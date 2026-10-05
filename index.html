@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Happy Hour Finder V1</title>
+    <link rel="stylesheet" href="./src/styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="tool-panel" aria-labelledby="app-title">
+        <div class="intro">
+          <p class="eyebrow">Happy Hour Finder V1</p>
+          <h1 id="app-title">Find happy hours based on your preferences.</h1>
+          <p>
+            Set your budget, cravings, timing, and vibe to see which happy-hour options fit best.
+          </p>
+          <p class="data-note">V1 uses a real DTLA happy-hour seed list from public guides. Always verify before going.</p>
+        </div>
+
+        <section class="quick-searches" aria-labelledby="quick-searches-title">
+          <div>
+            <p class="eyebrow" id="quick-searches-title">Try a search</p>
+            <div class="preset-actions" id="preset-actions"></div>
+          </div>
+          <div>
+            <p class="eyebrow">Budget</p>
+            <div class="budget-actions" id="budget-actions"></div>
+          </div>
+        </section>
+
+        <form id="request-form" class="request-form">
+          <label>
+            Location
+            <input name="location" value="Downtown LA" />
+          </label>
+
+          <label>
+            Neighborhood
+            <select name="neighborhood" id="neighborhood-filter">
+              <option value="all">All DTLA areas</option>
+            </select>
+          </label>
+
+          <label>
+            Day
+            <select name="day">
+              <option>Monday</option>
+              <option>Tuesday</option>
+              <option>Wednesday</option>
+              <option selected>Thursday</option>
+              <option>Friday</option>
+              <option>Saturday</option>
+              <option>Sunday</option>
+            </select>
+          </label>
+
+          <label>
+            Time
+            <input name="time" type="time" value="17:30" />
+          </label>
+
+          <label>
+            Max distance
+            <div class="input-with-unit">
+              <input name="maxDistance" type="number" min="0.5" max="20" step="0.5" value="3" />
+              <span>mi</span>
+            </div>
+          </label>
+
+          <label>
+            Budget
+            <div class="input-with-unit">
+              <span>$</span>
+              <input name="budget" type="number" min="10" max="100" step="1" value="25" />
+            </div>
+          </label>
+
+          <label>
+            Food preferences
+            <input name="foodPreferences" value="tacos, seafood" />
+          </label>
+
+          <label>
+            Drink preferences
+            <input name="drinkPreferences" value="margarita" />
+          </label>
+
+          <label>
+            Atmosphere
+            <select name="atmosphere">
+              <option selected>lively</option>
+              <option>casual</option>
+              <option>date-night</option>
+              <option>upscale</option>
+              <option>quiet</option>
+              <option>cozy</option>
+              <option>sports</option>
+            </select>
+          </label>
+
+          <button type="submit">Update ranking</button>
+        </form>
+      </section>
+
+      <section class="results-panel" aria-live="polite">
+        <div class="results-heading">
+          <div>
+            <p class="eyebrow">Ranked results</p>
+            <h2 id="results-title">Thursday at 5:30 PM near Downtown LA</h2>
+          </div>
+          <span class="method-pill">30% time match</span>
+        </div>
+        <div id="results" class="results-grid"></div>
+      </section>
+
+    </main>
+
+    <script type="module" src="./src/app.js"></script>
+  </body>
+</html>

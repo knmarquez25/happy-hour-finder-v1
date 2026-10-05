@@ -1,0 +1,40 @@
+export const searchPresets = [
+  {
+    label: "Tacos + margaritas",
+    location: "Downtown LA",
+    neighborhood: "all",
+    day: "Thursday",
+    time: "17:30",
+    maxDistance: 3,
+    budget: 25,
+    foodPreferences: "tacos, seafood",
+    drinkPreferences: "margarita",
+    atmosphere: "lively",
+  },
+  {
+    label: "Cozy date night",
+    location: "Arts District",
+    neighborhood: "Arts District",
+    day: "Friday",
+    time: "16:30",
+    maxDistance: 4,
+    budget: 35,
+    foodPreferences: "vegetarian, flatbread",
+    drinkPreferences: "gin, spritz",
+    atmosphere: "date-night",
+  },
+  {
+    label: "Seafood + wine",
+    location: "Arts District",
+    neighborhood: "Arts District",
+    day: "Wednesday",
+    time: "17:45",
+    maxDistance: 5,
+    budget: 40,
+    foodPreferences: "seafood, oysters",
+    drinkPreferences: "wine, spritz",
+    atmosphere: "upscale",
+  },
+];
+
+export const budgetOptions = [20, 25, 35, 50];
