@@ -65,6 +65,35 @@ const base = process.env.PREVIEW_URL || "http://127.0.0.1:4174";
     await page.locator("[name=drinkPreferences]").fill("wine");
     assert.match(await page.locator("#active-filters").innerText(), /sushi/);
     assert.match(await page.locator("#active-filters").innerText(), /wine/);
+    assert.equal(await page.locator("[name=requireFood]").isChecked(), true);
+    assert.equal(await page.locator("[name=requireDrinks]").isChecked(), true);
+    assert.equal(
+      await page.locator("#results .result-card").count(),
+      0,
+      "Unconfirmed sushi does not return unrelated primary results",
+    );
+    await page.locator("[name=foodPreferences]").fill("seafood");
+    assert.ok(
+      (await page.locator("#results .result-card").count()) > 0,
+      "Confirmed seafood and wine return matching results",
+    );
+    await page.locator("[name=drinkPreferences]").fill("not-a-real-drink");
+    assert.equal(
+      await page.locator("#results .result-card").count(),
+      0,
+      "Drink edits filter actual results too",
+    );
+    await page.getByLabel("Drink is a must-have", { exact: true }).uncheck();
+    assert.ok(
+      (await page.locator("#results .result-card").count()) > 0,
+      "Soft preference is still an explicit opt-out",
+    );
+    await page.locator("[name=drinkPreferences]").fill("wine");
+    assert.equal(await page.locator("[name=requireDrinks]").isChecked(), true);
+    await page.locator("[name=foodPreferences]").fill("");
+    await page.locator("[name=drinkPreferences]").fill("");
+    assert.equal(await page.locator("[name=requireFood]").isChecked(), false);
+    assert.equal(await page.locator("[name=requireDrinks]").isChecked(), false);
     await page.locator("#sort").selectOption("match");
     for (const budget of [1, 100, 250, 500]) {
       await page.locator("#budget").fill(String(budget));

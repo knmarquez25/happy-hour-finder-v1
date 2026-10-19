@@ -241,6 +241,14 @@ form.addEventListener("input", (event) => {
   document.querySelector("#preset-select").value = "";
   if (event.target.name === "budget")
     document.querySelector("#budget-slider").value = event.target.value;
+  const requiredField = {
+    foodPreferences: "requireFood",
+    drinkPreferences: "requireDrinks",
+  }[event.target.name];
+  if (requiredField)
+    form.elements[requiredField].checked = event.target.value
+      .split(",")
+      .some((value) => value.trim());
   if (form.checkValidity()) runSearch();
 });
 document.querySelector("#budget-slider").addEventListener("input", (event) => {
@@ -290,8 +298,8 @@ document.querySelector("#preset-select").addEventListener("change", (event) => {
   }
   for (const [key, value] of Object.entries(preset))
     form.elements.namedItem(key).value = value;
-  form.elements.requireFood.checked = false;
-  form.elements.requireDrinks.checked = false;
+  form.elements.requireFood.checked = Boolean(preset.foodPreferences.trim());
+  form.elements.requireDrinks.checked = Boolean(preset.drinkPreferences.trim());
   document.querySelector("#budget-slider").value = preset.budget;
   runSearch();
 });
