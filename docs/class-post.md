@@ -2,7 +2,7 @@
 
 ## Solution And Screenshots
 
-[Published app](https://knmarquez25.github.io/happy-hour-finder-v1/).
+[App URL](https://knmarquez25.github.io/happy-hour-finder-v1/). The improved version is committed locally; publishing is pending GitHub write authorization. The screenshot below shows the improved version.
 
 ![Improved Happy Hour Finder](assets/happy-hour-desktop.png)
 
