@@ -25,6 +25,9 @@ const adjustments = JSON.parse(
 );
 const reviewed = records.map((record) => ({
   ...record,
+  ...(adjustments[record.id]?.specials
+    ? { specials: adjustments[record.id].specials }
+    : {}),
   hours: record.hours.map((window) => ({
     ...window,
     ...(adjustments[record.id]?.restriction &&

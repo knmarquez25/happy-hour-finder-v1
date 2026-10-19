@@ -2125,7 +2125,14 @@ export const restaurants = [
         "note": "Restaurant identity and Bali Way waterfront location inspected; no exact discounted per-item amounts established."
       }
     ],
-    "notes": "Applies to bar bites/lounge drinks. Do not interpret percentage or dollar-off offers as exact prices. Separate Del Rey Lounge 14:00 start not merged into SALT or counted as a second location."
+    "notes": "Applies to bar bites/lounge drinks. Do not interpret percentage or dollar-off offers as exact prices. Separate Del Rey Lounge 14:00 start not merged into SALT or counted as a second location.",
+    "specials": [
+      {
+        "text": "20% off bar bites and $2 off lounge drinks during Sunset Hour.",
+        "status": "primary",
+        "sourceId": "hotel"
+      }
+    ]
   },
   {
     "id": "simonette-culver-city",
@@ -2702,7 +2709,14 @@ export const restaurants = [
         "note": "Confirms 17:00-18:00 and 90-minute dining limit; parties of seven or more should contact restaurant."
       }
     ],
-    "notes": "90-minute dining experience. No arithmetic-derived prices. Official wording limits discount to Happy Hour menu; tourism guide's broader entire-menu description not adopted."
+    "notes": "90-minute dining experience. No arithmetic-derived prices. Official wording limits discount to Happy Hour menu; tourism guide's broader entire-menu description not adopted.",
+    "specials": [
+      {
+        "text": "FIG at 5: 50% off the Happy Hour menu, including bites, wines, beers and cocktails. Tuesday-Saturday, 5-6pm; 90-minute dining limit.",
+        "status": "primary",
+        "sourceId": "hotel"
+      }
+    ]
   },
   {
     "id": "hinano-cafe-venice",
@@ -4402,7 +4416,14 @@ export const restaurants = [
         "note": "Branch address; Monday-Friday 4-7pm HH, $2 off beer, wine, cocktails and appetizers. No exact final HH per-item amounts in this offer."
       }
     ],
-    "notes": "Discount-only offer: $2 off beer, wine, cocktails and appetizers. Prices remain null; no subtraction from regular menu or use of unrelated Monday 20:00 karaoke $8 wells."
+    "notes": "Discount-only offer: $2 off beer, wine, cocktails and appetizers. Prices remain null; no subtraction from regular menu or use of unrelated Monday 20:00 karaoke $8 wells.",
+    "specials": [
+      {
+        "text": "$2 off beer, wine, cocktails and appetizers.",
+        "status": "primary",
+        "sourceId": "official"
+      }
+    ]
   },
   {
     "id": "octopus-restaurant-burbank",
@@ -5104,7 +5125,14 @@ export const restaurants = [
         "note": "Full branch address; HH Mon-Fri 3-6pm and Sunday 3-10pm; $3 off wings, $2 off draft beer/wine/shareables, $3 off Haus cocktails, $1 off any 3-pack sliders."
       }
     ],
-    "notes": "Only published discount amounts, not exact final item prices; prices remain null. Saturday has no advertised HH window. No regular menu prices reused."
+    "notes": "Only published discount amounts, not exact final item prices; prices remain null. Saturday has no advertised HH window. No regular menu prices reused.",
+    "specials": [
+      {
+        "text": "$1 off a 3-pack of sliders; $2 off draft beer, wine and shareables; $3 off Haus cocktails and wings.",
+        "status": "primary",
+        "sourceId": "official"
+      }
+    ]
   },
   {
     "id": "checker-hall-highland-park",

@@ -461,6 +461,27 @@ a:focus-visible {
   color: var(--muted);
   margin-top: 3px;
 }
+.listed-specials strong {
+  font-size: 13px;
+}
+.listed-specials ul {
+  margin: 7px 0;
+  padding-left: 18px;
+  font-size: 13px;
+}
+.listed-specials li + li {
+  margin-top: 4px;
+}
+.special-source a {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  overflow-wrap: anywhere;
+}
+.special-source svg {
+  width: 12px;
+  height: 12px;
+}
 .combo-total {
   text-align: right;
   flex-shrink: 0;

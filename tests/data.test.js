@@ -26,6 +26,24 @@ const record = {
   drinkTags: [],
   atmosphereTags: [],
 };
+test("listed discount specials need text and valid source evidence", () => {
+  assert.ok(
+    validateRecords([
+      {
+        ...record,
+        specials: [{ text: "$2 off drinks", status: "primary", sourceId: "s" }],
+      },
+    ]).some((error) => error.includes("primary")),
+  );
+  assert.ok(
+    validateRecords([
+      {
+        ...record,
+        specials: [{ text: "", status: "secondary", sourceId: "s" }],
+      },
+    ]).some((error) => error.includes("special")),
+  );
+});
 test("duplicate venue IDs and physical addresses are rejected", () => {
   assert.ok(
     validateRecords([record, record]).some((error) =>

@@ -21,6 +21,26 @@ export function budgetLabel(difference) {
       ? "Right on target"
       : `${formatMoney(Math.abs(difference))} ${difference > 0 ? "above" : "below"} target`;
 }
+export function happyHourListings(venue) {
+  return [
+    ...(venue.specials || []).map((item) => ({ ...item, text: item.text })),
+    ...(venue.menu || []).map((item) => ({
+      ...item,
+      text: `${item.name} - ${Number.isSafeInteger(item.priceCents) && item.priceCents > 0 ? formatMoney(item.priceCents) : "Price not available"}${item.days ? ` (${item.days.join(", ")} only)` : ""}`,
+    })),
+  ].flatMap((item) => {
+    const source = venue.sources?.find((source) => source.id === item.sourceId);
+    const primary =
+      item.status === "primary" &&
+      source?.type === "primary" &&
+      Boolean(source.reviewedOn);
+    const secondary =
+      item.status === "secondary" && source?.type === "secondary";
+    return item.text && (primary || secondary)
+      ? [{ text: item.text, source, primary }]
+      : [];
+  });
+}
 export function restoreShortlist(raw, allowedIds) {
   try {
     const parsed = JSON.parse(raw);

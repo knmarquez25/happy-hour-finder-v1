@@ -13,6 +13,7 @@ import {
   restoreShortlist,
   toggleShortlist,
   sortResults,
+  happyHourListings,
 } from "./ui-state.js";
 
 const form = document.querySelector("#request-form");
@@ -92,6 +93,21 @@ function sourceLink(source) {
   }
   return `<a href="${esc(url.href)}" target="_blank" rel="noreferrer">${esc(url.hostname.replace(/^www\./, ""))}${icon("arrow-up-right")}</a>`;
 }
+function renderSpecials(venue) {
+  const listings = happyHourListings(venue);
+  const groups = [true, false]
+    .map((primary) => {
+      const items = listings.filter((item) => item.primary === primary);
+      if (!items.length) return "";
+      const sources = [...new Set(items.map((item) => item.source))];
+      return `<strong>${primary ? "Restaurant-listed" : "Guide-listed"} happy-hour specials</strong><ul>${items.map((item) => `<li>${esc(item.text)}</li>`).join("")}</ul>${sources.map((source) => `<small class="special-source">${sourceLink(source)} · ${source.reviewedOn ? `Reviewed ${dateText(source.reviewedOn)}` : "Not restaurant-reviewed"}</small>`).join("")}`;
+    })
+    .join("");
+  const official = venue.sources.find(
+    (source) => source.type === "primary" && source.reviewedOn,
+  );
+  return `<div class="listed-specials">${groups || `<strong>Happy-hour menu</strong><small>${official ? "Specials have not been transcribed yet. View the restaurant's menu or website:" : "Restaurant-listed specials are not available in this dataset yet."}</small>${official ? `<small class="special-source">${sourceLink(official)} · Reviewed ${dateText(official.reviewedOn)}</small>` : ""}`}<small>Listed offers only; check days and seating restrictions in the details. No combo total inferred.</small></div>`;
+}
 function renderDetails(venue) {
   return `<details class="venue-details"><summary>Specials, sources &amp; match details</summary><p>${esc(venue.address || "Address needs verification")}</p><p><strong>Listed schedule:</strong> ${esc(formatHappyHour(venue.hours) || "Exact days and times not established.")}</p>${venue.notes ? `<p>${esc(venue.notes)}</p>` : ""}<h4>Published happy-hour items</h4>${venue.menu.length ? venue.menu.map((item) => `<div class="menu-item"><span>${esc(item.name)}<br><small>${esc(item.status === "primary" ? "Restaurant-listed" : item.status === "conflicting" ? "Conflicting sources" : "Not restaurant-confirmed")}${item.windowIds ? " · Limited schedule" : ""}</small></span><span>${item.priceCents === null ? "Price unknown" : money(item.priceCents)}</span></div>`).join("") : "<p>Itemized happy-hour prices are not established. No combo total is inferred.</p>"}${venue.legacyEstimateCents ? `<p>Original V1 estimate: ${money(venue.legacyEstimateCents)}/person, unverified and not used as a combo total.</p>` : ""}<h4>Sources</h4><ul class="source-list">${venue.sources.map((source) => `<li>${sourceLink(source)}<br>${esc(source.type === "primary" ? "Restaurant source" : "Secondary source")} · ${source.reviewedOn ? `Reviewed ${dateText(source.reviewedOn)}` : "Not reviewed"}${source.note ? `<br>${esc(source.note)}` : ""}</li>`).join("")}</ul>${venue.coordinates ? `<p>Distance: ${esc(venue.coordinates.precision || "Sourced coordinates")} from ${esc(currentRequest.origin.name)} area reference point. Not a route or travel-time estimate.</p>` : ""}<h4>Match ${venue.score}/100</h4>${Object.entries(
     venue.breakdown,
@@ -108,7 +124,7 @@ function renderVenue(venue, index, alternative = false) {
   const difference = venue.budgetDifferenceCents;
   const selected = shortlist.includes(venue.id);
   const window = venue.activeWindows?.[0];
-  return `<article class="result-card" data-venue-id="${esc(venue.id)}"><div class="card-heading"><div class="venue-title"><p class="eyebrow">${alternative ? "Other option" : index === 0 && document.querySelector("#sort").value === "match" ? "Top match" : `Option ${index + 1}`}</p><h3>${esc(venue.name)}</h3><p class="venue-meta">${esc(venue.neighborhood)}<span aria-hidden="true">·</span>${icon("map-pin")}${formatDistance(venue.distanceMiles)}</p></div><button class="save-button" type="button" data-save="${esc(venue.id)}" aria-pressed="${selected}" aria-label="${selected ? "Remove" : "Save"} ${esc(venue.name)} ${selected ? "from" : "to"} shortlist">${icon(selected ? "bookmark-check" : "bookmark")}<span>${selected ? "Saved" : "Save"}</span></button></div><div class="card-schedule"><span class="status ${alternative ? "uncertain" : ""}">${icon(alternative ? "circle-alert" : "clock-3")}${alternative ? "Needs a second look" : "Restaurant-listed happy hour"}</span>${window ? `<span class="schedule-time">${displayTime(window.start)}–${displayTime(window.end)}${window.restriction !== "none" ? ` · ${esc(window.restriction.replaceAll("-", " "))}` : ""}</span>` : ""}</div><div class="combo"><div class="combo-items">${venue.combo ? `${esc(venue.combo.food.name)} + ${esc(venue.combo.drink.name)}<small>${money(venue.combo.food.priceCents)} + ${money(venue.combo.drink.priceCents)} · One published order of each</small>` : "Itemized combo not confirmed<small>Missing or uncertain prices stay unknown</small>"}<small>Subtotal before tax, tip &amp; fees</small></div><div class="combo-total"><div class="price ${venue.combo ? "" : "unknown"}">${venue.combo ? money(venue.combo.totalCents) : "Price unknown"}</div><div class="budget-difference ${difference === null ? "unknown" : difference > 0 ? "over" : ""}">${budgetLabel(difference)}</div></div></div><div class="match-reasons">${venue.reasons
+  return `<article class="result-card" data-venue-id="${esc(venue.id)}"><div class="card-heading"><div class="venue-title"><p class="eyebrow">${alternative ? "Other option" : index === 0 && document.querySelector("#sort").value === "match" ? "Top match" : `Option ${index + 1}`}</p><h3>${esc(venue.name)}</h3><p class="venue-meta">${esc(venue.neighborhood)}<span aria-hidden="true">·</span>${icon("map-pin")}${formatDistance(venue.distanceMiles)}</p></div><button class="save-button" type="button" data-save="${esc(venue.id)}" aria-pressed="${selected}" aria-label="${selected ? "Remove" : "Save"} ${esc(venue.name)} ${selected ? "from" : "to"} shortlist">${icon(selected ? "bookmark-check" : "bookmark")}<span>${selected ? "Saved" : "Save"}</span></button></div><div class="card-schedule"><span class="status ${alternative ? "uncertain" : ""}">${icon(alternative ? "circle-alert" : "clock-3")}${alternative ? "Needs a second look" : "Restaurant-listed happy hour"}</span>${window ? `<span class="schedule-time">${displayTime(window.start)}–${displayTime(window.end)}${window.restriction !== "none" ? ` · ${esc(window.restriction.replaceAll("-", " "))}` : ""}</span>` : ""}</div><div class="combo"><div class="combo-items">${venue.combo ? `${esc(venue.combo.food.name)} + ${esc(venue.combo.drink.name)}<small>${money(venue.combo.food.priceCents)} + ${money(venue.combo.drink.priceCents)} · One published order of each</small>` : renderSpecials(venue)}${venue.combo ? "<small>Subtotal before tax, tip &amp; fees</small>" : ""}</div><div class="combo-total"><div class="price ${venue.combo ? "" : "unknown"}">${venue.combo ? money(venue.combo.totalCents) : "Price unknown"}</div><div class="budget-difference ${difference === null ? "unknown" : difference > 0 ? "over" : ""}">${budgetLabel(difference)}</div></div></div><div class="match-reasons">${venue.reasons
     .filter((reason) => reason !== "Listed happy hour fits")
     .map(
       (reason) =>
@@ -158,7 +174,18 @@ function renderShortlist() {
     .filter(Boolean)
     .map(
       (venue) =>
-        `<article class="comparison-item"><h3>${esc(venue.name)}</h3><p>${esc(venue.neighborhood)} · ${formatDistance(venue.distanceMiles)}</p><p class="compare-price">${venue.combo ? money(venue.combo.totalCents) : "Price unknown"}</p><p>${budgetLabel(venue.budgetDifferenceCents)}</p><p>${venue.eligible ? "Meets required filters" : esc(venue.failures.join("; "))}</p><p>${venue.combo ? `${esc(venue.combo.food.name)} + ${esc(venue.combo.drink.name)}` : "Combo not confirmed"}</p><p>${esc(formatHappyHour(venue.hours) || "Schedule unconfirmed")}</p><button class="icon-button" type="button" data-remove="${esc(venue.id)}" aria-label="Remove ${esc(venue.name)} from shortlist" data-tooltip="Remove from shortlist">${icon("x")}</button></article>`,
+        `<article class="comparison-item"><h3>${esc(venue.name)}</h3><p>${esc(venue.neighborhood)} · ${formatDistance(venue.distanceMiles)}</p><p class="compare-price">${venue.combo ? money(venue.combo.totalCents) : "Price unknown"}</p><p>${budgetLabel(venue.budgetDifferenceCents)}</p><p>${venue.eligible ? "Meets required filters" : esc(venue.failures.join("; "))}</p><p>${
+          venue.combo
+            ? `${esc(venue.combo.food.name)} + ${esc(venue.combo.drink.name)}`
+            : esc(
+                happyHourListings(venue)
+                  .map(
+                    (item) =>
+                      `${item.primary ? "Restaurant-listed" : "Guide-listed"}: ${item.text}`,
+                  )
+                  .join("; ") || "See restaurant menu for happy-hour specials",
+              )
+        }</p><p>${esc(formatHappyHour(venue.hours) || "Schedule unconfirmed")}</p><button class="icon-button" type="button" data-remove="${esc(venue.id)}" aria-label="Remove ${esc(venue.name)} from shortlist" data-tooltip="Remove from shortlist">${icon("x")}</button></article>`,
     )
     .join("");
   icons();

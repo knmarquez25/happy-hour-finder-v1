@@ -1,6 +1,55 @@
 {
-  "ospi-brentwood":{"restriction":"bar-or-patio","note":"Original official menu notes explicitly limit seating to bar/patio. This maps to the existing opt-in, without treating cashless payment as an invented price."},
-  "the-galley-santa-monica":{"restriction":"bar-or-patio","note":"Official source notes explicitly say bar/front patio."},
-  "surfing-fox-santa-monica":{"restriction":"bar-or-patio","note":"Reviewed Sunset Hour tab explicitly restricts seating to bar/patio."},
-  "ocean-prime-beverly-hills":{"itemDays":{"food-1":["Friday"],"drink-1":["Friday"]},"itemPairs":{"food-1":["drink-1"]},"note":"Friday-only oyster price is conservatively paired only with the documented champagne promotion, not the unrelated beer; lounge restriction remains conditional."}
+  "salt-marina-del-rey-hotel": {
+    "specials": [
+      {
+        "text": "20% off bar bites and $2 off lounge drinks during Sunset Hour.",
+        "status": "primary",
+        "sourceId": "hotel"
+      }
+    ]
+  },
+  "fig-fairmont-miramar-santa-monica": {
+    "specials": [
+      {
+        "text": "FIG at 5: 50% off the Happy Hour menu, including bites, wines, beers and cocktails. Tuesday-Saturday, 5-6pm; 90-minute dining limit.",
+        "status": "primary",
+        "sourceId": "hotel"
+      }
+    ]
+  },
+  "inkwell-tavern-burbank": {
+    "specials": [
+      {
+        "text": "$2 off beer, wine, cocktails and appetizers.",
+        "status": "primary",
+        "sourceId": "official"
+      }
+    ]
+  },
+  "dog-haus-biergarten-alhambra": {
+    "specials": [
+      {
+        "text": "$1 off a 3-pack of sliders; $2 off draft beer, wine and shareables; $3 off Haus cocktails and wings.",
+        "status": "primary",
+        "sourceId": "official"
+      }
+    ]
+  },
+  "ospi-brentwood": {
+    "restriction": "bar-or-patio",
+    "note": "Original official menu notes explicitly limit seating to bar/patio. This maps to the existing opt-in, without treating cashless payment as an invented price."
+  },
+  "the-galley-santa-monica": {
+    "restriction": "bar-or-patio",
+    "note": "Official source notes explicitly say bar/front patio."
+  },
+  "surfing-fox-santa-monica": {
+    "restriction": "bar-or-patio",
+    "note": "Reviewed Sunset Hour tab explicitly restricts seating to bar/patio."
+  },
+  "ocean-prime-beverly-hills": {
+    "itemDays": { "food-1": ["Friday"], "drink-1": ["Friday"] },
+    "itemPairs": { "food-1": ["drink-1"] },
+    "note": "Friday-only oyster price is conservatively paired only with the documented champagne promotion, not the unrelated beer; lounge restriction remains conditional."
+  }
 }

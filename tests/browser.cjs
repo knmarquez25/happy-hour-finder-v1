@@ -113,6 +113,22 @@ const base = process.env.PREVIEW_URL || "http://127.0.0.1:4174";
       await page.locator("#results .budget-difference").first().innerText(),
       /above target/,
     );
+    await page.locator("#origin").selectOption("burbank");
+    const inkwell = page.locator(
+      '#results [data-venue-id="inkwell-tavern-burbank"]',
+    );
+    assert.match(
+      await inkwell.locator(".listed-specials").innerText(),
+      /\$2 off beer, wine, cocktails and appetizers/,
+    );
+    assert.equal(
+      await inkwell
+        .locator(".listed-specials a[href='https://inkwelltavern.com/']")
+        .count(),
+      1,
+    );
+    assert.match(await inkwell.locator(".price").innerText(), /Price unknown/);
+    await inkwell.screenshot({ path: "test-results/listed-specials.png" });
     await page.locator("#preset-select").selectOption("pasadena");
     assert.match(await page.locator("#result-count").innerText(), /Pasadena/);
     await page.locator("#sort").selectOption("price");

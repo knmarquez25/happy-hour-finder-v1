@@ -57,6 +57,11 @@ export function validateRecords(records) {
       )
         error("Unsupported primary evidence");
     };
+    for (const special of record.specials || []) {
+      if (typeof special.text !== "string" || !special.text.trim())
+        error("Invalid listed special");
+      evidence(special);
+    }
     for (const window of record.hours || []) {
       if (
         !window.days?.length ||

@@ -6,7 +6,62 @@ import {
   sortResults,
   budgetLabel,
   escapeHtml,
+  happyHourListings,
 } from "../src/ui-state.js";
+test("happy-hour listings retain exact prices, discount wording and source attribution without inventing totals", () => {
+  const source = {
+    id: "official",
+    type: "primary",
+    reviewedOn: "2026-10-19",
+    url: "https://example.com",
+  };
+  const venue = {
+    sources: [source],
+    menu: [
+      {
+        name: "Beer",
+        priceCents: 700,
+        status: "primary",
+        sourceId: "official",
+        days: ["Friday"],
+      },
+      {
+        name: "Fries",
+        priceCents: null,
+        status: "primary",
+        sourceId: "official",
+      },
+      {
+        name: "Unreviewed taco",
+        priceCents: 200,
+        status: "primary",
+        sourceId: "missing",
+      },
+    ],
+    specials: [
+      { text: "$2 off appetizers", status: "primary", sourceId: "official" },
+    ],
+  };
+  const listings = happyHourListings(venue);
+  assert.equal(listings.length, 3);
+  assert.equal(listings[0].text, "$2 off appetizers");
+  assert.match(listings[1].text, /Beer.*\$7.*Friday/);
+  assert.match(listings[2].text, /Fries.*Price not available/);
+  assert.ok(listings.every((item) => item.source === source && item.primary));
+});
+test("guide-only listings stay secondary and unsupported primary claims are omitted", () => {
+  const source = { id: "guide", type: "secondary", reviewedOn: "2026-10-19" };
+  const listings = happyHourListings({
+    sources: [source],
+    menu: [],
+    specials: [
+      { text: "Guide special", sourceId: "guide", status: "secondary" },
+      { text: "False primary", sourceId: "guide", status: "primary" },
+    ],
+  });
+  assert.equal(listings.length, 1);
+  assert.equal(listings[0].primary, false);
+});
 test("invalid browser storage cannot break the app or inject shortlist entries", () => {
   assert.deepEqual(restoreShortlist("{bad", ["a"]), []);
   assert.deepEqual(restoreShortlist('{"id":"a"}', ["a"]), []);
