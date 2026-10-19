@@ -58,12 +58,12 @@
 **Files:** Updated QA/design notes and any fixes directly required by review.
 
 - [x] Run `npm test`, `npm run data:validate`, `npm run evaluate`, `npm run evaluate:holdout`, `npm run test:browser`, `npm run test:qa`, and `git diff --check`.
-- [ ] Review the complete presentation/workflow diff for source integrity, accessibility, failed-media states, and disclosure/tray interactions; fix important findings with regressions.
-- [ ] Fetch GitHub main and publish only a verified fast-forward update; do not overwrite unrelated changes or force-push.
-- [ ] Wait for Pages deployment success, then run both browser suites against the live URL using `PREVIEW_URL`.
-- [ ] Report the published URL, test results, and any remaining media/browser/data limitations.
+- [x] Review the complete presentation/workflow diff for source integrity, accessibility, failed-media states, and disclosure/tray interactions; fix important findings with regressions.
+- [x] Fetch GitHub main and publish only a verified fast-forward update; do not overwrite unrelated changes or force-push.
+- [x] Wait for Pages deployment success, then run both browser suites against the live URL using `PREVIEW_URL`.
+- [x] Report the published URL, test results, and any remaining media/browser/data limitations.
 
-Local verification completed October 19, 2026 at application HEAD `77e8fbc`; see `docs/neighborhood-guide-qa.md` for fresh evidence and limitations. Local presentation/workflow inspection found no new concrete defect. The review checkbox above remains open for the parent-dispatched final whole-branch gate. Deployment and live acceptance are pending and parent-owned; Task 3 does not publish, merge or message other chats.
+Release completed October 19, 2026. Independent final review and scoped re-review accepted the focus correction at `4e7846c`. The controller published identical tree `aa5c59f681757d1c71c31e2fcb1f39a2d1cc8142` as GitHub commit `274a0316d4881d61ff90f2d013d20d2576679570`, confirmed Pages success, and passed both live browser suites (126 QA checks). See `docs/neighborhood-guide-qa.md` for evidence and limitations. Other-chat files were preserved; no cross-chat message was sent.
 
 ## Plan Review
 

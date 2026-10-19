@@ -1,4 +1,8 @@
-# Neighborhood Guide Local QA
+# Neighborhood Guide QA
+
+## Published Acceptance
+
+October 19, 2026: final scoped re-review accepted `4e7846c` with no new findings. GitHub release `274a0316d4881d61ff90f2d013d20d2576679570` has the exact tested local tree. Pages workflow `39334866103` completed successfully. Both suites were then rerun with `PREVIEW_URL=https://knmarquez25.github.io/happy-hour-finder-v1/`: browser regressions passed across all six widths with no bounds violations or page errors; QA passed 126 checks with no errors or failed same-origin assets. Fresh controller unit run passed 46/46. These release results supersede the historical pending-status notes below. Photo, cross-browser, permissions and restaurant-data limitations remain unchanged.
 
 Fresh verification: October 19, 2026, `codex/neighborhood-guide`, application HEAD `77e8fbc`. Task 1 and Task 2 passed their independent gates, including the dark-mode tray hover correction. This document supplements the historical `qa-review.md`; it does not repeat its dependency-audit claim as a fresh audit.
 
