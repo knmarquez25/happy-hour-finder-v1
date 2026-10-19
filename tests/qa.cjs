@@ -20,6 +20,81 @@ const base = process.env.PREVIEW_URL || "http://127.0.0.1:4174/";
     await fs.mkdir("test-results", { recursive: true });
     await page.goto(base);
     await page.locator("#results .result-card").first().waitFor();
+    await page.route("https://images.squarespace-cdn.com/**", (route) =>
+      route.abort(),
+    );
+    await page.reload();
+    const failedPhoto = page.locator(
+      '#results [data-venue-id="perch-la"] .venue-media',
+    );
+    await failedPhoto.waitFor();
+    await page.waitForFunction(() =>
+      document
+        .querySelector('#results [data-venue-id="perch-la"] .venue-media')
+        ?.classList.contains("media-failed"),
+    );
+    assert.ok(await failedPhoto.locator(".media-fallback").isVisible());
+    assert.equal(
+      await failedPhoto.locator("a").getAttribute("href"),
+      "https://www.perchla.com/",
+    );
+    const geometry = await failedPhoto.boundingBox();
+    assert.ok(Math.abs(geometry.width / geometry.height - 4 / 3) < 0.02);
+    await failedPhoto.screenshot({
+      path: "test-results/intentional-abort-perch.png",
+    });
+    await page.unroute("https://images.squarespace-cdn.com/**");
+    await page.reload();
+    for (const [origin, id] of [
+      ["dtla", "perch-la"],
+      ["silver-lake", "le-oyster-bar-silver-lake"],
+      ["pasadena", "foothill-restaurant-pasadena"],
+      ["burbank", "inkwell-tavern-burbank"],
+    ]) {
+      await page.locator("[name=maxDistance]").selectOption("5");
+      await page.locator("#origin").selectOption(origin);
+      const media = page.locator(
+        `#results [data-venue-id="${id}"] .venue-media`,
+      );
+      await media.scrollIntoViewIfNeeded();
+      await media.locator("img").evaluate((img) => img.decode());
+      assert.ok(
+        await media.locator("img").evaluate((img) => img.naturalWidth > 0),
+      );
+      assert.ok(await media.locator(".photo-credit").isVisible());
+      await media.screenshot({ path: `test-results/media-${id}.png` });
+    }
+    await page.locator("#origin").selectOption("dtla");
+    await page.setViewportSize({ width: 390, height: 900 });
+    const normalPhoto = page.locator(
+      '#results [data-venue-id="perch-la"] .venue-media',
+    );
+    await normalPhoto.scrollIntoViewIfNeeded();
+    await normalPhoto.locator("img").evaluate((img) => img.decode());
+    await page.screenshot({
+      path: "test-results/normal-photos-mobile.png",
+      fullPage: false,
+    });
+    await page.setViewportSize({ width: 1440, height: 1000 });
+    await page.route("https://fonts.googleapis.com/**", (route) =>
+      route.abort(),
+    );
+    await page.route("https://fonts.gstatic.com/**", (route) => route.abort());
+    await page.reload();
+    assert.ok(await page.locator("h1").isVisible());
+    await page.screenshot({
+      path: "test-results/font-fallback.png",
+      fullPage: true,
+    });
+    await page.unroute("https://fonts.googleapis.com/**");
+    await page.unroute("https://fonts.gstatic.com/**");
+    await page.reload();
+    await page.locator("#theme-toggle").click();
+    await page.screenshot({
+      path: "test-results/dark-desktop.png",
+      fullPage: true,
+    });
+    await page.locator("#theme-toggle").click();
     await page.locator("[name=maxDistance]").selectOption("25");
     await page.locator("[name=foodPreferences]").fill("");
     await page.locator("[name=drinkPreferences]").fill("");
@@ -44,8 +119,16 @@ const base = process.env.PREVIEW_URL || "http://127.0.0.1:4174/";
           await page.locator("#results-title").innerText(),
           new RegExp(day),
         );
-        if (time === "04:00")
+        if (time === "04:00") {
           assert.equal(await page.locator("#results .result-card").count(), 0);
+          assert.ok(
+            await page
+              .locator("#alternative-results .failure-reason")
+              .first()
+              .isVisible(),
+            "Inactive happy hours appear automatically with failure reasons",
+          );
+        }
         for (const sort of ["match", "budget", "price", "distance"]) {
           await page.locator("#sort").selectOption(sort);
           let values;
@@ -125,6 +208,22 @@ const base = process.env.PREVIEW_URL || "http://127.0.0.1:4174/";
     for (const width of [1440, 1024, 768, 390, 320]) {
       await page.setViewportSize({ width, height: 900 });
       const layout = await page.evaluate(() => ({
+        clippedFallbacks: [
+          ...document.querySelectorAll(".media-failed .media-fallback"),
+        ]
+          .filter((el) => {
+            if (!el.getClientRects().length) return false;
+            const frame = el.getBoundingClientRect();
+            return [...el.children].some((child) => {
+              const rect = child.getBoundingClientRect();
+              return (
+                rect.top < frame.top ||
+                rect.bottom > frame.bottom ||
+                rect.right > frame.right
+              );
+            });
+          })
+          .map((el) => el.textContent),
         overflow: document.documentElement.scrollWidth > innerWidth + 1,
         outside: [...document.querySelectorAll("body *")]
           .filter((el) => {
@@ -163,6 +262,11 @@ const base = process.env.PREVIEW_URL || "http://127.0.0.1:4174/";
         `Layout ${width}: ${JSON.stringify(layout.outside)}`,
       );
       assert.deepEqual(layout.unlabeled, [], `Control labels ${width}`);
+      assert.deepEqual(
+        layout.clippedFallbacks,
+        [],
+        `Fallback text fits ${width}`,
+      );
       await page.screenshot({
         path: `test-results/qa-${width}.png`,
         fullPage: false,

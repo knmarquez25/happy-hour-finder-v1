@@ -9,18 +9,28 @@
     />
     <meta name="color-scheme" content="light dark" />
     <title>Happy Hour Finder | DTLA & Nearby</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&amp;family=DM+Sans:wght@400;500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./src/styles.css" />
   </head>
   <body>
     <a class="skip-link" href="#results-title">Skip to results</a>
     <header class="app-header">
+      <div class="edition">
+        <span>Los Angeles &amp; the neighborhoods around it</span
+        ><span>The after-work edit</span>
+      </div>
       <div class="header-inner">
         <div class="brand">
           <span class="brand-mark"
             ><i data-lucide="martini" aria-hidden="true"></i
           ></span>
           <div>
-            <h1>Happy Hour Finder</h1>
+            <h1>Happy Hour <span>Finder</span></h1>
+            <p class="brand-note">Good plans start here.</p>
             <p>
               DTLA &amp; nearby <span aria-hidden="true">·</span>
               <span id="coverage-count">Researching local spots</span>
@@ -30,7 +40,9 @@
         <div class="header-actions">
           <button id="shortlist-jump" type="button" disabled>
             <i data-lucide="bookmark" aria-hidden="true"></i
-            ><span>Shortlist <span id="shortlist-count">0</span></span></button
+            ><span
+              >Tonight's contenders <span id="shortlist-count">0</span></span
+            ></button
           ><button
             id="theme-toggle"
             class="icon-button"
@@ -44,9 +56,9 @@
       </div>
     </header>
     <div class="app-shell">
-      <aside class="search-panel" aria-label="Search preferences">
+      <section class="search-panel" aria-label="Search preferences">
         <form id="request-form">
-          <h2>Your plans</h2>
+          <h2 class="sr-only">Your plans</h2>
           <label class="field"
             >Optional quick plan<select id="preset-select" name="preset">
               <option value="">Custom search</option>
@@ -166,11 +178,11 @@
             may differ on holidays and event days.
           </p>
         </details>
-      </aside>
+      </section>
       <main id="main-results">
         <div class="results-heading">
           <div>
-            <p class="eyebrow">Your next happy hour</p>
+            <p class="eyebrow">Clock out. Head out.</p>
             <h2 id="results-title">Thursday, 5:30 PM</h2>
             <p id="result-count" class="secondary" aria-live="polite"></p>
           </div>
@@ -188,6 +200,14 @@
         <button id="show-more" class="more-button" type="button" hidden>
           Show more spots<i data-lucide="chevron-down" aria-hidden="true"></i>
         </button>
+        <aside id="contenders-tray" aria-label="Saved contenders" hidden>
+          <strong>Tonight's contenders</strong>
+          <div id="tray-items"></div>
+          <span id="tray-count">0 / 3 spots</span
+          ><a href="#shortlist"
+            >Compare all <i data-lucide="arrow-down" aria-hidden="true"></i
+          ></a>
+        </aside>
         <section
           id="shortlist"
           class="shortlist"
@@ -196,7 +216,7 @@
         >
           <div class="section-heading">
             <div>
-              <h2 id="shortlist-title">Your shortlist</h2>
+              <h2 id="shortlist-title">Tonight's contenders</h2>
               <p class="secondary">Menu subtotals before tax, tip &amp; fees</p>
             </div>
             <button
@@ -213,7 +233,9 @@
           <p id="shortlist-message" class="secondary" aria-live="polite"></p>
         </section>
         <details id="alternatives" class="alternatives">
-          <summary><span id="alternatives-title">Other options</span></summary>
+          <summary>
+            <span id="alternatives-title">Other spots to consider</span>
+          </summary>
           <p class="secondary">
             These do not meet every requirement. Each result shows what needs to
             change or be verified.
