@@ -14,6 +14,12 @@ const base = process.env.PREVIEW_URL || "http://127.0.0.1:4174";
     await fs.mkdir("test-results", { recursive: true });
     await page.goto(base);
     await page.locator("#results .result-card").first().waitFor();
+    assert.ok(
+      await page
+        .getByRole("combobox", { name: "Search near", exact: true })
+        .isVisible(),
+    );
+    assert.equal(await page.locator("[name=neighborhood]").count(), 0);
     assert.match(
       await page.locator("#coverage-count").innerText(),
       /100 researched/,

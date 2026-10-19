@@ -169,28 +169,12 @@ function runSearch() {
     currentRequest = requestFromForm();
     error.hidden = true;
     searchResult = searchRestaurants(restaurants, currentRequest);
-    // Keep saved venues visible in comparison even when a neighborhood filter changes.
     allEvaluated = new Map(
       [...searchResult.matches, ...searchResult.alternatives].map((venue) => [
         venue.id,
         venue,
       ]),
     );
-    const missing = restaurants.filter(
-      (venue) => shortlist.includes(venue.id) && !allEvaluated.has(venue.id),
-    );
-    if (missing.length) {
-      const extra = searchRestaurants(missing, {
-        ...currentRequest,
-        neighborhood: "all",
-      });
-      for (const venue of [...extra.matches, ...extra.alternatives])
-        allEvaluated.set(venue.id, {
-          ...venue,
-          eligible: false,
-          failures: [...venue.failures, "Different neighborhood"],
-        });
-    }
     mainLimit = 8;
     alternativeLimit = 6;
     document.querySelector("#results-title").textContent =
@@ -221,12 +205,6 @@ function runSearch() {
 form.elements.originId.innerHTML = origins
   .map((origin) => `<option value="${origin.id}">${esc(origin.name)}</option>`)
   .join("");
-document.querySelector("#neighborhood-filter").innerHTML =
-  '<option value="all">All neighborhoods</option>' +
-  [...new Set(restaurants.map((venue) => venue.neighborhood))]
-    .sort()
-    .map((name) => `<option value="${esc(name)}">${esc(name)}</option>`)
-    .join("");
 document.querySelector("#coverage-count").textContent =
   `${dataMetadata.total} researched spots · 25-mile coverage`;
 document.querySelector("#data-summary").innerHTML =
@@ -312,7 +290,6 @@ document.querySelector("#preset-select").addEventListener("change", (event) => {
   }
   for (const [key, value] of Object.entries(preset))
     form.elements.namedItem(key).value = value;
-  form.elements.neighborhood.value = "all";
   form.elements.requireFood.checked = false;
   form.elements.requireDrinks.checked = false;
   document.querySelector("#budget-slider").value = preset.budget;
