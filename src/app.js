@@ -134,11 +134,13 @@ function renderLists() {
     !searchResult.alternatives.length;
   document.querySelector("#alternatives-title").textContent =
     `Other options (${searchResult.alternatives.length})`;
-  document.querySelector("#alternative-results").innerHTML =
-    searchResult.alternatives
-      .slice(0, alternativeLimit)
-      .map((venue, index) => renderVenue(venue, index, true))
-      .join("");
+  document.querySelector("#alternative-results").innerHTML = sortResults(
+    searchResult.alternatives,
+    document.querySelector("#sort").value,
+  )
+    .slice(0, alternativeLimit)
+    .map((venue, index) => renderVenue(venue, index, true))
+    .join("");
   document.querySelector("#more-alternatives").hidden =
     searchResult.alternatives.length <= alternativeLimit;
   icons();
@@ -198,6 +200,8 @@ function runSearch() {
     const tags = [
       `${currentRequest.maxDistance} mi radius`,
       `Around ${money(Math.round(currentRequest.budget * 100))}`,
+      ...currentRequest.foodPreferences.map((value) => `Food: ${value}`),
+      ...currentRequest.drinkPreferences.map((value) => `Drink: ${value}`),
       ...(currentRequest.requireFood ? ["Food required"] : []),
       ...(currentRequest.requireDrinks ? ["Drink required"] : []),
       ...(currentRequest.includeRestricted
@@ -249,6 +253,18 @@ form.addEventListener("change", (event) => {
     document.querySelector("#budget-slider").value = event.target.value;
   runSearch();
 });
+form.addEventListener("input", (event) => {
+  if (
+    !["budget", "foodPreferences", "drinkPreferences"].includes(
+      event.target.name,
+    )
+  )
+    return;
+  document.querySelector("#preset-select").value = "";
+  if (event.target.name === "budget")
+    document.querySelector("#budget-slider").value = event.target.value;
+  if (form.checkValidity()) runSearch();
+});
 document.querySelector("#budget-slider").addEventListener("input", (event) => {
   form.elements.budget.value = event.target.value;
   document.querySelector("#preset-select").value = "";
@@ -289,7 +305,11 @@ document.querySelector("#preset-select").addEventListener("change", (event) => {
     },
   };
   const preset = presets[event.target.value];
-  if (!preset) return;
+  if (!preset) {
+    document.querySelector("#more-filters").open = true;
+    form.elements.foodPreferences.focus();
+    return;
+  }
   for (const [key, value] of Object.entries(preset))
     form.elements.namedItem(key).value = value;
   form.elements.neighborhood.value = "all";

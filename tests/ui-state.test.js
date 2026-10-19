@@ -31,6 +31,19 @@ test("budget labels express above and below without pretending unknowns fit", ()
   assert.equal(budgetLabel(null), "Price not confirmed");
   assert.equal(budgetLabel(0), "Right on target");
 });
+test("budget sort orders by absolute target difference and keeps unknown prices last", () => {
+  const rows = [
+    { id: "cheap", score: 100, budgetDifferenceCents: -8000 },
+    { id: "near", score: 70, budgetDifferenceCents: -1000 },
+    { id: "over", score: 80, budgetDifferenceCents: 500 },
+    { id: "unknown", score: 100, budgetDifferenceCents: null },
+  ];
+  assert.deepEqual(
+    sortResults(rows, "budget").map((row) => row.id),
+    ["over", "near", "cheap", "unknown"],
+  );
+  assert.equal(rows[0].id, "cheap");
+});
 test("venue and preference text is escaped before markup insertion", () => {
   assert.equal(
     escapeHtml('<img onerror="x">'),

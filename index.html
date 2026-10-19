@@ -48,7 +48,7 @@
         <form id="request-form">
           <h2>Your plans</h2>
           <label class="field"
-            >Quick plan<select id="preset-select" name="preset">
+            >Optional quick plan<select id="preset-select" name="preset">
               <option value="">Custom search</option>
               <option value="tacos">Tacos + margaritas</option>
               <option value="wine">Seafood + wine</option>
@@ -113,8 +113,8 @@
               >Per person, before tax, tip &amp; fees</small
             >
           </div>
-          <details id="more-filters">
-            <summary>Food, drinks &amp; more</summary>
+          <details id="more-filters" open>
+            <summary>Customize food, drinks &amp; more</summary>
             <div class="preference-fields">
               <label class="field"
                 >Neighborhood<select
@@ -187,6 +187,7 @@
           <label class="sort-control"
             >Sort by<select id="sort">
               <option value="match">Best match</option>
+              <option value="budget">Closest to budget</option>
               <option value="price">Lowest subtotal</option>
               <option value="distance">Nearest</option>
             </select></label

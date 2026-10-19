@@ -28,6 +28,38 @@ const base = process.env.PREVIEW_URL || "http://127.0.0.1:4174";
       "Lucide asset rendered",
     );
     await page.screenshot({ path: "test-results/desktop.png", fullPage: true });
+    assert.ok(
+      await page.locator("[name=foodPreferences]").isVisible(),
+      "Custom food input is visible immediately",
+    );
+    assert.ok(
+      await page.locator("[name=drinkPreferences]").isVisible(),
+      "Custom drink input is visible immediately",
+    );
+    await page.locator("#sort").selectOption("budget");
+    await page.locator("#budget").fill("100");
+    assert.match(
+      await page.locator("#active-filters").innerText(),
+      /Around \$100/,
+    );
+    const differences = (
+      await page.locator("#results .budget-difference").allTextContents()
+    )
+      .filter((label) => !label.includes("not confirmed"))
+      .map((label) => Number(label.replace(/[^0-9.]/g, "")) || 0);
+    assert.deepEqual(
+      differences,
+      [...differences].sort((a, b) => a - b),
+    );
+    assert.match(
+      await page.locator("#results-title").innerText(),
+      /Thursday, 5:30 PM/,
+    );
+    await page.locator("[name=foodPreferences]").fill("sushi");
+    await page.locator("[name=drinkPreferences]").fill("wine");
+    assert.match(await page.locator("#active-filters").innerText(), /sushi/);
+    assert.match(await page.locator("#active-filters").innerText(), /wine/);
+    await page.locator("#sort").selectOption("match");
     await page.getByRole("spinbutton", { name: /Budget target/ }).fill("5");
     await page.getByRole("spinbutton", { name: /Budget target/ }).press("Tab");
     assert.ok(
@@ -69,7 +101,8 @@ const base = process.env.PREVIEW_URL || "http://127.0.0.1:4174";
     assert.equal(await page.locator("#comparison .comparison-item").count(), 3);
     await page.locator("#comparison [data-remove]").first().click();
     assert.equal(await page.locator("#shortlist-count").innerText(), "2");
-    await page.locator("#more-filters > summary").click();
+    if (!((await page.locator("#more-filters").getAttribute("open")) !== null))
+      await page.locator("#more-filters > summary").click();
     await page.locator("[name=foodPreferences]").fill("not-a-real-dish");
     await page.getByLabel("Food is a must-have", { exact: true }).check();
     assert.equal(await page.locator("#results .empty-state").count(), 1);

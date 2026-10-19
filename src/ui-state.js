@@ -45,11 +45,15 @@ export function toggleShortlist(current, id) {
 }
 export function sortResults(rows, sort) {
   const value = (row, key) =>
-    key === "price"
-      ? (row.combo?.totalCents ?? Infinity)
-      : key === "distance"
-        ? (row.distanceMiles ?? Infinity)
-        : 0;
+    key === "budget"
+      ? Number.isFinite(row.budgetDifferenceCents)
+        ? Math.abs(row.budgetDifferenceCents)
+        : Infinity
+      : key === "price"
+        ? (row.combo?.totalCents ?? Infinity)
+        : key === "distance"
+          ? (row.distanceMiles ?? Infinity)
+          : 0;
   return [...rows].sort((a, b) =>
     sort === "match"
       ? b.score - a.score || a.id.localeCompare(b.id)
