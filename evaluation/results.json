@@ -1,0 +1,1030 @@
+{
+  "evaluatedOn": "2026-10-19",
+  "split": "development",
+  "baseline": {
+    "sha": "865f3c9b4a1ce436d56eb0ab9afbb55938c44fc8",
+    "frozenOn": "2026-10-19",
+    "note": "Unmodified original modules. Match scores are not evaluation accuracy."
+  },
+  "data": {
+    "collectedOn": "2026-10-19",
+    "target": 100,
+    "total": 100,
+    "located": 100,
+    "primaryHours": 73,
+    "primaryFoodAndDrink": 38,
+    "outsideRadius": []
+  },
+  "criterion": "At least one top-three independently labeled source-supported, within-radius food+drink pair <= target + $5 on positive cases; correct empty primary results on explicit negative controls.",
+  "budgetPolicy": "The +$5 range is an evaluation relevance label, not a filter in the app. No lower spend floor.",
+  "scores": {
+    "baseline": {
+      "total": 15,
+      "passed": 1,
+      "positiveTotal": 11,
+      "positivePassed": 0,
+      "negativeTotal": 4,
+      "negativePassed": 1,
+      "rows": [
+        {
+          "id": "dtla-weekday",
+          "label": "DTLA weekday food and drink",
+          "negative": false,
+          "returned": [
+            "sol-agave",
+            "kombu-sushi",
+            "resident"
+          ],
+          "suitable": null,
+          "pass": false
+        },
+        {
+          "id": "arts-wine",
+          "label": "Arts District wine date",
+          "negative": false,
+          "returned": [
+            "joyce",
+            "propaganda-wine-bar",
+            "broken-shaker-dtla"
+          ],
+          "suitable": null,
+          "pass": false
+        },
+        {
+          "id": "dtla-low-budget",
+          "label": "Low target does not exclude all venues",
+          "negative": false,
+          "returned": [
+            "resident",
+            "yuko-kitchen-dtla",
+            "redwood-bar-grill"
+          ],
+          "suitable": null,
+          "pass": false
+        },
+        {
+          "id": "dtla-tacos",
+          "label": "DTLA early tacos and margaritas",
+          "negative": false,
+          "returned": [
+            "sol-agave",
+            "la-cha-cha-cha",
+            "the-rooftop-at-the-wayfarer-downtown-la"
+          ],
+          "suitable": null,
+          "pass": false
+        },
+        {
+          "id": "dtla-weekend",
+          "label": "DTLA weekend happy hour",
+          "negative": false,
+          "returned": [
+            "joyce",
+            "propaganda-wine-bar",
+            "resident"
+          ],
+          "suitable": null,
+          "pass": false
+        },
+        {
+          "id": "pasadena",
+          "label": "Pasadena weekday",
+          "negative": false,
+          "returned": [
+            "resident",
+            "yuko-kitchen-dtla",
+            "kombu-sushi"
+          ],
+          "suitable": null,
+          "pass": false
+        },
+        {
+          "id": "glendale",
+          "label": "Glendale weekday",
+          "negative": false,
+          "returned": [
+            "joyce",
+            "propaganda-wine-bar",
+            "the-mermaid"
+          ],
+          "suitable": null,
+          "pass": false
+        },
+        {
+          "id": "hollywood",
+          "label": "Hollywood weekday",
+          "negative": false,
+          "returned": [
+            "joyce",
+            "propaganda-wine-bar",
+            "the-mermaid"
+          ],
+          "suitable": null,
+          "pass": false
+        },
+        {
+          "id": "culver-city",
+          "label": "Culver City weekday",
+          "negative": false,
+          "returned": [
+            "joyce",
+            "propaganda-wine-bar",
+            "resident"
+          ],
+          "suitable": null,
+          "pass": false
+        },
+        {
+          "id": "santa-monica",
+          "label": "Santa Monica weekday",
+          "negative": false,
+          "returned": [
+            "joyce",
+            "propaganda-wine-bar",
+            "resident"
+          ],
+          "suitable": null,
+          "pass": false
+        },
+        {
+          "id": "burbank",
+          "label": "Burbank weekday",
+          "negative": false,
+          "returned": [
+            "joyce",
+            "propaganda-wine-bar",
+            "resident"
+          ],
+          "suitable": null,
+          "pass": false
+        },
+        {
+          "id": "early-morning",
+          "label": "No happy hour at dawn",
+          "negative": true,
+          "returned": [
+            "mignon-wine-cheese-bar",
+            "resident",
+            "the-mermaid"
+          ],
+          "suitable": null,
+          "pass": false
+        },
+        {
+          "id": "impossible-food",
+          "label": "Unsupported required food",
+          "negative": true,
+          "returned": [
+            "joyce",
+            "perch-la",
+            "propaganda-wine-bar"
+          ],
+          "suitable": null,
+          "pass": false
+        },
+        {
+          "id": "impossible-drink",
+          "label": "Unsupported required drink",
+          "negative": true,
+          "returned": [
+            "joyce",
+            "perch-la",
+            "propaganda-wine-bar"
+          ],
+          "suitable": null,
+          "pass": false
+        },
+        {
+          "id": "empty-area",
+          "label": "Unknown neighborhood cannot silently relax",
+          "negative": true,
+          "returned": [],
+          "suitable": null,
+          "pass": true
+        }
+      ]
+    },
+    "improved": {
+      "total": 15,
+      "passed": 12,
+      "positiveTotal": 11,
+      "positivePassed": 8,
+      "negativeTotal": 4,
+      "negativePassed": 4,
+      "rows": [
+        {
+          "id": "dtla-weekday",
+          "label": "DTLA weekday food and drink",
+          "negative": false,
+          "returned": [
+            "perch-la",
+            "far-bar",
+            "le-oyster-bar-silver-lake"
+          ],
+          "suitable": "perch-la",
+          "pass": true
+        },
+        {
+          "id": "arts-wine",
+          "label": "Arts District wine date",
+          "negative": false,
+          "returned": [
+            "perch-la",
+            "far-bar"
+          ],
+          "suitable": "perch-la",
+          "pass": true
+        },
+        {
+          "id": "dtla-low-budget",
+          "label": "Low target does not exclude all venues",
+          "negative": false,
+          "returned": [
+            "perch-la",
+            "far-bar"
+          ],
+          "suitable": "perch-la",
+          "pass": true
+        },
+        {
+          "id": "dtla-tacos",
+          "label": "DTLA early tacos and margaritas",
+          "negative": false,
+          "returned": [
+            "perch-la",
+            "far-bar"
+          ],
+          "suitable": "perch-la",
+          "pass": true
+        },
+        {
+          "id": "dtla-weekend",
+          "label": "DTLA weekend happy hour",
+          "negative": false,
+          "returned": [],
+          "suitable": null,
+          "pass": false
+        },
+        {
+          "id": "pasadena",
+          "label": "Pasadena weekday",
+          "negative": false,
+          "returned": [
+            "green-street-restaurant-pasadena",
+            "guss-bbq-south-pasadena",
+            "granville-pasadena"
+          ],
+          "suitable": "green-street-restaurant-pasadena",
+          "pass": true
+        },
+        {
+          "id": "glendale",
+          "label": "Glendale weekday",
+          "negative": false,
+          "returned": [
+            "bacari-glendale",
+            "edendale-silver-lake"
+          ],
+          "suitable": null,
+          "pass": false
+        },
+        {
+          "id": "hollywood",
+          "label": "Hollywood weekday",
+          "negative": false,
+          "returned": [
+            "iki-ramen-hollywood",
+            "formosa-cafe-west-hollywood",
+            "33-taps-silver-lake"
+          ],
+          "suitable": "iki-ramen-hollywood",
+          "pass": true
+        },
+        {
+          "id": "culver-city",
+          "label": "Culver City weekday",
+          "negative": false,
+          "returned": [
+            "simonette-culver-city",
+            "bacari-culver-city"
+          ],
+          "suitable": "simonette-culver-city",
+          "pass": true
+        },
+        {
+          "id": "santa-monica",
+          "label": "Santa Monica weekday",
+          "negative": false,
+          "returned": [
+            "michaels-santa-monica",
+            "library-alehouse-santa-monica",
+            "manchego-santa-monica"
+          ],
+          "suitable": "michaels-santa-monica",
+          "pass": true
+        },
+        {
+          "id": "burbank",
+          "label": "Burbank weekday",
+          "negative": false,
+          "returned": [
+            "granville-burbank",
+            "inkwell-tavern-burbank"
+          ],
+          "suitable": null,
+          "pass": false
+        },
+        {
+          "id": "early-morning",
+          "label": "No happy hour at dawn",
+          "negative": true,
+          "returned": [],
+          "suitable": null,
+          "pass": true
+        },
+        {
+          "id": "impossible-food",
+          "label": "Unsupported required food",
+          "negative": true,
+          "returned": [],
+          "suitable": null,
+          "pass": true
+        },
+        {
+          "id": "impossible-drink",
+          "label": "Unsupported required drink",
+          "negative": true,
+          "returned": [],
+          "suitable": null,
+          "pass": true
+        },
+        {
+          "id": "empty-area",
+          "label": "Unknown neighborhood cannot silently relax",
+          "negative": true,
+          "returned": [],
+          "suitable": null,
+          "pass": true
+        }
+      ]
+    }
+  },
+  "guardrails": {
+    "baseline": {
+      "returned": 42,
+      "requiredConstraintEvidenceFailures": 42,
+      "note": "Failed or unproven source-backed eligibility, not proof that every excluded real-world offer is false. Budget is not a required constraint."
+    },
+    "improved": {
+      "returned": 24,
+      "requiredConstraintEvidenceFailures": 0,
+      "note": "Failed or unproven source-backed eligibility, not proof that every excluded real-world offer is false. Budget is not a required constraint."
+    }
+  },
+  "raw": {
+    "baseline": {
+      "dtla-weekday": [
+        {
+          "id": "sol-agave",
+          "name": "Sol Agave",
+          "score": 92,
+          "displayedEstimate": 27,
+          "activeAccordingToOriginalData": true
+        },
+        {
+          "id": "kombu-sushi",
+          "name": "Kombu Sushi",
+          "score": 88,
+          "displayedEstimate": 22,
+          "activeAccordingToOriginalData": true
+        },
+        {
+          "id": "resident",
+          "name": "Resident",
+          "score": 84,
+          "displayedEstimate": 18,
+          "activeAccordingToOriginalData": true
+        }
+      ],
+      "arts-wine": [
+        {
+          "id": "joyce",
+          "name": "Joyce",
+          "score": 96,
+          "displayedEstimate": 28,
+          "activeAccordingToOriginalData": true
+        },
+        {
+          "id": "propaganda-wine-bar",
+          "name": "Propaganda Wine Bar",
+          "score": 96,
+          "displayedEstimate": 28,
+          "activeAccordingToOriginalData": true
+        },
+        {
+          "id": "broken-shaker-dtla",
+          "name": "Broken Shaker DTLA",
+          "score": 96,
+          "displayedEstimate": 29,
+          "activeAccordingToOriginalData": true
+        }
+      ],
+      "dtla-low-budget": [
+        {
+          "id": "resident",
+          "name": "Resident",
+          "score": 78,
+          "displayedEstimate": 18,
+          "activeAccordingToOriginalData": true
+        },
+        {
+          "id": "yuko-kitchen-dtla",
+          "name": "Yuko Kitchen DTLA",
+          "score": 78,
+          "displayedEstimate": 20,
+          "activeAccordingToOriginalData": true
+        },
+        {
+          "id": "redwood-bar-grill",
+          "name": "Redwood Bar & Grill",
+          "score": 77,
+          "displayedEstimate": 18,
+          "activeAccordingToOriginalData": true
+        }
+      ],
+      "dtla-tacos": [
+        {
+          "id": "sol-agave",
+          "name": "Sol Agave",
+          "score": 86,
+          "displayedEstimate": 27,
+          "activeAccordingToOriginalData": true
+        },
+        {
+          "id": "la-cha-cha-cha",
+          "name": "LA Cha Cha Cha",
+          "score": 81,
+          "displayedEstimate": 30,
+          "activeAccordingToOriginalData": true
+        },
+        {
+          "id": "the-rooftop-at-the-wayfarer-downtown-la",
+          "name": "The Rooftop at The Wayfarer Downtown LA",
+          "score": 80,
+          "displayedEstimate": 30,
+          "activeAccordingToOriginalData": true
+        }
+      ],
+      "dtla-weekend": [
+        {
+          "id": "joyce",
+          "name": "Joyce",
+          "score": 89,
+          "displayedEstimate": 28,
+          "activeAccordingToOriginalData": true
+        },
+        {
+          "id": "propaganda-wine-bar",
+          "name": "Propaganda Wine Bar",
+          "score": 89,
+          "displayedEstimate": 28,
+          "activeAccordingToOriginalData": true
+        },
+        {
+          "id": "resident",
+          "name": "Resident",
+          "score": 89,
+          "displayedEstimate": 18,
+          "activeAccordingToOriginalData": true
+        }
+      ],
+      "pasadena": [
+        {
+          "id": "resident",
+          "name": "Resident",
+          "score": 89,
+          "displayedEstimate": 18,
+          "activeAccordingToOriginalData": true
+        },
+        {
+          "id": "yuko-kitchen-dtla",
+          "name": "Yuko Kitchen DTLA",
+          "score": 89,
+          "displayedEstimate": 20,
+          "activeAccordingToOriginalData": true
+        },
+        {
+          "id": "kombu-sushi",
+          "name": "Kombu Sushi",
+          "score": 88,
+          "displayedEstimate": 22,
+          "activeAccordingToOriginalData": true
+        }
+      ],
+      "glendale": [
+        {
+          "id": "joyce",
+          "name": "Joyce",
+          "score": 89,
+          "displayedEstimate": 28,
+          "activeAccordingToOriginalData": true
+        },
+        {
+          "id": "propaganda-wine-bar",
+          "name": "Propaganda Wine Bar",
+          "score": 89,
+          "displayedEstimate": 28,
+          "activeAccordingToOriginalData": true
+        },
+        {
+          "id": "the-mermaid",
+          "name": "The Mermaid",
+          "score": 89,
+          "displayedEstimate": 24,
+          "activeAccordingToOriginalData": true
+        }
+      ],
+      "hollywood": [
+        {
+          "id": "joyce",
+          "name": "Joyce",
+          "score": 89,
+          "displayedEstimate": 28,
+          "activeAccordingToOriginalData": true
+        },
+        {
+          "id": "propaganda-wine-bar",
+          "name": "Propaganda Wine Bar",
+          "score": 89,
+          "displayedEstimate": 28,
+          "activeAccordingToOriginalData": true
+        },
+        {
+          "id": "the-mermaid",
+          "name": "The Mermaid",
+          "score": 89,
+          "displayedEstimate": 24,
+          "activeAccordingToOriginalData": true
+        }
+      ],
+      "culver-city": [
+        {
+          "id": "joyce",
+          "name": "Joyce",
+          "score": 89,
+          "displayedEstimate": 28,
+          "activeAccordingToOriginalData": true
+        },
+        {
+          "id": "propaganda-wine-bar",
+          "name": "Propaganda Wine Bar",
+          "score": 89,
+          "displayedEstimate": 28,
+          "activeAccordingToOriginalData": true
+        },
+        {
+          "id": "resident",
+          "name": "Resident",
+          "score": 89,
+          "displayedEstimate": 18,
+          "activeAccordingToOriginalData": true
+        }
+      ],
+      "santa-monica": [
+        {
+          "id": "joyce",
+          "name": "Joyce",
+          "score": 89,
+          "displayedEstimate": 28,
+          "activeAccordingToOriginalData": true
+        },
+        {
+          "id": "propaganda-wine-bar",
+          "name": "Propaganda Wine Bar",
+          "score": 89,
+          "displayedEstimate": 28,
+          "activeAccordingToOriginalData": true
+        },
+        {
+          "id": "resident",
+          "name": "Resident",
+          "score": 89,
+          "displayedEstimate": 18,
+          "activeAccordingToOriginalData": true
+        }
+      ],
+      "burbank": [
+        {
+          "id": "joyce",
+          "name": "Joyce",
+          "score": 89,
+          "displayedEstimate": 28,
+          "activeAccordingToOriginalData": true
+        },
+        {
+          "id": "propaganda-wine-bar",
+          "name": "Propaganda Wine Bar",
+          "score": 89,
+          "displayedEstimate": 28,
+          "activeAccordingToOriginalData": true
+        },
+        {
+          "id": "resident",
+          "name": "Resident",
+          "score": 89,
+          "displayedEstimate": 18,
+          "activeAccordingToOriginalData": true
+        }
+      ],
+      "early-morning": [
+        {
+          "id": "mignon-wine-cheese-bar",
+          "name": "Mignon Wine & Cheese Bar",
+          "score": 70,
+          "displayedEstimate": 24,
+          "activeAccordingToOriginalData": false
+        },
+        {
+          "id": "resident",
+          "name": "Resident",
+          "score": 70,
+          "displayedEstimate": 18,
+          "activeAccordingToOriginalData": false
+        },
+        {
+          "id": "the-mermaid",
+          "name": "The Mermaid",
+          "score": 70,
+          "displayedEstimate": 24,
+          "activeAccordingToOriginalData": false
+        }
+      ],
+      "impossible-food": [
+        {
+          "id": "joyce",
+          "name": "Joyce",
+          "score": 82,
+          "displayedEstimate": 28,
+          "activeAccordingToOriginalData": true
+        },
+        {
+          "id": "perch-la",
+          "name": "Perch LA",
+          "score": 82,
+          "displayedEstimate": 32,
+          "activeAccordingToOriginalData": true
+        },
+        {
+          "id": "propaganda-wine-bar",
+          "name": "Propaganda Wine Bar",
+          "score": 82,
+          "displayedEstimate": 28,
+          "activeAccordingToOriginalData": true
+        }
+      ],
+      "impossible-drink": [
+        {
+          "id": "joyce",
+          "name": "Joyce",
+          "score": 84,
+          "displayedEstimate": 28,
+          "activeAccordingToOriginalData": true
+        },
+        {
+          "id": "perch-la",
+          "name": "Perch LA",
+          "score": 84,
+          "displayedEstimate": 32,
+          "activeAccordingToOriginalData": true
+        },
+        {
+          "id": "propaganda-wine-bar",
+          "name": "Propaganda Wine Bar",
+          "score": 84,
+          "displayedEstimate": 28,
+          "activeAccordingToOriginalData": true
+        }
+      ],
+      "empty-area": []
+    },
+    "improved": {
+      "dtla-weekday": {
+        "primaryCount": 3,
+        "top": [
+          {
+            "id": "perch-la",
+            "name": "Perch LA",
+            "score": 65,
+            "totalCents": 1600,
+            "budgetDifferenceCents": -900,
+            "distanceMiles": 0.24320818898579097,
+            "requiredFailures": []
+          },
+          {
+            "id": "far-bar",
+            "name": "Far Bar",
+            "score": 34,
+            "totalCents": null,
+            "budgetDifferenceCents": null,
+            "distanceMiles": 0.881629334146081,
+            "requiredFailures": []
+          },
+          {
+            "id": "le-oyster-bar-silver-lake",
+            "name": "L&E Oyster Bar",
+            "score": 30,
+            "totalCents": null,
+            "budgetDifferenceCents": null,
+            "distanceMiles": 2.752711391393056,
+            "requiredFailures": []
+          }
+        ],
+        "alternativeCount": 97
+      },
+      "arts-wine": {
+        "primaryCount": 2,
+        "top": [
+          {
+            "id": "perch-la",
+            "name": "Perch LA",
+            "score": 92,
+            "totalCents": 1500,
+            "budgetDifferenceCents": -1500,
+            "distanceMiles": 1.1253593597689153,
+            "requiredFailures": []
+          },
+          {
+            "id": "far-bar",
+            "name": "Far Bar",
+            "score": 48,
+            "totalCents": null,
+            "budgetDifferenceCents": null,
+            "distanceMiles": 0.6848510644668817,
+            "requiredFailures": []
+          }
+        ],
+        "alternativeCount": 98
+      },
+      "dtla-low-budget": {
+        "primaryCount": 2,
+        "top": [
+          {
+            "id": "perch-la",
+            "name": "Perch LA",
+            "score": 85,
+            "totalCents": 1200,
+            "budgetDifferenceCents": 200,
+            "distanceMiles": 0.24320818898579097,
+            "requiredFailures": []
+          },
+          {
+            "id": "far-bar",
+            "name": "Far Bar",
+            "score": 55,
+            "totalCents": null,
+            "budgetDifferenceCents": null,
+            "distanceMiles": 0.881629334146081,
+            "requiredFailures": []
+          }
+        ],
+        "alternativeCount": 98
+      },
+      "dtla-tacos": {
+        "primaryCount": 2,
+        "top": [
+          {
+            "id": "perch-la",
+            "name": "Perch LA",
+            "score": 62,
+            "totalCents": 1200,
+            "budgetDifferenceCents": -1300,
+            "distanceMiles": 0.24320818898579097,
+            "requiredFailures": []
+          },
+          {
+            "id": "far-bar",
+            "name": "Far Bar",
+            "score": 41,
+            "totalCents": null,
+            "budgetDifferenceCents": null,
+            "distanceMiles": 0.881629334146081,
+            "requiredFailures": []
+          }
+        ],
+        "alternativeCount": 98
+      },
+      "dtla-weekend": {
+        "primaryCount": 0,
+        "top": [],
+        "alternativeCount": 100
+      },
+      "pasadena": {
+        "primaryCount": 4,
+        "top": [
+          {
+            "id": "green-street-restaurant-pasadena",
+            "name": "Green Street Restaurant",
+            "score": 86,
+            "totalCents": 1500,
+            "budgetDifferenceCents": -1000,
+            "distanceMiles": 0.769610658254716,
+            "requiredFailures": []
+          },
+          {
+            "id": "guss-bbq-south-pasadena",
+            "name": "Gus's BBQ South Pasadena",
+            "score": 84,
+            "totalCents": 1600,
+            "budgetDifferenceCents": -900,
+            "distanceMiles": 2.047203960979177,
+            "requiredFailures": []
+          },
+          {
+            "id": "granville-pasadena",
+            "name": "GRANVILLE Pasadena",
+            "score": 66,
+            "totalCents": null,
+            "budgetDifferenceCents": null,
+            "distanceMiles": 0.7682873874830279,
+            "requiredFailures": []
+          }
+        ],
+        "alternativeCount": 96
+      },
+      "glendale": {
+        "primaryCount": 2,
+        "top": [
+          {
+            "id": "bacari-glendale",
+            "name": "Bacari Glendale",
+            "score": 67,
+            "totalCents": null,
+            "budgetDifferenceCents": null,
+            "distanceMiles": 0.1368542967479429,
+            "requiredFailures": []
+          },
+          {
+            "id": "edendale-silver-lake",
+            "name": "Edendale",
+            "score": 63,
+            "totalCents": null,
+            "budgetDifferenceCents": null,
+            "distanceMiles": 2.484004346312988,
+            "requiredFailures": []
+          }
+        ],
+        "alternativeCount": 98
+      },
+      "hollywood": {
+        "primaryCount": 6,
+        "top": [
+          {
+            "id": "iki-ramen-hollywood",
+            "name": "IKI Ramen + Sushi Hollywood",
+            "score": 86,
+            "totalCents": 1000,
+            "budgetDifferenceCents": -2000,
+            "distanceMiles": 0.42541982919749965,
+            "requiredFailures": []
+          },
+          {
+            "id": "formosa-cafe-west-hollywood",
+            "name": "The Formosa Cafe",
+            "score": 85,
+            "totalCents": 1500,
+            "budgetDifferenceCents": -1500,
+            "distanceMiles": 1.3186736775666785,
+            "requiredFailures": []
+          },
+          {
+            "id": "33-taps-silver-lake",
+            "name": "33 Taps Silver Lake",
+            "score": 82,
+            "totalCents": 1400,
+            "budgetDifferenceCents": -1600,
+            "distanceMiles": 2.8874035258062576,
+            "requiredFailures": []
+          }
+        ],
+        "alternativeCount": 94
+      },
+      "culver-city": {
+        "primaryCount": 2,
+        "top": [
+          {
+            "id": "simonette-culver-city",
+            "name": "Simonette",
+            "score": 87,
+            "totalCents": 1400,
+            "budgetDifferenceCents": -1600,
+            "distanceMiles": 0.23780957069981756,
+            "requiredFailures": []
+          },
+          {
+            "id": "bacari-culver-city",
+            "name": "Bacari Culver City",
+            "score": 67,
+            "totalCents": null,
+            "budgetDifferenceCents": null,
+            "distanceMiles": 0.2783637727203622,
+            "requiredFailures": []
+          }
+        ],
+        "alternativeCount": 98
+      },
+      "santa-monica": {
+        "primaryCount": 6,
+        "top": [
+          {
+            "id": "michaels-santa-monica",
+            "name": "Michael's Santa Monica",
+            "score": 86,
+            "totalCents": 1900,
+            "budgetDifferenceCents": -1100,
+            "distanceMiles": 0.37953674434503476,
+            "requiredFailures": []
+          },
+          {
+            "id": "library-alehouse-santa-monica",
+            "name": "Library Alehouse",
+            "score": 85,
+            "totalCents": 1400,
+            "budgetDifferenceCents": -1600,
+            "distanceMiles": 1.3765142059323008,
+            "requiredFailures": []
+          },
+          {
+            "id": "manchego-santa-monica",
+            "name": "Manchego",
+            "score": 85,
+            "totalCents": 1700,
+            "budgetDifferenceCents": -1300,
+            "distanceMiles": 1.0145178534633383,
+            "requiredFailures": []
+          }
+        ],
+        "alternativeCount": 94
+      },
+      "burbank": {
+        "primaryCount": 2,
+        "top": [
+          {
+            "id": "granville-burbank",
+            "name": "GRANVILLE Burbank",
+            "score": 67,
+            "totalCents": null,
+            "budgetDifferenceCents": null,
+            "distanceMiles": 0.037025060059066243,
+            "requiredFailures": []
+          },
+          {
+            "id": "inkwell-tavern-burbank",
+            "name": "Inkwell Tavern",
+            "score": 66,
+            "totalCents": null,
+            "budgetDifferenceCents": null,
+            "distanceMiles": 0.6297428845524171,
+            "requiredFailures": []
+          }
+        ],
+        "alternativeCount": 98
+      },
+      "early-morning": {
+        "primaryCount": 0,
+        "top": [],
+        "alternativeCount": 100
+      },
+      "impossible-food": {
+        "primaryCount": 0,
+        "top": [],
+        "alternativeCount": 100
+      },
+      "impossible-drink": {
+        "primaryCount": 0,
+        "top": [],
+        "alternativeCount": 100
+      },
+      "empty-area": {
+        "primaryCount": 0,
+        "top": [],
+        "alternativeCount": 0
+      }
+    }
+  },
+  "hashes": {
+    "src/data.js": "a56ecb2b5de788689aba5a168a79e8f22b93b078dd53c3570570cbddb09e91ad",
+    "src/matching.js": "d656c0e712ceae6e18a1fe70161ec515d436aba1e26b77018f569d4165b3bf2b",
+    "src/locations.js": "3f370ef8c181254f1a0e97f473665fbbb6f3044c8876a4db96a4b23d2511af08",
+    "evaluation/cases.json": "103d70015c840d7d54f0f0a1701c788d4cdf343b76e39f6d40babcdc6597e1da",
+    "evaluation/holdout.json": "55f3d4e7ac43fd999cb0475218ef49c035d86cec2380951c85ea41a0716df107",
+    "evaluation/gold.json": "5c377f069c7c2fbd0fb214fd5d28d53a5d71f69b429bb7669f69d4d722338ece",
+    "evaluation/baseline/data.js": "6f4c9484450bd0f743bd5d7442c4198b94b74eac449b06bb138d027e911215f3",
+    "evaluation/baseline/scoring.js": "83e633c6d1840d5a8256707bb23fcbe65a2ffc6d9ed0ee546814add1133b915a"
+  },
+  "limitations": [
+    "Small convenience sample, not statistical evidence of citywide accuracy.",
+    "Positive cases with no evidenced acceptable venue remain failures, not automatic passes.",
+    "AI-assisted source review, not an independent human panel or in-person verification.",
+    "No fabricated intermediate legacy score: its reputation and per-person-estimate inputs are not comparable with the reviewed schema."
+  ]
+}

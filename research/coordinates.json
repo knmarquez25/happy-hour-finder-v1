@@ -1,0 +1,785 @@
+{
+  "424 Fair Oaks Avenue, South Pasadena, CA 91030": {
+    "lat": 34.120226145952,
+    "lng": -118.150228757942,
+    "sourceUrl": "https://geocoding.geo.census.gov/geocoder/locations/addressbatch",
+    "precision": "address-range interpolation",
+    "matchedAddress": "424 FAIR OAKS AVE, SOUTH PASADENA, CA, 91030",
+    "reviewedOn": "2026-10-19",
+    "benchmark": "Public_AR_Current"
+  },
+  "808 Fair Oaks Avenue, South Pasadena, CA 91030": {
+    "lat": 34.116557579503,
+    "lng": -118.150267391036,
+    "sourceUrl": "https://geocoding.geo.census.gov/geocoder/locations/addressbatch",
+    "precision": "address-range interpolation",
+    "matchedAddress": "808 FAIR OAKS AVE, SOUTH PASADENA, CA, 91030",
+    "reviewedOn": "2026-10-19",
+    "benchmark": "Public_AR_Current"
+  },
+  "3245 Casitas Avenue, Los Angeles, CA 90039": {
+    "lat": 34.11588515662,
+    "lng": -118.251575786108,
+    "sourceUrl": "https://geocoding.geo.census.gov/geocoder/locations/addressbatch",
+    "precision": "address-range interpolation",
+    "matchedAddress": "3245 CASITAS AVE, LOS ANGELES, CA, 90039",
+    "reviewedOn": "2026-10-19",
+    "benchmark": "Public_AR_Current"
+  },
+  "2980 Los Feliz Boulevard, Los Angeles, CA 90039": {
+    "lat": 34.125607493485,
+    "lng": -118.264368032406,
+    "sourceUrl": "https://geocoding.geo.census.gov/geocoder/locations/addressbatch",
+    "precision": "address-range interpolation",
+    "matchedAddress": "2980 LOS FELIZ BLVD, LOS ANGELES, CA, 90039",
+    "reviewedOn": "2026-10-19",
+    "benchmark": "Public_AR_Current"
+  },
+  "2133 Colorado Boulevard, Los Angeles, CA 90041": {
+    "lat": 34.139285363,
+    "lng": -118.212856428218,
+    "sourceUrl": "https://geocoding.geo.census.gov/geocoder/locations/addressbatch",
+    "precision": "address-range interpolation",
+    "matchedAddress": "2133 COLORADO BLVD, LOS ANGELES, CA, 90041",
+    "reviewedOn": "2026-10-19",
+    "benchmark": "Public_AR_Current"
+  },
+  "410 E Main Street, Alhambra, CA 91801": {
+    "lat": 34.097206901174,
+    "lng": -118.122373405481,
+    "sourceUrl": "https://geocoding.geo.census.gov/geocoder/locations/addressbatch",
+    "precision": "address-range interpolation",
+    "matchedAddress": "410 E MAIN ST, ALHAMBRA, CA, 91801",
+    "reviewedOn": "2026-10-19",
+    "benchmark": "Public_AR_Current"
+  },
+  "104 N Avenue 56, 2nd Floor, Los Angeles, CA 90042": {
+    "lat": 34.108964942669,
+    "lng": -118.194310269497,
+    "sourceUrl": "https://geocoding.geo.census.gov/geocoder/locations/addressbatch",
+    "precision": "address-range interpolation",
+    "matchedAddress": "104 N AVE 56, LOS ANGELES, CA, 90042",
+    "reviewedOn": "2026-10-19",
+    "benchmark": "Public_AR_Current"
+  },
+  "5684 York Boulevard, Los Angeles, CA 90042": {
+    "lat": 34.118884984444,
+    "lng": -118.194121354499,
+    "sourceUrl": "https://geocoding.geo.census.gov/geocoder/locations/addressbatch",
+    "precision": "address-range interpolation",
+    "matchedAddress": "5684 YORK BLVD, LOS ANGELES, CA, 90042",
+    "reviewedOn": "2026-10-19",
+    "benchmark": "Public_AR_Current"
+  },
+  "950 E 3rd St, Los Angeles, CA 90013": {
+    "lat": 34.045919930435,
+    "lng": -118.233554703596,
+    "sourceUrl": "https://geocoding.geo.census.gov/geocoder/locations/addressbatch",
+    "precision": "address-range interpolation",
+    "matchedAddress": "950 E 3RD ST, LOS ANGELES, CA, 90013",
+    "reviewedOn": "2026-10-19",
+    "benchmark": "Public_AR_Current"
+  },
+  "777 S Alameda St #154, Los Angeles, CA 90021": {
+    "lat": 34.030474195045,
+    "lng": -118.238959821391,
+    "sourceUrl": "https://geocoding.geo.census.gov/geocoder/locations/addressbatch",
+    "precision": "address-range interpolation",
+    "matchedAddress": "777 S ALAMEDA ST, LOS ANGELES, CA, 90021",
+    "reviewedOn": "2026-10-19",
+    "benchmark": "Public_AR_Current"
+  },
+  "316 W 2nd St, Los Angeles, CA 90012": {
+    "lat": 34.052487174893,
+    "lng": -118.246932097932,
+    "sourceUrl": "https://geocoding.geo.census.gov/geocoder/locations/addressbatch",
+    "precision": "address-range interpolation",
+    "matchedAddress": "316 W 2ND ST, LOS ANGELES, CA, 90012",
+    "reviewedOn": "2026-10-19",
+    "benchmark": "Public_AR_Current"
+  },
+  "428 South Hewitt Street, Los Angeles, CA 90013": {
+    "lat": 34.043058949635,
+    "lng": -118.235213332582,
+    "sourceUrl": "https://geocoding.geo.census.gov/geocoder/locations/addressbatch",
+    "precision": "address-range interpolation",
+    "matchedAddress": "428 S HEWITT ST, LOS ANGELES, CA, 90013",
+    "reviewedOn": "2026-10-19",
+    "benchmark": "Public_AR_Current"
+  },
+  "1124 San Julian St, Los Angeles, CA 90015": {
+    "lat": 34.035435508885,
+    "lng": -118.253399168251,
+    "sourceUrl": "https://geocoding.geo.census.gov/geocoder/locations/addressbatch",
+    "precision": "address-range interpolation",
+    "matchedAddress": "1124 SAN JULIAN ST, LOS ANGELES, CA, 90015",
+    "reviewedOn": "2026-10-19",
+    "benchmark": "Public_AR_Current"
+  },
+  "920 S Olive St, Los Angeles, CA 90015": {
+    "lat": 34.043372476883,
+    "lng": -118.258449600567,
+    "sourceUrl": "https://geocoding.geo.census.gov/geocoder/locations/addressbatch",
+    "precision": "address-range interpolation",
+    "matchedAddress": "920 S OLIVE ST, LOS ANGELES, CA, 90015",
+    "reviewedOn": "2026-10-19",
+    "benchmark": "Public_AR_Current"
+  },
+  "800 W Olympic Blvd, Los Angeles, CA 90015": {
+    "lat": 34.04539100959,
+    "lng": -118.265829315983,
+    "sourceUrl": "https://geocoding.geo.census.gov/geocoder/locations/addressbatch",
+    "precision": "address-range interpolation",
+    "matchedAddress": "800 W OLYMPIC BLVD, LOS ANGELES, CA, 90015",
+    "reviewedOn": "2026-10-19",
+    "benchmark": "Public_AR_Current"
+  },
+  "209 S Central Ave, Los Angeles, CA 90012": {
+    "lat": 34.047601560387,
+    "lng": -118.239415875137,
+    "sourceUrl": "https://geocoding.geo.census.gov/geocoder/locations/addressbatch",
+    "precision": "address-range interpolation",
+    "matchedAddress": "209 S CENTRAL AVE, LOS ANGELES, CA, 90012",
+    "reviewedOn": "2026-10-19",
+    "benchmark": "Public_AR_Current"
+  },
+  "428 E 2nd St, Los Angeles, CA 90012": {
+    "lat": 34.047428907372,
+    "lng": -118.238989810489,
+    "sourceUrl": "https://geocoding.geo.census.gov/geocoder/locations/addressbatch",
+    "precision": "address-range interpolation",
+    "matchedAddress": "428 E 2ND ST, LOS ANGELES, CA, 90012",
+    "reviewedOn": "2026-10-19",
+    "benchmark": "Public_AR_Current"
+  },
+  "770 S Grand Ave, Los Angeles, CA 90017": {
+    "lat": 34.046192708047,
+    "lng": -118.257520780053,
+    "sourceUrl": "https://geocoding.geo.census.gov/geocoder/locations/addressbatch",
+    "precision": "address-range interpolation",
+    "matchedAddress": "770 S GRAND AVE, LOS ANGELES, CA, 90017",
+    "reviewedOn": "2026-10-19",
+    "benchmark": "Public_AR_Current"
+  },
+  "812 E 3rd St, Los Angeles, CA 90013": {
+    "lat": 34.045749762482,
+    "lng": -118.235928083568,
+    "sourceUrl": "https://geocoding.geo.census.gov/geocoder/locations/addressbatch",
+    "precision": "address-range interpolation",
+    "matchedAddress": "812 E 3RD ST, LOS ANGELES, CA, 90013",
+    "reviewedOn": "2026-10-19",
+    "benchmark": "Public_AR_Current"
+  },
+  "128 E 6th St, Los Angeles, CA 90014": {
+    "lat": 34.045021516025,
+    "lng": -118.249683472806,
+    "sourceUrl": "https://geocoding.geo.census.gov/geocoder/locations/addressbatch",
+    "precision": "address-range interpolation",
+    "matchedAddress": "128 E 6TH ST, LOS ANGELES, CA, 90014",
+    "reviewedOn": "2026-10-19",
+    "benchmark": "Public_AR_Current"
+  },
+  "832 S Olive St, Los Angeles, CA 90014": {
+    "lat": 34.044643322994,
+    "lng": -118.257262837356,
+    "sourceUrl": "https://geocoding.geo.census.gov/geocoder/locations/addressbatch",
+    "precision": "address-range interpolation",
+    "matchedAddress": "832 S OLIVE ST, LOS ANGELES, CA, 90014",
+    "reviewedOn": "2026-10-19",
+    "benchmark": "Public_AR_Current"
+  },
+  "448 S Hill St, Los Angeles, CA 90013": {
+    "lat": 34.049477316386,
+    "lng": -118.251034873885,
+    "sourceUrl": "https://geocoding.geo.census.gov/geocoder/locations/addressbatch",
+    "precision": "address-range interpolation",
+    "matchedAddress": "448 S HILL ST, LOS ANGELES, CA, 90013",
+    "reviewedOn": "2026-10-19",
+    "benchmark": "Public_AR_Current"
+  },
+  "1100 S Hope St, Los Angeles, CA 90015": {
+    "lat": 34.042171647736,
+    "lng": -118.263036438581,
+    "sourceUrl": "https://geocoding.geo.census.gov/geocoder/locations/addressbatch",
+    "precision": "address-range interpolation",
+    "matchedAddress": "1100 S HOPE ST, LOS ANGELES, CA, 90015",
+    "reviewedOn": "2026-10-19",
+    "benchmark": "Public_AR_Current"
+  },
+  "357 South Broadway, Los Angeles, CA 90013": {
+    "lat": 34.050180462864,
+    "lng": -118.248832578377,
+    "sourceUrl": "https://geocoding.geo.census.gov/geocoder/locations/addressbatch",
+    "precision": "address-range interpolation",
+    "matchedAddress": "357 S BROADWAY, LOS ANGELES, CA, 90013",
+    "reviewedOn": "2026-10-19",
+    "benchmark": "Public_AR_Current"
+  },
+  "212 W 5th St, Los Angeles, CA 90013, USA": {
+    "lat": 34.04721597954,
+    "lng": -118.249467397304,
+    "sourceUrl": "https://geocoding.geo.census.gov/geocoder/locations/addressbatch",
+    "precision": "address-range interpolation",
+    "matchedAddress": "212 W 5TH ST, LOS ANGELES, CA, 90013",
+    "reviewedOn": "2026-10-19",
+    "benchmark": "Public_AR_Current"
+  },
+  "800 W 7th St, Los Angeles, CA 90017": {
+    "lat": 34.048679023308,
+    "lng": -118.258862015578,
+    "sourceUrl": "https://geocoding.geo.census.gov/geocoder/locations/addressbatch",
+    "precision": "address-range interpolation",
+    "matchedAddress": "800 W 7TH ST, LOS ANGELES, CA, 90017",
+    "reviewedOn": "2026-10-19",
+    "benchmark": "Public_AR_Current"
+  },
+  "101 W 5th St, Los Angeles, CA 90013": {
+    "lat": 34.0469117747,
+    "lng": -118.248765497037,
+    "sourceUrl": "https://geocoding.geo.census.gov/geocoder/locations/addressbatch",
+    "precision": "address-range interpolation",
+    "matchedAddress": "101 W 5TH ST, LOS ANGELES, CA, 90013",
+    "reviewedOn": "2026-10-19",
+    "benchmark": "Public_AR_Current"
+  },
+  "347 E 1st St, Los Angeles, CA 90012": {
+    "lat": 34.049672874561,
+    "lng": -118.23973198762,
+    "sourceUrl": "https://geocoding.geo.census.gov/geocoder/locations/addressbatch",
+    "precision": "address-range interpolation",
+    "matchedAddress": "347 E 1ST ST, LOS ANGELES, CA, 90012",
+    "reviewedOn": "2026-10-19",
+    "benchmark": "Public_AR_Current"
+  },
+  "416 W 8th St, Los Angeles, CA 90014": {
+    "lat": 34.044508390486,
+    "lng": -118.255960501048,
+    "sourceUrl": "https://geocoding.geo.census.gov/geocoder/locations/addressbatch",
+    "precision": "address-range interpolation",
+    "matchedAddress": "416 W 8TH ST, LOS ANGELES, CA, 90014",
+    "reviewedOn": "2026-10-19",
+    "benchmark": "Public_AR_Current"
+  },
+  "841 Cordova Street, Pasadena, CA 91101": {
+    "lat": 34.142611120658,
+    "lng": -118.133210895564,
+    "sourceUrl": "https://geocoding.geo.census.gov/geocoder/locations/addressbatch",
+    "precision": "address-range interpolation",
+    "matchedAddress": "841 CORDOVA ST, PASADENA, CA, 91101",
+    "reviewedOn": "2026-10-19",
+    "benchmark": "Public_AR_Current"
+  },
+  "110 E Union Street, Pasadena, CA 91103": {
+    "lat": 34.146724511845,
+    "lng": -118.148790796649,
+    "sourceUrl": "https://geocoding.geo.census.gov/geocoder/locations/addressbatch",
+    "precision": "address-range interpolation",
+    "matchedAddress": "110 E UNION ST, PASADENA, CA, 91103",
+    "reviewedOn": "2026-10-19",
+    "benchmark": "Public_AR_Current"
+  },
+  "2835 E Foothill Boulevard, Pasadena, CA 91107": {
+    "lat": 34.14998407848,
+    "lng": -118.09179285579,
+    "sourceUrl": "https://geocoding.geo.census.gov/geocoder/locations/addressbatch",
+    "precision": "address-range interpolation",
+    "matchedAddress": "2835 E FOOTHILL BLVD, PASADENA, CA, 91107",
+    "reviewedOn": "2026-10-19",
+    "benchmark": "Public_AR_Current"
+  },
+  "146 Shoppers Lane, Pasadena, CA 91101": {
+    "lat": 34.143107567285,
+    "lng": -118.131440452255,
+    "sourceUrl": "https://geocoding.geo.census.gov/geocoder/locations/addressbatch",
+    "precision": "address-range interpolation",
+    "matchedAddress": "146 SHOPPERS LN, PASADENA, CA, 91101",
+    "reviewedOn": "2026-10-19",
+    "benchmark": "Public_AR_Current"
+  },
+  "40 W Green Street, Pasadena, CA 91105": {
+    "lat": 34.144448347802,
+    "lng": -118.151236775221,
+    "sourceUrl": "https://geocoding.geo.census.gov/geocoder/locations/addressbatch",
+    "precision": "address-range interpolation",
+    "matchedAddress": "40 W GREEN ST, PASADENA, CA, 91105",
+    "reviewedOn": "2026-10-19",
+    "benchmark": "Public_AR_Current"
+  },
+  "1133 Rosemont Avenue, Pasadena, CA 91103": {
+    "lat": 34.170103502509,
+    "lng": -118.167438286581,
+    "sourceUrl": "https://geocoding.geo.census.gov/geocoder/locations/addressbatch",
+    "precision": "address-range interpolation",
+    "matchedAddress": "1133 ROSEMONT AVE, PASADENA, CA, 91103",
+    "reviewedOn": "2026-10-19",
+    "benchmark": "Public_AR_Current"
+  },
+  "270 S Lake Avenue, Pasadena, CA 91101": {
+    "lat": 34.141245434341,
+    "lng": -118.132243388659,
+    "sourceUrl": "https://geocoding.geo.census.gov/geocoder/locations/addressbatch",
+    "precision": "address-range interpolation",
+    "matchedAddress": "270 S LAKE AVE, PASADENA, CA, 91101",
+    "reviewedOn": "2026-10-19",
+    "benchmark": "Public_AR_Current"
+  },
+  "950 E Colorado Boulevard, Pasadena, CA 91106": {
+    "lat": 34.145850684223,
+    "lng": -118.131430207645,
+    "sourceUrl": "https://geocoding.geo.census.gov/geocoder/locations/addressbatch",
+    "precision": "address-range interpolation",
+    "matchedAddress": "950 E COLORADO BLVD, PASADENA, CA, 91106",
+    "reviewedOn": "2026-10-19",
+    "benchmark": "Public_AR_Current"
+  },
+  "695 E Green Street, Pasadena, CA 91101": {
+    "lat": 34.144577509836,
+    "lng": -118.136983080973,
+    "sourceUrl": "https://geocoding.geo.census.gov/geocoder/locations/addressbatch",
+    "precision": "address-range interpolation",
+    "matchedAddress": "695 E GREEN ST, PASADENA, CA, 91101",
+    "reviewedOn": "2026-10-19",
+    "benchmark": "Public_AR_Current"
+  },
+  "3437 Ocean View Boulevard, Glendale, CA 91208": {
+    "lat": 34.201183591702,
+    "lng": -118.228372814438,
+    "sourceUrl": "https://geocoding.geo.census.gov/geocoder/locations/addressbatch",
+    "precision": "address-range interpolation",
+    "matchedAddress": "3437 OCEAN VIEW BLVD, GLENDALE, CA, 91208",
+    "reviewedOn": "2026-10-19",
+    "benchmark": "Public_AR_Current"
+  },
+  "3445 N Verdugo Road, Glendale, CA 91208": {
+    "lat": 34.202000853174,
+    "lng": -118.22723696709,
+    "sourceUrl": "https://geocoding.geo.census.gov/geocoder/locations/addressbatch",
+    "precision": "address-range interpolation",
+    "matchedAddress": "3445 N VERDUGO RD, GLENDALE, CA, 91208",
+    "reviewedOn": "2026-10-19",
+    "benchmark": "Public_AR_Current"
+  },
+  "757 Americana Way, Glendale, CA 91210": {
+    "lat": 34.144476961,
+    "lng": -118.255247307037,
+    "sourceUrl": "https://geocoding.geo.census.gov/geocoder/locations/addressbatch",
+    "precision": "address-range interpolation",
+    "matchedAddress": "757 AMERICANA WAY, GLENDALE, CA, 91210",
+    "reviewedOn": "2026-10-19",
+    "benchmark": "Public_AR_Current"
+  },
+  "924 S San Fernando Boulevard, Burbank, CA 91502": {
+    "lat": 34.174969929461,
+    "lng": -118.300531618721,
+    "sourceUrl": "https://geocoding.geo.census.gov/geocoder/locations/addressbatch",
+    "precision": "address-range interpolation",
+    "matchedAddress": "924 S SAN FERNANDO BLVD, BURBANK, CA, 91502",
+    "reviewedOn": "2026-10-19",
+    "benchmark": "Public_AR_Current"
+  },
+  "227 E Palm Avenue, Burbank, CA 91502": {
+    "lat": 34.182686166336,
+    "lng": -118.310433843063,
+    "sourceUrl": "https://geocoding.geo.census.gov/geocoder/locations/addressbatch",
+    "precision": "address-range interpolation",
+    "matchedAddress": "227 E PALM AVE, BURBANK, CA, 91502",
+    "reviewedOn": "2026-10-19",
+    "benchmark": "Public_AR_Current"
+  },
+  "121 N San Fernando Boulevard, Burbank, CA 91502": {
+    "lat": 34.181237080044,
+    "lng": -118.309374763097,
+    "sourceUrl": "https://geocoding.geo.census.gov/geocoder/locations/addressbatch",
+    "precision": "address-range interpolation",
+    "matchedAddress": "121 N SAN FERNANDO BLVD, BURBANK, CA, 91502",
+    "reviewedOn": "2026-10-19",
+    "benchmark": "Public_AR_Current"
+  },
+  "4420 W Lakeside Drive, Burbank, CA 91505": {
+    "lat": 34.145740508133,
+    "lng": -118.341442850331,
+    "sourceUrl": "https://geocoding.geo.census.gov/geocoder/locations/addressbatch",
+    "precision": "address-range interpolation",
+    "matchedAddress": "4420 W LAKESIDE DR, BURBANK, CA, 91505",
+    "reviewedOn": "2026-10-19",
+    "benchmark": "Public_AR_Current"
+  },
+  "9595 Wilshire Blvd, Beverly Hills, CA 90212": {
+    "lat": 34.067118430207,
+    "lng": -118.403201703354,
+    "sourceUrl": "https://geocoding.geo.census.gov/geocoder/locations/addressbatch",
+    "precision": "address-range interpolation",
+    "matchedAddress": "9595 WILSHIRE BLVD, BEVERLY HILLS, CA, 90212",
+    "reviewedOn": "2026-10-19",
+    "benchmark": "Public_AR_Current"
+  },
+  "9601 Brighton Way, Beverly Hills, CA 90210": {
+    "lat": 34.068518154585,
+    "lng": -118.404051326168,
+    "sourceUrl": "https://geocoding.geo.census.gov/geocoder/locations/addressbatch",
+    "precision": "address-range interpolation",
+    "matchedAddress": "9601 BRIGHTON WAY, BEVERLY HILLS, CA, 90210",
+    "reviewedOn": "2026-10-19",
+    "benchmark": "Public_AR_Current"
+  },
+  "467 N Canon Dr, Beverly Hills, CA 90210": {
+    "lat": 34.071843770995,
+    "lng": -118.402202409664,
+    "sourceUrl": "https://geocoding.geo.census.gov/geocoder/locations/addressbatch",
+    "precision": "address-range interpolation",
+    "matchedAddress": "467 N CANON DR, BEVERLY HILLS, CA, 90210",
+    "reviewedOn": "2026-10-19",
+    "benchmark": "Public_AR_Current"
+  },
+  "9018 Burton Way, Beverly Hills, CA 90211": {
+    "lat": 34.072026000507,
+    "lng": -118.388279067584,
+    "sourceUrl": "https://geocoding.geo.census.gov/geocoder/locations/addressbatch",
+    "precision": "address-range interpolation",
+    "matchedAddress": "9018 BURTON WAY, BEVERLY HILLS, CA, 90211",
+    "reviewedOn": "2026-10-19",
+    "benchmark": "Public_AR_Current"
+  },
+  "434 N Camden Dr, Beverly Hills, CA 90210": {
+    "lat": 34.069035901953,
+    "lng": -118.404412408098,
+    "sourceUrl": "https://geocoding.geo.census.gov/geocoder/locations/addressbatch",
+    "precision": "address-range interpolation",
+    "matchedAddress": "434 N CAMDEN DR, BEVERLY HILLS, CA, 90210",
+    "reviewedOn": "2026-10-19",
+    "benchmark": "Public_AR_Current"
+  },
+  "740 S Western Ave #115, Los Angeles, CA 90005": {
+    "lat": 34.058566686004,
+    "lng": -118.30900476209,
+    "sourceUrl": "https://geocoding.geo.census.gov/geocoder/locations/addressbatch",
+    "precision": "address-range interpolation",
+    "matchedAddress": "740 S WESTERN AVE, LOS ANGELES, CA, 90005",
+    "reviewedOn": "2026-10-19",
+    "benchmark": "Public_AR_Current"
+  },
+  "9876 Wilshire Blvd, Beverly Hills, CA 90210": {
+    "lat": 34.067029782727,
+    "lng": -118.413246624138,
+    "sourceUrl": "https://geocoding.geo.census.gov/geocoder/locations/addressbatch",
+    "precision": "address-range interpolation",
+    "matchedAddress": "9876 WILSHIRE BLVD, BEVERLY HILLS, CA, 90210",
+    "reviewedOn": "2026-10-19",
+    "benchmark": "Public_AR_Current"
+  },
+  "100 N La Cienega Blvd, Beverly Hills, CA 90211": {
+    "lat": 34.067257203654,
+    "lng": -118.376178584869,
+    "sourceUrl": "https://geocoding.geo.census.gov/geocoder/locations/addressbatch",
+    "precision": "address-range interpolation",
+    "matchedAddress": "100 N LA CIENEGA BLVD, BEVERLY HILLS, CA, 90211",
+    "reviewedOn": "2026-10-19",
+    "benchmark": "Public_AR_Current"
+  },
+  "9411 Culver Boulevard, Culver City, CA 90232": {
+    "lat": 34.024321328063,
+    "lng": -118.39434974064,
+    "sourceUrl": "https://geocoding.geo.census.gov/geocoder/locations/addressbatch",
+    "precision": "address-range interpolation",
+    "matchedAddress": "9411 CULVER BLVD, CULVER CITY, CA, 90232",
+    "reviewedOn": "2026-10-19",
+    "benchmark": "Public_AR_Current"
+  },
+  "105 N Robertson Blvd, Beverly Hills, CA 90211": {
+    "lat": 34.067176159072,
+    "lng": -118.383755400043,
+    "sourceUrl": "https://geocoding.geo.census.gov/geocoder/locations/addressbatch",
+    "precision": "address-range interpolation",
+    "matchedAddress": "105 N ROBERTSON BLVD, BEVERLY HILLS, CA, 90211",
+    "reviewedOn": "2026-10-19",
+    "benchmark": "Public_AR_Current"
+  },
+  "2442 Main Street, Santa Monica, CA 90405": {
+    "lat": 34.003931683001,
+    "lng": -118.485584689939,
+    "sourceUrl": "https://geocoding.geo.census.gov/geocoder/locations/addressbatch",
+    "precision": "address-range interpolation",
+    "matchedAddress": "2442 MAIN ST, SANTA MONICA, CA, 90405",
+    "reviewedOn": "2026-10-19",
+    "benchmark": "Public_AR_Current"
+  },
+  "13950 Panay Way, Marina del Rey, CA 90292": {
+    "lat": 33.979098266455,
+    "lng": -118.453347562814,
+    "sourceUrl": "https://geocoding.geo.census.gov/geocoder/locations/addressbatch",
+    "precision": "address-range interpolation",
+    "matchedAddress": "13950 PANAY WAY, MARINA DEL REY, CA, 90292",
+    "reviewedOn": "2026-10-19",
+    "benchmark": "Public_AR_Current"
+  },
+  "13534 Bali Way, Marina del Rey, CA 90292": {
+    "lat": 33.981091105383,
+    "lng": -118.443550878687,
+    "sourceUrl": "https://geocoding.geo.census.gov/geocoder/locations/addressbatch",
+    "precision": "address-range interpolation",
+    "matchedAddress": "13534 BALI WAY, MARINA DEL REY, CA, 90292",
+    "reviewedOn": "2026-10-19",
+    "benchmark": "Public_AR_Current"
+  },
+  "3927 Van Buren Place, Culver City, CA 90232": {
+    "lat": 34.022965530965,
+    "lng": -118.393010184117,
+    "sourceUrl": "https://geocoding.geo.census.gov/geocoder/locations/addressbatch",
+    "precision": "address-range interpolation",
+    "matchedAddress": "3927 VAN BUREN PL, CULVER CITY, CA, 90232",
+    "reviewedOn": "2026-10-19",
+    "benchmark": "Public_AR_Current"
+  },
+  "1100 Glendon Avenue, Los Angeles, CA 90024": {
+    "lat": 34.060775116192,
+    "lng": -118.444355262954,
+    "sourceUrl": "https://geocoding.geo.census.gov/geocoder/locations/addressbatch",
+    "precision": "address-range interpolation",
+    "matchedAddress": "1100 GLENDON AVE, LOS ANGELES, CA, 90024",
+    "reviewedOn": "2026-10-19",
+    "benchmark": "Public_AR_Current"
+  },
+  "2025 Pacific Avenue, Venice, CA 90291": {
+    "lat": 33.985174391607,
+    "lng": -118.470277020746,
+    "sourceUrl": "https://geocoding.geo.census.gov/geocoder/locations/addressbatch",
+    "precision": "address-range interpolation",
+    "matchedAddress": "2025 PACIFIC AVE, VENICE, CA, 90291",
+    "reviewedOn": "2026-10-19",
+    "benchmark": "Public_AR_Current"
+  },
+  "1000 Gayley Avenue, Los Angeles, CA 90024": {
+    "lat": 34.061947705788,
+    "lng": -118.44788053133,
+    "sourceUrl": "https://geocoding.geo.census.gov/geocoder/locations/addressbatch",
+    "precision": "address-range interpolation",
+    "matchedAddress": "1000 GAYLEY AVE, LOS ANGELES, CA, 90024",
+    "reviewedOn": "2026-10-19",
+    "benchmark": "Public_AR_Current"
+  },
+  "205 Ocean Front Walk, Venice, CA 90291": {
+    "lat": 33.995193517144,
+    "lng": -118.480888986223,
+    "sourceUrl": "https://geocoding.geo.census.gov/geocoder/locations/addressbatch",
+    "precision": "address-range interpolation",
+    "matchedAddress": "205 OCEAN FRONT WALK, VENICE, CA, 90291",
+    "reviewedOn": "2026-10-19",
+    "benchmark": "Public_AR_Current"
+  },
+  "366 E 2nd St, Los Angeles, CA 90012": {
+    "lat": 34.048120875607,
+    "lng": -118.24004257764,
+    "sourceUrl": "https://geocoding.geo.census.gov/geocoder/locations/addressbatch",
+    "precision": "address-range interpolation",
+    "matchedAddress": "366 E 2ND ST, LOS ANGELES, CA, 90012",
+    "reviewedOn": "2026-10-19",
+    "benchmark": "Public_AR_Current"
+  },
+  "700 W 7th St, Los Angeles, CA 90017": {
+    "lat": 34.04798290126,
+    "lng": -118.257781071531,
+    "sourceUrl": "https://geocoding.geo.census.gov/geocoder/locations/addressbatch",
+    "precision": "address-range interpolation",
+    "matchedAddress": "700 W 7TH ST, LOS ANGELES, CA, 90017",
+    "reviewedOn": "2026-10-19",
+    "benchmark": "Public_AR_Current"
+  },
+  "1654 Ocean Avenue, Santa Monica, CA 90401": {
+    "lat": 34.010198989082,
+    "lng": -118.493513322567,
+    "sourceUrl": "https://geocoding.geo.census.gov/geocoder/locations/addressbatch",
+    "precision": "address-range interpolation",
+    "matchedAddress": "1654 OCEAN AVE, SANTA MONICA, CA, 90401",
+    "reviewedOn": "2026-10-19",
+    "benchmark": "Public_AR_Current"
+  },
+  "1251 Third Street Promenade, Santa Monica, CA 90401": {
+    "lat": 34.017701662978,
+    "lng": -118.498376849918,
+    "sourceUrl": "https://geocoding.geo.census.gov/geocoder/locations/addressbatch",
+    "precision": "address-range interpolation",
+    "matchedAddress": "1251 3RD STREET PROMENADE, SANTA MONICA, CA, 90401",
+    "reviewedOn": "2026-10-19",
+    "benchmark": "Public_AR_Current"
+  },
+  "9400 Culver Boulevard, Culver City, CA 90232": {
+    "lat": 34.024229550804,
+    "lng": -118.393974781105,
+    "sourceUrl": "https://geocoding.geo.census.gov/geocoder/locations/addressbatch",
+    "precision": "address-range interpolation",
+    "matchedAddress": "9400 CULVER BLVD, CULVER CITY, CA, 90232",
+    "reviewedOn": "2026-10-19",
+    "benchmark": "Public_AR_Current"
+  },
+  "3833 Main Street, Culver City, CA 90232": {
+    "lat": 34.024824389275,
+    "lng": -118.394646384223,
+    "sourceUrl": "https://geocoding.geo.census.gov/geocoder/locations/addressbatch",
+    "precision": "address-range interpolation",
+    "matchedAddress": "3833 MAIN ST, CULVER CITY, CA, 90232",
+    "reviewedOn": "2026-10-19",
+    "benchmark": "Public_AR_Current"
+  },
+  "15 Washington Boulevard, Venice, CA 90292": {
+    "lat": 33.979325130655,
+    "lng": -118.466472231359,
+    "sourceUrl": "https://geocoding.geo.census.gov/geocoder/locations/addressbatch",
+    "precision": "address-range interpolation",
+    "matchedAddress": "15 WASHINGTON BLVD, VENICE, CA, 90292",
+    "reviewedOn": "2026-10-19",
+    "benchmark": "Public_AR_Current"
+  },
+  "145 South Barrington Avenue, Los Angeles, CA 90049": {
+    "lat": 34.064516016035,
+    "lng": -118.469266504264,
+    "sourceUrl": "https://geocoding.geo.census.gov/geocoder/locations/addressbatch",
+    "precision": "address-range interpolation",
+    "matchedAddress": "145 S BARRINGTON AVE, LOS ANGELES, CA, 90049",
+    "reviewedOn": "2026-10-19",
+    "benchmark": "Public_AR_Current"
+  },
+  "2424 Pico Boulevard, Santa Monica, CA 90405": {
+    "lat": 34.022134893203,
+    "lng": -118.464237402898,
+    "sourceUrl": "https://geocoding.geo.census.gov/geocoder/locations/addressbatch",
+    "precision": "address-range interpolation",
+    "matchedAddress": "2424 PICO BLVD, SANTA MONICA, CA, 90405",
+    "reviewedOn": "2026-10-19",
+    "benchmark": "Public_AR_Current"
+  },
+  "2911 Main Street, Santa Monica, CA 90405": {
+    "lat": 33.999315418818,
+    "lng": -118.4807783711,
+    "sourceUrl": "https://geocoding.geo.census.gov/geocoder/locations/addressbatch",
+    "precision": "address-range interpolation",
+    "matchedAddress": "2911 MAIN ST, SANTA MONICA, CA, 90405",
+    "reviewedOn": "2026-10-19",
+    "benchmark": "Public_AR_Current"
+  },
+  "120 Colorado Avenue, Santa Monica, CA 90401": {
+    "lat": 34.011577304489,
+    "lng": -118.494587222465,
+    "sourceUrl": "https://geocoding.geo.census.gov/geocoder/locations/addressbatch",
+    "precision": "address-range interpolation",
+    "matchedAddress": "120 COLORADO AVE, SANTA MONICA, CA, 90401",
+    "reviewedOn": "2026-10-19",
+    "benchmark": "Public_AR_Current"
+  },
+  "1621 Wilshire Boulevard, Santa Monica, CA 90403": {
+    "lat": 34.02878403475,
+    "lng": -118.486468818713,
+    "sourceUrl": "https://geocoding.geo.census.gov/geocoder/locations/addressbatch",
+    "precision": "address-range interpolation",
+    "matchedAddress": "1621 WILSHIRE BLVD, SANTA MONICA, CA, 90403",
+    "reviewedOn": "2026-10-19",
+    "benchmark": "Public_AR_Current"
+  },
+  "2518 Main Street, Santa Monica, CA 90405": {
+    "lat": 34.003275528335,
+    "lng": -118.484923853531,
+    "sourceUrl": "https://geocoding.geo.census.gov/geocoder/locations/addressbatch",
+    "precision": "address-range interpolation",
+    "matchedAddress": "2518 MAIN ST, SANTA MONICA, CA, 90405",
+    "reviewedOn": "2026-10-19",
+    "benchmark": "Public_AR_Current"
+  },
+  "1147 Third Street, Santa Monica, CA 90403": {
+    "lat": 34.019091256668,
+    "lng": -118.500037167672,
+    "sourceUrl": "https://geocoding.geo.census.gov/geocoder/locations/addressbatch",
+    "precision": "address-range interpolation",
+    "matchedAddress": "1147 3RD ST, SANTA MONICA, CA, 90403",
+    "reviewedOn": "2026-10-19",
+    "benchmark": "Public_AR_Current"
+  },
+  "1442 Second Street, Santa Monica, CA 90401": {
+    "lat": 34.014272849062,
+    "lng": -118.496409248468,
+    "sourceUrl": "https://geocoding.geo.census.gov/geocoder/locations/addressbatch",
+    "precision": "address-range interpolation",
+    "matchedAddress": "1442 2ND ST, SANTA MONICA, CA, 90401",
+    "reviewedOn": "2026-10-19",
+    "benchmark": "Public_AR_Current"
+  },
+  "4500 Los Feliz Blvd, Los Angeles, CA 90027": {
+    "lat": 34.111819573226,
+    "lng": -118.287485379982,
+    "sourceUrl": "https://geocoding.geo.census.gov/geocoder/locations/addressbatch",
+    "precision": "address-range interpolation",
+    "matchedAddress": "4500 LOS FELIZ BLVD, LOS ANGELES, CA, 90027",
+    "reviewedOn": "2026-10-19",
+    "benchmark": "Public_AR_Current"
+  },
+  "430 N Camden Dr, Beverly Hills, CA 90210": {
+    "lat": 34.068983539745,
+    "lng": -118.404357655371,
+    "sourceUrl": "https://geocoding.geo.census.gov/geocoder/locations/addressbatch",
+    "precision": "address-range interpolation",
+    "matchedAddress": "430 N CAMDEN DR, BEVERLY HILLS, CA, 90210",
+    "reviewedOn": "2026-10-19",
+    "benchmark": "Public_AR_Current"
+  },
+  "3909 W Sunset Blvd, Los Angeles, CA 90029": {
+    "lat": 34.091816195926,
+    "lng": -118.279668012185,
+    "sourceUrl": "https://geocoding.geo.census.gov/geocoder/locations/addressbatch",
+    "precision": "address-range interpolation",
+    "matchedAddress": "3909 W SUNSET BLVD, LOS ANGELES, CA, 90029",
+    "reviewedOn": "2026-10-19",
+    "benchmark": "Public_AR_Current"
+  },
+  "8941 Santa Monica Blvd, West Hollywood, CA 90069": {
+    "lat": 34.084113910884,
+    "lng": -118.385243536378,
+    "sourceUrl": "https://geocoding.geo.census.gov/geocoder/locations/addressbatch",
+    "precision": "address-range interpolation",
+    "matchedAddress": "8941 SANTA MONICA BLVD, WEST HOLLYWOOD, CA, 90069",
+    "reviewedOn": "2026-10-19",
+    "benchmark": "Public_AR_Current"
+  },
+  "2838 Rowena Ave, Los Angeles, CA 90039": {
+    "lat": 34.107673266263,
+    "lng": -118.265877937063,
+    "sourceUrl": "https://geocoding.geo.census.gov/geocoder/locations/addressbatch",
+    "precision": "address-range interpolation",
+    "matchedAddress": "2838 ROWENA AVE, LOS ANGELES, CA, 90039",
+    "reviewedOn": "2026-10-19",
+    "benchmark": "Public_AR_Current"
+  },
+  "1637 Silver Lake Blvd, Los Angeles, CA 90026": {
+    "lat": 34.088626598553,
+    "lng": -118.269054950746,
+    "sourceUrl": "https://geocoding.geo.census.gov/geocoder/locations/addressbatch",
+    "precision": "address-range interpolation",
+    "matchedAddress": "1637 SILVER LAKE BLVD, LOS ANGELES, CA, 90026",
+    "reviewedOn": "2026-10-19",
+    "benchmark": "Public_AR_Current"
+  },
+  "8400 Santa Monica Blvd, West Hollywood, CA 90069": {
+    "lat": 34.090555864687,
+    "lng": -118.373225864737,
+    "sourceUrl": "https://geocoding.geo.census.gov/geocoder/locations/addressbatch",
+    "precision": "address-range interpolation",
+    "matchedAddress": "8400 SANTA MONICA BLVD, WEST HOLLYWOOD, CA, 90069",
+    "reviewedOn": "2026-10-19",
+    "benchmark": "Public_AR_Current"
+  },
+  "8401 Santa Monica Blvd, West Hollywood, CA 90069": {
+    "lat": 34.090549434812,
+    "lng": -118.374223912145,
+    "sourceUrl": "https://geocoding.geo.census.gov/geocoder/locations/addressbatch",
+    "precision": "address-range interpolation",
+    "matchedAddress": "8401 SANTA MONICA BLVD, WEST HOLLYWOOD, CA, 90069",
+    "reviewedOn": "2026-10-19",
+    "benchmark": "Public_AR_Current"
+  },
+  "1534 N McCadden Pl, Los Angeles, CA 90028": {
+    "lat": 34.098592180641,
+    "lng": -118.337495242633,
+    "sourceUrl": "https://geocoding.geo.census.gov/geocoder/locations/addressbatch",
+    "precision": "address-range interpolation",
+    "matchedAddress": "1534 N MCCADDEN PL, LOS ANGELES, CA, 90028",
+    "reviewedOn": "2026-10-19",
+    "benchmark": "Public_AR_Current"
+  }
+}

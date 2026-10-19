@@ -1,0 +1,1648 @@
+[
+  {
+    "id": "marina-pasadena",
+    "name": "Marina",
+    "neighborhood": "Pasadena",
+    "address": "841 Cordova Street, Pasadena, CA 91101",
+    "coordinates": null,
+    "hours": [
+      {
+        "days": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+          "Sunday"
+        ],
+        "start": "17:00",
+        "end": "18:00",
+        "sourceId": "official",
+        "status": "primary",
+        "restriction": "bar-only"
+      }
+    ],
+    "menu": [
+      {
+        "id": "food-1",
+        "name": "French Fries",
+        "kind": "food",
+        "priceCents": 800,
+        "tags": [
+          "fries"
+        ],
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "id": "food-2",
+        "name": "Margherita Pizza",
+        "kind": "food",
+        "priceCents": 1500,
+        "tags": [
+          "pizza"
+        ],
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "id": "drink-1",
+        "name": "Margarita",
+        "kind": "drink",
+        "priceCents": 900,
+        "tags": [
+          "margarita"
+        ],
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "id": "drink-2",
+        "name": "Scrimshaw Pilsner",
+        "kind": "drink",
+        "priceCents": 500,
+        "tags": [
+          "beer"
+        ],
+        "sourceId": "official",
+        "status": "primary"
+      }
+    ],
+    "foodTags": [
+      "fries",
+      "pizza"
+    ],
+    "drinkTags": [
+      "margarita",
+      "beer"
+    ],
+    "atmosphereTags": [],
+    "sources": [
+      {
+        "id": "official",
+        "url": "https://www.marinapasadena.com/menu/happy-hour/",
+        "type": "primary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "note": "Branch address, daily 5-6pm, bar seating only, item prices; also advertises Monday all day."
+      }
+    ],
+    "notes": "Bar seating only. Monday all-day extension is published, but only the explicitly bounded daily 17:00-18:00 window is encoded; no invented opening or closing endpoint."
+  },
+  {
+    "id": "maestro-pasadena",
+    "name": "Maestro",
+    "neighborhood": "Pasadena",
+    "address": "110 E Union Street, Pasadena, CA 91103",
+    "coordinates": null,
+    "hours": [
+      {
+        "days": [
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Sunday"
+        ],
+        "start": "17:00",
+        "end": "18:30",
+        "sourceId": "official",
+        "status": "primary",
+        "restriction": "conditional"
+      }
+    ],
+    "menu": [
+      {
+        "id": "food-1",
+        "name": "Guacamole",
+        "kind": "food",
+        "priceCents": 1200,
+        "tags": [
+          "guacamole"
+        ],
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "id": "food-2",
+        "name": "Queso Fundido",
+        "kind": "food",
+        "priceCents": 1200,
+        "tags": [
+          "queso"
+        ],
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "id": "drink-1",
+        "name": "Maestro Margarita",
+        "kind": "drink",
+        "priceCents": 1200,
+        "tags": [
+          "margarita"
+        ],
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "id": "drink-2",
+        "name": "Beer",
+        "kind": "drink",
+        "priceCents": 500,
+        "tags": [
+          "beer"
+        ],
+        "sourceId": "official",
+        "status": "primary"
+      }
+    ],
+    "foodTags": [
+      "guacamole",
+      "queso"
+    ],
+    "drinkTags": [
+      "margarita",
+      "beer"
+    ],
+    "atmosphereTags": [],
+    "sources": [
+      {
+        "id": "official",
+        "url": "https://www.maestropasadena.com/happyhour",
+        "type": "primary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "note": "HH Sunday-Thursday 5-6:30pm; same page says closed Mondays. Lists $12 cocktails, $5 beers and priced food."
+      }
+    ],
+    "notes": "Internal conflict: Sunday-Thursday happy-hour heading includes Monday, but location hours explicitly close Mondays. Monday excluded; confirm any change with branch."
+  },
+  {
+    "id": "foothill-restaurant-pasadena",
+    "name": "Foothill Restaurant",
+    "neighborhood": "Pasadena",
+    "address": "2835 E Foothill Boulevard, Pasadena, CA 91107",
+    "coordinates": null,
+    "hours": [
+      {
+        "days": [
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "start": "11:00",
+        "end": "18:00",
+        "sourceId": "official",
+        "status": "primary",
+        "restriction": "none"
+      }
+    ],
+    "menu": [
+      {
+        "id": "food-1",
+        "name": "House Fries",
+        "kind": "food",
+        "priceCents": 600,
+        "tags": [
+          "fries"
+        ],
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "id": "food-2",
+        "name": "Pretzel & Cheese",
+        "kind": "food",
+        "priceCents": 1000,
+        "tags": [
+          "pretzel"
+        ],
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "id": "drink-1",
+        "name": "Margarita",
+        "kind": "drink",
+        "priceCents": 1000,
+        "tags": [
+          "margarita"
+        ],
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "id": "drink-2",
+        "name": "Beer of the Day",
+        "kind": "drink",
+        "priceCents": 700,
+        "tags": [
+          "beer"
+        ],
+        "sourceId": "official",
+        "status": "primary"
+      }
+    ],
+    "foodTags": [
+      "fries",
+      "pretzel"
+    ],
+    "drinkTags": [
+      "margarita",
+      "beer"
+    ],
+    "atmosphereTags": [],
+    "sources": [
+      {
+        "id": "official",
+        "url": "https://foothillrestaurant.com/happyhour",
+        "type": "primary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "note": "Branch HH menu states Tuesday-Friday 11am-6pm and all day Wednesday; exact food/drink prices and full address."
+      }
+    ],
+    "notes": "Wednesday all-day extension is published but not expanded beyond the explicit 11:00-18:00 window. Site lists 3% kitchen-staff surcharge and 20% gratuity for parties of 8 or more; not added to item prices."
+  },
+  {
+    "id": "green-street-restaurant-pasadena",
+    "name": "Green Street Restaurant",
+    "neighborhood": "Pasadena",
+    "address": "146 Shoppers Lane, Pasadena, CA 91101",
+    "coordinates": null,
+    "hours": [
+      {
+        "days": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "start": "16:00",
+        "end": "18:00",
+        "sourceId": "official",
+        "status": "primary",
+        "restriction": "none"
+      }
+    ],
+    "menu": [
+      {
+        "id": "food-1",
+        "name": "Housemade Chips and Salsa",
+        "kind": "food",
+        "priceCents": 800,
+        "tags": [
+          "chips-and-salsa"
+        ],
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "id": "food-2",
+        "name": "Sliders (2)",
+        "kind": "food",
+        "priceCents": 1000,
+        "tags": [
+          "sliders"
+        ],
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "id": "drink-1",
+        "name": "Draft Beer",
+        "kind": "drink",
+        "priceCents": 700,
+        "tags": [
+          "beer"
+        ],
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "id": "drink-2",
+        "name": "House Wine",
+        "kind": "drink",
+        "priceCents": 1000,
+        "tags": [
+          "wine"
+        ],
+        "sourceId": "official",
+        "status": "primary"
+      }
+    ],
+    "foodTags": [
+      "chips-and-salsa",
+      "sliders"
+    ],
+    "drinkTags": [
+      "beer",
+      "wine"
+    ],
+    "atmosphereTags": [],
+    "sources": [
+      {
+        "id": "official",
+        "url": "https://greenstreetrestaurant.com/menu/happy-hour/",
+        "type": "primary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "note": "HH Monday-Friday 4-6pm with exact food and drink prices; sliders include fries, cheese extra."
+      },
+      {
+        "id": "location",
+        "url": "https://greenstreetrestaurant.com/contact/",
+        "type": "primary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "note": "Full address is 146 Shopper's Ln., Pasadena, CA 91101; normalized street spelling in address."
+      }
+    ],
+    "notes": "Additional $2-off bar-beverage offer is not converted into item prices. Guacamole and slider cheese cost extra."
+  },
+  {
+    "id": "agnes-restaurant-cheesery-pasadena",
+    "name": "Agnes Restaurant & Cheesery",
+    "neighborhood": "Pasadena",
+    "address": "40 W Green Street, Pasadena, CA 91105",
+    "coordinates": null,
+    "hours": [
+      {
+        "days": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+          "Sunday"
+        ],
+        "start": "14:00",
+        "end": "17:00",
+        "sourceId": "official",
+        "status": "primary",
+        "restriction": "conditional"
+      }
+    ],
+    "menu": [
+      {
+        "id": "food-1",
+        "name": "French Fries",
+        "kind": "food",
+        "priceCents": null,
+        "tags": [
+          "fries"
+        ],
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "id": "food-2",
+        "name": "Cheese Board",
+        "kind": "food",
+        "priceCents": null,
+        "tags": [
+          "cheese"
+        ],
+        "sourceId": "official",
+        "status": "primary"
+      }
+    ],
+    "foodTags": [
+      "fries",
+      "cheese"
+    ],
+    "drinkTags": [],
+    "atmosphereTags": [],
+    "sources": [
+      {
+        "id": "official",
+        "url": "https://www.agnesla.com/happyhourmenu",
+        "type": "primary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "note": "Daily 2-5pm counter-style HH menu and full address; named food but no published numerical prices or HH drink specials in inspected text."
+      }
+    ],
+    "notes": "Happy hour is counter-style. Food prices remain null; no regular beverage-menu items relabeled as happy hour. Optional 4% wellness charge removable on request; 20% service fee for parties of 6 or more."
+  },
+  {
+    "id": "brookside-restaurant-pasadena",
+    "name": "Brookside Restaurant",
+    "neighborhood": "Pasadena",
+    "address": "1133 Rosemont Avenue, Pasadena, CA 91103",
+    "coordinates": null,
+    "hours": [
+      {
+        "days": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "start": "15:00",
+        "end": "18:00",
+        "sourceId": "official",
+        "status": "primary",
+        "restriction": "none"
+      }
+    ],
+    "menu": [],
+    "foodTags": [],
+    "drinkTags": [],
+    "atmosphereTags": [],
+    "sources": [
+      {
+        "id": "official",
+        "url": "https://www.brooksidegc.com/brookside-restaurant/",
+        "type": "primary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "note": "Public restaurant branch address and Monday-Friday 3-6pm HH; kitchen closes at 6pm."
+      },
+      {
+        "id": "menu-inspected",
+        "url": "https://www.brooksidegc.com/wp-content/uploads/sites/9671/2026/04/New-Brookside-Menu-FINAL-VERSION.pdf",
+        "type": "primary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "note": "Inspected two-page linked menu; no explicit happy-hour section identified. Regular menu prices not imported."
+      }
+    ],
+    "notes": "Schedule-only record. Happy-hour-specific food and drink items/prices unavailable in inspected evidence. Holiday hours may vary."
+  },
+  {
+    "id": "granville-pasadena",
+    "name": "GRANVILLE Pasadena",
+    "neighborhood": "Pasadena",
+    "address": "270 S Lake Avenue, Pasadena, CA 91101",
+    "coordinates": null,
+    "hours": [
+      {
+        "days": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "start": "15:00",
+        "end": "18:00",
+        "sourceId": "official",
+        "status": "primary",
+        "restriction": "none"
+      }
+    ],
+    "menu": [],
+    "foodTags": [],
+    "drinkTags": [],
+    "atmosphereTags": [],
+    "sources": [
+      {
+        "id": "official",
+        "url": "https://www.granville.com/",
+        "type": "primary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "note": "Official contact/locations section explicitly lists Pasadena address and weekday HH 3-6pm for listed branches; NoHo-only exception is irrelevant."
+      },
+      {
+        "id": "menu-inspected",
+        "url": "https://www.granville.com/menu-1",
+        "type": "primary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "note": "Regular menu inspected; no explicit HH section identified. No standard prices reused as happy-hour prices."
+      }
+    ],
+    "notes": "Schedule-only record. Site-wide weekday offer is attached to a location list that explicitly includes this branch; not borrowed from NoHo. No verified HH item list or prices."
+  },
+  {
+    "id": "venezuelan-chamo-cuisine-pasadena",
+    "name": "Venezuelan Chamo Cuisine",
+    "neighborhood": "Pasadena",
+    "address": "950 E Colorado Boulevard, Pasadena, CA 91106",
+    "coordinates": null,
+    "hours": [
+      {
+        "days": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday"
+        ],
+        "start": "15:00",
+        "end": "20:00",
+        "sourceId": "official",
+        "status": "conflicting",
+        "restriction": "conditional"
+      },
+      {
+        "days": [
+          "Friday"
+        ],
+        "start": "15:00",
+        "end": "20:00",
+        "sourceId": "official",
+        "status": "primary",
+        "restriction": "none"
+      }
+    ],
+    "menu": [
+      {
+        "id": "drink-1",
+        "name": "Frozen Artesanal Margarita",
+        "kind": "drink",
+        "priceCents": null,
+        "tags": [
+          "margarita"
+        ],
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "id": "drink-2",
+        "name": "Beer",
+        "kind": "drink",
+        "priceCents": null,
+        "tags": [
+          "beer"
+        ],
+        "sourceId": "official",
+        "status": "primary"
+      }
+    ],
+    "foodTags": [],
+    "drinkTags": [
+      "margarita",
+      "beer"
+    ],
+    "atmosphereTags": [],
+    "sources": [
+      {
+        "id": "official",
+        "url": "https://chamovenezuelancuisine.com/page/happy-hour",
+        "type": "primary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "note": "Explicit Monday-Friday 3-8pm HH with frozen margaritas and beer; no exact accessible prices."
+      },
+      {
+        "id": "location",
+        "url": "https://chamovenezuelancuisine.com/page/contact-us",
+        "type": "primary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "note": "Full address; store closes 7:30pm Monday-Thursday and 8:30pm Friday-Saturday."
+      }
+    ],
+    "notes": "Conflict: advertised Monday-Thursday HH ends 20:00, but official contact page closes the restaurant at 19:30. Those windows are conflicting and conditional, not reliable beyond closing. Friday window does not conflict. Mentioned arepas/cachapas are pairings, not established HH specials, and are excluded."
+  },
+  {
+    "id": "el-portal-pasadena",
+    "name": "El Portal",
+    "neighborhood": "Pasadena",
+    "address": "695 E Green Street, Pasadena, CA 91101",
+    "coordinates": null,
+    "hours": [
+      {
+        "days": [
+          "Tuesday",
+          "Thursday"
+        ],
+        "start": "15:00",
+        "end": "18:00",
+        "sourceId": "official",
+        "status": "primary",
+        "restriction": "bar-only"
+      },
+      {
+        "days": [
+          "Wednesday",
+          "Friday"
+        ],
+        "start": "15:00",
+        "end": "18:00",
+        "sourceId": "official",
+        "status": "conflicting",
+        "restriction": "bar-only"
+      },
+      {
+        "days": [
+          "Saturday",
+          "Sunday"
+        ],
+        "start": "15:00",
+        "end": "17:00",
+        "sourceId": "official",
+        "status": "primary",
+        "restriction": "bar-only"
+      }
+    ],
+    "menu": [
+      {
+        "id": "drink-1",
+        "name": "Margarita",
+        "kind": "drink",
+        "priceCents": 800,
+        "tags": [
+          "margarita"
+        ],
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "id": "drink-2",
+        "name": "Draft Beer",
+        "kind": "drink",
+        "priceCents": 700,
+        "tags": [
+          "beer"
+        ],
+        "sourceId": "official",
+        "status": "primary"
+      }
+    ],
+    "foodTags": [],
+    "drinkTags": [
+      "margarita",
+      "beer"
+    ],
+    "atmosphereTags": [],
+    "sources": [
+      {
+        "id": "official",
+        "url": "https://www.elportalrestaurant.com/",
+        "type": "primary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "note": "HH block: Tue-Fri 3-6pm, Sat-Sun 3-5pm, $7 draft beer/$8 margaritas/$7 house wine, bar only; branch address. Embedded Wednesday/Friday post captions instead say 3-5pm."
+      }
+    ],
+    "notes": "Weekday conflict: recurring HH block says 15:00-18:00, while Wednesday and Friday social captions embedded on the same page say 15:00-17:00. Affected windows flagged conflicting; confirm end time. Separate Tuesday $2 tacos 16:00-close are not silently applied across HH windows."
+  },
+  {
+    "id": "john-sparr-tavern-glendale",
+    "name": "John Sparr Tavern",
+    "neighborhood": "Glendale",
+    "address": "3437 Ocean View Boulevard, Glendale, CA 91208",
+    "coordinates": null,
+    "hours": [
+      {
+        "days": [
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "start": "15:30",
+        "end": "17:30",
+        "sourceId": "official",
+        "status": "primary",
+        "restriction": "none"
+      }
+    ],
+    "menu": [],
+    "foodTags": [],
+    "drinkTags": [],
+    "atmosphereTags": [],
+    "sources": [
+      {
+        "id": "official",
+        "url": "https://www.johnsparrtavern.com/menu",
+        "type": "primary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "note": "Explicit Tuesday-Friday 3:30-5:30pm HH and full branch address. HH menu exists as image; linked image fetch failed, so its contents were not reviewed."
+      }
+    ],
+    "notes": "Schedule-only record. Menu image could not be inspected; no prices or HH items transcribed. Restaurant is closed Mondays."
+  },
+  {
+    "id": "la-cabanita-glendale",
+    "name": "La Cabanita",
+    "neighborhood": "Glendale",
+    "address": "3445 N Verdugo Road, Glendale, CA 91208",
+    "coordinates": null,
+    "hours": [
+      {
+        "days": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "start": "14:00",
+        "end": "17:00",
+        "sourceId": "official",
+        "status": "primary",
+        "restriction": "none"
+      }
+    ],
+    "menu": [
+      {
+        "id": "food-1",
+        "name": "Happy Hour Nachos",
+        "kind": "food",
+        "priceCents": 1000,
+        "tags": [
+          "nachos"
+        ],
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "id": "food-2",
+        "name": "Happy Hour Quesadilla",
+        "kind": "food",
+        "priceCents": 1000,
+        "tags": [
+          "quesadilla"
+        ],
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "id": "drink-1",
+        "name": "Happy Hour House Margarita",
+        "kind": "drink",
+        "priceCents": 800,
+        "tags": [
+          "margarita"
+        ],
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "id": "drink-2",
+        "name": "Happy Hour Beer",
+        "kind": "drink",
+        "priceCents": 600,
+        "tags": [
+          "beer"
+        ],
+        "sourceId": "official",
+        "status": "primary"
+      }
+    ],
+    "foodTags": [
+      "nachos",
+      "quesadilla"
+    ],
+    "drinkTags": [
+      "margarita",
+      "beer"
+    ],
+    "atmosphereTags": [],
+    "sources": [
+      {
+        "id": "official",
+        "url": "https://www.lacabanitarestaurant.com/menu",
+        "type": "primary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "note": "Explicit HH category: Monday-Friday 2-5pm, priced HH food/drinks, and full Glendale branch address."
+      }
+    ],
+    "notes": "Use the Happy Hour category only. Separate $9.94 Margarita Wednesday special is not the $8 happy-hour house margarita."
+  },
+  {
+    "id": "bacari-glendale",
+    "name": "Bacari Glendale",
+    "neighborhood": "Glendale",
+    "address": "757 Americana Way, Glendale, CA 91210",
+    "coordinates": null,
+    "hours": [
+      {
+        "days": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "start": "15:00",
+        "end": "18:00",
+        "sourceId": "official",
+        "status": "primary",
+        "restriction": "none"
+      }
+    ],
+    "menu": [],
+    "foodTags": [],
+    "drinkTags": [],
+    "atmosphereTags": [],
+    "sources": [
+      {
+        "id": "official",
+        "url": "https://www.eatwithbacari.com/glendale",
+        "type": "primary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "note": "Branch page explicitly states Monday-Friday 3-6pm HH and full address. Remaining food/drink lists are not labeled HH."
+      }
+    ],
+    "notes": "Schedule-only record. Regular dinner, brunch and 90-minute open-bar packages are not established HH specials and were not imported. Site warns website items/prices may not be most current."
+  },
+  {
+    "id": "inkwell-tavern-burbank",
+    "name": "Inkwell Tavern",
+    "neighborhood": "Burbank",
+    "address": "924 S San Fernando Boulevard, Burbank, CA 91502",
+    "coordinates": null,
+    "hours": [
+      {
+        "days": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "start": "16:00",
+        "end": "19:00",
+        "sourceId": "official",
+        "status": "primary",
+        "restriction": "none"
+      }
+    ],
+    "menu": [
+      {
+        "id": "drink-1",
+        "name": "Beer",
+        "kind": "drink",
+        "priceCents": null,
+        "tags": [
+          "beer"
+        ],
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "id": "drink-2",
+        "name": "Wine",
+        "kind": "drink",
+        "priceCents": null,
+        "tags": [
+          "wine"
+        ],
+        "sourceId": "official",
+        "status": "primary"
+      }
+    ],
+    "foodTags": [],
+    "drinkTags": [
+      "beer",
+      "wine"
+    ],
+    "atmosphereTags": [],
+    "sources": [
+      {
+        "id": "official",
+        "url": "https://inkwelltavern.com/",
+        "type": "primary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "note": "Branch address; Monday-Friday 4-7pm HH, $2 off beer, wine, cocktails and appetizers. No exact final HH per-item amounts in this offer."
+      }
+    ],
+    "notes": "Discount-only offer: $2 off beer, wine, cocktails and appetizers. Prices remain null; no subtraction from regular menu or use of unrelated Monday 20:00 karaoke $8 wells."
+  },
+  {
+    "id": "octopus-restaurant-burbank",
+    "name": "Octopus Restaurant Burbank",
+    "neighborhood": "Burbank",
+    "address": "227 E Palm Avenue, Burbank, CA 91502",
+    "coordinates": null,
+    "hours": [
+      {
+        "days": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday"
+        ],
+        "start": "15:00",
+        "end": "18:00",
+        "sourceId": "official",
+        "status": "primary",
+        "restriction": "conditional"
+      },
+      {
+        "days": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Sunday"
+        ],
+        "start": "20:00",
+        "end": "22:00",
+        "sourceId": "official",
+        "status": "primary",
+        "restriction": "conditional"
+      },
+      {
+        "days": [
+          "Friday",
+          "Saturday"
+        ],
+        "start": "20:00",
+        "end": "22:30",
+        "sourceId": "official",
+        "status": "primary",
+        "restriction": "conditional"
+      }
+    ],
+    "menu": [],
+    "foodTags": [],
+    "drinkTags": [],
+    "atmosphereTags": [],
+    "sources": [
+      {
+        "id": "official",
+        "url": "https://www.octopusrestaurant.com/orderonline",
+        "type": "primary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "note": "Burbank address; HH Mon-Sat 3-6pm; reverse HH daily 8pm-close; branch closes Sun-Thu 10pm, Fri-Sat 10:30pm. Explicit restrictions."
+      }
+    ],
+    "notes": "Reverse HH endpoints normalized using the same branch page's closing hours. No reservations; excluded major holidays/special occasions and parties of 16 or more. No HH items/prices imported from regular ordering menu."
+  },
+  {
+    "id": "granville-burbank",
+    "name": "GRANVILLE Burbank",
+    "neighborhood": "Burbank",
+    "address": "121 N San Fernando Boulevard, Burbank, CA 91502",
+    "coordinates": null,
+    "hours": [
+      {
+        "days": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "start": "15:00",
+        "end": "18:00",
+        "sourceId": "official",
+        "status": "primary",
+        "restriction": "none"
+      }
+    ],
+    "menu": [],
+    "foodTags": [],
+    "drinkTags": [],
+    "atmosphereTags": [],
+    "sources": [
+      {
+        "id": "official",
+        "url": "https://www.granville.com/",
+        "type": "primary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "note": "Official contact/locations section explicitly lists Burbank full address and weekday 3-6pm HH for listed branches; NoHo exception not applied."
+      },
+      {
+        "id": "menu-inspected",
+        "url": "https://www.granville.com/menu-1",
+        "type": "primary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "note": "Regular menu inspected; no explicit HH section identified, so no regular menu items/prices imported."
+      }
+    ],
+    "notes": "Schedule-only record. Distinct physical location from GRANVILLE Pasadena."
+  },
+  {
+    "id": "smoke-house-burbank",
+    "name": "Smoke House Restaurant",
+    "neighborhood": "Burbank",
+    "address": "4420 W Lakeside Drive, Burbank, CA 91505",
+    "coordinates": null,
+    "hours": [
+      {
+        "days": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "start": "15:00",
+        "end": "17:00",
+        "sourceId": "official",
+        "status": "primary",
+        "restriction": "bar-only"
+      }
+    ],
+    "menu": [],
+    "foodTags": [],
+    "drinkTags": [],
+    "atmosphereTags": [],
+    "sources": [
+      {
+        "id": "official",
+        "url": "https://www.smokehouse1946.com/specials",
+        "type": "primary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "note": "Official current specials page: Monday-Friday 3-5pm HH in bar/lounge only, no takeout or combination with other discounts; full address."
+      },
+      {
+        "id": "menu-inspected",
+        "url": "https://www.smokehouse1946.com/menu",
+        "type": "primary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "note": "Inspected regular lunch menu; not accepted as HH price evidence."
+      }
+    ],
+    "notes": "Bar and lounge only. HH items/prices not verified in inspected official material. Third-party menu/history snippets show different hours/prices and are not used."
+  },
+  {
+    "id": "twoheys-south-pasadena",
+    "name": "Twohey's Restaurant",
+    "neighborhood": "South Pasadena",
+    "address": "424 Fair Oaks Avenue, South Pasadena, CA 91030",
+    "coordinates": null,
+    "hours": [
+      {
+        "days": [
+          "Monday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+          "Sunday"
+        ],
+        "start": "15:00",
+        "end": "17:00",
+        "sourceId": "official",
+        "status": "primary",
+        "restriction": "conditional"
+      }
+    ],
+    "menu": [
+      {
+        "id": "food-1",
+        "name": "Chicken Wings",
+        "kind": "food",
+        "priceCents": null,
+        "tags": [
+          "wings"
+        ],
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "id": "food-2",
+        "name": "Short Rib Sliders",
+        "kind": "food",
+        "priceCents": null,
+        "tags": [
+          "sliders"
+        ],
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "id": "drink-1",
+        "name": "Margarita",
+        "kind": "drink",
+        "priceCents": 700,
+        "tags": [
+          "margarita"
+        ],
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "id": "drink-2",
+        "name": "House Chardonnay",
+        "kind": "drink",
+        "priceCents": 700,
+        "tags": [
+          "wine"
+        ],
+        "sourceId": "official",
+        "status": "primary"
+      }
+    ],
+    "foodTags": [
+      "wings",
+      "sliders"
+    ],
+    "drinkTags": [
+      "margarita",
+      "wine"
+    ],
+    "atmosphereTags": [],
+    "sources": [
+      {
+        "id": "official",
+        "url": "https://www.twoheys.com/bar-and-happy-hour",
+        "type": "primary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "note": "Dedicated HH menu says daily 3-6pm except Tuesdays, lists $7 classic cocktails/$7 house wines and named food without food prices."
+      },
+      {
+        "id": "homepage",
+        "url": "https://www.twoheys.com/",
+        "type": "primary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "note": "Homepage says daily 3-5pm except Tuesdays; full South Pasadena address."
+      }
+    ],
+    "notes": "Internal conflict: homepage ends HH at 17:00, dedicated menu at 18:00. Encoded only the common 15:00-17:00 interval; 17:00-18:00 remains unresolved. Closed Tuesdays. Food prices unavailable; mug-for-pint beer offer has no exact final price."
+  },
+  {
+    "id": "guss-bbq-south-pasadena",
+    "name": "Gus's BBQ South Pasadena",
+    "neighborhood": "South Pasadena",
+    "address": "808 Fair Oaks Avenue, South Pasadena, CA 91030",
+    "coordinates": null,
+    "hours": [
+      {
+        "days": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "start": "15:00",
+        "end": "17:30",
+        "sourceId": "official",
+        "status": "primary",
+        "restriction": "none"
+      }
+    ],
+    "menu": [
+      {
+        "id": "food-1",
+        "name": "Rib Sliders (3)",
+        "kind": "food",
+        "priceCents": 1000,
+        "tags": [
+          "sliders",
+          "barbecue"
+        ],
+        "sourceId": "hh-food",
+        "status": "primary"
+      },
+      {
+        "id": "drink-1",
+        "name": "Draft Beer",
+        "kind": "drink",
+        "priceCents": 600,
+        "tags": [
+          "beer"
+        ],
+        "sourceId": "hh-drink",
+        "status": "primary"
+      }
+    ],
+    "foodTags": [
+      "sliders",
+      "barbecue"
+    ],
+    "drinkTags": [
+      "beer"
+    ],
+    "atmosphereTags": [],
+    "sources": [
+      {
+        "id": "official",
+        "url": "https://www.gussbbq.com/locations",
+        "type": "primary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "note": "South Pasadena branch address and Monday-Friday 3-5:30pm HH."
+      },
+      {
+        "id": "hh-food",
+        "url": "https://www.gussbbq.com/items/rib-sliders",
+        "type": "primary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "note": "Official item page labels Food - Happy Hour, Gus's BBQ - South Pasadena; 3 rib sliders $10."
+      },
+      {
+        "id": "hh-drink",
+        "url": "https://www.gussbbq.com/items/draft-beers",
+        "type": "primary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "note": "Official item page labels Libations - Happy Hour, Gus's BBQ - South Pasadena; draft beers $6."
+      },
+      {
+        "id": "hh-menu",
+        "url": "https://www.gussbbq.com/menus/happy-hour?location=guss-bbq-south-pasadena",
+        "type": "primary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "note": "Official branch-selected happy-hour menu inspected; see item pages for exact amounts."
+      }
+    ],
+    "notes": "HH item pages are explicitly attached to South Pasadena, not Claremont or Porter Ranch. No chain-wide price assumption."
+  },
+  {
+    "id": "momed-atwater-village",
+    "name": "Momed",
+    "neighborhood": "Atwater Village",
+    "address": "3245 Casitas Avenue, Los Angeles, CA 90039",
+    "coordinates": null,
+    "hours": [
+      {
+        "days": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Sunday"
+        ],
+        "start": "17:00",
+        "end": "18:30",
+        "sourceId": "hh-menu",
+        "status": "primary",
+        "restriction": "bar-only"
+      }
+    ],
+    "menu": [
+      {
+        "id": "drink-1",
+        "name": "Cadillac Margarita",
+        "kind": "drink",
+        "priceCents": 800,
+        "tags": [
+          "margarita"
+        ],
+        "sourceId": "hh-menu",
+        "status": "primary"
+      },
+      {
+        "id": "drink-2",
+        "name": "Old Fashioned",
+        "kind": "drink",
+        "priceCents": 800,
+        "tags": [
+          "old-fashioned"
+        ],
+        "sourceId": "hh-menu",
+        "status": "primary"
+      }
+    ],
+    "foodTags": [],
+    "drinkTags": [
+      "margarita",
+      "old-fashioned"
+    ],
+    "atmosphereTags": [],
+    "sources": [
+      {
+        "id": "official",
+        "url": "https://www.atmomed.com/",
+        "type": "primary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "note": "Atwater branch address and The Bridge Bar context; homepage directly links current HH PDF."
+      },
+      {
+        "id": "hh-menu",
+        "url": "https://www.atmomed.com/files/new-hh-may-2025-pdf.pdf",
+        "type": "primary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "note": "Currently homepage-linked HH at the Bridge: Sunday-Thursday 5-6:30pm, $8 listed cocktails, 5% kitchen living-wage fee."
+      },
+      {
+        "id": "older-menu",
+        "url": "https://www.atmomed.com/files/hh-menu-summer-24-pdf.pdf",
+        "type": "primary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "note": "Older discoverable official PDF instead lists $7 cocktails/$6 wine/$5 beer and 4% fee; not used for current prices."
+      }
+    ],
+    "notes": "At the Bridge Bar. Current homepage-linked May 2025 menu takes precedence over older summer-2024 PDF; no HH food verified. 5% kitchen-team fee excluded from base prices. Older menu's holiday exclusion is not assumed to carry forward."
+  },
+  {
+    "id": "tam-oshanter-atwater-village",
+    "name": "Tam O'Shanter",
+    "neighborhood": "Atwater Village",
+    "address": "2980 Los Feliz Boulevard, Los Angeles, CA 90039",
+    "coordinates": null,
+    "hours": [
+      {
+        "days": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "start": "14:00",
+        "end": "17:00",
+        "sourceId": "official",
+        "status": "primary",
+        "restriction": "none"
+      }
+    ],
+    "menu": [
+      {
+        "id": "drink-1",
+        "name": "Tommy's Margarita",
+        "kind": "drink",
+        "priceCents": 1000,
+        "tags": [
+          "margarita"
+        ],
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "id": "drink-2",
+        "name": "House Draft Beer",
+        "kind": "drink",
+        "priceCents": 600,
+        "tags": [
+          "beer"
+        ],
+        "sourceId": "official",
+        "status": "primary"
+      }
+    ],
+    "foodTags": [],
+    "drinkTags": [
+      "margarita",
+      "beer"
+    ],
+    "atmosphereTags": [],
+    "sources": [
+      {
+        "id": "official",
+        "url": "https://www.lawrysonline.com/tam-o-shanter/happenings/happy-hour/",
+        "type": "primary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "note": "Branch-specific HH Monday-Friday 2-5pm, $10 listed classic cocktails, $6 house draft beers, full address."
+      },
+      {
+        "id": "neighborhood-press",
+        "url": "https://beverlypress.com/2026/07/restaurant-news-703/",
+        "type": "secondary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "note": "Directly inspected July 30, 2026 article identifies Tam O'Shanter as Atwater Village at 2980 Los Feliz Blvd.; geographic corroboration only, not source of menu prices."
+      }
+    ],
+    "notes": "Located in Atwater Village despite Los Feliz Boulevard street name; not the Los Feliz neighborhood. Published HH page supplies drinks only; regular food menu not reused."
+  },
+  {
+    "id": "relentless-brewing-spirits-eagle-rock",
+    "name": "Relentless Brewing & Spirits",
+    "neighborhood": "Eagle Rock",
+    "address": "2133 Colorado Boulevard, Los Angeles, CA 90041",
+    "coordinates": null,
+    "hours": [
+      {
+        "days": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "start": "16:00",
+        "end": "18:00",
+        "sourceId": "official",
+        "status": "primary",
+        "restriction": "conditional"
+      }
+    ],
+    "menu": [],
+    "foodTags": [],
+    "drinkTags": [],
+    "atmosphereTags": [],
+    "sources": [
+      {
+        "id": "official",
+        "url": "https://www.relentlessbrewingandspirits.com/los-angeles",
+        "type": "primary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "note": "Official Los Angeles branch identifies Eagle Rock restaurant, full address, Monday-Friday 4-6pm HH; private-event/holiday changes possible."
+      },
+      {
+        "id": "menu-inspected",
+        "url": "https://www.relentlessbrewingandspirits.com/the-food",
+        "type": "primary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "note": "Official food-menu page inspected; no verified happy-hour-specific item prices extracted."
+      }
+    ],
+    "notes": "Schedule-only record. Do not apply Temecula branch specials. Restaurant warns hours may change for private parties and holidays."
+  },
+  {
+    "id": "dog-haus-biergarten-alhambra",
+    "name": "Dog Haus Biergarten Alhambra",
+    "neighborhood": "Alhambra",
+    "address": "410 E Main Street, Alhambra, CA 91801",
+    "coordinates": null,
+    "hours": [
+      {
+        "days": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "start": "15:00",
+        "end": "18:00",
+        "sourceId": "official",
+        "status": "primary",
+        "restriction": "none"
+      },
+      {
+        "days": [
+          "Sunday"
+        ],
+        "start": "15:00",
+        "end": "22:00",
+        "sourceId": "official",
+        "status": "primary",
+        "restriction": "none"
+      }
+    ],
+    "menu": [
+      {
+        "id": "food-1",
+        "name": "Wings",
+        "kind": "food",
+        "priceCents": null,
+        "tags": [
+          "wings"
+        ],
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "id": "drink-1",
+        "name": "Draft Beer",
+        "kind": "drink",
+        "priceCents": null,
+        "tags": [
+          "beer"
+        ],
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "id": "drink-2",
+        "name": "Wine",
+        "kind": "drink",
+        "priceCents": null,
+        "tags": [
+          "wine"
+        ],
+        "sourceId": "official",
+        "status": "primary"
+      }
+    ],
+    "foodTags": [
+      "wings"
+    ],
+    "drinkTags": [
+      "beer",
+      "wine"
+    ],
+    "atmosphereTags": [],
+    "sources": [
+      {
+        "id": "official",
+        "url": "https://locations.doghaus.com/locations/ca/alhambra/410-e-main-st",
+        "type": "primary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "note": "Full branch address; HH Mon-Fri 3-6pm and Sunday 3-10pm; $3 off wings, $2 off draft beer/wine/shareables, $3 off Haus cocktails, $1 off any 3-pack sliders."
+      }
+    ],
+    "notes": "Only published discount amounts, not exact final item prices; prices remain null. Saturday has no advertised HH window. No regular menu prices reused."
+  },
+  {
+    "id": "checker-hall-highland-park",
+    "name": "Checker Hall",
+    "neighborhood": "Highland Park",
+    "address": "104 N Avenue 56, 2nd Floor, Los Angeles, CA 90042",
+    "coordinates": null,
+    "hours": [],
+    "menu": [],
+    "foodTags": [],
+    "drinkTags": [],
+    "atmosphereTags": [],
+    "sources": [
+      {
+        "id": "official",
+        "url": "https://www.checkerhall.com/menus",
+        "type": "primary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "note": "Official menu index has HH link, full address and HH 4-6pm footer, but does not explicitly state HH days."
+      },
+      {
+        "id": "about",
+        "url": "https://www.checkerhall.com/about",
+        "type": "primary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "note": "Official about page identifies Highland Park and repeats HH 4-6pm without explicit weekdays."
+      },
+      {
+        "id": "hh-image",
+        "url": "https://cdn.prod.website-files.com/63ca1c9e6b053671ce51573a/6abae5748df3ca308af02f7d_2026-09-18%20-%20Happy%20Hour%20Menu.png",
+        "type": "primary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": null,
+        "note": "Linked official menu image could not be reviewed: web fetch failed and browser safety policy blocked the CDN. No contents inferred."
+      }
+    ],
+    "notes": "Currently listed official HH, but days unknown, so hours=[] per schema. Do not infer daily from ordinary opening hours. Menu image remains unreviewed; older guide snippet says daily 17:00-18:00, inconsistent with current official 16:00-18:00 footer, and is not used."
+  },
+  {
+    "id": "barcade-los-angeles-highland-park",
+    "name": "Barcade Los Angeles",
+    "neighborhood": "Highland Park",
+    "address": "5684 York Boulevard, Los Angeles, CA 90042",
+    "coordinates": null,
+    "hours": [
+      {
+        "days": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "start": "16:00",
+        "end": "18:00",
+        "sourceId": "official",
+        "status": "primary",
+        "restriction": "none"
+      }
+    ],
+    "menu": [
+      {
+        "id": "drink-1",
+        "name": "House Margarita",
+        "kind": "drink",
+        "priceCents": 500,
+        "tags": [
+          "margarita"
+        ],
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "id": "drink-2",
+        "name": "Spicy Margarita",
+        "kind": "drink",
+        "priceCents": 500,
+        "tags": [
+          "margarita"
+        ],
+        "sourceId": "official",
+        "status": "primary"
+      }
+    ],
+    "foodTags": [],
+    "drinkTags": [
+      "margarita"
+    ],
+    "atmosphereTags": [],
+    "sources": [
+      {
+        "id": "official",
+        "url": "https://barcade.com/location/los-angeles",
+        "type": "primary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "note": "Branch-specific rendered page directly inspected in browser: Mon-Fri 4-6pm; $5 house/spicy margaritas, $5 select apps, $3 off beer/wine/wells. Web text extraction returned shell only; primary classification comes from rendered browser inspection."
+      }
+    ],
+    "notes": "Select appetizers are $5 but unnamed in HH offer, so none of the regular-menu foods is silently designated as a $5 special. Separate lunch/Tuesday-wing specials excluded."
+  }
+]

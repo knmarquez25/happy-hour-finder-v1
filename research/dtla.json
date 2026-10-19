@@ -1,0 +1,1427 @@
+[
+  {
+    "id": "joyce",
+    "name": "Joyce",
+    "neighborhood": "South Park",
+    "address": "770 S Grand Ave, Los Angeles, CA 90017",
+    "coordinates": null,
+    "hours": [
+      {
+        "id": "evening",
+        "days": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+          "Sunday"
+        ],
+        "start": "17:00",
+        "end": "19:00",
+        "sourceId": "official",
+        "status": "primary",
+        "restriction": "bar-or-patio"
+      },
+      {
+        "id": "late",
+        "days": [
+          "Friday",
+          "Saturday"
+        ],
+        "start": "21:00",
+        "end": "23:00",
+        "sourceId": "official",
+        "status": "primary",
+        "restriction": "bar-or-patio"
+      }
+    ],
+    "menu": [
+      {
+        "id": "shrimp",
+        "name": "Colossal shrimp cocktail (3)",
+        "kind": "food",
+        "priceCents": 1500,
+        "tags": [
+          "seafood",
+          "shrimp"
+        ],
+        "sourceId": "official",
+        "status": "primary",
+        "windowIds": [
+          "evening"
+        ]
+      },
+      {
+        "id": "mac",
+        "name": "Happy-hour smoked mac & cheese",
+        "kind": "food",
+        "priceCents": 1500,
+        "tags": [
+          "mac and cheese",
+          "pasta"
+        ],
+        "sourceId": "official",
+        "status": "primary",
+        "windowIds": [
+          "evening",
+          "late"
+        ]
+      },
+      {
+        "id": "margarita",
+        "name": "Tommy's Margarita",
+        "kind": "drink",
+        "priceCents": 1300,
+        "tags": [
+          "margarita",
+          "tequila",
+          "cocktail"
+        ],
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "id": "beer",
+        "name": "Clasica lager",
+        "kind": "drink",
+        "priceCents": 800,
+        "tags": [
+          "beer",
+          "lager"
+        ],
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "id": "wine",
+        "name": "House wine",
+        "kind": "drink",
+        "priceCents": 1300,
+        "tags": [
+          "wine"
+        ],
+        "sourceId": "official",
+        "status": "primary"
+      }
+    ],
+    "foodTags": [
+      "seafood",
+      "shrimp",
+      "pasta"
+    ],
+    "drinkTags": [
+      "margarita",
+      "wine",
+      "beer",
+      "cocktail"
+    ],
+    "atmosphereTags": [
+      "lively",
+      "date-night"
+    ],
+    "legacyEstimateCents": 2800,
+    "sources": [
+      {
+        "id": "official",
+        "url": "https://www.joycela.com/menus/",
+        "type": "primary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "note": "Official happy-hour section specifies bar/patio seating, daily 5-7 PM; late section Friday/Saturday 9-11 PM. Named items under $8/$13/$15 headings. Atmosphere is editorial."
+      }
+    ],
+    "notes": "Bar and patio guests only. Menu states a 4.5% service charge, removable upon request; it is not included in the displayed subtotal. Large-party gratuity may apply. Original guide prices are outdated."
+  },
+  {
+    "id": "kombu-sushi",
+    "name": "Kombu Sushi",
+    "neighborhood": "Arts District",
+    "address": "300 S Santa Fe Ave Q, Los Angeles, CA 90013",
+    "coordinates": null,
+    "hours": [
+      {
+        "days": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+          "Sunday"
+        ],
+        "start": "15:00",
+        "end": "18:00",
+        "id": "guide-0",
+        "sourceId": "guide",
+        "status": "secondary",
+        "restriction": "none"
+      }
+    ],
+    "menu": [],
+    "foodTags": [],
+    "drinkTags": [],
+    "atmosphereTags": [],
+    "legacyEstimateCents": 2200,
+    "sources": [
+      {
+        "id": "guide",
+        "url": "https://downtownla.com/explore/dining-and-drinks/happy-hour-finder",
+        "type": "secondary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "note": "Guide listing: Daily 3pm-6pm. Dog-friendly happy hour: $3 beer and sake; $8 wine & cocktails; $5 hand rolls and more food deals"
+      }
+    ],
+    "notes": "Original estimate is not a supported combo price. Historical vibe and reputation values are not current verified facts."
+  },
+  {
+    "id": "la-cha-cha-cha",
+    "name": "LA Cha Cha Cha",
+    "neighborhood": "Arts District",
+    "address": "812 E 3rd St, Los Angeles, CA 90013",
+    "coordinates": null,
+    "hours": [
+      {
+        "days": [
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+          "Sunday"
+        ],
+        "start": "12:00",
+        "end": "16:00",
+        "id": "guide-0",
+        "sourceId": "guide",
+        "status": "secondary",
+        "restriction": "none"
+      }
+    ],
+    "menu": [],
+    "foodTags": [],
+    "drinkTags": [],
+    "atmosphereTags": [],
+    "legacyEstimateCents": 3000,
+    "sources": [
+      {
+        "id": "guide",
+        "url": "https://downtownla.com/explore/dining-and-drinks/happy-hour-finder",
+        "type": "secondary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "note": "Guide listing: Tues - Sun 12:00pm-4:00pm. Discounted menu of bites, raspados, and cocktails"
+      }
+    ],
+    "notes": "Original estimate is not a supported combo price. Historical vibe and reputation values are not current verified facts."
+  },
+  {
+    "id": "library-bar",
+    "name": "Library Bar",
+    "neighborhood": "Financial District",
+    "address": "630 W 6th St suite 116 a, Los Angeles, CA 90017",
+    "coordinates": null,
+    "hours": [
+      {
+        "days": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "start": "15:00",
+        "end": "19:00",
+        "id": "guide-0",
+        "sourceId": "guide",
+        "status": "secondary",
+        "restriction": "none"
+      }
+    ],
+    "menu": [],
+    "foodTags": [],
+    "drinkTags": [],
+    "atmosphereTags": [],
+    "legacyEstimateCents": 2400,
+    "sources": [
+      {
+        "id": "guide",
+        "url": "https://downtownla.com/explore/dining-and-drinks/happy-hour-finder",
+        "type": "secondary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "note": "Guide listing: Mon-Fri 3-7pm. Truly one of the best happy hour in town! Discounted cocktails, beers and wines"
+      }
+    ],
+    "notes": "Original estimate is not a supported combo price. Historical vibe and reputation values are not current verified facts."
+  },
+  {
+    "id": "mignon-wine-cheese-bar",
+    "name": "Mignon Wine & Cheese Bar",
+    "neighborhood": "Historic Core",
+    "address": "128 E 6th St, Los Angeles, CA 90014",
+    "coordinates": null,
+    "hours": [
+      {
+        "days": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+          "Sunday"
+        ],
+        "start": "18:00",
+        "end": "20:00",
+        "id": "guide-0",
+        "sourceId": "guide",
+        "status": "secondary",
+        "restriction": "none"
+      }
+    ],
+    "menu": [],
+    "foodTags": [],
+    "drinkTags": [],
+    "atmosphereTags": [],
+    "legacyEstimateCents": 2400,
+    "sources": [
+      {
+        "id": "guide",
+        "url": "https://downtownla.com/explore/dining-and-drinks/happy-hour-finder",
+        "type": "secondary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "note": "Guide listing: Daily 6-8pm. $8 wines"
+      }
+    ],
+    "notes": "Original estimate is not a supported combo price. Historical vibe and reputation values are not current verified facts."
+  },
+  {
+    "id": "native-son",
+    "name": "Native Son",
+    "neighborhood": "South Park",
+    "address": "832 S Olive St, Los Angeles, CA 90014",
+    "coordinates": null,
+    "hours": [],
+    "menu": [],
+    "foodTags": [],
+    "drinkTags": [],
+    "atmosphereTags": [],
+    "legacyEstimateCents": 2400,
+    "sources": [
+      {
+        "id": "guide",
+        "url": "https://downtownla.com/explore/dining-and-drinks/happy-hour-finder",
+        "type": "secondary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "note": "Guide listing: 4-6pm. $5 Pints\n$6 Specialty Pints\n$15 Pitcher\nBite & Burger Specials"
+      }
+    ],
+    "notes": "Original estimate is not a supported combo price. Historical vibe and reputation values are not current verified facts."
+  },
+  {
+    "id": "peking-tavern",
+    "name": "Peking Tavern",
+    "neighborhood": "Historic Core",
+    "address": "236 S. Los Angeles Street Suite G Los Angeles, California 90012",
+    "coordinates": null,
+    "hours": [
+      {
+        "days": [
+          "Monday"
+        ],
+        "start": "15:00",
+        "end": "23:00",
+        "id": "guide-0",
+        "sourceId": "guide",
+        "status": "secondary",
+        "restriction": "none"
+      },
+      {
+        "days": [
+          "Tuesday"
+        ],
+        "start": "18:00",
+        "end": "19:00",
+        "id": "guide-1",
+        "sourceId": "guide",
+        "status": "secondary",
+        "restriction": "none"
+      },
+      {
+        "days": [
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "start": "17:00",
+        "end": "19:00",
+        "id": "guide-2",
+        "sourceId": "guide",
+        "status": "secondary",
+        "restriction": "none"
+      },
+      {
+        "days": [
+          "Saturday",
+          "Sunday"
+        ],
+        "start": "15:00",
+        "end": "19:00",
+        "id": "guide-3",
+        "sourceId": "guide",
+        "status": "secondary",
+        "restriction": "none"
+      }
+    ],
+    "menu": [],
+    "foodTags": [],
+    "drinkTags": [],
+    "atmosphereTags": [],
+    "legacyEstimateCents": 2300,
+    "sources": [
+      {
+        "id": "guide",
+        "url": "https://downtownla.com/explore/dining-and-drinks/happy-hour-finder",
+        "type": "secondary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "note": "Guide listing: Mon all-night; Tue 6-7pm; Wed-Fri 5-7pm Sat-Sun 3-7pm. 15% off starters and dim sum items; drink specials"
+      }
+    ],
+    "notes": "Original estimate is not a supported combo price. Historical vibe and reputation values are not current verified facts."
+  },
+  {
+    "id": "perch-la",
+    "name": "Perch LA",
+    "neighborhood": "Financial District",
+    "address": "448 S Hill St, Los Angeles, CA 90013",
+    "coordinates": null,
+    "hours": [
+      {
+        "id": "weekday",
+        "days": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday"
+        ],
+        "start": "16:00",
+        "end": "18:00",
+        "sourceId": "official",
+        "status": "primary",
+        "restriction": "none"
+      },
+      {
+        "id": "friday-overlap",
+        "days": [
+          "Friday"
+        ],
+        "start": "16:00",
+        "end": "18:00",
+        "sourceId": "official",
+        "status": "primary",
+        "restriction": "none"
+      }
+    ],
+    "menu": [
+      {
+        "id": "slider",
+        "name": "Brioche beef slider",
+        "kind": "food",
+        "priceCents": 500,
+        "tags": [
+          "burger",
+          "beef"
+        ],
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "id": "crab-cake",
+        "name": "Maryland blue crab cake",
+        "kind": "food",
+        "priceCents": 900,
+        "tags": [
+          "seafood",
+          "crab"
+        ],
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "id": "avocado-toast",
+        "name": "Avocado toast",
+        "kind": "food",
+        "priceCents": 600,
+        "tags": [
+          "avocado",
+          "toast"
+        ],
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "id": "beer",
+        "name": "Kronenbourg 1664",
+        "kind": "drink",
+        "priceCents": 700,
+        "tags": [
+          "beer"
+        ],
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "id": "wine",
+        "name": "Happy-hour wine",
+        "kind": "drink",
+        "priceCents": 1000,
+        "tags": [
+          "wine"
+        ],
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "id": "hi-ball",
+        "name": "Citrus Hi-Ball",
+        "kind": "drink",
+        "priceCents": 1000,
+        "tags": [
+          "cocktail",
+          "gin",
+          "tequila",
+          "vodka",
+          "whisky"
+        ],
+        "sourceId": "official",
+        "status": "primary"
+      }
+    ],
+    "foodTags": [
+      "seafood",
+      "burger",
+      "avocado"
+    ],
+    "drinkTags": [
+      "wine",
+      "beer",
+      "cocktail",
+      "gin",
+      "tequila",
+      "vodka",
+      "whisky"
+    ],
+    "atmosphereTags": [
+      "rooftop",
+      "date-night"
+    ],
+    "legacyEstimateCents": 3200,
+    "sources": [
+      {
+        "id": "official",
+        "url": "https://www.perchla.com/menu-aperitif",
+        "type": "primary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "note": "Happy-hour menu lists weekdays 4-6 PM and item prices. Footer lists Friday 3-6 PM; only the nonconflicting 4-6 PM overlap is treated as supported. Atmosphere labels are editorial."
+      }
+    ],
+    "notes": "Friday 3-4 PM has conflicting information on the official page and is not treated as confirmed. Holiday/event exceptions and large-party gratuities may apply."
+  },
+  {
+    "id": "prank-bar",
+    "name": "Prank Bar",
+    "neighborhood": "South Park",
+    "address": "1100 S Hope St, Los Angeles, CA 90015",
+    "coordinates": null,
+    "hours": [
+      {
+        "days": [
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "start": "16:00",
+        "end": "20:00",
+        "id": "guide-0",
+        "sourceId": "guide",
+        "status": "secondary",
+        "restriction": "none"
+      },
+      {
+        "days": [
+          "Saturday",
+          "Sunday"
+        ],
+        "start": "15:00",
+        "end": "18:00",
+        "id": "guide-1",
+        "sourceId": "guide",
+        "status": "secondary",
+        "restriction": "none"
+      }
+    ],
+    "menu": [],
+    "foodTags": [],
+    "drinkTags": [],
+    "atmosphereTags": [],
+    "legacyEstimateCents": 2800,
+    "sources": [
+      {
+        "id": "guide",
+        "url": "https://downtownla.com/explore/dining-and-drinks/happy-hour-finder",
+        "type": "secondary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "note": "Guide listing: Tues-Fri 4-8pm; Sat-Sun 3-6pm. Golden Hour: discounted food and drinks"
+      }
+    ],
+    "notes": "Original estimate is not a supported combo price. Historical vibe and reputation values are not current verified facts."
+  },
+  {
+    "id": "precinct-dtla",
+    "name": "Precinct DTLA",
+    "neighborhood": "Historic Core",
+    "address": "357 South Broadway, Los Angeles, CA 90013",
+    "coordinates": null,
+    "hours": [],
+    "menu": [],
+    "foodTags": [],
+    "drinkTags": [],
+    "atmosphereTags": [],
+    "legacyEstimateCents": 2200,
+    "sources": [
+      {
+        "id": "guide",
+        "url": "https://downtownla.com/explore/dining-and-drinks/happy-hour-finder",
+        "type": "secondary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "note": "Guide listing: 6-9pm. $8 Well Cocktails\n$9 Wine\n$6 Hard Selzters\n$4 Beer on Tap\n$12 Signature Cocktails"
+      }
+    ],
+    "notes": "Original estimate is not a supported combo price. Historical vibe and reputation values are not current verified facts."
+  },
+  {
+    "id": "propaganda-wine-bar",
+    "name": "Propaganda Wine Bar",
+    "neighborhood": "Arts District",
+    "address": "950 E 3rd St, Los Angeles, CA 90013",
+    "coordinates": null,
+    "hours": [],
+    "menu": [],
+    "foodTags": [],
+    "drinkTags": [],
+    "atmosphereTags": [],
+    "legacyEstimateCents": 2800,
+    "sources": [
+      {
+        "id": "guide",
+        "url": "https://downtownla.com/explore/dining-and-drinks/happy-hour-finder",
+        "type": "secondary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "note": "Guide listing: Tues–Sat 3–6pm; Sun 1–pm. Celebrate the Aperitivo culture: Spritz cocktails, chilled vermut, natural wines and a small plates"
+      }
+    ],
+    "notes": "Original estimate is not a supported combo price. Historical vibe and reputation values are not current verified facts."
+  },
+  {
+    "id": "rappahannock-oyster-bar",
+    "name": "Rappahannock Oyster Bar",
+    "neighborhood": "Arts District",
+    "address": "777 S Alameda St #154, Los Angeles, CA 90021",
+    "coordinates": null,
+    "hours": [
+      {
+        "days": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday"
+        ],
+        "start": "16:00",
+        "end": "18:00",
+        "id": "guide-0",
+        "sourceId": "guide",
+        "status": "secondary",
+        "restriction": "none"
+      }
+    ],
+    "menu": [],
+    "foodTags": [],
+    "drinkTags": [],
+    "atmosphereTags": [],
+    "legacyEstimateCents": 3400,
+    "sources": [
+      {
+        "id": "guide",
+        "url": "https://downtownla.com/explore/dining-and-drinks/happy-hour-finder",
+        "type": "secondary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "note": "Guide listing: Mon-Thur 4-6pm. Oysers, rose and much more!"
+      }
+    ],
+    "notes": "Original estimate is not a supported combo price. Historical vibe and reputation values are not current verified facts."
+  },
+  {
+    "id": "redwood-bar-grill",
+    "name": "Redwood Bar & Grill",
+    "neighborhood": "Historic Core",
+    "address": "316 W 2nd St, Los Angeles, CA 90012",
+    "coordinates": null,
+    "hours": [
+      {
+        "days": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "start": "15:00",
+        "end": "20:00",
+        "id": "guide-0",
+        "sourceId": "guide",
+        "status": "secondary",
+        "restriction": "none"
+      }
+    ],
+    "menu": [],
+    "foodTags": [],
+    "drinkTags": [],
+    "atmosphereTags": [],
+    "legacyEstimateCents": 1800,
+    "sources": [
+      {
+        "id": "guide",
+        "url": "https://downtownla.com/explore/dining-and-drinks/happy-hour-finder",
+        "type": "secondary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "note": "Guide listing: Mon-Fri 3-8pm. Drink Specials: $2 PBR; $3 Budweiser, Bud Light, $1 off draft beers, Well drinks; Food specials"
+      }
+    ],
+    "notes": "Original estimate is not a supported combo price. Historical vibe and reputation values are not current verified facts."
+  },
+  {
+    "id": "resident",
+    "name": "Resident",
+    "neighborhood": "Arts District",
+    "address": "428 South Hewitt Street, Los Angeles, CA 90013",
+    "coordinates": null,
+    "hours": [
+      {
+        "days": [
+          "Thursday",
+          "Friday",
+          "Saturday",
+          "Sunday"
+        ],
+        "start": "12:00",
+        "end": "19:00",
+        "id": "guide-0",
+        "sourceId": "guide",
+        "status": "secondary",
+        "restriction": "none"
+      }
+    ],
+    "menu": [],
+    "foodTags": [],
+    "drinkTags": [],
+    "atmosphereTags": [],
+    "legacyEstimateCents": 1800,
+    "sources": [
+      {
+        "id": "guide",
+        "url": "https://downtownla.com/explore/dining-and-drinks/happy-hour-finder",
+        "type": "secondary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "note": "Guide listing: Thur-Sun: 12-7pm. $10 aperol spritz"
+      }
+    ],
+    "notes": "Original estimate is not a supported combo price. Historical vibe and reputation values are not current verified facts."
+  },
+  {
+    "id": "rossoblu",
+    "name": "Rossoblu",
+    "neighborhood": "Fashion District",
+    "address": "1124 San Julian St, Los Angeles, CA 90015",
+    "coordinates": null,
+    "hours": [
+      {
+        "id": "wed",
+        "days": [
+          "Wednesday"
+        ],
+        "start": "17:00",
+        "end": "21:00",
+        "sourceId": "official",
+        "status": "primary",
+        "restriction": "bar-only"
+      },
+      {
+        "id": "evening",
+        "days": [
+          "Thursday",
+          "Friday",
+          "Saturday",
+          "Sunday"
+        ],
+        "start": "17:00",
+        "end": "18:00",
+        "sourceId": "official",
+        "status": "primary",
+        "restriction": "bar-only"
+      }
+    ],
+    "menu": [
+      {
+        "id": "fries",
+        "name": "Apennine fries",
+        "kind": "food",
+        "priceCents": 800,
+        "tags": [
+          "fries"
+        ],
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "id": "fritto",
+        "name": "Seafood fritto misto",
+        "kind": "food",
+        "priceCents": 1200,
+        "tags": [
+          "seafood"
+        ],
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "id": "beer",
+        "name": "Happy-hour beer",
+        "kind": "drink",
+        "priceCents": 700,
+        "tags": [
+          "beer"
+        ],
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "id": "wine",
+        "name": "House wine",
+        "kind": "drink",
+        "priceCents": 1200,
+        "tags": [
+          "wine"
+        ],
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "id": "spritz",
+        "name": "Aperol spritz",
+        "kind": "drink",
+        "priceCents": 1200,
+        "tags": [
+          "spritz",
+          "cocktail"
+        ],
+        "sourceId": "official",
+        "status": "primary"
+      }
+    ],
+    "foodTags": [
+      "seafood",
+      "fries"
+    ],
+    "drinkTags": [
+      "beer",
+      "wine",
+      "spritz",
+      "cocktail"
+    ],
+    "atmosphereTags": [
+      "date-night"
+    ],
+    "legacyEstimateCents": 3200,
+    "sources": [
+      {
+        "id": "official",
+        "url": "https://www.rossoblula.com/pizza-happy-hour",
+        "type": "primary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "note": "Official bar-only menu: Wednesday all operating hours (5-9 PM listed on same page); Thursday-Sunday 5-6 PM. Exact bar-bite and drink prices. Atmosphere is editorial."
+      }
+    ],
+    "notes": "At the bar only. Closed Monday/Tuesday. No pizza combo is inferred from the URL or old guide."
+  },
+  {
+    "id": "shekarchi-bar-grill",
+    "name": "Shekarchi Bar & Grill",
+    "neighborhood": "South Park",
+    "address": "920 S Olive St, Los Angeles, CA 90015",
+    "coordinates": null,
+    "hours": [
+      {
+        "days": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday"
+        ],
+        "start": "15:00",
+        "end": "19:00",
+        "id": "guide-0",
+        "sourceId": "guide",
+        "status": "secondary",
+        "restriction": "none"
+      }
+    ],
+    "menu": [],
+    "foodTags": [],
+    "drinkTags": [],
+    "atmosphereTags": [],
+    "legacyEstimateCents": 2500,
+    "sources": [
+      {
+        "id": "guide",
+        "url": "https://downtownla.com/explore/dining-and-drinks/happy-hour-finder",
+        "type": "secondary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "note": "Guide listing: Mon-Sat 3-7pm. $10-12 cocktails; $5 beers"
+      }
+    ],
+    "notes": "Original estimate is not a supported combo price. Historical vibe and reputation values are not current verified facts."
+  },
+  {
+    "id": "sol-agave",
+    "name": "Sol Agave",
+    "neighborhood": "South Park",
+    "address": "800 W Olympic Blvd, Los Angeles, CA 90015",
+    "coordinates": null,
+    "hours": [
+      {
+        "days": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+          "Sunday"
+        ],
+        "start": "14:00",
+        "end": "18:00",
+        "id": "guide-0",
+        "sourceId": "guide",
+        "status": "secondary",
+        "restriction": "none"
+      }
+    ],
+    "menu": [],
+    "foodTags": [],
+    "drinkTags": [],
+    "atmosphereTags": [],
+    "legacyEstimateCents": 2700,
+    "sources": [
+      {
+        "id": "guide",
+        "url": "https://downtownla.com/explore/dining-and-drinks/happy-hour-finder",
+        "type": "secondary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "note": "Guide listing: Daily 2-6pm. Daily specials"
+      }
+    ],
+    "notes": "Original estimate is not a supported combo price. Historical vibe and reputation values are not current verified facts."
+  },
+  {
+    "id": "tenno-sushi",
+    "name": "Tenno Sushi",
+    "neighborhood": "Little Tokyo",
+    "address": "209 S Central Ave, Los Angeles, CA 90012",
+    "coordinates": null,
+    "hours": [
+      {
+        "days": [
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "start": "16:00",
+        "end": "19:00",
+        "id": "guide-0",
+        "sourceId": "guide",
+        "status": "secondary",
+        "restriction": "none"
+      }
+    ],
+    "menu": [],
+    "foodTags": [],
+    "drinkTags": [],
+    "atmosphereTags": [],
+    "legacyEstimateCents": 2600,
+    "sources": [
+      {
+        "id": "guide",
+        "url": "https://downtownla.com/explore/dining-and-drinks/happy-hour-finder",
+        "type": "secondary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "note": "Guide listing: Tues-Fri 4-7pm. Try our wonderful happy hour menu! Discounted handrolls, snacks, beers, and sakes"
+      }
+    ],
+    "notes": "Original estimate is not a supported combo price. Historical vibe and reputation values are not current verified facts."
+  },
+  {
+    "id": "the-mermaid",
+    "name": "The Mermaid",
+    "neighborhood": "Little Tokyo",
+    "address": "428 E 2nd St, Los Angeles, CA 90012",
+    "coordinates": null,
+    "hours": [
+      {
+        "days": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "start": "17:00",
+        "end": "20:00",
+        "id": "guide-0",
+        "sourceId": "guide",
+        "status": "secondary",
+        "restriction": "none"
+      },
+      {
+        "days": [
+          "Saturday"
+        ],
+        "start": "15:00",
+        "end": "18:00",
+        "id": "guide-1",
+        "sourceId": "guide",
+        "status": "secondary",
+        "restriction": "none"
+      },
+      {
+        "days": [
+          "Sunday"
+        ],
+        "start": "12:00",
+        "end": "23:00",
+        "id": "guide-2",
+        "sourceId": "guide",
+        "status": "secondary",
+        "restriction": "none"
+      }
+    ],
+    "menu": [],
+    "foodTags": [],
+    "drinkTags": [],
+    "atmosphereTags": [],
+    "legacyEstimateCents": 2400,
+    "sources": [
+      {
+        "id": "guide",
+        "url": "https://downtownla.com/explore/dining-and-drinks/happy-hour-finder",
+        "type": "secondary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "note": "Guide listing: Mon-Fri 5-8pm; Sat 3-6pm; Sun All-day. $2 off snacks"
+      }
+    ],
+    "notes": "Original estimate is not a supported combo price. Historical vibe and reputation values are not current verified facts."
+  },
+  {
+    "id": "the-palm-l-a-downtown",
+    "name": "The Palm - L.A. Downtown",
+    "neighborhood": "South Park",
+    "address": "1100 Flower St, Los Angeles, CA 90015",
+    "coordinates": null,
+    "hours": [
+      {
+        "days": [
+          "Sunday",
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "start": "16:00",
+        "end": "18:30",
+        "id": "guide-0",
+        "sourceId": "guide",
+        "status": "secondary",
+        "restriction": "none"
+      }
+    ],
+    "menu": [],
+    "foodTags": [],
+    "drinkTags": [],
+    "atmosphereTags": [],
+    "legacyEstimateCents": 3500,
+    "sources": [
+      {
+        "id": "guide",
+        "url": "https://downtownla.com/explore/dining-and-drinks/happy-hour-finder",
+        "type": "secondary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "note": "Guide listing: Sun-Fri: 4-6:30pm. Special prices for bites and cocktails"
+      }
+    ],
+    "notes": "Original estimate is not a supported combo price. Historical vibe and reputation values are not current verified facts."
+  },
+  {
+    "id": "the-rooftop-at-the-wayfarer-downtown-la",
+    "name": "The Rooftop at The Wayfarer Downtown LA",
+    "neighborhood": "South Park",
+    "address": "813 Flower St, Los Angeles, CA 90017",
+    "coordinates": null,
+    "hours": [
+      {
+        "days": [
+          "Thursday",
+          "Friday"
+        ],
+        "start": "16:00",
+        "end": "18:00",
+        "id": "guide-0",
+        "sourceId": "guide",
+        "status": "secondary",
+        "restriction": "none"
+      }
+    ],
+    "menu": [],
+    "foodTags": [],
+    "drinkTags": [],
+    "atmosphereTags": [],
+    "legacyEstimateCents": 3000,
+    "sources": [
+      {
+        "id": "guide",
+        "url": "https://downtownla.com/explore/dining-and-drinks/happy-hour-finder",
+        "type": "secondary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "note": "Guide listing: Thur-Fri: 4-6pm. You know the drill— Happy Hour is a lifestyle. We've got food and drink specials from 4-6pm every Thursday and Friday"
+      }
+    ],
+    "notes": "Original estimate is not a supported combo price. Historical vibe and reputation values are not current verified facts."
+  },
+  {
+    "id": "wax-on-hi-fi",
+    "name": "WAX ON HI-FI",
+    "neighborhood": "Historic Core",
+    "address": "212 W 5th St, Los Angeles, CA 90013, USA",
+    "coordinates": null,
+    "hours": [
+      {
+        "days": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday"
+        ],
+        "start": "17:00",
+        "end": "20:00",
+        "id": "guide-0",
+        "sourceId": "guide",
+        "status": "secondary",
+        "restriction": "none"
+      }
+    ],
+    "menu": [],
+    "foodTags": [],
+    "drinkTags": [],
+    "atmosphereTags": [],
+    "legacyEstimateCents": 2600,
+    "sources": [
+      {
+        "id": "guide",
+        "url": "https://downtownla.com/explore/dining-and-drinks/happy-hour-finder",
+        "type": "secondary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "note": "Guide listing: Mon-Sat 5-8pm. Condensed menu of heavy hitters and drink specials"
+      }
+    ],
+    "notes": "Original estimate is not a supported combo price. Historical vibe and reputation values are not current verified facts."
+  },
+  {
+    "id": "wokcano",
+    "name": "Wokcano",
+    "neighborhood": "Financial District",
+    "address": "800 W 7th St, Los Angeles, CA 90017",
+    "coordinates": null,
+    "hours": [
+      {
+        "days": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+          "Sunday"
+        ],
+        "start": "15:00",
+        "end": "19:00",
+        "id": "guide-0",
+        "sourceId": "guide",
+        "status": "secondary",
+        "restriction": "none"
+      }
+    ],
+    "menu": [],
+    "foodTags": [],
+    "drinkTags": [],
+    "atmosphereTags": [],
+    "legacyEstimateCents": 2300,
+    "sources": [
+      {
+        "id": "guide",
+        "url": "https://downtownla.com/explore/dining-and-drinks/happy-hour-finder",
+        "type": "secondary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "note": "Guide listing: Daily 3-7pm. $7 beer, wine, and cocktails; $5 sake"
+      }
+    ],
+    "notes": "Original estimate is not a supported combo price. Historical vibe and reputation values are not current verified facts."
+  },
+  {
+    "id": "wolf-crane-bar",
+    "name": "Wolf & Crane Bar",
+    "neighborhood": "Little Tokyo",
+    "address": "366 E 2nd St, Los Angeles, CA 90012",
+    "coordinates": null,
+    "hours": [
+      {
+        "days": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "start": "17:00",
+        "end": "19:00",
+        "id": "guide-0",
+        "sourceId": "guide",
+        "status": "secondary",
+        "restriction": "none"
+      }
+    ],
+    "menu": [],
+    "foodTags": [],
+    "drinkTags": [],
+    "atmosphereTags": [],
+    "legacyEstimateCents": 2200,
+    "sources": [
+      {
+        "id": "guide",
+        "url": "https://downtownla.com/explore/dining-and-drinks/happy-hour-finder",
+        "type": "secondary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "note": "Guide listing: Mon - Fri: 5–7 PM. The bar offers happy hour drinks, beer, wine, cocktails, hard liquor, and sake"
+      }
+    ],
+    "notes": "Original estimate is not a supported combo price. Historical vibe and reputation values are not current verified facts."
+  },
+  {
+    "id": "yuko-kitchen-dtla",
+    "name": "Yuko Kitchen DTLA",
+    "neighborhood": "Historic Core",
+    "address": "101 W 5th St, Los Angeles, CA 90013",
+    "coordinates": null,
+    "hours": [
+      {
+        "days": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday"
+        ],
+        "start": "16:00",
+        "end": "19:00",
+        "id": "guide-0",
+        "sourceId": "guide",
+        "status": "secondary",
+        "restriction": "none"
+      }
+    ],
+    "menu": [],
+    "foodTags": [],
+    "drinkTags": [],
+    "atmosphereTags": [],
+    "legacyEstimateCents": 2000,
+    "sources": [
+      {
+        "id": "guide",
+        "url": "https://downtownla.com/explore/dining-and-drinks/happy-hour-finder",
+        "type": "secondary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "note": "Guide listing: Mon-Sat 4-7pm. Discounted sake and snacks"
+      }
+    ],
+    "notes": "Original estimate is not a supported combo price. Historical vibe and reputation values are not current verified facts."
+  },
+  {
+    "id": "far-bar",
+    "name": "Far Bar",
+    "neighborhood": "Little Tokyo",
+    "address": "347 E 1st St, Los Angeles, CA 90012",
+    "coordinates": null,
+    "hours": [
+      {
+        "id": "monday",
+        "days": [
+          "Monday"
+        ],
+        "start": "15:00",
+        "end": "23:00",
+        "sourceId": "official",
+        "status": "primary",
+        "restriction": "none"
+      },
+      {
+        "id": "weekday",
+        "days": [
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "start": "15:00",
+        "end": "20:00",
+        "sourceId": "official",
+        "status": "primary",
+        "restriction": "none"
+      }
+    ],
+    "menu": [],
+    "foodTags": [],
+    "drinkTags": [],
+    "atmosphereTags": [],
+    "legacyEstimateCents": 2100,
+    "sources": [
+      {
+        "id": "official",
+        "url": "https://www.farbarla.com/take-out-menu-1",
+        "type": "primary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "note": "Official footer supports location, Monday 3-11 PM, Tuesday-Friday 3-8 PM. Embedded menu images not reviewed, so no prices inferred."
+      }
+    ],
+    "notes": "Sunday all-day extension not assigned guessed hours. Menu item prices are unverified; large-party gratuity may apply."
+  },
+  {
+    "id": "district-restaurant",
+    "name": "District Restaurant",
+    "neighborhood": "Financial District",
+    "address": "700 W 7th St, Los Angeles, CA 90017",
+    "coordinates": null,
+    "hours": [
+      {
+        "days": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+          "Sunday"
+        ],
+        "start": "15:00",
+        "end": "19:00",
+        "id": "guide-0",
+        "sourceId": "guide",
+        "status": "secondary",
+        "restriction": "none"
+      }
+    ],
+    "menu": [],
+    "foodTags": [],
+    "drinkTags": [],
+    "atmosphereTags": [],
+    "legacyEstimateCents": 2400,
+    "sources": [
+      {
+        "id": "guide",
+        "url": "https://downtownla.com/explore/dining-and-drinks/happy-hour-finder",
+        "type": "secondary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "note": "Guide listing: Daily 3–7pm. Daily happy hour with good times and discounts"
+      }
+    ],
+    "notes": "Original estimate is not a supported combo price. Historical vibe and reputation values are not current verified facts."
+  },
+  {
+    "id": "broken-shaker-dtla",
+    "name": "Broken Shaker DTLA",
+    "neighborhood": "Downtown",
+    "address": "416 W 8th St, Los Angeles, CA 90014",
+    "coordinates": null,
+    "hours": [
+      {
+        "days": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday"
+        ],
+        "start": "16:00",
+        "end": "19:00",
+        "id": "guide-0",
+        "sourceId": "guide",
+        "status": "secondary",
+        "restriction": "none"
+      }
+    ],
+    "menu": [],
+    "foodTags": [],
+    "drinkTags": [],
+    "atmosphereTags": [],
+    "legacyEstimateCents": 2900,
+    "sources": [
+      {
+        "id": "guide",
+        "url": "https://dtlahappy.com/",
+        "type": "secondary",
+        "accessedOn": null,
+        "reviewedOn": null,
+        "note": "Original guide record retained; current listing not independently reviewed."
+      }
+    ],
+    "notes": "Original estimate is not a supported combo price. Historical vibe and reputation values are not current verified facts."
+  }
+]

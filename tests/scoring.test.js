@@ -4,9 +4,9 @@ import {
   isHappyHourActive,
   rankRestaurants,
   scoreRestaurant,
-} from "../src/scoring.js";
-import { restaurants } from "../src/data.js";
-import { budgetOptions, searchPresets } from "../src/presets.js";
+} from "../evaluation/baseline/scoring.js";
+import { restaurants } from "../evaluation/baseline/data.js";
+import { budgetOptions, searchPresets } from "../evaluation/baseline/presets.js";
 
 const baseRequest = {
   location: "Downtown LA",

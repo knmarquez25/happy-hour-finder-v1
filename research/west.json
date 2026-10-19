@@ -1,0 +1,391 @@
+[
+  {
+    "id": "casa-martin-ocean-avenue",
+    "name": "Casa Martin - Ocean Avenue",
+    "neighborhood": "Santa Monica",
+    "address": "1654 Ocean Avenue, Santa Monica, CA 90401",
+    "coordinates": null,
+    "hours": [{"days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "start": "15:00", "end": "18:00", "sourceId": "menu", "status": "primary", "restriction": "conditional"}],
+    "menu": [
+      {"id": "food-1", "name": "Two steak tacos", "kind": "food", "priceCents": 800, "tags": ["tacos"], "sourceId": "menu", "status": "primary"},
+      {"id": "drink-1", "name": "Red sangria", "kind": "drink", "priceCents": 600, "tags": ["sangria"], "sourceId": "menu", "status": "primary"}
+    ],
+    "foodTags": ["tacos"], "drinkTags": ["sangria"], "atmosphereTags": [],
+    "sources": [
+      {"id": "official", "url": "https://www.casamartinsm.com/menu/", "type": "primary", "accessedOn": "2026-10-19", "reviewedOn": "2026-10-19", "note": "Lists this address and weekday schedule; explicitly links the same happy-hour PDF for both Santa Monica branches."},
+      {"id": "menu", "url": "https://www.casamartinsm.com/wp-content/uploads/2020/04/Happy-Hour-Menu.pdf", "type": "primary", "accessedOn": "2026-10-19", "reviewedOn": "2026-10-19", "note": "Linked menu supplies exact prices and excludes holidays and special events. Old upload path; no current publication date supplied."}
+    ],
+    "notes": "Holidays and special events excluded. Official sources say 18:00 end; tourism guide says 18:30 and different sangria pricing. Official evidence retained. Taco price is for two, not each."
+  },
+  {
+    "id": "casa-martin-third-street-promenade",
+    "name": "Casa Martin - Third Street Promenade",
+    "neighborhood": "Santa Monica",
+    "address": "1251 Third Street Promenade, Santa Monica, CA 90401",
+    "coordinates": null,
+    "hours": [{"days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "start": "15:00", "end": "18:00", "sourceId": "menu", "status": "primary", "restriction": "conditional"}],
+    "menu": [
+      {"id": "food-1", "name": "Two chicken tacos", "kind": "food", "priceCents": 800, "tags": ["tacos"], "sourceId": "menu", "status": "primary"},
+      {"id": "drink-1", "name": "Red sangria", "kind": "drink", "priceCents": 600, "tags": ["sangria"], "sourceId": "menu", "status": "primary"}
+    ],
+    "foodTags": ["tacos"], "drinkTags": ["sangria"], "atmosphereTags": [],
+    "sources": [
+      {"id": "official", "url": "https://www.casamartinsm.com/menu/", "type": "primary", "accessedOn": "2026-10-19", "reviewedOn": "2026-10-19", "note": "Separately identifies Promenade address, hours, and its link to the shared happy-hour PDF."},
+      {"id": "menu", "url": "https://www.casamartinsm.com/wp-content/uploads/2020/04/Happy-Hour-Menu.pdf", "type": "primary", "accessedOn": "2026-10-19", "reviewedOn": "2026-10-19", "note": "Exact food/drink prices; excludes holidays and special events. Older upload remains linked by this branch."}
+    ],
+    "notes": "Distinct physical location from Ocean Avenue. Holidays and special events excluded. Tourism guide's longer weekday window and Sunday offer were not imported. Taco price covers two."
+  },
+  {
+    "id": "culver-hotel-bar-restaurant",
+    "name": "The Culver Hotel Bar & Restaurant",
+    "neighborhood": "Culver City",
+    "address": "9400 Culver Boulevard, Culver City, CA 90232",
+    "coordinates": null,
+    "hours": [{"days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "start": "15:00", "end": "17:00", "sourceId": "menu", "status": "conflicting", "restriction": "none"}],
+    "menu": [
+      {"id": "food-1", "name": "Parmesan fries", "kind": "food", "priceCents": 800, "tags": ["fries"], "sourceId": "menu", "status": "primary"},
+      {"id": "drink-1", "name": "Draft beer", "kind": "drink", "priceCents": 500, "tags": ["beer"], "sourceId": "menu", "status": "primary"}
+    ],
+    "foodTags": ["fries"], "drinkTags": ["beer"], "atmosphereTags": [],
+    "sources": [
+      {"id": "menu", "url": "https://www.culverhotel.com/menus", "type": "primary", "accessedOn": "2026-10-19", "reviewedOn": "2026-10-19", "note": "Harry's Hour section lists weekdays 15:00-17:00, priced human food and drinks, and street address."},
+      {"id": "dining", "url": "https://www.culverhotel.com/downtown-culver-city-restaurants", "type": "primary", "accessedOn": "2026-10-19", "reviewedOn": "2026-10-19", "note": "Dining page repeatedly gives weekdays 15:00-18:00, contradicting the menu's end time."}
+    ],
+    "notes": "Unresolved official schedule conflict: menu ends 17:00, dining page 18:00. Encoded menu window is conflicting, not a verified live schedule. Pet-treat board deliberately excluded from food items."
+  },
+  {
+    "id": "public-school-310-culver-city",
+    "name": "Public School 310",
+    "neighborhood": "Culver City",
+    "address": "9411 Culver Boulevard, Culver City, CA 90232",
+    "coordinates": null,
+    "hours": [{"days": ["Thursday", "Friday"], "start": "15:00", "end": "18:00", "sourceId": "official", "status": "primary", "restriction": "bar-only"}],
+    "menu": [
+      {"id": "food-1", "name": "Garlic fries", "kind": "food", "priceCents": 900, "tags": ["fries"], "sourceId": "official", "status": "primary"},
+      {"id": "drink-1", "name": "Red sangria", "kind": "drink", "priceCents": 800, "tags": ["sangria"], "sourceId": "official", "status": "primary"}
+    ],
+    "foodTags": ["fries"], "drinkTags": ["sangria"], "atmosphereTags": [],
+    "sources": [{"id": "official", "url": "https://www.psontap.com/ps-310", "type": "primary", "accessedOn": "2026-10-19", "reviewedOn": "2026-10-19", "note": "Branch page contains address and priced Recess menu. Top announcement and lower schedule disagree on all-day days and late-night start; both explicitly support Thursday/Friday 15:00-18:00."}],
+    "notes": "Only the mutually consistent Thursday/Friday window retained. Top: Monday all day, Tuesday-Friday 15:00-18:00, late 21:00-close. Lower page: Sunday-Wednesday all day, Thursday-Saturday 15:00-18:00, late 20:00-close; another block omits Saturday. Malformed 11am late-night end not used. Bar-only per announcement."
+  },
+  {
+    "id": "the-galley-santa-monica",
+    "name": "The Galley",
+    "neighborhood": "Santa Monica",
+    "address": "2442 Main Street, Santa Monica, CA 90405",
+    "coordinates": null,
+    "hours": [{"days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], "start": "17:00", "end": "19:00", "sourceId": "official", "status": "primary", "restriction": "conditional"}],
+    "menu": [], "foodTags": [], "drinkTags": [], "atmosphereTags": [],
+    "sources": [
+      {"id": "official", "url": "https://www.thegalleyrestaurant.net/", "type": "primary", "accessedOn": "2026-10-19", "reviewedOn": "2026-10-19", "note": "Address and daily happy hour; explicitly limited to bar and front patio."},
+      {"id": "menu", "url": "https://www.thegalleyrestaurant.net/our-menu/", "type": "primary", "accessedOn": "2026-10-19", "reviewedOn": "2026-10-19", "note": "Inspected menu repeats schedule but does not clearly identify per-item happy-hour prices; regular items not imported."}
+    ],
+    "notes": "Bar and front patio only. Tourism guide prices were not treated as official menu evidence; item arrays left empty."
+  },
+  {
+    "id": "dear-janes-marina-del-rey",
+    "name": "Dear Jane's",
+    "neighborhood": "Marina del Rey",
+    "address": "13950 Panay Way, Marina del Rey, CA 90292",
+    "coordinates": null,
+    "hours": [{"days": ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"], "start": "17:30", "end": "19:00", "sourceId": "official", "status": "primary", "restriction": "bar-only"}],
+    "menu": [], "foodTags": [], "drinkTags": [], "atmosphereTags": [],
+    "sources": [
+      {"id": "official", "url": "https://www.dearjanesla.com/", "type": "primary", "accessedOn": "2026-10-19", "reviewedOn": "2026-10-19", "note": "Address and consistent Tuesday-Saturday times. Body permits bar and weather-dependent patio; footer says bar only. No priced happy-hour items established."},
+      {"id": "unavailable-menu", "url": "https://www.dearjanesla.com/menus", "type": "primary", "accessedOn": "2026-10-19", "reviewedOn": null, "note": "Open returned internal error; content unreviewed and unused."}
+    ],
+    "notes": "Bar eligibility is supported by both official blocks. Patio eligibility conflicts with bar-only footer; confirm directly. Closed Sunday/Monday. Homepage cocktail descriptions were not silently reused as happy-hour items."
+  },
+  {
+    "id": "salt-marina-del-rey-hotel",
+    "name": "SALT Restaurant & Bar",
+    "neighborhood": "Marina del Rey",
+    "address": "13534 Bali Way, Marina del Rey, CA 90292",
+    "coordinates": null,
+    "hours": [{"days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"], "start": "16:00", "end": "18:30", "sourceId": "hotel", "status": "primary", "restriction": "conditional"}],
+    "menu": [], "foodTags": [], "drinkTags": [], "atmosphereTags": [],
+    "sources": [
+      {"id": "hotel", "url": "https://www.marinadelreyhotel.com/dining-overview/", "type": "primary", "accessedOn": "2026-10-19", "reviewedOn": "2026-10-19", "note": "SALT Sunset Hour 16:00-18:30 Monday-Saturday; 20% off bar bites and $2 off lounge drinks. Footer supplies hotel address. Separate Del Rey Lounge extended window begins 14:00."},
+      {"id": "restaurant", "url": "https://www.saltmdr.com/", "type": "primary", "accessedOn": "2026-10-19", "reviewedOn": "2026-10-19", "note": "Restaurant identity and Bali Way waterfront location inspected; no exact discounted per-item amounts established."}
+    ],
+    "notes": "Applies to bar bites/lounge drinks. Do not interpret percentage or dollar-off offers as exact prices. Separate Del Rey Lounge 14:00 start not merged into SALT or counted as a second location."
+  },
+  {
+    "id": "simonette-culver-city",
+    "name": "Simonette",
+    "neighborhood": "Culver City",
+    "address": "3927 Van Buren Place, Culver City, CA 90232",
+    "coordinates": null,
+    "hours": [{"days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], "start": "15:00", "end": "18:00", "sourceId": "official", "status": "primary", "restriction": "none"}],
+    "menu": [
+      {"id": "food-1", "name": "Burger Parisienne", "kind": "food", "priceCents": 1000, "tags": ["burger"], "sourceId": "menu", "status": "primary"},
+      {"id": "drink-1", "name": "Lager", "kind": "drink", "priceCents": 400, "tags": ["beer"], "sourceId": "menu", "status": "primary"}
+    ],
+    "foodTags": ["burger"], "drinkTags": ["beer"], "atmosphereTags": [],
+    "sources": [
+      {"id": "official", "url": "https://www.simonetterestaurant.com/", "type": "primary", "accessedOn": "2026-10-19", "reviewedOn": "2026-10-19", "note": "Full address and daily hours; advertises half-price burgers, $8 wine and $12 cocktail of the day."},
+      {"id": "happenings", "url": "https://www.simonetterestaurant.com/weekly-happenings", "type": "primary", "accessedOn": "2026-10-19", "reviewedOn": "2026-10-19", "note": "Daily happy hour confirms $4 beer and 15:00-18:00."},
+      {"id": "menu", "url": "https://static1.squarespace.com/static/5be5da0d25bf029c9c2ed22d/t/68dff694936382200281ca21/1759508116611/Simonette_HappyHour_9.25.25_web.pdf", "type": "primary", "accessedOn": "2026-10-19", "reviewedOn": "2026-10-19", "note": "Directly read branded happy-hour PDF hosted under the same Squarespace site ID as official homepage images. Exact burger and lager prices. Filename dated 2025; found through search, not a current homepage PDF link."}
+    ],
+    "notes": "Exact burger amount comes from older official-hosted menu; current homepage confirms the burger promotion but not its dollar amount. Reconfirm food price before travel. No price calculated from a percentage."
+  },
+  {
+    "id": "stk-los-angeles-westwood",
+    "name": "STK Los Angeles",
+    "neighborhood": "Westwood",
+    "address": "1100 Glendon Avenue, Los Angeles, CA 90024",
+    "coordinates": null,
+    "hours": [
+      {"days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "start": "14:30", "end": "18:30", "sourceId": "official", "status": "primary", "restriction": "none"},
+      {"days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Sunday"], "start": "22:00", "end": "23:00", "sourceId": "official", "status": "primary", "restriction": "none"}
+    ],
+    "menu": [], "foodTags": [], "drinkTags": [], "atmosphereTags": [],
+    "sources": [
+      {"id": "official", "url": "https://stksteakhouse.com/en-us/location/los-angeles/", "type": "primary", "accessedOn": "2026-10-19", "reviewedOn": "2026-10-19", "note": "Current Westwood branch address and menu-link schedule. Advertises $3/$6/$9 tiers without assigning an inspected item to a tier."},
+      {"id": "menu", "url": "https://stksteakhouse.com/en-us/location/los-angeles/menu/?menu=Happy-Hour-Menu", "type": "primary", "accessedOn": "2026-10-19", "reviewedOn": "2026-10-19", "note": "Page opened but returned menu headings without readable item/pricing content. No item prices inferred from tiers."}
+    ],
+    "notes": "Uses current Glendon Avenue branch, not former W hotel address. No regular steak or cocktail prices imported."
+  },
+  {
+    "id": "ospi-venice",
+    "name": "Ospi Venice",
+    "neighborhood": "Venice",
+    "address": "2025 Pacific Avenue, Venice, CA 90291",
+    "coordinates": null,
+    "hours": [{"days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], "start": "15:00", "end": "18:00", "sourceId": "official", "status": "primary", "restriction": "none"}],
+    "menu": [
+      {"id": "food-1", "name": "Crispy provolone", "kind": "food", "priceCents": 1400, "tags": ["cheese"], "sourceId": "menu", "status": "primary"},
+      {"id": "drink-1", "name": "Espresso martini", "kind": "drink", "priceCents": 1400, "tags": ["espresso-martini"], "sourceId": "menu", "status": "primary"}
+    ],
+    "foodTags": ["cheese"], "drinkTags": ["espresso-martini"], "atmosphereTags": [],
+    "sources": [
+      {"id": "official", "url": "https://ospi.com/venice", "type": "primary", "accessedOn": "2026-10-19", "reviewedOn": "2026-10-19", "note": "Venice address, daily Aperitivo schedule and direct link to current branch PDF. Parking garage address is different and not used."},
+      {"id": "menu", "url": "https://firebasestorage.googleapis.com/v0/b/mmh-co.firebasestorage.app/o/ospi%2Fvenice%2Fmenus%2Fpdfs%2Fdaily%2F09-16-26-ospi-venice-aperitivo-happy-hour-menu-1791412014971.pdf?alt=media&token=c91e7cbe-73af-4215-94ec-6b8a8990b9dc", "type": "primary", "accessedOn": "2026-10-19", "reviewedOn": "2026-10-19", "note": "Officially linked Venice PDF lists item-specific Aperitivo amounts and daily 15:00-18:00."}
+    ],
+    "notes": "Cashless. Menu mentions removable surcharge, not included in item prices. Old ospi.com PDF URL returned generic site content; current Firebase PDF used instead. No Brentwood-only seating restriction transferred to Venice."
+  },
+  {
+    "id": "ospi-brentwood",
+    "name": "Ospi Brentwood",
+    "neighborhood": "Brentwood",
+    "address": "11677 San Vicente Boulevard, Suite 200, Los Angeles, CA 90049",
+    "coordinates": null,
+    "hours": [{"days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], "start": "15:00", "end": "18:00", "sourceId": "menu", "status": "primary", "restriction": "conditional"}],
+    "menu": [
+      {"id": "food-1", "name": "Margherita pizza", "kind": "food", "priceCents": 2200, "tags": ["pizza"], "sourceId": "menu", "status": "primary"},
+      {"id": "drink-1", "name": "Skyduster lager pint", "kind": "drink", "priceCents": 1000, "tags": ["beer"], "sourceId": "menu", "status": "primary"},
+      {"id": "food-2", "name": "Crispy provolone (pick-two offer)", "kind": "food", "priceCents": null, "tags": ["cheese"], "sourceId": "menu", "status": "primary"}
+    ],
+    "foodTags": ["pizza", "cheese"], "drinkTags": ["beer"], "atmosphereTags": [],
+    "sources": [
+      {"id": "official", "url": "https://ospi.com/brentwood", "type": "primary", "accessedOn": "2026-10-19", "reviewedOn": "2026-10-19", "note": "Branch address including suite; links this branch-specific Aperitivo PDF."},
+      {"id": "menu", "url": "https://firebasestorage.googleapis.com/v0/b/mmh-co.firebasestorage.app/o/ospi%2Fbrentwood%2Fmenus%2Fpdfs%2Fdaily%2F09-16-26-ospi-brentwood-aperitivo-happy-hour-menu-1791411913224.pdf?alt=media&token=9d7070d4-fede-4065-9d10-a0773f68cc1e", "type": "primary", "accessedOn": "2026-10-19", "reviewedOn": "2026-10-19", "note": "Daily 15:00-18:00 at bar/patio only. Pick two for $25 excludes beer, mini cocktail flight and pizzas; these have separately listed amounts."}
+    ],
+    "notes": "Bar and patio only; cashless. Pizza $22 and beer $10 are individually published on the happy-hour menu but excluded from pick-two-for-$25. Provolone has no individual published amount; never divide bundle price into invented item prices. Venice prices not reused."
+  },
+  {
+    "id": "roccos-tavern-westwood",
+    "name": "Rocco's Tavern - Westwood",
+    "neighborhood": "Westwood",
+    "address": "1000 Gayley Avenue, Los Angeles, CA 90024",
+    "coordinates": null,
+    "hours": [{"days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], "start": "15:00", "end": "19:00", "sourceId": "official", "status": "primary", "restriction": "none"}],
+    "menu": [], "foodTags": [], "drinkTags": [], "atmosphereTags": [],
+    "sources": [{"id": "official", "url": "https://www.roccostavern.com/locations/westwood", "type": "primary", "accessedOn": "2026-10-19", "reviewedOn": "2026-10-19", "note": "Westwood/UCLA branch page supplies full address and explicitly daily happy hour. No happy-hour-specific priced items established."}],
+    "notes": "General wings/pizza descriptions and unspecified double happy hour were not turned into food deals or a second schedule."
+  },
+  {
+    "id": "the-waterfront-venice",
+    "name": "The Waterfront",
+    "neighborhood": "Venice",
+    "address": "205 Ocean Front Walk, Venice, CA 90291",
+    "coordinates": null,
+    "hours": [
+      {"days": ["Monday", "Thursday", "Friday"], "start": "15:00", "end": "19:00", "sourceId": "official", "status": "primary", "restriction": "none"},
+      {"days": ["Saturday", "Sunday"], "start": "19:00", "end": "21:00", "sourceId": "official", "status": "conflicting", "restriction": "none"}
+    ],
+    "menu": [
+      {"id": "food-1", "name": "Cheeseburger with fries", "kind": "food", "priceCents": 1200, "tags": ["burger", "fries"], "sourceId": "official", "status": "primary"},
+      {"id": "drink-1", "name": "PBR (buy one, get one free)", "kind": "drink", "priceCents": 800, "tags": ["beer"], "sourceId": "official", "status": "primary"}
+    ],
+    "foodTags": ["burger", "fries"], "drinkTags": ["beer"], "atmosphereTags": [],
+    "sources": [{"id": "official", "url": "https://www.thewaterfrontvenice.com/menus", "type": "primary", "accessedOn": "2026-10-19", "reviewedOn": "2026-10-19", "note": "Happy-hour section lists $12 food and BOGO drinks with posted purchase prices. Menu body says weekend 19:00-21:00; footer says 19:00-20:00. Footer says Tuesday/Wednesday closed."}],
+    "notes": "Weekday schedule restricted to open Monday/Thursday/Friday; Tuesday/Wednesday not included despite generic weekdays wording. Weekend end unresolved. $8 is posted PBR purchase price with second free, not an invented $4 effective per-drink price."
+  },
+  {
+    "id": "bacari-culver-city",
+    "name": "Bacari Culver City",
+    "neighborhood": "Culver City",
+    "address": "3833 Main Street, Culver City, CA 90232",
+    "coordinates": null,
+    "hours": [
+      {"days": ["Monday", "Tuesday", "Wednesday", "Thursday"], "start": "16:30", "end": "18:00", "sourceId": "official", "status": "primary", "restriction": "none"},
+      {"days": ["Friday"], "start": "15:00", "end": "18:00", "sourceId": "official", "status": "primary", "restriction": "none"}
+    ],
+    "menu": [], "foodTags": [], "drinkTags": [], "atmosphereTags": [],
+    "sources": [{"id": "official", "url": "https://www.eatwithbacari.com/culver-city", "type": "primary", "accessedOn": "2026-10-19", "reviewedOn": "2026-10-19", "note": "Culver City address and weekday happy-hour schedule. Regular dinner items present but not established as happy-hour items."}],
+    "notes": "No generic Bacari chain offer or Playa del Rey pricing transferred to this branch."
+  },
+  {
+    "id": "fig-fairmont-miramar-santa-monica",
+    "name": "FIG Restaurant",
+    "neighborhood": "Santa Monica",
+    "address": "101 Wilshire Boulevard, Santa Monica, CA 90401",
+    "coordinates": null,
+    "hours": [{"days": ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"], "start": "17:00", "end": "18:00", "sourceId": "hotel", "status": "primary", "restriction": "conditional"}],
+    "menu": [], "foodTags": [], "drinkTags": [], "atmosphereTags": [],
+    "sources": [
+      {"id": "hotel", "url": "https://www.fairmont-miramar.com/dine/fig-restaurant/", "type": "primary", "accessedOn": "2026-10-19", "reviewedOn": "2026-10-19", "note": "Full address and FIG at 5 Tuesday-Saturday. Fifty percent off the happy-hour menu, not an independently inspected set of final item prices."},
+      {"id": "faq", "url": "https://www.figsantamonica.com/faq/", "type": "primary", "accessedOn": "2026-10-19", "reviewedOn": "2026-10-19", "note": "Confirms 17:00-18:00 and 90-minute dining limit; parties of seven or more should contact restaurant."}
+    ],
+    "notes": "90-minute dining experience. No arithmetic-derived prices. Official wording limits discount to Happy Hour menu; tourism guide's broader entire-menu description not adopted."
+  },
+  {
+    "id": "hinano-cafe-venice",
+    "name": "Hinano Cafe",
+    "neighborhood": "Venice",
+    "address": "15 Washington Boulevard, Venice, CA 90292",
+    "coordinates": null,
+    "hours": [{"days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "start": "16:00", "end": "20:00", "sourceId": "official", "status": "primary", "restriction": "none"}],
+    "menu": [], "foodTags": [], "drinkTags": [], "atmosphereTags": [],
+    "sources": [
+      {"id": "official", "url": "https://www.hinanocafevenice.com/", "type": "primary", "accessedOn": "2026-10-19", "reviewedOn": "2026-10-19", "note": "Address explicitly uses Venice CA 90292; weekday happy-hour times repeated. General beer/wine and burger descriptions do not establish happy-hour-specific items."},
+      {"id": "menu", "url": "https://www.hinanocafevenice.com/menu", "type": "primary", "accessedOn": "2026-10-19", "reviewedOn": "2026-10-19", "note": "Inspected menu repeats happy-hour schedule but does not identify priced happy-hour food/drink items."}
+    ],
+    "notes": "Postal ZIP retained exactly as official address rather than assumed Venice 90291. No regular burger silently treated as a happy-hour special."
+  },
+  {
+    "id": "all-roads-pinseria-brentwood",
+    "name": "All Roads Pinseria + Enoteca",
+    "neighborhood": "Brentwood",
+    "address": "145 South Barrington Avenue, Los Angeles, CA 90049",
+    "coordinates": null,
+    "hours": [{"days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], "start": "15:30", "end": "17:30", "sourceId": "official", "status": "primary", "restriction": "none"}],
+    "menu": [], "foodTags": [], "drinkTags": [], "atmosphereTags": [],
+    "sources": [
+      {"id": "official", "url": "https://www.allroadspinseria.com/", "type": "primary", "accessedOn": "2026-10-19", "reviewedOn": "2026-10-19", "note": "Explicit daily happy-hour schedule and Brentwood identity."},
+      {"id": "contact", "url": "https://www.allroadspinseria.com/contact", "type": "primary", "accessedOn": "2026-10-19", "reviewedOn": "2026-10-19", "note": "Full Barrington Avenue address and ZIP."},
+      {"id": "menu", "url": "https://www.allroadspinseria.com/menu", "type": "primary", "accessedOn": "2026-10-19", "reviewedOn": "2026-10-19", "note": "Menu page inspected; image-based dinner/lunch menus did not establish specific happy-hour item amounts. No image transcription claimed."}
+    ],
+    "notes": "Happy-hour existence and schedule supported; item-level coverage incomplete."
+  },
+  {
+    "id": "lunetta-santa-monica",
+    "name": "Lunetta",
+    "neighborhood": "Santa Monica",
+    "address": "2424 Pico Boulevard, Santa Monica, CA 90405",
+    "coordinates": null,
+    "hours": [{"days": ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"], "start": "15:00", "end": "17:00", "sourceId": "menu", "status": "primary", "restriction": "conditional"}],
+    "menu": [
+      {"id": "food-1", "name": "Potato chips and dip", "kind": "food", "priceCents": 800, "tags": ["chips"], "sourceId": "menu", "status": "primary"},
+      {"id": "drink-1", "name": "Aperol spritz", "kind": "drink", "priceCents": 1200, "tags": ["spritz"], "sourceId": "menu", "status": "primary"}
+    ],
+    "foodTags": ["chips"], "drinkTags": ["spritz"], "atmosphereTags": [],
+    "sources": [
+      {"id": "official", "url": "https://www.lunettasm.com/restaurant_menus/", "type": "primary", "accessedOn": "2026-10-19", "reviewedOn": "2026-10-19", "note": "Golden Hour Tuesday-Saturday and direct PDF link; address shown as 2420 / 2424 Pico Boulevard, one adjoining restaurant complex."},
+      {"id": "menu", "url": "https://www.lunettasm.com/wp-content/uploads/2026/04/NEW-GH-421.pdf", "type": "primary", "accessedOn": "2026-10-19", "reviewedOn": "2026-10-19", "note": "Golden Hour PDF supplies exact food prices, $12 cocktail category including Aperol spritz, schedule and dine-in-only rule."}
+    ],
+    "notes": "Dine-in only. Uses 2424 entrance from official combined 2420/2424 listing; verify entrance during geocoding. Adjoining Lunetta All Day is not counted as another location."
+  },
+  {
+    "id": "library-alehouse-santa-monica",
+    "name": "Library Alehouse",
+    "neighborhood": "Santa Monica",
+    "address": "2911 Main Street, Santa Monica, CA 90405",
+    "coordinates": null,
+    "hours": [{"days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "start": "16:00", "end": "18:00", "sourceId": "official", "status": "primary", "restriction": "none"}],
+    "menu": [
+      {"id": "food-1", "name": "Two street tacos (chicken or steak)", "kind": "food", "priceCents": 700, "tags": ["tacos"], "sourceId": "menu-image", "status": "primary"},
+      {"id": "drink-1", "name": "Mayberry IPA", "kind": "drink", "priceCents": 700, "tags": ["beer", "ipa"], "sourceId": "menu-image", "status": "primary"}
+    ],
+    "foodTags": ["tacos"], "drinkTags": ["beer", "ipa"], "atmosphereTags": [],
+    "sources": [
+      {"id": "official", "url": "https://www.libraryalehouse.com/happy-hour", "type": "primary", "accessedOn": "2026-10-19", "reviewedOn": "2026-10-19", "note": "Weekday schedule and direct link to official happy-hour image."},
+      {"id": "address", "url": "https://www.libraryalehouse.com/", "type": "primary", "accessedOn": "2026-10-19", "reviewedOn": "2026-10-19", "note": "Full Main Street address."},
+      {"id": "menu-image", "url": "https://images.squarespace-cdn.com/content/v1/664faefda75c1706e8633fc4/216133c6-5d4b-497d-b7a5-3014f205a66d/Library%2Bdrink%2BMenu_HAPPY%2BHOUR.png", "type": "primary", "accessedOn": "2026-10-19", "reviewedOn": "2026-10-19", "note": "Direct official image visually inspected in browser screenshot. Hoppy Hour: beer category $7, two street tacos $7, Monday-Friday 16:00-18:00."}
+    ],
+    "notes": "Official image's $7 beer supersedes tourism guide's $6 select-beer claim. Taco amount covers two."
+  },
+  {
+    "id": "surfing-fox-santa-monica",
+    "name": "The Surfing Fox",
+    "neighborhood": "Santa Monica",
+    "address": "120 Colorado Avenue, Santa Monica, CA 90401",
+    "coordinates": null,
+    "hours": [{"days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "start": "15:00", "end": "18:00", "sourceId": "official", "status": "primary", "restriction": "conditional"}],
+    "menu": [
+      {"id": "food-1", "name": "Fox fries", "kind": "food", "priceCents": 500, "tags": ["fries"], "sourceId": "official", "status": "primary"},
+      {"id": "drink-1", "name": "Pacifico draft", "kind": "drink", "priceCents": 600, "tags": ["beer"], "sourceId": "official", "status": "primary"}
+    ],
+    "foodTags": ["fries"], "drinkTags": ["beer"], "atmosphereTags": [],
+    "sources": [{"id": "official", "url": "https://www.thesurfingfoxsm.com/", "type": "primary", "accessedOn": "2026-10-19", "reviewedOn": "2026-10-19", "note": "Full address and schedule. Browser selected Sunset Hour menu and directly read loaded widget: bar/patio only, Fox fries $5, Pacifico $6. Default web extraction shows all-day menu instead."}],
+    "notes": "Bar and patio seating only. Prices transcribed from selected Sunset Hour tab, not all-day menu or tourism guide."
+  },
+  {
+    "id": "la-puglia-santa-monica",
+    "name": "LA Puglia",
+    "neighborhood": "Santa Monica",
+    "address": "1621 Wilshire Boulevard, Santa Monica, CA 90403",
+    "coordinates": null,
+    "hours": [{"days": ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], "start": "14:00", "end": "17:00", "sourceId": "official", "status": "primary", "restriction": "conditional"}],
+    "menu": [
+      {"id": "food-1", "name": "Puglia pizza", "kind": "food", "priceCents": 1600, "tags": ["pizza"], "sourceId": "official", "status": "primary"},
+      {"id": "drink-1", "name": "Peroni beer", "kind": "drink", "priceCents": 800, "tags": ["beer"], "sourceId": "official", "status": "primary"}
+    ],
+    "foodTags": ["pizza"], "drinkTags": ["beer"], "atmosphereTags": [],
+    "sources": [{"id": "official", "url": "https://lapuglia.us/happy-hour", "type": "primary", "accessedOn": "2026-10-19", "reviewedOn": "2026-10-19", "note": "Lists everyday 14:00-17:00, exact happy-hour category/item prices, full address, and closed-Monday business hours on same page."}],
+    "notes": "Monday excluded because same official page says closed Mondays, despite everyday happy-hour heading. Schedule applies only on operating days. Cashless. No Monday availability claimed."
+  },
+  {
+    "id": "manchego-santa-monica",
+    "name": "Manchego",
+    "neighborhood": "Santa Monica",
+    "address": "2518 Main Street, Santa Monica, CA 90405",
+    "coordinates": null,
+    "hours": [
+      {"days": ["Tuesday", "Wednesday", "Thursday", "Friday"], "start": "17:00", "end": "18:30", "sourceId": "official", "status": "primary", "restriction": "none"},
+      {"days": ["Saturday", "Sunday"], "start": "15:00", "end": "18:30", "sourceId": "official", "status": "primary", "restriction": "none"}
+    ],
+    "menu": [
+      {"id": "food-1", "name": "Deviled eggs", "kind": "food", "priceCents": 900, "tags": ["eggs"], "sourceId": "official", "status": "primary"},
+      {"id": "drink-1", "name": "Sangria glass", "kind": "drink", "priceCents": 800, "tags": ["sangria"], "sourceId": "official", "status": "primary"}
+    ],
+    "foodTags": ["eggs"], "drinkTags": ["sangria"], "atmosphereTags": [],
+    "sources": [{"id": "official", "url": "https://www.manchegosm.com/menu", "type": "primary", "accessedOn": "2026-10-19", "reviewedOn": "2026-10-19", "note": "Explicit Happy hour section supplies separate weekday/weekend schedules, exact prices and footer address. Regular tapas and drinks appear in other sections and were not mixed in."}],
+    "notes": "Official menu retained over older third-party daily 17:00 start descriptions. No Monday window stated."
+  },
+  {
+    "id": "michaels-santa-monica",
+    "name": "Michael's Santa Monica",
+    "neighborhood": "Santa Monica",
+    "address": "1147 Third Street, Santa Monica, CA 90403",
+    "coordinates": null,
+    "hours": [{"days": ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"], "start": "16:00", "end": "18:00", "sourceId": "official", "status": "primary", "restriction": "none"}],
+    "menu": [
+      {"id": "food-1", "name": "Fries", "kind": "food", "priceCents": 700, "tags": ["fries"], "sourceId": "menu", "status": "primary"},
+      {"id": "drink-1", "name": "1979 cocktail", "kind": "drink", "priceCents": 1200, "tags": ["cocktail"], "sourceId": "menu", "status": "primary"}
+    ],
+    "foodTags": ["fries"], "drinkTags": ["cocktail"], "atmosphereTags": [],
+    "sources": [
+      {"id": "official", "url": "https://michaelssantamonica.com/", "type": "primary", "accessedOn": "2026-10-19", "reviewedOn": "2026-10-19", "note": "Explicit happy-hour hours Tuesday-Saturday; closed Sunday/Monday."},
+      {"id": "address", "url": "https://michaelssantamonica.com/contact-us/", "type": "primary", "accessedOn": "2026-10-19", "reviewedOn": "2026-10-19", "note": "1147 3rd Street, Santa Monica 90403."},
+      {"id": "menu", "url": "https://michaelssantamonica.com/adacompliant/happy-hour/", "type": "primary", "accessedOn": "2026-10-19", "reviewedOn": "2026-10-19", "note": "Official accessible happy-hour menu: fries $7 and 1979 within Cocktails $12 category."}
+    ],
+    "notes": "Santa Monica branch only, not Michael's New York. Menu's separate signature cocktails and regular wines were not imported as happy-hour discounts."
+  },
+  {
+    "id": "north-italia-santa-monica",
+    "name": "North Italia - Santa Monica",
+    "neighborhood": "Santa Monica",
+    "address": "1442 Second Street, Santa Monica, CA 90401",
+    "coordinates": null,
+    "hours": [{"days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "start": "15:00", "end": "18:00", "sourceId": "official", "status": "primary", "restriction": "bar-only"}],
+    "menu": [
+      {"id": "food-1", "name": "Cacio e pepe arancini", "kind": "food", "priceCents": 1000, "tags": ["arancini"], "sourceId": "official", "status": "primary"},
+      {"id": "drink-1", "name": "Sicilian margarita", "kind": "drink", "priceCents": 1200, "tags": ["margarita"], "sourceId": "official", "status": "primary"}
+    ],
+    "foodTags": ["arancini"], "drinkTags": ["margarita"], "atmosphereTags": [],
+    "sources": [{"id": "official", "url": "https://www.northitalia.com/locations/santa-monica-ca/?menu=happy-hour", "type": "primary", "accessedOn": "2026-10-19", "reviewedOn": "2026-10-19", "note": "Direct open of Santa Monica page supplies full address; happy-hour section says weekdays 15:00-18:00 at bar, arancini $10 and Sicilian margarita $12. Search result body showed a different older menu version, not used."}],
+    "notes": "Bar only. All-day Monday language is attached to half-off wine bottles, not applied to food/cocktail schedule. Exact amounts from directly opened page rather than differing search excerpt."
+  }
+]

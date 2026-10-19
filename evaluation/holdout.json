@@ -1,0 +1,7 @@
+[
+  {"id":"holdout-sm-friday","label":"Santa Monica Friday","originId":"santa-monica","day":"Friday","time":"16:15","maxDistance":4,"budget":28,"foodPreferences":[],"drinkPreferences":["wine"],"atmosphere":"","negative":false},
+  {"id":"holdout-pasadena","label":"Pasadena early evening","originId":"pasadena","day":"Tuesday","time":"17:15","maxDistance":4,"budget":25,"foodPreferences":[],"drinkPreferences":[],"atmosphere":"","negative":false},
+  {"id":"holdout-dtla-close","label":"DTLA at common closing boundary","originId":"dtla","day":"Thursday","time":"18:00","maxDistance":3,"budget":30,"foodPreferences":[],"drinkPreferences":[],"atmosphere":"","negative":false},
+  {"id":"holdout-hollywood","label":"Hollywood modest budget","originId":"hollywood","day":"Wednesday","time":"16:45","maxDistance":4,"budget":20,"foodPreferences":[],"drinkPreferences":[],"atmosphere":"","negative":false},
+  {"id":"holdout-dawn","label":"No happy hour at dawn outside DTLA","originId":"culver-city","day":"Sunday","time":"06:15","maxDistance":3,"budget":30,"foodPreferences":[],"drinkPreferences":[],"atmosphere":"","negative":true}
+]

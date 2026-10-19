@@ -1,0 +1,6 @@
+{
+  "ospi-brentwood":{"restriction":"bar-or-patio","note":"Original official menu notes explicitly limit seating to bar/patio. This maps to the existing opt-in, without treating cashless payment as an invented price."},
+  "the-galley-santa-monica":{"restriction":"bar-or-patio","note":"Official source notes explicitly say bar/front patio."},
+  "surfing-fox-santa-monica":{"restriction":"bar-or-patio","note":"Reviewed Sunset Hour tab explicitly restricts seating to bar/patio."},
+  "ocean-prime-beverly-hills":{"itemDays":{"food-1":["Friday"],"drink-1":["Friday"]},"itemPairs":{"food-1":["drink-1"]},"note":"Friday-only oyster price is conservatively paired only with the documented champagne promotion, not the unrelated beer; lounge restriction remains conditional."}
+}

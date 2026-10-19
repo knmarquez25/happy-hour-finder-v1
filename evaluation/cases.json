@@ -1,0 +1,17 @@
+[
+  {"id":"dtla-weekday","label":"DTLA weekday food and drink","originId":"dtla","day":"Thursday","time":"17:30","maxDistance":3,"budget":25,"foodPreferences":["seafood","tacos"],"drinkPreferences":["margarita"],"atmosphere":"lively","negative":false},
+  {"id":"arts-wine","label":"Arts District wine date","originId":"arts-district","day":"Wednesday","time":"17:15","maxDistance":3,"budget":30,"foodPreferences":[],"drinkPreferences":["wine"],"atmosphere":"date-night","negative":false},
+  {"id":"dtla-low-budget","label":"Low target does not exclude all venues","originId":"dtla","day":"Thursday","time":"16:30","maxDistance":3,"budget":10,"foodPreferences":[],"drinkPreferences":["beer"],"atmosphere":"","negative":false},
+  {"id":"dtla-tacos","label":"DTLA early tacos and margaritas","originId":"dtla","day":"Friday","time":"16:00","maxDistance":3,"budget":25,"foodPreferences":["tacos"],"drinkPreferences":["margarita"],"atmosphere":"","negative":false},
+  {"id":"dtla-weekend","label":"DTLA weekend happy hour","originId":"dtla","day":"Saturday","time":"17:15","maxDistance":3,"budget":35,"foodPreferences":[],"drinkPreferences":[],"atmosphere":"","negative":false},
+  {"id":"pasadena","label":"Pasadena weekday","originId":"pasadena","day":"Thursday","time":"16:30","maxDistance":3,"budget":25,"foodPreferences":[],"drinkPreferences":[],"atmosphere":"","negative":false},
+  {"id":"glendale","label":"Glendale weekday","originId":"glendale","day":"Wednesday","time":"17:00","maxDistance":3,"budget":30,"foodPreferences":[],"drinkPreferences":[],"atmosphere":"","negative":false},
+  {"id":"hollywood","label":"Hollywood weekday","originId":"hollywood","day":"Tuesday","time":"17:00","maxDistance":3,"budget":30,"foodPreferences":[],"drinkPreferences":[],"atmosphere":"","negative":false},
+  {"id":"culver-city","label":"Culver City weekday","originId":"culver-city","day":"Friday","time":"17:00","maxDistance":3,"budget":30,"foodPreferences":[],"drinkPreferences":[],"atmosphere":"","negative":false},
+  {"id":"santa-monica","label":"Santa Monica weekday","originId":"santa-monica","day":"Thursday","time":"17:00","maxDistance":3,"budget":30,"foodPreferences":[],"drinkPreferences":[],"atmosphere":"","negative":false},
+  {"id":"burbank","label":"Burbank weekday","originId":"burbank","day":"Thursday","time":"17:00","maxDistance":3,"budget":30,"foodPreferences":[],"drinkPreferences":[],"atmosphere":"","negative":false},
+  {"id":"early-morning","label":"No happy hour at dawn","originId":"dtla","day":"Thursday","time":"06:00","maxDistance":25,"budget":25,"foodPreferences":[],"drinkPreferences":[],"atmosphere":"","negative":true},
+  {"id":"impossible-food","label":"Unsupported required food","originId":"dtla","day":"Thursday","time":"17:30","maxDistance":25,"budget":50,"foodPreferences":["unicorn-noodle-test"],"drinkPreferences":[],"atmosphere":"","requireFood":true,"negative":true},
+  {"id":"impossible-drink","label":"Unsupported required drink","originId":"dtla","day":"Thursday","time":"17:30","maxDistance":25,"budget":50,"foodPreferences":[],"drinkPreferences":["evaluation-only-drink"],"atmosphere":"","requireDrinks":true,"negative":true},
+  {"id":"empty-area","label":"Unknown neighborhood cannot silently relax","originId":"dtla","neighborhood":"No such neighborhood","day":"Thursday","time":"17:30","maxDistance":25,"budget":25,"foodPreferences":[],"drinkPreferences":[],"atmosphere":"","negative":true}
+]

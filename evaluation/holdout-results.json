@@ -1,0 +1,434 @@
+{
+  "evaluatedOn": "2026-10-19",
+  "split": "holdout",
+  "baseline": {
+    "sha": "865f3c9b4a1ce436d56eb0ab9afbb55938c44fc8",
+    "frozenOn": "2026-10-19",
+    "note": "Unmodified original modules. Match scores are not evaluation accuracy."
+  },
+  "data": {
+    "collectedOn": "2026-10-19",
+    "target": 100,
+    "total": 100,
+    "located": 100,
+    "primaryHours": 73,
+    "primaryFoodAndDrink": 38,
+    "outsideRadius": []
+  },
+  "criterion": "At least one top-three independently labeled source-supported, within-radius food+drink pair <= target + $5 on positive cases; correct empty primary results on explicit negative controls.",
+  "budgetPolicy": "The +$5 range is an evaluation relevance label, not a filter in the app. No lower spend floor.",
+  "scores": {
+    "baseline": {
+      "total": 5,
+      "passed": 0,
+      "positiveTotal": 4,
+      "positivePassed": 0,
+      "negativeTotal": 1,
+      "negativePassed": 0,
+      "rows": [
+        {
+          "id": "holdout-sm-friday",
+          "label": "Santa Monica Friday",
+          "negative": false,
+          "returned": [
+            "propaganda-wine-bar",
+            "kombu-sushi",
+            "library-bar"
+          ],
+          "suitable": null,
+          "pass": false
+        },
+        {
+          "id": "holdout-pasadena",
+          "label": "Pasadena early evening",
+          "negative": false,
+          "returned": [
+            "the-mermaid",
+            "wolf-crane-bar",
+            "yuko-kitchen-dtla"
+          ],
+          "suitable": null,
+          "pass": false
+        },
+        {
+          "id": "holdout-dtla-close",
+          "label": "DTLA at common closing boundary",
+          "negative": false,
+          "returned": [
+            "joyce",
+            "mignon-wine-cheese-bar",
+            "propaganda-wine-bar"
+          ],
+          "suitable": null,
+          "pass": false
+        },
+        {
+          "id": "holdout-hollywood",
+          "label": "Hollywood modest budget",
+          "negative": false,
+          "returned": [
+            "yuko-kitchen-dtla",
+            "redwood-bar-grill",
+            "kombu-sushi"
+          ],
+          "suitable": null,
+          "pass": false
+        },
+        {
+          "id": "holdout-dawn",
+          "label": "No happy hour at dawn outside DTLA",
+          "negative": true,
+          "returned": [
+            "joyce",
+            "la-cha-cha-cha",
+            "mignon-wine-cheese-bar"
+          ],
+          "suitable": null,
+          "pass": false
+        }
+      ]
+    },
+    "improved": {
+      "total": 5,
+      "passed": 4,
+      "positiveTotal": 4,
+      "positivePassed": 3,
+      "negativeTotal": 1,
+      "negativePassed": 1,
+      "rows": [
+        {
+          "id": "holdout-sm-friday",
+          "label": "Santa Monica Friday",
+          "negative": false,
+          "returned": [
+            "michaels-santa-monica",
+            "library-alehouse-santa-monica",
+            "the-waterfront-venice"
+          ],
+          "suitable": "michaels-santa-monica",
+          "pass": true
+        },
+        {
+          "id": "holdout-pasadena",
+          "label": "Pasadena early evening",
+          "negative": false,
+          "returned": [
+            "green-street-restaurant-pasadena",
+            "guss-bbq-south-pasadena",
+            "foothill-restaurant-pasadena"
+          ],
+          "suitable": "green-street-restaurant-pasadena",
+          "pass": true
+        },
+        {
+          "id": "holdout-dtla-close",
+          "label": "DTLA at common closing boundary",
+          "negative": false,
+          "returned": [
+            "far-bar",
+            "le-oyster-bar-silver-lake"
+          ],
+          "suitable": null,
+          "pass": false
+        },
+        {
+          "id": "holdout-hollywood",
+          "label": "Hollywood modest budget",
+          "negative": false,
+          "returned": [
+            "iki-ramen-hollywood",
+            "formosa-cafe-west-hollywood",
+            "33-taps-silver-lake"
+          ],
+          "suitable": "iki-ramen-hollywood",
+          "pass": true
+        },
+        {
+          "id": "holdout-dawn",
+          "label": "No happy hour at dawn outside DTLA",
+          "negative": true,
+          "returned": [],
+          "suitable": null,
+          "pass": true
+        }
+      ]
+    }
+  },
+  "guardrails": {
+    "baseline": {
+      "returned": 15,
+      "requiredConstraintEvidenceFailures": 15,
+      "note": "Failed or unproven source-backed eligibility, not proof that every excluded real-world offer is false. Budget is not a required constraint."
+    },
+    "improved": {
+      "returned": 11,
+      "requiredConstraintEvidenceFailures": 0,
+      "note": "Failed or unproven source-backed eligibility, not proof that every excluded real-world offer is false. Budget is not a required constraint."
+    }
+  },
+  "raw": {
+    "baseline": {
+      "holdout-sm-friday": [
+        {
+          "id": "propaganda-wine-bar",
+          "name": "Propaganda Wine Bar",
+          "score": 90,
+          "displayedEstimate": 28,
+          "activeAccordingToOriginalData": true
+        },
+        {
+          "id": "kombu-sushi",
+          "name": "Kombu Sushi",
+          "score": 89,
+          "displayedEstimate": 22,
+          "activeAccordingToOriginalData": true
+        },
+        {
+          "id": "library-bar",
+          "name": "Library Bar",
+          "score": 89,
+          "displayedEstimate": 24,
+          "activeAccordingToOriginalData": true
+        }
+      ],
+      "holdout-pasadena": [
+        {
+          "id": "the-mermaid",
+          "name": "The Mermaid",
+          "score": 89,
+          "displayedEstimate": 24,
+          "activeAccordingToOriginalData": true
+        },
+        {
+          "id": "wolf-crane-bar",
+          "name": "Wolf & Crane Bar",
+          "score": 89,
+          "displayedEstimate": 22,
+          "activeAccordingToOriginalData": true
+        },
+        {
+          "id": "yuko-kitchen-dtla",
+          "name": "Yuko Kitchen DTLA",
+          "score": 89,
+          "displayedEstimate": 20,
+          "activeAccordingToOriginalData": true
+        }
+      ],
+      "holdout-dtla-close": [
+        {
+          "id": "joyce",
+          "name": "Joyce",
+          "score": 89,
+          "displayedEstimate": 28,
+          "activeAccordingToOriginalData": true
+        },
+        {
+          "id": "mignon-wine-cheese-bar",
+          "name": "Mignon Wine & Cheese Bar",
+          "score": 89,
+          "displayedEstimate": 24,
+          "activeAccordingToOriginalData": true
+        },
+        {
+          "id": "propaganda-wine-bar",
+          "name": "Propaganda Wine Bar",
+          "score": 89,
+          "displayedEstimate": 28,
+          "activeAccordingToOriginalData": true
+        }
+      ],
+      "holdout-hollywood": [
+        {
+          "id": "yuko-kitchen-dtla",
+          "name": "Yuko Kitchen DTLA",
+          "score": 89,
+          "displayedEstimate": 20,
+          "activeAccordingToOriginalData": true
+        },
+        {
+          "id": "redwood-bar-grill",
+          "name": "Redwood Bar & Grill",
+          "score": 88,
+          "displayedEstimate": 18,
+          "activeAccordingToOriginalData": true
+        },
+        {
+          "id": "kombu-sushi",
+          "name": "Kombu Sushi",
+          "score": 82,
+          "displayedEstimate": 22,
+          "activeAccordingToOriginalData": true
+        }
+      ],
+      "holdout-dawn": [
+        {
+          "id": "joyce",
+          "name": "Joyce",
+          "score": 70,
+          "displayedEstimate": 28,
+          "activeAccordingToOriginalData": false
+        },
+        {
+          "id": "la-cha-cha-cha",
+          "name": "LA Cha Cha Cha",
+          "score": 70,
+          "displayedEstimate": 30,
+          "activeAccordingToOriginalData": false
+        },
+        {
+          "id": "mignon-wine-cheese-bar",
+          "name": "Mignon Wine & Cheese Bar",
+          "score": 70,
+          "displayedEstimate": 24,
+          "activeAccordingToOriginalData": false
+        }
+      ]
+    },
+    "improved": {
+      "holdout-sm-friday": {
+        "primaryCount": 6,
+        "top": [
+          {
+            "id": "michaels-santa-monica",
+            "name": "Michael's Santa Monica",
+            "score": 76,
+            "totalCents": 1900,
+            "budgetDifferenceCents": -900,
+            "distanceMiles": 0.37953674434503476,
+            "requiredFailures": []
+          },
+          {
+            "id": "library-alehouse-santa-monica",
+            "name": "Library Alehouse",
+            "score": 74,
+            "totalCents": 1400,
+            "budgetDifferenceCents": -1400,
+            "distanceMiles": 1.3765142059323008,
+            "requiredFailures": []
+          },
+          {
+            "id": "the-waterfront-venice",
+            "name": "The Waterfront",
+            "score": 74,
+            "totalCents": 2000,
+            "budgetDifferenceCents": -800,
+            "distanceMiles": 1.6044927314731623,
+            "requiredFailures": []
+          }
+        ],
+        "alternativeCount": 94
+      },
+      "holdout-pasadena": {
+        "primaryCount": 7,
+        "top": [
+          {
+            "id": "green-street-restaurant-pasadena",
+            "name": "Green Street Restaurant",
+            "score": 86,
+            "totalCents": 1500,
+            "budgetDifferenceCents": -1000,
+            "distanceMiles": 0.769610658254716,
+            "requiredFailures": []
+          },
+          {
+            "id": "guss-bbq-south-pasadena",
+            "name": "Gus's BBQ South Pasadena",
+            "score": 84,
+            "totalCents": 1600,
+            "budgetDifferenceCents": -900,
+            "distanceMiles": 2.047203960979177,
+            "requiredFailures": []
+          },
+          {
+            "id": "foothill-restaurant-pasadena",
+            "name": "Foothill Restaurant",
+            "score": 83,
+            "totalCents": 1300,
+            "budgetDifferenceCents": -1200,
+            "distanceMiles": 3.0276826775167986,
+            "requiredFailures": []
+          }
+        ],
+        "alternativeCount": 93
+      },
+      "holdout-dtla-close": {
+        "primaryCount": 2,
+        "top": [
+          {
+            "id": "far-bar",
+            "name": "Far Bar",
+            "score": 66,
+            "totalCents": null,
+            "budgetDifferenceCents": null,
+            "distanceMiles": 0.881629334146081,
+            "requiredFailures": []
+          },
+          {
+            "id": "le-oyster-bar-silver-lake",
+            "name": "L&E Oyster Bar",
+            "score": 62,
+            "totalCents": null,
+            "budgetDifferenceCents": null,
+            "distanceMiles": 2.752711391393056,
+            "requiredFailures": []
+          }
+        ],
+        "alternativeCount": 98
+      },
+      "holdout-hollywood": {
+        "primaryCount": 8,
+        "top": [
+          {
+            "id": "iki-ramen-hollywood",
+            "name": "IKI Ramen + Sushi Hollywood",
+            "score": 86,
+            "totalCents": 1000,
+            "budgetDifferenceCents": -1000,
+            "distanceMiles": 0.42541982919749965,
+            "requiredFailures": []
+          },
+          {
+            "id": "formosa-cafe-west-hollywood",
+            "name": "The Formosa Cafe",
+            "score": 85,
+            "totalCents": 1500,
+            "budgetDifferenceCents": -500,
+            "distanceMiles": 1.3186736775666785,
+            "requiredFailures": []
+          },
+          {
+            "id": "33-taps-silver-lake",
+            "name": "33 Taps Silver Lake",
+            "score": 83,
+            "totalCents": 1400,
+            "budgetDifferenceCents": -600,
+            "distanceMiles": 2.8874035258062576,
+            "requiredFailures": []
+          }
+        ],
+        "alternativeCount": 92
+      },
+      "holdout-dawn": {
+        "primaryCount": 0,
+        "top": [],
+        "alternativeCount": 100
+      }
+    }
+  },
+  "hashes": {
+    "src/data.js": "a56ecb2b5de788689aba5a168a79e8f22b93b078dd53c3570570cbddb09e91ad",
+    "src/matching.js": "d656c0e712ceae6e18a1fe70161ec515d436aba1e26b77018f569d4165b3bf2b",
+    "src/locations.js": "3f370ef8c181254f1a0e97f473665fbbb6f3044c8876a4db96a4b23d2511af08",
+    "evaluation/cases.json": "103d70015c840d7d54f0f0a1701c788d4cdf343b76e39f6d40babcdc6597e1da",
+    "evaluation/holdout.json": "55f3d4e7ac43fd999cb0475218ef49c035d86cec2380951c85ea41a0716df107",
+    "evaluation/gold.json": "5c377f069c7c2fbd0fb214fd5d28d53a5d71f69b429bb7669f69d4d722338ece",
+    "evaluation/baseline/data.js": "6f4c9484450bd0f743bd5d7442c4198b94b74eac449b06bb138d027e911215f3",
+    "evaluation/baseline/scoring.js": "83e633c6d1840d5a8256707bb23fcbe65a2ffc6d9ed0ee546814add1133b915a"
+  },
+  "limitations": [
+    "Small convenience sample, not statistical evidence of citywide accuracy.",
+    "Positive cases with no evidenced acceptable venue remain failures, not automatic passes.",
+    "AI-assisted source review, not an independent human panel or in-person verification.",
+    "No fabricated intermediate legacy score: its reputation and per-person-estimate inputs are not comparable with the reviewed schema."
+  ]
+}

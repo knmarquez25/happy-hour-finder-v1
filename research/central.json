@@ -1,0 +1,1976 @@
+[
+  {
+    "id": "messhall-kitchen-los-feliz",
+    "name": "Messhall Kitchen",
+    "neighborhood": "Los Feliz",
+    "address": "4500 Los Feliz Blvd, Los Angeles, CA 90027",
+    "coordinates": null,
+    "hours": [
+      {
+        "days": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday"
+        ],
+        "start": "15:00",
+        "end": "18:00",
+        "sourceId": "official",
+        "status": "conflicting",
+        "restriction": "conditional"
+      },
+      {
+        "days": [
+          "Friday"
+        ],
+        "start": "15:00",
+        "end": "18:00",
+        "sourceId": "official",
+        "status": "primary",
+        "restriction": "none"
+      }
+    ],
+    "menu": [
+      {
+        "id": "food-1",
+        "name": "Backyard Burger",
+        "kind": "food",
+        "priceCents": 1000,
+        "tags": [
+          "burger"
+        ],
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "id": "food-2",
+        "name": "Oysters (each)",
+        "kind": "food",
+        "priceCents": 200,
+        "tags": [
+          "oysters"
+        ],
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "id": "drink-1",
+        "name": "Draft Beer",
+        "kind": "drink",
+        "priceCents": 600,
+        "tags": [
+          "beer"
+        ],
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "id": "drink-2",
+        "name": "Gimlet",
+        "kind": "drink",
+        "priceCents": 1000,
+        "tags": [
+          "cocktail"
+        ],
+        "sourceId": "official",
+        "status": "primary"
+      }
+    ],
+    "foodTags": [
+      "burger",
+      "oysters"
+    ],
+    "drinkTags": [
+      "beer",
+      "cocktail"
+    ],
+    "atmosphereTags": [],
+    "sources": [
+      {
+        "id": "official",
+        "url": "https://messhallkitchen.com/-food-menu?destination=food_menu&promotion=custom_promotion&source=header&spot_id=19529",
+        "type": "primary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "note": "Mon-Fri 3-6pm section contains these food and drink prices; oyster price is per piece."
+      },
+      {
+        "id": "official-location",
+        "url": "https://messhallkitchen.com/",
+        "type": "primary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "note": "Full address. Posted general opening is 4pm Monday-Thursday and noon Friday, conflicting with 3pm happy-hour start on Monday-Thursday."
+      }
+    ],
+    "notes": "Menu advertises 3-6pm weekdays, but homepage opens at 4pm Monday-Thursday. Those windows are conflicting; confirm before arriving at 3pm. Friday has no opening-time conflict. No guide-only all-night Monday or $1 Tuesday claims adopted."
+  },
+  {
+    "id": "formosa-cafe-west-hollywood",
+    "name": "The Formosa Cafe",
+    "neighborhood": "West Hollywood",
+    "address": "7156 Santa Monica Blvd, West Hollywood, CA 90046",
+    "coordinates": null,
+    "hours": [
+      {
+        "days": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+          "Sunday"
+        ],
+        "start": "15:00",
+        "end": "18:00",
+        "sourceId": "official",
+        "status": "primary",
+        "restriction": "none"
+      }
+    ],
+    "menu": [
+      {
+        "id": "food-1",
+        "name": "Szechuan Wings",
+        "kind": "food",
+        "priceCents": 1000,
+        "tags": [
+          "wings"
+        ],
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "id": "food-2",
+        "name": "Kung Pao Brussels Sprouts",
+        "kind": "food",
+        "priceCents": 1000,
+        "tags": [
+          "vegetables"
+        ],
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "id": "drink-1",
+        "name": "Stagecoach",
+        "kind": "drink",
+        "priceCents": 1000,
+        "tags": [
+          "cocktail"
+        ],
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "id": "drink-2",
+        "name": "Daily Beer",
+        "kind": "drink",
+        "priceCents": 500,
+        "tags": [
+          "beer"
+        ],
+        "sourceId": "official",
+        "status": "primary"
+      }
+    ],
+    "foodTags": [
+      "wings",
+      "vegetables"
+    ],
+    "drinkTags": [
+      "cocktail",
+      "beer"
+    ],
+    "atmosphereTags": [],
+    "sources": [
+      {
+        "id": "official",
+        "url": "https://theformosacafe.com/menu",
+        "type": "primary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "note": "Golden Hour daily 3-6pm; cocktails and named food plates $10, daily beer $5."
+      },
+      {
+        "id": "official-location",
+        "url": "https://theformosacafe.com/location",
+        "type": "primary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "note": "Same official page gives ZIP 90069 in its visit block but 90046 in its FAQ. Address uses FAQ ZIP; flag for Census resolution."
+      }
+    ],
+    "notes": "Official location page has an internal ZIP conflict (90069 versus 90046). Street address is consistent. Golden Hour is the published happy-hour offer."
+  },
+  {
+    "id": "laurel-hardware-west-hollywood",
+    "name": "Laurel Hardware",
+    "neighborhood": "West Hollywood",
+    "address": "7984 Santa Monica Blvd, West Hollywood, CA 90046",
+    "coordinates": null,
+    "hours": [
+      {
+        "days": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+          "Sunday"
+        ],
+        "start": "17:00",
+        "end": "18:00",
+        "sourceId": "official",
+        "status": "primary",
+        "restriction": "none"
+      }
+    ],
+    "menu": [],
+    "foodTags": [],
+    "drinkTags": [],
+    "atmosphereTags": [],
+    "sources": [
+      {
+        "id": "official",
+        "url": "https://www.laurelhardware.com/",
+        "type": "primary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "note": "Branch address and daily happy hour 5-6pm directly inspected; no priced happy-hour menu visible."
+      }
+    ],
+    "notes": "Schedule-only record. Guide prices were not substituted for an official menu."
+  },
+  {
+    "id": "marea-beverly-hills",
+    "name": "Marea Beverly Hills",
+    "neighborhood": "Beverly Hills",
+    "address": "430 N Camden Dr, Beverly Hills, CA 90210",
+    "coordinates": null,
+    "hours": [
+      {
+        "days": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "start": "16:00",
+        "end": "19:00",
+        "sourceId": "official-menu",
+        "status": "primary",
+        "restriction": "conditional"
+      },
+      {
+        "days": [
+          "Saturday"
+        ],
+        "start": "17:00",
+        "end": "19:00",
+        "sourceId": "official-menu",
+        "status": "primary",
+        "restriction": "conditional"
+      }
+    ],
+    "menu": [],
+    "foodTags": [],
+    "drinkTags": [],
+    "atmosphereTags": [],
+    "sources": [
+      {
+        "id": "official",
+        "url": "https://www.marearestaurant.com/beverly-hills/contact",
+        "type": "primary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "note": "Full street address and ZIP; Aperitivo Monday-Friday 4-7pm."
+      },
+      {
+        "id": "official-menu",
+        "url": "https://www.marearestaurant.com/beverly-hills/menu",
+        "type": "primary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "note": "Aperitivo Monday-Friday 4-7pm and Saturday 5-7pm, bar and lounge. Extracted page mixes multiple menus; item-to-Aperitivo mapping was not reliable, so menu left empty."
+      }
+    ],
+    "notes": "Bar and lounge only. Contact page omits Saturday while menu explicitly includes it; omission is not treated as a cancellation. No mixed regular-menu prices imported."
+  },
+  {
+    "id": "black-cat-silver-lake",
+    "name": "The Black Cat",
+    "neighborhood": "Silver Lake",
+    "address": "3909 W Sunset Blvd, Los Angeles, CA 90029",
+    "coordinates": null,
+    "hours": [
+      {
+        "days": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "start": "16:00",
+        "end": "18:00",
+        "sourceId": "official",
+        "status": "primary",
+        "restriction": "conditional"
+      }
+    ],
+    "menu": [
+      {
+        "id": "food-1",
+        "name": "Happy Hour Kitty Burger",
+        "kind": "food",
+        "priceCents": 1000,
+        "tags": [
+          "burger"
+        ],
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "id": "food-2",
+        "name": "Chicken Wings",
+        "kind": "food",
+        "priceCents": 900,
+        "tags": [
+          "wings"
+        ],
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "id": "drink-1",
+        "name": "Black Cat Manhattan",
+        "kind": "drink",
+        "priceCents": 1000,
+        "tags": [
+          "cocktail",
+          "manhattan"
+        ],
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "id": "drink-2",
+        "name": "Draft Beer",
+        "kind": "drink",
+        "priceCents": 600,
+        "tags": [
+          "beer"
+        ],
+        "sourceId": "official",
+        "status": "primary"
+      }
+    ],
+    "foodTags": [
+      "burger",
+      "wings"
+    ],
+    "drinkTags": [
+      "cocktail",
+      "manhattan",
+      "beer"
+    ],
+    "atmosphereTags": [],
+    "sources": [
+      {
+        "id": "official",
+        "url": "https://www.theblackcatla.com/",
+        "type": "primary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "note": "Branch address, weekday 4-6pm schedule and explicitly separated happy-hour food, cocktail and beer sections. Establishment is 21+."
+      }
+    ],
+    "notes": "21+ establishment. Separate $13 Aristocat burger/beer bundle is inside-only; it is not split into invented component prices. Listed standalone items are separate published prices. Menu warns items can change."
+  },
+  {
+    "id": "33-taps-silver-lake",
+    "name": "33 Taps Silver Lake",
+    "neighborhood": "Silver Lake",
+    "address": "3725 W Sunset Blvd, Los Angeles, CA 90026",
+    "coordinates": null,
+    "hours": [
+      {
+        "days": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "start": "15:00",
+        "end": "19:00",
+        "sourceId": "official",
+        "status": "primary",
+        "restriction": "none"
+      },
+      {
+        "days": [
+          "Monday",
+          "Tuesday",
+          "Wednesday"
+        ],
+        "start": "21:30",
+        "end": "23:00",
+        "sourceId": "official",
+        "status": "primary",
+        "restriction": "conditional"
+      },
+      {
+        "days": [
+          "Thursday",
+          "Friday",
+          "Saturday"
+        ],
+        "start": "21:30",
+        "end": "00:00",
+        "sourceId": "official",
+        "status": "primary",
+        "restriction": "conditional"
+      },
+      {
+        "days": [
+          "Sunday"
+        ],
+        "start": "21:30",
+        "end": "22:00",
+        "sourceId": "official",
+        "status": "primary",
+        "restriction": "conditional"
+      }
+    ],
+    "menu": [
+      {
+        "id": "food-1",
+        "name": "Happy Hour Cheeseburger",
+        "kind": "food",
+        "priceCents": 900,
+        "tags": [
+          "burger"
+        ],
+        "sourceId": "official-menu",
+        "status": "primary"
+      },
+      {
+        "id": "drink-1",
+        "name": "33 Taps Draft Pint",
+        "kind": "drink",
+        "priceCents": 500,
+        "tags": [
+          "beer"
+        ],
+        "sourceId": "official-menu",
+        "status": "primary"
+      },
+      {
+        "id": "drink-2",
+        "name": "Margarita",
+        "kind": "drink",
+        "priceCents": 800,
+        "tags": [
+          "margarita"
+        ],
+        "sourceId": "official-menu",
+        "status": "primary"
+      }
+    ],
+    "foodTags": [
+      "burger"
+    ],
+    "drinkTags": [
+      "beer",
+      "margarita"
+    ],
+    "atmosphereTags": [],
+    "sources": [
+      {
+        "id": "official",
+        "url": "https://www.eatdrink33.com/silver-lake-location/",
+        "type": "primary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "note": "Branch-specific full address, weekday 3-7pm and nightly 9:30-close schedule. Closing times used to normalize close. Kitchen closes one hour early Monday-Thursday and Sunday."
+      },
+      {
+        "id": "official-menu",
+        "url": "https://www.eatdrink33.com/menus/",
+        "type": "primary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "note": "Happy-hour section identifies cheeseburger, house pints and margarita. Prices cross-supported by official-specials, explicitly applicable at every location."
+      },
+      {
+        "id": "official-specials",
+        "url": "https://www.eatdrink33.com/event/",
+        "type": "primary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "note": "Explicitly all locations: $5 drafts, $7 wells, $8 cocktails/wines, $9 food for afternoon and late-night happy hour."
+      }
+    ],
+    "notes": "Late-night food is only available until kitchen close: Mon-Wed 22:00, Thu 23:00, Sun 21:00. Sunday late happy hour is therefore drinks-only. Friday/Saturday kitchen cutoff not specified. Afternoon supports the priced food/drink pair."
+  },
+  {
+    "id": "33-taps-west-hollywood",
+    "name": "33 Taps West Hollywood",
+    "neighborhood": "West Hollywood",
+    "address": "8941 Santa Monica Blvd, West Hollywood, CA 90069",
+    "coordinates": null,
+    "hours": [
+      {
+        "days": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "start": "15:00",
+        "end": "19:00",
+        "sourceId": "official",
+        "status": "primary",
+        "restriction": "none"
+      },
+      {
+        "days": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday"
+        ],
+        "start": "21:30",
+        "end": "23:00",
+        "sourceId": "official",
+        "status": "primary",
+        "restriction": "conditional"
+      },
+      {
+        "days": [
+          "Friday",
+          "Saturday"
+        ],
+        "start": "21:30",
+        "end": "00:00",
+        "sourceId": "official",
+        "status": "primary",
+        "restriction": "conditional"
+      },
+      {
+        "days": [
+          "Sunday"
+        ],
+        "start": "21:30",
+        "end": "22:00",
+        "sourceId": "official",
+        "status": "primary",
+        "restriction": "conditional"
+      }
+    ],
+    "menu": [
+      {
+        "id": "food-1",
+        "name": "Happy Hour Cheeseburger",
+        "kind": "food",
+        "priceCents": 900,
+        "tags": [
+          "burger"
+        ],
+        "sourceId": "official-menu",
+        "status": "primary"
+      },
+      {
+        "id": "drink-1",
+        "name": "33 Taps Draft Pint",
+        "kind": "drink",
+        "priceCents": 500,
+        "tags": [
+          "beer"
+        ],
+        "sourceId": "official-menu",
+        "status": "primary"
+      },
+      {
+        "id": "drink-2",
+        "name": "Margarita",
+        "kind": "drink",
+        "priceCents": 800,
+        "tags": [
+          "margarita"
+        ],
+        "sourceId": "official-menu",
+        "status": "primary"
+      }
+    ],
+    "foodTags": [
+      "burger"
+    ],
+    "drinkTags": [
+      "beer",
+      "margarita"
+    ],
+    "atmosphereTags": [],
+    "sources": [
+      {
+        "id": "official",
+        "url": "https://www.eatdrink33.com/west-hollywood-location/",
+        "type": "primary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "note": "Branch-specific full address, weekday 3-7pm and nightly 9:30-close happy hour; close normalized using branch hours. Kitchen closes one hour early Monday-Thursday and Sunday."
+      },
+      {
+        "id": "official-menu",
+        "url": "https://www.eatdrink33.com/menus/",
+        "type": "primary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "note": "Happy-hour section names cheeseburger, house pints and margarita. Prices cross-supported by official-specials, expressly for every location."
+      },
+      {
+        "id": "official-specials",
+        "url": "https://www.eatdrink33.com/event/",
+        "type": "primary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "note": "All-location afternoon and late-night specials: $5 drafts, $7 wells, $8 cocktails/wines, $9 food."
+      }
+    ],
+    "notes": "Late-night food stops at 22:00 Mon-Thu and 21:00 Sun; Sunday late happy hour is drinks-only. Friday/Saturday kitchen cutoff not specified. Afternoon supports the priced food/drink pair."
+  },
+  {
+    "id": "edendale-silver-lake",
+    "name": "Edendale",
+    "neighborhood": "Silver Lake",
+    "address": "2838 Rowena Ave, Los Angeles, CA 90039",
+    "coordinates": null,
+    "hours": [
+      {
+        "days": [
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "start": "17:00",
+        "end": "19:00",
+        "sourceId": "official",
+        "status": "primary",
+        "restriction": "none"
+      }
+    ],
+    "menu": [],
+    "foodTags": [],
+    "drinkTags": [],
+    "atmosphereTags": [],
+    "sources": [
+      {
+        "id": "official",
+        "url": "https://theedendale.com/hours-info/",
+        "type": "primary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "note": "Food-special happy hour Tue-Fri 5-7pm; Monday all night. Dinner and bar have different closing times, so Monday is not normalized without direct menu review."
+      },
+      {
+        "id": "official-location",
+        "url": "https://theedendale.com/contact-directions/",
+        "type": "primary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "note": "Street address and Silverlake label, without ZIP."
+      },
+      {
+        "id": "address-secondary",
+        "url": "https://www.discoverlosangeles.com/eat-drink/edendale-grill",
+        "type": "secondary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "note": "Directly inspected tourism listing supplies Los Angeles and ZIP 90039-2002; only used for postal completion."
+      },
+      {
+        "id": "unreviewed-menu",
+        "url": "https://theedendale.com/wp-content/uploads/2025/05/Edendale-Happy-Hour-Menu.pdf",
+        "type": "primary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": null,
+        "note": "Direct PDF open failed with internal access error. Search snippets contain prices and Mon 5-10pm, but those are secondary and were not adopted."
+      }
+    ],
+    "notes": "Monday all-night happy hour is listed but not encoded because exact applicability through kitchen versus bar close is unresolved. Menu left empty; failed PDF is unreviewed."
+  },
+  {
+    "id": "le-oyster-bar-silver-lake",
+    "name": "L&E Oyster Bar",
+    "neighborhood": "Silver Lake",
+    "address": "1637 Silver Lake Blvd, Los Angeles, CA 90026",
+    "coordinates": null,
+    "hours": [
+      {
+        "days": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "start": "17:00",
+        "end": "19:00",
+        "sourceId": "official",
+        "status": "primary",
+        "restriction": "none"
+      }
+    ],
+    "menu": [],
+    "foodTags": [],
+    "drinkTags": [],
+    "atmosphereTags": [],
+    "sources": [
+      {
+        "id": "official",
+        "url": "https://www.leoysterbar.com/",
+        "type": "primary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "note": "Silver Lake branch street address and Monday-Friday 5-7pm happy hour."
+      },
+      {
+        "id": "official-upstairs",
+        "url": "https://www.leoysterbar.com/upstairs",
+        "type": "primary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "note": "Official Upstairs & Happy Hour page repeats weekday 5-7pm. Image menu not reviewed; no item prices extracted."
+      },
+      {
+        "id": "address-secondary",
+        "url": "https://www.opentable.com/l-and-e-oyster-bar",
+        "type": "secondary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "note": "Directly inspected address supplies Los Angeles, CA 90026; regular menu not reused as happy hour."
+      },
+      {
+        "id": "unreviewed-menu-image",
+        "url": "https://images.squarespace-cdn.com/content/v1/68b39499dcf6053c8e04aa04/029f8ae1-627d-4b9e-8735-8f999f3071f3/NEW%2BUPSTAIRS%2BMENU%2B%2B8.16.26.jpg",
+        "type": "primary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": null,
+        "note": "Linked menu image was inaccessible via web tool; unreviewed."
+      }
+    ],
+    "notes": "Schedule-only. Upstairs page title alone does not establish an upstairs-only restriction, so none is asserted."
+  },
+  {
+    "id": "gracias-madre-west-hollywood",
+    "name": "Gracias Madre West Hollywood",
+    "neighborhood": "West Hollywood",
+    "address": "8905 Melrose Ave, West Hollywood, CA 90069",
+    "coordinates": null,
+    "hours": [
+      {
+        "days": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "start": "15:00",
+        "end": "18:00",
+        "sourceId": "official-menu",
+        "status": "primary",
+        "restriction": "none"
+      }
+    ],
+    "menu": [
+      {
+        "id": "food-1",
+        "name": "Ceviche Tostada",
+        "kind": "food",
+        "priceCents": 700,
+        "tags": [
+          "tostada",
+          "vegan"
+        ],
+        "sourceId": "official-menu",
+        "status": "primary"
+      },
+      {
+        "id": "food-2",
+        "name": "Garlic Chipotle Fries",
+        "kind": "food",
+        "priceCents": 700,
+        "tags": [
+          "fries",
+          "vegan"
+        ],
+        "sourceId": "official-menu",
+        "status": "primary"
+      },
+      {
+        "id": "drink-1",
+        "name": "House Cerveza",
+        "kind": "drink",
+        "priceCents": 700,
+        "tags": [
+          "beer"
+        ],
+        "sourceId": "official-menu",
+        "status": "primary"
+      },
+      {
+        "id": "drink-2",
+        "name": "Purista Margarita",
+        "kind": "drink",
+        "priceCents": 1100,
+        "tags": [
+          "margarita"
+        ],
+        "sourceId": "official-menu",
+        "status": "conflicting"
+      }
+    ],
+    "foodTags": [
+      "tostada",
+      "vegan",
+      "fries"
+    ],
+    "drinkTags": [
+      "beer",
+      "margarita"
+    ],
+    "atmosphereTags": [],
+    "sources": [
+      {
+        "id": "official",
+        "url": "https://graciasmadre.com/pages/location-menus",
+        "type": "primary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "note": "Full branch address; happy hour Mon-Fri 3-6pm; links current menu."
+      },
+      {
+        "id": "official-menu",
+        "url": "https://cdn.shopify.com/s/files/1/0905/4132/6630/files/GM_Menus_-_Web_260930.pdf?v=1791161657",
+        "type": "primary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "note": "Linked menu, page 6 (zero-index 5), explicitly happy hour 3-6 Mon-Fri. Purista $11, cerveza $7, ceviche tostada/fries $7; Happy Madre Meal $12."
+      },
+      {
+        "id": "official-home",
+        "url": "https://graciasmadre.com/",
+        "type": "primary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "note": "Homepage still advertises $9 margaritas and $7 favorites, conflicting with linked menu's $11 Purista."
+      }
+    ],
+    "notes": "Use latest linked menu pricing, with margarita flagged conflicting against $9 homepage claim. Other retained prices have no directly inspected official disagreement. Entire menu is plant-based. Bundled Happy Madre Meal is $12, not a separate $12 food component."
+  },
+  {
+    "id": "la-boheme-west-hollywood",
+    "name": "La Boheme",
+    "neighborhood": "West Hollywood",
+    "address": "8400 Santa Monica Blvd, West Hollywood, CA 90069",
+    "coordinates": null,
+    "hours": [
+      {
+        "days": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday"
+        ],
+        "start": "17:00",
+        "end": "22:00",
+        "sourceId": "official",
+        "status": "primary",
+        "restriction": "conditional"
+      },
+      {
+        "days": [
+          "Friday",
+          "Saturday"
+        ],
+        "start": "17:00",
+        "end": "19:00",
+        "sourceId": "official",
+        "status": "primary",
+        "restriction": "none"
+      },
+      {
+        "days": [
+          "Sunday"
+        ],
+        "start": "16:00",
+        "end": "22:00",
+        "sourceId": "official",
+        "status": "primary",
+        "restriction": "conditional"
+      }
+    ],
+    "menu": [
+      {
+        "id": "food-1",
+        "name": "Cheeseburger Sliders",
+        "kind": "food",
+        "priceCents": 1000,
+        "tags": [
+          "burger"
+        ],
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "id": "food-2",
+        "name": "Buffalo Cauliflower",
+        "kind": "food",
+        "priceCents": 900,
+        "tags": [
+          "vegetables"
+        ],
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "id": "drink-1",
+        "name": "House Wine (glass)",
+        "kind": "drink",
+        "priceCents": 900,
+        "tags": [
+          "wine"
+        ],
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "id": "drink-2",
+        "name": "Happy Hour Cocktail",
+        "kind": "drink",
+        "priceCents": 1000,
+        "tags": [
+          "cocktail"
+        ],
+        "sourceId": "official",
+        "status": "primary"
+      }
+    ],
+    "foodTags": [
+      "burger",
+      "vegetables"
+    ],
+    "drinkTags": [
+      "wine",
+      "cocktail"
+    ],
+    "atmosphereTags": [],
+    "sources": [
+      {
+        "id": "official",
+        "url": "https://www.labohemeweho.com/menus/",
+        "type": "primary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "note": "Happy-hour section: Mon-Thu 5-close, Fri-Sat 5-7, Sun 4-close; sliders $10, cauliflower $9, house wine $9, cocktails $10."
+      },
+      {
+        "id": "official-location",
+        "url": "https://www.labohemeweho.com/location/la-boheme/",
+        "type": "primary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "note": "Full address; Mon-Thu and Sunday close 10pm used to normalize close."
+      }
+    ],
+    "notes": "Close-based windows normalized from official location hours. Happy-hour cocktail choices are not named in that section; generic category retained without assigning regular-menu cocktail names."
+  },
+  {
+    "id": "hugos-west-hollywood",
+    "name": "Hugo's West Hollywood",
+    "neighborhood": "West Hollywood",
+    "address": "8401 Santa Monica Blvd, West Hollywood, CA 90069",
+    "coordinates": null,
+    "hours": [
+      {
+        "days": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "start": "16:00",
+        "end": "19:00",
+        "sourceId": "official-menu",
+        "status": "primary",
+        "restriction": "none"
+      }
+    ],
+    "menu": [],
+    "foodTags": [],
+    "drinkTags": [],
+    "atmosphereTags": [],
+    "sources": [
+      {
+        "id": "official",
+        "url": "https://www.hugosrestaurant.com/",
+        "type": "primary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "note": "West Hollywood branch full address and current operating hours."
+      },
+      {
+        "id": "official-menu",
+        "url": "https://www.hugosrestaurant.com/files/hugos-menu-weho-pdf.pdf",
+        "type": "primary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "note": "Directly inspected branch PDF says happy hour weekdays 4-7pm. Its regular menu prices are not identified as happy-hour prices."
+      }
+    ],
+    "notes": "Schedule-only. No weekend offer adopted. Regular-menu food and drink prices are not labeled as happy-hour prices and were not imported."
+  },
+  {
+    "id": "da-michele-hollywood",
+    "name": "L'Antica Pizzeria da Michele Hollywood",
+    "neighborhood": "Hollywood",
+    "address": "1534 N McCadden Pl, Los Angeles, CA 90028",
+    "coordinates": null,
+    "hours": [
+      {
+        "days": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "start": "14:00",
+        "end": "17:00",
+        "sourceId": "official",
+        "status": "primary",
+        "restriction": "conditional"
+      },
+      {
+        "days": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday"
+        ],
+        "start": "21:00",
+        "end": "23:00",
+        "sourceId": "official",
+        "status": "primary",
+        "restriction": "conditional"
+      },
+      {
+        "days": [
+          "Friday"
+        ],
+        "start": "21:00",
+        "end": "00:00",
+        "sourceId": "official",
+        "status": "primary",
+        "restriction": "conditional"
+      }
+    ],
+    "menu": [
+      {
+        "id": "food-1",
+        "name": "Arancini",
+        "kind": "food",
+        "priceCents": 1200,
+        "tags": [
+          "arancini"
+        ],
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "id": "food-2",
+        "name": "Marinara Pizza",
+        "kind": "food",
+        "priceCents": 1200,
+        "tags": [
+          "pizza"
+        ],
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "id": "drink-1",
+        "name": "Peroni",
+        "kind": "drink",
+        "priceCents": 500,
+        "tags": [
+          "beer"
+        ],
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "id": "drink-2",
+        "name": "Negroni",
+        "kind": "drink",
+        "priceCents": 1200,
+        "tags": [
+          "negroni",
+          "cocktail"
+        ],
+        "sourceId": "official",
+        "status": "primary"
+      }
+    ],
+    "foodTags": [
+      "arancini",
+      "pizza"
+    ],
+    "drinkTags": [
+      "beer",
+      "negroni",
+      "cocktail"
+    ],
+    "atmosphereTags": [],
+    "sources": [
+      {
+        "id": "official",
+        "url": "https://damicheleusa.com/dinner-brunch/",
+        "type": "primary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "note": "Hollywood menu happy-hour section: Mon-Fri 2-5pm and 9-close, bar and high tops only; listed bites $12, cocktails $12, Peroni $5."
+      },
+      {
+        "id": "official-location",
+        "url": "https://damicheleusa.com/contact-hollywood/",
+        "type": "primary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "note": "Full Hollywood address; close Mon-Thu 11pm and Fri midnight normalizes late window."
+      }
+    ],
+    "notes": "Bar and high tops only. Marinara Pizza is $12; optional Margherita upgrade +$3 not silently included. Separate Thursday Aperitivo event is not merged into these recurring happy-hour terms."
+  },
+  {
+    "id": "ocean-prime-beverly-hills",
+    "name": "Ocean Prime Beverly Hills",
+    "neighborhood": "Beverly Hills",
+    "address": "9595 Wilshire Blvd, Beverly Hills, CA 90212",
+    "coordinates": null,
+    "hours": [
+      {
+        "days": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "start": "15:00",
+        "end": "19:00",
+        "sourceId": "official",
+        "status": "primary",
+        "restriction": "conditional"
+      }
+    ],
+    "menu": [
+      {
+        "id": "food-1",
+        "name": "Friday Happy Hour Oyster (each)",
+        "kind": "food",
+        "priceCents": 200,
+        "tags": [
+          "oysters"
+        ],
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "id": "drink-1",
+        "name": "Veuve Clicquot Rose (Friday glass)",
+        "kind": "drink",
+        "priceCents": 2000,
+        "tags": [
+          "wine",
+          "sparkling-wine"
+        ],
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "id": "drink-2",
+        "name": "Peroni (happy-hour select beer)",
+        "kind": "drink",
+        "priceCents": 600,
+        "tags": [
+          "beer"
+        ],
+        "sourceId": "official",
+        "status": "primary"
+      }
+    ],
+    "foodTags": [
+      "oysters"
+    ],
+    "drinkTags": [
+      "wine",
+      "sparkling-wine",
+      "beer"
+    ],
+    "atmosphereTags": [],
+    "sources": [
+      {
+        "id": "official",
+        "url": "https://ocean-prime.com/locations-menus/beverly-hills/",
+        "type": "primary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "note": "Branch address and Mon-Fri 3-7pm in lounge. Friday promotion explicitly pairs $20 Veuve Clicquot Rose glass with $2 oysters. Happy-hour section lists select beers including Peroni at $6; $5 off lounge food and signature cocktails."
+      }
+    ],
+    "notes": "Lounge only. Oyster $2 and Veuve glass $20 apply Friday only; not offered as weekday-wide prices. Friday supports the full priced food/drink pair. No fixed food price computed from $5-off regular lounge menu."
+  },
+  {
+    "id": "bacari-beverly-hills",
+    "name": "Bacari Beverly Hills",
+    "neighborhood": "Beverly Hills",
+    "address": "9601 Brighton Way, Beverly Hills, CA 90210",
+    "coordinates": null,
+    "hours": [
+      {
+        "days": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "start": "15:00",
+        "end": "18:00",
+        "sourceId": "official",
+        "status": "primary",
+        "restriction": "none"
+      }
+    ],
+    "menu": [],
+    "foodTags": [],
+    "drinkTags": [],
+    "atmosphereTags": [],
+    "sources": [
+      {
+        "id": "official",
+        "url": "https://www.eatwithbacari.com/beverly-hills",
+        "type": "primary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "note": "Branch full address and happy hour Monday-Friday 3-6pm. Regular menu is present, but inspected text does not reliably identify happy-hour item prices."
+      }
+    ],
+    "notes": "Schedule-only; regular menu not reused or discounted by inference."
+  },
+  {
+    "id": "jade-beverly-hills",
+    "name": "Jade Beverly Hills",
+    "neighborhood": "Beverly Hills",
+    "address": "467 N Canon Dr, Beverly Hills, CA 90210",
+    "coordinates": null,
+    "hours": [
+      {
+        "days": [
+          "Tuesday",
+          "Wednesday",
+          "Thursday"
+        ],
+        "start": "17:30",
+        "end": "19:00",
+        "sourceId": "official",
+        "status": "primary",
+        "restriction": "none"
+      }
+    ],
+    "menu": [],
+    "foodTags": [],
+    "drinkTags": [],
+    "atmosphereTags": [],
+    "sources": [
+      {
+        "id": "official",
+        "url": "https://www.jadebeverlyhills.com/",
+        "type": "primary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "note": "Full branch address and happy hour Tuesday-Thursday 5:30-7pm directly inspected; no priced happy-hour items in accessible text."
+      }
+    ],
+    "notes": "Schedule-only. Guide descriptions of sushi and drinks not promoted to primary menu evidence."
+  },
+  {
+    "id": "il-cielo-beverly-hills",
+    "name": "Il Cielo / Bar Cielo",
+    "neighborhood": "Beverly Hills",
+    "address": "9018 Burton Way, Beverly Hills, CA 90211",
+    "coordinates": null,
+    "hours": [
+      {
+        "days": [
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Sunday"
+        ],
+        "start": "17:30",
+        "end": "19:30",
+        "sourceId": "official-menu",
+        "status": "conflicting",
+        "restriction": "bar-only"
+      }
+    ],
+    "menu": [
+      {
+        "id": "food-1",
+        "name": "Parmesan Truffle Fries",
+        "kind": "food",
+        "priceCents": 1600,
+        "tags": [
+          "fries"
+        ],
+        "sourceId": "official-menu",
+        "status": "primary"
+      },
+      {
+        "id": "food-2",
+        "name": "Fried Calamari & Zucchini",
+        "kind": "food",
+        "priceCents": 1600,
+        "tags": [
+          "calamari"
+        ],
+        "sourceId": "official-menu",
+        "status": "primary"
+      },
+      {
+        "id": "drink-1",
+        "name": "Happy Hour Beer",
+        "kind": "drink",
+        "priceCents": 800,
+        "tags": [
+          "beer"
+        ],
+        "sourceId": "official-menu",
+        "status": "primary"
+      },
+      {
+        "id": "drink-2",
+        "name": "Happy Hour Martini",
+        "kind": "drink",
+        "priceCents": 1200,
+        "tags": [
+          "martini",
+          "cocktail"
+        ],
+        "sourceId": "official-menu",
+        "status": "primary"
+      }
+    ],
+    "foodTags": [
+      "fries",
+      "calamari"
+    ],
+    "drinkTags": [
+      "beer",
+      "martini",
+      "cocktail"
+    ],
+    "atmosphereTags": [],
+    "sources": [
+      {
+        "id": "official-menu",
+        "url": "https://www.ilcielo.com/menus/",
+        "type": "primary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "note": "Aperitivo happy-hour section labels Bar Cielo Wed-Fri and Sun 5:30-7:30pm and supplies these prices; address in footer."
+      },
+      {
+        "id": "official-bar",
+        "url": "https://www.ilcielo.com/bar-cielo/",
+        "type": "primary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "note": "Conflicting Aperitivo schedule: Monday through Friday, 5-8pm with parenthetical Friday 5:30pm start. Does not match main menu's days or end time."
+      }
+    ],
+    "notes": "Schedule requires venue confirmation. Encoded main-menu window is conflicting, not a clean primary schedule. Menu item prices are directly primary-supported. Bar Cielo only; no regular dinner prices reused."
+  },
+  {
+    "id": "beverly-bar-beverly-hills",
+    "name": "Beverly Bar",
+    "neighborhood": "Beverly Hills",
+    "address": "434 N Camden Dr, Beverly Hills, CA 90210",
+    "coordinates": null,
+    "hours": [
+      {
+        "days": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+          "Sunday"
+        ],
+        "start": "14:00",
+        "end": "18:00",
+        "sourceId": "official-menu",
+        "status": "primary",
+        "restriction": "none"
+      }
+    ],
+    "menu": [
+      {
+        "id": "food-1",
+        "name": "Truffle Parmesan Fries",
+        "kind": "food",
+        "priceCents": 1200,
+        "tags": [
+          "fries"
+        ],
+        "sourceId": "official-menu",
+        "status": "primary"
+      },
+      {
+        "id": "food-2",
+        "name": "The Beverly Smash Burger",
+        "kind": "food",
+        "priceCents": 1800,
+        "tags": [
+          "burger"
+        ],
+        "sourceId": "official-menu",
+        "status": "primary"
+      },
+      {
+        "id": "drink-1",
+        "name": "Asahi Draft",
+        "kind": "drink",
+        "priceCents": 700,
+        "tags": [
+          "beer"
+        ],
+        "sourceId": "official-menu",
+        "status": "primary"
+      },
+      {
+        "id": "drink-2",
+        "name": "Classic Margarita",
+        "kind": "drink",
+        "priceCents": 1300,
+        "tags": [
+          "margarita"
+        ],
+        "sourceId": "official-menu",
+        "status": "primary"
+      }
+    ],
+    "foodTags": [
+      "fries",
+      "burger"
+    ],
+    "drinkTags": [
+      "beer",
+      "margarita"
+    ],
+    "atmosphereTags": [],
+    "sources": [
+      {
+        "id": "official",
+        "url": "https://beverlybar.com/",
+        "type": "primary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "note": "Full branch address and daily 2-6pm happy hour."
+      },
+      {
+        "id": "official-menu",
+        "url": "https://beverlybar.com/happy-hour/",
+        "type": "primary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "note": "Directly inspected happy-hour menu has exact food and drink prices; page says every day 2-6pm and invites any seat."
+      }
+    ],
+    "notes": "No bar-only restriction inferred from promotional bar wording; happy-hour page says any seat."
+  },
+  {
+    "id": "iki-ramen-koreatown",
+    "name": "IKI Ramen + Sushi Koreatown",
+    "neighborhood": "Koreatown",
+    "address": "740 S Western Ave #115, Los Angeles, CA 90005",
+    "coordinates": null,
+    "hours": [
+      {
+        "days": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "start": "14:30",
+        "end": "17:30",
+        "sourceId": "official",
+        "status": "primary",
+        "restriction": "none"
+      }
+    ],
+    "menu": [
+      {
+        "id": "food-1",
+        "name": "Edamame",
+        "kind": "food",
+        "priceCents": 500,
+        "tags": [
+          "edamame"
+        ],
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "id": "food-2",
+        "name": "Chicken Gyoza",
+        "kind": "food",
+        "priceCents": 600,
+        "tags": [
+          "dumplings"
+        ],
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "id": "drink-1",
+        "name": "Draft Beer",
+        "kind": "drink",
+        "priceCents": 500,
+        "tags": [
+          "beer"
+        ],
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "id": "drink-2",
+        "name": "IKI Martini",
+        "kind": "drink",
+        "priceCents": 1000,
+        "tags": [
+          "martini",
+          "cocktail"
+        ],
+        "sourceId": "official",
+        "status": "primary"
+      }
+    ],
+    "foodTags": [
+      "edamame",
+      "dumplings"
+    ],
+    "drinkTags": [
+      "beer",
+      "martini",
+      "cocktail"
+    ],
+    "atmosphereTags": [],
+    "sources": [
+      {
+        "id": "official",
+        "url": "https://ikiramen.com/happenings/happy-hour",
+        "type": "primary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "note": "Official happy-hour page explicitly invites Koreatown at this full address and Sunset at 6565 Sunset Blvd. Mon-Fri 2:30-5:30pm; priced food/drink list."
+      }
+    ],
+    "notes": "Shared official offer expressly names both retained branches. Do not confuse the separate IKI Nori concept at 6464 Sunset Blvd with this Ramen + Sushi location."
+  },
+  {
+    "id": "iki-ramen-hollywood",
+    "name": "IKI Ramen + Sushi Hollywood",
+    "neighborhood": "Hollywood",
+    "address": "6565 Sunset Blvd, Los Angeles, CA 90028",
+    "coordinates": null,
+    "hours": [
+      {
+        "days": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "start": "14:30",
+        "end": "17:30",
+        "sourceId": "official",
+        "status": "primary",
+        "restriction": "none"
+      }
+    ],
+    "menu": [
+      {
+        "id": "food-1",
+        "name": "Edamame",
+        "kind": "food",
+        "priceCents": 500,
+        "tags": [
+          "edamame"
+        ],
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "id": "food-2",
+        "name": "Chicken Gyoza",
+        "kind": "food",
+        "priceCents": 600,
+        "tags": [
+          "dumplings"
+        ],
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "id": "drink-1",
+        "name": "Draft Beer",
+        "kind": "drink",
+        "priceCents": 500,
+        "tags": [
+          "beer"
+        ],
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "id": "drink-2",
+        "name": "IKI Martini",
+        "kind": "drink",
+        "priceCents": 1000,
+        "tags": [
+          "martini",
+          "cocktail"
+        ],
+        "sourceId": "official",
+        "status": "primary"
+      }
+    ],
+    "foodTags": [
+      "edamame",
+      "dumplings"
+    ],
+    "drinkTags": [
+      "beer",
+      "martini",
+      "cocktail"
+    ],
+    "atmosphereTags": [],
+    "sources": [
+      {
+        "id": "official",
+        "url": "https://ikiramen.com/happenings/happy-hour",
+        "type": "primary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "note": "Happy-hour invitation explicitly identifies Sunset address 6565 Sunset Blvd; footer labels it IKI Ramen+Sushi Hollywood. Mon-Fri 2:30-5:30pm with exact item prices."
+      }
+    ],
+    "notes": "This is the 6565 Sunset Ramen + Sushi branch, not IKI Nori at 6464 Sunset. Shared offer explicitly identifies this address."
+  },
+  {
+    "id": "bacari-silverlake",
+    "name": "Bacari Silverlake",
+    "neighborhood": "Silver Lake",
+    "address": "3626 Sunset Blvd, Los Angeles, CA 90026",
+    "coordinates": null,
+    "hours": [
+      {
+        "days": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "start": "17:00",
+        "end": "18:00",
+        "sourceId": "official",
+        "status": "primary",
+        "restriction": "none"
+      }
+    ],
+    "menu": [],
+    "foodTags": [],
+    "drinkTags": [],
+    "atmosphereTags": [],
+    "sources": [
+      {
+        "id": "official",
+        "url": "https://www.eatwithbacari.com/silverlake",
+        "type": "primary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "note": "Branch full address and happy hour Monday-Friday 5-6pm; no reliable happy-hour item pricing in inspected text."
+      }
+    ],
+    "notes": "Official 5-6pm schedule used; secondary guide's 4-6pm and item-specific specials were not adopted. Regular menu not reused."
+  },
+  {
+    "id": "circa-55-beverly-hilton",
+    "name": "CIRCA 55 Rooftop",
+    "neighborhood": "Beverly Hills",
+    "address": "9876 Wilshire Blvd, Beverly Hills, CA 90210",
+    "coordinates": null,
+    "hours": [
+      {
+        "days": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+          "Sunday"
+        ],
+        "start": "15:00",
+        "end": "18:00",
+        "sourceId": "official",
+        "status": "primary",
+        "restriction": "none"
+      }
+    ],
+    "menu": [],
+    "foodTags": [],
+    "drinkTags": [],
+    "atmosphereTags": [],
+    "sources": [
+      {
+        "id": "official",
+        "url": "https://www.hilton.com/en/hotels/laxbhhh-the-beverly-hilton/dining/",
+        "type": "primary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "note": "Property restaurant page explicitly lists daily happy hour 3-6pm. Accessible menu text is breakfast; no happy-hour items or prices extracted."
+      },
+      {
+        "id": "official-location",
+        "url": "https://www.hilton.com/en/hotels/laxbhhh-the-beverly-hilton/",
+        "type": "primary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "note": "Official hotel page provides full address for this eighth-floor restaurant."
+      }
+    ],
+    "notes": "Schedule-only. Regular breakfast menu not reused; interactive happy-hour tab did not expose item prices in web text. Hotel advertises renovation notice; no closure asserted."
+  },
+  {
+    "id": "lawrys-prime-rib-beverly-hills",
+    "name": "Lawry's The Prime Rib Beverly Hills",
+    "neighborhood": "Beverly Hills",
+    "address": "100 N La Cienega Blvd, Beverly Hills, CA 90211",
+    "coordinates": null,
+    "hours": [
+      {
+        "days": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "start": "16:30",
+        "end": "18:30",
+        "sourceId": "official-menu",
+        "status": "primary",
+        "restriction": "bar-only"
+      }
+    ],
+    "menu": [
+      {
+        "id": "food-1",
+        "name": "Prime Rib Katsu Sando (happy-hour discount)",
+        "kind": "food",
+        "priceCents": null,
+        "tags": [
+          "sandwich"
+        ],
+        "sourceId": "official-bites",
+        "status": "primary"
+      },
+      {
+        "id": "drink-1",
+        "name": "La Cienega Mule",
+        "kind": "drink",
+        "priceCents": 1000,
+        "tags": [
+          "cocktail"
+        ],
+        "sourceId": "official-menu",
+        "status": "primary"
+      },
+      {
+        "id": "drink-2",
+        "name": "Stella Artois Draft (16 oz)",
+        "kind": "drink",
+        "priceCents": 700,
+        "tags": [
+          "beer"
+        ],
+        "sourceId": "official-menu",
+        "status": "primary"
+      }
+    ],
+    "foodTags": [
+      "sandwich"
+    ],
+    "drinkTags": [
+      "cocktail",
+      "beer"
+    ],
+    "atmosphereTags": [],
+    "sources": [
+      {
+        "id": "official",
+        "url": "https://www.lawrysonline.com/lawrys-the-prime-rib-beverly-hills/happenings/happy-hour/",
+        "type": "primary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "note": "Full branch address and weekday 4:30-6:30pm bar happy hour; links current HH and Bar Bites PDFs."
+      },
+      {
+        "id": "official-menu",
+        "url": "https://www.lawrysonline.com/wp-content/uploads/2026/05/9642-BH-Bar-Book-INSERTS-Happy-Hour-Beer-Q3-4.25x11-061325-HAPPY-HOUR.pdf",
+        "type": "primary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "note": "Current linked menu confirms Mon-Fri 4:30-6:30pm, bar only, $10 named cocktails and $7 named draft beers, plus $5 off Bar Bites."
+      },
+      {
+        "id": "official-bites",
+        "url": "https://www.lawrysonline.com/wp-content/uploads/2026/05/9805-BH-Bar-Book-TEXT-Q2-4.25x11-031926-BAR-BITES.pdf",
+        "type": "primary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "note": "Linked Bar Bites includes Prime Rib Katsu Sando at regular $34. Happy-hour eligibility established by official-menu; final discounted price is not printed, so priceCents null."
+      }
+    ],
+    "notes": "Bar only. Do not treat regular $34 Sando as its happy-hour price. Older search-indexed 2024-path PDF says 4:30-5:30, but current linked PDF and current page agree on 4:30-6:30."
+  },
+  {
+    "id": "prospect-gourmand-beverly-hills",
+    "name": "Prospect Gourmand",
+    "neighborhood": "Beverly Hills",
+    "address": "105 N Robertson Blvd, Beverly Hills, CA 90211",
+    "coordinates": null,
+    "hours": [
+      {
+        "days": [
+          "Tuesday",
+          "Wednesday",
+          "Thursday"
+        ],
+        "start": "15:00",
+        "end": "21:00",
+        "sourceId": "official",
+        "status": "primary",
+        "restriction": "none"
+      },
+      {
+        "days": [
+          "Friday",
+          "Saturday",
+          "Sunday"
+        ],
+        "start": "15:00",
+        "end": "22:00",
+        "sourceId": "official",
+        "status": "primary",
+        "restriction": "none"
+      }
+    ],
+    "menu": [
+      {
+        "id": "food-1",
+        "name": "Gourmando Slider",
+        "kind": "food",
+        "priceCents": 600,
+        "tags": [
+          "burger"
+        ],
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "id": "food-2",
+        "name": "Baja Fish Taco",
+        "kind": "food",
+        "priceCents": 800,
+        "tags": [
+          "tacos",
+          "fish"
+        ],
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "id": "drink-1",
+        "name": "Red or White Wine (glass)",
+        "kind": "drink",
+        "priceCents": 700,
+        "tags": [
+          "wine"
+        ],
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "id": "drink-2",
+        "name": "Cadillac Margarita",
+        "kind": "drink",
+        "priceCents": 1100,
+        "tags": [
+          "margarita"
+        ],
+        "sourceId": "official",
+        "status": "primary"
+      }
+    ],
+    "foodTags": [
+      "burger",
+      "tacos",
+      "fish"
+    ],
+    "drinkTags": [
+      "wine",
+      "margarita"
+    ],
+    "atmosphereTags": [],
+    "sources": [
+      {
+        "id": "official",
+        "url": "https://www.prospectgourmand.com/menu-lunch",
+        "type": "primary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "note": "Page explicitly lists Happy Hour Tue-Sun 3pm-close. Final Happy Hour/Tasters section has slider $6, fish taco $8, wine $7, Cadillac Margarita $11. Footer supplies full address and closing times."
+      }
+    ],
+    "notes": "Close normalized from same page: Tue-Thu 21:00; Fri-Sun 22:00. Earlier regular cocktail prices on the page are not used. Tourism guide's 3-6pm differs from official 3-close; official terms retained."
+  }
+]

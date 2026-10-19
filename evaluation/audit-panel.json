@@ -1,0 +1,5 @@
+{
+  "selection":"First ten venues in the frozen original dataset, selected by original record order rather than performance.",
+  "venues":["joyce","kombu-sushi","la-cha-cha-cha","library-bar","mignon-wine-cheese-bar","native-son","peking-tavern","perch-la","prank-bar","precinct-dtla"],
+  "limitations":"Source support is not the same as real-world accuracy. Unknown or unreviewed primary evidence is not counted as a correct factual claim. Audit each baseline/current schedule and price statement against independently reviewed sources, preserving unknowns."
+}

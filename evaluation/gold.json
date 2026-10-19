@@ -1,0 +1,207 @@
+{
+  "reviewedOn": "2026-10-19",
+  "labels": {
+    "dtla-weekday": [
+      "perch-la"
+    ],
+    "arts-wine": [
+      "perch-la"
+    ],
+    "dtla-low-budget": [
+      "perch-la"
+    ],
+    "dtla-tacos": [
+      "perch-la"
+    ],
+    "dtla-weekend": [],
+    "pasadena": [
+      "green-street-restaurant-pasadena",
+      "guss-bbq-south-pasadena"
+    ],
+    "glendale": [],
+    "hollywood": [
+      "formosa-cafe-west-hollywood",
+      "33-taps-silver-lake",
+      "iki-ramen-hollywood"
+    ],
+    "culver-city": [
+      "simonette-culver-city"
+    ],
+    "santa-monica": [
+      "ospi-venice",
+      "the-waterfront-venice",
+      "library-alehouse-santa-monica",
+      "manchego-santa-monica",
+      "michaels-santa-monica"
+    ],
+    "burbank": [],
+    "early-morning": [],
+    "impossible-food": [],
+    "impossible-drink": [],
+    "empty-area": [],
+    "holdout-sm-friday": [
+      "ospi-venice",
+      "the-waterfront-venice",
+      "library-alehouse-santa-monica",
+      "michaels-santa-monica"
+    ],
+    "holdout-pasadena": [
+      "foothill-restaurant-pasadena",
+      "green-street-restaurant-pasadena",
+      "guss-bbq-south-pasadena"
+    ],
+    "holdout-dtla-close": [],
+    "holdout-hollywood": [
+      "formosa-cafe-west-hollywood",
+      "33-taps-silver-lake",
+      "33-taps-west-hollywood",
+      "gracias-madre-west-hollywood",
+      "iki-ramen-koreatown",
+      "iki-ramen-hollywood"
+    ],
+    "holdout-dawn": []
+  },
+  "validLabels": {
+    "dtla-weekday": [
+      "perch-la",
+      "far-bar",
+      "le-oyster-bar-silver-lake"
+    ],
+    "arts-wine": [
+      "perch-la",
+      "far-bar"
+    ],
+    "dtla-low-budget": [
+      "perch-la",
+      "far-bar"
+    ],
+    "dtla-tacos": [
+      "perch-la",
+      "far-bar"
+    ],
+    "dtla-weekend": [],
+    "pasadena": [
+      "green-street-restaurant-pasadena",
+      "brookside-restaurant-pasadena",
+      "granville-pasadena",
+      "guss-bbq-south-pasadena"
+    ],
+    "glendale": [
+      "bacari-glendale",
+      "edendale-silver-lake"
+    ],
+    "hollywood": [
+      "formosa-cafe-west-hollywood",
+      "laurel-hardware-west-hollywood",
+      "33-taps-silver-lake",
+      "hugos-west-hollywood",
+      "iki-ramen-hollywood",
+      "bacari-silverlake"
+    ],
+    "culver-city": [
+      "simonette-culver-city",
+      "bacari-culver-city"
+    ],
+    "santa-monica": [
+      "ospi-venice",
+      "the-waterfront-venice",
+      "library-alehouse-santa-monica",
+      "manchego-santa-monica",
+      "michaels-santa-monica"
+    ],
+    "burbank": [
+      "inkwell-tavern-burbank",
+      "granville-burbank"
+    ],
+    "early-morning": [],
+    "impossible-food": [],
+    "impossible-drink": [],
+    "empty-area": [],
+    "holdout-sm-friday": [
+      "ospi-venice",
+      "the-waterfront-venice",
+      "all-roads-pinseria-brentwood",
+      "library-alehouse-santa-monica",
+      "michaels-santa-monica"
+    ],
+    "holdout-pasadena": [
+      "foothill-restaurant-pasadena",
+      "green-street-restaurant-pasadena",
+      "brookside-restaurant-pasadena",
+      "granville-pasadena",
+      "guss-bbq-south-pasadena",
+      "dog-haus-biergarten-alhambra",
+      "barcade-los-angeles-highland-park"
+    ],
+    "holdout-dtla-close": [
+      "far-bar",
+      "le-oyster-bar-silver-lake"
+    ],
+    "holdout-hollywood": [
+      "tam-oshanter-atwater-village",
+      "formosa-cafe-west-hollywood",
+      "33-taps-silver-lake",
+      "33-taps-west-hollywood",
+      "gracias-madre-west-hollywood",
+      "hugos-west-hollywood",
+      "iki-ramen-koreatown",
+      "iki-ramen-hollywood"
+    ],
+    "holdout-dawn": []
+  },
+  "holdoutValidLabels": {
+    "holdout-sm-friday": [
+      "ospi-venice",
+      "the-waterfront-venice",
+      "all-roads-pinseria-brentwood",
+      "library-alehouse-santa-monica",
+      "michaels-santa-monica"
+    ],
+    "holdout-pasadena": [
+      "foothill-restaurant-pasadena",
+      "green-street-restaurant-pasadena",
+      "brookside-restaurant-pasadena",
+      "granville-pasadena",
+      "guss-bbq-south-pasadena",
+      "dog-haus-biergarten-alhambra",
+      "barcade-los-angeles-highland-park"
+    ],
+    "holdout-dtla-close": [
+      "far-bar",
+      "le-oyster-bar-silver-lake"
+    ],
+    "holdout-hollywood": [
+      "tam-oshanter-atwater-village",
+      "formosa-cafe-west-hollywood",
+      "33-taps-silver-lake",
+      "33-taps-west-hollywood",
+      "gracias-madre-west-hollywood",
+      "hugos-west-hollywood",
+      "iki-ramen-koreatown",
+      "iki-ramen-hollywood"
+    ],
+    "holdout-dawn": []
+  },
+  "notes": {
+    "dtla-weekday": "Thursday 17:30, radius 3mi, ceiling $30. Perch is 0.243208mi away; its primary weekday 16:00-18:00 window and $5 slider + $7 beer = $12 qualify. Seafood/taco, margarita and atmosphere preferences are soft. Joyce and Rossoblu have seating restrictions and includeRestricted is absent/false. Sources: https://www.perchla.com/menu-aperitif ; https://www.joycela.com/menus/ ; https://www.rossoblula.com/pizza-happy-hour .",
+    "arts-wine": "Wednesday 17:15, radius 3mi, ceiling $35. Perch is 1.125359mi from the Arts District origin; $5 slider + $10 HH wine = $15 in the 16:00-18:00 window. Wine/date-night preferences do not create hard exclusions. Nearby guide-only listings lack admissible primary priced pairs; Joyce and Rossoblu are seating-restricted. Source: https://www.perchla.com/menu-aperitif .",
+    "dtla-low-budget": "Thursday 16:30, radius 3mi, ceiling $15, with no lower price bound. Perch 0.243208mi, $5 slider + $7 beer = $12 qualifies despite exceeding the $10 target itself. 33 Taps Silver Lake (3.069296mi) and IKI Koreatown (3.135664mi) are outside radius. Source: https://www.perchla.com/menu-aperitif .",
+    "dtla-tacos": "Friday 16:00, radius 3mi, ceiling $30. Perch 0.243208mi qualifies at the start-inclusive 16:00 edge with a $12 slider/beer pair. Taco and margarita preferences are not must-haves. The official Friday 15:00 versus 16:00 start discrepancy does not affect the supported 16:00-18:00 overlap. Source: https://www.perchla.com/menu-aperitif .",
+    "dtla-weekend": "Coverage gap, not a claimed real-world absence of Saturday HH. Saturday 17:15 within 3mi has no evidenced unrestricted primary priced pair: Perch is weekday-only; Joyce and Rossoblu are seating-restricted; other nearby supplied records are secondary, unpriced, or lack a usable window. Sources: https://www.perchla.com/menu-aperitif ; https://www.joycela.com/menus/ ; https://www.rossoblula.com/pizza-happy-hour .",
+    "pasadena": "Thursday 16:30, radius 3mi, ceiling $30. Green Street 0.769611mi: chips/salsa $8 + draft beer $7 = $15, weekdays 16:00-18:00. Gus's South Pasadena 2.047204mi: 3 rib sliders $10 + draft $6 = $16, weekdays 15:00-17:30. Foothill 3.027683mi is outside radius; no rounding or radius relaxation. Sources: https://greenstreetrestaurant.com/menu/happy-hour/ ; https://www.gussbbq.com/locations ; https://www.gussbbq.com/items/rib-sliders ; https://www.gussbbq.com/items/draft-beers .",
+    "glendale": "Coverage gap at Wednesday 17:00 within 3mi, ceiling $35. No admissible primary fixed-price food-and-drink pair. La Cabanita ends at 17:00 exclusively and is also 4.408875mi away; John Sparr is 4.332953mi and unpriced. Bacari Glendale lacks HH item prices; Momed is restricted and lacks food; Tam O'Shanter has no HH food price and ends at 17:00. Nearby Messhall's Wednesday window is conflicting/conditional, and Edendale is unpriced. Sources: https://www.lacabanitarestaurant.com/menu ; https://www.eatwithbacari.com/glendale ; https://www.johnsparrtavern.com/menu ; https://www.lawrysonline.com/tam-o-shanter/happenings/happy-hour/ .",
+    "hollywood": "Tuesday 17:00, radius 3mi, ceiling $35. Formosa 1.318674mi: $10 wings + $5 daily beer = $15; 33 Taps Silver Lake 2.887404mi: $9 HH cheeseburger + $5 house draft = $14; IKI Hollywood 0.425420mi: $5 edamame + $5 draft = $10. All have primary unrestricted active afternoon windows. IKI Koreatown 3.141026mi and 33 Taps WeHo 3.560979mi exceed 3mi. Sources: https://theformosacafe.com/menu ; https://www.eatdrink33.com/silver-lake-location/ ; https://www.eatdrink33.com/menus/ ; https://www.eatdrink33.com/event/ ; https://ikiramen.com/happenings/happy-hour .",
+    "culver-city": "Friday 17:00, radius 3mi, ceiling $35. Simonette is 0.237810mi away, daily 15:00-18:00, $10 Burger Parisienne + $4 lager = $14. Exact burger price relies on an older official-hosted HH PDF, while the current happenings page confirms the HH and beer price. Culver Hotel is conflicting and reaches its menu's exclusive 17:00 end; Public School is bar-only; Bacari has unknown costs. Source: https://www.simonetterestaurant.com/weekly-happenings ; exact-price PDF in gold-notes.md.",
+    "santa-monica": "Thursday 17:00, radius 3mi, ceiling $35. Ospi Venice 2.518750mi: provolone $14 + espresso martini $14 = $28; Waterfront 1.604493mi: cheeseburger/fries $12 + posted PBR purchase $8 = $20; Library Alehouse 1.376514mi: 2 tacos $7 + Mayberry IPA $7 = $14; Manchego 1.014518mi: deviled eggs $9 + sangria $8 = $17; Michael's 0.379537mi: fries $7 + 1979 cocktail $12 = $19. All active, primary and unrestricted. Waterfront uses the full $8 purchase, not a $4 BOGO-derived price. Sources and the prior visual-review limitation for Library's image are in gold-notes.md.",
+    "burbank": "Coverage gap at Thursday 17:00 within 3mi, ceiling $35. Inkwell has dollar-off offers and no exact food price; GRANVILLE has no HH-priced items; Octopus is conditional and unpriced. Smoke House is seating-restricted, unpriced, and its HH ends at this exclusive 17:00 boundary. No invented subtotal or positive label. Sources: https://inkwelltavern.com/ ; https://www.granville.com/ ; https://www.octopusrestaurant.com/orderonline ; https://www.smokehouse1946.com/specials .",
+    "early-morning": "Thursday 06:00, radius 25mi. None of the 100 supplied source-reviewed records has an admissible primary HH window covering this dawn time. Overnight offers were considered by their documented start/end and do not extend to 06:00. Ordinary restaurant opening times do not establish happy hour.",
+    "impossible-food": "Thursday 17:30, radius 25mi, ceiling $55. requireFood=true makes unicorn-noodle-test a hard constraint; no primary HH food item or source-reviewed tag in the supplied evidence supports it. No venue can be labeled by relaxing the required food or inventing a tag.",
+    "impossible-drink": "Thursday 17:30, radius 25mi, ceiling $55. requireDrinks=true makes evaluation-only-drink a hard constraint; no primary HH drink item or source-reviewed tag supports it. The empty label is independent of ranking or the case's negative flag.",
+    "empty-area": "The explicit neighborhood 'No such neighborhood' has no corresponding source-reviewed venue neighborhood among the 100 supplied records. This hard area constraint is not silently replaced by the DTLA origin or expanded to all LA; labels remain empty.",
+    "holdout-sm-friday": "HELD OUT. Friday 16:15, radius 4mi, ceiling $33. Ospi Venice 2.518750mi/$28; Waterfront 1.604493mi/$20 using the full PBR purchase price; Library Alehouse 1.376514mi/$14; Michael's 0.379537mi/$19 all qualify. Manchego does not start until 17:00. Wine is soft, so beer or cocktail pairs remain acceptable. Ospi Brentwood is restricted/conditional, and Casa Martin, Surfing Fox, La Puglia and Lunetta have conditional windows. Exact sources and item witnesses are in gold-notes.md.",
+    "holdout-pasadena": "HELD OUT. Tuesday 17:15, radius 4mi, ceiling $30. Green Street 0.769611mi/$15 and Gus's South Pasadena 2.047204mi/$16 remain active. Foothill 3.027683mi now fits 4mi and offers fries $6 + beer of day $7 = $13, Tuesday 11:00-18:00. Marina is bar-only, Maestro is conditional, and drink-only/unpriced nearby records cannot establish a pair. Sources: https://greenstreetrestaurant.com/menu/happy-hour/ ; https://www.gussbbq.com/locations ; https://www.gussbbq.com/items/rib-sliders ; https://www.gussbbq.com/items/draft-beers ; https://foothillrestaurant.com/happyhour .",
+    "holdout-dtla-close": "HELD OUT coverage gap. Thursday 18:00 within 3mi, ceiling $35. Perch's HH ends at 18:00, so the end-exclusive boundary fails. Joyce/Rossoblu are seating-restricted; Far Bar has no exact primary food-and-drink pair. 33 Taps Silver Lake is 3.069296mi away, outside the fixed radius, and no other supplied local primary priced pair qualifies. Sources: https://www.perchla.com/menu-aperitif ; https://www.farbarla.com/take-out-menu-1 .",
+    "holdout-hollywood": "HELD OUT. Wednesday 16:45, radius 4mi, ceiling $25. Formosa 1.318674mi/$15; 33 Taps Silver Lake 2.887404mi/$14; 33 Taps West Hollywood 3.560979mi/$14; Gracias Madre 3.720462mi, fries $7 + house cerveza $7 = $14; IKI Koreatown 3.141026mi/$10; IKI Hollywood 0.425420mi/$10 qualify in primary unrestricted windows. Gracias Madre's conflicting margarita is not used. Da Michele and Black Cat are conditional/restricted; Messhall's Wednesday window is conflicting. Sources: https://theformosacafe.com/menu ; https://www.eatdrink33.com/menus/ ; https://www.eatdrink33.com/event/ ; https://ikiramen.com/happenings/happy-hour ; Gracias Madre linked PDF in gold-notes.md.",
+    "holdout-dawn": "HELD OUT. Sunday 06:15 within 3mi of Culver City has no primary source-reviewed HH window or priced pair. Simonette's daily HH starts 15:00. Neither ordinary breakfast service nor an expired previous-night offer is a qualifying HH. Source: https://www.simonetterestaurant.com/weekly-happenings ."
+  }
+}
