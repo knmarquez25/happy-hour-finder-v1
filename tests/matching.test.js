@@ -65,6 +65,86 @@ const request = {
   drinkPreferences: ["margarita"],
   atmosphere: "lively",
 };
+test("required food and drink categories cannot pass on an empty menu with blank preferences", () => {
+  assert.equal(
+    evaluateRestaurant(
+      { ...venue, menu: [] },
+      {
+        ...request,
+        foodPreferences: [],
+        drinkPreferences: [],
+        requireFood: true,
+        requireDrinks: true,
+      },
+    ).eligible,
+    false,
+  );
+  assert.equal(
+    evaluateRestaurant(venue, {
+      ...request,
+      foodPreferences: [],
+      drinkPreferences: [],
+      requireFood: true,
+      requireDrinks: true,
+    }).eligible,
+    true,
+  );
+});
+test("overnight item weekday follows the active window's starting day", () => {
+  const overnight = {
+    ...venue,
+    hours: [
+      { ...venue.hours[0], days: ["Friday"], start: "22:00", end: "02:00" },
+    ],
+    menu: venue.menu.map((item) => ({ ...item, days: ["Friday"] })),
+  };
+  assert.equal(
+    evaluateRestaurant(overnight, {
+      ...request,
+      day: "Saturday",
+      time: "01:00",
+      requireFood: true,
+      requireDrinks: true,
+    }).eligible,
+    true,
+  );
+  assert.equal(
+    selectCombo(overnight, { ...request, day: "Saturday", time: "01:00" })
+      .totalCents,
+    2700,
+  );
+});
+test("required food and drinks must be compatible, even when prices are unknown", () => {
+  const conditional = {
+    ...venue,
+    menu: [
+      { ...venue.menu[0], pairWithIds: ["beer"] },
+      { ...venue.menu[1], id: "beer", tags: ["beer"] },
+      { ...venue.menu[1], id: "wine", tags: ["wine"] },
+    ],
+  };
+  const required = {
+    ...request,
+    requireFood: true,
+    requireDrinks: true,
+    drinkPreferences: ["wine"],
+  };
+  assert.equal(evaluateRestaurant(conditional, required).eligible, false);
+  assert.equal(
+    evaluateRestaurant(
+      {
+        ...venue,
+        menu: venue.menu.map((item) => ({ ...item, priceCents: null })),
+      },
+      {
+        ...request,
+        requireFood: true,
+        requireDrinks: true,
+      },
+    ).eligible,
+    true,
+  );
+});
 test("flexible budget retains over-target and cheaper matches with exact differences", () => {
   const result = searchRestaurants([venue], request);
   assert.equal(result.matches.length, 1);

@@ -401,5 +401,6 @@ document.addEventListener("pointerover", (event) => {
 });
 document.addEventListener("pointerout", hideTooltip);
 document.addEventListener("scroll", hideTooltip, { passive: true });
+window.addEventListener("resize", hideTooltip);
 runSearch();
 icons();

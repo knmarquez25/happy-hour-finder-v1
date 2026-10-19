@@ -60,6 +60,14 @@ const base = process.env.PREVIEW_URL || "http://127.0.0.1:4174";
     assert.match(await page.locator("#active-filters").innerText(), /sushi/);
     assert.match(await page.locator("#active-filters").innerText(), /wine/);
     await page.locator("#sort").selectOption("match");
+    for (const budget of [1, 100, 250, 500]) {
+      await page.locator("#budget").fill(String(budget));
+      assert.equal(
+        await page.locator("#budget-slider").inputValue(),
+        String(budget),
+        "Slider and numeric budget stay synchronized",
+      );
+    }
     await page.getByRole("spinbutton", { name: /Budget target/ }).fill("5");
     await page.getByRole("spinbutton", { name: /Budget target/ }).press("Tab");
     assert.ok(

@@ -133,7 +133,15 @@ function commonSupportedWindow(venue, request, items) {
       activeWindow(window, request.day, request.time) &&
       restrictionAllowed(window, request) &&
       items.every(
-        (item) => !item.windowIds || item.windowIds.includes(window.id),
+        (item) =>
+          (!item.windowIds || item.windowIds.includes(window.id)) &&
+          (!item.days ||
+            item.days.includes(
+              toMinutes(window.start) > toMinutes(window.end) &&
+                toMinutes(request.time) < toMinutes(window.end)
+                ? weekdays[(weekdays.indexOf(request.day) + 6) % 7]
+                : request.day,
+            )),
       ),
   );
 }
@@ -141,8 +149,14 @@ function availableMenuItems(venue, request) {
   return (venue.menu || []).filter(
     (item) =>
       primaryEvidence(venue, item) &&
-      (!item.days || item.days.includes(request.day)) &&
       commonSupportedWindow(venue, request, [item]),
+  );
+}
+function compatibleItems(venue, request, food, drink) {
+  return (
+    commonSupportedWindow(venue, request, [food, drink]) &&
+    (!food.pairWithIds || food.pairWithIds.includes(drink.id)) &&
+    (!drink.pairWithIds || drink.pairWithIds.includes(food.id))
   );
 }
 export function selectCombo(venue, rawRequest) {
@@ -155,12 +169,7 @@ export function selectCombo(venue, rawRequest) {
   const combinations = [];
   for (const food of foods)
     for (const drink of drinks) {
-      if (
-        !commonSupportedWindow(venue, request, [food, drink]) ||
-        (food.pairWithIds && !food.pairWithIds.includes(drink.id)) ||
-        (drink.pairWithIds && !drink.pairWithIds.includes(food.id))
-      )
-        continue;
+      if (!compatibleItems(venue, request, food, drink)) continue;
       const foodMatches = matchingPreferences(
           food.tags,
           request.foodPreferences,
@@ -249,16 +258,43 @@ export function evaluateRestaurant(venue, rawRequest) {
     );
   if (
     request.requireFood &&
-    request.foodPreferences.length &&
-    !matchingPreferences(supportedFood, request.foodPreferences).length
+    !availableItems.some(
+      (item) =>
+        item.kind === "food" &&
+        (!request.foodPreferences.length ||
+          matchingPreferences(item.tags, request.foodPreferences).length),
+    )
   )
     failures.push("Required food not confirmed on happy-hour menu");
   if (
     request.requireDrinks &&
-    request.drinkPreferences.length &&
-    !matchingPreferences(supportedDrinks, request.drinkPreferences).length
+    !availableItems.some(
+      (item) =>
+        item.kind === "drink" &&
+        (!request.drinkPreferences.length ||
+          matchingPreferences(item.tags, request.drinkPreferences).length),
+    )
   )
     failures.push("Required drink not confirmed on happy-hour menu");
+  if (
+    request.requireFood &&
+    request.requireDrinks &&
+    !availableItems.some(
+      (food) =>
+        food.kind === "food" &&
+        (!request.foodPreferences.length ||
+          matchingPreferences(food.tags, request.foodPreferences).length) &&
+        availableItems.some(
+          (drink) =>
+            drink.kind === "drink" &&
+            (!request.drinkPreferences.length ||
+              matchingPreferences(drink.tags, request.drinkPreferences)
+                .length) &&
+            compatibleItems(venue, request, food, drink),
+        ),
+    )
+  )
+    failures.push("Required food and drink offers cannot be combined");
   const combo = selectCombo(venue, request);
   const budgetDifferenceCents = combo
     ? combo.totalCents - Math.round(request.budget * 100)
