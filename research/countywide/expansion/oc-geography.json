@@ -1,0 +1,128 @@
+[
+  {
+    "id": "benchmark-santa-ana",
+    "queryAddress": "601 E Santa Ana Blvd, Santa Ana, CA 92701",
+    "submittedAddress": "601 E Santa Ana Blvd, Santa Ana, CA 92701",
+    "url": "https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?address=601+E+Santa+Ana+Blvd%2C+Santa+Ana%2C+CA+92701&benchmark=Public_AR_Current&vintage=Current_Current&format=json",
+    "matches": [
+      {
+        "matchedAddress": "601 E SANTA ANA BLVD, SANTA ANA, CA, 92701",
+        "coordinates": {
+          "x": -117.862557527417,
+          "y": 33.750476426644
+        },
+        "counties": [
+          {
+            "geoid": "06059",
+            "name": "Orange County"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "chapter-one-santa-ana",
+    "queryAddress": "227 N Broadway, Santa Ana, CA 92701",
+    "submittedAddress": "227 N Broadway, Santa Ana, CA 92701",
+    "url": "https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?address=227+N+Broadway%2C+Santa+Ana%2C+CA+92701&benchmark=Public_AR_Current&vintage=Current_Current&format=json",
+    "matches": [
+      {
+        "matchedAddress": "227 N BROADWAY, SANTA ANA, CA, 92701",
+        "coordinates": {
+          "x": -117.869669560665,
+          "y": 33.746543889764
+        },
+        "counties": [
+          {
+            "geoid": "06059",
+            "name": "Orange County"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "cedar-creek-inn-brea",
+    "queryAddress": "20 Pointe Drive, Brea, CA 92821",
+    "submittedAddress": "20 Pointe Drive, Brea, CA 92821",
+    "url": "https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?address=20+Pointe+Drive%2C+Brea%2C+CA+92821&benchmark=Public_AR_Current&vintage=Current_Current&format=json",
+    "matches": [
+      {
+        "matchedAddress": "20 POINTE DR, BREA, CA, 92821",
+        "coordinates": {
+          "x": -117.876999244115,
+          "y": 33.926554154649
+        },
+        "counties": [
+          {
+            "geoid": "06059",
+            "name": "Orange County"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "billys-at-the-beach-newport-beach",
+    "queryAddress": "2751 West Coast Hwy, Newport Beach, CA 92663",
+    "submittedAddress": "2751 West Coast Hwy, Newport Beach, CA 92663",
+    "url": "https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?address=2751+West+Coast+Hwy%2C+Newport+Beach%2C+CA+92663&benchmark=Public_AR_Current&vintage=Current_Current&format=json",
+    "matches": [
+      {
+        "matchedAddress": "2751 W COAST HWY, NEWPORT BEACH, CA, 92663",
+        "coordinates": {
+          "x": -117.919987489017,
+          "y": 33.61805312646
+        },
+        "counties": [
+          {
+            "geoid": "06059",
+            "name": "Orange County"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "mayfield-san-juan-capistrano",
+    "queryAddress": "31761 Camino Capistrano, San Juan Capistrano, CA 92675",
+    "submittedAddress": "31761 Camino Capistrano, San Juan Capistrano, CA 92675",
+    "url": "https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?address=31761+Camino+Capistrano%2C+San+Juan+Capistrano%2C+CA+92675&benchmark=Public_AR_Current&vintage=Current_Current&format=json",
+    "matches": [
+      {
+        "matchedAddress": "31761 CAM CAPISTRANO, SAN JUAN CAPISTRANO, CA, 92675",
+        "coordinates": {
+          "x": -117.662782792449,
+          "y": 33.501644384133
+        },
+        "counties": [
+          {
+            "geoid": "06059",
+            "name": "Orange County"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "coyote-grill-laguna-beach",
+    "queryAddress": "31621 Coast Hwy, Laguna Beach, CA 92651",
+    "submittedAddress": "31621 Coast Hwy, Laguna Beach, CA 92651",
+    "url": "https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?address=31621+Coast+Hwy%2C+Laguna+Beach%2C+CA+92651&benchmark=Public_AR_Current&vintage=Current_Current&format=json",
+    "matches": [
+      {
+        "matchedAddress": "31621 S COAST HWY, LAGUNA BEACH, CA, 92651",
+        "coordinates": {
+          "x": -117.745040315855,
+          "y": 33.50325806335
+        },
+        "counties": [
+          {
+            "geoid": "06059",
+            "name": "Orange County"
+          }
+        ]
+      }
+    ]
+  }
+]

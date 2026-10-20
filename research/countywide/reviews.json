@@ -1,0 +1,554 @@
+[
+  {
+    "id": "review-cw-wood-valencia-1",
+    "candidateId": "cw-wood-valencia",
+    "revision": "1",
+    "at": "2026-10-19T22:39:51Z",
+    "reviewer": "Codex source inspection",
+    "reviewMethod": "agent-source-inspection",
+    "decision": "request-review",
+    "sourceIds": ["src-wood-valencia"],
+    "affectedFields": ["county", "identity", "policy", "restrictions"],
+    "confirmedPairIds": [],
+    "rationale": "Final identity, county evidence, retention decision, and independent review remain pending."
+  },
+  {
+    "id": "review-cw-frontyard-1",
+    "candidateId": "cw-frontyard",
+    "revision": "1",
+    "at": "2026-10-19T22:39:51Z",
+    "reviewer": "Codex source inspection",
+    "reviewMethod": "agent-source-inspection",
+    "decision": "request-review",
+    "sourceIds": ["src-frontyard", "src-frontyard-contact"],
+    "affectedFields": [
+      "hours.weekend",
+      "hours.lateEnd",
+      "address",
+      "county",
+      "policy"
+    ],
+    "confirmedPairIds": [],
+    "rationale": "Final identity, county evidence, retention decision, and independent review remain pending."
+  },
+  {
+    "id": "review-cw-attic-1",
+    "candidateId": "cw-attic",
+    "revision": "1",
+    "at": "2026-10-19T22:39:51Z",
+    "reviewer": "Codex source inspection",
+    "reviewMethod": "agent-source-inspection",
+    "decision": "request-review",
+    "sourceIds": ["src-attic"],
+    "affectedFields": ["county", "identity", "policy", "hours", "menu"],
+    "confirmedPairIds": [],
+    "rationale": "Final identity, county evidence, retention decision, and independent review remain pending."
+  },
+  {
+    "id": "review-cw-hangar-1",
+    "candidateId": "cw-hangar",
+    "revision": "1",
+    "at": "2026-10-19T22:39:51Z",
+    "reviewer": "Codex source inspection",
+    "reviewMethod": "agent-source-inspection",
+    "decision": "request-review",
+    "sourceIds": ["src-hangar"],
+    "affectedFields": ["county", "identity", "policy", "hours", "menu"],
+    "confirmedPairIds": [],
+    "rationale": "Final identity, county evidence, retention decision, and independent review remain pending."
+  },
+  {
+    "id": "review-cw-wood-irvine-1",
+    "candidateId": "cw-wood-irvine",
+    "revision": "1",
+    "at": "2026-10-19T22:39:51Z",
+    "reviewer": "Codex source inspection",
+    "reviewMethod": "agent-source-inspection",
+    "decision": "request-review",
+    "sourceIds": ["src-wood-irvine"],
+    "affectedFields": ["county", "identity", "policy", "restrictions"],
+    "confirmedPairIds": [],
+    "rationale": "Final identity, county evidence, retention decision, and independent review remain pending."
+  },
+  {
+    "id": "review-cw-lazy-irvine-1",
+    "candidateId": "cw-lazy-irvine",
+    "revision": "1",
+    "at": "2026-10-19T22:39:51Z",
+    "reviewer": "Codex source inspection",
+    "reviewMethod": "agent-source-inspection",
+    "decision": "request-review",
+    "sourceIds": ["src-lazy-irvine"],
+    "affectedFields": ["county", "identity", "policy", "restrictions"],
+    "confirmedPairIds": [],
+    "rationale": "Final identity, county evidence, retention decision, and independent review remain pending."
+  },
+  {
+    "id": "review-cw-benchmark-1",
+    "candidateId": "cw-benchmark",
+    "revision": "1",
+    "at": "2026-10-19T22:39:51Z",
+    "reviewer": "Codex source inspection",
+    "reviewMethod": "agent-source-inspection",
+    "decision": "request-review",
+    "sourceIds": ["src-benchmark"],
+    "affectedFields": ["county", "identity", "policy", "hours", "menu"],
+    "confirmedPairIds": [],
+    "rationale": "Final identity, county evidence, retention decision, and independent review remain pending."
+  },
+  {
+    "id": "review-cw-playa-1",
+    "candidateId": "cw-playa",
+    "revision": "1",
+    "at": "2026-10-19T22:39:51Z",
+    "reviewer": "Codex source inspection",
+    "reviewMethod": "agent-source-inspection",
+    "decision": "exclude",
+    "sourceIds": ["src-playa"],
+    "affectedFields": ["county", "identity", "policy", "hours", "menu"],
+    "confirmedPairIds": [],
+    "rationale": "Direct official closure notice."
+  },
+  {
+    "id": "integration-cw-risu-long-beach-review",
+    "candidateId": "cw-risu-long-beach",
+    "revision": "1",
+    "at": "2026-10-20T01:35:10Z",
+    "reviewer": "Codex integration source inspection",
+    "reviewMethod": "agent-source-inspection",
+    "decision": "accept",
+    "sourceIds": [
+      "src-cw-risu-long-beach-official-hh",
+      "src-cw-risu-long-beach-official-menu",
+      "src-cw-risu-long-beach-official-location",
+      "src-cw-risu-long-beach-census"
+    ],
+    "affectedFields": [],
+    "confirmedPairIds": ["pair-daily-afternoon"],
+    "rationale": "Current official advertisement and selected facts inspected, bounded window applicability retained, identity checked against current dataset, government county/address match reviewed, and factual-only retention basis recorded. No source-content license or in-person confirmation claimed.",
+    "candidateHash": "c1bf0e01da228a05f28b31deb0026cc26449a41afde3bd723a9a243f00971af5",
+    "evidenceHash": "b5c3cebd89495baa93e9cf610e9bd8938b23f53a52d27e553ed0f864c2b656f2"
+  },
+  {
+    "id": "integration-cw-the-hare-long-beach-review",
+    "candidateId": "cw-the-hare-long-beach",
+    "revision": "1",
+    "at": "2026-10-20T01:35:10Z",
+    "reviewer": "Codex integration source inspection",
+    "reviewMethod": "agent-source-inspection",
+    "decision": "accept",
+    "sourceIds": [
+      "src-cw-the-hare-long-beach-official-home",
+      "src-cw-the-hare-long-beach-official-hh",
+      "src-cw-the-hare-long-beach-census"
+    ],
+    "affectedFields": [],
+    "confirmedPairIds": [],
+    "rationale": "Current official advertisement and selected facts inspected, bounded window applicability retained, identity checked against current dataset, government county/address match reviewed, and factual-only retention basis recorded. No source-content license or in-person confirmation claimed.",
+    "candidateHash": "d0db77915b7f56c7cc408d50b6d2de902d66d5ade967ce6496641186cd813c30",
+    "evidenceHash": "1e8c0f17a4b96af6617a40af3efa71a911163f562fc6d166b335fb565b9737a7"
+  },
+  {
+    "id": "integration-cw-nomad-eatery-el-segundo-review",
+    "candidateId": "cw-nomad-eatery-el-segundo",
+    "revision": "1",
+    "at": "2026-10-20T01:35:10Z",
+    "reviewer": "Codex integration source inspection",
+    "reviewMethod": "agent-source-inspection",
+    "decision": "accept",
+    "sourceIds": [
+      "src-cw-nomad-eatery-el-segundo-official-hh",
+      "src-cw-nomad-eatery-el-segundo-official-home",
+      "src-cw-nomad-eatery-el-segundo-official-location",
+      "src-cw-nomad-eatery-el-segundo-census"
+    ],
+    "affectedFields": [],
+    "confirmedPairIds": [],
+    "rationale": "Current official advertisement and selected facts inspected, bounded window applicability retained, identity checked against current dataset, government county/address match reviewed, and factual-only retention basis recorded. No source-content license or in-person confirmation claimed.",
+    "candidateHash": "525a1c988a76ec27e320617c177cce1b9f4b0d243bf50ec69cd10819f51e1884",
+    "evidenceHash": "e9b4c3ebb4ba36ab6fccc0bd7734c0d6b82eaa5db6149e8949952cfcb5cf705e"
+  },
+  {
+    "id": "integration-cw-sausal-el-segundo-review",
+    "candidateId": "cw-sausal-el-segundo",
+    "revision": "1",
+    "at": "2026-10-20T01:35:10Z",
+    "reviewer": "Codex integration source inspection",
+    "reviewMethod": "agent-source-inspection",
+    "decision": "accept",
+    "sourceIds": [
+      "src-cw-sausal-el-segundo-official-menu",
+      "src-cw-sausal-el-segundo-official-home",
+      "src-cw-sausal-el-segundo-official-hh",
+      "src-cw-sausal-el-segundo-census"
+    ],
+    "affectedFields": [],
+    "confirmedPairIds": ["pair-daily-afternoon"],
+    "rationale": "Current official advertisement and selected facts inspected, bounded window applicability retained, identity checked against current dataset, government county/address match reviewed, and factual-only retention basis recorded. No source-content license or in-person confirmation claimed.",
+    "candidateHash": "356a137e1ad51c3ffc9325afca7329c608d49dc4891218a603b1d07826cea931",
+    "evidenceHash": "2e11c0cd24ac2607c3227276e0a87f08a05e25a448339969d7b5f2b1f6d07174"
+  },
+  {
+    "id": "integration-cw-the-social-valencia-review",
+    "candidateId": "cw-the-social-valencia",
+    "revision": "1",
+    "at": "2026-10-20T01:35:10Z",
+    "reviewer": "Codex integration source inspection",
+    "reviewMethod": "agent-source-inspection",
+    "decision": "request-review",
+    "sourceIds": [
+      "src-cw-the-social-valencia-official-home",
+      "src-cw-the-social-valencia-official-location"
+    ],
+    "affectedFields": ["county", "coordinates", "identity"],
+    "confirmedPairIds": [],
+    "rationale": "Census returned no address match. Do not guess a county, coordinate, or import eligibility."
+  },
+  {
+    "id": "integration-cw-glendora-continental-glendora-review",
+    "candidateId": "cw-glendora-continental-glendora",
+    "revision": "1",
+    "at": "2026-10-20T01:35:10Z",
+    "reviewer": "Codex integration source inspection",
+    "reviewMethod": "agent-source-inspection",
+    "decision": "accept",
+    "sourceIds": [
+      "src-cw-glendora-continental-glendora-official-hours",
+      "src-cw-glendora-continental-glendora-official-home",
+      "src-cw-glendora-continental-glendora-census"
+    ],
+    "affectedFields": [],
+    "confirmedPairIds": [],
+    "rationale": "Current official advertisement and selected facts inspected, bounded window applicability retained, identity checked against current dataset, government county/address match reviewed, and factual-only retention basis recorded. No source-content license or in-person confirmation claimed.",
+    "candidateHash": "0ac28a08fe5dae38800ca383388de30ed1debbbe3b5b0b76607936932ab362c6",
+    "evidenceHash": "5e2fcf4b2d6bd0718c7d593d88aed09909ea7f3a7ce69340254c5a66dff3f77c"
+  },
+  {
+    "id": "integration-cw-benchmark-review",
+    "candidateId": "cw-benchmark",
+    "revision": "2",
+    "at": "2026-10-20T01:35:10Z",
+    "reviewer": "Codex integration source inspection",
+    "reviewMethod": "agent-source-inspection",
+    "decision": "accept",
+    "sourceIds": [
+      "src-benchmark",
+      "src-cw-benchmark-menu",
+      "src-cw-benchmark-census"
+    ],
+    "affectedFields": [],
+    "confirmedPairIds": [],
+    "rationale": "Current official advertisement and selected facts inspected, bounded window applicability retained, identity checked against current dataset, government county/address match reviewed, and factual-only retention basis recorded. No source-content license or in-person confirmation claimed.",
+    "candidateHash": "cde90112407a313587cc8de6305b91bb76fba58bf670ce124efed693aa13088f",
+    "evidenceHash": "d8b4bb4f484a2170f3518327ad230903eefa530be3c2150a87e1b72a36e27b15"
+  },
+  {
+    "id": "integration-cw-chapter-one-santa-ana-review",
+    "candidateId": "cw-chapter-one-santa-ana",
+    "revision": "1",
+    "at": "2026-10-20T01:35:10Z",
+    "reviewer": "Codex integration source inspection",
+    "reviewMethod": "agent-source-inspection",
+    "decision": "accept",
+    "sourceIds": [
+      "src-cw-chapter-one-santa-ana-happy-hour",
+      "src-cw-chapter-one-santa-ana-location",
+      "src-cw-chapter-one-santa-ana-privacy",
+      "src-cw-chapter-one-santa-ana-census"
+    ],
+    "affectedFields": [],
+    "confirmedPairIds": ["pair-weekday"],
+    "rationale": "Current official advertisement and selected facts inspected, bounded window applicability retained, identity checked against current dataset, government county/address match reviewed, and factual-only retention basis recorded. No source-content license or in-person confirmation claimed.",
+    "candidateHash": "3afbbd5ea88c940252e5046e9847b81c51bf1653c8433947464d1e323771ed7e",
+    "evidenceHash": "43d421db4acac75e244f537f144ebd96f5ec4d2e6b8fa00ee8ebe840123ea310"
+  },
+  {
+    "id": "integration-cw-cedar-creek-inn-brea-review",
+    "candidateId": "cw-cedar-creek-inn-brea",
+    "revision": "1",
+    "at": "2026-10-20T01:35:10Z",
+    "reviewer": "Codex integration source inspection",
+    "reviewMethod": "agent-source-inspection",
+    "decision": "accept",
+    "sourceIds": [
+      "src-cw-cedar-creek-inn-brea-location",
+      "src-cw-cedar-creek-inn-brea-happy-hour-menu",
+      "src-cw-cedar-creek-inn-brea-census"
+    ],
+    "affectedFields": [],
+    "confirmedPairIds": [],
+    "rationale": "Current official advertisement and selected facts inspected, bounded window applicability retained, identity checked against current dataset, government county/address match reviewed, and factual-only retention basis recorded. No source-content license or in-person confirmation claimed.",
+    "candidateHash": "60dc33b057d7fbb9e802ea2fcd75c550aa35ce124bb0f2b6be1b91ea4fc2fdad",
+    "evidenceHash": "392be2dff28cdc35d5ffc681ba30680e3d02546683759c53bfc572a171054bd6"
+  },
+  {
+    "id": "integration-cw-billys-at-the-beach-newport-beach-review",
+    "candidateId": "cw-billys-at-the-beach-newport-beach",
+    "revision": "1",
+    "at": "2026-10-20T01:35:10Z",
+    "reviewer": "Codex integration source inspection",
+    "reviewMethod": "agent-source-inspection",
+    "decision": "accept",
+    "sourceIds": [
+      "src-cw-billys-at-the-beach-newport-beach-location",
+      "src-cw-billys-at-the-beach-newport-beach-happy-hour-menu",
+      "src-cw-billys-at-the-beach-newport-beach-census"
+    ],
+    "affectedFields": [],
+    "confirmedPairIds": ["pair-weekday"],
+    "rationale": "Current official advertisement and selected facts inspected, bounded window applicability retained, identity checked against current dataset, government county/address match reviewed, and factual-only retention basis recorded. No source-content license or in-person confirmation claimed.",
+    "candidateHash": "14fb07e2fbc77ac11daddb3908518320b328df411d53854f5507e1e8cd2511b7",
+    "evidenceHash": "cdddb86a5ef9073d276299e504c16cff981064ab65a1c8cd3b76c8af1c712d6a"
+  },
+  {
+    "id": "integration-cw-mayfield-san-juan-capistrano-review",
+    "candidateId": "cw-mayfield-san-juan-capistrano",
+    "revision": "1",
+    "at": "2026-10-20T01:35:10Z",
+    "reviewer": "Codex integration source inspection",
+    "reviewMethod": "agent-source-inspection",
+    "decision": "accept",
+    "sourceIds": [
+      "src-cw-mayfield-san-juan-capistrano-happy-hour",
+      "src-cw-mayfield-san-juan-capistrano-census"
+    ],
+    "affectedFields": [],
+    "confirmedPairIds": ["pair-afternoon"],
+    "rationale": "Current official advertisement and selected facts inspected, bounded window applicability retained, identity checked against current dataset, government county/address match reviewed, and factual-only retention basis recorded. No source-content license or in-person confirmation claimed.",
+    "candidateHash": "a7de1667d25f60af435633e7f2e16e1af55ef296b05e9a491e8fedf048d5f8c0",
+    "evidenceHash": "a6ef77cb0637c3cb48c155babb33d42391284edfe852b7b18370b5945d67af4e"
+  },
+  {
+    "id": "integration-cw-coyote-grill-laguna-beach-review",
+    "candidateId": "cw-coyote-grill-laguna-beach",
+    "revision": "1",
+    "at": "2026-10-20T01:35:10Z",
+    "reviewer": "Codex integration source inspection",
+    "reviewMethod": "agent-source-inspection",
+    "decision": "accept",
+    "sourceIds": [
+      "src-cw-coyote-grill-laguna-beach-daily-event",
+      "src-cw-coyote-grill-laguna-beach-tuesday-event",
+      "src-cw-coyote-grill-laguna-beach-menu",
+      "src-cw-coyote-grill-laguna-beach-census"
+    ],
+    "affectedFields": [],
+    "confirmedPairIds": ["pair-bar-standard", "pair-bar-tuesday"],
+    "rationale": "Current official advertisement and selected facts inspected, bounded window applicability retained, identity checked against current dataset, government county/address match reviewed, and factual-only retention basis recorded. No source-content license or in-person confirmation claimed.",
+    "candidateHash": "db83e5dee931298be597f571c7b14953c582e3d211cc4676759c9b9caa30e867",
+    "evidenceHash": "7b534449d90d15defd90112066498ce1a8060e79b9b43afcc1f25c7d500f94d9"
+  },
+  {
+    "id": "audit-cw-benchmark-3",
+    "candidateId": "cw-benchmark",
+    "revision": "3",
+    "at": "2026-10-20T01:45:18Z",
+    "reviewer": "Codex integration review after independent agent audit (Carver)",
+    "reviewMethod": "agent-source-inspection",
+    "decision": "accept",
+    "sourceIds": [
+      "src-benchmark",
+      "src-cw-benchmark-menu",
+      "src-cw-benchmark-census"
+    ],
+    "affectedFields": [],
+    "confirmedPairIds": [],
+    "rationale": "Independent agent audit corroborated branch-specific official hours/prices/restrictions and fresh Census matches for all 11 admissions. Current notes distinguish resolved geography from unknown prices and limited factual-only retention. Cedar prices remain fully withheld from public fields. No human or same-day confirmation is claimed.",
+    "candidateHash": "983424c72987c9ec1c3d057a742c502ff353c810c246b5f33d4129faf2aa9a57",
+    "evidenceHash": "d8b4bb4f484a2170f3518327ad230903eefa530be3c2150a87e1b72a36e27b15"
+  },
+  {
+    "id": "audit-cw-risu-long-beach-2",
+    "candidateId": "cw-risu-long-beach",
+    "revision": "2",
+    "at": "2026-10-20T01:45:18Z",
+    "reviewer": "Codex integration review after independent agent audit (Carver)",
+    "reviewMethod": "agent-source-inspection",
+    "decision": "accept",
+    "sourceIds": [
+      "src-cw-risu-long-beach-official-hh",
+      "src-cw-risu-long-beach-official-menu",
+      "src-cw-risu-long-beach-official-location",
+      "src-cw-risu-long-beach-census"
+    ],
+    "affectedFields": [],
+    "confirmedPairIds": ["pair-daily-afternoon"],
+    "rationale": "Independent agent audit corroborated branch-specific official hours/prices/restrictions and fresh Census matches for all 11 admissions. Current notes distinguish resolved geography from unknown prices and limited factual-only retention. Cedar prices remain fully withheld from public fields. No human or same-day confirmation is claimed.",
+    "candidateHash": "84bff4d6e5664a78495b2820d66bbd0f9072f75d07132e6d6a6599a23d68dad0",
+    "evidenceHash": "b5c3cebd89495baa93e9cf610e9bd8938b23f53a52d27e553ed0f864c2b656f2"
+  },
+  {
+    "id": "audit-cw-the-hare-long-beach-2",
+    "candidateId": "cw-the-hare-long-beach",
+    "revision": "2",
+    "at": "2026-10-20T01:45:18Z",
+    "reviewer": "Codex integration review after independent agent audit (Carver)",
+    "reviewMethod": "agent-source-inspection",
+    "decision": "accept",
+    "sourceIds": [
+      "src-cw-the-hare-long-beach-official-home",
+      "src-cw-the-hare-long-beach-official-hh",
+      "src-cw-the-hare-long-beach-census"
+    ],
+    "affectedFields": [],
+    "confirmedPairIds": [],
+    "rationale": "Independent agent audit corroborated branch-specific official hours/prices/restrictions and fresh Census matches for all 11 admissions. Current notes distinguish resolved geography from unknown prices and limited factual-only retention. Cedar prices remain fully withheld from public fields. No human or same-day confirmation is claimed.",
+    "candidateHash": "be1b1779c21a45dda12189671ef27dbf0cbf0d325680554c90017f5ebe30e409",
+    "evidenceHash": "1e8c0f17a4b96af6617a40af3efa71a911163f562fc6d166b335fb565b9737a7"
+  },
+  {
+    "id": "audit-cw-nomad-eatery-el-segundo-2",
+    "candidateId": "cw-nomad-eatery-el-segundo",
+    "revision": "2",
+    "at": "2026-10-20T01:45:18Z",
+    "reviewer": "Codex integration review after independent agent audit (Carver)",
+    "reviewMethod": "agent-source-inspection",
+    "decision": "accept",
+    "sourceIds": [
+      "src-cw-nomad-eatery-el-segundo-official-hh",
+      "src-cw-nomad-eatery-el-segundo-official-home",
+      "src-cw-nomad-eatery-el-segundo-official-location",
+      "src-cw-nomad-eatery-el-segundo-census"
+    ],
+    "affectedFields": [],
+    "confirmedPairIds": [],
+    "rationale": "Independent agent audit corroborated branch-specific official hours/prices/restrictions and fresh Census matches for all 11 admissions. Current notes distinguish resolved geography from unknown prices and limited factual-only retention. Cedar prices remain fully withheld from public fields. No human or same-day confirmation is claimed.",
+    "candidateHash": "67ec7bce0b4d9a85de4d248d748cf212b97eb0f68c37bd034398966d1d5a7218",
+    "evidenceHash": "e9b4c3ebb4ba36ab6fccc0bd7734c0d6b82eaa5db6149e8949952cfcb5cf705e"
+  },
+  {
+    "id": "audit-cw-sausal-el-segundo-2",
+    "candidateId": "cw-sausal-el-segundo",
+    "revision": "2",
+    "at": "2026-10-20T01:45:18Z",
+    "reviewer": "Codex integration review after independent agent audit (Carver)",
+    "reviewMethod": "agent-source-inspection",
+    "decision": "accept",
+    "sourceIds": [
+      "src-cw-sausal-el-segundo-official-menu",
+      "src-cw-sausal-el-segundo-official-home",
+      "src-cw-sausal-el-segundo-official-hh",
+      "src-cw-sausal-el-segundo-census"
+    ],
+    "affectedFields": [],
+    "confirmedPairIds": ["pair-daily-afternoon"],
+    "rationale": "Independent agent audit corroborated branch-specific official hours/prices/restrictions and fresh Census matches for all 11 admissions. Current notes distinguish resolved geography from unknown prices and limited factual-only retention. Cedar prices remain fully withheld from public fields. No human or same-day confirmation is claimed.",
+    "candidateHash": "72ef0a85bf45eb75d72c8b896e27986cacfc1fd65e64244bea982b9168bcc75b",
+    "evidenceHash": "2e11c0cd24ac2607c3227276e0a87f08a05e25a448339969d7b5f2b1f6d07174"
+  },
+  {
+    "id": "audit-cw-glendora-continental-glendora-2",
+    "candidateId": "cw-glendora-continental-glendora",
+    "revision": "2",
+    "at": "2026-10-20T01:45:18Z",
+    "reviewer": "Codex integration review after independent agent audit (Carver)",
+    "reviewMethod": "agent-source-inspection",
+    "decision": "accept",
+    "sourceIds": [
+      "src-cw-glendora-continental-glendora-official-hours",
+      "src-cw-glendora-continental-glendora-official-home",
+      "src-cw-glendora-continental-glendora-census"
+    ],
+    "affectedFields": [],
+    "confirmedPairIds": [],
+    "rationale": "Independent agent audit corroborated branch-specific official hours/prices/restrictions and fresh Census matches for all 11 admissions. Current notes distinguish resolved geography from unknown prices and limited factual-only retention. Cedar prices remain fully withheld from public fields. No human or same-day confirmation is claimed.",
+    "candidateHash": "ae3b5884f4ff5061d4da921c0be01b42f50ac1f8ed0722406bdf4dc4e24ecb53",
+    "evidenceHash": "5e2fcf4b2d6bd0718c7d593d88aed09909ea7f3a7ce69340254c5a66dff3f77c"
+  },
+  {
+    "id": "audit-cw-chapter-one-santa-ana-2",
+    "candidateId": "cw-chapter-one-santa-ana",
+    "revision": "2",
+    "at": "2026-10-20T01:45:18Z",
+    "reviewer": "Codex integration review after independent agent audit (Carver)",
+    "reviewMethod": "agent-source-inspection",
+    "decision": "accept",
+    "sourceIds": [
+      "src-cw-chapter-one-santa-ana-happy-hour",
+      "src-cw-chapter-one-santa-ana-location",
+      "src-cw-chapter-one-santa-ana-privacy",
+      "src-cw-chapter-one-santa-ana-census"
+    ],
+    "affectedFields": [],
+    "confirmedPairIds": ["pair-weekday"],
+    "rationale": "Independent agent audit corroborated branch-specific official hours/prices/restrictions and fresh Census matches for all 11 admissions. Current notes distinguish resolved geography from unknown prices and limited factual-only retention. Cedar prices remain fully withheld from public fields. No human or same-day confirmation is claimed.",
+    "candidateHash": "fbc3104f9441d671160397ec52aada07614bce3f2af0530a208512f97abc9ccf",
+    "evidenceHash": "43d421db4acac75e244f537f144ebd96f5ec4d2e6b8fa00ee8ebe840123ea310"
+  },
+  {
+    "id": "audit-cw-cedar-creek-inn-brea-2",
+    "candidateId": "cw-cedar-creek-inn-brea",
+    "revision": "2",
+    "at": "2026-10-20T01:45:18Z",
+    "reviewer": "Codex integration review after independent agent audit (Carver)",
+    "reviewMethod": "agent-source-inspection",
+    "decision": "accept",
+    "sourceIds": [
+      "src-cw-cedar-creek-inn-brea-location",
+      "src-cw-cedar-creek-inn-brea-happy-hour-menu",
+      "src-cw-cedar-creek-inn-brea-census"
+    ],
+    "affectedFields": [],
+    "confirmedPairIds": [],
+    "rationale": "Independent agent audit corroborated branch-specific official hours/prices/restrictions and fresh Census matches for all 11 admissions. Current notes distinguish resolved geography from unknown prices and limited factual-only retention. Cedar prices remain fully withheld from public fields. No human or same-day confirmation is claimed.",
+    "candidateHash": "4840167e328b979b310f216567bee2db285592eb410f01fde0bf6233c073e675",
+    "evidenceHash": "33c59aeda61f22d2605bbd6b67276ec7a4c0d56cad2ffe4cc748f5c79c3e97c5"
+  },
+  {
+    "id": "audit-cw-billys-at-the-beach-newport-beach-2",
+    "candidateId": "cw-billys-at-the-beach-newport-beach",
+    "revision": "2",
+    "at": "2026-10-20T01:45:18Z",
+    "reviewer": "Codex integration review after independent agent audit (Carver)",
+    "reviewMethod": "agent-source-inspection",
+    "decision": "accept",
+    "sourceIds": [
+      "src-cw-billys-at-the-beach-newport-beach-location",
+      "src-cw-billys-at-the-beach-newport-beach-happy-hour-menu",
+      "src-cw-billys-at-the-beach-newport-beach-census"
+    ],
+    "affectedFields": [],
+    "confirmedPairIds": ["pair-weekday"],
+    "rationale": "Independent agent audit corroborated branch-specific official hours/prices/restrictions and fresh Census matches for all 11 admissions. Current notes distinguish resolved geography from unknown prices and limited factual-only retention. Cedar prices remain fully withheld from public fields. No human or same-day confirmation is claimed.",
+    "candidateHash": "17bf72a2db56439830bb2c4b47d9d772438fcb02312f0c1d70208fc7f5391aa0",
+    "evidenceHash": "cdddb86a5ef9073d276299e504c16cff981064ab65a1c8cd3b76c8af1c712d6a"
+  },
+  {
+    "id": "audit-cw-mayfield-san-juan-capistrano-2",
+    "candidateId": "cw-mayfield-san-juan-capistrano",
+    "revision": "2",
+    "at": "2026-10-20T01:45:18Z",
+    "reviewer": "Codex integration review after independent agent audit (Carver)",
+    "reviewMethod": "agent-source-inspection",
+    "decision": "accept",
+    "sourceIds": [
+      "src-cw-mayfield-san-juan-capistrano-happy-hour",
+      "src-cw-mayfield-san-juan-capistrano-census"
+    ],
+    "affectedFields": [],
+    "confirmedPairIds": ["pair-afternoon"],
+    "rationale": "Independent agent audit corroborated branch-specific official hours/prices/restrictions and fresh Census matches for all 11 admissions. Current notes distinguish resolved geography from unknown prices and limited factual-only retention. Cedar prices remain fully withheld from public fields. No human or same-day confirmation is claimed.",
+    "candidateHash": "6d015aaa2d0a97616ee53509ff0d6218a6983ec853feb038f42477941c191d36",
+    "evidenceHash": "a6ef77cb0637c3cb48c155babb33d42391284edfe852b7b18370b5945d67af4e"
+  },
+  {
+    "id": "audit-cw-coyote-grill-laguna-beach-2",
+    "candidateId": "cw-coyote-grill-laguna-beach",
+    "revision": "2",
+    "at": "2026-10-20T01:45:18Z",
+    "reviewer": "Codex integration review after independent agent audit (Carver)",
+    "reviewMethod": "agent-source-inspection",
+    "decision": "accept",
+    "sourceIds": [
+      "src-cw-coyote-grill-laguna-beach-daily-event",
+      "src-cw-coyote-grill-laguna-beach-tuesday-event",
+      "src-cw-coyote-grill-laguna-beach-menu",
+      "src-cw-coyote-grill-laguna-beach-census"
+    ],
+    "affectedFields": [],
+    "confirmedPairIds": ["pair-bar-standard", "pair-bar-tuesday"],
+    "rationale": "Independent agent audit corroborated branch-specific official hours/prices/restrictions and fresh Census matches for all 11 admissions. Current notes distinguish resolved geography from unknown prices and limited factual-only retention. Cedar prices remain fully withheld from public fields. No human or same-day confirmation is claimed.",
+    "candidateHash": "56372f88853fc49511ba67d3d96c9c62b762dc4b66511cbd4f9ae135c7d866c5",
+    "evidenceHash": "7b534449d90d15defd90112066498ce1a8060e79b9b43afcc1f25c7d500f94d9"
+  }
+]

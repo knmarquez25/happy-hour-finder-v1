@@ -123,7 +123,7 @@ function renderDetails(venue) {
 }
 function renderMedia(venue) {
   const media = venueMedia[venue.id];
-  return `<div class="venue-media ${media ? "" : "media-failed"}"><div class="media-fallback"><span>${esc(venue.neighborhood)}</span><strong>${esc(venue.name)}</strong><small>Los Angeles &amp; nearby</small></div>${media ? `<img src="${esc(media.url)}" alt="${esc(media.alt)}" loading="lazy" width="800" height="600"><a class="photo-credit" href="${esc(media.sourceUrl)}" target="_blank" rel="noreferrer">Photo: restaurant ${icon("arrow-up-right")}</a>` : ""}</div>`;
+  return `<div class="venue-media ${media ? "" : "media-failed"}"><div class="media-fallback"><span>${esc(venue.neighborhood)}</span><strong>${esc(venue.name)}</strong><small>LA + Orange County</small></div>${media ? `<img src="${esc(media.url)}" alt="${esc(media.alt)}" loading="lazy" width="800" height="600"><a class="photo-credit" href="${esc(media.sourceUrl)}" target="_blank" rel="noreferrer">Photo: restaurant ${icon("arrow-up-right")}</a>` : ""}</div>`;
 }
 document.addEventListener(
   "error",
@@ -264,11 +264,11 @@ form.elements.originId.innerHTML = origins
   .map((origin) => `<option value="${origin.id}">${esc(origin.name)}</option>`)
   .join("");
 document.querySelector("#coverage-count").textContent =
-  `${dataMetadata.total} researched spots · 25-mile coverage`;
+  `${dataMetadata.total} researched spots · LA + Orange County`;
 document.querySelector("#data-summary").innerHTML =
   [
     ["Researched spots", dataMetadata.total],
-    ["Locations in radius", dataMetadata.located],
+    ["Geocoded locations", dataMetadata.located],
     ["Restaurant-listed schedules", dataMetadata.primaryHours],
     ["Priced food + drink records", dataMetadata.primaryFoodAndDrink],
   ]

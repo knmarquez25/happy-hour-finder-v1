@@ -1,0 +1,261 @@
+[
+  {
+    "id": "la-north",
+    "name": "Santa Clarita / Antelope Valley",
+    "countyGeoid": "06037",
+    "jurisdictionType": "region",
+    "boundarySourceUrl": null,
+    "scopeStatus": "in-progress",
+    "attempts": [
+      {
+        "candidateId": "cw-wood-valencia",
+        "at": "2026-10-19T22:39:51Z",
+        "method": "manual official-source inspection"
+      }
+    ],
+    "candidateIds": ["cw-wood-valencia"],
+    "notes": "Work grouping only. Boundaries and full city/unincorporated inventory remain pending; candidate counties are unverified."
+  },
+  {
+    "id": "la-valley",
+    "name": "San Fernando Valley",
+    "countyGeoid": "06037",
+    "jurisdictionType": "region",
+    "boundarySourceUrl": null,
+    "scopeStatus": "in-progress",
+    "attempts": [
+      {
+        "candidateId": "cw-frontyard",
+        "at": "2026-10-19T22:39:51Z",
+        "method": "manual official-source inspection"
+      }
+    ],
+    "candidateIds": ["cw-frontyard"],
+    "notes": "Work grouping only. Boundaries and full city/unincorporated inventory remain pending; candidate counties are unverified."
+  },
+  {
+    "id": "la-southbay",
+    "name": "South Bay",
+    "countyGeoid": "06037",
+    "jurisdictionType": "region",
+    "boundarySourceUrl": null,
+    "scopeStatus": "in-progress",
+    "attempts": [
+      {
+        "candidateId": "cw-hangar",
+        "at": "2026-10-19T22:39:51Z",
+        "method": "manual official-source inspection"
+      },
+      {
+        "candidateId": "cw-nomad-eatery-el-segundo",
+        "at": "2026-10-20T01:35:10Z",
+        "method": "official-source inspection and Census geography match"
+      },
+      {
+        "candidateId": "cw-sausal-el-segundo",
+        "at": "2026-10-20T01:35:10Z",
+        "method": "official-source inspection and Census geography match"
+      }
+    ],
+    "candidateIds": [
+      "cw-hangar",
+      "cw-nomad-eatery-el-segundo",
+      "cw-sausal-el-segundo"
+    ],
+    "notes": "Work grouping only. Boundaries and full city/unincorporated inventory remain pending; candidate counties are unverified."
+  },
+  {
+    "id": "la-gateway",
+    "name": "Long Beach / Gateway",
+    "countyGeoid": "06037",
+    "jurisdictionType": "region",
+    "boundarySourceUrl": null,
+    "scopeStatus": "in-progress",
+    "attempts": [
+      {
+        "candidateId": "cw-attic",
+        "at": "2026-10-19T22:39:51Z",
+        "method": "manual official-source inspection"
+      },
+      {
+        "candidateId": "cw-risu-long-beach",
+        "at": "2026-10-20T01:35:10Z",
+        "method": "official-source inspection and Census geography match"
+      },
+      {
+        "candidateId": "cw-the-hare-long-beach",
+        "at": "2026-10-20T01:35:10Z",
+        "method": "official-source inspection and Census geography match"
+      }
+    ],
+    "candidateIds": [
+      "cw-attic",
+      "cw-risu-long-beach",
+      "cw-the-hare-long-beach"
+    ],
+    "notes": "Work grouping only. Boundaries and full city/unincorporated inventory remain pending; candidate counties are unverified."
+  },
+  {
+    "id": "la-east",
+    "name": "Eastern LA / San Gabriel Valley",
+    "countyGeoid": "06037",
+    "jurisdictionType": "region",
+    "boundarySourceUrl": null,
+    "scopeStatus": "in-progress",
+    "attempts": [
+      {
+        "candidateId": "cw-glendora-continental-glendora",
+        "at": "2026-10-20T01:35:10Z",
+        "method": "official-source inspection and Census geography match"
+      }
+    ],
+    "candidateIds": ["cw-glendora-continental-glendora"],
+    "notes": "Work grouping only. Boundaries and full city/unincorporated inventory remain pending; candidate counties are unverified."
+  },
+  {
+    "id": "la-central",
+    "name": "Central / South LA",
+    "countyGeoid": "06037",
+    "jurisdictionType": "region",
+    "boundarySourceUrl": null,
+    "scopeStatus": "not-started",
+    "attempts": [],
+    "candidateIds": [],
+    "notes": "Work grouping only. Boundaries and full city/unincorporated inventory remain pending; candidate counties are unverified."
+  },
+  {
+    "id": "la-west",
+    "name": "Westside / Malibu / mountains",
+    "countyGeoid": "06037",
+    "jurisdictionType": "region",
+    "boundarySourceUrl": null,
+    "scopeStatus": "not-started",
+    "attempts": [],
+    "candidateIds": [],
+    "notes": "Work grouping only. Boundaries and full city/unincorporated inventory remain pending; candidate counties are unverified."
+  },
+  {
+    "id": "la-islands",
+    "name": "Island communities",
+    "countyGeoid": "06037",
+    "jurisdictionType": "region",
+    "boundarySourceUrl": null,
+    "scopeStatus": "not-started",
+    "attempts": [],
+    "candidateIds": [],
+    "notes": "Work grouping only. Boundaries and full city/unincorporated inventory remain pending; candidate counties are unverified."
+  },
+  {
+    "id": "oc-north",
+    "name": "North OC",
+    "countyGeoid": "06059",
+    "jurisdictionType": "region",
+    "boundarySourceUrl": null,
+    "scopeStatus": "in-progress",
+    "attempts": [
+      {
+        "candidateId": "cw-cedar-creek-inn-brea",
+        "at": "2026-10-20T01:35:10Z",
+        "method": "official-source inspection and Census geography match"
+      }
+    ],
+    "candidateIds": ["cw-cedar-creek-inn-brea"],
+    "notes": "Work grouping only. Boundaries and full city/unincorporated inventory remain pending; candidate counties are unverified."
+  },
+  {
+    "id": "oc-central",
+    "name": "Central OC",
+    "countyGeoid": "06059",
+    "jurisdictionType": "region",
+    "boundarySourceUrl": null,
+    "scopeStatus": "in-progress",
+    "attempts": [
+      {
+        "candidateId": "cw-wood-irvine",
+        "at": "2026-10-19T22:39:51Z",
+        "method": "manual official-source inspection"
+      },
+      {
+        "candidateId": "cw-lazy-irvine",
+        "at": "2026-10-19T22:39:51Z",
+        "method": "manual official-source inspection"
+      },
+      {
+        "candidateId": "cw-benchmark",
+        "at": "2026-10-19T22:39:51Z",
+        "method": "manual official-source inspection"
+      },
+      {
+        "candidateId": "cw-chapter-one-santa-ana",
+        "at": "2026-10-20T01:35:10Z",
+        "method": "official-source inspection and Census geography match"
+      }
+    ],
+    "candidateIds": [
+      "cw-wood-irvine",
+      "cw-lazy-irvine",
+      "cw-benchmark",
+      "cw-chapter-one-santa-ana"
+    ],
+    "notes": "Work grouping only. Boundaries and full city/unincorporated inventory remain pending; candidate counties are unverified."
+  },
+  {
+    "id": "oc-coast",
+    "name": "Coastal OC",
+    "countyGeoid": "06059",
+    "jurisdictionType": "region",
+    "boundarySourceUrl": null,
+    "scopeStatus": "in-progress",
+    "attempts": [
+      {
+        "candidateId": "cw-playa",
+        "at": "2026-10-19T22:39:51Z",
+        "method": "manual official-source inspection"
+      },
+      {
+        "candidateId": "cw-billys-at-the-beach-newport-beach",
+        "at": "2026-10-20T01:35:10Z",
+        "method": "official-source inspection and Census geography match"
+      },
+      {
+        "candidateId": "cw-coyote-grill-laguna-beach",
+        "at": "2026-10-20T01:35:10Z",
+        "method": "official-source inspection and Census geography match"
+      }
+    ],
+    "candidateIds": [
+      "cw-playa",
+      "cw-billys-at-the-beach-newport-beach",
+      "cw-coyote-grill-laguna-beach"
+    ],
+    "notes": "Work grouping only. Boundaries and full city/unincorporated inventory remain pending; candidate counties are unverified."
+  },
+  {
+    "id": "oc-inland",
+    "name": "Inland OC",
+    "countyGeoid": "06059",
+    "jurisdictionType": "region",
+    "boundarySourceUrl": null,
+    "scopeStatus": "not-started",
+    "attempts": [],
+    "candidateIds": [],
+    "notes": "Work grouping only. Boundaries and full city/unincorporated inventory remain pending; candidate counties are unverified."
+  },
+  {
+    "id": "oc-south",
+    "name": "South OC",
+    "countyGeoid": "06059",
+    "jurisdictionType": "region",
+    "boundarySourceUrl": null,
+    "scopeStatus": "in-progress",
+    "attempts": [
+      {
+        "candidateId": "cw-mayfield-san-juan-capistrano",
+        "at": "2026-10-20T01:35:10Z",
+        "method": "official-source inspection and Census geography match"
+      }
+    ],
+    "candidateIds": ["cw-mayfield-san-juan-capistrano"],
+    "notes": "Work grouping only. Boundaries and full city/unincorporated inventory remain pending; candidate counties are unverified."
+  }
+]

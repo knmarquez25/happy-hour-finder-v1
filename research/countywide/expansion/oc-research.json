@@ -1,0 +1,531 @@
+{
+  "records": [
+    {
+      "id": "benchmark-santa-ana",
+      "name": "Benchmark",
+      "neighborhood": "Santa Ana",
+      "address": "601 E Santa Ana Blvd, Santa Ana, CA 92701",
+      "coordinates": null,
+      "hours": [
+        {
+          "id": "weekday",
+          "days": ["Wednesday", "Thursday", "Friday"],
+          "start": "16:00",
+          "end": "18:00",
+          "restriction": "none",
+          "status": "primary",
+          "sourceId": "menu"
+        }
+      ],
+      "menu": [],
+      "foodTags": [],
+      "drinkTags": [],
+      "atmosphereTags": [],
+      "sources": [
+        {
+          "id": "menu",
+          "url": "https://benchmarkoc.com/menu/",
+          "type": "primary",
+          "accessedOn": "2026-10-19",
+          "reviewedOn": "2026-10-19",
+          "note": "agent-source-inspection. HAPPY HOUR section after BRUNCH gives Wednesday-Friday 16:00-18:00 and separate snack/drink lists; no numeric prices visible. Page also specifies 22% gratuity for parties of eight or more. Publication date not stated."
+        },
+        {
+          "id": "location",
+          "url": "https://benchmarkoc.com/",
+          "type": "primary",
+          "accessedOn": "2026-10-19",
+          "reviewedOn": "2026-10-19",
+          "note": "agent-source-inspection. Address appears below ABOUT BENCHMARK and in footer. Footer copyright 2026; this is not a menu publication date. No terms/privacy/reuse link visible in inspected navigation or footer."
+        }
+      ],
+      "notes": "Reviewer method: agent-source-inspection, not human review. Advertised happy hour verified; exact prices unavailable, so no priced menu or calculated savings retained. Party-of-eight gratuity is additional. County and coordinates await parent government-geocoding. No holiday or seating exclusion stated in inspected happy-hour section; absence is not a guarantee. Policy permission unresolved."
+    },
+    {
+      "id": "chapter-one-santa-ana",
+      "name": "Chapter One: the modern local",
+      "neighborhood": "Downtown Santa Ana",
+      "address": "227 N Broadway, Santa Ana, CA 92701",
+      "coordinates": null,
+      "hours": [
+        {
+          "id": "weekday",
+          "days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "start": "15:00",
+          "end": "18:00",
+          "restriction": "none",
+          "status": "primary",
+          "sourceId": "happy-hour"
+        }
+      ],
+      "menu": [
+        {
+          "id": "fries",
+          "name": "Duck-fat fries",
+          "kind": "food",
+          "priceCents": 800,
+          "tags": ["fries"],
+          "sourceId": "happy-hour",
+          "status": "primary",
+          "windowIds": ["weekday"]
+        },
+        {
+          "id": "margarita",
+          "name": "Margarita",
+          "kind": "drink",
+          "priceCents": 800,
+          "tags": ["margarita", "cocktail"],
+          "sourceId": "happy-hour",
+          "status": "primary",
+          "windowIds": ["weekday"]
+        }
+      ],
+      "foodTags": ["fries"],
+      "drinkTags": ["margarita", "cocktail"],
+      "atmosphereTags": [],
+      "sources": [
+        {
+          "id": "happy-hour",
+          "url": "https://chapteronetml.com/food/happy-hour.php",
+          "type": "primary",
+          "accessedOn": "2026-10-19",
+          "reviewedOn": "2026-10-19",
+          "note": "agent-source-inspection. Reached through homepage MENUS > HAPPY-HOUR in browser and inspected again with web. Heading supplies Monday-Friday 15:00-18:00; Food Specials lists fries at $8; Drink Specials lists margaritas at $8. Footer adds 20% gratuity for six or more. Menu publication date not stated."
+        },
+        {
+          "id": "location",
+          "url": "https://chapteronetml.com/contact.php",
+          "type": "primary",
+          "accessedOn": "2026-10-19",
+          "reviewedOn": "2026-10-19",
+          "note": "agent-source-inspection. Location heading gives 227 N Broadway, Santa Ana, CA 92701. Publication date not stated."
+        },
+        {
+          "id": "privacy",
+          "url": "https://chapteronetml.com/privacy-policy.php",
+          "type": "primary",
+          "accessedOn": "2026-10-19",
+          "reviewedOn": "2026-10-19",
+          "note": "agent-source-inspection. Homepage cookie banner links this policy. Dated February 18, 2026; sections 1-12 concern personal data, analytics, cookies, retention and contact. No factual-data republication license identified."
+        }
+      ],
+      "specials": [
+        {
+          "text": "During weekday happy hour, draft beer and wine by the glass each receive a $3 reduction; final prices were not established.",
+          "status": "primary",
+          "sourceId": "happy-hour"
+        }
+      ],
+      "notes": "Reviewer method: agent-source-inspection, not human review. Prices are directly advertised happy-hour amounts, before tax/tip. Menu says 20% gratuity for parties of six or more and substitutions may be declined except for allergies. No seating or holiday exclusion stated in inspected section. County and coordinates await parent government-geocoding."
+    },
+    {
+      "id": "cedar-creek-inn-brea",
+      "name": "Cedar Creek Inn - Brea",
+      "neighborhood": "Brea",
+      "address": "20 Pointe Drive, Brea, CA 92821",
+      "coordinates": null,
+      "hours": [
+        {
+          "id": "daily",
+          "days": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday"
+          ],
+          "start": "15:00",
+          "end": "18:00",
+          "restriction": "bar-or-patio",
+          "status": "primary",
+          "sourceId": "location"
+        }
+      ],
+      "menu": [
+        {
+          "id": "potato-skins",
+          "name": "Potato skins",
+          "kind": "food",
+          "priceCents": 1000,
+          "tags": ["potato"],
+          "sourceId": "happy-hour-menu",
+          "status": "primary",
+          "windowIds": ["daily"]
+        },
+        {
+          "id": "mule",
+          "name": "Happy-hour mule",
+          "kind": "drink",
+          "priceCents": 900,
+          "tags": ["mule", "cocktail"],
+          "sourceId": "happy-hour-menu",
+          "status": "primary",
+          "windowIds": ["daily"]
+        }
+      ],
+      "foodTags": ["potato"],
+      "drinkTags": ["mule", "cocktail"],
+      "atmosphereTags": [],
+      "sources": [
+        {
+          "id": "location",
+          "url": "https://www.cedarcreekbrea.com/",
+          "type": "primary",
+          "accessedOn": "2026-10-19",
+          "reviewedOn": "2026-10-19",
+          "note": "agent-source-inspection. Our Food states daily 15:00-18:00 on front patio; Our Location repeats daily 15:00-18:00 in bar and gives 20 Pointe Drive. Thirsty Thursday advertises bar happy hour from 15:00 until close and links retained PDF. Publication date not stated; seasonal homepage is not proof of menu revision date."
+        },
+        {
+          "id": "happy-hour-menu",
+          "url": "https://www.cedarcreekbrea.com/files/hh-food-cocktails-1-pdf.pdf",
+          "type": "primary",
+          "accessedOn": "2026-10-19",
+          "reviewedOn": "2026-10-19",
+          "note": "agent-source-inspection. Single-page PDF linked by homepage Thirsty Thursday View Menu. Upper Happy Hour $10 heading covers potato skins; MULES HH entry is governed by bottom key HH = $9 / spirits differ. Bottom also lists house wine/well drinks $8 and monthly draft $7. Fine print: 18% gratuity for eight or more; 3% credit-card processing fee waived for debit/cash. No printed publication date identified."
+        }
+      ],
+      "specials": [
+        {
+          "text": "Thursday bar happy hour continues until closing; the record's exact window includes only the daily 15:00-18:00 period.",
+          "status": "primary",
+          "sourceId": "location"
+        }
+      ],
+      "notes": "Reviewer method: agent-source-inspection, not human review. Bar or front patio; ordinary dining-room applicability not established. Mule's happy-hour spirit may differ from the regular cocktail; $9 is explicit HH pricing, not a calculation from its regular $13 entry. Fees/gratuity excluded from item amounts. Thursday extension not converted into a clock endpoint. County and coordinates await parent government-geocoding."
+    },
+    {
+      "id": "billys-at-the-beach-newport-beach",
+      "name": "Billy's At The Beach",
+      "neighborhood": "Newport Beach",
+      "address": "2751 West Coast Hwy, Newport Beach, CA 92663",
+      "coordinates": null,
+      "hours": [
+        {
+          "id": "weekday",
+          "days": ["Tuesday", "Wednesday", "Thursday", "Friday"],
+          "start": "15:00",
+          "end": "19:00",
+          "restriction": "none",
+          "status": "primary",
+          "sourceId": "location"
+        },
+        {
+          "id": "saturday",
+          "days": ["Saturday"],
+          "start": "11:30",
+          "end": "15:30",
+          "restriction": "conditional",
+          "status": "primary",
+          "sourceId": "location"
+        },
+        {
+          "id": "sunday",
+          "days": ["Sunday"],
+          "start": "10:00",
+          "end": "14:00",
+          "restriction": "conditional",
+          "status": "primary",
+          "sourceId": "location"
+        }
+      ],
+      "menu": [
+        {
+          "id": "calamari",
+          "name": "Happy-hour calamari",
+          "kind": "food",
+          "priceCents": 1000,
+          "tags": ["calamari", "seafood"],
+          "sourceId": "happy-hour-menu",
+          "status": "primary",
+          "windowIds": ["weekday", "saturday", "sunday"]
+        },
+        {
+          "id": "blue-hawaiian",
+          "name": "Happy-hour Blue Hawaiian",
+          "kind": "drink",
+          "priceCents": 1000,
+          "tags": ["cocktail"],
+          "sourceId": "happy-hour-menu",
+          "status": "primary",
+          "windowIds": ["weekday", "saturday", "sunday"]
+        }
+      ],
+      "foodTags": ["calamari", "seafood"],
+      "drinkTags": ["cocktail"],
+      "atmosphereTags": [],
+      "sources": [
+        {
+          "id": "location",
+          "url": "https://www.billysatthebeach.net/",
+          "type": "primary",
+          "accessedOn": "2026-10-19",
+          "reviewedOn": "2026-10-19",
+          "note": "agent-source-inspection. Visit Us gives branch address; Happy Hour is Daily block specifies Tuesday-Friday 15:00-19:00, Saturday open-15:30, Sunday open-14:00, Monday closed. Adjacent operating hours establish Saturday opening 11:30 and Sunday opening 10:00; weekend starts are those published opening times, not separately printed HH starts. Publication date not stated."
+        },
+        {
+          "id": "happy-hour-menu",
+          "url": "https://www.billysatthebeach.net/menus/happy-hour",
+          "type": "primary",
+          "accessedOn": "2026-10-19",
+          "reviewedOn": "2026-10-19",
+          "note": "agent-source-inspection. HAPPY HOUR - DRINKS lists HH Blue Hawaiian $10; HAPPY HOUR - FOOD lists HH Calamari $10. Branch address appears at bottom. No menu publication date displayed."
+        }
+      ],
+      "notes": "Reviewer method: agent-source-inspection, not human review. Weekend starts depend on published operating hours and can change on special-event days. Homepage branch schedule excludes Monday despite generic daily heading. No seating or holiday exclusion identified on retained pages; confirm availability. County and coordinates await parent government-geocoding."
+    },
+    {
+      "id": "mayfield-san-juan-capistrano",
+      "name": "Mayfield Restaurant & Marketplace",
+      "neighborhood": "San Juan Capistrano",
+      "address": "31761 Camino Capistrano, San Juan Capistrano, CA 92675",
+      "coordinates": null,
+      "hours": [
+        {
+          "id": "afternoon",
+          "days": ["Wednesday", "Thursday", "Friday", "Sunday"],
+          "start": "14:30",
+          "end": "18:00",
+          "restriction": "none",
+          "status": "primary",
+          "sourceId": "happy-hour"
+        },
+        {
+          "id": "tuesday",
+          "days": ["Tuesday"],
+          "start": "17:00",
+          "end": "18:00",
+          "restriction": "conditional",
+          "status": "primary",
+          "sourceId": "happy-hour"
+        }
+      ],
+      "menu": [
+        {
+          "id": "nuts",
+          "name": "Spiced nuts",
+          "kind": "food",
+          "priceCents": 600,
+          "tags": ["nuts"],
+          "sourceId": "happy-hour",
+          "status": "primary",
+          "windowIds": ["afternoon", "tuesday"]
+        },
+        {
+          "id": "pilsner",
+          "name": "pFriem pilsner on draft",
+          "kind": "drink",
+          "priceCents": 800,
+          "tags": ["beer", "pilsner"],
+          "sourceId": "happy-hour",
+          "status": "primary",
+          "windowIds": ["afternoon", "tuesday"]
+        }
+      ],
+      "foodTags": ["nuts"],
+      "drinkTags": ["beer", "pilsner"],
+      "atmosphereTags": [],
+      "sources": [
+        {
+          "id": "happy-hour",
+          "url": "https://www.mayfieldoc.com/happy-hour",
+          "type": "primary",
+          "accessedOn": "2026-10-19",
+          "reviewedOn": "2026-10-19",
+          "note": "agent-source-inspection. Heading advertises Sunday-Friday 14:30-18:00 subject to opening hours. HOURS OF OPERATION excludes Monday and Tuesday before 17:00. Food lists nuts $6; $8 DRAFT BEERS includes pFriem Pilsner. FIND US supplies address. Browser footer TERMS and PRIVACY links both resolve back to this same happy-hour URL, with no policy text supplied. Menu publication date not stated."
+        }
+      ],
+      "notes": "Reviewer method: agent-source-inspection, not human review. Tuesday 17:00 start applies the page's explicit closure exception; Monday omitted because closed. Saturday excluded by advertised Sunday-Friday schedule. Exact listed prices retained, with no assumption that every listed item is discounted from a regular price. No seating/holiday exclusion established. County and coordinates await parent government-geocoding."
+    },
+    {
+      "id": "coyote-grill-laguna-beach",
+      "name": "Coyote Grill - Laguna Beach",
+      "neighborhood": "South Laguna Beach",
+      "address": "31621 Coast Hwy, Laguna Beach, CA 92651",
+      "coordinates": null,
+      "hours": [
+        {
+          "id": "bar-standard",
+          "days": [
+            "Monday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday"
+          ],
+          "start": "15:00",
+          "end": "18:00",
+          "restriction": "bar-only",
+          "status": "primary",
+          "sourceId": "daily-event"
+        },
+        {
+          "id": "bar-tuesday",
+          "days": ["Tuesday"],
+          "start": "15:00",
+          "end": "21:00",
+          "restriction": "bar-only",
+          "status": "primary",
+          "sourceId": "tuesday-event"
+        }
+      ],
+      "menu": [
+        {
+          "id": "bar-chicken-taco",
+          "name": "Chicken taco, one, bar happy hour",
+          "kind": "food",
+          "priceCents": 625,
+          "tags": ["tacos", "chicken"],
+          "sourceId": "menu",
+          "status": "primary",
+          "windowIds": ["bar-standard", "bar-tuesday"]
+        },
+        {
+          "id": "margarita",
+          "name": "Happy-hour margarita",
+          "kind": "drink",
+          "priceCents": 850,
+          "tags": ["margarita", "cocktail"],
+          "sourceId": "menu",
+          "status": "primary",
+          "windowIds": ["bar-standard", "bar-tuesday"]
+        }
+      ],
+      "foodTags": ["tacos", "chicken"],
+      "drinkTags": ["margarita", "cocktail"],
+      "atmosphereTags": [],
+      "sources": [
+        {
+          "id": "daily-event",
+          "url": "https://www.coyotegrill.tv/events/happy-hour",
+          "type": "primary",
+          "accessedOn": "2026-10-19",
+          "reviewedOn": "2026-10-19",
+          "note": "agent-source-inspection. HAPPY HOUR event states every day 15:00-18:00. Location footer supplies street address and closures: 14:00 closing on Super Bowl day, July 4 and Halloween; closed Thanksgiving, Christmas Eve and Christmas Day. No publication date displayed."
+        },
+        {
+          "id": "tuesday-event",
+          "url": "https://www.coyotegrill.tv/events/taco-tuesday",
+          "type": "primary",
+          "accessedOn": "2026-10-19",
+          "reviewedOn": "2026-10-19",
+          "note": "agent-source-inspection. TACO TUESDAY event identifies weekly Tuesday 15:00-21:00 and explicitly extends happy hour through that entire interval. Same branch footer. No publication date displayed."
+        },
+        {
+          "id": "menu",
+          "url": "https://www.coyotegrill.tv/menus",
+          "type": "primary",
+          "accessedOn": "2026-10-19",
+          "reviewedOn": "2026-10-19",
+          "note": "agent-source-inspection. Bar Happy Hour subsection: Chicken Taco a la carte $6.25, HH Margarita $8.50; bar seating and no takeout required. Separate Dining Room Happy Hour uses different food offerings and repeats no takeout; those food prices are not substituted for bar items. No publication date displayed."
+        }
+      ],
+      "notes": "Reviewer method: agent-source-inspection, not human review. This record models bar seating so its single-taco food price cannot be matched as a dining-room plate. No happy-hour takeout. Listed closure days override recurring windows: Super Bowl day, July 4, Halloween, Thanksgiving, Christmas Eve and Christmas Day. Monday football extension not modeled because seasonal applicability is unresolved. County and coordinates await parent government-geocoding."
+    }
+  ],
+  "policyFindings": [
+    {
+      "recordId": "benchmark-santa-ana",
+      "sourceOrigin": "https://benchmarkoc.com",
+      "termsUrlsInspected": [],
+      "restrictionsFound": [
+        "Homepage footer asserts copyright 2026; no reuse license supplied."
+      ],
+      "basis": "agent-source-inspection of official homepage/menu navigation and footers, plus targeted site search for terms/privacy. Only independently authored branch and schedule observations retained; no menu descriptions, images, raw pages or price guesses.",
+      "unresolvedQuestions": [
+        "No dedicated terms/access/reuse policy was discoverable in inspected surfaces; this does not establish permission or absence of other terms."
+      ]
+    },
+    {
+      "recordId": "chapter-one-santa-ana",
+      "sourceOrigin": "https://chapteronetml.com",
+      "termsUrlsInspected": ["https://chapteronetml.com/privacy-policy.php"],
+      "restrictionsFound": [
+        "Linked privacy policy concerns visitor data and third-party practices; it does not grant menu republication rights."
+      ],
+      "basis": "agent-source-inspection of official menu, contact page and linked privacy policy, last updated 2026-02-18. No scraping or factual-observation reuse prohibition identified in that inspected policy. Retained only a small factual price/schedule sample with independently written labels and notes.",
+      "unresolvedQuestions": [
+        "A separate access/reuse agreement was not located; no blanket license or commercial-use permission is asserted."
+      ]
+    },
+    {
+      "recordId": "cedar-creek-inn-brea",
+      "sourceOrigin": "https://www.cedarcreekbrea.com",
+      "termsUrlsInspected": [],
+      "restrictionsFound": [
+        "Menu limits happy-hour availability by seating; adds large-party gratuity and a credit-card processing fee."
+      ],
+      "basis": "agent-source-inspection of branch homepage, navigation/footer and its directly linked happy-hour PDF, plus targeted policy search. No restaurant terms/access/reuse link exposed in inspected surfaces. Only concise branch-owned factual observations retained; Popmenu reviews, photos, mapping data and other provider content excluded.",
+      "unresolvedQuestions": [
+        "No affirmative reuse license established; applicability of additional restaurant or hosting-provider terms remains unresolved.",
+        "Homepage separately mentions front patio and bar; restaurant should confirm access to other seating."
+      ]
+    },
+    {
+      "recordId": "billys-at-the-beach-newport-beach",
+      "sourceOrigin": "https://www.billysatthebeach.net",
+      "termsUrlsInspected": [],
+      "restrictionsFound": [],
+      "basis": "agent-source-inspection of official homepage and happy-hour menu navigation/footers, plus targeted policy search. No linked access/reuse policy found on those surfaces. Retained concise restaurant-published branch, schedule and two price facts in original wording; provider reviews, photos and map content excluded.",
+      "unresolvedQuestions": [
+        "No license or absence of contractual restrictions can be inferred from missing policy links; additional restaurant/provider terms may apply.",
+        "Weekend starts follow adjacent published operating hours; special-event openings may differ.",
+        "Seating, holiday exclusions and additional charges were not specified in retained sources."
+      ]
+    },
+    {
+      "recordId": "mayfield-san-juan-capistrano",
+      "sourceOrigin": "https://www.mayfieldoc.com",
+      "termsUrlsInspected": ["https://www.mayfieldoc.com/happy-hour"],
+      "restrictionsFound": [
+        "Footer asserts all rights reserved; no reuse license supplied."
+      ],
+      "basis": "agent-source-inspection of official happy-hour page and browser footer link destinations. Both TERMS and PRIVACY are self-links to the same page, which contains no substantive access/reuse policy. Retained only independently authored branch, schedule and two price observations, without recipe descriptions or media.",
+      "unresolvedQuestions": [
+        "Substantive terms/privacy documents could not be reached through the self-links; access/reuse permission remains unresolved."
+      ]
+    },
+    {
+      "recordId": "coyote-grill-laguna-beach",
+      "sourceOrigin": "https://www.coyotegrill.tv",
+      "termsUrlsInspected": [],
+      "restrictionsFound": [
+        "No happy-hour takeout; selected food is bar-specific. Holiday and special-day closures override normal hours."
+      ],
+      "basis": "agent-source-inspection of restaurant homepage, menu and directly opened public recurring-event pages, including navigation/footer. No linked restaurant access/reuse policy visible there. Retained only independently authored schedule, branch, restriction and two price observations; provider photos, reviews, maps and page content excluded.",
+      "unresolvedQuestions": [
+        "No affirmative factual-data reuse license established; additional restaurant/provider terms may apply.",
+        "Monday football extension season and end date were not established and are omitted."
+      ]
+    },
+    {
+      "recordId": "starfish-laguna-beach-excluded",
+      "sourceOrigin": "https://starfishhospitalitygroup.com",
+      "termsUrlsInspected": [
+        "https://starfishhospitalitygroup.com/terms-of-use/"
+      ],
+      "restrictionsFound": [
+        "Terms dated 2025-08-01 require written permission for scraping, crawling or data harvesting.",
+        "Site content license is limited to personal use; unauthorized reproduction, redistribution and derivative works are prohibited."
+      ],
+      "basis": "agent-source-inspection of official Terms of Use, Acceptable use and Intellectual Property Rights sections. Excluded after discovering restrictions; no restaurant record or menu facts retained from this origin and no further menu inspection pursued.",
+      "unresolvedQuestions": [
+        "Written permission was not obtained; branch remains excluded."
+      ]
+    }
+  ],
+  "limitations": [
+    "Six new physical branches checked against all IDs and addresses in research/dtla.json, west.json, north.json and central.json (100 existing records). Regional coverage: Santa Ana two, Brea one, Newport Beach one, south Laguna Beach one, San Juan Capistrano one. No Fullerton branch retained; Brea supplies the requested northern OC focus.",
+    "All reviews use agent-source-inspection, not human inspection or restaurant confirmation. Official public pages were opened individually through web/browser tools; no bulk scraper, access-control bypass, paid API or subscription used. No raw pages, menu prose or media saved.",
+    "Coordinates intentionally null for parent government-geocoding; Orange County jurisdiction and coordinates are not independently government-verified in this file.",
+    "Five records have a directly supported food/drink price pair. Benchmark intentionally has an empty menu because inspected current official happy-hour text lacks numeric prices. No final prices calculated from discounts.",
+    "Regular weekly windows can be overridden by holidays, closures, private events and menu changes. Unknown exceptions are not represented as affirmative availability. Item amounts exclude taxes, tips and disclosed extra fees.",
+    "Policy discovery is bounded to inspected public links and focused searches. Missing policies or no identified prohibition is not an affirmative license. Mayfield's TERMS/PRIVACY links point back to its menu; substantive policies remain unresolved. Hosting-provider terms were not comprehensively established.",
+    "Starfish excluded because its official terms restrict harvesting and redistribution. Wood Ranch and Lazy Dog were not used or inspected, as instructed.",
+    "Hopscotch's official image-menu links could not be inspected successfully with web; no record or prices retained. Oak's official happy-hour PDF did not yield readable content in web or browser; no record or prices retained. Driftwood and Bodega were not established from directly inspected usable official happy-hour evidence in this research pass.",
+    "Cedar Creek Thursday extension is described without converting 'until close' into an exact endpoint. Billy's weekend start times normalize its explicit 'open' wording using the same official page's operating hours. Mayfield Tuesday start applies its explicit 17:00 opening exception. Coyote Monday football extension omitted pending seasonal confirmation.",
+    "No deployment or app/shared-file changes performed. Only this research JSON is written. No staging, commits, agents or cross-chat messaging used."
+  ]
+}

@@ -4,6 +4,7 @@ const path = require("node:path");
 const { chromium } = require(process.env.PLAYWRIGHT_MODULE || "playwright");
 const base = process.env.PREVIEW_URL || "http://127.0.0.1:4174";
 (async () => {
+  const { dataMetadata } = await import("../src/data.js");
   const browser = await chromium.launch({ headless: true, channel: "chrome" });
   try {
     const page = await browser.newPage({
@@ -15,6 +16,19 @@ const base = process.env.PREVIEW_URL || "http://127.0.0.1:4174";
     await page.goto(base);
     await page.locator("#results .result-card").first().waitFor();
     assert.match(await page.locator("h1").innerText(), /Happy Hour\s+Finder/i);
+    assert.equal(await page.title(), "Happy Hour Finder | LA + Orange County");
+    assert.match(
+      await page.locator(".edition").innerText(),
+      /LA \+ Orange County/i,
+    );
+    assert.equal(
+      await page.locator("#coverage-count").innerText(),
+      `${dataMetadata.total} researched spots · LA + Orange County`,
+    );
+    assert.match(
+      await page.locator(".coverage-details").textContent(),
+      /Coverage is incomplete/,
+    );
     assert.ok(await page.locator(".edition").isVisible());
     assert.equal(await page.locator(".result-card > .score-label").count(), 0);
     assert.ok(
@@ -51,7 +65,7 @@ const base = process.env.PREVIEW_URL || "http://127.0.0.1:4174";
     assert.equal(await page.locator("[name=neighborhood]").count(), 0);
     assert.match(
       await page.locator("#coverage-count").innerText(),
-      /100 researched/,
+      new RegExp(`^${dataMetadata.total} researched spots`),
     );
     assert.equal(
       (await page.locator("#results .result-card").count()) > 0,

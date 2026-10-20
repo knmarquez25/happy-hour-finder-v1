@@ -1,4 +1,4 @@
-import { origins, coverageCenter, distanceMiles } from "./locations.js";
+import { origins, coverageEligibility, distanceMiles } from "./locations.js";
 
 export const weekdays = [
   "Monday",
@@ -211,7 +211,7 @@ export function selectCombo(venue, rawRequest) {
 export function evaluateRestaurant(venue, rawRequest) {
   const request = normalizeRequest(rawRequest);
   const distance = distanceMiles(request.origin, venue.coordinates),
-    coverageDistance = distanceMiles(coverageCenter, venue.coordinates);
+    coverage = coverageEligibility(venue);
   const windows = (venue.hours || []).filter((window) =>
     activeWindow(window, request.day, request.time),
   );
@@ -220,8 +220,7 @@ export function evaluateRestaurant(venue, rawRequest) {
     restrictionAllowed(window, request),
   );
   const failures = [];
-  if (coverageDistance === null) failures.push("Location needs verification");
-  else if (coverageDistance > 25) failures.push("Outside 25-mile coverage");
+  if (!coverage.included) failures.push(coverage.reason);
   if (distance !== null && distance > request.maxDistance)
     failures.push(
       `${(distance - request.maxDistance).toFixed(1)} mi beyond your distance`,

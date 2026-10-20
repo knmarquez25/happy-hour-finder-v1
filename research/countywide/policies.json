@@ -1,0 +1,430 @@
+[
+  {
+    "id": "wr",
+    "sourceOrigins": ["https://www.woodranch.com"],
+    "checkedAt": "2026-10-20T01:35:10Z",
+    "accessMethod": "manual",
+    "automatedAccess": "denied",
+    "factReuse": "unconfirmed",
+    "publicRetention": "denied",
+    "rawRetention": {
+      "permission": "denied",
+      "maxSeconds": null
+    },
+    "attribution": "Link to source; concise independently authored notes only.",
+    "termsUrl": "https://www.woodranch.com/terms-conditions/",
+    "robotsUrl": null,
+    "unresolvedQuestions": [
+      "Reviewed sections 3.1, 3.3, 4.3 and 6 restrict publisher use/republication and automated collection. No permission obtained. Do not integrate."
+    ]
+  },
+  {
+    "id": "frontyard",
+    "sourceOrigins": ["https://www.thefrontyardla.com"],
+    "checkedAt": "2026-10-19T22:39:51Z",
+    "accessMethod": "manual",
+    "automatedAccess": "unconfirmed",
+    "factReuse": "unconfirmed",
+    "publicRetention": "unconfirmed",
+    "rawRetention": {
+      "permission": "denied",
+      "maxSeconds": null
+    },
+    "attribution": "Link to source; concise independently authored notes only.",
+    "termsUrl": null,
+    "robotsUrl": null,
+    "unresolvedQuestions": [
+      "Access and reuse policy not fully audited; no bulk collection or raw archives.",
+      "Public export permission remains pending."
+    ]
+  },
+  {
+    "id": "attic",
+    "sourceOrigins": ["https://www.theatticonbroadway.com"],
+    "checkedAt": "2026-10-19T22:39:51Z",
+    "accessMethod": "manual",
+    "automatedAccess": "unconfirmed",
+    "factReuse": "unconfirmed",
+    "publicRetention": "unconfirmed",
+    "rawRetention": {
+      "permission": "denied",
+      "maxSeconds": null
+    },
+    "attribution": "Link to source; concise independently authored notes only.",
+    "termsUrl": null,
+    "robotsUrl": null,
+    "unresolvedQuestions": [
+      "Access and reuse policy not fully audited; no bulk collection or raw archives.",
+      "Public export permission remains pending."
+    ]
+  },
+  {
+    "id": "hangar",
+    "sourceOrigins": ["https://thehangarinn.com"],
+    "checkedAt": "2026-10-19T22:39:51Z",
+    "accessMethod": "manual",
+    "automatedAccess": "unconfirmed",
+    "factReuse": "unconfirmed",
+    "publicRetention": "unconfirmed",
+    "rawRetention": {
+      "permission": "denied",
+      "maxSeconds": null
+    },
+    "attribution": "Link to source; concise independently authored notes only.",
+    "termsUrl": null,
+    "robotsUrl": null,
+    "unresolvedQuestions": [
+      "Access and reuse policy not fully audited; no bulk collection or raw archives.",
+      "Public export permission remains pending."
+    ]
+  },
+  {
+    "id": "lazy",
+    "sourceOrigins": ["https://lazydogrestaurants.com"],
+    "checkedAt": "2026-10-20T01:35:10Z",
+    "accessMethod": "manual",
+    "automatedAccess": "unconfirmed",
+    "factReuse": "unconfirmed",
+    "publicRetention": "denied",
+    "rawRetention": {
+      "permission": "denied",
+      "maxSeconds": null
+    },
+    "attribution": "Link to source; concise independently authored notes only.",
+    "termsUrl": "https://lazydogrestaurants.com/pages/terms-of-use",
+    "robotsUrl": null,
+    "unresolvedQuestions": [
+      "Reviewed content-use clause restricts republication; no permission obtained. Do not integrate."
+    ]
+  },
+  {
+    "id": "benchmark",
+    "sourceOrigins": ["https://benchmarkoc.com"],
+    "checkedAt": "2026-10-20T01:35:10Z",
+    "accessMethod": "manual",
+    "automatedAccess": "unconfirmed",
+    "factReuse": "allowed",
+    "publicRetention": "allowed",
+    "rawRetention": {
+      "permission": "denied",
+      "maxSeconds": null
+    },
+    "attribution": "Official source links; only selected, independently authored factual observations, no descriptions, photos, reviews, page layout, archives, or API-directory content.",
+    "termsUrl": null,
+    "robotsUrl": null,
+    "permissionBasis": "independently-authored-facts",
+    "basisUrl": "https://www.copyright.gov/help/faq/faq-protect.html",
+    "rationale": "This decision covers our independently authored factual observations only, not a restaurant-granted content license. Exposed navigation/footer policies and targeted policy search were inspected; no contrary factual-observation restriction was identified for this origin. Known restrictive origins are withheld. No automation grant is inferred.",
+    "inspectionFinding": "agent-source-inspection of official homepage/menu navigation and footers, plus targeted site search for terms/privacy. Only independently authored branch and schedule observations retained; no menu descriptions, images, raw pages or price guesses.",
+    "unresolvedQuestions": [
+      "No dedicated terms/access/reuse policy was discoverable in inspected surfaces; this does not establish permission or absence of other terms."
+    ]
+  },
+  {
+    "id": "playa",
+    "sourceOrigins": ["https://www.playamesa.com"],
+    "checkedAt": "2026-10-19T22:39:51Z",
+    "accessMethod": "manual",
+    "automatedAccess": "unconfirmed",
+    "factReuse": "unconfirmed",
+    "publicRetention": "unconfirmed",
+    "rawRetention": {
+      "permission": "denied",
+      "maxSeconds": null
+    },
+    "attribution": "Link to source; concise independently authored notes only.",
+    "termsUrl": null,
+    "robotsUrl": null,
+    "unresolvedQuestions": [
+      "Access and reuse policy not fully audited; no bulk collection or raw archives.",
+      "Public export permission remains pending."
+    ]
+  },
+  {
+    "id": "census-factual-geography",
+    "sourceOrigins": ["https://geocoding.geo.census.gov"],
+    "checkedAt": "2026-10-20T01:35:10Z",
+    "accessMethod": "manual",
+    "automatedAccess": "allowed",
+    "factReuse": "allowed",
+    "publicRetention": "allowed",
+    "rawRetention": {
+      "permission": "denied",
+      "maxSeconds": null
+    },
+    "attribution": "US Census Bureau Geocoder; exact public query URL and benchmark/vintage retained.",
+    "termsUrl": "https://geocoding.geo.census.gov/geocoder/Geocoding_Services_API.html",
+    "robotsUrl": null,
+    "permissionBasis": "Public government geography facts; only address match, coordinate estimates and county codes retained, no source media or website content.",
+    "unresolvedQuestions": [
+      "Street-range interpolation does not establish building entrances or suite geometry."
+    ]
+  },
+  {
+    "id": "facts-cw-risu-long-beach",
+    "sourceOrigins": ["https://www.therisu.com"],
+    "checkedAt": "2026-10-20T01:35:10Z",
+    "accessMethod": "manual",
+    "automatedAccess": "unconfirmed",
+    "factReuse": "allowed",
+    "publicRetention": "allowed",
+    "rawRetention": {
+      "permission": "denied",
+      "maxSeconds": null
+    },
+    "attribution": "Official source links; only selected, independently authored factual observations, no descriptions, photos, reviews, page layout, archives, or API-directory content.",
+    "termsUrl": null,
+    "robotsUrl": null,
+    "permissionBasis": "independently-authored-facts",
+    "basisUrl": "https://www.copyright.gov/help/faq/faq-protect.html",
+    "rationale": "This decision covers our independently authored factual observations only, not a restaurant-granted content license. Exposed navigation/footer policies and targeted policy search were inspected; no contrary factual-observation restriction was identified for this origin. Known restrictive origins are withheld. No automation grant is inferred.",
+    "inspectionFinding": "Public official pages directly inspected using web. Navigation/footer content and domain-limited privacy/terms search checked. Only concise independently authored observations retained; no page copies, images or descriptive menu prose retained.",
+    "unresolvedQuestions": [
+      "Unlinked or dynamically displayed terms may exist; no affirmative reuse license established.",
+      "Monday extension has no exact supported endpoint."
+    ]
+  },
+  {
+    "id": "facts-cw-the-hare-long-beach",
+    "sourceOrigins": ["https://www.theharelb.com"],
+    "checkedAt": "2026-10-20T01:35:10Z",
+    "accessMethod": "manual",
+    "automatedAccess": "unconfirmed",
+    "factReuse": "allowed",
+    "publicRetention": "allowed",
+    "rawRetention": {
+      "permission": "denied",
+      "maxSeconds": null
+    },
+    "attribution": "Official source links; only selected, independently authored factual observations, no descriptions, photos, reviews, page layout, archives, or API-directory content.",
+    "termsUrl": null,
+    "robotsUrl": null,
+    "permissionBasis": "independently-authored-facts",
+    "basisUrl": "https://www.copyright.gov/help/faq/faq-protect.html",
+    "rationale": "This decision covers our independently authored factual observations only, not a restaurant-granted content license. Exposed navigation/footer policies and targeted policy search were inspected; no contrary factual-observation restriction was identified for this origin. Known restrictive origins are withheld. No automation grant is inferred.",
+    "inspectionFinding": "Public official pages directly inspected using web; navigation/footer and domain-limited policy search checked. Only original factual observations retained. Ordering provider not used as evidence.",
+    "unresolvedQuestions": [
+      "Unlinked terms and reuse authorization remain unresolved.",
+      "Homepage percentage offer conflicts with dedicated happy-hour prices and discounts; menu left empty.",
+      "Late-night days conflict; Monday all-day scope has no encoded endpoint."
+    ]
+  },
+  {
+    "id": "facts-cw-nomad-eatery-el-segundo",
+    "sourceOrigins": ["https://nomadsouthbay.com"],
+    "checkedAt": "2026-10-20T01:35:10Z",
+    "accessMethod": "manual",
+    "automatedAccess": "unconfirmed",
+    "factReuse": "allowed",
+    "publicRetention": "allowed",
+    "rawRetention": {
+      "permission": "denied",
+      "maxSeconds": null
+    },
+    "attribution": "Official source links; only selected, independently authored factual observations, no descriptions, photos, reviews, page layout, archives, or API-directory content.",
+    "termsUrl": null,
+    "robotsUrl": null,
+    "permissionBasis": "independently-authored-facts",
+    "basisUrl": "https://www.copyright.gov/help/faq/faq-protect.html",
+    "rationale": "This decision covers our independently authored factual observations only, not a restaurant-granted content license. Exposed navigation/footer policies and targeted policy search were inspected; no contrary factual-observation restriction was identified for this origin. Known restrictive origins are withheld. No automation grant is inferred.",
+    "inspectionFinding": "Direct web inspection of public official pages, navigation/footer and domain-limited policy search. Retained a small selection of factual prices, address and agreed hours, independently phrased; no menu descriptions or provider content retained.",
+    "unresolvedQuestions": [
+      "Unlinked terms and affirmative reuse rights remain unresolved.",
+      "Saturday happy hour appears on dedicated menu but not homepage; omitted pending confirmation.",
+      "Charcuterie heading and price conflict; omitted."
+    ]
+  },
+  {
+    "id": "facts-cw-sausal-el-segundo",
+    "sourceOrigins": ["https://www.sausal.com"],
+    "checkedAt": "2026-10-20T01:35:10Z",
+    "accessMethod": "manual",
+    "automatedAccess": "unconfirmed",
+    "factReuse": "allowed",
+    "publicRetention": "allowed",
+    "rawRetention": {
+      "permission": "denied",
+      "maxSeconds": null
+    },
+    "attribution": "Official source links; only selected, independently authored factual observations, no descriptions, photos, reviews, page layout, archives, or API-directory content.",
+    "termsUrl": "https://www.sausal.com/accessibility",
+    "robotsUrl": null,
+    "permissionBasis": "independently-authored-facts",
+    "basisUrl": "https://www.copyright.gov/help/faq/faq-protect.html",
+    "rationale": "This decision covers our independently authored factual observations only, not a restaurant-granted content license. Exposed navigation/footer policies and targeted policy search were inspected; no contrary factual-observation restriction was identified for this origin. Known restrictive origins are withheld. No automation grant is inferred.",
+    "inspectionFinding": "Public official homepage, happy-hour page, branch menu and linked accessibility statement directly inspected through web. Only selected factual prices, hours and address retained in original wording; no catering prose, menu descriptions or media retained.",
+    "unresolvedQuestions": [
+      "No affirmative republication license established; additional unlinked terms may exist.",
+      "Menu has no visible publication date or explicit seating/purchase restrictions."
+    ]
+  },
+  {
+    "id": "facts-cw-the-social-valencia",
+    "sourceOrigins": ["https://thesocialrestaurant.com"],
+    "checkedAt": "2026-10-20T01:35:10Z",
+    "accessMethod": "manual",
+    "automatedAccess": "unconfirmed",
+    "factReuse": "allowed",
+    "publicRetention": "allowed",
+    "rawRetention": {
+      "permission": "denied",
+      "maxSeconds": null
+    },
+    "attribution": "Official source links; only selected, independently authored factual observations, no descriptions, photos, reviews, page layout, archives, or API-directory content.",
+    "termsUrl": null,
+    "robotsUrl": null,
+    "permissionBasis": "independently-authored-facts",
+    "basisUrl": "https://www.copyright.gov/help/faq/faq-protect.html",
+    "rationale": "This decision covers our independently authored factual observations only, not a restaurant-granted content license. Exposed navigation/footer policies and targeted policy search were inspected; no contrary factual-observation restriction was identified for this origin. Known restrictive origins are withheld. No automation grant is inferred.",
+    "inspectionFinding": "Direct web inspection of public official homepage and location page, navigation/footer, and domain-limited policy search. Only address and explicitly labeled happy-hour hours retained, independently phrased.",
+    "unresolvedQuestions": [
+      "Unlinked terms and affirmative reuse authorization remain unresolved.",
+      "No visible current publication date; current operation, offers and seating applicability need reconfirmation.",
+      "No specific happy-hour prices verified."
+    ]
+  },
+  {
+    "id": "facts-cw-glendora-continental-glendora",
+    "sourceOrigins": ["https://www.glendoracontinental.com"],
+    "checkedAt": "2026-10-20T01:35:10Z",
+    "accessMethod": "manual",
+    "automatedAccess": "unconfirmed",
+    "factReuse": "allowed",
+    "publicRetention": "allowed",
+    "rawRetention": {
+      "permission": "denied",
+      "maxSeconds": null
+    },
+    "attribution": "Official source links; only selected, independently authored factual observations, no descriptions, photos, reviews, page layout, archives, or API-directory content.",
+    "termsUrl": null,
+    "robotsUrl": null,
+    "permissionBasis": "independently-authored-facts",
+    "basisUrl": "https://www.copyright.gov/help/faq/faq-protect.html",
+    "rationale": "This decision covers our independently authored factual observations only, not a restaurant-granted content license. Exposed navigation/footer policies and targeted policy search were inspected; no contrary factual-observation restriction was identified for this origin. Known restrictive origins are withheld. No automation grant is inferred.",
+    "inspectionFinding": "Direct web inspection of public official homepage and hours page, navigation/footer, and domain-limited policy search. Retained only independently worded factual observations; third-party site-builder and mapping content not used as restaurant evidence.",
+    "unresolvedQuestions": [
+      "Unlinked terms and affirmative reuse rights remain unresolved.",
+      "Discount's exact appetizer exclusions and dining-room applicability are not established.",
+      "No exact final happy-hour prices verified."
+    ]
+  },
+  {
+    "id": "facts-cw-chapter-one-santa-ana",
+    "sourceOrigins": ["https://chapteronetml.com"],
+    "checkedAt": "2026-10-20T01:35:10Z",
+    "accessMethod": "manual",
+    "automatedAccess": "unconfirmed",
+    "factReuse": "allowed",
+    "publicRetention": "allowed",
+    "rawRetention": {
+      "permission": "denied",
+      "maxSeconds": null
+    },
+    "attribution": "Official source links; only selected, independently authored factual observations, no descriptions, photos, reviews, page layout, archives, or API-directory content.",
+    "termsUrl": "https://chapteronetml.com/privacy-policy.php",
+    "robotsUrl": null,
+    "permissionBasis": "independently-authored-facts",
+    "basisUrl": "https://www.copyright.gov/help/faq/faq-protect.html",
+    "rationale": "This decision covers our independently authored factual observations only, not a restaurant-granted content license. Exposed navigation/footer policies and targeted policy search were inspected; no contrary factual-observation restriction was identified for this origin. Known restrictive origins are withheld. No automation grant is inferred.",
+    "inspectionFinding": "agent-source-inspection of official menu, contact page and linked privacy policy, last updated 2026-02-18. No scraping or factual-observation reuse prohibition identified in that inspected policy. Retained only a small factual price/schedule sample with independently written labels and notes.",
+    "unresolvedQuestions": [
+      "A separate access/reuse agreement was not located; no blanket license or commercial-use permission is asserted."
+    ]
+  },
+  {
+    "id": "facts-cw-cedar-creek-inn-brea",
+    "sourceOrigins": ["https://www.cedarcreekbrea.com"],
+    "checkedAt": "2026-10-20T01:35:10Z",
+    "accessMethod": "manual",
+    "automatedAccess": "unconfirmed",
+    "factReuse": "allowed",
+    "publicRetention": "allowed",
+    "rawRetention": {
+      "permission": "denied",
+      "maxSeconds": null
+    },
+    "attribution": "Official source links; only selected, independently authored factual observations, no descriptions, photos, reviews, page layout, archives, or API-directory content.",
+    "termsUrl": null,
+    "robotsUrl": null,
+    "permissionBasis": "independently-authored-facts",
+    "basisUrl": "https://www.copyright.gov/help/faq/faq-protect.html",
+    "rationale": "This decision covers our independently authored factual observations only, not a restaurant-granted content license. Exposed navigation/footer policies and targeted policy search were inspected; no contrary factual-observation restriction was identified for this origin. Known restrictive origins are withheld. No automation grant is inferred.",
+    "inspectionFinding": "agent-source-inspection of branch homepage, navigation/footer and its directly linked happy-hour PDF, plus targeted policy search. No restaurant terms/access/reuse link exposed in inspected surfaces. Only concise branch-owned factual observations retained; Popmenu reviews, photos, mapping data and other provider content excluded.",
+    "unresolvedQuestions": [
+      "No affirmative reuse license established; applicability of additional restaurant or hosting-provider terms remains unresolved.",
+      "Homepage separately mentions front patio and bar; restaurant should confirm access to other seating."
+    ]
+  },
+  {
+    "id": "facts-cw-billys-at-the-beach-newport-beach",
+    "sourceOrigins": ["https://www.billysatthebeach.net"],
+    "checkedAt": "2026-10-20T01:35:10Z",
+    "accessMethod": "manual",
+    "automatedAccess": "unconfirmed",
+    "factReuse": "allowed",
+    "publicRetention": "allowed",
+    "rawRetention": {
+      "permission": "denied",
+      "maxSeconds": null
+    },
+    "attribution": "Official source links; only selected, independently authored factual observations, no descriptions, photos, reviews, page layout, archives, or API-directory content.",
+    "termsUrl": null,
+    "robotsUrl": null,
+    "permissionBasis": "independently-authored-facts",
+    "basisUrl": "https://www.copyright.gov/help/faq/faq-protect.html",
+    "rationale": "This decision covers our independently authored factual observations only, not a restaurant-granted content license. Exposed navigation/footer policies and targeted policy search were inspected; no contrary factual-observation restriction was identified for this origin. Known restrictive origins are withheld. No automation grant is inferred.",
+    "inspectionFinding": "agent-source-inspection of official homepage and happy-hour menu navigation/footers, plus targeted policy search. No linked access/reuse policy found on those surfaces. Retained concise restaurant-published branch, schedule and two price facts in original wording; provider reviews, photos and map content excluded.",
+    "unresolvedQuestions": [
+      "No license or absence of contractual restrictions can be inferred from missing policy links; additional restaurant/provider terms may apply.",
+      "Weekend starts follow adjacent published operating hours; special-event openings may differ.",
+      "Seating, holiday exclusions and additional charges were not specified in retained sources."
+    ]
+  },
+  {
+    "id": "facts-cw-mayfield-san-juan-capistrano",
+    "sourceOrigins": ["https://www.mayfieldoc.com"],
+    "checkedAt": "2026-10-20T01:35:10Z",
+    "accessMethod": "manual",
+    "automatedAccess": "unconfirmed",
+    "factReuse": "allowed",
+    "publicRetention": "allowed",
+    "rawRetention": {
+      "permission": "denied",
+      "maxSeconds": null
+    },
+    "attribution": "Official source links; only selected, independently authored factual observations, no descriptions, photos, reviews, page layout, archives, or API-directory content.",
+    "termsUrl": "https://www.mayfieldoc.com/happy-hour",
+    "robotsUrl": null,
+    "permissionBasis": "independently-authored-facts",
+    "basisUrl": "https://www.copyright.gov/help/faq/faq-protect.html",
+    "rationale": "This decision covers our independently authored factual observations only, not a restaurant-granted content license. Exposed navigation/footer policies and targeted policy search were inspected; no contrary factual-observation restriction was identified for this origin. Known restrictive origins are withheld. No automation grant is inferred.",
+    "inspectionFinding": "agent-source-inspection of official happy-hour page and browser footer link destinations. Both TERMS and PRIVACY are self-links to the same page, which contains no substantive access/reuse policy. Retained only independently authored branch, schedule and two price observations, without recipe descriptions or media.",
+    "unresolvedQuestions": [
+      "Substantive terms/privacy documents could not be reached through the self-links; access/reuse permission remains unresolved."
+    ]
+  },
+  {
+    "id": "facts-cw-coyote-grill-laguna-beach",
+    "sourceOrigins": ["https://www.coyotegrill.tv"],
+    "checkedAt": "2026-10-20T01:35:10Z",
+    "accessMethod": "manual",
+    "automatedAccess": "unconfirmed",
+    "factReuse": "allowed",
+    "publicRetention": "allowed",
+    "rawRetention": {
+      "permission": "denied",
+      "maxSeconds": null
+    },
+    "attribution": "Official source links; only selected, independently authored factual observations, no descriptions, photos, reviews, page layout, archives, or API-directory content.",
+    "termsUrl": null,
+    "robotsUrl": null,
+    "permissionBasis": "independently-authored-facts",
+    "basisUrl": "https://www.copyright.gov/help/faq/faq-protect.html",
+    "rationale": "This decision covers our independently authored factual observations only, not a restaurant-granted content license. Exposed navigation/footer policies and targeted policy search were inspected; no contrary factual-observation restriction was identified for this origin. Known restrictive origins are withheld. No automation grant is inferred.",
+    "inspectionFinding": "agent-source-inspection of restaurant homepage, menu and directly opened public recurring-event pages, including navigation/footer. No linked restaurant access/reuse policy visible there. Retained only independently authored schedule, branch, restriction and two price observations; provider photos, reviews, maps and page content excluded.",
+    "unresolvedQuestions": [
+      "No affirmative factual-data reuse license established; additional restaurant/provider terms may apply.",
+      "Monday football extension season and end date were not established and are omitted."
+    ]
+  }
+]

@@ -1,0 +1,533 @@
+{
+  "records": [
+    {
+      "id": "risu-long-beach",
+      "name": "RISÜ Food & Spirits",
+      "neighborhood": "Downtown Long Beach",
+      "address": "207 E Seaside Way, Suite A, Long Beach, CA 90802",
+      "coordinates": null,
+      "hours": [
+        {
+          "id": "daily-afternoon",
+          "days": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday"
+          ],
+          "start": "16:00",
+          "end": "18:00",
+          "restriction": "Monday extension has no encoded endpoint; other seating or purchase restrictions not specified.",
+          "status": "primary",
+          "sourceId": "official-hh"
+        }
+      ],
+      "menu": [
+        {
+          "id": "food-fries",
+          "name": "Truffle fries",
+          "kind": "food",
+          "priceCents": 900,
+          "tags": ["fries"],
+          "sourceId": "official-hh",
+          "status": "primary",
+          "windowIds": ["daily-afternoon"]
+        },
+        {
+          "id": "food-wings",
+          "name": "Chicken wings",
+          "kind": "food",
+          "priceCents": 900,
+          "tags": ["wings"],
+          "sourceId": "official-hh",
+          "status": "primary",
+          "windowIds": ["daily-afternoon"]
+        },
+        {
+          "id": "drink-well",
+          "name": "Well drink",
+          "kind": "drink",
+          "priceCents": 600,
+          "tags": ["cocktail"],
+          "sourceId": "official-menu",
+          "status": "primary",
+          "windowIds": ["daily-afternoon"]
+        },
+        {
+          "id": "drink-wine",
+          "name": "House red or white wine",
+          "kind": "drink",
+          "priceCents": 700,
+          "tags": ["wine"],
+          "sourceId": "official-menu",
+          "status": "primary",
+          "windowIds": ["daily-afternoon"]
+        }
+      ],
+      "foodTags": ["fries", "wings"],
+      "drinkTags": ["cocktail", "wine"],
+      "atmosphereTags": [],
+      "sources": [
+        {
+          "id": "official-hh",
+          "url": "https://www.therisu.com/happy-hour",
+          "type": "primary",
+          "accessedOn": "2026-10-19",
+          "reviewedOn": "2026-10-19",
+          "note": "agent-source-inspection: Happy Hour heading and Our Happy Hour Menu give daily 16:00-18:00 and Monday all-day extension; fries and wings appear in the $9 group. Publication date not displayed."
+        },
+        {
+          "id": "official-menu",
+          "url": "https://www.therisu.com/menu",
+          "type": "primary",
+          "accessedOn": "2026-10-19",
+          "reviewedOn": "2026-10-19",
+          "note": "agent-source-inspection: Happy Hour subsection, Drinks, explicitly separates $6 wells and $7 house wine from food groups. Publication date not displayed."
+        },
+        {
+          "id": "official-location",
+          "url": "https://www.therisu.com/long-beach-restaurant",
+          "type": "primary",
+          "accessedOn": "2026-10-19",
+          "reviewedOn": "2026-10-19",
+          "note": "agent-source-inspection: Downtown Long Beach and Address sections identify Suite A at 207 E Seaside Way; Visit section repeats daily happy hour. Publication date not displayed."
+        }
+      ],
+      "specials": [
+        {
+          "text": "Happy-hour specialty cocktails are $2 below regular prices; beer is $1 below regular prices.",
+          "status": "primary",
+          "sourceId": "official-menu"
+        }
+      ],
+      "notes": "Reviewer method: agent-source-inspection. Monday is advertised as all day on the happy-hour page and all night on the location page; only the shared bounded daily window is encoded. No final prices calculated from discounts. Serving sizes, tax, gratuity and additional restrictions are unspecified. County and coordinates await government geocoding."
+    },
+    {
+      "id": "the-hare-long-beach",
+      "name": "The Hare Bar & Restaurant",
+      "neighborhood": "Long Beach",
+      "address": "1800 E Broadway, Long Beach, CA 90802",
+      "coordinates": null,
+      "hours": [
+        {
+          "id": "daily-afternoon",
+          "days": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday"
+          ],
+          "start": "15:00",
+          "end": "18:00",
+          "restriction": "Dine-in only per homepage; offer details conflict across official pages.",
+          "status": "primary",
+          "sourceId": "official-home"
+        }
+      ],
+      "menu": [],
+      "foodTags": [],
+      "drinkTags": [],
+      "atmosphereTags": [],
+      "sources": [
+        {
+          "id": "official-home",
+          "url": "https://www.theharelb.com/",
+          "type": "primary",
+          "accessedOn": "2026-10-19",
+          "reviewedOn": "2026-10-19",
+          "note": "agent-source-inspection: happy hour block gives daily 15:00-18:00, Monday all day, dine-in requirement and percentage promotion; location block supplies address. Publication date not displayed; footer copyright 2025 is not a menu date."
+        },
+        {
+          "id": "official-hh",
+          "url": "https://www.theharelb.com/happy-hour",
+          "type": "primary",
+          "accessedOn": "2026-10-19",
+          "reviewedOn": "2026-10-19",
+          "note": "agent-source-inspection: Hoppy Happy Hour and Hoppy Happy Food both repeat daily 15:00-18:00, but present fixed-price and category-discount offers that differ from the homepage. Publication date not displayed."
+        }
+      ],
+      "notes": "Reviewer method: agent-source-inspection. Both official pages agree on daily 15:00-18:00. Homepage advertises 25% off food and specified drink categories; dedicated page instead lists fixed-price drinks and dollar discounts on food/wine. No prices or specials retained because simultaneous applicability is unresolved. Homepage late-night days are Sunday-Thursday; dedicated page says daily. No late-night or Monday all-day endpoints inferred from business hours. County and coordinates await government geocoding."
+    },
+    {
+      "id": "nomad-eatery-el-segundo",
+      "name": "Nomad Eatery",
+      "neighborhood": "El Segundo",
+      "address": "2041 Rosecrans Avenue, Suite 190, El Segundo, CA 90245",
+      "coordinates": null,
+      "hours": [
+        {
+          "id": "weekday-afternoon",
+          "days": ["Tuesday", "Wednesday", "Thursday", "Friday"],
+          "start": "16:30",
+          "end": "18:00",
+          "restriction": "Saturday is disputed between official pages and omitted; other restrictions not specified.",
+          "status": "primary",
+          "sourceId": "official-hh"
+        }
+      ],
+      "menu": [
+        {
+          "id": "food-guacamole",
+          "name": "Guacamole with chips",
+          "kind": "food",
+          "priceCents": 600,
+          "tags": ["guacamole"],
+          "sourceId": "official-hh",
+          "status": "primary",
+          "windowIds": ["weekday-afternoon"]
+        },
+        {
+          "id": "food-fries",
+          "name": "Fries",
+          "kind": "food",
+          "priceCents": 600,
+          "tags": ["fries"],
+          "sourceId": "official-hh",
+          "status": "primary",
+          "windowIds": ["weekday-afternoon"]
+        }
+      ],
+      "foodTags": ["guacamole", "fries"],
+      "drinkTags": [],
+      "atmosphereTags": [],
+      "sources": [
+        {
+          "id": "official-hh",
+          "url": "https://nomadsouthbay.com/happy-hour-menu/",
+          "type": "primary",
+          "accessedOn": "2026-10-19",
+          "reviewedOn": "2026-10-19",
+          "note": "agent-source-inspection: Happy Hour Menu heading gives Tuesday-Saturday 16:30-18:00; $6 Items lists guacamole/chips and fries at 6.00 each. Publication date not displayed. The charcuterie heading and item price disagree; that item is omitted."
+        },
+        {
+          "id": "official-home",
+          "url": "https://nomadsouthbay.com/",
+          "type": "primary",
+          "accessedOn": "2026-10-19",
+          "reviewedOn": "2026-10-19",
+          "note": "agent-source-inspection: Cocktails paragraph gives Tuesday-Friday happy hour 16:30-18:00, conflicting with Saturday inclusion on dedicated menu. Publication date not displayed."
+        },
+        {
+          "id": "official-location",
+          "url": "https://nomadsouthbay.com/contact/",
+          "type": "primary",
+          "accessedOn": "2026-10-19",
+          "reviewedOn": "2026-10-19",
+          "note": "agent-source-inspection: Contact Us, Visit link text gives street address, suite and ZIP 90245. Publication date not displayed."
+        }
+      ],
+      "notes": "Reviewer method: agent-source-inspection. Encoded days are the agreement between official homepage and dedicated happy-hour menu. Saturday remains unverified because the pages conflict; no date establishes which is newer. Only unambiguous food prices retained; no drink prices tied to happy hour were established. County and coordinates await government geocoding."
+    },
+    {
+      "id": "sausal-el-segundo",
+      "name": "Sausal",
+      "neighborhood": "El Segundo",
+      "address": "219 Main Street, El Segundo, CA 90245",
+      "coordinates": null,
+      "hours": [
+        {
+          "id": "daily-afternoon",
+          "days": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday"
+          ],
+          "start": "15:00",
+          "end": "18:00",
+          "restriction": "Seating and purchase restrictions not specified in inspected happy-hour menu.",
+          "status": "primary",
+          "sourceId": "official-menu"
+        }
+      ],
+      "menu": [
+        {
+          "id": "food-poppers",
+          "name": "Jalapeno poppers",
+          "kind": "food",
+          "priceCents": 600,
+          "tags": ["poppers"],
+          "sourceId": "official-menu",
+          "status": "primary",
+          "windowIds": ["daily-afternoon"]
+        },
+        {
+          "id": "food-chips",
+          "name": "Chips with salsa",
+          "kind": "food",
+          "priceCents": 250,
+          "tags": ["chips-salsa"],
+          "sourceId": "official-menu",
+          "status": "primary",
+          "windowIds": ["daily-afternoon"]
+        },
+        {
+          "id": "drink-margarita",
+          "name": "Rancho margarita",
+          "kind": "drink",
+          "priceCents": 850,
+          "tags": ["margarita"],
+          "sourceId": "official-menu",
+          "status": "primary",
+          "windowIds": ["daily-afternoon"]
+        },
+        {
+          "id": "drink-beer",
+          "name": "Modelo Negra lager",
+          "kind": "drink",
+          "priceCents": 650,
+          "tags": ["beer"],
+          "sourceId": "official-menu",
+          "status": "primary",
+          "windowIds": ["daily-afternoon"]
+        }
+      ],
+      "foodTags": ["poppers", "chips-salsa"],
+      "drinkTags": ["margarita", "beer"],
+      "atmosphereTags": [],
+      "sources": [
+        {
+          "id": "official-menu",
+          "url": "https://www.sausal.com/lunch-dinner?location=Main+Street&menu=happy-hour",
+          "type": "primary",
+          "accessedOn": "2026-10-19",
+          "reviewedOn": "2026-10-19",
+          "note": "agent-source-inspection: Happy Hour availability line gives Monday-Sunday 15:00-18:00. Happy Hour Drinks and HAPPY HOUR BITES supply the four recorded prices. Publication date not displayed."
+        },
+        {
+          "id": "official-home",
+          "url": "https://www.sausal.com/",
+          "type": "primary",
+          "accessedOn": "2026-10-19",
+          "reviewedOn": "2026-10-19",
+          "note": "agent-source-inspection: Cocktail Excitement paragraph repeats daily 15:00-18:00; Visit Us gives 219 Main Street and ZIP 90245. Publication date not displayed; footer copyright 2022 is not a menu date."
+        },
+        {
+          "id": "official-hh",
+          "url": "https://www.sausal.com/happy-hour",
+          "type": "primary",
+          "accessedOn": "2026-10-19",
+          "reviewedOn": "2026-10-19",
+          "note": "agent-source-inspection: opening paragraph explicitly spells out Monday-Sunday 15:00-18:00 and Happy Hour Menu link leads to Main Street menu. Catering and event prices elsewhere on this page were not treated as happy-hour item prices. Publication date not displayed."
+        }
+      ],
+      "notes": "Reviewer method: agent-source-inspection. Prices are directly advertised in the branch happy-hour menu; no discount arithmetic. Serving sizes, tax and gratuity unspecified. County and coordinates await government geocoding."
+    },
+    {
+      "id": "the-social-valencia",
+      "name": "The Social Restaurant",
+      "neighborhood": "Valencia / Santa Clarita",
+      "address": "23329 Lyons Avenue, Suite A, Valencia, CA 91355",
+      "coordinates": null,
+      "hours": [
+        {
+          "id": "tuesday-thursday",
+          "days": ["Tuesday", "Wednesday", "Thursday"],
+          "start": "16:00",
+          "end": "18:30",
+          "restriction": "Bar opens at 16:00; dining room opens at 17:00. Happy-hour seating scope not explicitly stated.",
+          "status": "primary",
+          "sourceId": "official-home"
+        },
+        {
+          "id": "friday",
+          "days": ["Friday"],
+          "start": "16:00",
+          "end": "18:00",
+          "restriction": "Bar opens at 16:00; dining room opens at 17:00. Happy-hour seating scope not explicitly stated.",
+          "status": "primary",
+          "sourceId": "official-home"
+        }
+      ],
+      "menu": [],
+      "foodTags": [],
+      "drinkTags": [],
+      "atmosphereTags": [],
+      "sources": [
+        {
+          "id": "official-home",
+          "url": "https://thesocialrestaurant.com/",
+          "type": "primary",
+          "accessedOn": "2026-10-19",
+          "reviewedOn": "2026-10-19",
+          "note": "agent-source-inspection: RESTAURANT HOURS footer separately labels Dining Room, Bar and Happy Hour, including Tuesday-Thursday 16:00-18:30 and Friday 16:00-18:00. THE SOCIAL RESTAURANT block gives Suite A address. Publication date not displayed; footer copyright 2017 is not evidence of menu publication date."
+        },
+        {
+          "id": "official-location",
+          "url": "https://thesocialrestaurant.com/location/",
+          "type": "primary",
+          "accessedOn": "2026-10-19",
+          "reviewedOn": "2026-10-19",
+          "note": "agent-source-inspection: location page identifies Santa Clarita address and footer repeats the two explicit happy-hour windows and suite. Publication date not displayed."
+        }
+      ],
+      "notes": "Reviewer method: agent-source-inspection. Official site advertises happy-hour windows but inspected pages do not establish specific happy-hour food or drink prices, so menu is empty. No weekend happy hour inferred from regular service hours. Site lacks a visible recent publication date; current operation and offers merit reconfirmation. County and coordinates await government geocoding."
+    },
+    {
+      "id": "glendora-continental-glendora",
+      "name": "Glendora Continental Restaurant",
+      "neighborhood": "Glendora / Eastern San Gabriel Valley",
+      "address": "316 W Route 66, Glendora, CA 91740",
+      "coordinates": null,
+      "hours": [
+        {
+          "id": "weekday-afternoon",
+          "days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "start": "15:00",
+          "end": "19:00",
+          "restriction": "Advertised in Bar/Lounge section; dining-room applicability not established.",
+          "status": "primary",
+          "sourceId": "official-hours"
+        }
+      ],
+      "menu": [],
+      "foodTags": [],
+      "drinkTags": [],
+      "atmosphereTags": [],
+      "sources": [
+        {
+          "id": "official-hours",
+          "url": "https://www.glendoracontinental.com/menu1",
+          "type": "primary",
+          "accessedOn": "2026-10-19",
+          "reviewedOn": "2026-10-19",
+          "note": "agent-source-inspection: Bar/Lounge section gives Monday-Friday 15:00-19:00 with half-price appetizers and unspecified drink promotions. Contact Us gives 316 W Route 66. Publication date not displayed; footer copyright 2025 is not a menu date."
+        },
+        {
+          "id": "official-home",
+          "url": "https://www.glendoracontinental.com/",
+          "type": "primary",
+          "accessedOn": "2026-10-19",
+          "reviewedOn": "2026-10-19",
+          "note": "agent-source-inspection: Bar/Lounge section repeats weekday happy-hour hours and appetizer discount; Contact Us repeats street address. Publication date not displayed."
+        }
+      ],
+      "specials": [
+        {
+          "text": "Appetizers are advertised at 50% off during weekday happy hour in the bar/lounge; drink promotions have no specified prices.",
+          "status": "primary",
+          "sourceId": "official-hours"
+        }
+      ],
+      "notes": "Reviewer method: agent-source-inspection. No final appetizer prices derived from the discount. Separate Wednesday wine promotion has no exact time window and is omitted. County and coordinates await government geocoding."
+    }
+  ],
+  "policyFindings": [
+    {
+      "recordId": "risu-long-beach",
+      "sourceOrigin": "https://www.therisu.com",
+      "termsUrlsInspected": [],
+      "restrictionsFound": [
+        "No access or reuse policy link was exposed in the inspected homepage, happy-hour, menu or location page text. This is not permission."
+      ],
+      "basis": "Public official pages directly inspected using web. Navigation/footer content and domain-limited privacy/terms search checked. Only concise independently authored observations retained; no page copies, images or descriptive menu prose retained.",
+      "unresolvedQuestions": [
+        "Unlinked or dynamically displayed terms may exist; no affirmative reuse license established.",
+        "Monday extension has no exact supported endpoint."
+      ]
+    },
+    {
+      "recordId": "the-hare-long-beach",
+      "sourceOrigin": "https://www.theharelb.com",
+      "termsUrlsInspected": [],
+      "restrictionsFound": [
+        "No access or reuse policy link exposed on inspected homepage or happy-hour page; copyright notice present. No license inferred."
+      ],
+      "basis": "Public official pages directly inspected using web; navigation/footer and domain-limited policy search checked. Only original factual observations retained. Ordering provider not used as evidence.",
+      "unresolvedQuestions": [
+        "Unlinked terms and reuse authorization remain unresolved.",
+        "Homepage percentage offer conflicts with dedicated happy-hour prices and discounts; menu left empty.",
+        "Late-night days conflict; Monday all-day scope has no encoded endpoint."
+      ]
+    },
+    {
+      "recordId": "nomad-eatery-el-segundo",
+      "sourceOrigin": "https://nomadsouthbay.com",
+      "termsUrlsInspected": [],
+      "restrictionsFound": [
+        "No access or reuse policy link exposed on inspected homepage, happy-hour or contact page; copyright notice present. No license inferred."
+      ],
+      "basis": "Direct web inspection of public official pages, navigation/footer and domain-limited policy search. Retained a small selection of factual prices, address and agreed hours, independently phrased; no menu descriptions or provider content retained.",
+      "unresolvedQuestions": [
+        "Unlinked terms and affirmative reuse rights remain unresolved.",
+        "Saturday happy hour appears on dedicated menu but not homepage; omitted pending confirmation.",
+        "Charcuterie heading and price conflict; omitted."
+      ]
+    },
+    {
+      "recordId": "sausal-el-segundo",
+      "sourceOrigin": "https://www.sausal.com",
+      "termsUrlsInspected": ["https://www.sausal.com/accessibility"],
+      "restrictionsFound": [
+        "Linked accessibility statement addresses access for people with disabilities, not reuse rights. Copyright notice present. No separate reuse or automated-access policy found in inspected navigation/footer or domain-limited search."
+      ],
+      "basis": "Public official homepage, happy-hour page, branch menu and linked accessibility statement directly inspected through web. Only selected factual prices, hours and address retained in original wording; no catering prose, menu descriptions or media retained.",
+      "unresolvedQuestions": [
+        "No affirmative republication license established; additional unlinked terms may exist.",
+        "Menu has no visible publication date or explicit seating/purchase restrictions."
+      ]
+    },
+    {
+      "recordId": "the-social-valencia",
+      "sourceOrigin": "https://thesocialrestaurant.com",
+      "termsUrlsInspected": [],
+      "restrictionsFound": [
+        "No access or reuse policy link exposed on inspected homepage or location page; copyright notice present. No license inferred."
+      ],
+      "basis": "Direct web inspection of public official homepage and location page, navigation/footer, and domain-limited policy search. Only address and explicitly labeled happy-hour hours retained, independently phrased.",
+      "unresolvedQuestions": [
+        "Unlinked terms and affirmative reuse authorization remain unresolved.",
+        "No visible current publication date; current operation, offers and seating applicability need reconfirmation.",
+        "No specific happy-hour prices verified."
+      ]
+    },
+    {
+      "recordId": "glendora-continental-glendora",
+      "sourceOrigin": "https://www.glendoracontinental.com",
+      "termsUrlsInspected": [],
+      "restrictionsFound": [
+        "No access or reuse policy link exposed on inspected official homepage or menu1 page; copyright notice and site-builder credit present. No license inferred."
+      ],
+      "basis": "Direct web inspection of public official homepage and hours page, navigation/footer, and domain-limited policy search. Retained only independently worded factual observations; third-party site-builder and mapping content not used as restaurant evidence.",
+      "unresolvedQuestions": [
+        "Unlinked terms and affirmative reuse rights remain unresolved.",
+        "Discount's exact appetizer exclusions and dining-room applicability are not established.",
+        "No exact final happy-hour prices verified."
+      ]
+    },
+    {
+      "recordId": "saint-and-second-excluded",
+      "sourceOrigin": "https://www.saintandsecond.com",
+      "termsUrlsInspected": [
+        "https://www.saintandsecond.com/terms",
+        "https://www.saintandsecond.com/privacy"
+      ],
+      "restrictionsFound": [
+        "Terms updated December 7, 2023: sections 01 and 02 restrict content reuse/republication and limit use to personal informational purposes; section 04(j) prohibits extraction/data-gathering tools and collecting or storing site content."
+      ],
+      "basis": "Official linked terms and privacy pages directly inspected. Excluded branches from records due to restrictive terms. No menu facts from this restaurant retained for integration; no further extraction pursued after identifying restrictions.",
+      "unresolvedQuestions": [
+        "Written permission would be needed before reconsidering this source under its stated terms; none obtained or requested."
+      ]
+    }
+  ],
+  "limitations": [
+    "Six new physical branches: two Long Beach, two El Segundo/South Bay, one Valencia/Santa Clarita and one Glendora/eastern San Gabriel Valley. IDs and addresses checked against all 100 records in dtla.json, west.json, north.json and central.json.",
+    "Reviewer method throughout is agent-source-inspection, not human review. Source inspection date is 2026-10-19; no visible publication date established for retained restaurant pages.",
+    "All coordinates intentionally null. County membership and coordinates await the parent's government geocoding; city names are official advertised addresses, not completed county-boundary verification.",
+    "Public visibility and absence of discovered restrictive terms do not establish a reuse license. Policy inspection was limited to exposed navigation/footer links and targeted searches; undiscovered policies remain possible.",
+    "Three records have empty menus. The Hare has conflicting official offers; The Social has no verified happy-hour prices; Glendora Continental has only a supported discount. Nomad has two exact food prices but no verified happy-hour drink prices.",
+    "Only mutually supported, exactly bounded windows encoded where official pages disagree. No opening/closing times substituted for all-day or close-based promotion endpoints. No discount final prices calculated.",
+    "Saint & Second excluded for restrictive official terms. Wood Ranch and Lazy Dog not used. The Attic's image-based offer was not visually verified and is not included. Other suggested leads were not required to reach six qualifying records.",
+    "Only this research JSON is written. No app/UI integration, deployment, staging, commits, paid APIs, subscriptions, cross-chat messages or agents used. No source pages, menu prose, images or provider content saved."
+  ]
+}

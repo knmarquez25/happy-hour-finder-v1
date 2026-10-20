@@ -8,11 +8,19 @@
   },
   "data": {
     "collectedOn": "2026-10-19",
-    "target": 100,
-    "total": 100,
-    "located": 100,
-    "primaryHours": 73,
-    "primaryFoodAndDrink": 38,
+    "target": 500,
+    "targetStatus": "proposed milestone, not complete coverage",
+    "legacyTotal": 100,
+    "countywideAdded": 11,
+    "coverage": "LA County and Orange County; original unannotated records retain legacy DTLA coverage",
+    "countyCounts": {
+      "06037": 5,
+      "06059": 6
+    },
+    "total": 111,
+    "located": 111,
+    "primaryHours": 84,
+    "primaryFoodAndDrink": 44,
     "outsideRadius": []
   },
   "criterion": "At least one top-three independently labeled source-supported, within-radius food+drink pair <= target + $5 on positive cases; correct empty primary results on explicit negative controls.",
@@ -316,7 +324,7 @@
             "requiredFailures": []
           }
         ],
-        "alternativeCount": 94
+        "alternativeCount": 105
       },
       "holdout-pasadena": {
         "primaryCount": 7,
@@ -349,7 +357,7 @@
             "requiredFailures": []
           }
         ],
-        "alternativeCount": 93
+        "alternativeCount": 104
       },
       "holdout-dtla-close": {
         "primaryCount": 2,
@@ -373,7 +381,7 @@
             "requiredFailures": []
           }
         ],
-        "alternativeCount": 98
+        "alternativeCount": 109
       },
       "holdout-hollywood": {
         "primaryCount": 8,
@@ -406,19 +414,19 @@
             "requiredFailures": []
           }
         ],
-        "alternativeCount": 92
+        "alternativeCount": 103
       },
       "holdout-dawn": {
         "primaryCount": 0,
         "top": [],
-        "alternativeCount": 100
+        "alternativeCount": 111
       }
     }
   },
   "hashes": {
-    "src/data.js": "04d7ff9731199f5fa901fa8f811352988fa9cf0bcc3cbcad69dbd6c18352f9f0",
-    "src/matching.js": "d405a66d35f10e836ad8dd1f1b201911c54f78b46c57b79bcf8cea02911623e6",
-    "src/locations.js": "3f370ef8c181254f1a0e97f473665fbbb6f3044c8876a4db96a4b23d2511af08",
+    "src/data.js": "9d3e82c412bd22cda427b5167d0d79cb3dbc20203c7754cf91d198d34bfcf31a",
+    "src/matching.js": "217f2a9f4b7bf89be335a9574aa032d56af4f33d9189a16c8ab94e49c47f88a8",
+    "src/locations.js": "aa7b3d2211428a8addd425323febb177a9a24a44f51c14f820724df7ffe8354c",
     "evaluation/cases.json": "103d70015c840d7d54f0f0a1701c788d4cdf343b76e39f6d40babcdc6597e1da",
     "evaluation/holdout.json": "55f3d4e7ac43fd999cb0475218ef49c035d86cec2380951c85ea41a0716df107",
     "evaluation/gold.json": "5c377f069c7c2fbd0fb214fd5d28d53a5d71f69b429bb7669f69d4d722338ece",

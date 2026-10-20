@@ -1,0 +1,114 @@
+[
+  {
+    "id": "risu-long-beach",
+    "queryAddress": "207 E Seaside Way, Suite A, Long Beach, CA 90802",
+    "submittedAddress": "207 E Seaside Way, Long Beach, CA 90802",
+    "url": "https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?address=207+E+Seaside+Way%2C+Long+Beach%2C+CA+90802&benchmark=Public_AR_Current&vintage=Current_Current&format=json",
+    "matches": [
+      {
+        "matchedAddress": "207 E SEASIDE WAY, LONG BEACH, CA, 90802",
+        "coordinates": {
+          "x": -118.190837556096,
+          "y": 33.765897840046
+        },
+        "counties": [
+          {
+            "geoid": "06037",
+            "name": "Los Angeles County"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "the-hare-long-beach",
+    "queryAddress": "1800 E Broadway, Long Beach, CA 90802",
+    "submittedAddress": "1800 E Broadway, Long Beach, CA 90802",
+    "url": "https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?address=1800+E+Broadway%2C+Long+Beach%2C+CA+90802&benchmark=Public_AR_Current&vintage=Current_Current&format=json",
+    "matches": [
+      {
+        "matchedAddress": "1800 E BROADWAY, LONG BEACH, CA, 90802",
+        "coordinates": {
+          "x": -118.169625477734,
+          "y": 33.767447559631
+        },
+        "counties": [
+          {
+            "geoid": "06037",
+            "name": "Los Angeles County"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "nomad-eatery-el-segundo",
+    "queryAddress": "2041 Rosecrans Avenue, Suite 190, El Segundo, CA 90245",
+    "submittedAddress": "2041 Rosecrans Avenue, El Segundo, CA 90245",
+    "url": "https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?address=2041+Rosecrans+Avenue%2C+El+Segundo%2C+CA+90245&benchmark=Public_AR_Current&vintage=Current_Current&format=json",
+    "matches": [
+      {
+        "matchedAddress": "2041 ROSECRANS AVE, EL SEGUNDO, CA, 90245",
+        "coordinates": {
+          "x": -118.391071226244,
+          "y": 33.901924987339
+        },
+        "counties": [
+          {
+            "geoid": "06037",
+            "name": "Los Angeles County"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sausal-el-segundo",
+    "queryAddress": "219 Main Street, El Segundo, CA 90245",
+    "submittedAddress": "219 Main Street, El Segundo, CA 90245",
+    "url": "https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?address=219+Main+Street%2C+El+Segundo%2C+CA+90245&benchmark=Public_AR_Current&vintage=Current_Current&format=json",
+    "matches": [
+      {
+        "matchedAddress": "219 MAIN ST, EL SEGUNDO, CA, 90245",
+        "coordinates": {
+          "x": -118.415991080748,
+          "y": 33.918101014131
+        },
+        "counties": [
+          {
+            "geoid": "06037",
+            "name": "Los Angeles County"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "the-social-valencia",
+    "queryAddress": "23329 Lyons Avenue, Suite A, Valencia, CA 91355",
+    "submittedAddress": "23329 Lyons Avenue, Valencia, CA 91355",
+    "url": "https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?address=23329+Lyons+Avenue%2C+Valencia%2C+CA+91355&benchmark=Public_AR_Current&vintage=Current_Current&format=json",
+    "matches": []
+  },
+  {
+    "id": "glendora-continental-glendora",
+    "queryAddress": "316 W Route 66, Glendora, CA 91740",
+    "submittedAddress": "316 W Route 66, Glendora, CA 91740",
+    "url": "https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?address=316+W+Route+66%2C+Glendora%2C+CA+91740&benchmark=Public_AR_Current&vintage=Current_Current&format=json",
+    "matches": [
+      {
+        "matchedAddress": "316 W STATE RTE 66, GLENDORA, CA, 91740",
+        "coordinates": {
+          "x": -117.867656213831,
+          "y": 34.128610080006
+        },
+        "counties": [
+          {
+            "geoid": "06037",
+            "name": "Los Angeles County"
+          }
+        ]
+      }
+    ]
+  }
+]

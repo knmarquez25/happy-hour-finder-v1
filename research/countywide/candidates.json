@@ -1,0 +1,1169 @@
+[
+  {
+    "id": "cw-wood-valencia",
+    "revision": "1",
+    "name": "Wood Ranch Valencia",
+    "address": {
+      "street": "25580 The Old Road",
+      "unit": null,
+      "city": "Stevenson Ranch",
+      "state": "CA",
+      "postalCode": "91381"
+    },
+    "county": {
+      "geoid": null,
+      "sourceId": null,
+      "reviewedOn": null
+    },
+    "coordinates": null,
+    "identityStatus": "pending",
+    "operatingStatus": "unknown",
+    "operatingSourceId": null,
+    "offerName": "Happy Hour",
+    "offerEvidenceSourceIds": ["src-wood-valencia"],
+    "hours": [
+      {
+        "id": "afternoon",
+        "days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "start": "15:00",
+        "end": "18:00",
+        "restriction": "conditional",
+        "status": "primary",
+        "sourceId": "src-wood-valencia",
+        "notes": "Excludes holidays; menu/seating restrictions await review."
+      }
+    ],
+    "menu": [],
+    "specials": [],
+    "compatiblePairs": [],
+    "notes": "Weekday 15:00-18:00; holidays excluded. Valencia is branch name; address locality Stevenson Ranch. Separate Tuesday wine offer excluded."
+  },
+  {
+    "id": "cw-frontyard",
+    "revision": "1",
+    "name": "The Front Yard",
+    "address": {
+      "street": null,
+      "unit": null,
+      "city": "North Hollywood",
+      "state": "CA",
+      "postalCode": null
+    },
+    "county": {
+      "geoid": null,
+      "sourceId": null,
+      "reviewedOn": null
+    },
+    "coordinates": null,
+    "identityStatus": "pending",
+    "operatingStatus": "unknown",
+    "operatingSourceId": null,
+    "offerName": "Happy Hour",
+    "offerEvidenceSourceIds": ["src-frontyard"],
+    "hours": [],
+    "menu": [],
+    "specials": [],
+    "compatiblePairs": [],
+    "notes": "Weekday afternoon 15:00-17:30. Contact page says daily; weekend applicability conflicts. Late-night end is close, not an inferred numeric time."
+  },
+  {
+    "id": "cw-attic",
+    "revision": "1",
+    "name": "The Attic",
+    "address": {
+      "street": "3441 E Broadway",
+      "unit": null,
+      "city": "Long Beach",
+      "state": "CA",
+      "postalCode": "90803"
+    },
+    "county": {
+      "geoid": null,
+      "sourceId": null,
+      "reviewedOn": null
+    },
+    "coordinates": null,
+    "identityStatus": "pending",
+    "operatingStatus": "unknown",
+    "operatingSourceId": null,
+    "offerName": "Happy Hour",
+    "offerEvidenceSourceIds": ["src-attic"],
+    "hours": [],
+    "menu": [],
+    "specials": [],
+    "compatiblePairs": [],
+    "notes": "Image contents not inspected. Footer opening hours are not happy-hour hours."
+  },
+  {
+    "id": "cw-hangar",
+    "revision": "1",
+    "name": "The Hangar Inn",
+    "address": {
+      "street": "1001 N Aviation Blvd",
+      "unit": null,
+      "city": "Manhattan Beach",
+      "state": "CA",
+      "postalCode": "90266"
+    },
+    "county": {
+      "geoid": null,
+      "sourceId": null,
+      "reviewedOn": null
+    },
+    "coordinates": null,
+    "identityStatus": "pending",
+    "operatingStatus": "unknown",
+    "operatingSourceId": null,
+    "offerName": null,
+    "offerEvidenceSourceIds": [],
+    "hours": [],
+    "menu": [],
+    "specials": [],
+    "compatiblePairs": [],
+    "notes": "No advertised offer in inspected text. Alternate-domain search result remains unreviewed; no claim of absence."
+  },
+  {
+    "id": "cw-wood-irvine",
+    "revision": "1",
+    "name": "Wood Ranch Irvine",
+    "address": {
+      "street": "501 Spectrum Center Drive",
+      "unit": null,
+      "city": "Irvine",
+      "state": "CA",
+      "postalCode": "92618"
+    },
+    "county": {
+      "geoid": null,
+      "sourceId": null,
+      "reviewedOn": null
+    },
+    "coordinates": null,
+    "identityStatus": "pending",
+    "operatingStatus": "unknown",
+    "operatingSourceId": null,
+    "offerName": "Happy Hour",
+    "offerEvidenceSourceIds": ["src-wood-irvine"],
+    "hours": [
+      {
+        "id": "afternoon",
+        "days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "start": "15:00",
+        "end": "18:00",
+        "restriction": "conditional",
+        "status": "primary",
+        "sourceId": "src-wood-irvine",
+        "notes": "Excludes holidays; menu/seating restrictions await review."
+      }
+    ],
+    "menu": [],
+    "specials": [],
+    "compatiblePairs": [],
+    "notes": "Weekday 15:00-18:00; holidays excluded. Separate Tuesday wine offer excluded."
+  },
+  {
+    "id": "cw-lazy-irvine",
+    "revision": "1",
+    "name": "Lazy Dog Irvine",
+    "address": {
+      "street": "13290 Jamboree Rd",
+      "unit": null,
+      "city": "Irvine",
+      "state": "CA",
+      "postalCode": "92602"
+    },
+    "county": {
+      "geoid": null,
+      "sourceId": null,
+      "reviewedOn": null
+    },
+    "coordinates": null,
+    "identityStatus": "pending",
+    "operatingStatus": "unknown",
+    "operatingSourceId": null,
+    "offerName": "Happy Hour",
+    "offerEvidenceSourceIds": ["src-lazy-irvine"],
+    "hours": [
+      {
+        "id": "afternoon",
+        "days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "start": "15:00",
+        "end": "18:00",
+        "restriction": "conditional",
+        "status": "primary",
+        "sourceId": "src-lazy-irvine",
+        "notes": "Seating and menu restrictions await review."
+      },
+      {
+        "id": "late",
+        "days": ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday"],
+        "start": "21:00",
+        "end": "00:00",
+        "restriction": "conditional",
+        "status": "primary",
+        "sourceId": "src-lazy-irvine",
+        "notes": "Midnight follows originating weekday. Menu/seating restrictions await review."
+      }
+    ],
+    "menu": [],
+    "specials": [],
+    "compatiblePairs": [],
+    "notes": "Weekday 15:00-18:00; Sunday-Thursday 21:00-midnight. Nearby branches do not inherit this offer."
+  },
+  {
+    "id": "cw-benchmark",
+    "revision": "3",
+    "name": "Benchmark",
+    "neighborhood": "Santa Ana",
+    "address": {
+      "street": "601 E Santa Ana Blvd",
+      "unit": null,
+      "city": "Santa Ana",
+      "state": "CA",
+      "postalCode": "92701"
+    },
+    "county": {
+      "geoid": "06059",
+      "sourceId": "src-cw-benchmark-census",
+      "reviewedOn": "2026-10-19"
+    },
+    "coordinates": {
+      "lat": 33.750476426644,
+      "lng": -117.862557527417,
+      "precision": "address-range interpolation",
+      "sourceId": "src-cw-benchmark-census"
+    },
+    "identityStatus": "resolved",
+    "operatingStatus": "unknown",
+    "operatingSourceId": null,
+    "offerName": "Happy Hour",
+    "offerEvidenceSourceIds": ["src-cw-benchmark-menu"],
+    "hours": [
+      {
+        "id": "weekday",
+        "days": ["Wednesday", "Thursday", "Friday"],
+        "start": "16:00",
+        "end": "18:00",
+        "restriction": "none",
+        "status": "primary",
+        "sourceId": "src-cw-benchmark-menu",
+        "notes": "none"
+      }
+    ],
+    "menu": [
+      {
+        "id": "fries",
+        "name": "Parmesan fries",
+        "kind": "food",
+        "priceCents": null,
+        "tags": ["fries"],
+        "status": "primary",
+        "sourceId": "src-cw-benchmark-menu",
+        "windowIds": ["weekday"]
+      },
+      {
+        "id": "house-wine",
+        "name": "House wine",
+        "kind": "drink",
+        "priceCents": null,
+        "tags": ["wine"],
+        "status": "primary",
+        "sourceId": "src-cw-benchmark-menu",
+        "windowIds": ["weekday"]
+      }
+    ],
+    "specials": [],
+    "compatiblePairs": [],
+    "notes": "Reviewer method: agent-source-inspection, not human review. Advertised happy hour verified; exact prices unavailable, so no priced menu or calculated savings retained. Party-of-eight gratuity is additional. Government county/address match reviewed; coordinates are street-range estimates. No holiday or seating exclusion stated in inspected happy-hour section; absence is not a guarantee. A limited factual-only retention basis is documented; no source-content license is asserted. Review uses selected independently authored facts only; no source-content license is represented. Location is government street-range interpolation where resolved."
+  },
+  {
+    "id": "cw-playa",
+    "revision": "1",
+    "name": "Playa Mesa",
+    "address": {
+      "street": "428 E 17th St",
+      "unit": null,
+      "city": "Costa Mesa",
+      "state": "CA",
+      "postalCode": "92627"
+    },
+    "county": {
+      "geoid": null,
+      "sourceId": null,
+      "reviewedOn": null
+    },
+    "coordinates": null,
+    "identityStatus": "pending",
+    "operatingStatus": "closed",
+    "operatingSourceId": "src-playa",
+    "offerName": null,
+    "offerEvidenceSourceIds": [],
+    "hours": [],
+    "menu": [],
+    "specials": [],
+    "compatiblePairs": [],
+    "notes": "Official site announces permanent closure; exclude from active candidates."
+  },
+  {
+    "id": "cw-risu-long-beach",
+    "revision": "2",
+    "name": "RISÜ Food & Spirits",
+    "neighborhood": "Downtown Long Beach",
+    "address": {
+      "street": "207 E Seaside Way",
+      "unit": "A",
+      "city": "Long Beach",
+      "state": "CA",
+      "postalCode": "90802"
+    },
+    "county": {
+      "geoid": "06037",
+      "sourceId": "src-cw-risu-long-beach-census",
+      "reviewedOn": "2026-10-19"
+    },
+    "coordinates": {
+      "lat": 33.765897840046,
+      "lng": -118.190837556096,
+      "precision": "address-range interpolation",
+      "sourceId": "src-cw-risu-long-beach-census"
+    },
+    "identityStatus": "resolved",
+    "operatingStatus": "unknown",
+    "operatingSourceId": null,
+    "offerName": "Happy Hour",
+    "offerEvidenceSourceIds": ["src-cw-risu-long-beach-official-hh"],
+    "hours": [
+      {
+        "id": "daily-afternoon",
+        "days": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+          "Sunday"
+        ],
+        "start": "16:00",
+        "end": "18:00",
+        "restriction": "none",
+        "status": "primary",
+        "sourceId": "src-cw-risu-long-beach-official-hh",
+        "notes": "Monday extension has no encoded endpoint; other seating or purchase restrictions not specified."
+      }
+    ],
+    "menu": [
+      {
+        "id": "food-fries",
+        "name": "Truffle fries",
+        "kind": "food",
+        "priceCents": 900,
+        "tags": ["fries"],
+        "sourceId": "src-cw-risu-long-beach-official-hh",
+        "status": "primary",
+        "windowIds": ["daily-afternoon"]
+      },
+      {
+        "id": "food-wings",
+        "name": "Chicken wings",
+        "kind": "food",
+        "priceCents": 900,
+        "tags": ["wings"],
+        "sourceId": "src-cw-risu-long-beach-official-hh",
+        "status": "primary",
+        "windowIds": ["daily-afternoon"]
+      },
+      {
+        "id": "drink-well",
+        "name": "Well drink",
+        "kind": "drink",
+        "priceCents": 600,
+        "tags": ["cocktail"],
+        "sourceId": "src-cw-risu-long-beach-official-hh",
+        "status": "primary",
+        "windowIds": ["daily-afternoon"]
+      },
+      {
+        "id": "drink-wine",
+        "name": "House red or white wine",
+        "kind": "drink",
+        "priceCents": 700,
+        "tags": ["wine"],
+        "sourceId": "src-cw-risu-long-beach-official-hh",
+        "status": "primary",
+        "windowIds": ["daily-afternoon"]
+      }
+    ],
+    "specials": [
+      {
+        "text": "Happy-hour specialty cocktails are $2 below regular prices; beer is $1 below regular prices.",
+        "status": "primary",
+        "sourceId": "src-cw-risu-long-beach-official-menu"
+      }
+    ],
+    "compatiblePairs": [
+      {
+        "id": "pair-daily-afternoon",
+        "foodId": "food-fries",
+        "drinkId": "drink-well",
+        "windowId": "daily-afternoon",
+        "status": "primary",
+        "sourceId": "src-cw-risu-long-beach-official-hh"
+      }
+    ],
+    "notes": "Reviewer method: agent-source-inspection. Monday is advertised as all day on the happy-hour page and all night on the location page; only the shared bounded daily window is encoded. No final prices calculated from discounts. Serving sizes, tax, gratuity and additional restrictions are unspecified. Government county/address match reviewed; coordinates are street-range estimates. Review uses selected independently authored facts only; no source-content license is represented. Location is government street-range interpolation where resolved."
+  },
+  {
+    "id": "cw-the-hare-long-beach",
+    "revision": "2",
+    "name": "The Hare Bar & Restaurant",
+    "neighborhood": "Long Beach",
+    "address": {
+      "street": "1800 E Broadway",
+      "unit": null,
+      "city": "Long Beach",
+      "state": "CA",
+      "postalCode": "90802"
+    },
+    "county": {
+      "geoid": "06037",
+      "sourceId": "src-cw-the-hare-long-beach-census",
+      "reviewedOn": "2026-10-19"
+    },
+    "coordinates": {
+      "lat": 33.767447559631,
+      "lng": -118.169625477734,
+      "precision": "address-range interpolation",
+      "sourceId": "src-cw-the-hare-long-beach-census"
+    },
+    "identityStatus": "resolved",
+    "operatingStatus": "unknown",
+    "operatingSourceId": null,
+    "offerName": "Happy Hour",
+    "offerEvidenceSourceIds": ["src-cw-the-hare-long-beach-official-home"],
+    "hours": [
+      {
+        "id": "daily-afternoon",
+        "days": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+          "Sunday"
+        ],
+        "start": "15:00",
+        "end": "18:00",
+        "restriction": "none",
+        "status": "primary",
+        "sourceId": "src-cw-the-hare-long-beach-official-home",
+        "notes": "Dine-in only per homepage; offer details conflict across official pages."
+      }
+    ],
+    "menu": [],
+    "specials": [],
+    "compatiblePairs": [],
+    "notes": "Reviewer method: agent-source-inspection. Both official pages agree on daily 15:00-18:00. Homepage advertises 25% off food and specified drink categories; dedicated page instead lists fixed-price drinks and dollar discounts on food/wine. No prices or specials retained because simultaneous applicability is unresolved. Homepage late-night days are Sunday-Thursday; dedicated page says daily. No late-night or Monday all-day endpoints inferred from business hours. Government county/address match reviewed; coordinates are street-range estimates. Review uses selected independently authored facts only; no source-content license is represented. Location is government street-range interpolation where resolved."
+  },
+  {
+    "id": "cw-nomad-eatery-el-segundo",
+    "revision": "2",
+    "name": "Nomad Eatery",
+    "neighborhood": "El Segundo",
+    "address": {
+      "street": "2041 Rosecrans Avenue",
+      "unit": "190",
+      "city": "El Segundo",
+      "state": "CA",
+      "postalCode": "90245"
+    },
+    "county": {
+      "geoid": "06037",
+      "sourceId": "src-cw-nomad-eatery-el-segundo-census",
+      "reviewedOn": "2026-10-19"
+    },
+    "coordinates": {
+      "lat": 33.901924987339,
+      "lng": -118.391071226244,
+      "precision": "address-range interpolation",
+      "sourceId": "src-cw-nomad-eatery-el-segundo-census"
+    },
+    "identityStatus": "resolved",
+    "operatingStatus": "unknown",
+    "operatingSourceId": null,
+    "offerName": "Happy Hour",
+    "offerEvidenceSourceIds": ["src-cw-nomad-eatery-el-segundo-official-hh"],
+    "hours": [
+      {
+        "id": "weekday-afternoon",
+        "days": ["Tuesday", "Wednesday", "Thursday", "Friday"],
+        "start": "16:30",
+        "end": "18:00",
+        "restriction": "none",
+        "status": "primary",
+        "sourceId": "src-cw-nomad-eatery-el-segundo-official-hh",
+        "notes": "Saturday is disputed between official pages and omitted; other restrictions not specified."
+      }
+    ],
+    "menu": [
+      {
+        "id": "food-guacamole",
+        "name": "Guacamole with chips",
+        "kind": "food",
+        "priceCents": 600,
+        "tags": ["guacamole"],
+        "sourceId": "src-cw-nomad-eatery-el-segundo-official-hh",
+        "status": "primary",
+        "windowIds": ["weekday-afternoon"]
+      },
+      {
+        "id": "food-fries",
+        "name": "Fries",
+        "kind": "food",
+        "priceCents": 600,
+        "tags": ["fries"],
+        "sourceId": "src-cw-nomad-eatery-el-segundo-official-hh",
+        "status": "primary",
+        "windowIds": ["weekday-afternoon"]
+      }
+    ],
+    "specials": [],
+    "compatiblePairs": [],
+    "notes": "Reviewer method: agent-source-inspection. Encoded days are the agreement between official homepage and dedicated happy-hour menu. Saturday remains unverified because the pages conflict; no date establishes which is newer. Only unambiguous food prices retained; no drink prices tied to happy hour were established. Government county/address match reviewed; coordinates are street-range estimates. Review uses selected independently authored facts only; no source-content license is represented. Location is government street-range interpolation where resolved."
+  },
+  {
+    "id": "cw-sausal-el-segundo",
+    "revision": "2",
+    "name": "Sausal",
+    "neighborhood": "El Segundo",
+    "address": {
+      "street": "219 Main Street",
+      "unit": null,
+      "city": "El Segundo",
+      "state": "CA",
+      "postalCode": "90245"
+    },
+    "county": {
+      "geoid": "06037",
+      "sourceId": "src-cw-sausal-el-segundo-census",
+      "reviewedOn": "2026-10-19"
+    },
+    "coordinates": {
+      "lat": 33.918101014131,
+      "lng": -118.415991080748,
+      "precision": "address-range interpolation",
+      "sourceId": "src-cw-sausal-el-segundo-census"
+    },
+    "identityStatus": "resolved",
+    "operatingStatus": "unknown",
+    "operatingSourceId": null,
+    "offerName": "Happy Hour",
+    "offerEvidenceSourceIds": ["src-cw-sausal-el-segundo-official-menu"],
+    "hours": [
+      {
+        "id": "daily-afternoon",
+        "days": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+          "Sunday"
+        ],
+        "start": "15:00",
+        "end": "18:00",
+        "restriction": "none",
+        "status": "primary",
+        "sourceId": "src-cw-sausal-el-segundo-official-menu",
+        "notes": "Seating and purchase restrictions not specified in inspected happy-hour menu."
+      }
+    ],
+    "menu": [
+      {
+        "id": "food-poppers",
+        "name": "Jalapeno poppers",
+        "kind": "food",
+        "priceCents": 600,
+        "tags": ["poppers"],
+        "sourceId": "src-cw-sausal-el-segundo-official-menu",
+        "status": "primary",
+        "windowIds": ["daily-afternoon"]
+      },
+      {
+        "id": "food-chips",
+        "name": "Chips with salsa",
+        "kind": "food",
+        "priceCents": 250,
+        "tags": ["chips-salsa"],
+        "sourceId": "src-cw-sausal-el-segundo-official-menu",
+        "status": "primary",
+        "windowIds": ["daily-afternoon"]
+      },
+      {
+        "id": "drink-margarita",
+        "name": "Rancho margarita",
+        "kind": "drink",
+        "priceCents": 850,
+        "tags": ["margarita"],
+        "sourceId": "src-cw-sausal-el-segundo-official-menu",
+        "status": "primary",
+        "windowIds": ["daily-afternoon"]
+      },
+      {
+        "id": "drink-beer",
+        "name": "Modelo Negra lager",
+        "kind": "drink",
+        "priceCents": 650,
+        "tags": ["beer"],
+        "sourceId": "src-cw-sausal-el-segundo-official-menu",
+        "status": "primary",
+        "windowIds": ["daily-afternoon"]
+      }
+    ],
+    "specials": [],
+    "compatiblePairs": [
+      {
+        "id": "pair-daily-afternoon",
+        "foodId": "food-poppers",
+        "drinkId": "drink-margarita",
+        "windowId": "daily-afternoon",
+        "status": "primary",
+        "sourceId": "src-cw-sausal-el-segundo-official-menu"
+      }
+    ],
+    "notes": "Reviewer method: agent-source-inspection. Prices are directly advertised in the branch happy-hour menu; no discount arithmetic. Serving sizes, tax and gratuity unspecified. Government county/address match reviewed; coordinates are street-range estimates. Review uses selected independently authored facts only; no source-content license is represented. Location is government street-range interpolation where resolved."
+  },
+  {
+    "id": "cw-the-social-valencia",
+    "revision": "1",
+    "name": "The Social Restaurant",
+    "neighborhood": "Valencia / Santa Clarita",
+    "address": {
+      "street": "23329 Lyons Avenue",
+      "unit": "A",
+      "city": "Valencia",
+      "state": "CA",
+      "postalCode": "91355"
+    },
+    "county": {
+      "geoid": null,
+      "sourceId": null,
+      "reviewedOn": null
+    },
+    "coordinates": null,
+    "identityStatus": "pending",
+    "operatingStatus": "unknown",
+    "operatingSourceId": null,
+    "offerName": "Happy Hour",
+    "offerEvidenceSourceIds": ["src-cw-the-social-valencia-official-home"],
+    "hours": [
+      {
+        "id": "tuesday-thursday",
+        "days": ["Tuesday", "Wednesday", "Thursday"],
+        "start": "16:00",
+        "end": "18:30",
+        "restriction": "conditional",
+        "status": "primary",
+        "sourceId": "src-cw-the-social-valencia-official-home",
+        "notes": "Bar opens at 16:00; dining room opens at 17:00. Happy-hour seating scope not explicitly stated."
+      },
+      {
+        "id": "friday",
+        "days": ["Friday"],
+        "start": "16:00",
+        "end": "18:00",
+        "restriction": "conditional",
+        "status": "primary",
+        "sourceId": "src-cw-the-social-valencia-official-home",
+        "notes": "Bar opens at 16:00; dining room opens at 17:00. Happy-hour seating scope not explicitly stated."
+      }
+    ],
+    "menu": [],
+    "specials": [],
+    "compatiblePairs": [],
+    "notes": "Reviewer method: agent-source-inspection. Official site advertises happy-hour windows but inspected pages do not establish specific happy-hour food or drink prices, so menu is empty. No weekend happy hour inferred from regular service hours. Site lacks a visible recent publication date; current operation and offers merit reconfirmation. County and coordinates await government geocoding. Review uses selected independently authored facts only; no source-content license is represented. Location is government street-range interpolation where resolved."
+  },
+  {
+    "id": "cw-glendora-continental-glendora",
+    "revision": "2",
+    "name": "Glendora Continental Restaurant",
+    "neighborhood": "Glendora / Eastern San Gabriel Valley",
+    "address": {
+      "street": "316 W Route 66",
+      "unit": null,
+      "city": "Glendora",
+      "state": "CA",
+      "postalCode": "91740"
+    },
+    "county": {
+      "geoid": "06037",
+      "sourceId": "src-cw-glendora-continental-glendora-census",
+      "reviewedOn": "2026-10-19"
+    },
+    "coordinates": {
+      "lat": 34.128610080006,
+      "lng": -117.867656213831,
+      "precision": "address-range interpolation",
+      "sourceId": "src-cw-glendora-continental-glendora-census"
+    },
+    "identityStatus": "resolved",
+    "operatingStatus": "unknown",
+    "operatingSourceId": null,
+    "offerName": "Happy Hour",
+    "offerEvidenceSourceIds": [
+      "src-cw-glendora-continental-glendora-official-hours"
+    ],
+    "hours": [
+      {
+        "id": "weekday-afternoon",
+        "days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "start": "15:00",
+        "end": "19:00",
+        "restriction": "bar-only",
+        "status": "primary",
+        "sourceId": "src-cw-glendora-continental-glendora-official-hours",
+        "notes": "Advertised in Bar/Lounge section; dining-room applicability not established."
+      }
+    ],
+    "menu": [],
+    "specials": [
+      {
+        "text": "Appetizers are advertised at 50% off during weekday happy hour in the bar/lounge; drink promotions have no specified prices.",
+        "status": "primary",
+        "sourceId": "src-cw-glendora-continental-glendora-official-hours"
+      }
+    ],
+    "compatiblePairs": [],
+    "notes": "Reviewer method: agent-source-inspection. No final appetizer prices derived from the discount. Separate Wednesday wine promotion has no exact time window and is omitted. Government county/address match reviewed; coordinates are street-range estimates. Review uses selected independently authored facts only; no source-content license is represented. Location is government street-range interpolation where resolved."
+  },
+  {
+    "id": "cw-chapter-one-santa-ana",
+    "revision": "2",
+    "name": "Chapter One: the modern local",
+    "neighborhood": "Downtown Santa Ana",
+    "address": {
+      "street": "227 N Broadway",
+      "unit": null,
+      "city": "Santa Ana",
+      "state": "CA",
+      "postalCode": "92701"
+    },
+    "county": {
+      "geoid": "06059",
+      "sourceId": "src-cw-chapter-one-santa-ana-census",
+      "reviewedOn": "2026-10-19"
+    },
+    "coordinates": {
+      "lat": 33.746543889764,
+      "lng": -117.869669560665,
+      "precision": "address-range interpolation",
+      "sourceId": "src-cw-chapter-one-santa-ana-census"
+    },
+    "identityStatus": "resolved",
+    "operatingStatus": "unknown",
+    "operatingSourceId": null,
+    "offerName": "Happy Hour",
+    "offerEvidenceSourceIds": ["src-cw-chapter-one-santa-ana-happy-hour"],
+    "hours": [
+      {
+        "id": "weekday",
+        "days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "start": "15:00",
+        "end": "18:00",
+        "restriction": "none",
+        "status": "primary",
+        "sourceId": "src-cw-chapter-one-santa-ana-happy-hour",
+        "notes": "none"
+      }
+    ],
+    "menu": [
+      {
+        "id": "fries",
+        "name": "Duck-fat fries",
+        "kind": "food",
+        "priceCents": 800,
+        "tags": ["fries"],
+        "sourceId": "src-cw-chapter-one-santa-ana-happy-hour",
+        "status": "primary",
+        "windowIds": ["weekday"]
+      },
+      {
+        "id": "margarita",
+        "name": "Margarita",
+        "kind": "drink",
+        "priceCents": 800,
+        "tags": ["margarita", "cocktail"],
+        "sourceId": "src-cw-chapter-one-santa-ana-happy-hour",
+        "status": "primary",
+        "windowIds": ["weekday"]
+      }
+    ],
+    "specials": [
+      {
+        "text": "During weekday happy hour, draft beer and wine by the glass each receive a $3 reduction; final prices were not established.",
+        "status": "primary",
+        "sourceId": "src-cw-chapter-one-santa-ana-happy-hour"
+      }
+    ],
+    "compatiblePairs": [
+      {
+        "id": "pair-weekday",
+        "foodId": "fries",
+        "drinkId": "margarita",
+        "windowId": "weekday",
+        "status": "primary",
+        "sourceId": "src-cw-chapter-one-santa-ana-happy-hour"
+      }
+    ],
+    "notes": "Reviewer method: agent-source-inspection, not human review. Prices are directly advertised happy-hour amounts, before tax/tip. Menu says 20% gratuity for parties of six or more and substitutions may be declined except for allergies. No seating or holiday exclusion stated in inspected section. Government county/address match reviewed; coordinates are street-range estimates. Review uses selected independently authored facts only; no source-content license is represented. Location is government street-range interpolation where resolved."
+  },
+  {
+    "id": "cw-cedar-creek-inn-brea",
+    "revision": "2",
+    "name": "Cedar Creek Inn - Brea",
+    "neighborhood": "Brea",
+    "address": {
+      "street": "20 Pointe Drive",
+      "unit": null,
+      "city": "Brea",
+      "state": "CA",
+      "postalCode": "92821"
+    },
+    "county": {
+      "geoid": "06059",
+      "sourceId": "src-cw-cedar-creek-inn-brea-census",
+      "reviewedOn": "2026-10-19"
+    },
+    "coordinates": {
+      "lat": 33.926554154649,
+      "lng": -117.876999244115,
+      "precision": "address-range interpolation",
+      "sourceId": "src-cw-cedar-creek-inn-brea-census"
+    },
+    "identityStatus": "resolved",
+    "operatingStatus": "unknown",
+    "operatingSourceId": null,
+    "offerName": "Happy Hour",
+    "offerEvidenceSourceIds": ["src-cw-cedar-creek-inn-brea-location"],
+    "hours": [
+      {
+        "id": "daily",
+        "days": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+          "Sunday"
+        ],
+        "start": "15:00",
+        "end": "18:00",
+        "restriction": "bar-or-patio",
+        "status": "primary",
+        "sourceId": "src-cw-cedar-creek-inn-brea-location",
+        "notes": "bar-or-patio"
+      }
+    ],
+    "menu": [],
+    "specials": [
+      {
+        "text": "Thursday bar happy hour continues until closing; the record's exact window includes only the daily 15:00-18:00 period.",
+        "status": "primary",
+        "sourceId": "src-cw-cedar-creek-inn-brea-location"
+      }
+    ],
+    "compatiblePairs": [],
+    "notes": "Official branch homepage advertises daily 15:00-18:00 in the bar or front patio. The separate Thursday closing-time extension is not encoded. The linked PDF requires independent visual review; no food or drink prices are adopted for app display. Confirm additional fees with the restaurant. Government county/address match reviewed; coordinates are street-range estimates. Retention covers independently authored factual observations only, not a source-content license.",
+    "withholdMenuPrices": true
+  },
+  {
+    "id": "cw-billys-at-the-beach-newport-beach",
+    "revision": "2",
+    "name": "Billy's At The Beach",
+    "neighborhood": "Newport Beach",
+    "address": {
+      "street": "2751 West Coast Hwy",
+      "unit": null,
+      "city": "Newport Beach",
+      "state": "CA",
+      "postalCode": "92663"
+    },
+    "county": {
+      "geoid": "06059",
+      "sourceId": "src-cw-billys-at-the-beach-newport-beach-census",
+      "reviewedOn": "2026-10-19"
+    },
+    "coordinates": {
+      "lat": 33.61805312646,
+      "lng": -117.919987489017,
+      "precision": "address-range interpolation",
+      "sourceId": "src-cw-billys-at-the-beach-newport-beach-census"
+    },
+    "identityStatus": "resolved",
+    "operatingStatus": "unknown",
+    "operatingSourceId": null,
+    "offerName": "Happy Hour",
+    "offerEvidenceSourceIds": [
+      "src-cw-billys-at-the-beach-newport-beach-location"
+    ],
+    "hours": [
+      {
+        "id": "weekday",
+        "days": ["Tuesday", "Wednesday", "Thursday", "Friday"],
+        "start": "15:00",
+        "end": "19:00",
+        "restriction": "none",
+        "status": "primary",
+        "sourceId": "src-cw-billys-at-the-beach-newport-beach-location",
+        "notes": "none"
+      },
+      {
+        "id": "saturday",
+        "days": ["Saturday"],
+        "start": "11:30",
+        "end": "15:30",
+        "restriction": "conditional",
+        "status": "primary",
+        "sourceId": "src-cw-billys-at-the-beach-newport-beach-location",
+        "notes": "conditional"
+      },
+      {
+        "id": "sunday",
+        "days": ["Sunday"],
+        "start": "10:00",
+        "end": "14:00",
+        "restriction": "conditional",
+        "status": "primary",
+        "sourceId": "src-cw-billys-at-the-beach-newport-beach-location",
+        "notes": "conditional"
+      }
+    ],
+    "menu": [
+      {
+        "id": "calamari",
+        "name": "Happy-hour calamari",
+        "kind": "food",
+        "priceCents": 1000,
+        "tags": ["calamari", "seafood"],
+        "sourceId": "src-cw-billys-at-the-beach-newport-beach-happy-hour-menu",
+        "status": "primary",
+        "windowIds": ["weekday", "saturday", "sunday"]
+      },
+      {
+        "id": "blue-hawaiian",
+        "name": "Happy-hour Blue Hawaiian",
+        "kind": "drink",
+        "priceCents": 1000,
+        "tags": ["cocktail"],
+        "sourceId": "src-cw-billys-at-the-beach-newport-beach-happy-hour-menu",
+        "status": "primary",
+        "windowIds": ["weekday", "saturday", "sunday"]
+      }
+    ],
+    "specials": [],
+    "compatiblePairs": [
+      {
+        "id": "pair-weekday",
+        "foodId": "calamari",
+        "drinkId": "blue-hawaiian",
+        "windowId": "weekday",
+        "status": "primary",
+        "sourceId": "src-cw-billys-at-the-beach-newport-beach-happy-hour-menu"
+      }
+    ],
+    "notes": "Reviewer method: agent-source-inspection, not human review. Weekend starts depend on published operating hours and can change on special-event days. Homepage branch schedule excludes Monday despite generic daily heading. No seating or holiday exclusion identified on retained pages; confirm availability. Government county/address match reviewed; coordinates are street-range estimates. Review uses selected independently authored facts only; no source-content license is represented. Location is government street-range interpolation where resolved."
+  },
+  {
+    "id": "cw-mayfield-san-juan-capistrano",
+    "revision": "2",
+    "name": "Mayfield Restaurant & Marketplace",
+    "neighborhood": "San Juan Capistrano",
+    "address": {
+      "street": "31761 Camino Capistrano",
+      "unit": null,
+      "city": "San Juan Capistrano",
+      "state": "CA",
+      "postalCode": "92675"
+    },
+    "county": {
+      "geoid": "06059",
+      "sourceId": "src-cw-mayfield-san-juan-capistrano-census",
+      "reviewedOn": "2026-10-19"
+    },
+    "coordinates": {
+      "lat": 33.501644384133,
+      "lng": -117.662782792449,
+      "precision": "address-range interpolation",
+      "sourceId": "src-cw-mayfield-san-juan-capistrano-census"
+    },
+    "identityStatus": "resolved",
+    "operatingStatus": "unknown",
+    "operatingSourceId": null,
+    "offerName": "Happy Hour",
+    "offerEvidenceSourceIds": [
+      "src-cw-mayfield-san-juan-capistrano-happy-hour"
+    ],
+    "hours": [
+      {
+        "id": "afternoon",
+        "days": ["Wednesday", "Thursday", "Friday", "Sunday"],
+        "start": "14:30",
+        "end": "18:00",
+        "restriction": "none",
+        "status": "primary",
+        "sourceId": "src-cw-mayfield-san-juan-capistrano-happy-hour",
+        "notes": "none"
+      },
+      {
+        "id": "tuesday",
+        "days": ["Tuesday"],
+        "start": "17:00",
+        "end": "18:00",
+        "restriction": "conditional",
+        "status": "primary",
+        "sourceId": "src-cw-mayfield-san-juan-capistrano-happy-hour",
+        "notes": "conditional"
+      }
+    ],
+    "menu": [
+      {
+        "id": "nuts",
+        "name": "Spiced nuts",
+        "kind": "food",
+        "priceCents": 600,
+        "tags": ["nuts"],
+        "sourceId": "src-cw-mayfield-san-juan-capistrano-happy-hour",
+        "status": "primary",
+        "windowIds": ["afternoon", "tuesday"]
+      },
+      {
+        "id": "pilsner",
+        "name": "pFriem pilsner on draft",
+        "kind": "drink",
+        "priceCents": 800,
+        "tags": ["beer", "pilsner"],
+        "sourceId": "src-cw-mayfield-san-juan-capistrano-happy-hour",
+        "status": "primary",
+        "windowIds": ["afternoon", "tuesday"]
+      }
+    ],
+    "specials": [],
+    "compatiblePairs": [
+      {
+        "id": "pair-afternoon",
+        "foodId": "nuts",
+        "drinkId": "pilsner",
+        "windowId": "afternoon",
+        "status": "primary",
+        "sourceId": "src-cw-mayfield-san-juan-capistrano-happy-hour"
+      }
+    ],
+    "notes": "Reviewer method: agent-source-inspection, not human review. Tuesday 17:00 start applies the page's explicit closure exception; Monday omitted because closed. Saturday excluded by advertised Sunday-Friday schedule. Exact listed prices retained, with no assumption that every listed item is discounted from a regular price. No seating/holiday exclusion established. Government county/address match reviewed; coordinates are street-range estimates. Review uses selected independently authored facts only; no source-content license is represented. Location is government street-range interpolation where resolved."
+  },
+  {
+    "id": "cw-coyote-grill-laguna-beach",
+    "revision": "2",
+    "name": "Coyote Grill - Laguna Beach",
+    "neighborhood": "South Laguna Beach",
+    "address": {
+      "street": "31621 Coast Hwy",
+      "unit": null,
+      "city": "Laguna Beach",
+      "state": "CA",
+      "postalCode": "92651"
+    },
+    "county": {
+      "geoid": "06059",
+      "sourceId": "src-cw-coyote-grill-laguna-beach-census",
+      "reviewedOn": "2026-10-19"
+    },
+    "coordinates": {
+      "lat": 33.50325806335,
+      "lng": -117.745040315855,
+      "precision": "address-range interpolation",
+      "sourceId": "src-cw-coyote-grill-laguna-beach-census"
+    },
+    "identityStatus": "resolved",
+    "operatingStatus": "unknown",
+    "operatingSourceId": null,
+    "offerName": "Happy Hour",
+    "offerEvidenceSourceIds": [
+      "src-cw-coyote-grill-laguna-beach-daily-event",
+      "src-cw-coyote-grill-laguna-beach-tuesday-event"
+    ],
+    "hours": [
+      {
+        "id": "bar-standard",
+        "days": [
+          "Monday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+          "Sunday"
+        ],
+        "start": "15:00",
+        "end": "18:00",
+        "restriction": "bar-only",
+        "status": "primary",
+        "sourceId": "src-cw-coyote-grill-laguna-beach-daily-event",
+        "notes": "bar-only"
+      },
+      {
+        "id": "bar-tuesday",
+        "days": ["Tuesday"],
+        "start": "15:00",
+        "end": "21:00",
+        "restriction": "bar-only",
+        "status": "primary",
+        "sourceId": "src-cw-coyote-grill-laguna-beach-tuesday-event",
+        "notes": "bar-only"
+      }
+    ],
+    "menu": [
+      {
+        "id": "bar-chicken-taco",
+        "name": "Chicken taco, one, bar happy hour",
+        "kind": "food",
+        "priceCents": 625,
+        "tags": ["tacos", "chicken"],
+        "sourceId": "src-cw-coyote-grill-laguna-beach-menu",
+        "status": "primary",
+        "windowIds": ["bar-standard", "bar-tuesday"]
+      },
+      {
+        "id": "margarita",
+        "name": "Happy-hour margarita",
+        "kind": "drink",
+        "priceCents": 850,
+        "tags": ["margarita", "cocktail"],
+        "sourceId": "src-cw-coyote-grill-laguna-beach-menu",
+        "status": "primary",
+        "windowIds": ["bar-standard", "bar-tuesday"]
+      }
+    ],
+    "specials": [],
+    "compatiblePairs": [
+      {
+        "id": "pair-bar-standard",
+        "foodId": "bar-chicken-taco",
+        "drinkId": "margarita",
+        "windowId": "bar-standard",
+        "status": "primary",
+        "sourceId": "src-cw-coyote-grill-laguna-beach-menu"
+      },
+      {
+        "id": "pair-bar-tuesday",
+        "foodId": "bar-chicken-taco",
+        "drinkId": "margarita",
+        "windowId": "bar-tuesday",
+        "status": "primary",
+        "sourceId": "src-cw-coyote-grill-laguna-beach-menu"
+      }
+    ],
+    "notes": "Reviewer method: agent-source-inspection, not human review. This record models bar seating so its single-taco food price cannot be matched as a dining-room plate. No happy-hour takeout. Listed closure days override recurring windows: Super Bowl day, July 4, Halloween, Thanksgiving, Christmas Eve and Christmas Day. Monday football extension not modeled because seasonal applicability is unresolved. Government county/address match reviewed; coordinates are street-range estimates. Review uses selected independently authored facts only; no source-content license is represented. Location is government street-range interpolation where resolved."
+  }
+]

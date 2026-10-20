@@ -1,9 +1,5 @@
 import { weekdays, toMinutes } from "./matching.js";
-import {
-  coverageCenter,
-  distanceMiles,
-  validCoordinates,
-} from "./locations.js";
+import { coverageEligibility, validCoordinates } from "./locations.js";
 export function validateRecords(records) {
   const errors = [],
     ids = new Set(),
@@ -38,9 +34,11 @@ export function validateRecords(records) {
     if (record.coordinates) {
       if (!validCoordinates(record.coordinates)) error("Invalid coordinates");
       if (!record.coordinates.sourceUrl) error("Coordinates lack provenance");
-      if (distanceMiles(coverageCenter, record.coordinates) > 25)
-        error("Outside 25-mile coverage");
+      const coverage = coverageEligibility(record);
+      if (!coverage.included) error(coverage.reason);
     }
+    if (Object.hasOwn(record, "county") && !record.coordinates)
+      error("County/location government evidence needs verification");
     const evidence = (item) => {
       if (!sourceIds.has(item.sourceId)) error("Unknown source reference");
       if (

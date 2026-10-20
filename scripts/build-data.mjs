@@ -1,6 +1,10 @@
 import { readFile, writeFile } from "node:fs/promises";
 import { validateRecords } from "../src/validation.js";
-import { distanceMiles, coverageCenter } from "../src/locations.js";
+import { coverageEligibility } from "../src/locations.js";
+import { exportAcceptedBatch } from "../research/countywide/tools/export.mjs";
+import { loadBatch, localDate } from "../research/countywide/tools/common.mjs";
+import { fileURLToPath } from "node:url";
+import { evidenceSnapshotMetadata } from "./data-metadata.mjs";
 const root = new URL("../", import.meta.url),
   records = [];
 for (const name of ["dtla", "west", "north", "central"]) {
@@ -50,17 +54,49 @@ const reviewed = records.map((record) => ({
     coordinates[record.address] ||
     null,
 }));
-const outside = reviewed.filter(
-  (record) =>
-    record.coordinates &&
-    distanceMiles(coverageCenter, record.coordinates) > 25,
+const now = new Date().toISOString();
+const staged = exportAcceptedBatch(
+  await loadBatch(fileURLToPath(new URL("research/countywide/", root))),
+  { now },
+).records;
+const accepted = JSON.parse(
+  await readFile(new URL("research/countywide/accepted.json", root), "utf8"),
 );
-const included = reviewed.filter((record) => !outside.includes(record));
+if (JSON.stringify(accepted) !== JSON.stringify(staged))
+  throw new Error(
+    "Countywide accepted export is stale. Run the staging export before building app data.",
+  );
+if (
+  accepted.some(
+    (record) => !record.county || !coverageEligibility(record).included,
+  )
+)
+  throw new Error(
+    "Every countywide addition needs reviewed county/location evidence.",
+  );
+const outside = reviewed.filter(
+  (record) => record.coordinates && !coverageEligibility(record).included,
+);
+const included = [
+  ...reviewed.filter((record) => !outside.includes(record)),
+  ...accepted,
+];
 const errors = validateRecords(included);
 if (errors.length) throw new Error(errors.join("\n"));
 const metadata = {
-  collectedOn: "2026-10-19",
-  target: 100,
+  ...evidenceSnapshotMetadata(included, { builtOn: localDate(now) }),
+  target: 500,
+  targetStatus: "proposed milestone, not complete coverage",
+  legacyTotal: reviewed.length - outside.length,
+  countywideAdded: accepted.length,
+  coverage:
+    "LA County and Orange County; original unannotated records retain legacy DTLA coverage",
+  countyCounts: Object.fromEntries(
+    ["06037", "06059"].map((geoid) => [
+      geoid,
+      accepted.filter((record) => record.county.geoid === geoid).length,
+    ]),
+  ),
   total: included.length,
   located: included.filter((r) => r.coordinates).length,
   primaryHours: included.filter((r) =>

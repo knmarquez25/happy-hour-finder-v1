@@ -1,0 +1,8 @@
+{
+  "id": "countywide-pilot-2026-10-19",
+  "target": 40,
+  "countyGeoids": ["06037", "06059"],
+  "timezone": "America/Los_Angeles",
+  "effort": { "minutes": null, "costCents": null },
+  "notes": "Manual-source research with user-approved local countywide data integration; no paid providers, automation, commit, or deployment. Unknown effort and cost are not zero."
+}

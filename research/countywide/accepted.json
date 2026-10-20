@@ -1,0 +1,1253 @@
+[
+  {
+    "id": "cw-benchmark",
+    "name": "Benchmark",
+    "neighborhood": "Santa Ana",
+    "address": "601 E Santa Ana Blvd, Santa Ana, CA 92701",
+    "county": {
+      "geoid": "06059",
+      "sourceId": "src-cw-benchmark-census",
+      "reviewedOn": "2026-10-19",
+      "status": "primary"
+    },
+    "coordinates": {
+      "lat": 33.750476426644,
+      "lng": -117.862557527417,
+      "sourceUrl": "https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?address=601+E+Santa+Ana+Blvd%2C+Santa+Ana%2C+CA+92701&benchmark=Public_AR_Current&vintage=Current_Current&format=json",
+      "precision": "address-range interpolation",
+      "reviewedOn": "2026-10-19"
+    },
+    "hours": [
+      {
+        "id": "weekday",
+        "days": ["Wednesday", "Thursday", "Friday"],
+        "start": "16:00",
+        "end": "18:00",
+        "restriction": "none",
+        "status": "primary",
+        "sourceId": "src-cw-benchmark-menu",
+        "notes": "none"
+      }
+    ],
+    "menu": [
+      {
+        "id": "fries",
+        "name": "Parmesan fries",
+        "kind": "food",
+        "priceCents": null,
+        "tags": ["fries"],
+        "status": "primary",
+        "sourceId": "src-cw-benchmark-menu",
+        "windowIds": ["weekday"]
+      },
+      {
+        "id": "house-wine",
+        "name": "House wine",
+        "kind": "drink",
+        "priceCents": null,
+        "tags": ["wine"],
+        "status": "primary",
+        "sourceId": "src-cw-benchmark-menu",
+        "windowIds": ["weekday"]
+      }
+    ],
+    "foodTags": ["fries"],
+    "drinkTags": ["wine"],
+    "atmosphereTags": [],
+    "sources": [
+      {
+        "id": "src-benchmark",
+        "url": "https://benchmarkoc.com/",
+        "type": "primary",
+        "publisherRole": "restaurant",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "reviewMethod": "agent-source-inspection",
+        "publisherUpdatedOn": null,
+        "note": "agent-source-inspection. Address appears below ABOUT BENCHMARK and in footer: agent-source-inspection. Address appears below ABOUT BENCHMARK and in footer. Footer copyright 2026; this is not a menu publication date. No terms/privacy/reuse link visible in inspected navigation or footer."
+      },
+      {
+        "id": "src-cw-benchmark-menu",
+        "url": "https://benchmarkoc.com/menu/",
+        "type": "primary",
+        "publisherRole": "restaurant",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "reviewMethod": "agent-source-inspection",
+        "publisherUpdatedOn": null,
+        "note": "agent-source-inspection. HAPPY HOUR section after BRUNCH gives Wednesday-Friday 16:00-18:00 and separate snack/drink lists; no numeric prices visible: agent-source-inspection. HAPPY HOUR section after BRUNCH gives Wednesday-Friday 16:00-18:00 and separate snack/drink lists; no numeric prices visible. Page also specifies 22% gratuity for parties of eight or more. Publication date not stated."
+      },
+      {
+        "id": "src-cw-benchmark-census",
+        "url": "https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?address=601+E+Santa+Ana+Blvd%2C+Santa+Ana%2C+CA+92701&benchmark=Public_AR_Current&vintage=Current_Current&format=json",
+        "type": "primary",
+        "publisherRole": "government",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "reviewMethod": "agent-source-inspection",
+        "publisherUpdatedOn": null,
+        "geography": {
+          "countyGeoid": "06059",
+          "queryAddress": "601 E Santa Ana Blvd, Santa Ana, CA 92701",
+          "submittedAddress": "601 E Santa Ana Blvd, Santa Ana, CA 92701",
+          "matchedAddress": "601 E SANTA ANA BLVD, SANTA ANA, CA, 92701",
+          "lat": 33.750476426644,
+          "lng": -117.862557527417,
+          "benchmark": "Public_AR_Current",
+          "vintage": "Current_Current"
+        },
+        "note": "result.addressMatches[0].coordinates and geographies.Counties[0].GEOID: Matched 601 E SANTA ANA BLVD, SANTA ANA, CA, 92701; street-range interpolation. Suites from official branch evidence are not geocoded separately."
+      }
+    ],
+    "notes": "Reviewer method: agent-source-inspection, not human review. Advertised happy hour verified; exact prices unavailable, so no priced menu or calculated savings retained. Party-of-eight gratuity is additional. Government county/address match reviewed; coordinates are street-range estimates. No holiday or seating exclusion stated in inspected happy-hour section; absence is not a guarantee. A limited factual-only retention basis is documented; no source-content license is asserted. Review uses selected independently authored facts only; no source-content license is represented. Location is government street-range interpolation where resolved."
+  },
+  {
+    "id": "cw-risu-long-beach",
+    "name": "RISÜ Food & Spirits",
+    "neighborhood": "Downtown Long Beach",
+    "address": "207 E Seaside Way, Suite A, Long Beach, CA 90802",
+    "county": {
+      "geoid": "06037",
+      "sourceId": "src-cw-risu-long-beach-census",
+      "reviewedOn": "2026-10-19",
+      "status": "primary"
+    },
+    "coordinates": {
+      "lat": 33.765897840046,
+      "lng": -118.190837556096,
+      "sourceUrl": "https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?address=207+E+Seaside+Way%2C+Long+Beach%2C+CA+90802&benchmark=Public_AR_Current&vintage=Current_Current&format=json",
+      "precision": "address-range interpolation",
+      "reviewedOn": "2026-10-19"
+    },
+    "hours": [
+      {
+        "id": "daily-afternoon",
+        "days": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+          "Sunday"
+        ],
+        "start": "16:00",
+        "end": "18:00",
+        "restriction": "none",
+        "status": "primary",
+        "sourceId": "src-cw-risu-long-beach-official-hh",
+        "notes": "Monday extension has no encoded endpoint; other seating or purchase restrictions not specified."
+      }
+    ],
+    "menu": [
+      {
+        "id": "food-fries",
+        "name": "Truffle fries",
+        "kind": "food",
+        "priceCents": 900,
+        "tags": ["fries"],
+        "sourceId": "src-cw-risu-long-beach-official-hh",
+        "status": "primary",
+        "windowIds": ["daily-afternoon"]
+      },
+      {
+        "id": "food-wings",
+        "name": "Chicken wings",
+        "kind": "food",
+        "priceCents": 900,
+        "tags": ["wings"],
+        "sourceId": "src-cw-risu-long-beach-official-hh",
+        "status": "primary",
+        "windowIds": ["daily-afternoon"]
+      },
+      {
+        "id": "drink-well",
+        "name": "Well drink",
+        "kind": "drink",
+        "priceCents": 600,
+        "tags": ["cocktail"],
+        "sourceId": "src-cw-risu-long-beach-official-hh",
+        "status": "primary",
+        "windowIds": ["daily-afternoon"]
+      },
+      {
+        "id": "drink-wine",
+        "name": "House red or white wine",
+        "kind": "drink",
+        "priceCents": 700,
+        "tags": ["wine"],
+        "sourceId": "src-cw-risu-long-beach-official-hh",
+        "status": "primary",
+        "windowIds": ["daily-afternoon"]
+      }
+    ],
+    "foodTags": ["fries", "wings"],
+    "drinkTags": ["cocktail", "wine"],
+    "atmosphereTags": [],
+    "sources": [
+      {
+        "id": "src-cw-risu-long-beach-official-hh",
+        "url": "https://www.therisu.com/happy-hour",
+        "type": "primary",
+        "publisherRole": "restaurant",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "reviewMethod": "agent-source-inspection",
+        "publisherUpdatedOn": null,
+        "note": "agent-source-inspection: Happy Hour heading and Our Happy Hour Menu give daily 16:00-18:00 and Monday all-day extension; fries and wings appear in the $9 group. Publication date not displayed.: agent-source-inspection: Happy Hour heading and Our Happy Hour Menu give daily 16:00-18:00 and Monday all-day extension; fries and wings appear in the $9 group. Publication date not displayed."
+      },
+      {
+        "id": "src-cw-risu-long-beach-official-menu",
+        "url": "https://www.therisu.com/menu",
+        "type": "primary",
+        "publisherRole": "restaurant",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "reviewMethod": "agent-source-inspection",
+        "publisherUpdatedOn": null,
+        "note": "agent-source-inspection: Happy Hour subsection, Drinks, explicitly separates $6 wells and $7 house wine from food groups. Publication date not displayed.: agent-source-inspection: Happy Hour subsection, Drinks, explicitly separates $6 wells and $7 house wine from food groups. Publication date not displayed."
+      },
+      {
+        "id": "src-cw-risu-long-beach-official-location",
+        "url": "https://www.therisu.com/long-beach-restaurant",
+        "type": "primary",
+        "publisherRole": "restaurant",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "reviewMethod": "agent-source-inspection",
+        "publisherUpdatedOn": null,
+        "note": "agent-source-inspection: Downtown Long Beach and Address sections identify Suite A at 207 E Seaside Way; Visit section repeats daily happy hour. Publication date not displayed.: agent-source-inspection: Downtown Long Beach and Address sections identify Suite A at 207 E Seaside Way; Visit section repeats daily happy hour. Publication date not displayed."
+      },
+      {
+        "id": "src-cw-risu-long-beach-census",
+        "url": "https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?address=207+E+Seaside+Way%2C+Long+Beach%2C+CA+90802&benchmark=Public_AR_Current&vintage=Current_Current&format=json",
+        "type": "primary",
+        "publisherRole": "government",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "reviewMethod": "agent-source-inspection",
+        "publisherUpdatedOn": null,
+        "geography": {
+          "countyGeoid": "06037",
+          "queryAddress": "207 E Seaside Way, Suite A, Long Beach, CA 90802",
+          "submittedAddress": "207 E Seaside Way, Long Beach, CA 90802",
+          "matchedAddress": "207 E SEASIDE WAY, LONG BEACH, CA, 90802",
+          "lat": 33.765897840046,
+          "lng": -118.190837556096,
+          "benchmark": "Public_AR_Current",
+          "vintage": "Current_Current"
+        },
+        "note": "result.addressMatches[0].coordinates and geographies.Counties[0].GEOID: Matched 207 E SEASIDE WAY, LONG BEACH, CA, 90802; street-range interpolation. Suites from official branch evidence are not geocoded separately."
+      }
+    ],
+    "specials": [
+      {
+        "text": "Happy-hour specialty cocktails are $2 below regular prices; beer is $1 below regular prices.",
+        "status": "primary",
+        "sourceId": "src-cw-risu-long-beach-official-menu"
+      }
+    ],
+    "notes": "Reviewer method: agent-source-inspection. Monday is advertised as all day on the happy-hour page and all night on the location page; only the shared bounded daily window is encoded. No final prices calculated from discounts. Serving sizes, tax, gratuity and additional restrictions are unspecified. Government county/address match reviewed; coordinates are street-range estimates. Review uses selected independently authored facts only; no source-content license is represented. Location is government street-range interpolation where resolved."
+  },
+  {
+    "id": "cw-the-hare-long-beach",
+    "name": "The Hare Bar & Restaurant",
+    "neighborhood": "Long Beach",
+    "address": "1800 E Broadway, Long Beach, CA 90802",
+    "county": {
+      "geoid": "06037",
+      "sourceId": "src-cw-the-hare-long-beach-census",
+      "reviewedOn": "2026-10-19",
+      "status": "primary"
+    },
+    "coordinates": {
+      "lat": 33.767447559631,
+      "lng": -118.169625477734,
+      "sourceUrl": "https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?address=1800+E+Broadway%2C+Long+Beach%2C+CA+90802&benchmark=Public_AR_Current&vintage=Current_Current&format=json",
+      "precision": "address-range interpolation",
+      "reviewedOn": "2026-10-19"
+    },
+    "hours": [
+      {
+        "id": "daily-afternoon",
+        "days": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+          "Sunday"
+        ],
+        "start": "15:00",
+        "end": "18:00",
+        "restriction": "none",
+        "status": "primary",
+        "sourceId": "src-cw-the-hare-long-beach-official-home",
+        "notes": "Dine-in only per homepage; offer details conflict across official pages."
+      }
+    ],
+    "menu": [],
+    "foodTags": [],
+    "drinkTags": [],
+    "atmosphereTags": [],
+    "sources": [
+      {
+        "id": "src-cw-the-hare-long-beach-official-home",
+        "url": "https://www.theharelb.com/",
+        "type": "primary",
+        "publisherRole": "restaurant",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "reviewMethod": "agent-source-inspection",
+        "publisherUpdatedOn": null,
+        "note": "agent-source-inspection: happy hour block gives daily 15:00-18:00, Monday all day, dine-in requirement and percentage promotion; location block supplies address. Publication date not displayed; footer copyright 2025 is not a menu date.: agent-source-inspection: happy hour block gives daily 15:00-18:00, Monday all day, dine-in requirement and percentage promotion; location block supplies address. Publication date not displayed; footer copyright 2025 is not a menu date."
+      },
+      {
+        "id": "src-cw-the-hare-long-beach-official-hh",
+        "url": "https://www.theharelb.com/happy-hour",
+        "type": "primary",
+        "publisherRole": "restaurant",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "reviewMethod": "agent-source-inspection",
+        "publisherUpdatedOn": null,
+        "note": "agent-source-inspection: Hoppy Happy Hour and Hoppy Happy Food both repeat daily 15:00-18:00, but present fixed-price and category-discount offers that differ from the homepage. Publication date not displayed.: agent-source-inspection: Hoppy Happy Hour and Hoppy Happy Food both repeat daily 15:00-18:00, but present fixed-price and category-discount offers that differ from the homepage. Publication date not displayed."
+      },
+      {
+        "id": "src-cw-the-hare-long-beach-census",
+        "url": "https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?address=1800+E+Broadway%2C+Long+Beach%2C+CA+90802&benchmark=Public_AR_Current&vintage=Current_Current&format=json",
+        "type": "primary",
+        "publisherRole": "government",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "reviewMethod": "agent-source-inspection",
+        "publisherUpdatedOn": null,
+        "geography": {
+          "countyGeoid": "06037",
+          "queryAddress": "1800 E Broadway, Long Beach, CA 90802",
+          "submittedAddress": "1800 E Broadway, Long Beach, CA 90802",
+          "matchedAddress": "1800 E BROADWAY, LONG BEACH, CA, 90802",
+          "lat": 33.767447559631,
+          "lng": -118.169625477734,
+          "benchmark": "Public_AR_Current",
+          "vintage": "Current_Current"
+        },
+        "note": "result.addressMatches[0].coordinates and geographies.Counties[0].GEOID: Matched 1800 E BROADWAY, LONG BEACH, CA, 90802; street-range interpolation. Suites from official branch evidence are not geocoded separately."
+      }
+    ],
+    "notes": "Reviewer method: agent-source-inspection. Both official pages agree on daily 15:00-18:00. Homepage advertises 25% off food and specified drink categories; dedicated page instead lists fixed-price drinks and dollar discounts on food/wine. No prices or specials retained because simultaneous applicability is unresolved. Homepage late-night days are Sunday-Thursday; dedicated page says daily. No late-night or Monday all-day endpoints inferred from business hours. Government county/address match reviewed; coordinates are street-range estimates. Review uses selected independently authored facts only; no source-content license is represented. Location is government street-range interpolation where resolved."
+  },
+  {
+    "id": "cw-nomad-eatery-el-segundo",
+    "name": "Nomad Eatery",
+    "neighborhood": "El Segundo",
+    "address": "2041 Rosecrans Avenue, Suite 190, El Segundo, CA 90245",
+    "county": {
+      "geoid": "06037",
+      "sourceId": "src-cw-nomad-eatery-el-segundo-census",
+      "reviewedOn": "2026-10-19",
+      "status": "primary"
+    },
+    "coordinates": {
+      "lat": 33.901924987339,
+      "lng": -118.391071226244,
+      "sourceUrl": "https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?address=2041+Rosecrans+Avenue%2C+El+Segundo%2C+CA+90245&benchmark=Public_AR_Current&vintage=Current_Current&format=json",
+      "precision": "address-range interpolation",
+      "reviewedOn": "2026-10-19"
+    },
+    "hours": [
+      {
+        "id": "weekday-afternoon",
+        "days": ["Tuesday", "Wednesday", "Thursday", "Friday"],
+        "start": "16:30",
+        "end": "18:00",
+        "restriction": "none",
+        "status": "primary",
+        "sourceId": "src-cw-nomad-eatery-el-segundo-official-hh",
+        "notes": "Saturday is disputed between official pages and omitted; other restrictions not specified."
+      }
+    ],
+    "menu": [
+      {
+        "id": "food-guacamole",
+        "name": "Guacamole with chips",
+        "kind": "food",
+        "priceCents": 600,
+        "tags": ["guacamole"],
+        "sourceId": "src-cw-nomad-eatery-el-segundo-official-hh",
+        "status": "primary",
+        "windowIds": ["weekday-afternoon"]
+      },
+      {
+        "id": "food-fries",
+        "name": "Fries",
+        "kind": "food",
+        "priceCents": 600,
+        "tags": ["fries"],
+        "sourceId": "src-cw-nomad-eatery-el-segundo-official-hh",
+        "status": "primary",
+        "windowIds": ["weekday-afternoon"]
+      }
+    ],
+    "foodTags": ["guacamole", "fries"],
+    "drinkTags": [],
+    "atmosphereTags": [],
+    "sources": [
+      {
+        "id": "src-cw-nomad-eatery-el-segundo-official-hh",
+        "url": "https://nomadsouthbay.com/happy-hour-menu/",
+        "type": "primary",
+        "publisherRole": "restaurant",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "reviewMethod": "agent-source-inspection",
+        "publisherUpdatedOn": null,
+        "note": "agent-source-inspection: Happy Hour Menu heading gives Tuesday-Saturday 16:30-18:00; $6 Items lists guacamole/chips and fries at 6.00 each. Publication date not displayed: agent-source-inspection: Happy Hour Menu heading gives Tuesday-Saturday 16:30-18:00; $6 Items lists guacamole/chips and fries at 6.00 each. Publication date not displayed. The charcuterie heading and item price disagree; that item is omitted."
+      },
+      {
+        "id": "src-cw-nomad-eatery-el-segundo-official-home",
+        "url": "https://nomadsouthbay.com/",
+        "type": "primary",
+        "publisherRole": "restaurant",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "reviewMethod": "agent-source-inspection",
+        "publisherUpdatedOn": null,
+        "note": "agent-source-inspection: Cocktails paragraph gives Tuesday-Friday happy hour 16:30-18:00, conflicting with Saturday inclusion on dedicated menu. Publication date not displayed.: agent-source-inspection: Cocktails paragraph gives Tuesday-Friday happy hour 16:30-18:00, conflicting with Saturday inclusion on dedicated menu. Publication date not displayed."
+      },
+      {
+        "id": "src-cw-nomad-eatery-el-segundo-official-location",
+        "url": "https://nomadsouthbay.com/contact/",
+        "type": "primary",
+        "publisherRole": "restaurant",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "reviewMethod": "agent-source-inspection",
+        "publisherUpdatedOn": null,
+        "note": "agent-source-inspection: Contact Us, Visit link text gives street address, suite and ZIP 90245. Publication date not displayed.: agent-source-inspection: Contact Us, Visit link text gives street address, suite and ZIP 90245. Publication date not displayed."
+      },
+      {
+        "id": "src-cw-nomad-eatery-el-segundo-census",
+        "url": "https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?address=2041+Rosecrans+Avenue%2C+El+Segundo%2C+CA+90245&benchmark=Public_AR_Current&vintage=Current_Current&format=json",
+        "type": "primary",
+        "publisherRole": "government",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "reviewMethod": "agent-source-inspection",
+        "publisherUpdatedOn": null,
+        "geography": {
+          "countyGeoid": "06037",
+          "queryAddress": "2041 Rosecrans Avenue, Suite 190, El Segundo, CA 90245",
+          "submittedAddress": "2041 Rosecrans Avenue, El Segundo, CA 90245",
+          "matchedAddress": "2041 ROSECRANS AVE, EL SEGUNDO, CA, 90245",
+          "lat": 33.901924987339,
+          "lng": -118.391071226244,
+          "benchmark": "Public_AR_Current",
+          "vintage": "Current_Current"
+        },
+        "note": "result.addressMatches[0].coordinates and geographies.Counties[0].GEOID: Matched 2041 ROSECRANS AVE, EL SEGUNDO, CA, 90245; street-range interpolation. Suites from official branch evidence are not geocoded separately."
+      }
+    ],
+    "notes": "Reviewer method: agent-source-inspection. Encoded days are the agreement between official homepage and dedicated happy-hour menu. Saturday remains unverified because the pages conflict; no date establishes which is newer. Only unambiguous food prices retained; no drink prices tied to happy hour were established. Government county/address match reviewed; coordinates are street-range estimates. Review uses selected independently authored facts only; no source-content license is represented. Location is government street-range interpolation where resolved."
+  },
+  {
+    "id": "cw-sausal-el-segundo",
+    "name": "Sausal",
+    "neighborhood": "El Segundo",
+    "address": "219 Main Street, El Segundo, CA 90245",
+    "county": {
+      "geoid": "06037",
+      "sourceId": "src-cw-sausal-el-segundo-census",
+      "reviewedOn": "2026-10-19",
+      "status": "primary"
+    },
+    "coordinates": {
+      "lat": 33.918101014131,
+      "lng": -118.415991080748,
+      "sourceUrl": "https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?address=219+Main+Street%2C+El+Segundo%2C+CA+90245&benchmark=Public_AR_Current&vintage=Current_Current&format=json",
+      "precision": "address-range interpolation",
+      "reviewedOn": "2026-10-19"
+    },
+    "hours": [
+      {
+        "id": "daily-afternoon",
+        "days": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+          "Sunday"
+        ],
+        "start": "15:00",
+        "end": "18:00",
+        "restriction": "none",
+        "status": "primary",
+        "sourceId": "src-cw-sausal-el-segundo-official-menu",
+        "notes": "Seating and purchase restrictions not specified in inspected happy-hour menu."
+      }
+    ],
+    "menu": [
+      {
+        "id": "food-poppers",
+        "name": "Jalapeno poppers",
+        "kind": "food",
+        "priceCents": 600,
+        "tags": ["poppers"],
+        "sourceId": "src-cw-sausal-el-segundo-official-menu",
+        "status": "primary",
+        "windowIds": ["daily-afternoon"]
+      },
+      {
+        "id": "food-chips",
+        "name": "Chips with salsa",
+        "kind": "food",
+        "priceCents": 250,
+        "tags": ["chips-salsa"],
+        "sourceId": "src-cw-sausal-el-segundo-official-menu",
+        "status": "primary",
+        "windowIds": ["daily-afternoon"]
+      },
+      {
+        "id": "drink-margarita",
+        "name": "Rancho margarita",
+        "kind": "drink",
+        "priceCents": 850,
+        "tags": ["margarita"],
+        "sourceId": "src-cw-sausal-el-segundo-official-menu",
+        "status": "primary",
+        "windowIds": ["daily-afternoon"]
+      },
+      {
+        "id": "drink-beer",
+        "name": "Modelo Negra lager",
+        "kind": "drink",
+        "priceCents": 650,
+        "tags": ["beer"],
+        "sourceId": "src-cw-sausal-el-segundo-official-menu",
+        "status": "primary",
+        "windowIds": ["daily-afternoon"]
+      }
+    ],
+    "foodTags": ["poppers", "chips-salsa"],
+    "drinkTags": ["margarita", "beer"],
+    "atmosphereTags": [],
+    "sources": [
+      {
+        "id": "src-cw-sausal-el-segundo-official-menu",
+        "url": "https://www.sausal.com/lunch-dinner?location=Main+Street&menu=happy-hour",
+        "type": "primary",
+        "publisherRole": "restaurant",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "reviewMethod": "agent-source-inspection",
+        "publisherUpdatedOn": null,
+        "note": "agent-source-inspection: Happy Hour availability line gives Monday-Sunday 15:00-18:00. Happy Hour Drinks and HAPPY HOUR BITES supply the four recorded prices: agent-source-inspection: Happy Hour availability line gives Monday-Sunday 15:00-18:00. Happy Hour Drinks and HAPPY HOUR BITES supply the four recorded prices. Publication date not displayed."
+      },
+      {
+        "id": "src-cw-sausal-el-segundo-official-home",
+        "url": "https://www.sausal.com/",
+        "type": "primary",
+        "publisherRole": "restaurant",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "reviewMethod": "agent-source-inspection",
+        "publisherUpdatedOn": null,
+        "note": "agent-source-inspection: Cocktail Excitement paragraph repeats daily 15:00-18:00; Visit Us gives 219 Main Street and ZIP 90245. Publication date not displayed; footer copyright 2022 is not a menu date.: agent-source-inspection: Cocktail Excitement paragraph repeats daily 15:00-18:00; Visit Us gives 219 Main Street and ZIP 90245. Publication date not displayed; footer copyright 2022 is not a menu date."
+      },
+      {
+        "id": "src-cw-sausal-el-segundo-official-hh",
+        "url": "https://www.sausal.com/happy-hour",
+        "type": "primary",
+        "publisherRole": "restaurant",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "reviewMethod": "agent-source-inspection",
+        "publisherUpdatedOn": null,
+        "note": "agent-source-inspection: opening paragraph explicitly spells out Monday-Sunday 15:00-18:00 and Happy Hour Menu link leads to Main Street menu. Catering and event prices elsewhere on this page were not treated as happy-hour item prices: agent-source-inspection: opening paragraph explicitly spells out Monday-Sunday 15:00-18:00 and Happy Hour Menu link leads to Main Street menu. Catering and event prices elsewhere on this page were not treated as happy-hour item prices. Publication date not displayed."
+      },
+      {
+        "id": "src-cw-sausal-el-segundo-census",
+        "url": "https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?address=219+Main+Street%2C+El+Segundo%2C+CA+90245&benchmark=Public_AR_Current&vintage=Current_Current&format=json",
+        "type": "primary",
+        "publisherRole": "government",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "reviewMethod": "agent-source-inspection",
+        "publisherUpdatedOn": null,
+        "geography": {
+          "countyGeoid": "06037",
+          "queryAddress": "219 Main Street, El Segundo, CA 90245",
+          "submittedAddress": "219 Main Street, El Segundo, CA 90245",
+          "matchedAddress": "219 MAIN ST, EL SEGUNDO, CA, 90245",
+          "lat": 33.918101014131,
+          "lng": -118.415991080748,
+          "benchmark": "Public_AR_Current",
+          "vintage": "Current_Current"
+        },
+        "note": "result.addressMatches[0].coordinates and geographies.Counties[0].GEOID: Matched 219 MAIN ST, EL SEGUNDO, CA, 90245; street-range interpolation. Suites from official branch evidence are not geocoded separately."
+      }
+    ],
+    "notes": "Reviewer method: agent-source-inspection. Prices are directly advertised in the branch happy-hour menu; no discount arithmetic. Serving sizes, tax and gratuity unspecified. Government county/address match reviewed; coordinates are street-range estimates. Review uses selected independently authored facts only; no source-content license is represented. Location is government street-range interpolation where resolved."
+  },
+  {
+    "id": "cw-glendora-continental-glendora",
+    "name": "Glendora Continental Restaurant",
+    "neighborhood": "Glendora / Eastern San Gabriel Valley",
+    "address": "316 W Route 66, Glendora, CA 91740",
+    "county": {
+      "geoid": "06037",
+      "sourceId": "src-cw-glendora-continental-glendora-census",
+      "reviewedOn": "2026-10-19",
+      "status": "primary"
+    },
+    "coordinates": {
+      "lat": 34.128610080006,
+      "lng": -117.867656213831,
+      "sourceUrl": "https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?address=316+W+Route+66%2C+Glendora%2C+CA+91740&benchmark=Public_AR_Current&vintage=Current_Current&format=json",
+      "precision": "address-range interpolation",
+      "reviewedOn": "2026-10-19"
+    },
+    "hours": [
+      {
+        "id": "weekday-afternoon",
+        "days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "start": "15:00",
+        "end": "19:00",
+        "restriction": "bar-only",
+        "status": "primary",
+        "sourceId": "src-cw-glendora-continental-glendora-official-hours",
+        "notes": "Advertised in Bar/Lounge section; dining-room applicability not established."
+      }
+    ],
+    "menu": [],
+    "foodTags": [],
+    "drinkTags": [],
+    "atmosphereTags": [],
+    "sources": [
+      {
+        "id": "src-cw-glendora-continental-glendora-official-hours",
+        "url": "https://www.glendoracontinental.com/menu1",
+        "type": "primary",
+        "publisherRole": "restaurant",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "reviewMethod": "agent-source-inspection",
+        "publisherUpdatedOn": null,
+        "note": "agent-source-inspection: Bar/Lounge section gives Monday-Friday 15:00-19:00 with half-price appetizers and unspecified drink promotions. Contact Us gives 316 W Route 66: agent-source-inspection: Bar/Lounge section gives Monday-Friday 15:00-19:00 with half-price appetizers and unspecified drink promotions. Contact Us gives 316 W Route 66. Publication date not displayed; footer copyright 2025 is not a menu date."
+      },
+      {
+        "id": "src-cw-glendora-continental-glendora-official-home",
+        "url": "https://www.glendoracontinental.com/",
+        "type": "primary",
+        "publisherRole": "restaurant",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "reviewMethod": "agent-source-inspection",
+        "publisherUpdatedOn": null,
+        "note": "agent-source-inspection: Bar/Lounge section repeats weekday happy-hour hours and appetizer discount; Contact Us repeats street address. Publication date not displayed.: agent-source-inspection: Bar/Lounge section repeats weekday happy-hour hours and appetizer discount; Contact Us repeats street address. Publication date not displayed."
+      },
+      {
+        "id": "src-cw-glendora-continental-glendora-census",
+        "url": "https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?address=316+W+Route+66%2C+Glendora%2C+CA+91740&benchmark=Public_AR_Current&vintage=Current_Current&format=json",
+        "type": "primary",
+        "publisherRole": "government",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "reviewMethod": "agent-source-inspection",
+        "publisherUpdatedOn": null,
+        "geography": {
+          "countyGeoid": "06037",
+          "queryAddress": "316 W Route 66, Glendora, CA 91740",
+          "submittedAddress": "316 W Route 66, Glendora, CA 91740",
+          "matchedAddress": "316 W STATE RTE 66, GLENDORA, CA, 91740",
+          "lat": 34.128610080006,
+          "lng": -117.867656213831,
+          "benchmark": "Public_AR_Current",
+          "vintage": "Current_Current"
+        },
+        "note": "result.addressMatches[0].coordinates and geographies.Counties[0].GEOID: Matched 316 W STATE RTE 66, GLENDORA, CA, 91740; street-range interpolation. Suites from official branch evidence are not geocoded separately."
+      }
+    ],
+    "specials": [
+      {
+        "text": "Appetizers are advertised at 50% off during weekday happy hour in the bar/lounge; drink promotions have no specified prices.",
+        "status": "primary",
+        "sourceId": "src-cw-glendora-continental-glendora-official-hours"
+      }
+    ],
+    "notes": "Reviewer method: agent-source-inspection. No final appetizer prices derived from the discount. Separate Wednesday wine promotion has no exact time window and is omitted. Government county/address match reviewed; coordinates are street-range estimates. Review uses selected independently authored facts only; no source-content license is represented. Location is government street-range interpolation where resolved."
+  },
+  {
+    "id": "cw-chapter-one-santa-ana",
+    "name": "Chapter One: the modern local",
+    "neighborhood": "Downtown Santa Ana",
+    "address": "227 N Broadway, Santa Ana, CA 92701",
+    "county": {
+      "geoid": "06059",
+      "sourceId": "src-cw-chapter-one-santa-ana-census",
+      "reviewedOn": "2026-10-19",
+      "status": "primary"
+    },
+    "coordinates": {
+      "lat": 33.746543889764,
+      "lng": -117.869669560665,
+      "sourceUrl": "https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?address=227+N+Broadway%2C+Santa+Ana%2C+CA+92701&benchmark=Public_AR_Current&vintage=Current_Current&format=json",
+      "precision": "address-range interpolation",
+      "reviewedOn": "2026-10-19"
+    },
+    "hours": [
+      {
+        "id": "weekday",
+        "days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "start": "15:00",
+        "end": "18:00",
+        "restriction": "none",
+        "status": "primary",
+        "sourceId": "src-cw-chapter-one-santa-ana-happy-hour",
+        "notes": "none"
+      }
+    ],
+    "menu": [
+      {
+        "id": "fries",
+        "name": "Duck-fat fries",
+        "kind": "food",
+        "priceCents": 800,
+        "tags": ["fries"],
+        "sourceId": "src-cw-chapter-one-santa-ana-happy-hour",
+        "status": "primary",
+        "windowIds": ["weekday"]
+      },
+      {
+        "id": "margarita",
+        "name": "Margarita",
+        "kind": "drink",
+        "priceCents": 800,
+        "tags": ["margarita", "cocktail"],
+        "sourceId": "src-cw-chapter-one-santa-ana-happy-hour",
+        "status": "primary",
+        "windowIds": ["weekday"]
+      }
+    ],
+    "foodTags": ["fries"],
+    "drinkTags": ["margarita", "cocktail"],
+    "atmosphereTags": [],
+    "sources": [
+      {
+        "id": "src-cw-chapter-one-santa-ana-happy-hour",
+        "url": "https://chapteronetml.com/food/happy-hour.php",
+        "type": "primary",
+        "publisherRole": "restaurant",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "reviewMethod": "agent-source-inspection",
+        "publisherUpdatedOn": null,
+        "note": "agent-source-inspection. Reached through homepage MENUS > HAPPY-HOUR in browser and inspected again with web: agent-source-inspection. Reached through homepage MENUS > HAPPY-HOUR in browser and inspected again with web. Heading supplies Monday-Friday 15:00-18:00; Food Specials lists fries at $8; Drink Specials lists margaritas at $8. Footer adds 20% gratuity for six or more. Menu publication date not stated."
+      },
+      {
+        "id": "src-cw-chapter-one-santa-ana-location",
+        "url": "https://chapteronetml.com/contact.php",
+        "type": "primary",
+        "publisherRole": "restaurant",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "reviewMethod": "agent-source-inspection",
+        "publisherUpdatedOn": null,
+        "note": "agent-source-inspection. Location heading gives 227 N Broadway, Santa Ana, CA 92701: agent-source-inspection. Location heading gives 227 N Broadway, Santa Ana, CA 92701. Publication date not stated."
+      },
+      {
+        "id": "src-cw-chapter-one-santa-ana-privacy",
+        "url": "https://chapteronetml.com/privacy-policy.php",
+        "type": "primary",
+        "publisherRole": "restaurant",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "reviewMethod": "agent-source-inspection",
+        "publisherUpdatedOn": null,
+        "note": "agent-source-inspection. Homepage cookie banner links this policy: agent-source-inspection. Homepage cookie banner links this policy. Dated February 18, 2026; sections 1-12 concern personal data, analytics, cookies, retention and contact. No factual-data republication license identified."
+      },
+      {
+        "id": "src-cw-chapter-one-santa-ana-census",
+        "url": "https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?address=227+N+Broadway%2C+Santa+Ana%2C+CA+92701&benchmark=Public_AR_Current&vintage=Current_Current&format=json",
+        "type": "primary",
+        "publisherRole": "government",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "reviewMethod": "agent-source-inspection",
+        "publisherUpdatedOn": null,
+        "geography": {
+          "countyGeoid": "06059",
+          "queryAddress": "227 N Broadway, Santa Ana, CA 92701",
+          "submittedAddress": "227 N Broadway, Santa Ana, CA 92701",
+          "matchedAddress": "227 N BROADWAY, SANTA ANA, CA, 92701",
+          "lat": 33.746543889764,
+          "lng": -117.869669560665,
+          "benchmark": "Public_AR_Current",
+          "vintage": "Current_Current"
+        },
+        "note": "result.addressMatches[0].coordinates and geographies.Counties[0].GEOID: Matched 227 N BROADWAY, SANTA ANA, CA, 92701; street-range interpolation. Suites from official branch evidence are not geocoded separately."
+      }
+    ],
+    "specials": [
+      {
+        "text": "During weekday happy hour, draft beer and wine by the glass each receive a $3 reduction; final prices were not established.",
+        "status": "primary",
+        "sourceId": "src-cw-chapter-one-santa-ana-happy-hour"
+      }
+    ],
+    "notes": "Reviewer method: agent-source-inspection, not human review. Prices are directly advertised happy-hour amounts, before tax/tip. Menu says 20% gratuity for parties of six or more and substitutions may be declined except for allergies. No seating or holiday exclusion stated in inspected section. Government county/address match reviewed; coordinates are street-range estimates. Review uses selected independently authored facts only; no source-content license is represented. Location is government street-range interpolation where resolved."
+  },
+  {
+    "id": "cw-cedar-creek-inn-brea",
+    "name": "Cedar Creek Inn - Brea",
+    "neighborhood": "Brea",
+    "address": "20 Pointe Drive, Brea, CA 92821",
+    "county": {
+      "geoid": "06059",
+      "sourceId": "src-cw-cedar-creek-inn-brea-census",
+      "reviewedOn": "2026-10-19",
+      "status": "primary"
+    },
+    "coordinates": {
+      "lat": 33.926554154649,
+      "lng": -117.876999244115,
+      "sourceUrl": "https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?address=20+Pointe+Drive%2C+Brea%2C+CA+92821&benchmark=Public_AR_Current&vintage=Current_Current&format=json",
+      "precision": "address-range interpolation",
+      "reviewedOn": "2026-10-19"
+    },
+    "hours": [
+      {
+        "id": "daily",
+        "days": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+          "Sunday"
+        ],
+        "start": "15:00",
+        "end": "18:00",
+        "restriction": "bar-or-patio",
+        "status": "primary",
+        "sourceId": "src-cw-cedar-creek-inn-brea-location",
+        "notes": "bar-or-patio"
+      }
+    ],
+    "menu": [],
+    "foodTags": [],
+    "drinkTags": [],
+    "atmosphereTags": [],
+    "sources": [
+      {
+        "id": "src-cw-cedar-creek-inn-brea-location",
+        "url": "https://www.cedarcreekbrea.com/",
+        "type": "primary",
+        "publisherRole": "restaurant",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "reviewMethod": "agent-source-inspection",
+        "publisherUpdatedOn": null,
+        "note": "agent-source-inspection. Our Food states daily 15:00-18:00 on front patio; Our Location repeats daily 15:00-18:00 in bar and gives 20 Pointe Drive: agent-source-inspection. Our Food states daily 15:00-18:00 on front patio; Our Location repeats daily 15:00-18:00 in bar and gives 20 Pointe Drive. Thirsty Thursday advertises bar happy hour from 15:00 until close and links retained PDF. Publication date not stated; seasonal homepage is not proof of menu revision date."
+      },
+      {
+        "id": "src-cw-cedar-creek-inn-brea-happy-hour-menu",
+        "url": "https://www.cedarcreekbrea.com/files/hh-food-cocktails-1-pdf.pdf",
+        "type": "primary",
+        "publisherRole": "restaurant",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "reviewMethod": "agent-source-inspection",
+        "publisherUpdatedOn": null,
+        "note": "Linked happy-hour PDF; reference only pending visual review: Linked by the official branch homepage. Independent visual review remains outstanding; no item-price assertions are adopted for display. Refer to the restaurant for menu details and additional fees."
+      },
+      {
+        "id": "src-cw-cedar-creek-inn-brea-census",
+        "url": "https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?address=20+Pointe+Drive%2C+Brea%2C+CA+92821&benchmark=Public_AR_Current&vintage=Current_Current&format=json",
+        "type": "primary",
+        "publisherRole": "government",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "reviewMethod": "agent-source-inspection",
+        "publisherUpdatedOn": null,
+        "geography": {
+          "countyGeoid": "06059",
+          "queryAddress": "20 Pointe Drive, Brea, CA 92821",
+          "submittedAddress": "20 Pointe Drive, Brea, CA 92821",
+          "matchedAddress": "20 POINTE DR, BREA, CA, 92821",
+          "lat": 33.926554154649,
+          "lng": -117.876999244115,
+          "benchmark": "Public_AR_Current",
+          "vintage": "Current_Current"
+        },
+        "note": "result.addressMatches[0].coordinates and geographies.Counties[0].GEOID: Matched 20 POINTE DR, BREA, CA, 92821; street-range interpolation. Suites from official branch evidence are not geocoded separately."
+      }
+    ],
+    "specials": [
+      {
+        "text": "Thursday bar happy hour continues until closing; the record's exact window includes only the daily 15:00-18:00 period.",
+        "status": "primary",
+        "sourceId": "src-cw-cedar-creek-inn-brea-location"
+      }
+    ],
+    "notes": "Official branch homepage advertises daily 15:00-18:00 in the bar or front patio. The separate Thursday closing-time extension is not encoded. The linked PDF requires independent visual review; no food or drink prices are adopted for app display. Confirm additional fees with the restaurant. Government county/address match reviewed; coordinates are street-range estimates. Retention covers independently authored factual observations only, not a source-content license.",
+    "withholdMenuPrices": true
+  },
+  {
+    "id": "cw-billys-at-the-beach-newport-beach",
+    "name": "Billy's At The Beach",
+    "neighborhood": "Newport Beach",
+    "address": "2751 West Coast Hwy, Newport Beach, CA 92663",
+    "county": {
+      "geoid": "06059",
+      "sourceId": "src-cw-billys-at-the-beach-newport-beach-census",
+      "reviewedOn": "2026-10-19",
+      "status": "primary"
+    },
+    "coordinates": {
+      "lat": 33.61805312646,
+      "lng": -117.919987489017,
+      "sourceUrl": "https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?address=2751+West+Coast+Hwy%2C+Newport+Beach%2C+CA+92663&benchmark=Public_AR_Current&vintage=Current_Current&format=json",
+      "precision": "address-range interpolation",
+      "reviewedOn": "2026-10-19"
+    },
+    "hours": [
+      {
+        "id": "weekday",
+        "days": ["Tuesday", "Wednesday", "Thursday", "Friday"],
+        "start": "15:00",
+        "end": "19:00",
+        "restriction": "none",
+        "status": "primary",
+        "sourceId": "src-cw-billys-at-the-beach-newport-beach-location",
+        "notes": "none"
+      },
+      {
+        "id": "saturday",
+        "days": ["Saturday"],
+        "start": "11:30",
+        "end": "15:30",
+        "restriction": "conditional",
+        "status": "primary",
+        "sourceId": "src-cw-billys-at-the-beach-newport-beach-location",
+        "notes": "conditional"
+      },
+      {
+        "id": "sunday",
+        "days": ["Sunday"],
+        "start": "10:00",
+        "end": "14:00",
+        "restriction": "conditional",
+        "status": "primary",
+        "sourceId": "src-cw-billys-at-the-beach-newport-beach-location",
+        "notes": "conditional"
+      }
+    ],
+    "menu": [
+      {
+        "id": "calamari",
+        "name": "Happy-hour calamari",
+        "kind": "food",
+        "priceCents": 1000,
+        "tags": ["calamari", "seafood"],
+        "sourceId": "src-cw-billys-at-the-beach-newport-beach-happy-hour-menu",
+        "status": "primary",
+        "windowIds": ["weekday", "saturday", "sunday"]
+      },
+      {
+        "id": "blue-hawaiian",
+        "name": "Happy-hour Blue Hawaiian",
+        "kind": "drink",
+        "priceCents": 1000,
+        "tags": ["cocktail"],
+        "sourceId": "src-cw-billys-at-the-beach-newport-beach-happy-hour-menu",
+        "status": "primary",
+        "windowIds": ["weekday", "saturday", "sunday"]
+      }
+    ],
+    "foodTags": ["calamari", "seafood"],
+    "drinkTags": ["cocktail"],
+    "atmosphereTags": [],
+    "sources": [
+      {
+        "id": "src-cw-billys-at-the-beach-newport-beach-location",
+        "url": "https://www.billysatthebeach.net/",
+        "type": "primary",
+        "publisherRole": "restaurant",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "reviewMethod": "agent-source-inspection",
+        "publisherUpdatedOn": null,
+        "note": "agent-source-inspection. Visit Us gives branch address; Happy Hour is Daily block specifies Tuesday-Friday 15:00-19:00, Saturday open-15:30, Sunday open-14:00, Monday closed: agent-source-inspection. Visit Us gives branch address; Happy Hour is Daily block specifies Tuesday-Friday 15:00-19:00, Saturday open-15:30, Sunday open-14:00, Monday closed. Adjacent operating hours establish Saturday opening 11:30 and Sunday opening 10:00; weekend starts are those published opening times, not separately printed HH starts. Publication date not stated."
+      },
+      {
+        "id": "src-cw-billys-at-the-beach-newport-beach-happy-hour-menu",
+        "url": "https://www.billysatthebeach.net/menus/happy-hour",
+        "type": "primary",
+        "publisherRole": "restaurant",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "reviewMethod": "agent-source-inspection",
+        "publisherUpdatedOn": null,
+        "note": "agent-source-inspection. HAPPY HOUR - DRINKS lists HH Blue Hawaiian $10; HAPPY HOUR - FOOD lists HH Calamari $10: agent-source-inspection. HAPPY HOUR - DRINKS lists HH Blue Hawaiian $10; HAPPY HOUR - FOOD lists HH Calamari $10. Branch address appears at bottom. No menu publication date displayed."
+      },
+      {
+        "id": "src-cw-billys-at-the-beach-newport-beach-census",
+        "url": "https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?address=2751+West+Coast+Hwy%2C+Newport+Beach%2C+CA+92663&benchmark=Public_AR_Current&vintage=Current_Current&format=json",
+        "type": "primary",
+        "publisherRole": "government",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "reviewMethod": "agent-source-inspection",
+        "publisherUpdatedOn": null,
+        "geography": {
+          "countyGeoid": "06059",
+          "queryAddress": "2751 West Coast Hwy, Newport Beach, CA 92663",
+          "submittedAddress": "2751 West Coast Hwy, Newport Beach, CA 92663",
+          "matchedAddress": "2751 W COAST HWY, NEWPORT BEACH, CA, 92663",
+          "lat": 33.61805312646,
+          "lng": -117.919987489017,
+          "benchmark": "Public_AR_Current",
+          "vintage": "Current_Current"
+        },
+        "note": "result.addressMatches[0].coordinates and geographies.Counties[0].GEOID: Matched 2751 W COAST HWY, NEWPORT BEACH, CA, 92663; street-range interpolation. Suites from official branch evidence are not geocoded separately."
+      }
+    ],
+    "notes": "Reviewer method: agent-source-inspection, not human review. Weekend starts depend on published operating hours and can change on special-event days. Homepage branch schedule excludes Monday despite generic daily heading. No seating or holiday exclusion identified on retained pages; confirm availability. Government county/address match reviewed; coordinates are street-range estimates. Review uses selected independently authored facts only; no source-content license is represented. Location is government street-range interpolation where resolved."
+  },
+  {
+    "id": "cw-mayfield-san-juan-capistrano",
+    "name": "Mayfield Restaurant & Marketplace",
+    "neighborhood": "San Juan Capistrano",
+    "address": "31761 Camino Capistrano, San Juan Capistrano, CA 92675",
+    "county": {
+      "geoid": "06059",
+      "sourceId": "src-cw-mayfield-san-juan-capistrano-census",
+      "reviewedOn": "2026-10-19",
+      "status": "primary"
+    },
+    "coordinates": {
+      "lat": 33.501644384133,
+      "lng": -117.662782792449,
+      "sourceUrl": "https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?address=31761+Camino+Capistrano%2C+San+Juan+Capistrano%2C+CA+92675&benchmark=Public_AR_Current&vintage=Current_Current&format=json",
+      "precision": "address-range interpolation",
+      "reviewedOn": "2026-10-19"
+    },
+    "hours": [
+      {
+        "id": "afternoon",
+        "days": ["Wednesday", "Thursday", "Friday", "Sunday"],
+        "start": "14:30",
+        "end": "18:00",
+        "restriction": "none",
+        "status": "primary",
+        "sourceId": "src-cw-mayfield-san-juan-capistrano-happy-hour",
+        "notes": "none"
+      },
+      {
+        "id": "tuesday",
+        "days": ["Tuesday"],
+        "start": "17:00",
+        "end": "18:00",
+        "restriction": "conditional",
+        "status": "primary",
+        "sourceId": "src-cw-mayfield-san-juan-capistrano-happy-hour",
+        "notes": "conditional"
+      }
+    ],
+    "menu": [
+      {
+        "id": "nuts",
+        "name": "Spiced nuts",
+        "kind": "food",
+        "priceCents": 600,
+        "tags": ["nuts"],
+        "sourceId": "src-cw-mayfield-san-juan-capistrano-happy-hour",
+        "status": "primary",
+        "windowIds": ["afternoon", "tuesday"]
+      },
+      {
+        "id": "pilsner",
+        "name": "pFriem pilsner on draft",
+        "kind": "drink",
+        "priceCents": 800,
+        "tags": ["beer", "pilsner"],
+        "sourceId": "src-cw-mayfield-san-juan-capistrano-happy-hour",
+        "status": "primary",
+        "windowIds": ["afternoon", "tuesday"]
+      }
+    ],
+    "foodTags": ["nuts"],
+    "drinkTags": ["beer", "pilsner"],
+    "atmosphereTags": [],
+    "sources": [
+      {
+        "id": "src-cw-mayfield-san-juan-capistrano-happy-hour",
+        "url": "https://www.mayfieldoc.com/happy-hour",
+        "type": "primary",
+        "publisherRole": "restaurant",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "reviewMethod": "agent-source-inspection",
+        "publisherUpdatedOn": null,
+        "note": "agent-source-inspection. Heading advertises Sunday-Friday 14:30-18:00 subject to opening hours: agent-source-inspection. Heading advertises Sunday-Friday 14:30-18:00 subject to opening hours. HOURS OF OPERATION excludes Monday and Tuesday before 17:00. Food lists nuts $6; $8 DRAFT BEERS includes pFriem Pilsner. FIND US supplies address. Browser footer TERMS and PRIVACY links both resolve back to this same happy-hour URL, with no policy text supplied. Menu publication date not stated."
+      },
+      {
+        "id": "src-cw-mayfield-san-juan-capistrano-census",
+        "url": "https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?address=31761+Camino+Capistrano%2C+San+Juan+Capistrano%2C+CA+92675&benchmark=Public_AR_Current&vintage=Current_Current&format=json",
+        "type": "primary",
+        "publisherRole": "government",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "reviewMethod": "agent-source-inspection",
+        "publisherUpdatedOn": null,
+        "geography": {
+          "countyGeoid": "06059",
+          "queryAddress": "31761 Camino Capistrano, San Juan Capistrano, CA 92675",
+          "submittedAddress": "31761 Camino Capistrano, San Juan Capistrano, CA 92675",
+          "matchedAddress": "31761 CAM CAPISTRANO, SAN JUAN CAPISTRANO, CA, 92675",
+          "lat": 33.501644384133,
+          "lng": -117.662782792449,
+          "benchmark": "Public_AR_Current",
+          "vintage": "Current_Current"
+        },
+        "note": "result.addressMatches[0].coordinates and geographies.Counties[0].GEOID: Matched 31761 CAM CAPISTRANO, SAN JUAN CAPISTRANO, CA, 92675; street-range interpolation. Suites from official branch evidence are not geocoded separately."
+      }
+    ],
+    "notes": "Reviewer method: agent-source-inspection, not human review. Tuesday 17:00 start applies the page's explicit closure exception; Monday omitted because closed. Saturday excluded by advertised Sunday-Friday schedule. Exact listed prices retained, with no assumption that every listed item is discounted from a regular price. No seating/holiday exclusion established. Government county/address match reviewed; coordinates are street-range estimates. Review uses selected independently authored facts only; no source-content license is represented. Location is government street-range interpolation where resolved."
+  },
+  {
+    "id": "cw-coyote-grill-laguna-beach",
+    "name": "Coyote Grill - Laguna Beach",
+    "neighborhood": "South Laguna Beach",
+    "address": "31621 Coast Hwy, Laguna Beach, CA 92651",
+    "county": {
+      "geoid": "06059",
+      "sourceId": "src-cw-coyote-grill-laguna-beach-census",
+      "reviewedOn": "2026-10-19",
+      "status": "primary"
+    },
+    "coordinates": {
+      "lat": 33.50325806335,
+      "lng": -117.745040315855,
+      "sourceUrl": "https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?address=31621+Coast+Hwy%2C+Laguna+Beach%2C+CA+92651&benchmark=Public_AR_Current&vintage=Current_Current&format=json",
+      "precision": "address-range interpolation",
+      "reviewedOn": "2026-10-19"
+    },
+    "hours": [
+      {
+        "id": "bar-standard",
+        "days": [
+          "Monday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+          "Sunday"
+        ],
+        "start": "15:00",
+        "end": "18:00",
+        "restriction": "bar-only",
+        "status": "primary",
+        "sourceId": "src-cw-coyote-grill-laguna-beach-daily-event",
+        "notes": "bar-only"
+      },
+      {
+        "id": "bar-tuesday",
+        "days": ["Tuesday"],
+        "start": "15:00",
+        "end": "21:00",
+        "restriction": "bar-only",
+        "status": "primary",
+        "sourceId": "src-cw-coyote-grill-laguna-beach-tuesday-event",
+        "notes": "bar-only"
+      }
+    ],
+    "menu": [
+      {
+        "id": "bar-chicken-taco",
+        "name": "Chicken taco, one, bar happy hour",
+        "kind": "food",
+        "priceCents": 625,
+        "tags": ["tacos", "chicken"],
+        "sourceId": "src-cw-coyote-grill-laguna-beach-menu",
+        "status": "primary",
+        "windowIds": ["bar-standard", "bar-tuesday"]
+      },
+      {
+        "id": "margarita",
+        "name": "Happy-hour margarita",
+        "kind": "drink",
+        "priceCents": 850,
+        "tags": ["margarita", "cocktail"],
+        "sourceId": "src-cw-coyote-grill-laguna-beach-menu",
+        "status": "primary",
+        "windowIds": ["bar-standard", "bar-tuesday"]
+      }
+    ],
+    "foodTags": ["tacos", "chicken"],
+    "drinkTags": ["margarita", "cocktail"],
+    "atmosphereTags": [],
+    "sources": [
+      {
+        "id": "src-cw-coyote-grill-laguna-beach-daily-event",
+        "url": "https://www.coyotegrill.tv/events/happy-hour",
+        "type": "primary",
+        "publisherRole": "restaurant",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "reviewMethod": "agent-source-inspection",
+        "publisherUpdatedOn": null,
+        "note": "agent-source-inspection. HAPPY HOUR event states every day 15:00-18:00: agent-source-inspection. HAPPY HOUR event states every day 15:00-18:00. Location footer supplies street address and closures: 14:00 closing on Super Bowl day, July 4 and Halloween; closed Thanksgiving, Christmas Eve and Christmas Day. No publication date displayed."
+      },
+      {
+        "id": "src-cw-coyote-grill-laguna-beach-tuesday-event",
+        "url": "https://www.coyotegrill.tv/events/taco-tuesday",
+        "type": "primary",
+        "publisherRole": "restaurant",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "reviewMethod": "agent-source-inspection",
+        "publisherUpdatedOn": null,
+        "note": "agent-source-inspection. TACO TUESDAY event identifies weekly Tuesday 15:00-21:00 and explicitly extends happy hour through that entire interval: agent-source-inspection. TACO TUESDAY event identifies weekly Tuesday 15:00-21:00 and explicitly extends happy hour through that entire interval. Same branch footer. No publication date displayed."
+      },
+      {
+        "id": "src-cw-coyote-grill-laguna-beach-menu",
+        "url": "https://www.coyotegrill.tv/menus",
+        "type": "primary",
+        "publisherRole": "restaurant",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "reviewMethod": "agent-source-inspection",
+        "publisherUpdatedOn": null,
+        "note": "agent-source-inspection. Bar Happy Hour subsection: Chicken Taco a la carte $6.25, HH Margarita $8.50; bar seating and no takeout required: agent-source-inspection. Bar Happy Hour subsection: Chicken Taco a la carte $6.25, HH Margarita $8.50; bar seating and no takeout required. Separate Dining Room Happy Hour uses different food offerings and repeats no takeout; those food prices are not substituted for bar items. No publication date displayed."
+      },
+      {
+        "id": "src-cw-coyote-grill-laguna-beach-census",
+        "url": "https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?address=31621+Coast+Hwy%2C+Laguna+Beach%2C+CA+92651&benchmark=Public_AR_Current&vintage=Current_Current&format=json",
+        "type": "primary",
+        "publisherRole": "government",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "reviewMethod": "agent-source-inspection",
+        "publisherUpdatedOn": null,
+        "geography": {
+          "countyGeoid": "06059",
+          "queryAddress": "31621 Coast Hwy, Laguna Beach, CA 92651",
+          "submittedAddress": "31621 Coast Hwy, Laguna Beach, CA 92651",
+          "matchedAddress": "31621 S COAST HWY, LAGUNA BEACH, CA, 92651",
+          "lat": 33.50325806335,
+          "lng": -117.745040315855,
+          "benchmark": "Public_AR_Current",
+          "vintage": "Current_Current"
+        },
+        "note": "result.addressMatches[0].coordinates and geographies.Counties[0].GEOID: Matched 31621 S COAST HWY, LAGUNA BEACH, CA, 92651; street-range interpolation. Suites from official branch evidence are not geocoded separately."
+      }
+    ],
+    "notes": "Reviewer method: agent-source-inspection, not human review. This record models bar seating so its single-taco food price cannot be matched as a dining-room plate. No happy-hour takeout. Listed closure days override recurring windows: Super Bowl day, July 4, Halloween, Thanksgiving, Christmas Eve and Christmas Day. Monday football extension not modeled because seasonal applicability is unresolved. Government county/address match reviewed; coordinates are street-range estimates. Review uses selected independently authored facts only; no source-content license is represented. Location is government street-range interpolation where resolved."
+  }
+]
