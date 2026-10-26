@@ -662,6 +662,7 @@ test("direct menu-link import extracts the actual page without depending on sear
     apiKey: "test",
     searchKey: "test",
     sourceUrl: "https://noon-bistro.example/",
+    pageReader: async () => null,
     fetchImpl: async (url, o) => {
       if (url.endsWith("/search")) {
         searches++;
@@ -730,6 +731,7 @@ test("import retains the explicit city and address even when the contact section
     apiKey: "test",
     searchKey: "test",
     sourceUrl: "https://noon-bistro.example/",
+    pageReader: async () => null,
     fetchImpl: async (url, o) =>
       url.endsWith("/extract")
         ? {
@@ -743,4 +745,25 @@ test("import retains the explicit city and address even when the contact section
         : mock(url, o),
   });
   assert.equal(r.candidates.length, 1);
+});
+
+test("a readable original menu imports without a search or extraction-service call", async () => {
+  const mock = fetcher(noonCandidate);
+  let external = 0;
+  const r = await searchPlaces("happy hour in Downey", {
+    apiKey: "test",
+    searchKey: "test",
+    sourceUrl: "https://noon-bistro.example/",
+    pageReader: async () => ({
+      title: "Noon Bistro Downey",
+      raw_content: noonSource.content,
+    }),
+    fetchImpl: async (url, o) => {
+      if (url.includes("tavily")) external++;
+      return mock(url, o);
+    },
+  });
+  assert.equal(external, 0);
+  assert.equal(r.candidates.length, 1);
+  assert.equal(r.provider, "Menu link");
 });

@@ -1,3 +1,4 @@
+import { readPublicMenu } from "./public-source.js";
 import { serviceError } from "./ai.js";
 import { normalizeCandidate, identity, publicUrl } from "../src/candidates.js";
 import { restaurants } from "../src/data.js";
@@ -124,6 +125,7 @@ export async function searchPlaces(
     fetchImpl = fetch,
     target = null,
     sourceUrl = null,
+    pageReader = readPublicMenu,
     savedCandidates = [],
   } = {},
 ) {
@@ -271,42 +273,49 @@ export async function searchPlaces(
         );
       }
   if (sourceUrl) {
-    let response;
+    let page = null;
     try {
-      response = await fetchImpl("https://api.tavily.com/extract", {
-        method: "POST",
-        headers: {
-          Authorization: "Bearer " + searchKey,
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          urls: [sourceUrl],
-          extract_depth: "basic",
-          format: "text",
-          include_images: false,
-        }),
-        signal: AbortSignal.timeout(20000),
-      });
-      if (!response.ok) throw Error();
-      const data = await response.json();
-      const page = data.results?.find(
-        (r) =>
-          r.url === sourceUrl &&
-          typeof r.raw_content === "string" &&
-          r.raw_content.trim(),
-      );
-      if (!page) throw Error();
-      unique.set(sourceUrl, {
-        url: sourceUrl,
-        title: page.raw_content.slice(0, 200),
-        raw_content: page.raw_content,
-      });
-    } catch {
-      throw serviceError(
-        "The menu link could not be read. Nothing was added; try a public text menu page.",
-        422,
-      );
+      const direct = await pageReader(sourceUrl);
+      if (direct?.raw_content && /happy[\s-]*hour/i.test(direct.raw_content))
+        page = direct;
+    } catch {}
+    if (!page) {
+      try {
+        const response = await fetchImpl("https://api.tavily.com/extract", {
+          method: "POST",
+          headers: {
+            Authorization: "Bearer " + searchKey,
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            urls: [sourceUrl],
+            extract_depth: "basic",
+            format: "text",
+            include_images: false,
+          }),
+          signal: AbortSignal.timeout(20000),
+        });
+        if (!response.ok) throw Error();
+        const data = await response.json();
+        page = data.results?.find(
+          (r) =>
+            r.url === sourceUrl &&
+            typeof r.raw_content === "string" &&
+            r.raw_content.trim(),
+        );
+        if (!page) throw Error();
+      } catch {
+        throw serviceError(
+          "The menu link could not be read. Nothing was added; try a public text menu page.",
+          422,
+        );
+      }
     }
+    unique.set(sourceUrl, {
+      url: sourceUrl,
+      title: page.title || page.raw_content.slice(0, 200),
+      raw_content: page.raw_content,
+    });
   }
   const searchData = { results: [...unique.values()] };
   const passages = [];
@@ -664,7 +673,7 @@ export async function searchPlaces(
       rejected,
     },
     candidates,
-    provider: "Tavily",
+    provider: sourceUrl ? "Menu link" : "Tavily",
     searchEntryHtml: "",
   };
 }
