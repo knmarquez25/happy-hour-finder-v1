@@ -1,6 +1,6 @@
 # Happy Hour Finder: browse first, ask AI when you want help
 
-**Public build:** Pending deployment of this iteration. The local working build runs at `http://127.0.0.1:4176`; that is not a shareable public link.
+**Public build:** [Happy Hour Finder](https://knmarquez25.github.io/happy-hour-finder-v1/). Tested in a fresh unauthenticated Chrome session on October 25, 2026. No account or API key is needed by visitors.
 
 **Final submission destination:** [Bruin Learn — Final Build](https://bruinlearn.ucla.edu/courses/237790/discussion_topics/1491803). This discussion requires a link to the build in the class gallery and answers to steps 1–6. No separate gallery link appears in the discussion instructions; its destination still needs to be established. Nothing has been posted. Replace this note with the actual gallery-post link once the public build is ready and posted.
 
@@ -20,7 +20,7 @@
 
 ![Browse-first Happy Hour Finder](assets/ai-discovery-desktop.png)
 
-Run `npm ci` and `npm start` with Node 22+. Browse all **111 researched restaurants** at the local URL above. Genuine AI suggestions require the server's private `GEMINI_API_KEY`; setup and public-host instructions are in [deployment.md](deployment.md). Without it, browsing and menu selection work, and the helper states that AI is unavailable.
+Open the public build and browse all **111 researched restaurants** immediately. Type an area, food/drink preference, or budget in the helper and submit. Expand a menu, choose your own items, and Clear request to restore the full list. The backend holds a private Gemini key; visitors do not supply one. Local developer instructions (`npm ci`, `npm start`, Node 22+) and the GitHub Pages + Render Free setup are in [deployment.md](deployment.md).
 
 Example request: **“Tacos and margaritas around $25.”** With AI configured, inspect its interpreted criteria and browse matching menus. The reviewed dataset includes Coyote Grill in Laguna Beach: a bar happy-hour chicken taco ($6.25) and margarita ($8.50) make a **$14.75 subtotal** before tax, tip, and fees, under a documented shared bar-only offer window. This is published-source evidence from the stored snapshot, not a current restaurant guarantee. Users may choose different menu items instead. Clear request restores the full list.
 
@@ -54,7 +54,7 @@ The user decides whether to supply an area, which preferences matter, whether to
 
 Improvements: no required dropdowns or area on entry; one shared result list; real server-side AI interpretation integration; menu-first cards; custom item selection; source and restriction visibility; graceful AI failure and Clear behavior.
 
-**76/76 unit and HTTP tests passed**, including 23 new checks for this iteration. The new browser regression passed at four viewport widths; the preserved previous interface passed its existing browser checks at six widths. Checks verify browsing all 111 records, deterministic filtering and arithmetic, optional/overnight timing, unknown prices, conditional offers, malformed AI responses, HTTP protections, and desktop/mobile flows. External AI responses are fixtures in these checks. **Live model accuracy and a user study have not yet been measured.** Full scope and reproducibility are in [ai-discovery-evaluation.md](ai-discovery-evaluation.md).
+**76/76 unit and HTTP tests passed**, including 23 new checks for this iteration. The new browser regression passed at four viewport widths; the preserved previous interface passed its existing browser checks at six widths. Checks verify browsing all 111 records, deterministic filtering and arithmetic, optional/overnight timing, unknown prices, conditional offers, malformed AI responses, HTTP protections, and desktop/mobile flows. External AI responses are fixtures in these checks. Three additional **live smoke cases passed (3/3)** from the public GitHub Pages app in a fresh unauthenticated Chrome session: tacos/margaritas/$25, area-only Pasadena, and a clarification for “near me.” The first two matched every expected preference field; the third asked for an area and preserved browsing. Warm response times were about 0.81–1.24 seconds. This is a small integration check, not general model accuracy or a user study. Full scope and reproducibility are in [ai-discovery-evaluation.md](ai-discovery-evaluation.md).
 
 The unchanged historical engine benchmark still measures **1/15 → 12/15** on development cases and **0/5 → 4/5** on held-out cases. These are prior engine results, not scores for the new AI feature.
 
@@ -64,7 +64,7 @@ Challenge: a Friday oyster price that requires the documented sparkling-wine gla
 
 Menus become outdated, restaurant coverage and item transcription are incomplete, and the model may misunderstand a request even when its response has a valid shape. Reviewed sources, visible interpreted criteria, evidence labels, explicit restrictions, server-side validation, and deterministic calculations reduce these risks without guaranteeing correctness. Source-review dates are not live confirmation. No allergy-safety or current-availability guarantee is made.
 
-API keys stay server-side. Requests have length limits, timeouts, and request quotas; users see that their submitted text goes to Google Gemini. Public deployment, a real API check, account usage limits, live-model evaluation, and user testing remain necessary before calling this a fully evaluated public AI product.
+API keys stay server-side. Requests have length limits, timeouts, and request quotas; users see that their submitted text goes to Google Gemini. The app is publicly deployed on GitHub Pages with a Render Free backend and has passed a small live AI check. Free quotas may make AI temporarily unavailable, and Render may take 50 seconds or more to wake after inactivity. Broader live-model evaluation, account usage monitoring, and user testing remain necessary.
 
 ## 6. What I want to build next
 

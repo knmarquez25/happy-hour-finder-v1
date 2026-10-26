@@ -4,7 +4,7 @@
 
 The approved iteration opens all **111 researched restaurants**, with no required area or dropdown filters. Describe an area, food/drink preference, or flexible budget in one request box; the server uses Google Gemini to extract optional criteria, and the app updates one menu-first results list. Browse menu items, choose your own order, and see the menu-price subtotal with source and compatibility notes. Restaurant data remains curated, not live-crawled.
 
-Run `npm ci` and `npm start` (Node 22+), then open <http://127.0.0.1:4176>. Browsing works without a key. Genuine AI needs a private server-side `GEMINI_API_KEY`; without it the helper states that AI is unavailable. This implementation has not been publicly deployed or live-model evaluated yet.
+Run `npm ci` and `npm start` (Node 22+), then open <http://127.0.0.1:4176>. Browsing works without a key. Genuine AI needs a private server-side `GEMINI_API_KEY`; without it the helper states that AI is unavailable. The public build is live at <https://knmarquez25.github.io/happy-hour-finder-v1/>, using a Render Free backend and Gemini 3.5 Flash-Lite. Three live smoke cases passed in a fresh unauthenticated Chrome session; this small check is not general model accuracy.
 
 See [setup and recommended Render hosting](docs/deployment.md), [six-step final submission draft](docs/final-submission.md), and [new evaluation scope](docs/ai-discovery-evaluation.md). Run `npm test` and, with the server running and Chrome installed, `npm run test:discovery-browser`.
 

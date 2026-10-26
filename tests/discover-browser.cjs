@@ -10,6 +10,14 @@ const { chromium } = require("playwright");
     const page = await browser.newPage({
       viewport: { width: 1280, height: 1000 },
     });
+    // UI regressions use local fixtures; the real separate-origin path is
+    // exercised by discovery-cross-origin.cjs and opt-in live-smoke.cjs.
+    await page.route("**/src/config.js", (route) =>
+      route.fulfill({
+        contentType: "text/javascript",
+        body: 'export const apiBase = "";',
+      }),
+    );
     const errors = [];
     page.on("pageerror", (e) => errors.push(e.message));
     await page.goto(base);
