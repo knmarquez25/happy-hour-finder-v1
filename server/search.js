@@ -209,7 +209,7 @@ export async function searchPlaces(
         },
         body: JSON.stringify({
           query: searchQuery,
-          search_depth: "basic",
+          search_depth: index > 0 ? "advanced" : "basic",
           auto_parameters: false,
           max_results: 12,
           include_answer: false,

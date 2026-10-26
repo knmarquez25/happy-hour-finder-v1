@@ -31,7 +31,7 @@ function fetcher(extracted = candidate, first = grounded()) {
     const body = JSON.parse(options.body);
     if (url === "https://api.tavily.com/search") {
       assert.equal(url, "https://api.tavily.com/search");
-      assert.equal(body.search_depth, "basic");
+      assert.ok(["basic", "advanced"].includes(body.search_depth));
       assert.equal(body.auto_parameters, false);
       assert.match(body.query, /California/);
       return { ok: true, json: async () => first };
@@ -596,7 +596,7 @@ test("a relevant city menu below the first eight search results is considered be
   assert.equal(r.candidates[0].sourceUrl, noonSource.url);
 });
 
-test("a city-and-time request uses two bounded basic searches and rejects an explicit later happy hour", async () => {
+test("a city-and-time request uses bounded basic and deeper searches and rejects an explicit later happy hour", async () => {
   const requests = [];
   const mocked = fetcher(
     { ...noonCandidate, hoursText: "Monday-Friday3pm-6pm" },
@@ -619,10 +619,10 @@ test("a city-and-time request uses two bounded basic searches and rejects an exp
     },
   });
   assert.equal(requests.length, 2);
+  assert.deepEqual(requests.map(b => b.search_depth), ["basic", "advanced"]);
   assert.ok(
     requests.every(
       (b) =>
-        b.search_depth === "basic" &&
         b.auto_parameters === false &&
         b.max_results === 12,
     ),
