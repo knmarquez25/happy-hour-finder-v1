@@ -276,6 +276,8 @@ export function initReviews({ endpoint, onApproved, onBrowse }) {
           signal: controller.signal,
         });
         if (own !== serial) return;
+        if (result.diagnostics)
+          console.info("Discovery review counts", result.diagnostics);
         if (result.saved) update(result.records || []);
         else {
           transient = (result.candidates || []).map((payload, n) => ({
