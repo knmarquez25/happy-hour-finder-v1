@@ -194,14 +194,9 @@ export async function searchPlaces(
   const plan = requestedSchedule(query);
   const queries = [retrievalQuery];
   if (searchArea && (plan.day || plan.time)) {
-    const timeWords =
-      plan.time === "12:00"
-        ? "noon 12pm"
-        : plan.time === "00:00"
-          ? "midnight late night"
-          : plan.time || "";
+    const hour = plan.time ? Number(plan.time.slice(0, 2)) % 12 || 12 : null;
     queries.push(
-      `${searchArea} happy hour ${timeWords || plan.day} menu`,
+      `"${searchArea}" "happy hour" "${hour || plan.day}"`,
     );
   }
   const attempts = await Promise.allSettled(
