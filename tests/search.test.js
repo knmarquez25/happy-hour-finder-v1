@@ -29,7 +29,7 @@ function fetcher(extracted = candidate, first = grounded()) {
   let n = 0;
   return async (url, options) => {
     const body = JSON.parse(options.body);
-    if (n++ === 0) {
+    if (url === "https://api.tavily.com/search") {
       assert.equal(url, "https://api.tavily.com/search");
       assert.equal(body.search_depth, "basic");
       assert.equal(body.auto_parameters, false);
@@ -529,20 +529,24 @@ const noonSource = {
 };
 test("explicit city retrieval searches menus without losing the original weekday and noon constraints", async () => {
   const query = "happy hour in Downey noon on Monday";
-  let webQuery, originalRequest;
+  const webQueries = [];
+  let originalRequest;
   const mocked = fetcher(noonCandidate, { results: [noonSource] });
   await searchPlaces(query, {
     apiKey: "test",
     searchKey: "test",
     fetchImpl: async (url, o) => {
       const b = JSON.parse(o.body);
-      if (url.includes("tavily")) webQuery = b.query;
+      if (url.includes("tavily")) webQueries.push(b.query);
       else originalRequest = JSON.parse(b.contents[0].parts[0].text).request;
       return mocked(url, o);
     },
   });
-  assert.match(webQuery, /Downey/);
-  assert.doesNotMatch(webQuery, /noon|Monday|Los Angeles OR Orange County/i);
+  assert.match(webQueries[0], /Downey/);
+  assert.doesNotMatch(
+    webQueries[0],
+    /noon|Monday|Los Angeles OR Orange County/i,
+  );
   assert.equal(
     originalRequest,
     query,
@@ -590,4 +594,41 @@ test("a relevant city menu below the first eight search results is considered be
   });
   assert.equal(r.candidates.length, 1);
   assert.equal(r.candidates[0].sourceUrl, noonSource.url);
+});
+
+test("a city-and-time request uses two bounded basic searches and rejects an explicit later happy hour", async () => {
+  const requests = [];
+  const mocked = fetcher(
+    { ...noonCandidate, hoursText: "Monday-Friday3pm-6pm" },
+    {
+      results: [
+        {
+          ...noonSource,
+          content:
+            "Noon Bistro Downey Happy hour Monday-Friday3pm-6pm. Domestic $3.50;Import $4.50",
+        },
+      ],
+    },
+  );
+  const r = await searchPlaces("happy hour in Downey noon on Monday", {
+    apiKey: "test",
+    searchKey: "test",
+    fetchImpl: async (url, o) => {
+      if (url.includes("tavily")) requests.push(JSON.parse(o.body));
+      return mocked(url, o);
+    },
+  });
+  assert.equal(requests.length, 2);
+  assert.ok(
+    requests.every(
+      (b) =>
+        b.search_depth === "basic" &&
+        b.auto_parameters === false &&
+        b.max_results === 12,
+    ),
+  );
+  assert.match(requests[1].query, /Downey.*Monday.*noon/i);
+  assert.ok(requests.every((b) => b.exclude_domains.includes("yelp.com")));
+  assert.equal(r.candidates.length, 0);
+  assert.equal(r.diagnostics.rejected.schedule, 1);
 });

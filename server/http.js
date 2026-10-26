@@ -255,7 +255,7 @@ export function createApp({
             "Enter a request between 1 and 1,000 characters.",
             400,
           );
-        reserve(req, res, 2);
+        reserve(req, res, 3);
         try {
           const result = await searchImpl(body.query, {
             apiKey,
