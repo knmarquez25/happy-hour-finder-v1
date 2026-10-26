@@ -243,3 +243,65 @@ test("AI extraction failures are distinguished from a search-service failure", a
     /AI menu extraction.*429/i,
   );
 });
+test("a menu excerpt may use restaurant name and location elsewhere on the same cited page", async () => {
+  const quote = "Happy hour includes a Classic martini.";
+  const c = {
+    ...candidate,
+    name: "New Bistro",
+    location: "Pasadena",
+    items: [{ name: "Classic martini", kind: "drink", priceCents: null }],
+    evidence: quote,
+  };
+  const r = await searchPlaces("martinis", {
+    apiKey: "test",
+    searchKey: "test",
+    fetchImpl: fetcher(c, {
+      results: [
+        {
+          url: candidate.sourceUrl,
+          title: "New Bistro — Pasadena menu",
+          content: quote,
+        },
+      ],
+    }),
+  });
+  assert.equal(r.candidates.length, 1);
+  assert.equal(r.candidates[0].items[0].priceCents, null);
+});
+test("search context is bounded and known restaurants are excluded before AI chooses candidates", async () => {
+  let calls = 0;
+  await searchPlaces("martinis", {
+    apiKey: "test",
+    searchKey: "test",
+    fetchImpl: async (url, o) => {
+      if (calls++ === 0)
+        return {
+          ok: true,
+          json: async () => ({
+            results: Array.from({ length: 12 }, () => ({
+              url: candidate.sourceUrl,
+              title: "New Bistro Pasadena",
+              content: text,
+              raw_content: "irrelevant ".repeat(4000) + text,
+            })),
+          }),
+        };
+      const body = JSON.parse(o.body);
+      assert.ok(body.contents[0].parts[0].text.length < 45000);
+      assert.match(body.systemInstruction.parts[0].text, /Joyce/);
+      return {
+        ok: true,
+        json: async () => ({
+          candidates: [
+            {
+              finishReason: "STOP",
+              content: {
+                parts: [{ text: JSON.stringify({ candidates: [] }) }],
+              },
+            },
+          ],
+        }),
+      };
+    },
+  });
+});
