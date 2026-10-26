@@ -291,7 +291,13 @@ export async function searchPlaces(
       .filter((v) => typeof v === "string")
       .join(" ")
       .toLowerCase();
+    // A home-page happy-hour schedule can be more relevant than a dedicated
+    // afternoon menu. This is a retrieval hint, never evidence of availability.
+    const hour = plan.time ? Number(plan.time.slice(0, 2)) % 12 || 12 : null;
+    const clockCue = hour && new RegExp(`\\b${hour}(?::[0-5]\\d)?\\s*(?:[ap]m|[-–—]\\s*\\d{1,2}(?::[0-5]\\d)?\\s*[ap]m)`, "i");
+    const scheduleCue = clockCue && happyHourWindows(text).some((window) => clockCue.test(window.slice(0, 450)));
     return (
+      (scheduleCue ? 40 : 0) +
       (row._scheduleQuery ? 20 : 0) +
       (searchArea && text.includes(searchArea.toLowerCase()) ? 100 : 0) +
       (/happy[\s-]*hour/i.test(row.title || "") ? 10 : 0) +
@@ -506,6 +512,7 @@ export async function searchPlaces(
       searchArea,
       searchCalls: queries.length,
       sourceHosts: passages.map((p) => new URL(p.url).hostname),
+      retrievedHosts: results.map((r) => { try { return new URL(r.url).hostname; } catch { return "invalid"; } }),
       extractedCount: rows.length,
       keptCount: candidates.length,
       rejected,

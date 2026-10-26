@@ -632,3 +632,19 @@ test("a city-and-time request uses two bounded basic searches and rejects an exp
   assert.equal(r.candidates.length, 0);
   assert.equal(r.diagnostics.rejected.schedule, 1);
 });
+
+test("a noon menu on a home page outranks eight explicit afternoon happy-hour menus", async () => {
+  const results = [
+    ...Array.from({length:8}, (_, n) => ({
+      url: `https://afternoon${n}.example/menu-happy-hour`,
+      title: "Downey Happy Hour menu",
+      content: "Downey happy hour Monday-Friday 3pm-6pm Martini $9"
+    })),
+    {...noonSource, url:"https://noon-bistro.example/", title:"Noon Bistro — Sports and Good Times"}
+  ];
+  const r = await searchPlaces("happy hour in Downey noon on Monday", {
+    apiKey:"test", searchKey:"test", fetchImpl:fetcher(noonCandidate,{results})
+  });
+  assert.equal(r.candidates.length,1);
+  assert.equal(r.candidates[0].sourceUrl,"https://noon-bistro.example/");
+});
