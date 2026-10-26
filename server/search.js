@@ -162,21 +162,25 @@ export async function searchPlaces(
       signal: AbortSignal.timeout(20000),
     });
   } catch {
-    throw serviceError(
-      "Free web search timed out. Your researched results are still available.",
-      503,
-    );
+    if (!target?.evidence)
+      throw serviceError(
+        "Free web search timed out. Your researched results are still available.",
+        503,
+      );
   }
-  if (!searchResponse.ok)
+  if (!searchResponse?.ok && !target?.evidence)
     throw serviceError(
       "Free web search is unavailable or its quota was reached. No paid fallback was used.",
       503,
     );
-  let searchData;
-  try {
-    searchData = await searchResponse.json();
-  } catch {
-    throw serviceError("Search returned an unreadable response.", 502);
+  let searchData = { results: [] };
+  if (searchResponse?.ok) {
+    try {
+      searchData = await searchResponse.json();
+    } catch {
+      if (!target?.evidence)
+        throw serviceError("Search returned an unreadable response.", 502);
+    }
   }
   const passages = [];
   const terms = [...new Set(query.toLowerCase().match(/[a-z]{3,}/g) || [])]

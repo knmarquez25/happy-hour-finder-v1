@@ -477,3 +477,35 @@ test("targeted menus can recover all items from saved venue-specific evidence wh
   assert.ok(!result.candidates[0].evidence.includes("Other Bistro"));
   assert.ok(!result.candidates[0].evidence.includes("Lobster"));
 });
+
+test("saved menu evidence remains usable when the free web search service is unavailable", async () => {
+  const target = {
+    ...candidate,
+    evidence:
+      "New Bistro Pasadena happy hour IKI martini $10; Truffle fries $7",
+  };
+  const extracted = {
+    ...candidate,
+    items: [
+      ...candidate.items,
+      { name: "Truffle fries", kind: "food", priceCents: 700 },
+    ],
+  };
+  const mocked = fetcher(extracted, { results: [] });
+  let first = true;
+  const result = await searchPlaces("New Bistro Pasadena menu", {
+    apiKey: "test",
+    searchKey: "test",
+    target,
+    fetchImpl: async (url, options) => {
+      const response = await mocked(url, options);
+      if (first) {
+        first = false;
+        return { ok: false, status: 429 };
+      }
+      return response;
+    },
+  });
+  assert.equal(result.candidates[0].items.length, 2);
+  assert.equal(result.candidates[0].previouslyCaptured, true);
+});
