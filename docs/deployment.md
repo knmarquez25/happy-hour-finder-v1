@@ -67,7 +67,7 @@ References: [structured output](https://ai.google.dev/gemini-api/docs/structured
 
 ## New-place discovery and owner review
 
-The new workflow uses a separate grounded Google Search call on `gemini-2.5-flash-lite`, followed by schema extraction on the existing Gemini model. This model is listed with free-tier search access; actual project eligibility and quotas must be tested. There is no paid-model fallback. A failed search preserves the researched list and displays the service error. Search is limited to LA and Orange County and six candidates per request; every saved offer needs a cited happy-hour passage naming the location and menu item. Citations/search summaries are unverified, not live restaurant confirmation.
+The new workflow uses Tavily basic web search followed by schema extraction on the existing Gemini model. The public Gemini 2.5 free-search attempt was rejected for this project; no paid Google grounding fallback is used. Tavily offers 1,000 free credits/month without a card; keep the account on Free with no pay-as-you-go. Automatic search-depth upgrades are disabled. There is no paid-model fallback. A failed search preserves the researched list and displays the service error. Search is limited to LA and Orange County and six candidates per request; every saved offer needs a cited happy-hour passage naming the location and menu item. Citations/search summaries are unverified, not live restaurant confirmation.
 
 Supabase Free provides durable candidates/evidence and owner Auth. Run `supabase/reviews.sql` in a dedicated project. Tables have RLS and no anon/authenticated grants. Create the owner's email/password user through the Supabase dashboard; the owner enters the password privately. Add these to Render's private environment, preserving the Gemini key:
 
@@ -75,7 +75,7 @@ Supabase Free provides durable candidates/evidence and owner Auth. Run `supabase
 - `SUPABASE_ANON_KEY`: legacy anon/public client key.
 - `SUPABASE_SERVICE_ROLE_KEY`: legacy service_role key, server only.
 - `OWNER_USER_ID`: the Auth user's UUID; never accept a client claim of ownership.
-- `SEARCH_MODEL=gemini-2.5-flash-lite`.
+- `TAVILY_API_KEY`: user enters privately in Render; never put it in frontend code.
 
 Rebuild/deploy the latest branch after saving. The public config endpoint exposes only the project URL and anon key, never the service role or owner password. Owner login goes directly to Supabase; the access token stays in memory and expires. Reloading requires signing in again. Every approval/rejection validates the token with Supabase and compares its user ID with `OWNER_USER_ID`. Disable public Auth signups if this project will only host the owner account.
 

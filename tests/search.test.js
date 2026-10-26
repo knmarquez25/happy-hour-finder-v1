@@ -16,21 +16,11 @@ const candidate = {
 };
 function grounded() {
   return {
-    candidates: [
+    results: [
       {
-        finishReason: "STOP",
-        content: { parts: [{ text }] },
-        groundingMetadata: {
-          groundingChunks: [
-            { web: { uri: candidate.sourceUrl, title: "Restaurant menu" } },
-          ],
-          groundingSupports: [
-            { segment: { text }, groundingChunkIndices: [0] },
-          ],
-          searchEntryPoint: {
-            renderedContent: "<p>Google search suggestions</p>",
-          },
-        },
+        url: candidate.sourceUrl,
+        title: "New Bistro Pasadena Happy Hour",
+        content: text,
       },
     ],
   };
@@ -40,8 +30,9 @@ function fetcher(extracted = candidate, first = grounded()) {
   return async (url, options) => {
     const body = JSON.parse(options.body);
     if (n++ === 0) {
-      assert.match(url, /gemini-2.5-flash-lite/);
-      assert.deepEqual(body.tools, [{ google_search: {} }]);
+      assert.equal(url, "https://api.tavily.com/search");
+      assert.equal(body.search_depth, "basic");
+      assert.equal(body.auto_parameters, false);
       return { ok: true, json: async () => first };
     }
     assert.match(url, /gemini-3.5-flash-lite/);
@@ -67,12 +58,13 @@ test("grounded discovery preserves a cited happy-hour item and unknown price", a
   };
   const result = await searchPlaces("martinis", {
     apiKey: "test",
+    searchKey: "search-test",
     fetchImpl: fetcher(c),
   });
   assert.equal(result.candidates.length, 1);
   assert.equal(result.candidates[0].items[0].priceCents, null);
   assert.equal(result.candidates[0].status, undefined);
-  assert.match(result.searchEntryHtml, /Google/);
+  assert.equal(result.provider, "Tavily");
 });
 test("uncited source, unrelated evidence and invalid prices cannot enter discovery", async () => {
   for (const bad of [
@@ -82,6 +74,7 @@ test("uncited source, unrelated evidence and invalid prices cannot enter discove
   ]) {
     const result = await searchPlaces("martini", {
       apiKey: "test",
+      searchKey: "search-test",
       fetchImpl: fetcher(bad),
     });
     assert.deepEqual(result.candidates, []);
@@ -92,6 +85,7 @@ test("search fails clearly without a key, quota or real citations", async () => 
   await assert.rejects(
     searchPlaces("martinis", {
       apiKey: "test",
+      searchKey: "search-test",
       fetchImpl: async () => ({ ok: false, status: 429 }),
     }),
     /free.*search|quota/i,
@@ -99,6 +93,7 @@ test("search fails clearly without a key, quota or real citations", async () => 
   await assert.rejects(
     searchPlaces("martini", {
       apiKey: "test",
+      searchKey: "search-test",
       fetchImpl: fetcher(candidate, {
         candidates: [{ finishReason: "STOP", content: { parts: [{ text }] } }],
       }),
@@ -182,4 +177,49 @@ test("approved Orange County menus match their county and food/drink combo prefe
     })[0].combo.totalCents,
     1200,
   );
+});
+test("free basic Tavily search supplies literal source passages without Google grounding", async () => {
+  let calls = 0;
+  const result = await searchPlaces("martinis", {
+    apiKey: "gemini-test",
+    searchKey: "tavily-test",
+    fetchImpl: async (url, options) => {
+      const body = JSON.parse(options.body);
+      if (calls++ === 0) {
+        assert.equal(url, "https://api.tavily.com/search");
+        assert.equal(options.headers.Authorization, "Bearer tavily-test");
+        assert.equal(body.search_depth, "basic");
+        assert.equal(body.auto_parameters, false);
+        return {
+          ok: true,
+          json: async () => ({
+            results: [
+              {
+                title: "New Bistro Pasadena Happy Hour",
+                url: candidate.sourceUrl,
+                content: text,
+              },
+            ],
+          }),
+        };
+      }
+      assert.equal(body.tools, undefined);
+      return {
+        ok: true,
+        json: async () => ({
+          candidates: [
+            {
+              finishReason: "STOP",
+              content: {
+                parts: [{ text: JSON.stringify({ candidates: [candidate] }) }],
+              },
+            },
+          ],
+        }),
+      };
+    },
+  });
+  assert.equal(result.candidates.length, 1);
+  assert.equal(result.provider, "Tavily");
+  assert.equal(calls, 2);
 });

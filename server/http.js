@@ -59,7 +59,7 @@ export function createApp({
     .filter(Boolean),
   fetchImpl = fetch,
   rateLimit = 10,
-  searchModel = process.env.SEARCH_MODEL || "gemini-2.5-flash-lite",
+  searchKey = process.env.TAVILY_API_KEY || "",
   searchImpl = searchPlaces,
   reviewStore = createReviewStore(),
 } = {}) {
@@ -253,7 +253,7 @@ export function createApp({
         try {
           const result = await searchImpl(body.query, {
             apiKey,
-            searchModel,
+            searchKey,
             model,
             fetchImpl,
           });

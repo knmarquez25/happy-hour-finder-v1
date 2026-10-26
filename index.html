@@ -8,7 +8,7 @@
       content="Browse researched happy-hour menus in LA and Orange County. Describe an area, food, or budget to get AI-guided suggestions, with published prices and source links."
     />
     <title>Happy Hour Finder | Ask & Browse</title>
-    <link rel="stylesheet" href="./src/discover.css?v=review-discovery-1" />
+    <link rel="stylesheet" href="./src/discover.css?v=review-discovery-2" />
   </head>
   <body>
     <a class="skip-link" href="#results-title">Skip to restaurants</a>
@@ -38,8 +38,9 @@
               aria-describedby="privacy request-note"
             ></textarea>
             <p class="privacy" id="privacy">
-              When you submit, your request is sent to Google Gemini. Free-tier
-              requests may be used to improve Google's products.
+              When you submit, your request is sent to Google Gemini and Tavily
+              for interpretation and web search. Gemini free-tier requests may
+              be used to improve Google's products.
             </p>
             <button class="primary" id="ask-button" type="submit">
               Find my happy hour <span aria-hidden="true">→</span>
@@ -183,7 +184,7 @@
     >
     <script
       type="module"
-      src="./src/discover-app.js?v=review-discovery-1"
+      src="./src/discover-app.js?v=review-discovery-2"
     ></script>
   </body>
 </html>

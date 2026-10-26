@@ -80,7 +80,7 @@ export function initReviews({ endpoint, onApproved, onBrowse }) {
             } catch {
               return "";
             }
-            return `<article class="restaurant-card pending-card" data-review-id="${esc(r.id)}"><div class="card-top"><div><h3>${esc(c.name)}</h3><p class="venue-location">${esc(c.location)}</p></div><span class="evidence-tag uncertain">${r.unsaved ? "Not saved" : "Needs owner verification"}</span></div><p class="small muted">Search evidence suggests this happy-hour offer. The owner has not confirmed the menu, price, or availability.</p>${c.items.map((i) => `<div class="menu-highlight"><span>${esc(i.name)}</span><strong>${i.priceCents === null ? "Price needs confirmation" : money(i.priceCents) + " · unverified"}</strong></div>`).join("")}<p class="small">${c.hoursText ? "Suggested hours (unverified): " + esc(c.hoursText) : "Happy-hour times need confirmation."}</p><details><summary>Search evidence &amp; source</summary><p>${esc(c.evidence)}</p><p class="small muted">AI search summary linked to a citation; check the original page. This is not a verbatim restaurant quote.</p><a href="${esc(c.sourceUrl)}" target="_blank" rel="noreferrer">Open cited source ↗</a></details>${(r.review_evidence || []).length ? `<details><summary>Community evidence (${r.review_evidence.length})</summary>${r.review_evidence.map((e) => `<p>${esc(e.note)}<br><a href="${esc(e.source_url)}" target="_blank" rel="noreferrer">Submitted source ↗</a></p>`).join("")}</details>` : ""}${r.unsaved ? '<p class="small budget-over">This discovery is not in the shared queue. Retry after storage is connected.</p>' : `<details><summary>Add menu evidence</summary><form data-evidence><label>Menu or photo link<input type="url" name="sourceUrl" required maxlength="2048" placeholder="https://restaurant.com/happy-hour"></label><label>What does the source confirm?<textarea name="note" maxlength="750" required></textarea></label><p class="small muted">Submit public menu information only. Evidence is public and still needs owner review.</p><button class="secondary" type="submit">Submit evidence</button><p class="form-message" role="status"></p></form></details>`}${isOwner && !r.unsaved ? ownerForm(c) : ""}</article>`;
+            return `<article class="restaurant-card pending-card" data-review-id="${esc(r.id)}"><div class="card-top"><div><h3>${esc(c.name)}</h3><p class="venue-location">${esc(c.location)}</p></div><span class="evidence-tag uncertain">${r.unsaved ? "Not saved" : "Needs owner verification"}</span></div><p class="small muted">Search evidence suggests this happy-hour offer. The owner has not confirmed the menu, price, or availability.</p>${c.items.map((i) => `<div class="menu-highlight"><span>${esc(i.name)}</span><strong>${i.priceCents === null ? "Price needs confirmation" : money(i.priceCents) + " · unverified"}</strong></div>`).join("")}<p class="small">${c.hoursText ? "Suggested hours (unverified): " + esc(c.hoursText) : "Happy-hour times need confirmation."}</p><details><summary>Search evidence &amp; source</summary><p>${esc(c.evidence)}</p><p class="small muted">Source excerpt from web search; check the original page and current happy-hour menu. This is not restaurant confirmation.</p><a href="${esc(c.sourceUrl)}" target="_blank" rel="noreferrer">Open cited source ↗</a></details>${(r.review_evidence || []).length ? `<details><summary>Community evidence (${r.review_evidence.length})</summary>${r.review_evidence.map((e) => `<p>${esc(e.note)}<br><a href="${esc(e.source_url)}" target="_blank" rel="noreferrer">Submitted source ↗</a></p>`).join("")}</details>` : ""}${r.unsaved ? '<p class="small budget-over">This discovery is not in the shared queue. Retry after storage is connected.</p>' : `<details><summary>Add menu evidence</summary><form data-evidence><label>Menu or photo link<input type="url" name="sourceUrl" required maxlength="2048" placeholder="https://restaurant.com/happy-hour"></label><label>What does the source confirm?<textarea name="note" maxlength="750" required></textarea></label><p class="small muted">Submit public menu information only. Evidence is public and still needs owner review.</p><button class="secondary" type="submit">Submit evidence</button><p class="form-message" role="status"></p></form></details>`}${isOwner && !r.unsaved ? ownerForm(c) : ""}</article>`;
           })
           .join("")
       : '<div class="empty-state"><h3>No places waiting for verification</h3><p>Tell us what sounds good to search beyond the researched list. New discoveries appear here for source review before publication.</p></div>';
@@ -288,16 +288,12 @@ export function initReviews({ endpoint, onApproved, onBrowse }) {
         }
         const attribution = document.querySelector("#search-attribution");
         attribution.replaceChildren();
-        if (result.searchEntryHtml) {
-          const frame = document.createElement("iframe");
-          frame.title = "Google Search suggestions";
-          frame.setAttribute(
-            "sandbox",
-            "allow-popups allow-popups-to-escape-sandbox",
-          );
-          frame.referrerPolicy = "no-referrer";
-          frame.srcdoc = result.searchEntryHtml;
-          attribution.append(frame);
+        if (result.provider === "Tavily") {
+          const credit = document.createElement("p");
+          credit.className = "small muted";
+          credit.textContent =
+            "Web search by Tavily · Check each original menu before owner approval.";
+          attribution.append(credit);
         }
         const count = result.candidates?.length || 0;
         status.textContent =

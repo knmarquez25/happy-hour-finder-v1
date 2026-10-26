@@ -8,3 +8,5 @@ Task 1: complete — search tests observed RED missing implementation, then GREE
 Task 2: complete locally — owner/store/API tests observed RED, then GREEN. Supabase tables created with RLS and public grants revoked; user privately configured owner login and Render keys.
 Task 3: local UI acceptance passed; public deployment in progress.
 Review: corrected county metadata, menu-name tags, and approved-list pagination, with RED/GREEN regressions. Full suite 94/94 passes; both browser suites pass.
+
+Ruling: Public Gemini 2.5 search call returned 503 immediately (free search unavailable). Replace that search stage with Tavily basic (one credit/request, auto_parameters=false), leaving Gemini 3.5 extraction. User created free Tavily account and privately entered keys into Render. Prior Supabase fields had not been saved; user re-entered them and a real rebuild is now confirmed in Render. No billing enabled.
