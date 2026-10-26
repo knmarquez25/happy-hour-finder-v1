@@ -3,7 +3,7 @@ import {
   normalizeCandidate,
   identity,
   freshMenuLookup,
-} from "./candidates.js?v=time-discovery-11";
+} from "./candidates.js?v=time-discovery-12";
 import { weekdays } from "./matching.js";
 export function initReviews({ endpoint, onApproved, onBrowse }) {
   const pending = document.querySelector("#pending-results"),
@@ -110,7 +110,7 @@ export function initReviews({ endpoint, onApproved, onBrowse }) {
     scopeLabel.textContent =
       searchKeys === null
         ? "Showing all saved places waiting for verification."
-        : "Showing discoveries returned for your current request. Clear request to browse all saved places waiting for verification.";
+        : "Showing matching saved and newly discovered places for your current request. Clear request to browse all saved places waiting for verification.";
     document.querySelector("#pending-tab").textContent =
       `Needs verification (${rows.length})`;
     pending.innerHTML = rows.length
@@ -526,14 +526,14 @@ export function initReviews({ endpoint, onApproved, onBrowse }) {
           const credit = document.createElement("p");
           credit.className = "small muted";
           credit.textContent =
-            "Web search by Tavily · Check each original menu before owner approval.";
+            "Web search by Tavily, plus saved menu evidence when available · Owner verification is still required.";
           attribution.append(credit);
         }
         const count = result.candidates?.length || 0;
         status.textContent =
           result.notice ||
           (count
-            ? `${count} new place${count === 1 ? "" : "s"} found. Review the unverified offers in Needs verification.`
+            ? `${count} matching unverified place${count === 1 ? "" : "s"}. Review the sources in Needs verification.`
             : "No additional source-supported places found for this request. Try a named area or a broader craving.");
         if (count) showTab("pending");
       } catch (e) {

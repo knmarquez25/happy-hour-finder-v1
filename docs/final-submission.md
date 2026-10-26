@@ -1,6 +1,6 @@
 # Happy Hour Finder: browse first, ask AI when you want help
 
-**Public build:** [Happy Hour Finder](https://knmarquez25.github.io/happy-hour-finder-v1/). Tested in a fresh unauthenticated Chrome session on October 25, 2026. No account or API key is needed by visitors.
+**Public build:** [Happy Hour Finder](https://knmarquez25.github.io/happy-hour-finder-v1/). Live checks updated October 26, 2026, including guest menu import and day/time filtering. No account or API key is needed by visitors.
 
 **Final submission destination:** [Bruin Learn — Final Build](https://bruinlearn.ucla.edu/courses/237790/discussion_topics/1491803). This discussion requires a link to the build in the class gallery and answers to steps 1–6. No separate gallery link appears in the discussion instructions; its destination still needs to be established. Nothing has been posted. Replace this note with the actual gallery-post link once the public build is ready and posted.
 
@@ -39,6 +39,13 @@ flowchart TD
   Q -->|Ask AI| A[Server extracts optional preferences]
   Q -->|Ask AI| W[Tavily basic searches public web sources]
   W --> E[AI extracts offers from cited source passages]
+  B --> L[Submit a public restaurant menu link]
+  L --> G[Read public HTTPS page with network limits]
+  G --> E
+  N --> SL[Saved unverified source library]
+  SL --> E
+  N --> PL[Public unverified menus and evidence labels]
+  PL --> M
   E --> T{Validate sources, items, missing prices and duplicates}
   T -->|Unsupported| R
   T -->|Supported as a candidate| N[Save in Needs verification]
@@ -64,7 +71,7 @@ The user decides whether to supply an area, which preferences matter, whether to
 
 Improvements: no required dropdowns or area on entry; one reviewed browsing list plus a separate Needs verification queue; server-side AI interpretation and source-based discovery; menu-first cards; custom item selection; source and restriction visibility; graceful AI failure and Clear behavior.
 
-**127/127 unit and HTTP tests passed**, including the new discovery and review workflow checks. The new browser regression passed at four viewport widths; the preserved previous interface passed its existing browser checks at six widths. Checks verify browsing all 111 records, deterministic filtering and arithmetic, optional/overnight timing, unknown prices, conditional offers, malformed AI responses, HTTP protections, and desktop/mobile flows. External AI responses are fixtures in these checks. Three additional **live smoke cases passed (3/3)** from the public GitHub Pages app in a fresh unauthenticated Chrome session: tacos/margaritas/$25, area-only Pasadena, and a clarification for “near me.” The first two matched every expected preference field; the third asked for an area and preserved browsing. Warm response times were about 0.81–1.24 seconds. This is a small integration check, not general model accuracy or a user study. Full scope and reproducibility are in [ai-discovery-evaluation.md](ai-discovery-evaluation.md).
+**145/145 unit and HTTP tests passed**, including the new discovery and review workflow checks. The new browser regression passed at four viewport widths; the preserved previous interface passed its existing browser checks at six widths. Checks verify browsing all 111 records, deterministic filtering and arithmetic, optional/overnight timing, unknown prices, conditional offers, malformed AI responses, HTTP protections, and desktop/mobile flows. External AI responses are fixtures in these checks. Three additional **live smoke cases passed (3/3)** from the public GitHub Pages app in a fresh unauthenticated Chrome session: tacos/margaritas/$25, area-only Pasadena, and a clarification for “near me.” The first two matched every expected preference field; the third asked for an area and preserved browsing. Warm response times were about 0.81–1.24 seconds. This is a small integration check, not general model accuracy or a user study. Full scope and reproducibility are in [ai-discovery-evaluation.md](ai-discovery-evaluation.md).
 
 New-place live check (October 26): “martinis” searched eight source pages and saved one unverified candidate. A second Los Angeles martini request produced four accepted candidates in total: Fiesta Cantina, Birds Hollywood, Queen’s Raw Bar, and Esters Wine Shop and Bar. All four are outside the original researched list, and their missing supported prices are labeled “Price needs confirmation.” The shared queue survived a new page load and loaded in the signed-in owner view. Owner sign-in, unsigned owner denial, and direct public database denial were checked live. Actual results are recorded in [live-discovery.json](../evaluation/live-discovery.json). The restaurant-owned source preference in the second request was not fully met: returned sources were guides, so this is a partial source-quality result, not four verified recommendations. Live publication still requires the owner's review; automated fixtures test the approval snapshot and reload path.
 
@@ -98,3 +105,16 @@ Timed discovery refinement: a city/day/time request now uses at most two paralle
 
 
 **Failed live recall acceptance (October 26):** The exact request “happy hour in Downey noon on Monday” still returned zero new candidates after generic retrieval and ranking refinements. Maria’s Bar & Grill’s [official page](https://mariasgrilldowney.com/) lists weekday happy hour 12–2 PM and 5–7 PM, but this source was absent from the provider’s retrieved results. A bounded advanced-search trial also missed it and was removed because it consumed extra free credits without improving this case. All 127 automated tests pass; those fixture-based checks do not establish live search recall. The Downey discovery issue remains unresolved. No restaurant was manually seeded or approved to make this test appear successful. See [recorded acceptance case](../evaluation/downey-recall.json).
+
+
+## Day/time filters and reusable menu sources (October 26)
+
+Optional Day and Time of day controls now apply to both reviewed results and the unverified source workflow. Night means an overlapping happy-hour window between 6 PM and midnight; an explicit exact time is also available. “Glendale Monday night” retains the broad night window rather than inventing or silently dropping a clock. Explicit controls override AI interpretation. Published shorthand such as “12–2 PM & 5–7 PM” is understood conservatively; unclear schedules remain unverified.
+
+Discovery searches saved pending source evidence alongside fresh web results. A new public menu-link form provides a way to add a source the search index misses. The server reads a public HTTPS HTML page with pinned validated public DNS, redirect checks, time/size limits and no credentials; unreadable/other sources can use bounded basic Tavily extraction. Gemini extracts supported happy-hour items, then existing literal source/item/price checks run. The source's literal name/address context is retained for future searches. Imported leads remain public and labeled Needs verification; only the owner can approve them.
+
+The known Downey Monday-noon case now returns Maria’s Bar & Grill with Domestic $3.50 and Import $4.50, from its official weekday 12–2 PM and 5–7 PM listing. Maria’s was added through the official menu-link import, not found automatically by the web search provider. The exact original query then returned it using one saved source among eight passages. This resolves the known missing lead in the application library while leaving the provider-only recall failure documented. No owner approval was performed. [Recorded live case](../evaluation/downey-recall.json).
+
+Current verification: 145/145 unit/HTTP tests pass; source-reader and search tests were reviewed independently. The new browser flow passed at 1280px and 390px; existing Downey scope and owner-review regressions passed. Free API request limits can still temporarily throttle a burst of searches/imports. This is a small live acceptance check, not a regional coverage or general accuracy score.
+
+Live time-filter check: “Glendale Monday night” retained Monday and Night (6 PM–midnight), with zero reviewed matches and two unverified leads. Oak and Vine's published weekday window overlaps from 6 to 6:30 PM; Bar Verde's expanded menu has unknown hours, so it remains a lead needing time confirmation. Unknown hours are not presented as verified availability. [Live filter cases](../evaluation/day-time-filter-live.json).
