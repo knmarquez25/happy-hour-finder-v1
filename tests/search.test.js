@@ -61,6 +61,7 @@ test("grounded discovery preserves a cited happy-hour item and unknown price", a
     searchKey: "search-test",
     fetchImpl: fetcher(c),
   });
+  assert.equal(result.diagnostics.keptCount, 1);
   assert.equal(result.candidates.length, 1);
   assert.equal(result.candidates[0].items[0].priceCents, null);
   assert.equal(result.candidates[0].status, undefined);
@@ -219,6 +220,7 @@ test("free basic Tavily search supplies literal source passages without Google g
       };
     },
   });
+  assert.equal(result.diagnostics.keptCount, 1);
   assert.equal(result.candidates.length, 1);
   assert.equal(result.provider, "Tavily");
   assert.equal(calls, 2);

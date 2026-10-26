@@ -238,6 +238,14 @@ export async function searchPlaces(
     ),
     candidates = [];
   const folded = (s) => s.normalize("NFKC").toLowerCase().replace(/\s+/g, " ");
+  const rejected = {
+    shape: 0,
+    source: 0,
+    name: 0,
+    location: 0,
+    item: 0,
+    existing: 0,
+  };
   for (const raw of rows) {
     try {
       const c = normalizeCandidate(raw),
@@ -245,15 +253,22 @@ export async function searchPlaces(
       const cited = passages.find(
         (p) => p.url === c.sourceUrl && p.text.includes(c.evidence),
       );
-      if (
-        !cited ||
-        !folded(c.evidence).includes(folded(c.name)) ||
-        !folded(c.evidence).includes(folded(c.location)) ||
-        c.items.some((i) => !folded(c.evidence).includes(folded(i.name))) ||
-        seen.has(key) ||
-        knownNames.has(identity({ name: c.name, location: "" }))
-      )
+      const reason = !cited
+        ? "source"
+        : !folded(c.evidence).includes(folded(c.name))
+          ? "name"
+          : !folded(c.evidence).includes(folded(c.location))
+            ? "location"
+            : c.items.some((i) => !folded(c.evidence).includes(folded(i.name)))
+              ? "item"
+              : seen.has(key) ||
+                  knownNames.has(identity({ name: c.name, location: "" }))
+                ? "existing"
+                : null;
+      if (reason) {
+        rejected[reason]++;
         continue;
+      }
       // Absent numeric evidence stays unknown, never an invented price.
       c.items = c.items.map((i) => ({
         ...i,
@@ -272,9 +287,17 @@ export async function searchPlaces(
       }));
       seen.add(key);
       candidates.push({ ...c, discoveredAt: new Date().toISOString() });
-    } catch {}
+    } catch {
+      rejected.shape++;
+    }
   }
   return {
+    diagnostics: {
+      sourceCount: passages.length,
+      extractedCount: rows.length,
+      keptCount: candidates.length,
+      rejected,
+    },
     candidates,
     provider: "Tavily",
     searchEntryHtml: "",
