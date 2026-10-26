@@ -12,6 +12,7 @@
     "dev": "python3 -m http.server 4174 --bind 127.0.0.1",
     "test:browser": "node tests/browser.cjs",
     "test:discovery-browser": "node tests/discover-browser.cjs",
+    "test:reviews-browser": "node tests/review-browser.cjs",
     "test:cross-origin": "node tests/discovery-cross-origin.cjs",
     "test:qa": "node tests/qa.cjs",
     "data:build": "node scripts/build-data.mjs",

@@ -8,7 +8,7 @@
       content="Browse researched happy-hour menus in LA and Orange County. Describe an area, food, or budget to get AI-guided suggestions, with published prices and source links."
     />
     <title>Happy Hour Finder | Ask & Browse</title>
-    <link rel="stylesheet" href="./src/discover.css?v=full-menu-1" />
+    <link rel="stylesheet" href="./src/discover.css?v=review-discovery-1" />
   </head>
   <body>
     <a class="skip-link" href="#results-title">Skip to restaurants</a>
@@ -46,9 +46,9 @@
             </button>
           </form>
           <p id="request-note" class="small muted">
-            AI searches this researched list; it doesn’t find new restaurants
-            online. Each request starts fresh. Mention a day or time if you have
-            one in mind.
+            AI searches our reviewed list and looks online for additional
+            places. New discoveries need owner verification. Each request starts
+            fresh.
           </p>
           <p id="ai-status" class="small" role="status"></p>
           <p id="request-error" role="alert" hidden></p>
@@ -70,9 +70,10 @@
             <summary>About these happy hours</summary>
             <p id="dataset-summary"></p>
             <p>
-              Coverage is incomplete. These are researched listings, not live
-              restaurant confirmation or a live search of TikTok and websites.
-              Dates show when a source was reviewed.
+              Coverage is incomplete. Reviewed listings are stored source
+              research; new online discoveries remain unverified until owner
+              review. TikTok access is not guaranteed. Dates show when a source
+              was reviewed.
             </p>
             <p>
               Menus and offers can change. Check the linked source and
@@ -92,7 +93,83 @@
             </button>
           </div>
           <p id="interpretation" class="interpretation" role="status"></p>
-          <div id="results" aria-busy="false"></div>
+          <div
+            class="discovery-tabs"
+            role="tablist"
+            aria-label="Happy-hour lists"
+          >
+            <button
+              id="browse-tab"
+              role="tab"
+              data-view="browse"
+              aria-selected="true"
+              aria-controls="browse-panel"
+              type="button"
+            >
+              Browse happy hours</button
+            ><button
+              id="pending-tab"
+              role="tab"
+              data-view="pending"
+              aria-selected="false"
+              tabindex="-1"
+              aria-controls="pending-panel"
+              type="button"
+            >
+              Needs verification (0)
+            </button>
+          </div>
+          <p id="discovery-status" role="status" class="discovery-status"></p>
+          <div id="search-attribution"></div>
+          <div id="browse-panel" role="tabpanel" aria-labelledby="browse-tab">
+            <div id="results" aria-busy="false"></div>
+          </div>
+          <div
+            id="pending-panel"
+            role="tabpanel"
+            aria-labelledby="pending-tab"
+            hidden
+          >
+            <p class="small muted">
+              These are newly discovered offers, not approved recommendations.
+              Community evidence helps the owner review them; it does not
+              automatically publish a place.
+            </p>
+            <div class="review-actions">
+              <button class="secondary" id="refresh-reviews" type="button">
+                Refresh queue</button
+              ><button class="secondary" id="owner-toggle" type="button">
+                Owner sign in</button
+              ><button
+                class="secondary"
+                id="owner-signout"
+                type="button"
+                hidden
+              >
+                Sign out
+              </button>
+            </div>
+            <section id="owner-panel" class="owner-panel" hidden>
+              <h3>Owner sign in</h3>
+              <form id="owner-form">
+                <label
+                  >Owner email<input
+                    type="email"
+                    name="email"
+                    autocomplete="username"
+                    required /></label
+                ><label
+                  >Owner password<input
+                    type="password"
+                    name="password"
+                    autocomplete="current-password"
+                    required /></label
+                ><button class="primary" type="submit">Sign in</button>
+                <p id="owner-message" role="status"></p>
+              </form>
+            </section>
+            <div id="pending-results"></div>
+          </div>
           <footer>
             <span>Restaurant-listed, not live-confirmed.</span
             ><a href="./docs/final-submission.md">Project write-up</a
@@ -104,6 +181,9 @@
     <noscript
       ><p>Enable JavaScript to browse the restaurant dataset.</p></noscript
     >
-    <script type="module" src="./src/discover-app.js?v=full-menu-1"></script>
+    <script
+      type="module"
+      src="./src/discover-app.js?v=review-discovery-1"
+    ></script>
   </body>
 </html>

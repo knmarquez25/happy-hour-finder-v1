@@ -3,6 +3,8 @@ import { readFile, realpath } from "node:fs/promises";
 import { dirname, resolve, extname, sep } from "node:path";
 import { fileURLToPath } from "node:url";
 import { interpretRequest, serviceError } from "./ai.js";
+import { searchPlaces } from "./search.js";
+import { createReviewStore } from "./reviews.js";
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const mime = {
@@ -20,7 +22,7 @@ const publicDocs = new Set([
   "/docs/class-post.md",
   "/docs/evaluation-report.md",
 ]);
-async function readJson(req) {
+async function readJson(req, allowedFields = ["query"]) {
   if (
     !req.headers["content-type"]?.toLowerCase().startsWith("application/json")
   )
@@ -40,7 +42,7 @@ async function readJson(req) {
       !data ||
       Array.isArray(data) ||
       typeof data !== "object" ||
-      Object.keys(data).some((k) => k !== "query")
+      Object.keys(data).some((k) => !allowedFields.includes(k))
     )
       throw new Error();
     return data;
@@ -57,6 +59,9 @@ export function createApp({
     .filter(Boolean),
   fetchImpl = fetch,
   rateLimit = 10,
+  searchModel = process.env.SEARCH_MODEL || "gemini-2.5-flash-lite",
+  searchImpl = searchPlaces,
+  reviewStore = createReviewStore(),
 } = {}) {
   const origins = new Set(
     allowedOrigins.map((value) => {
@@ -73,6 +78,41 @@ export function createApp({
     hourCalls = 0,
     inFlight = 0;
   const addresses = new Map();
+  let cachedReviews,
+    cacheUntil = 0;
+  async function reviewList() {
+    if (cachedReviews && Date.now() < cacheUntil) return cachedReviews;
+    const rows = await reviewStore.list();
+    cachedReviews = rows;
+    cacheUntil = Date.now() + 15000;
+    return rows;
+  }
+  function reserve(req, res, cost = 1) {
+    const now = Date.now();
+    if (now - minuteStart >= 60000) {
+      addresses.clear();
+      minuteStart = now;
+    }
+    if (now - hourStart >= 3600000) {
+      hourCalls = 0;
+      hourStart = now;
+    }
+    const ip = req.socket.remoteAddress || "unknown";
+    if (
+      (addresses.get(ip) || 0) + cost > rateLimit ||
+      hourCalls + cost > 100 ||
+      inFlight >= 2
+    ) {
+      res.setHeader("Retry-After", "60");
+      throw serviceError(
+        "AI or review requests are busy or limited. Please try again later.",
+        429,
+      );
+    }
+    addresses.set(ip, (addresses.get(ip) || 0) + cost);
+    hourCalls += cost;
+    inFlight++;
+  }
   const app = http.createServer(async (req, res) => {
     res.setHeader("X-Content-Type-Options", "nosniff");
     res.setHeader("Referrer-Policy", "no-referrer");
@@ -85,7 +125,21 @@ export function createApp({
     };
     try {
       const url = new URL(req.url, "http://localhost");
-      if (["/api/status", "/api/discover"].includes(url.pathname)) {
+      const reviewMatch = url.pathname.match(
+        /^\/api\/reviews\/([0-9a-f-]{36})\/(evidence|decision)$/i,
+      );
+      const apiMethod = [
+        "/api/status",
+        "/api/reviews",
+        "/api/review-config",
+        "/api/owner",
+      ].includes(url.pathname)
+        ? "GET"
+        : ["/api/discover", "/api/explore"].includes(url.pathname) ||
+            reviewMatch
+          ? "POST"
+          : null;
+      if (apiMethod) {
         const origin = req.headers.origin;
         if (origin) {
           let incoming;
@@ -118,13 +172,21 @@ export function createApp({
             .filter(Boolean);
           if (
             !origin ||
-            method !== (url.pathname === "/api/discover" ? "POST" : "GET") ||
-            headers.some((h) => h !== "content-type")
+            method !== apiMethod ||
+            headers.some(
+              (h) =>
+                h !== "content-type" &&
+                !(
+                  h === "authorization" &&
+                  (url.pathname === "/api/owner" ||
+                    reviewMatch?.[2] === "decision")
+                ),
+            )
           )
             throw serviceError("Unsupported cross-origin request.", 403);
           res.writeHead(204, {
             "Access-Control-Allow-Methods": method,
-            "Access-Control-Allow-Headers": "Content-Type",
+            "Access-Control-Allow-Headers": "Content-Type, Authorization",
             "Access-Control-Max-Age": "600",
           });
           return res.end();
@@ -148,30 +210,7 @@ export function createApp({
             "AI is not configured on this server yet. You can still browse every restaurant.",
             503,
           );
-        const now = Date.now();
-        if (now - minuteStart >= 60000) {
-          addresses.clear();
-          minuteStart = now;
-        }
-        if (now - hourStart >= 3600000) {
-          hourCalls = 0;
-          hourStart = now;
-        }
-        const ip = req.socket.remoteAddress || "unknown";
-        if (
-          (addresses.get(ip) || 0) >= rateLimit ||
-          hourCalls >= 100 ||
-          inFlight >= 2
-        ) {
-          res.setHeader("Retry-After", "60");
-          throw serviceError(
-            "AI is busy or its request limit was reached. Please try again later.",
-            429,
-          );
-        }
-        addresses.set(ip, (addresses.get(ip) || 0) + 1);
-        hourCalls++;
-        inFlight++;
+        reserve(req, res);
         try {
           return json(200, {
             preferences: await interpretRequest(body.query, {
@@ -180,6 +219,91 @@ export function createApp({
               fetchImpl,
             }),
           });
+        } finally {
+          inFlight--;
+        }
+      }
+      if (url.pathname === "/api/review-config" && req.method === "GET")
+        return json(200, reviewStore.publicConfig());
+      if (url.pathname === "/api/reviews" && req.method === "GET")
+        return json(200, { records: await reviewList() });
+      if (url.pathname === "/api/owner" && req.method === "GET") {
+        reserve(req, res);
+        try {
+          await reviewStore.owner(
+            req.headers.authorization?.replace(/^Bearer /, ""),
+          );
+          return json(200, { owner: true });
+        } finally {
+          inFlight--;
+        }
+      }
+      if (url.pathname === "/api/explore" && req.method === "POST") {
+        const body = await readJson(req);
+        if (
+          typeof body.query !== "string" ||
+          !body.query.trim() ||
+          body.query.length > 1000
+        )
+          throw serviceError(
+            "Enter a request between 1 and 1,000 characters.",
+            400,
+          );
+        reserve(req, res, 2);
+        try {
+          const result = await searchImpl(body.query, {
+            apiKey,
+            searchModel,
+            model,
+            fetchImpl,
+          });
+          if (!reviewStore.configured)
+            return json(200, {
+              ...result,
+              saved: false,
+              records: [],
+              notice:
+                "These discoveries are not saved: the shared review queue needs setup.",
+            });
+          try {
+            await reviewStore.save(result.candidates);
+            cacheUntil = 0;
+            return json(200, {
+              ...result,
+              saved: true,
+              records: await reviewList(),
+            });
+          } catch {
+            return json(200, {
+              ...result,
+              saved: false,
+              records: [],
+              notice:
+                "Found these places, but the review queue could not save them. Retry before leaving this page.",
+            });
+          }
+        } finally {
+          inFlight--;
+        }
+      }
+      if (reviewMatch && req.method === "POST") {
+        const action = reviewMatch[2];
+        const body = await readJson(
+          req,
+          action === "evidence" ? ["sourceUrl", "note"] : ["status", "payload"],
+        );
+        reserve(req, res);
+        try {
+          const record =
+            action === "evidence"
+              ? await reviewStore.evidence(reviewMatch[1], body)
+              : await reviewStore.decide(
+                  reviewMatch[1],
+                  body,
+                  req.headers.authorization?.replace(/^Bearer /, ""),
+                );
+          cacheUntil = 0;
+          return json(200, { record });
         } finally {
           inFlight--;
         }

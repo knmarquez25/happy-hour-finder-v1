@@ -17,3 +17,14 @@ services:
         value: https://knmarquez25.github.io
       - key: GEMINI_API_KEY
         sync: false
+
+      - key: SEARCH_MODEL
+        value: gemini-2.5-flash-lite
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_ANON_KEY
+        sync: false
+      - key: SUPABASE_SERVICE_ROLE_KEY
+        sync: false
+      - key: OWNER_USER_ID
+        sync: false

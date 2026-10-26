@@ -9,7 +9,7 @@ import {
   menuSelection,
   primaryEvidence,
   menuItems,
-} from "./discovery.js?v=full-menu-1";
+} from "./discovery.js?v=review-discovery-1";
 import { formatHappyHour } from "./matching.js";
 import {
   escapeHtml as esc,
@@ -17,6 +17,9 @@ import {
   happyHourListings,
 } from "./ui-state.js";
 
+import { candidateToVenue } from "./candidates.js";
+import { initReviews } from "./review-ui.js?v=review-discovery-1";
+let venues = [...restaurants];
 const list = document.querySelector("#results"),
   request = document.querySelector("#request"),
   error = document.querySelector("#request-error"),
@@ -55,7 +58,7 @@ function itemDetails(v, i) {
 function renderMenu(v) {
   const items = menuItems(v, preferences);
   if (items.length)
-    return `<section class="menu-items" aria-label="Listed happy-hour menu"><h4>Happy-hour menu · ${items.length} listed items</h4><p class="small muted">All items we have recorded are shown below. The restaurant may list additional items. Pick one published order of each; item schedules and restrictions apply.</p>${items.map(({ item: i, matchesRequest }) => `<div class="menu-choice"><label><input type="checkbox" data-item="${esc(i.id)}"><span>${esc(i.name)}<small class="item-evidence">${matchesRequest ? "Matches your request · " : ""}${itemDetails(v, i)}</small></span></label><strong>${Number.isSafeInteger(i.priceCents) ? money(i.priceCents) : "Price unknown"}</strong></div>`).join("")}<div class="order-total" aria-live="polite">Choose items to see your menu-price subtotal.</div><p class="order-note">Subtotals exclude tax, tip, and fees. Listed prices are not a guarantee of availability.</p></section>`;
+    return `<section class="menu-items" aria-label="Listed happy-hour menu"><h4>Happy-hour menu · ${items.length} listed items</h4><p class="small muted">All items we have recorded are shown below. The restaurant may list additional items. Pick one published order of each; item schedules and restrictions apply.</p>${items.map(({ item: i, matchesRequest }) => `<div class="menu-choice"><label><input type="checkbox" data-item="${esc(i.id)}"><span>${esc(i.name)}<small class="item-evidence">${matchesRequest ? "Matches your request · " : ""}${itemDetails(v, i)}</small></span></label><strong>${Number.isSafeInteger(i.priceCents) ? money(i.priceCents) : "Price needs confirmation"}</strong></div>`).join("")}<div class="order-total" aria-live="polite">Choose items to see your menu-price subtotal.</div><p class="order-note">Subtotals exclude tax, tip, and fees. Listed prices are not a guarantee of availability.</p></section>`;
   const specials = happyHourListings(v);
   return `<section class="menu-items" aria-label="Listed happy-hour offers"><h4>Listed happy-hour offers</h4>${specials.length ? specials.map((s) => `<div class="menu-highlight"><span>${esc(s.text)}<small class="item-evidence">${s.primary ? "Restaurant-listed" : "Guide-listed"} · ${sourceLink(s.source, "Source")}</small></span></div>`).join("") : ""}<p class="small muted">Individual menu items and exact prices have not been recorded. Browse the restaurant source below.</p></section>`;
 }
@@ -72,11 +75,11 @@ function renderCard(result) {
     .map((s) => s.reviewedOn)
     .sort()
     .at(-1);
-  const html = `<article class="restaurant-card" data-venue-id="${esc(v.id)}"><div class="card-top"><div><h3>${esc(v.name)}</h3><p class="venue-location">${esc([...new Set([v.neighborhood, city(v)].filter(Boolean))].join(" · "))}</p></div><span class="evidence-tag ${reviewed ? "" : "uncertain"}">${reviewed ? "Restaurant source listed" : "Needs restaurant review"}</span></div><p class="schedule">Listed happy hours: ${esc(formatHappyHour(v.hours) || "Exact schedule needs verification.")}</p>${reasons.length ? `<p class="match-reasons">${reasons.map(esc).join(" · ")}</p>` : ""}${renderMenu(v)}${combo ? `<div class="suggestion"><strong>A starting suggestion · ${money(combo.totalCents)}</strong><br>${esc(combo.food.name)} + ${esc(combo.drink.name)}${diff === null ? "" : `<br><span class="${diff > 0 ? "budget-over" : ""}">${money(Math.abs(diff))} ${diff > 0 ? "above" : "below"} your target</span>`}<small>One published order of each · before tax, tip &amp; fees</small><small>Applies to ${esc(formatHappyHour([window]))}. Listed offers, not live-confirmed.</small></div>` : '<p class="small muted">No supported food-and-drink combo total is available. Explore individual listings and sources.</p>'}<details class="source-details"><summary>Offer details &amp; sources</summary><p>${esc(v.address || "Address needs confirmation")}</p>${v.notes ? `<p>${esc(v.notes)}</p>` : ""}<ul>${v.sources.map((s) => `<li>${sourceLink(s)}<small>${s.type === "primary" ? "Restaurant / primary source" : "Secondary source"} · ${s.reviewedOn ? "Reviewed " + esc(s.reviewedOn) : "Not reviewed"}</small>${s.note ? `<small>${esc(s.note)}</small>` : ""}</li>`).join("")}</ul><p>Published information may change. Review dates are not current restaurant confirmation. No allergy-safety guarantee is made.</p></details><p class="evidence-line">${reviewed ? "Restaurant source reviewed " + esc(reviewed) : "Restaurant confirmation needed"} · Check restrictions before going.</p></article>`;
+  const html = `<article class="restaurant-card" data-venue-id="${esc(v.id)}"><div class="card-top"><div><h3>${esc(v.name)}</h3><p class="venue-location">${esc([...new Set([v.neighborhood, city(v)].filter(Boolean))].join(" · "))}</p></div><span class="evidence-tag ${reviewed ? "" : "uncertain"}">${v.ownerReviewed ? "Owner reviewed" : reviewed ? "Restaurant source listed" : "Needs restaurant review"}</span></div><p class="schedule">Listed happy hours: ${esc(formatHappyHour(v.hours) || "Exact schedule needs verification.")}</p>${reasons.length ? `<p class="match-reasons">${reasons.map(esc).join(" · ")}</p>` : ""}${renderMenu(v)}${combo ? `<div class="suggestion"><strong>A starting suggestion · ${money(combo.totalCents)}</strong><br>${esc(combo.food.name)} + ${esc(combo.drink.name)}${diff === null ? "" : `<br><span class="${diff > 0 ? "budget-over" : ""}">${money(Math.abs(diff))} ${diff > 0 ? "above" : "below"} your target</span>`}<small>One published order of each · before tax, tip &amp; fees</small><small>Applies to ${esc(formatHappyHour([window]))}. Listed offers, not live-confirmed.</small></div>` : '<p class="small muted">No supported food-and-drink combo total is available. Explore individual listings and sources.</p>'}<details class="source-details"><summary>Offer details &amp; sources</summary><p>${esc(v.address || "Address needs confirmation")}</p>${v.notes ? `<p>${esc(v.notes)}</p>` : ""}<ul>${v.sources.map((s) => `<li>${sourceLink(s)}<small>${s.type === "primary" ? "Restaurant / primary source" : "Secondary source"} · ${s.reviewedOn ? "Reviewed " + esc(s.reviewedOn) : "Not reviewed"}</small>${s.note ? `<small>${esc(s.note)}</small>` : ""}</li>`).join("")}</ul><p>Published information may change. Review dates are not current restaurant confirmation. No allergy-safety guarantee is made.</p></details><p class="evidence-line">${reviewed ? (v.ownerReviewed ? "Owner reviewed " : "Restaurant source reviewed ") + esc(reviewed) : "Restaurant confirmation needed"} · Check restrictions before going.</p></article>`;
   return html;
 }
 function render() {
-  const rows = discover(restaurants, preferences);
+  const rows = discover(venues, preferences);
   list.innerHTML = rows.length
     ? rows.map(renderCard).join("")
     : '<div class="empty-state"><h3>No researched matches for this request</h3><p>Try a broader area or fewer food and drink requirements. Missing evidence is not filled in to manufacture a match.</p><button class="secondary" type="button" data-browse-all>Browse all restaurants</button></div>';
@@ -103,11 +106,12 @@ function render() {
   if (preferences.day) parts.push(preferences.day);
   if (preferences.time) parts.push(preferences.time);
   if (preferences.atmosphere) parts.push(preferences.atmosphere);
-  parts.push(`${rows.length} of ${restaurants.length} researched restaurants`);
+  parts.push(`${rows.length} of ${venues.length} reviewed restaurants`);
   document.querySelector("#interpretation").textContent = parts.join(" · ");
 }
 function reset() {
   generation++;
+  reviews.reset();
   controller?.abort();
   preferences = emptyPreferences();
   request.value = "";
@@ -127,6 +131,7 @@ document
       reset();
       return;
     }
+    reviews.explore(query);
     const ownGeneration = ++generation;
     controller?.abort();
     controller = new AbortController();
@@ -156,7 +161,7 @@ document
             ? value.error
             : "AI is unavailable. Please try again.",
         );
-      const next = validatePreferences(value.preferences, restaurants);
+      const next = validatePreferences(value.preferences, venues);
       if (ownGeneration !== generation) return;
       if (next.clarification) throw new Error(next.clarification);
       preferences = next;
@@ -187,7 +192,7 @@ list.addEventListener("click", (e) => {
 list.addEventListener("change", (e) => {
   if (!e.target.matches("[data-item]")) return;
   const card = e.target.closest("[data-venue-id]");
-  const venue = restaurants.find((v) => v.id === card.dataset.venueId);
+  const venue = venues.find((v) => v.id === card.dataset.venueId);
   const ids = [...card.querySelectorAll("[data-item]:checked")].map(
     (i) => i.dataset.item,
   );
@@ -216,6 +221,19 @@ document.querySelector("#coverage").textContent =
   `${restaurants.length} researched spots · LA + Orange County`;
 document.querySelector("#dataset-summary").textContent =
   `${dataMetadata.total || restaurants.length} researched restaurant locations. Not every record has a complete menu, exact prices, or a restaurant-supported schedule.`;
+const reviews = initReviews({
+  endpoint,
+  onApproved(records) {
+    venues = [...restaurants, ...records.map(candidateToVenue).filter(Boolean)];
+    document.querySelector("#coverage").textContent =
+      `${venues.length} reviewed spots · LA + Orange County`;
+    render();
+  },
+  onBrowse() {
+    preferences = emptyPreferences();
+    render();
+  },
+});
 render();
 fetch(endpoint("status"))
   .then((r) => (r.ok ? r.json() : null))
