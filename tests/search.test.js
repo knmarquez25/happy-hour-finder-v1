@@ -33,7 +33,7 @@ function fetcher(extracted = candidate, first = grounded()) {
       assert.equal(url, "https://api.tavily.com/search");
       assert.equal(body.search_depth, "basic");
       assert.equal(body.auto_parameters, false);
-      assert.match(body.query, /Los Angeles OR Orange County/);
+      assert.match(body.query, /California/);
       return { ok: true, json: async () => first };
     }
     assert.match(url, /gemini-3.5-flash-lite/);
@@ -508,4 +508,86 @@ test("saved menu evidence remains usable when the free web search service is una
   });
   assert.equal(result.candidates[0].items.length, 2);
   assert.equal(result.candidates[0].previouslyCaptured, true);
+});
+
+const noonCandidate = {
+  ...candidate,
+  name: "Noon Bistro",
+  location: "Downey",
+  address: "123 Main St, Downey, CA",
+  hoursText: "Monday–Friday 12–2 PM",
+  items: [
+    { name: "Domestic", kind: "drink", priceCents: 350 },
+    { name: "Import", kind: "drink", priceCents: 450 },
+  ],
+};
+const noonSource = {
+  url: "https://noon-bistro.example/menu",
+  title: "Noon Bistro — Downey",
+  content:
+    "Noon Bistro in Downey: Happy hour Monday–Friday 12–2 PM. Domestic $3.50; Import $4.50",
+};
+test("explicit city retrieval searches menus without losing the original weekday and noon constraints", async () => {
+  const query = "happy hour in Downey noon on Monday";
+  let webQuery, originalRequest;
+  const mocked = fetcher(noonCandidate, { results: [noonSource] });
+  await searchPlaces(query, {
+    apiKey: "test",
+    searchKey: "test",
+    fetchImpl: async (url, o) => {
+      const b = JSON.parse(o.body);
+      if (url.includes("tavily")) webQuery = b.query;
+      else originalRequest = JSON.parse(b.contents[0].parts[0].text).request;
+      return mocked(url, o);
+    },
+  });
+  assert.match(webQuery, /Downey/);
+  assert.doesNotMatch(webQuery, /noon|Monday|Los Angeles OR Orange County/i);
+  assert.equal(
+    originalRequest,
+    query,
+    "Menu retrieval can broaden, but AI must retain all user constraints",
+  );
+});
+test("a happy-hour section far below navigation and lunch content is retained for extraction", async () => {
+  const raw =
+    "Noon Bistro Downey\nWelcome and lunch menu\n" +
+    "lunch content ".repeat(400) +
+    "\n### Happy Hour\nMonday–Friday 12–2 PM\nDomestic $3.50; Import $4.50\n### Contact\nDowney, CA";
+  const r = await searchPlaces("happy hour in Downey noon on Monday", {
+    apiKey: "test",
+    searchKey: "test",
+    fetchImpl: fetcher(
+      { ...noonCandidate, fragmentIndex: 1 },
+      {
+        results: [
+          {
+            ...noonSource,
+            content: "Welcome to Noon Bistro in Downey",
+            raw_content: raw,
+          },
+        ],
+      },
+    ),
+  });
+  assert.equal(r.candidates.length, 1);
+  assert.equal(r.candidates[0].items.length, 2);
+  assert.equal(r.candidates[0].items[0].priceCents, 350);
+});
+test("a relevant city menu below the first eight search results is considered before unrelated guides", async () => {
+  const results = [
+    ...Array.from({ length: 8 }, (_, n) => ({
+      url: `https://guide${n}.example/`,
+      title: "Los Angeles happy hours",
+      content: "Hollywood happy hour Martini $9",
+    })),
+    noonSource,
+  ];
+  const r = await searchPlaces("happy hour in Downey noon on Monday", {
+    apiKey: "test",
+    searchKey: "test",
+    fetchImpl: fetcher(noonCandidate, { results }),
+  });
+  assert.equal(r.candidates.length, 1);
+  assert.equal(r.candidates[0].sourceUrl, noonSource.url);
 });

@@ -1,0 +1,27 @@
+{
+  "date": "2026-10-26",
+  "query": "happy hour in Downey noon on Monday",
+  "knownPositive": {
+    "name": "Maria's Bar & Grill",
+    "sourceUrl": "https://mariasgrilldowney.com/",
+    "publishedHours": "Monday–Friday12–2PM and5–7PM",
+    "publishedItems": [
+      {
+        "name": "Domestic",
+        "priceCents": 350
+      },
+      {
+        "name": "Import",
+        "priceCents": 450
+      }
+    ]
+  },
+  "before": {
+    "sourceCount": 8,
+    "extractedCount": 0,
+    "keptCount": 0,
+    "validationRejections": 0
+  },
+  "acceptance": "At least one real Downey lead with source support for Monday noon should be displayed as Needs verification; do not auto-approve. Maria’s is a known source-supported positive, not proof of complete recall.",
+  "status": "Expected positive recorded before post-deploy live test."
+}

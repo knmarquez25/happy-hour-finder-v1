@@ -1,6 +1,50 @@
 import { serviceError } from "./ai.js";
 import { normalizeCandidate, identity, publicUrl } from "../src/candidates.js";
 import { restaurants } from "../src/data.js";
+import { areaOptions } from "../src/discovery.js";
+function explicitSearchArea(query) {
+  const q = query.trim().normalize("NFKC");
+  if (/\b(?:Los Angeles|LA|L\.A\.) County\b/i.test(q)) return "LA County";
+  return (
+    areaOptions(restaurants)
+      .sort((a, b) => b.length - a.length)
+      .find((area) => {
+        const name = area.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+        return (
+          new RegExp(
+            `\\b(?:in|near|around)\\s+${name}(?=$|[^\\p{L}\\p{N}])`,
+            "iu",
+          ).test(q) ||
+          new RegExp(
+            `^${name}(?:$|(?=\\s+(?:happy|on|at|noon|monday|tuesday|wednesday|thursday|friday|saturday|sunday)\\b))`,
+            "i",
+          ).test(q)
+        );
+      }) || null
+  );
+}
+function happyHourWindows(raw) {
+  const scored = [...raw.matchAll(/happy[\s-]*hour/gi)]
+    .slice(0, 80)
+    .map((match) => {
+      const at = match.index,
+        text = raw.slice(Math.max(0, at - 40), at + 1460);
+      const near = text.slice(0, 450);
+      const score =
+        (text.match(/\$\s*\d/g) || []).length * 2 +
+        (/mon|tue|wed|thu|fri|sat|sun|daily|every day/i.test(near) ? 8 : 0) +
+        (/\d{1,2}(?::\d{2})?\s*(?:[–—-]|am|pm)/i.test(near) ? 8 : 0);
+      return { at, text, score };
+    })
+    .sort((a, b) => b.score - a.score || a.at - b.at);
+  const chosen = [];
+  for (const row of scored) {
+    if (chosen.every((other) => Math.abs(other.at - row.at) > 750))
+      chosen.push(row);
+    if (chosen.length === 2) break;
+  }
+  return chosen.map((row) => row.text);
+}
 const schema = {
   type: "object",
   properties: {
@@ -142,6 +186,10 @@ export async function searchPlaces(
       );
     }
   }
+  const searchArea = target ? null : explicitSearchArea(query);
+  const retrievalQuery = searchArea
+    ? `${searchArea} California happy hour menu`
+    : `${query.trim()} happy hour restaurant menu (Los Angeles OR Orange County) California`;
   let searchResponse;
   try {
     searchResponse = await fetchImpl("https://api.tavily.com/search", {
@@ -151,7 +199,7 @@ export async function searchPlaces(
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        query: `${query.trim()} happy hour restaurant menu (Los Angeles OR Orange County) California`,
+        query: retrievalQuery,
         search_depth: "basic",
         auto_parameters: false,
         max_results: 12,
@@ -205,10 +253,23 @@ export async function searchPlaces(
         ].includes(w),
     )
     .map((w) => w.replace(/s$/, ""));
-  for (const row of (Array.isArray(searchData.results)
-    ? searchData.results
-    : []
-  ).slice(0, 8)) {
+  const results = (
+    Array.isArray(searchData.results) ? searchData.results : []
+  ).slice(0, 12);
+  const relevance = (row) => {
+    const text = [row.title, row.content, row.raw_content]
+      .filter((v) => typeof v === "string")
+      .join(" ")
+      .toLowerCase();
+    return (
+      (searchArea && text.includes(searchArea.toLowerCase()) ? 100 : 0) +
+      (/happy[\s-]*hour/i.test(row.title || "") ? 10 : 0) +
+      (/happy[-_]?hour|menu/i.test(row.url || "") ? 5 : 0)
+    );
+  };
+  for (const row of results
+    .sort((a, b) => relevance(b) - relevance(a))
+    .slice(0, 8)) {
     try {
       const url = publicUrl(row.url),
         title = typeof row.title === "string" ? row.title.slice(0, 400) : "";
@@ -218,11 +279,17 @@ export async function searchPlaces(
       if (typeof row.raw_content === "string") {
         const raw = row.raw_content,
           lower = raw.toLowerCase();
-        fragments.push(raw.slice(0, 400));
-        const at = terms.map((w) => lower.indexOf(w)).find((n) => n >= 0);
-        if (at !== undefined)
-          fragments.push(raw.slice(Math.max(0, at - 700), at + 1000));
-        fragments.push(raw.slice(-400));
+        const windows = happyHourWindows(raw);
+        if (windows.length) {
+          fragments.push(...windows);
+          fragments.push(raw.slice(0, 400) + "\n…\n" + raw.slice(-400));
+        } else {
+          fragments.push(raw.slice(0, 400));
+          const at = terms.map((w) => lower.indexOf(w)).find((n) => n >= 0);
+          if (at !== undefined)
+            fragments.push(raw.slice(Math.max(0, at - 700), at + 1000));
+          fragments.push(raw.slice(-400));
+        }
       }
       if (fragments.some((f) => f.trim()))
         passages.push({ url, title, fragments: [...new Set(fragments)] });
@@ -400,6 +467,8 @@ export async function searchPlaces(
   return {
     diagnostics: {
       sourceCount: passages.length,
+      searchArea,
+      sourceHosts: passages.map((p) => new URL(p.url).hostname),
       extractedCount: rows.length,
       keptCount: candidates.length,
       rejected,
