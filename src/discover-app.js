@@ -9,7 +9,7 @@ import {
   menuSelection,
   primaryEvidence,
   menuItems,
-} from "./discovery.js?v=review-discovery-9";
+} from "./discovery.js?v=review-discovery-10";
 import { formatHappyHour } from "./matching.js";
 import {
   escapeHtml as esc,
@@ -17,8 +17,8 @@ import {
   happyHourListings,
 } from "./ui-state.js";
 
-import { candidateToVenue } from "./candidates.js?v=review-discovery-9";
-import { initReviews } from "./review-ui.js?v=review-discovery-9";
+import { candidateToVenue } from "./candidates.js?v=review-discovery-10";
+import { initReviews } from "./review-ui.js?v=review-discovery-10";
 let venues = [...restaurants];
 const list = document.querySelector("#results"),
   request = document.querySelector("#request"),

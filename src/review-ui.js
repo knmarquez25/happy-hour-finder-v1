@@ -3,7 +3,7 @@ import {
   normalizeCandidate,
   identity,
   freshMenuLookup,
-} from "./candidates.js?v=review-discovery-9";
+} from "./candidates.js?v=review-discovery-10";
 import { weekdays } from "./matching.js";
 export function initReviews({ endpoint, onApproved, onBrowse }) {
   const pending = document.querySelector("#pending-results"),
@@ -30,7 +30,13 @@ export function initReviews({ endpoint, onApproved, onBrowse }) {
     token = "",
     isOwner = false,
     serial = 0,
-    controller;
+    controller,
+    searchKeys = null,
+    searchState = "all";
+  const scopeLabel = document.createElement("p");
+  scopeLabel.className = "small muted";
+  scopeLabel.id = "pending-scope";
+  pending.before(scopeLabel);
   const showTab = (name) => {
     document.querySelectorAll("[data-view]").forEach((b) => {
       const active = b.dataset.view === name;
@@ -88,11 +94,23 @@ export function initReviews({ endpoint, onApproved, onBrowse }) {
     const data = await api("reviews");
     update(data.records || []);
   }
+  function inSearchScope(record) {
+    if (searchKeys === null) return true;
+    try {
+      return searchKeys.has(identity(record.payload));
+    } catch {
+      return false;
+    }
+  }
   function render() {
     const rows = [
       ...records.filter((r) => r.status === "pending"),
       ...transient,
-    ];
+    ].filter(inSearchScope);
+    scopeLabel.textContent =
+      searchKeys === null
+        ? "Showing all saved places waiting for verification."
+        : "Showing discoveries returned for your current request. Clear request to browse all saved places waiting for verification.";
     document.querySelector("#pending-tab").textContent =
       `Needs verification (${rows.length})`;
     pending.innerHTML = rows.length
@@ -109,7 +127,9 @@ export function initReviews({ endpoint, onApproved, onBrowse }) {
             return `<article class="restaurant-card pending-card" data-review-id="${esc(r.id)}"><div class="card-top"><div><h3>${esc(c.name)}</h3><p class="venue-location">${esc(c.location)}</p></div><span class="evidence-tag uncertain">${r.unsaved ? "Not saved" : "Needs verification"}</span></div><p class="small muted">Menu, prices and availability need owner verification.</p>${pendingMenu(r, c)}${(r.review_evidence || []).length ? `<details><summary>Community evidence (${r.review_evidence.length})</summary>${r.review_evidence.map((e) => `<p>${esc(e.note)}<br><a href="${esc(e.source_url)}" target="_blank" rel="noreferrer">Submitted source ↗</a></p>`).join("")}</details>` : ""}${r.unsaved ? '<p class="small budget-over">This discovery is not in the shared queue. Retry after storage is connected.</p>' : `<details><summary>Add menu evidence</summary><form data-evidence><label>Menu or photo link<input type="url" name="sourceUrl" required maxlength="2048" placeholder="https://restaurant.com/happy-hour"></label><label>What does the source confirm?<textarea name="note" maxlength="750" required></textarea></label><p class="small muted">Submit public menu information only. Evidence is public and still needs owner review.</p><button class="secondary" type="submit">Submit evidence</button><p class="form-message" role="status"></p></form></details>`}${isOwner && !r.unsaved ? ownerForm(c) : ""}</article>`;
           })
           .join("")
-      : '<div class="empty-state"><h3>No places waiting for verification</h3><p>Tell us what sounds good to search beyond the researched list. New discoveries appear here for source review before publication.</p></div>';
+      : searchKeys !== null
+        ? `<div class="empty-state"><h3>${searchState === "loading" ? "Searching for discoveries…" : searchState === "error" ? "Discovery search unavailable" : "No discoveries for this search"}</h3><p>${searchState === "loading" ? "Discoveries returned for your current request will appear here." : searchState === "error" ? "Your saved review queue is unchanged. Retry the search, or clear your request to browse all saved places." : "The saved review queue is unchanged. Clear your request to see all places waiting for verification."}</p></div>`
+        : '<div class="empty-state"><h3>No places waiting for verification</h3><p>Tell us what sounds good to search beyond the researched list. New discoveries appear here for source review before publication.</p></div>';
     observeMenus();
   }
   function observeMenus() {
@@ -128,6 +148,7 @@ export function initReviews({ endpoint, onApproved, onBrowse }) {
     const r = records.find((r) => r.id === id && r.status === "pending");
     if (
       !r ||
+      !inSearchScope(r) ||
       isOwner ||
       autoPaused ||
       !config.menuPersistence ||
@@ -152,7 +173,7 @@ export function initReviews({ endpoint, onApproved, onBrowse }) {
     if (!id) return;
     queued.delete(id);
     const r = records.find((r) => r.id === id && r.status === "pending");
-    if (!r || freshMenuLookup(r)) return void pumpMenus();
+    if (!r || !inSearchScope(r) || freshMenuLookup(r)) return void pumpMenus();
     menuBusy = true;
     attempted.add(id);
     try {
@@ -412,6 +433,10 @@ export function initReviews({ endpoint, onApproved, onBrowse }) {
       serial++;
       controller?.abort();
       transient = [];
+      searchKeys = null;
+      searchState = "all";
+      menuQueue.length = 0;
+      queued.clear();
       status.textContent = "";
       showTab("browse");
       document.querySelector("#search-attribution").replaceChildren();
@@ -423,6 +448,11 @@ export function initReviews({ endpoint, onApproved, onBrowse }) {
       controller = new AbortController();
       status.textContent = "Searching for additional places online…";
       transient = [];
+      searchKeys = new Set();
+      searchState = "loading";
+      menuQueue.length = 0;
+      queued.clear();
+      render();
       try {
         const result = await api("explore", {
           method: "POST",
@@ -431,6 +461,8 @@ export function initReviews({ endpoint, onApproved, onBrowse }) {
           signal: controller.signal,
         });
         if (own !== serial) return;
+        searchKeys = new Set((result.candidates || []).map(identity));
+        searchState = "done";
         if (result.diagnostics)
           console.info(
             "Discovery review counts",
@@ -465,6 +497,8 @@ export function initReviews({ endpoint, onApproved, onBrowse }) {
       } catch (e) {
         if (own !== serial || e.name === "AbortError") return;
         status.textContent = e.message;
+        searchState = "error";
+        render();
       }
     },
   };
