@@ -229,3 +229,109 @@ test("menu lookup cannot search for an unknown or already reviewed record", asyn
     },
   );
 });
+
+test("time controls apply to discovery and saved pending sources are passed to extraction", async () => {
+  let seen;
+  const payload = { name: "Saved Noon", location: "Downey" };
+  const reviewStore = {
+    configured: true,
+    list: async () => [{ id, status: "pending", payload }],
+    save: async () => [],
+  };
+  await server(
+    {
+      apiKey: "test",
+      reviewStore,
+      searchImpl: async (query, options) => {
+        seen = { query, options };
+        return { candidates: [] };
+      },
+    },
+    async (base) => {
+      const r = await fetch(base + "/api/explore", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          query: "Glendale Tuesday afternoon",
+          filters: { day: "Monday", timePeriod: "night", time: null },
+        }),
+      });
+      assert.equal(r.status, 200);
+      assert.match(seen.query, /Monday night/);
+      assert.doesNotMatch(seen.query, /Tuesday|afternoon/);
+      assert.deepEqual(seen.options.savedCandidates, [payload]);
+    },
+  );
+});
+test("menu import can save only server-extracted candidates, not visitor-authored approval payloads", async () => {
+  let saved, seen;
+  const payload = { name: "Imported", location: "Downey" };
+  const reviewStore = {
+    configured: true,
+    list: async () => [{ id, status: "pending", payload }],
+    save: async (c) => {
+      saved = c;
+      return [];
+    },
+  };
+  await server(
+    {
+      apiKey: "test",
+      reviewStore,
+      searchImpl: async (query, o) => {
+        seen = o;
+        return { candidates: [payload] };
+      },
+    },
+    async (base) => {
+      const request = (body) =>
+        fetch(base + "/api/import-menu", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(body),
+        });
+      assert.equal(
+        (
+          await request({
+            sourceUrl: "https://example.com/",
+            status: "approved",
+          })
+        ).status,
+        400,
+      );
+      const r = await request({ sourceUrl: "https://example.com/" });
+      assert.equal(r.status, 200);
+      assert.equal(seen.sourceUrl, "https://example.com/");
+      assert.deepEqual(saved, [payload]);
+      assert.equal((await r.json()).records[0].status, "pending");
+    },
+  );
+});
+
+test("blank menu links and invalid filters are rejected before provider use", async () => {
+  let called = false;
+  await server(
+    {
+      apiKey: "test",
+      searchImpl: async () => {
+        called = true;
+        return { candidates: [] };
+      },
+    },
+    async (base) => {
+      for (const [path, body] of [
+        ["import-menu", { sourceUrl: "" }],
+        ["explore", { query: "Glendale", filters: { day: "Funday" } }],
+        ["discover", { query: "Glendale", filters: { timePeriod: "bad" } }],
+      ]) {
+        const r = await fetch(base + "/api/" + path, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(body),
+        });
+        assert.equal(r.status, 400);
+      }
+      assert.equal(called, false);
+    },
+  );
+});

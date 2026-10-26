@@ -32,6 +32,9 @@ export function normalizeCandidate(value) {
   )
     throw new Error("Invalid happy-hour items");
   const result = {
+    ...(value.discoveryMethod === "menu-link"
+      ? { discoveryMethod: "menu-link" }
+      : {}),
     name: clean(value.name, 160, "restaurant name"),
     location: clean(value.location, 120, "location"),
     county: ["LA County", "Orange County"].includes(value.county)

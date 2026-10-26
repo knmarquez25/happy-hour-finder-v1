@@ -619,13 +619,12 @@ test("a city-and-time request uses two bounded basic searches and rejects an exp
     },
   });
   assert.equal(requests.length, 2);
-  assert.deepEqual(requests.map(b => b.search_depth), ["basic", "basic"]);
+  assert.deepEqual(
+    requests.map((b) => b.search_depth),
+    ["basic", "basic"],
+  );
   assert.ok(
-    requests.every(
-      (b) =>
-        b.auto_parameters === false &&
-        b.max_results === 12,
-    ),
+    requests.every((b) => b.auto_parameters === false && b.max_results === 12),
   );
   assert.equal(requests[1].query, '"Downey" "happy hour" "12"');
   assert.ok(requests.every((b) => b.exclude_domains.includes("yelp.com")));
@@ -635,16 +634,77 @@ test("a city-and-time request uses two bounded basic searches and rejects an exp
 
 test("a noon menu on a home page outranks eight explicit afternoon happy-hour menus", async () => {
   const results = [
-    ...Array.from({length:8}, (_, n) => ({
+    ...Array.from({ length: 8 }, (_, n) => ({
       url: `https://afternoon${n}.example/menu-happy-hour`,
       title: "Downey Happy Hour menu",
-      content: "Downey happy hour Monday-Friday 3pm-6pm Martini $9"
+      content: "Downey happy hour Monday-Friday 3pm-6pm Martini $9",
     })),
-    {...noonSource, url:"https://noon-bistro.example/", title:"Noon Bistro — Sports and Good Times"}
+    {
+      ...noonSource,
+      url: "https://noon-bistro.example/",
+      title: "Noon Bistro — Sports and Good Times",
+    },
   ];
   const r = await searchPlaces("happy hour in Downey noon on Monday", {
-    apiKey:"test", searchKey:"test", fetchImpl:fetcher(noonCandidate,{results})
+    apiKey: "test",
+    searchKey: "test",
+    fetchImpl: fetcher(noonCandidate, { results }),
   });
-  assert.equal(r.candidates.length,1);
-  assert.equal(r.candidates[0].sourceUrl,"https://noon-bistro.example/");
+  assert.equal(r.candidates.length, 1);
+  assert.equal(r.candidates[0].sourceUrl, "https://noon-bistro.example/");
+});
+
+test("direct menu-link import extracts the actual page without depending on search indexing", async () => {
+  let searches = 0,
+    extracts = 0;
+  const mock = fetcher(noonCandidate);
+  const r = await searchPlaces("happy hour in Downey", {
+    apiKey: "test",
+    searchKey: "test",
+    sourceUrl: "https://noon-bistro.example/",
+    fetchImpl: async (url, o) => {
+      if (url.endsWith("/search")) {
+        searches++;
+        throw Error("should not search");
+      }
+      if (url.endsWith("/extract")) {
+        extracts++;
+        return {
+          ok: true,
+          json: async () => ({
+            results: [
+              {
+                url: "https://noon-bistro.example/",
+                raw_content:
+                  "Noon Bistro Downey\nHappy Hour\nMonday–Friday 12–2 PM & 5–7 PM\nDomestic $3.50 · Import $4.50",
+              },
+            ],
+          }),
+        };
+      }
+      return mock(url, o);
+    },
+  });
+  assert.equal(searches, 0);
+  assert.equal(extracts, 1);
+  assert.equal(r.candidates.length, 1);
+  assert.equal(r.candidates[0].discoveryMethod, "menu-link");
+  assert.equal(r.candidates[0].items[0].priceCents, 350);
+});
+test("saved unverified evidence remains searchable when the provider misses the page", async () => {
+  const saved = {
+    ...noonCandidate,
+    sourceUrl: noonSource.url,
+    evidence:
+      "Page title: Noon Bistro Downey\nMenu excerpt: " + noonSource.content,
+  };
+  const r = await searchPlaces("Downey Monday noon", {
+    apiKey: "test",
+    searchKey: "test",
+    savedCandidates: [saved],
+    fetchImpl: fetcher(noonCandidate, { results: [] }),
+  });
+  assert.equal(r.candidates.length, 1);
+  assert.equal(r.candidates[0].previouslyCaptured, true);
+  assert.equal(r.candidates[0].sourceUrl, noonSource.url);
 });

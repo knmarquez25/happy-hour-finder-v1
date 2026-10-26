@@ -1,3 +1,4 @@
+import { timePeriods, inTimePeriod } from "./time-filter.js";
 import {
   weekdays,
   isHappyHourActive,
@@ -15,6 +16,7 @@ export const emptyPreferences = () => ({
   budget: null,
   day: null,
   time: null,
+  timePeriod: null,
   atmosphere: null,
   clarification: null,
 });
@@ -71,6 +73,8 @@ export function validatePreferences(value, venues) {
     (typeof p.time !== "string" || !/^([01]\d|2[0-3]):[0-5]\d$/.test(p.time))
   )
     throw new Error("The AI returned an invalid time.");
+  if (p.timePeriod !== null && !Object.hasOwn(timePeriods, p.timePeriod))
+    throw new Error("Choose a valid time of day.");
   return p;
 }
 export function primaryEvidence(venue, record) {
@@ -94,9 +98,19 @@ function contexts(venue, p) {
     )
       continue;
     for (const day of p.day ? [p.day] : weekdays) {
-      const times = p.time ? [p.time] : [window.start, "00:00"];
+      const periodStart = timePeriods[p.timePeriod]?.start;
+      const startTime =
+        periodStart === undefined
+          ? null
+          : String(Math.floor(periodStart / 60)).padStart(2, "0") + ":00";
+      const times = p.time
+        ? [p.time]
+        : [window.start, "00:00", startTime].filter(Boolean);
       for (const time of times)
-        if (isHappyHourActive({ hours: [window] }, day, time))
+        if (
+          (p.time || inTimePeriod(time, p.timePeriod)) &&
+          isHappyHourActive({ hours: [window] }, day, time)
+        )
           result.push({ day, time, window });
     }
   }
@@ -212,7 +226,7 @@ export function discover(venues, raw = emptyPreferences()) {
     .flatMap((venue) => {
       if (!areaMatches(venue, p.area)) return [];
       const points = contexts(venue, p);
-      if ((p.day || p.time) && !points.length) return [];
+      if ((p.day || p.time || p.timePeriod) && !points.length) return [];
       const items = eligibleItems(venue, p, points);
       if (
         p.foodPreferences.some(
@@ -247,7 +261,8 @@ export function discover(venues, raw = emptyPreferences()) {
         reasons.push("Listed food: " + p.foodPreferences.join(", "));
       if (p.drinkPreferences.length)
         reasons.push("Listed drinks: " + p.drinkPreferences.join(", "));
-      if (p.day || p.time) reasons.push("Restaurant-listed schedule matches");
+      if (p.day || p.time || p.timePeriod)
+        reasons.push("Restaurant-listed schedule matches");
       if (p.atmosphere) reasons.push(p.atmosphere + " atmosphere (editorial)");
       return [
         {

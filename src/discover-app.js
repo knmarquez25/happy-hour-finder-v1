@@ -1,3 +1,4 @@
+import { timePeriods } from "./time-filter.js";
 import { restaurants, dataMetadata } from "./data.js";
 import { apiBase } from "./config.js";
 const endpoint = (path) =>
@@ -9,7 +10,7 @@ import {
   menuSelection,
   primaryEvidence,
   menuItems,
-} from "./discovery.js?v=review-discovery-10";
+} from "./discovery.js?v=time-discovery-11";
 import { formatHappyHour } from "./matching.js";
 import {
   escapeHtml as esc,
@@ -17,14 +18,39 @@ import {
   happyHourListings,
 } from "./ui-state.js";
 
-import { candidateToVenue } from "./candidates.js?v=review-discovery-10";
-import { initReviews } from "./review-ui.js?v=review-discovery-10";
+import { candidateToVenue } from "./candidates.js?v=time-discovery-11";
+import { initReviews } from "./review-ui.js?v=time-discovery-11";
 let venues = [...restaurants];
 const list = document.querySelector("#results"),
   request = document.querySelector("#request"),
   error = document.querySelector("#request-error"),
   clear = document.querySelector("#clear-request"),
   button = document.querySelector("#ask-button");
+const dayFilter = document.querySelector("#day-filter"),
+  periodFilter = document.querySelector("#period-filter"),
+  exactFilter = document.querySelector("#exact-time-filter"),
+  exactLabel = document.querySelector("#exact-time-label");
+let manualFilters = {};
+function syncTimeControls(p) {
+  dayFilter.value = p.day || "";
+  periodFilter.value = p.time ? "exact" : p.timePeriod || "";
+  exactFilter.value = p.time || "";
+  exactLabel.hidden = periodFilter.value !== "exact";
+}
+dayFilter.addEventListener("change", () => {
+  manualFilters.day = dayFilter.value || null;
+});
+periodFilter.addEventListener("change", () => {
+  exactLabel.hidden = periodFilter.value !== "exact";
+  manualFilters.timePeriod =
+    periodFilter.value === "exact" ? null : periodFilter.value || null;
+  manualFilters.time =
+    periodFilter.value === "exact" ? exactFilter.value || null : null;
+});
+exactFilter.addEventListener("change", () => {
+  manualFilters.time = exactFilter.value || null;
+  manualFilters.timePeriod = null;
+});
 let preferences = emptyPreferences(),
   generation = 0,
   controller;
@@ -105,6 +131,8 @@ function render() {
   ];
   if (preferences.day) parts.push(preferences.day);
   if (preferences.time) parts.push(preferences.time);
+  else if (preferences.timePeriod)
+    parts.push(timePeriods[preferences.timePeriod].label);
   if (preferences.atmosphere) parts.push(preferences.atmosphere);
   parts.push(`${rows.length} of ${venues.length} reviewed restaurants`);
   document.querySelector("#interpretation").textContent = parts.join(" · ");
@@ -114,6 +142,8 @@ function reset() {
   reviews.reset();
   controller?.abort();
   preferences = emptyPreferences();
+  manualFilters = {};
+  syncTimeControls(preferences);
   request.value = "";
   error.hidden = true;
   clear.hidden = true;
@@ -126,12 +156,19 @@ document
   .querySelector("#ask-form")
   .addEventListener("submit", async (event) => {
     event.preventDefault();
-    const query = request.value.trim();
+    const query =
+      request.value.trim() ||
+      (Object.keys(manualFilters).length ? "happy hours" : "");
+    if (periodFilter.value === "exact" && !exactFilter.value) {
+      error.textContent = "Choose an exact time or another time-of-day option.";
+      error.hidden = false;
+      return;
+    }
     if (!query) {
       reset();
       return;
     }
-    reviews.explore(query);
+    reviews.explore(query, manualFilters);
     const ownGeneration = ++generation;
     controller?.abort();
     controller = new AbortController();
@@ -144,7 +181,7 @@ document
       const response = await fetch(endpoint("discover"), {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ query }),
+        body: JSON.stringify({ query, filters: manualFilters }),
         signal: controller.signal,
       });
       let value;
@@ -165,6 +202,7 @@ document
       if (ownGeneration !== generation) return;
       if (next.clarification) throw new Error(next.clarification);
       preferences = next;
+      syncTimeControls(preferences);
       render();
     } catch (e) {
       if (ownGeneration !== generation || e.name === "AbortError") return;

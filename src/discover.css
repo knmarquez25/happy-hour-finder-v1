@@ -664,3 +664,60 @@ footer {
 .source-summary {
   overflow-wrap: anywhere;
 }
+
+.time-filters {
+  border: 1px solid var(--line, #c7cfc4);
+  border-radius: 12px;
+  padding: 14px;
+  margin: 12px 0;
+  display: grid;
+  gap: 10px;
+  min-width: 0;
+}
+.time-filters legend {
+  padding: 0 6px;
+  font-size: 0.9rem;
+}
+.time-filters label {
+  display: grid;
+  gap: 5px;
+  font-size: 0.85rem;
+}
+.time-filters select,
+.time-filters input,
+.source-import input {
+  width: 100%;
+  box-sizing: border-box;
+  min-width: 0;
+  padding: 10px;
+  border: 1px solid #aab6a7;
+  border-radius: 8px;
+  background: #fffdf6;
+  color: #233c2e;
+  font: inherit;
+}
+.time-filters p {
+  margin: 0;
+}
+.source-import {
+  margin: 16px 0;
+  padding: 12px;
+  border: 1px solid #c7cfc4;
+  border-radius: 10px;
+}
+.source-import summary {
+  cursor: pointer;
+  font-weight: 600;
+}
+.source-import form {
+  display: grid;
+  gap: 12px;
+  margin-top: 12px;
+}
+.source-import label {
+  display: grid;
+  gap: 5px;
+}
+[hidden] {
+  display: none !important;
+}

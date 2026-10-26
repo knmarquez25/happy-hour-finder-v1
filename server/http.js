@@ -1,3 +1,7 @@
+import {
+  applyTimeFilters,
+  overrideTimePreferences,
+} from "../src/time-filter.js";
 import http from "node:http";
 import { readFile, realpath } from "node:fs/promises";
 import { dirname, resolve, extname, sep } from "node:path";
@@ -23,6 +27,13 @@ const publicDocs = new Set([
   "/docs/class-post.md",
   "/docs/evaluation-report.md",
 ]);
+function filteredQuery(body) {
+  try {
+    return applyTimeFilters(body.query, body.filters);
+  } catch (e) {
+    throw serviceError(e.message, 400);
+  }
+}
 async function readJson(req, allowedFields = ["query"]) {
   if (
     !req.headers["content-type"]?.toLowerCase().startsWith("application/json")
@@ -137,8 +148,9 @@ export function createApp({
         "/api/owner",
       ].includes(url.pathname)
         ? "GET"
-        : ["/api/discover", "/api/explore"].includes(url.pathname) ||
-            reviewMatch
+        : ["/api/discover", "/api/explore", "/api/import-menu"].includes(
+              url.pathname,
+            ) || reviewMatch
           ? "POST"
           : null;
       if (apiMethod) {
@@ -197,7 +209,7 @@ export function createApp({
       if (url.pathname === "/api/status" && req.method === "GET")
         return json(200, { configured: Boolean(apiKey) });
       if (url.pathname === "/api/discover" && req.method === "POST") {
-        const body = await readJson(req);
+        const body = await readJson(req, ["query", "filters"]);
         if (
           typeof body.query !== "string" ||
           !body.query.trim() ||
@@ -215,11 +227,14 @@ export function createApp({
         reserve(req, res);
         try {
           return json(200, {
-            preferences: await interpretRequest(body.query, {
-              apiKey,
-              model,
-              fetchImpl,
-            }),
+            preferences: overrideTimePreferences(
+              await interpretRequest(filteredQuery(body), {
+                apiKey,
+                model,
+                fetchImpl,
+              }),
+              body.filters,
+            ),
           });
         } finally {
           inFlight--;
@@ -244,8 +259,22 @@ export function createApp({
           inFlight--;
         }
       }
-      if (url.pathname === "/api/explore" && req.method === "POST") {
-        const body = await readJson(req);
+      if (
+        ["/api/explore", "/api/import-menu"].includes(url.pathname) &&
+        req.method === "POST"
+      ) {
+        const importing = url.pathname === "/api/import-menu";
+        const body = await readJson(
+          req,
+          importing ? ["query", "sourceUrl"] : ["query", "filters"],
+        );
+        if (
+          importing &&
+          (typeof body.sourceUrl !== "string" || !body.sourceUrl.trim())
+        )
+          throw serviceError("Add a public menu link.", 400);
+        if (importing && body.query === undefined)
+          body.query = "Happy-hour menus in LA County or Orange County";
         if (
           typeof body.query !== "string" ||
           !body.query.trim() ||
@@ -255,11 +284,28 @@ export function createApp({
             "Enter a request between 1 and 1,000 characters.",
             400,
           );
-        reserve(req, res, 3);
+        let query;
         try {
-          const result = await searchImpl(body.query, {
+          query = applyTimeFilters(body.query, body.filters);
+        } catch (e) {
+          throw serviceError(e.message, 400);
+        }
+        reserve(req, res, importing ? 2 : 3);
+        try {
+          let savedCandidates = [];
+          if (!importing && reviewStore.configured) {
+            try {
+              savedCandidates = (await reviewList())
+                .filter((r) => r.status === "pending")
+                .map((r) => freshMenuLookup(r)?.candidate || r.payload);
+            } catch {}
+          }
+          const result = await searchImpl(query, {
             apiKey,
             searchKey,
+            ...(importing
+              ? { sourceUrl: body.sourceUrl }
+              : { savedCandidates }),
             model,
             fetchImpl,
           });

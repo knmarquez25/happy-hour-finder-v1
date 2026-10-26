@@ -1,3 +1,4 @@
+import { periodFromQuery, timePeriods } from "../src/time-filter.js";
 import { weekdays, isHappyHourActive } from "../src/matching.js";
 const dayWord =
   "(mon(?:day)?|tue(?:sday)?|wed(?:nesday)?|thu(?:rsday)?|fri(?:day)?|sat(?:urday)?|sun(?:day)?)";
@@ -52,9 +53,10 @@ export function contradictsSchedule(hoursText, query) {
     ) || [];
   if (times.length > 1) return false;
   const plan = requestedSchedule(query);
+  const period = !plan.time && timePeriods[periodFromQuery(query)];
   if (
     !hoursText ||
-    (!plan.day && !plan.time) ||
+    (!plan.day && !plan.time && !period) ||
     /\b(?:not|except|excluding)\b/i.test(query)
   )
     return false;
@@ -67,14 +69,24 @@ export function contradictsSchedule(hoursText, query) {
     )
   )
     return false;
+  // Infer a shared meridiem only for an ascending same-half-day range, or noon.
+  // Other ambiguous shorthand remains unknown rather than becoming a false match.
+  const expanded = text.replace(
+    /(\d{1,2})(?::(\d{2}))?\s*([-–—]|to)\s*(\d{1,2})(?::(\d{2}))?\s*([ap]m)/gi,
+    (all, h, m, sep, end, em, meridian) => {
+      if (Number(h) < Number(end) || (Number(h) === 12 && /pm/i.test(meridian)))
+        return `${h}${m ? ":" + m : ""}${meridian}${sep}${end}${em ? ":" + em : ""}${meridian}`;
+      return all;
+    },
+  );
   const pattern =
     /(\d{1,2})(?::(\d{2}))?\s*([ap]m)\s*(?:[-–—]|to)\s*(\d{1,2})(?::(\d{2}))?\s*([ap]m)/gi;
-  const ranges = [...text.matchAll(pattern)].map((m) => ({
+  const ranges = [...expanded.matchAll(pattern)].map((m) => ({
     start: clock(m[1], m[2], m[3]),
     end: clock(m[4], m[5], m[6]),
   }));
   const allRanges =
-    text.match(
+    expanded.match(
       /\d{1,2}(?::\d{2})?\s*(?:[ap]m)?\s*(?:[-–—]|to)\s*\d{1,2}(?::\d{2})?\s*(?:[ap]m)/gi,
     ) || [];
   if (
@@ -116,7 +128,16 @@ export function contradictsSchedule(hoursText, query) {
   const sampleDays = plan.day ? [plan.day] : weekdays;
   const sampleTimes = plan.time
     ? [plan.time]
-    : ["00:00", ...ranges.map((r) => r.start)];
+    : period
+      ? Array.from({ length: period.end - period.start }, (_, i) => {
+          const minute = period.start + i;
+          return (
+            String(Math.floor(minute / 60)).padStart(2, "0") +
+            ":" +
+            String(minute % 60).padStart(2, "0")
+          );
+        })
+      : ["00:00", ...ranges.map((r) => r.start)];
   return !sampleDays.some((day) =>
     sampleTimes.some((time) =>
       isHappyHourActive({ hours: windows }, day, time),

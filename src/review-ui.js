@@ -3,7 +3,7 @@ import {
   normalizeCandidate,
   identity,
   freshMenuLookup,
-} from "./candidates.js?v=review-discovery-10";
+} from "./candidates.js?v=time-discovery-11";
 import { weekdays } from "./matching.js";
 export function initReviews({ endpoint, onApproved, onBrowse }) {
   const pending = document.querySelector("#pending-results"),
@@ -124,7 +124,7 @@ export function initReviews({ endpoint, onApproved, onBrowse }) {
             } catch {
               return "";
             }
-            return `<article class="restaurant-card pending-card" data-review-id="${esc(r.id)}"><div class="card-top"><div><h3>${esc(c.name)}</h3><p class="venue-location">${esc(c.location)}</p></div><span class="evidence-tag uncertain">${r.unsaved ? "Not saved" : "Needs verification"}</span></div><p class="small muted">Menu, prices and availability need owner verification.</p>${pendingMenu(r, c)}${(r.review_evidence || []).length ? `<details><summary>Community evidence (${r.review_evidence.length})</summary>${r.review_evidence.map((e) => `<p>${esc(e.note)}<br><a href="${esc(e.source_url)}" target="_blank" rel="noreferrer">Submitted source ↗</a></p>`).join("")}</details>` : ""}${r.unsaved ? '<p class="small budget-over">This discovery is not in the shared queue. Retry after storage is connected.</p>' : `<details><summary>Add menu evidence</summary><form data-evidence><label>Menu or photo link<input type="url" name="sourceUrl" required maxlength="2048" placeholder="https://restaurant.com/happy-hour"></label><label>What does the source confirm?<textarea name="note" maxlength="750" required></textarea></label><p class="small muted">Submit public menu information only. Evidence is public and still needs owner review.</p><button class="secondary" type="submit">Submit evidence</button><p class="form-message" role="status"></p></form></details>`}${isOwner && !r.unsaved ? ownerForm(c) : ""}</article>`;
+            return `<article class="restaurant-card pending-card" data-review-id="${esc(r.id)}"><div class="card-top"><div><h3>${esc(c.name)}</h3><p class="venue-location">${esc(c.location)}</p></div><span class="evidence-tag uncertain">${r.unsaved ? "Not saved" : "Needs verification"}</span></div><p class="small muted">${r.payload.discoveryMethod === "menu-link" ? "Added from a menu link. " : ""}Menu, prices and availability need owner verification.</p>${pendingMenu(r, c)}${(r.review_evidence || []).length ? `<details><summary>Community evidence (${r.review_evidence.length})</summary>${r.review_evidence.map((e) => `<p>${esc(e.note)}<br><a href="${esc(e.source_url)}" target="_blank" rel="noreferrer">Submitted source ↗</a></p>`).join("")}</details>` : ""}${r.unsaved ? '<p class="small budget-over">This discovery is not in the shared queue. Retry after storage is connected.</p>' : `<details><summary>Add menu evidence</summary><form data-evidence><label>Menu or photo link<input type="url" name="sourceUrl" required maxlength="2048" placeholder="https://restaurant.com/happy-hour"></label><label>What does the source confirm?<textarea name="note" maxlength="750" required></textarea></label><p class="small muted">Submit public menu information only. Evidence is public and still needs owner review.</p><button class="secondary" type="submit">Submit evidence</button><p class="form-message" role="status"></p></form></details>`}${isOwner && !r.unsaved ? ownerForm(c) : ""}</article>`;
           })
           .join("")
       : searchKeys !== null
@@ -428,6 +428,48 @@ export function initReviews({ endpoint, onApproved, onBrowse }) {
       status.textContent = e.message;
       render();
     });
+  document
+    .querySelector("#import-menu-form")
+    .addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const form = e.currentTarget,
+        button = form.querySelector("button"),
+        message = document.querySelector("#import-menu-status");
+      const sourceUrl = form.elements.sourceUrl.value.trim(),
+        area = form.elements.area.value.trim();
+      const own = ++serial;
+      controller?.abort();
+      button.disabled = true;
+      message.textContent = "Reading the linked happy-hour menu…";
+      try {
+        const result = await post("import-menu", {
+          sourceUrl,
+          ...(area ? { query: `happy hour in ${area}` } : {}),
+        });
+        if (own !== serial) {
+          message.textContent = result.saved
+            ? "Menu link saved. Your newer search remains active."
+            : result.notice || "Menu link was not saved.";
+          return;
+        }
+        if (result.saved) {
+          searchKeys = new Set((result.candidates || []).map(identity));
+          searchState = "done";
+          update(result.records || []);
+        } else throw Error(result.notice || "The menu could not be saved.");
+        const count = result.candidates?.length || 0;
+        message.textContent = count
+          ? `${count} place(s) added from this menu link. Owner verification is still required.`
+          : "No additional source-supported happy-hour items were extracted. No place was approved.";
+        status.textContent =
+          "Showing results from the submitted menu link. Run your search again to see matching saved discoveries.";
+        showTab("pending");
+      } catch (err) {
+        message.textContent = err.message;
+      } finally {
+        button.disabled = false;
+      }
+    });
   return {
     reset() {
       serial++;
@@ -442,7 +484,7 @@ export function initReviews({ endpoint, onApproved, onBrowse }) {
       document.querySelector("#search-attribution").replaceChildren();
       render();
     },
-    async explore(query) {
+    async explore(query, filters = {}) {
       const own = ++serial;
       controller?.abort();
       controller = new AbortController();
@@ -457,7 +499,7 @@ export function initReviews({ endpoint, onApproved, onBrowse }) {
         const result = await api("explore", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ query }),
+          body: JSON.stringify({ query, filters }),
           signal: controller.signal,
         });
         if (own !== serial) return;

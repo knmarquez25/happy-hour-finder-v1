@@ -8,7 +8,7 @@
       content="Browse researched happy-hour menus in LA and Orange County. Describe an area, food, or budget to get AI-guided suggestions, with published prices and source links."
     />
     <title>Happy Hour Finder | Ask & Browse</title>
-    <link rel="stylesheet" href="./src/discover.css?v=review-discovery-10" />
+    <link rel="stylesheet" href="./src/discover.css?v=time-discovery-11" />
   </head>
   <body>
     <a class="skip-link" href="#results-title">Skip to restaurants</a>
@@ -42,6 +42,40 @@
               for interpretation and web search. Gemini free-tier requests may
               be used to improve Google's products.
             </p>
+            <fieldset class="time-filters">
+              <legend>
+                When do you want to go?
+                <span class="small muted">Optional</span>
+              </legend>
+              <label
+                >Day<select id="day-filter" aria-label="Day">
+                  <option value="">Any day</option>
+                  <option>Monday</option>
+                  <option>Tuesday</option>
+                  <option>Wednesday</option>
+                  <option>Thursday</option>
+                  <option>Friday</option>
+                  <option>Saturday</option>
+                  <option>Sunday</option>
+                </select></label
+              >
+              <label
+                >Time of day<select id="period-filter" aria-label="Time of day">
+                  <option value="">Any time</option>
+                  <option value="morning">Morning · 6 AM–noon</option>
+                  <option value="afternoon">Afternoon · noon–6 PM</option>
+                  <option value="night">Night · 6 PM–midnight</option>
+                  <option value="exact">Exact time</option>
+                </select></label
+              >
+              <label id="exact-time-label" hidden
+                >Exact time<input id="exact-time-filter" type="time"
+              /></label>
+              <p class="small muted">
+                Find a happy hour to apply these filters to both lists.
+                Time-of-day matches overlap that period.
+              </p>
+            </fieldset>
             <button class="primary" id="ask-button" type="submit">
               Find my happy hour <span aria-hidden="true">→</span>
             </button>
@@ -169,6 +203,32 @@
                 <p id="owner-message" role="status"></p>
               </form>
             </section>
+            <details class="source-import">
+              <summary>Know a place we missed? Add its menu link</summary>
+              <form id="import-menu-form">
+                <label
+                  >Public restaurant menu link<input
+                    type="url"
+                    name="sourceUrl"
+                    required
+                    maxlength="2048"
+                    placeholder="https://restaurant.com/happy-hour"
+                /></label>
+                <label
+                  >City or neighborhood (optional)<input
+                    name="area"
+                    maxlength="120"
+                    placeholder="Downey"
+                /></label>
+                <p class="small muted">
+                  We read the linked page and extract supported happy-hour
+                  items. Additions stay public and labeled Needs verification
+                  until the owner reviews them.
+                </p>
+                <button class="secondary" type="submit">Read menu link</button>
+                <p id="import-menu-status" role="status"></p>
+              </form>
+            </details>
             <div id="pending-results"></div>
           </div>
           <footer>
@@ -184,7 +244,7 @@
     >
     <script
       type="module"
-      src="./src/discover-app.js?v=review-discovery-10"
+      src="./src/discover-app.js?v=time-discovery-11"
     ></script>
   </body>
 </html>

@@ -123,6 +123,8 @@ export async function searchPlaces(
     model = "gemini-3.5-flash-lite",
     fetchImpl = fetch,
     target = null,
+    sourceUrl = null,
+    savedCandidates = [],
   } = {},
 ) {
   if (typeof query !== "string" || !query.trim() || query.length > 1000)
@@ -188,6 +190,15 @@ export async function searchPlaces(
     }
   }
   const searchArea = target ? null : explicitSearchArea(query);
+  if (sourceUrl !== null) {
+    try {
+      sourceUrl = publicUrl(sourceUrl);
+      if (!/^[a-z0-9.-]+\.[a-z]{2,}$/i.test(new URL(sourceUrl).hostname))
+        throw Error();
+    } catch {
+      throw serviceError("Use a public HTTPS restaurant menu link.", 400);
+    }
+  }
   const retrievalQuery = searchArea
     ? `${searchArea} California happy hour menu`
     : `${query.trim()} happy hour restaurant menu (Los Angeles OR Orange County) California`;
@@ -195,45 +206,50 @@ export async function searchPlaces(
   const queries = [retrievalQuery];
   if (searchArea && (plan.day || plan.time)) {
     const hour = plan.time ? Number(plan.time.slice(0, 2)) % 12 || 12 : null;
-    queries.push(
-      `"${searchArea}" "happy hour" "${hour || plan.day}"`,
-    );
+    queries.push(`"${searchArea}" "happy hour" "${hour || plan.day}"`);
   }
-  const attempts = await Promise.allSettled(
-    queries.map(async (searchQuery, index) => {
-      const response = await fetchImpl("https://api.tavily.com/search", {
-        method: "POST",
-        headers: {
-          Authorization: "Bearer " + searchKey,
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          query: searchQuery,
-          search_depth: "basic",
-          auto_parameters: false,
-          max_results: 12,
-          include_answer: false,
-          include_raw_content: "text",
-          include_images: false,
-          exclude_domains: [
-            "yelp.com",
-            "yelp.ca",
-            "tripadvisor.com",
-            "facebook.com",
-            "instagram.com",
-            "tiktok.com",
-          ],
+  const attempts = sourceUrl
+    ? []
+    : await Promise.allSettled(
+        queries.map(async (searchQuery, index) => {
+          const response = await fetchImpl("https://api.tavily.com/search", {
+            method: "POST",
+            headers: {
+              Authorization: "Bearer " + searchKey,
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              query: searchQuery,
+              search_depth: "basic",
+              auto_parameters: false,
+              max_results: 12,
+              include_answer: false,
+              include_raw_content: "text",
+              include_images: false,
+              exclude_domains: [
+                "yelp.com",
+                "yelp.ca",
+                "tripadvisor.com",
+                "facebook.com",
+                "instagram.com",
+                "tiktok.com",
+              ],
+            }),
+            signal: AbortSignal.timeout(20000),
+          });
+          if (!response.ok) throw Error("Search unavailable");
+          const data = await response.json();
+          return (Array.isArray(data?.results) ? data.results : [])
+            .slice(0, 12)
+            .map((row) => ({ ...row, _scheduleQuery: index > 0 }));
         }),
-        signal: AbortSignal.timeout(20000),
-      });
-      if (!response.ok) throw Error("Search unavailable");
-      const data = await response.json();
-      return (Array.isArray(data?.results) ? data.results : [])
-        .slice(0, 12)
-        .map((row) => ({ ...row, _scheduleQuery: index > 0 }));
-    }),
-  );
-  if (attempts.every((r) => r.status === "rejected") && !target?.evidence)
+      );
+  if (
+    !sourceUrl &&
+    attempts.every((r) => r.status === "rejected") &&
+    !target?.evidence &&
+    !savedCandidates.length
+  )
     throw serviceError(
       "Free web search is unavailable or its quota was reached. No paid fallback was used.",
       503,
@@ -254,6 +270,44 @@ export async function searchPlaces(
             : row,
         );
       }
+  if (sourceUrl) {
+    let response;
+    try {
+      response = await fetchImpl("https://api.tavily.com/extract", {
+        method: "POST",
+        headers: {
+          Authorization: "Bearer " + searchKey,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          urls: [sourceUrl],
+          extract_depth: "basic",
+          format: "text",
+          include_images: false,
+        }),
+        signal: AbortSignal.timeout(20000),
+      });
+      if (!response.ok) throw Error();
+      const data = await response.json();
+      const page = data.results?.find(
+        (r) =>
+          r.url === sourceUrl &&
+          typeof r.raw_content === "string" &&
+          r.raw_content.trim(),
+      );
+      if (!page) throw Error();
+      unique.set(sourceUrl, {
+        url: sourceUrl,
+        title: page.raw_content.slice(0, 200),
+        raw_content: page.raw_content,
+      });
+    } catch {
+      throw serviceError(
+        "The menu link could not be read. Nothing was added; try a public text menu page.",
+        422,
+      );
+    }
+  }
   const searchData = { results: [...unique.values()] };
   const passages = [];
   const terms = [...new Set(query.toLowerCase().match(/[a-z]{3,}/g) || [])]
@@ -289,8 +343,17 @@ export async function searchPlaces(
     // A home-page happy-hour schedule can be more relevant than a dedicated
     // afternoon menu. This is a retrieval hint, never evidence of availability.
     const hour = plan.time ? Number(plan.time.slice(0, 2)) % 12 || 12 : null;
-    const clockCue = hour && new RegExp(`\\b${hour}(?::[0-5]\\d)?\\s*(?:[ap]m|[-–—]\\s*\\d{1,2}(?::[0-5]\\d)?\\s*[ap]m)`, "i");
-    const scheduleCue = clockCue && happyHourWindows(text).some((window) => clockCue.test(window.slice(0, 450)));
+    const clockCue =
+      hour &&
+      new RegExp(
+        `\\b${hour}(?::[0-5]\\d)?\\s*(?:[ap]m|[-–—]\\s*\\d{1,2}(?::[0-5]\\d)?\\s*[ap]m)`,
+        "i",
+      );
+    const scheduleCue =
+      clockCue &&
+      happyHourWindows(text).some((window) =>
+        clockCue.test(window.slice(0, 450)),
+      );
     return (
       (scheduleCue ? 40 : 0) +
       (row._scheduleQuery ? 20 : 0) +
@@ -327,6 +390,53 @@ export async function searchPlaces(
         passages.push({ url, title, fragments: [...new Set(fragments)] });
     } catch {}
   }
+  // Search the accumulated unverified source library as well as the web.
+  // Saved evidence remains a lead, not owner approval or live confirmation.
+  const savedPassages = [];
+  if (!sourceUrl && !target)
+    for (const raw of savedCandidates.slice(0, 200)) {
+      try {
+        const c = normalizeCandidate(raw);
+        if (
+          searchArea &&
+          ![c.location, c.county].some(
+            (v) => v?.toLowerCase() === searchArea.toLowerCase(),
+          )
+        )
+          continue;
+        if (contradictsSchedule(c.hoursText, query)) continue;
+        const title = c.evidence.match(/^Page title: ([^\n]+)/)?.[1] || "";
+        const excerpt = c.evidence.replace(
+          /^Page title: [^\n]+\nMenu excerpt: /,
+          "",
+        );
+        if (
+          savedPassages.some(
+            (p) =>
+              p.url === c.sourceUrl &&
+              p.fragments[0] === excerpt.slice(0, 1500),
+          )
+        )
+          continue;
+        // Keep literal captured text; never synthesize an item or venue citation.
+        if (
+          ![title, excerpt]
+            .join(" ")
+            .toLowerCase()
+            .includes(c.name.toLowerCase())
+        )
+          continue;
+        savedPassages.push({
+          url: c.sourceUrl,
+          title,
+          fragments: [excerpt.slice(0, 1500)],
+          previouslyCaptured: true,
+        });
+        if (savedPassages.length === 4) break;
+      } catch {}
+    }
+  passages.unshift(...savedPassages);
+  passages.splice(8);
   // Previously captured source text is still useful when a fresh search misses it.
   // Scope guide excerpts to this venue before extraction, retaining their source URL.
   if (target?.evidence) {
@@ -495,6 +605,7 @@ export async function searchPlaces(
       candidates.push({
         ...c,
         previouslyCaptured: Boolean(cited.previouslyCaptured),
+        ...(sourceUrl ? { discoveryMethod: "menu-link" } : {}),
         discoveredAt: new Date().toISOString(),
       });
     } catch {
@@ -505,9 +616,17 @@ export async function searchPlaces(
     diagnostics: {
       sourceCount: passages.length,
       searchArea,
-      searchCalls: queries.length,
+      searchCalls: sourceUrl ? 0 : queries.length,
+      savedSourceCount: savedPassages.length,
+      importedSource: Boolean(sourceUrl),
       sourceHosts: passages.map((p) => new URL(p.url).hostname),
-      retrievedHosts: results.map((r) => { try { return new URL(r.url).hostname; } catch { return "invalid"; } }),
+      retrievedHosts: results.map((r) => {
+        try {
+          return new URL(r.url).hostname;
+        } catch {
+          return "invalid";
+        }
+      }),
       extractedCount: rows.length,
       keptCount: candidates.length,
       rejected,
