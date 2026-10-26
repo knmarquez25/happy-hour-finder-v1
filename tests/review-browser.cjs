@@ -102,6 +102,22 @@ const { chromium } = require("playwright");
         .count(),
       0,
     );
+    assert.equal(
+      await page.locator("#pending-results .evidence-tag").innerText(),
+      "Needs verification",
+    );
+    await page.reload();
+    await page.getByRole("tab", { name: /Needs verification/ }).click();
+    await page
+      .getByRole("heading", { name: "New Bistro", exact: true })
+      .waitFor();
+    assert.equal(
+      await page
+        .getByRole("button", { name: "Approve and publish", exact: true })
+        .count(),
+      0,
+      "Public visitors see pending places without owner controls",
+    );
     await page.getByText("Add menu evidence", { exact: true }).click();
     await page
       .getByLabel("Menu or photo link")
