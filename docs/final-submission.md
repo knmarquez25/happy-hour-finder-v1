@@ -20,7 +20,7 @@
 
 ![Browse-first Happy Hour Finder](assets/ai-discovery-desktop.png)
 
-Open the public build and browse all **111 researched restaurants** immediately. Type an area, food/drink preference, or budget in the helper and submit. Expand a menu, choose your own items, and Clear request to restore the full list. The backend holds a private Gemini key; visitors do not supply one. Local developer instructions (`npm ci`, `npm start`, Node 22+) and the GitHub Pages + Render Free setup are in [deployment.md](deployment.md).
+Open the public build and browse all **111 researched restaurants** immediately. Type an area, food/drink preference, or budget in the helper and submit. Every recorded menu item is visible on its restaurant card. Choose your own items, and Clear request to restore the full list. The backend holds a private Gemini key; visitors do not supply one. Local developer instructions (`npm ci`, `npm start`, Node 22+) and the GitHub Pages + Render Free setup are in [deployment.md](deployment.md).
 
 Example request: **“Tacos and margaritas around $25.”** With AI configured, inspect its interpreted criteria and browse matching menus. The reviewed dataset includes Coyote Grill in Laguna Beach: a bar happy-hour chicken taco ($6.25) and margarita ($8.50) make a **$14.75 subtotal** before tax, tip, and fees, under a documented shared bar-only offer window. This is published-source evidence from the stored snapshot, not a current restaurant guarantee. Users may choose different menu items instead. Clear request restores the full list.
 

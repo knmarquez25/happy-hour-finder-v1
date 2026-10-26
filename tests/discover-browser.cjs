@@ -41,7 +41,20 @@ const { chromium } = require("playwright");
     const first = page.locator("#results article").filter({
       has: page.getByRole("heading", { name: "Joyce", exact: true }),
     });
-    await first.locator("summary").filter({ hasText: "Browse menu" }).click();
+    assert.ok(
+      await first
+        .getByRole("checkbox", { name: /Colossal shrimp/ })
+        .isVisible(),
+      "Menu choices appear without expanding a section",
+    );
+    for (const venue of restaurants) {
+      const card = page.locator(`[data-venue-id="${venue.id}"]`);
+      assert.equal(
+        await card.locator(".menu-choice").count(),
+        venue.menu.length,
+        `${venue.name}: every listed item appears once`,
+      );
+    }
     await first.getByRole("checkbox", { name: /Colossal shrimp/ }).check();
     await first.getByRole("checkbox", { name: /Tommy/ }).check();
     assert.match(await first.locator(".order-total").innerText(), /\$28/);
@@ -83,14 +96,14 @@ const { chromium } = require("playwright");
     );
     assert.equal(await page.locator("#results article").count(), 3);
     for (const card of await page.locator("#results article").all()) {
-      const highlight = card.locator(".menu-highlight").first();
+      const highlight = card.locator(".menu-choice").first();
       assert.match(await highlight.innerText(), /martini/i);
       assert.match(await highlight.innerText(), /Matches your request/);
     }
     for (const id of ["iki-ramen-hollywood", "iki-ramen-koreatown"])
       assert.equal(
         await page
-          .locator(`[data-venue-id="${id}"] .menu-highlight`)
+          .locator(`[data-venue-id="${id}"] .menu-choice`)
           .first()
           .locator("strong")
           .innerText(),

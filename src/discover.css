@@ -280,7 +280,7 @@ summary {
   color: #43683a;
   margin: 12px 0;
 }
-.menu-highlights {
+.menu-items {
   margin: 9px 0 17px;
 }
 .menu-highlight {
@@ -322,7 +322,6 @@ summary {
   color: #95512b;
   font-weight: 600;
 }
-.menu-details,
 .source-details {
   font-size: 13px;
   margin-top: 16px;
@@ -510,4 +509,9 @@ footer {
   * {
     scroll-behavior: auto !important;
   }
+}
+
+.menu-items h4 {
+  font-size: 16px;
+  margin: 16px 0 8px;
 }

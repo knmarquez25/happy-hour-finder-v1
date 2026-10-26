@@ -5,7 +5,7 @@ import {
   validatePreferences,
   discover,
   menuSelection,
-  menuHighlights,
+  menuItems,
 } from "../src/discovery.js";
 import { restaurants } from "../src/data.js";
 const venue = {
@@ -76,21 +76,21 @@ const venue = {
   atmosphereTags: ["casual"],
 };
 const prefs = (overrides = {}) => ({ ...emptyPreferences(), ...overrides });
-test("requested martinis appear first in card highlights even when fourth on the menu", () => {
+test("requested martinis appear first in menu even when fourth on the menu", () => {
   const hollywood = restaurants.find((v) => v.id === "iki-ramen-hollywood");
   const rows =
-    menuHighlights(hollywood, prefs({ drinkPreferences: ["martini"] })) || [];
+    menuItems(hollywood, prefs({ drinkPreferences: ["martini"] })) || [];
   assert.equal(rows[0]?.item.name, "IKI Martini");
   assert.equal(rows[0].item.priceCents, 1000);
   assert.equal(rows[0].matchesRequest, true);
-  assert.equal(rows.length, 3);
+  assert.equal(rows.length, hollywood.menu.length);
   assert.equal(
     hollywood.menu[0].name,
     "Edamame",
     "Original menu order is untouched",
   );
 });
-test("highlights do not label unavailable or unsupported menu items as a request match", () => {
+test("menu items do not label unavailable or unsupported menu items as a request match", () => {
   const v = {
     ...venue,
     menu: [
@@ -107,7 +107,7 @@ test("highlights do not label unavailable or unsupported menu items as a request
     ],
   };
   const rows =
-    menuHighlights(
+    menuItems(
       v,
       prefs({
         day: "Friday",
@@ -116,7 +116,7 @@ test("highlights do not label unavailable or unsupported menu items as a request
         drinkPreferences: ["martini"],
       }),
     ) || [];
-  assert.equal(rows.length, 3);
+  assert.equal(rows.length, v.menu.length);
   assert.ok(rows.every((row) => !row.matchesRequest));
 });
 test("default browsing includes every record without mandatory plans or mutation", () => {

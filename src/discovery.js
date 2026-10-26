@@ -116,7 +116,7 @@ function eligibleItems(venue, p, points) {
       primaryEvidence(venue, item) && points.some((c) => applies(item, c)),
   );
 }
-export function menuHighlights(venue, p = emptyPreferences()) {
+export function menuItems(venue, p = emptyPreferences()) {
   const eligible = new Set(eligibleItems(venue, p, contexts(venue, p)));
   return (venue.menu || [])
     .map((item) => ({
@@ -137,8 +137,7 @@ export function menuHighlights(venue, p = emptyPreferences()) {
         Number(b.matchesRequest) - Number(a.matchesRequest) ||
         Number(primaryEvidence(venue, b.item)) -
           Number(primaryEvidence(venue, a.item)),
-    )
-    .slice(0, 3);
+    );
 }
 function areaMatches(venue, area) {
   if (!area) return true;

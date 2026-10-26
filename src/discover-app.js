@@ -8,8 +8,8 @@ import {
   discover,
   menuSelection,
   primaryEvidence,
-  menuHighlights,
-} from "./discovery.js?v=menu-matches-1";
+  menuItems,
+} from "./discovery.js?v=full-menu-1";
 import { formatHappyHour } from "./matching.js";
 import {
   escapeHtml as esc,
@@ -52,24 +52,12 @@ function itemDetails(v, i) {
   );
   return `${esc(status(i))}${primaryEvidence(v, i) ? "" : " · Price needs confirmation"}${i.days ? ` · ${esc(i.days.join(", "))} only` : ""}${i.windowIds ? ` · ${esc(formatHappyHour(windows))}` : ""}${i.pairWithIds ? " · Conditional pairing: check offer details" : ""}${s ? ` · ${sourceLink(s, "Source")}` : ""}`;
 }
-function highlights(v) {
-  const items = menuHighlights(v, preferences);
+function renderMenu(v) {
+  const items = menuItems(v, preferences);
   if (items.length)
-    return items
-      .map(
-        ({ item: i, matchesRequest }) =>
-          `<div class="menu-highlight"><span>${esc(i.name)}<small class="item-evidence">${matchesRequest ? "Matches your request · " : ""}${esc(status(i))}${i.days ? " · " + esc(i.days.join(", ")) + " only" : ""}${i.windowIds ? " · Specific offer window" : ""}</small></span><strong>${Number.isSafeInteger(i.priceCents) ? money(i.priceCents) : "Price unknown"}</strong></div>`,
-      )
-      .join("");
-  const specials = happyHourListings(v).slice(0, 3);
-  return specials.length
-    ? specials
-        .map(
-          (s) =>
-            `<div class="menu-highlight"><span>${esc(s.text)}<small class="item-evidence">${s.primary ? "Restaurant-listed" : "Guide-listed"} · ${sourceLink(s.source, "Source")}</small></span></div>`,
-        )
-        .join("")
-    : '<p class="small muted">Menu items and exact prices have not been transcribed yet. Browse the restaurant source below.</p>';
+    return `<section class="menu-items" aria-label="Listed happy-hour menu"><h4>Happy-hour menu · ${items.length} listed items</h4><p class="small muted">All items we have recorded are shown below. The restaurant may list additional items. Pick one published order of each; item schedules and restrictions apply.</p>${items.map(({ item: i, matchesRequest }) => `<div class="menu-choice"><label><input type="checkbox" data-item="${esc(i.id)}"><span>${esc(i.name)}<small class="item-evidence">${matchesRequest ? "Matches your request · " : ""}${itemDetails(v, i)}</small></span></label><strong>${Number.isSafeInteger(i.priceCents) ? money(i.priceCents) : "Price unknown"}</strong></div>`).join("")}<div class="order-total" aria-live="polite">Choose items to see your menu-price subtotal.</div><p class="order-note">Subtotals exclude tax, tip, and fees. Listed prices are not a guarantee of availability.</p></section>`;
+  const specials = happyHourListings(v);
+  return `<section class="menu-items" aria-label="Listed happy-hour offers"><h4>Listed happy-hour offers</h4>${specials.length ? specials.map((s) => `<div class="menu-highlight"><span>${esc(s.text)}<small class="item-evidence">${s.primary ? "Restaurant-listed" : "Guide-listed"} · ${sourceLink(s.source, "Source")}</small></span></div>`).join("") : ""}<p class="small muted">Individual menu items and exact prices have not been recorded. Browse the restaurant source below.</p></section>`;
 }
 function renderCard(result) {
   const {
@@ -84,7 +72,7 @@ function renderCard(result) {
     .map((s) => s.reviewedOn)
     .sort()
     .at(-1);
-  const html = `<article class="restaurant-card" data-venue-id="${esc(v.id)}"><div class="card-top"><div><h3>${esc(v.name)}</h3><p class="venue-location">${esc([...new Set([v.neighborhood, city(v)].filter(Boolean))].join(" · "))}</p></div><span class="evidence-tag ${reviewed ? "" : "uncertain"}">${reviewed ? "Restaurant source listed" : "Needs restaurant review"}</span></div><p class="schedule">Listed happy hours: ${esc(formatHappyHour(v.hours) || "Exact schedule needs verification.")}</p>${reasons.length ? `<p class="match-reasons">${reasons.map(esc).join(" · ")}</p>` : ""}<div class="menu-highlights">${highlights(v)}</div>${combo ? `<div class="suggestion"><strong>A starting suggestion · ${money(combo.totalCents)}</strong><br>${esc(combo.food.name)} + ${esc(combo.drink.name)}${diff === null ? "" : `<br><span class="${diff > 0 ? "budget-over" : ""}">${money(Math.abs(diff))} ${diff > 0 ? "above" : "below"} your target</span>`}<small>One published order of each · before tax, tip &amp; fees</small><small>Applies to ${esc(formatHappyHour([window]))}. Listed offers, not live-confirmed.</small></div>` : '<p class="small muted">No supported food-and-drink combo total is available. Explore individual listings and sources.</p>'}<details class="menu-details"><summary>Browse menu &amp; choose items</summary>${v.menu.length ? `<p class="small muted">Pick one published order of each item. Item-specific schedules and restrictions still apply.</p>${v.menu.map((i) => `<div class="menu-choice"><label><input type="checkbox" data-item="${esc(i.id)}"><span>${esc(i.name)}<small class="item-evidence">${itemDetails(v, i)}</small></span></label><strong>${Number.isSafeInteger(i.priceCents) ? money(i.priceCents) : "Price unknown"}</strong></div>`).join("")}<div class="order-total" aria-live="polite">Choose items to see your menu-price subtotal.</div><p class="order-note">Subtotals exclude tax, tip, and fees. Listed prices are not a guarantee of availability.</p>` : "<p>Itemized prices are not available in this dataset. Use the restaurant links to browse the menu.</p>"}</details><details class="source-details"><summary>Offer details &amp; sources</summary><p>${esc(v.address || "Address needs confirmation")}</p>${v.notes ? `<p>${esc(v.notes)}</p>` : ""}<ul>${v.sources.map((s) => `<li>${sourceLink(s)}<small>${s.type === "primary" ? "Restaurant / primary source" : "Secondary source"} · ${s.reviewedOn ? "Reviewed " + esc(s.reviewedOn) : "Not reviewed"}</small>${s.note ? `<small>${esc(s.note)}</small>` : ""}</li>`).join("")}</ul><p>Published information may change. Review dates are not current restaurant confirmation. No allergy-safety guarantee is made.</p></details><p class="evidence-line">${reviewed ? "Restaurant source reviewed " + esc(reviewed) : "Restaurant confirmation needed"} · Check restrictions before going.</p></article>`;
+  const html = `<article class="restaurant-card" data-venue-id="${esc(v.id)}"><div class="card-top"><div><h3>${esc(v.name)}</h3><p class="venue-location">${esc([...new Set([v.neighborhood, city(v)].filter(Boolean))].join(" · "))}</p></div><span class="evidence-tag ${reviewed ? "" : "uncertain"}">${reviewed ? "Restaurant source listed" : "Needs restaurant review"}</span></div><p class="schedule">Listed happy hours: ${esc(formatHappyHour(v.hours) || "Exact schedule needs verification.")}</p>${reasons.length ? `<p class="match-reasons">${reasons.map(esc).join(" · ")}</p>` : ""}${renderMenu(v)}${combo ? `<div class="suggestion"><strong>A starting suggestion · ${money(combo.totalCents)}</strong><br>${esc(combo.food.name)} + ${esc(combo.drink.name)}${diff === null ? "" : `<br><span class="${diff > 0 ? "budget-over" : ""}">${money(Math.abs(diff))} ${diff > 0 ? "above" : "below"} your target</span>`}<small>One published order of each · before tax, tip &amp; fees</small><small>Applies to ${esc(formatHappyHour([window]))}. Listed offers, not live-confirmed.</small></div>` : '<p class="small muted">No supported food-and-drink combo total is available. Explore individual listings and sources.</p>'}<details class="source-details"><summary>Offer details &amp; sources</summary><p>${esc(v.address || "Address needs confirmation")}</p>${v.notes ? `<p>${esc(v.notes)}</p>` : ""}<ul>${v.sources.map((s) => `<li>${sourceLink(s)}<small>${s.type === "primary" ? "Restaurant / primary source" : "Secondary source"} · ${s.reviewedOn ? "Reviewed " + esc(s.reviewedOn) : "Not reviewed"}</small>${s.note ? `<small>${esc(s.note)}</small>` : ""}</li>`).join("")}</ul><p>Published information may change. Review dates are not current restaurant confirmation. No allergy-safety guarantee is made.</p></details><p class="evidence-line">${reviewed ? "Restaurant source reviewed " + esc(reviewed) : "Restaurant confirmation needed"} · Check restrictions before going.</p></article>`;
   return html;
 }
 function render() {
