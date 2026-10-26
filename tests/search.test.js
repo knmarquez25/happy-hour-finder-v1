@@ -627,7 +627,7 @@ test("a city-and-time request uses two bounded basic searches and rejects an exp
         b.max_results === 12,
     ),
   );
-  assert.match(requests[1].query, /Downey.*Monday.*noon/i);
+  assert.equal(requests[1].query, "Downey happy hour noon 12pm menu");
   assert.ok(requests.every((b) => b.exclude_domains.includes("yelp.com")));
   assert.equal(r.candidates.length, 0);
   assert.equal(r.diagnostics.rejected.schedule, 1);

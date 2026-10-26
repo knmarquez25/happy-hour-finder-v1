@@ -196,12 +196,12 @@ export async function searchPlaces(
   if (searchArea && (plan.day || plan.time)) {
     const timeWords =
       plan.time === "12:00"
-        ? "noon lunch"
+        ? "noon 12pm"
         : plan.time === "00:00"
           ? "midnight late night"
           : plan.time || "";
     queries.push(
-      `${searchArea} California happy hour ${plan.day || ""} ${plan.day && ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"].includes(plan.day) ? "weekday" : ""} ${timeWords} menu`,
+      `${searchArea} happy hour ${timeWords || plan.day} menu`,
     );
   }
   const attempts = await Promise.allSettled(
