@@ -256,3 +256,37 @@ test("conditional late windows do not certify a closed-kitchen food match", () =
   assert.equal(discover([v], p).length, 0);
   assert.equal(menuSelection(v, ["food-1"], p).compatible, false);
 });
+
+test("an LA County city without saved venues is searchable and does not broaden to other cities", () => {
+  const p = prefs({ area: "Downey", day: "Monday", time: "12:00" });
+  assert.deepEqual(validatePreferences(p, restaurants), p);
+  assert.deepEqual(discover(restaurants, p), []);
+});
+test("Downey filtering preserves the requested weekday and noon rather than bypassing timing", () => {
+  const downey = {
+    ...venue,
+    id: "downey-fixture",
+    neighborhood: "Downey",
+    address: "1 Main St, Downey, CA 90241",
+    hours: [
+      { ...venue.hours[0], days: ["Monday"], start: "11:00", end: "14:00" },
+    ],
+  };
+  assert.equal(
+    discover(
+      [downey, venue],
+      prefs({ area: "Downey", day: "Monday", time: "12:00" }),
+    ).length,
+    1,
+  );
+  assert.equal(
+    discover([downey], prefs({ area: "Downey", day: "Tuesday", time: "12:00" }))
+      .length,
+    0,
+  );
+  assert.equal(
+    discover([downey], prefs({ area: "Downey", day: "Monday", time: "15:00" }))
+      .length,
+    0,
+  );
+});

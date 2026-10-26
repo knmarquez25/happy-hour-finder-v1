@@ -6,6 +6,7 @@ import {
   toMinutes,
 } from "./matching.js";
 import { origins } from "./locations.js";
+import { countyCities } from "./search-areas.js";
 
 export const emptyPreferences = () => ({
   area: null,
@@ -24,6 +25,7 @@ export function areaOptions(venues) {
       [
         "LA County",
         "Orange County",
+        ...Object.values(countyCities).flat(),
         ...origins.map((o) => o.name),
         ...venues.flatMap((v) => [v.neighborhood, city(v)]),
       ].filter(Boolean),
@@ -45,7 +47,9 @@ export function validatePreferences(value, venues) {
       throw new Error("The AI returned invalid text.");
   }
   if (p.area !== null && !areaOptions(venues).includes(p.area))
-    throw new Error("That area is not supported by this researched dataset.");
+    throw new Error(
+      "That area is not recognized in the LA/Orange County search index. Try a city or neighborhood name.",
+    );
   for (const key of ["foodPreferences", "drinkPreferences"]) {
     if (
       !Array.isArray(p[key]) ||

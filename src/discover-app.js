@@ -9,7 +9,7 @@ import {
   menuSelection,
   primaryEvidence,
   menuItems,
-} from "./discovery.js?v=review-discovery-8";
+} from "./discovery.js?v=review-discovery-9";
 import { formatHappyHour } from "./matching.js";
 import {
   escapeHtml as esc,
@@ -17,8 +17,8 @@ import {
   happyHourListings,
 } from "./ui-state.js";
 
-import { candidateToVenue } from "./candidates.js?v=review-discovery-8";
-import { initReviews } from "./review-ui.js?v=review-discovery-8";
+import { candidateToVenue } from "./candidates.js?v=review-discovery-9";
+import { initReviews } from "./review-ui.js?v=review-discovery-9";
 let venues = [...restaurants];
 const list = document.querySelector("#results"),
   request = document.querySelector("#request"),
@@ -82,7 +82,7 @@ function render() {
   const rows = discover(venues, preferences);
   list.innerHTML = rows.length
     ? rows.map(renderCard).join("")
-    : '<div class="empty-state"><h3>No researched matches for this request</h3><p>Try a broader area or fewer food and drink requirements. Missing evidence is not filled in to manufacture a match.</p><button class="secondary" type="button" data-browse-all>Browse all restaurants</button></div>';
+    : `<div class="empty-state"><h3>No reviewed happy-hour matches${preferences.area ? " in " + esc(preferences.area) : " for this request"}</h3><p>No saved restaurant listing is confirmed for these preferences. This does not mean no happy hours exist; additional discoveries may appear in Needs verification.</p><button class="secondary" type="button" data-browse-all>Browse all restaurants</button></div>`;
   document.querySelector("#results-title").textContent = Object.entries(
     preferences,
   ).some(

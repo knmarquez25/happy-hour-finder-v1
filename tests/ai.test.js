@@ -120,3 +120,27 @@ test("blank and overly long input cannot cause paid calls", async () => {
       /request/i,
     );
 });
+
+test("Downey Monday noon is a valid supported request even without researched Downey venues", async () => {
+  const result = await interpretRequest("happy hour in Downey noon on Monday", {
+    apiKey: "test",
+    fetchImpl: async (url, options) => {
+      const schema = JSON.parse(options.body).generationConfig
+        .responseJsonSchema;
+      assert.ok(schema.properties.area.enum.includes("Downey"));
+      assert.ok(schema.properties.area.enum.includes("Norwalk"));
+      assert.ok(schema.properties.area.enum.includes("San Clemente"));
+      assert.ok(!schema.properties.area.enum.includes("San Diego"));
+      return response({
+        ...emptyPreferences(),
+        area: "Downey",
+        day: "Monday",
+        time: "12:00",
+      });
+    },
+  });
+  assert.equal(result.area, "Downey");
+  assert.equal(result.day, "Monday");
+  assert.equal(result.time, "12:00");
+  assert.equal(result.clarification, null);
+});
