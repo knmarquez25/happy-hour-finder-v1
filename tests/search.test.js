@@ -417,3 +417,38 @@ test("an item omitted from retained evidence cannot pass discovery", async () =>
   });
   assert.equal(r.candidates.length, 0);
 });
+
+test("targeted menu lookup rejects a different venue even when its item matches the request", async () => {
+  const r = await searchPlaces("New Bistro Pasadena happy hour menu", {
+    apiKey: "test",
+    searchKey: "test",
+    target: { name: "Other Bistro", location: "Pasadena" },
+    fetchImpl: fetcher(candidate),
+  });
+  assert.equal(r.candidates.length, 0);
+});
+test("a martini discovery retains the other sourced happy-hour food and drinks", async () => {
+  const items = [
+    ...candidate.items,
+    { name: "Truffle fries", kind: "food", priceCents: 700 },
+    { name: "House wine", kind: "drink", priceCents: null },
+  ];
+  const r = await searchPlaces("martinis", {
+    apiKey: "test",
+    searchKey: "test",
+    fetchImpl: fetcher(
+      { ...candidate, items },
+      {
+        results: [
+          {
+            url: candidate.sourceUrl,
+            title: "New Bistro Pasadena Happy Hour",
+            content:
+              "IKI martini for $10; Truffle fries $7; House wine (price not listed).",
+          },
+        ],
+      },
+    ),
+  });
+  assert.deepEqual(r.candidates[0].items, items);
+});

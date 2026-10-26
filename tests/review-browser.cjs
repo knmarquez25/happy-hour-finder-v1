@@ -13,7 +13,9 @@ const { chromium } = require("playwright");
       county: "LA County",
       address: "Main St, Pasadena",
       sourceUrl: "https://example.com/menu",
-      evidence: "New Bistro Pasadena happy hour offers a Martini.",
+      evidence:
+        "New Bistro Pasadena happy hour offers a Martini. " +
+        "Long source article. ".repeat(50),
       items: [{ name: "Martini", kind: "drink", priceCents: null }],
       hoursText: null,
     };
@@ -29,6 +31,7 @@ const { chromium } = require("playwright");
       r.fulfill({
         json: {
           configured: true,
+          menuLookup: true,
           url: "https://test.supabase.co",
           anonKey: "public",
         },
@@ -46,6 +49,20 @@ const { chromium } = require("playwright");
         },
       });
     });
+    await page.route("**/api/reviews/*/menu", (r) =>
+      r.fulfill({
+        json: {
+          candidate: {
+            ...payload,
+            items: [
+              ...payload.items,
+              { name: "Truffle fries", kind: "food", priceCents: 700 },
+              { name: "House wine", kind: "drink", priceCents: null },
+            ],
+          },
+        },
+      }),
+    );
     await page.route("**/api/discover", async (r) => {
       const { emptyPreferences } = await import("../src/discovery.js");
       return r.fulfill({
@@ -68,6 +85,12 @@ const { chromium } = require("playwright");
       const body = r.request().postDataJSON();
       assert.equal(body.status, "approved");
       assert.equal(body.payload.items[0].priceCents, null);
+      assert.equal(body.payload.items.length, 3);
+      assert.equal(
+        payload.items.length,
+        1,
+        "Original discovery remains unchanged",
+      );
       records = [
         {
           id,
@@ -117,6 +140,37 @@ const { chromium } = require("playwright");
         .count(),
       0,
       "Public visitors see pending places without owner controls",
+    );
+    await page
+      .getByRole("button", { name: "Find more menu items", exact: true })
+      .click();
+    await page
+      .locator("#pending-results .menu-highlight")
+      .filter({ hasText: "Truffle fries" })
+      .waitFor();
+    await page.locator(".pending-card").scrollIntoViewIfNeeded();
+    assert.equal(
+      await page.locator("#pending-results .menu-highlight").count(),
+      3,
+    );
+    assert.match(
+      await page.locator("#pending-results").innerText(),
+      /Happy-hour menu/,
+    );
+    assert.equal(
+      await page
+        .getByRole("link", { name: "Open menu source", exact: true })
+        .count(),
+      1,
+    );
+    await page.getByText("Source details", { exact: true }).click();
+    assert.ok(
+      (await page.locator(".source-summary").innerText()).length <= 240,
+    );
+    assert.ok(
+      !(await page.locator("#pending-results").innerText()).includes(
+        "Long source article. ".repeat(20),
+      ),
     );
     await page.getByText("Add menu evidence", { exact: true }).click();
     await page

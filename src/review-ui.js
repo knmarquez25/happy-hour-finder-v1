@@ -1,11 +1,12 @@
 import { escapeHtml as esc, formatMoney as money } from "./ui-state.js";
-import { normalizeCandidate } from "./candidates.js";
+import { normalizeCandidate, identity } from "./candidates.js";
 import { weekdays } from "./matching.js";
 export function initReviews({ endpoint, onApproved, onBrowse }) {
   const pending = document.querySelector("#pending-results"),
     status = document.querySelector("#discovery-status"),
     ownerPanel = document.querySelector("#owner-panel"),
     ownerButton = document.querySelector("#owner-toggle");
+  const menus = new Map();
   let records = [],
     transient = [],
     config = {},
@@ -76,14 +77,22 @@ export function initReviews({ endpoint, onApproved, onBrowse }) {
           .map((r) => {
             let c;
             try {
-              c = normalizeCandidate(r.payload);
+              c = normalizeCandidate(menus.get(r.id) || r.payload);
             } catch {
               return "";
             }
-            return `<article class="restaurant-card pending-card" data-review-id="${esc(r.id)}"><div class="card-top"><div><h3>${esc(c.name)}</h3><p class="venue-location">${esc(c.location)}</p></div><span class="evidence-tag uncertain">${r.unsaved ? "Not saved" : "Needs verification"}</span></div><p class="small muted">Search evidence suggests this happy-hour offer. The owner has not confirmed the menu, price, or availability.</p>${c.items.map((i) => `<div class="menu-highlight"><span>${esc(i.name)}</span><strong>${i.priceCents === null ? "Price needs confirmation" : money(i.priceCents) + " · unverified"}</strong></div>`).join("")}<p class="small">${c.hoursText ? "Suggested hours (unverified): " + esc(c.hoursText) : "Happy-hour times need confirmation."}</p><details><summary>Search evidence &amp; source</summary><p>${esc(c.evidence)}</p><p class="small muted">Source excerpt from web search; check the original page and current happy-hour menu. This is not restaurant confirmation.</p><a href="${esc(c.sourceUrl)}" target="_blank" rel="noreferrer">Open cited source ↗</a></details>${(r.review_evidence || []).length ? `<details><summary>Community evidence (${r.review_evidence.length})</summary>${r.review_evidence.map((e) => `<p>${esc(e.note)}<br><a href="${esc(e.source_url)}" target="_blank" rel="noreferrer">Submitted source ↗</a></p>`).join("")}</details>` : ""}${r.unsaved ? '<p class="small budget-over">This discovery is not in the shared queue. Retry after storage is connected.</p>' : `<details><summary>Add menu evidence</summary><form data-evidence><label>Menu or photo link<input type="url" name="sourceUrl" required maxlength="2048" placeholder="https://restaurant.com/happy-hour"></label><label>What does the source confirm?<textarea name="note" maxlength="750" required></textarea></label><p class="small muted">Submit public menu information only. Evidence is public and still needs owner review.</p><button class="secondary" type="submit">Submit evidence</button><p class="form-message" role="status"></p></form></details>`}${isOwner && !r.unsaved ? ownerForm(c) : ""}</article>`;
+            return `<article class="restaurant-card pending-card" data-review-id="${esc(r.id)}"><div class="card-top"><div><h3>${esc(c.name)}</h3><p class="venue-location">${esc(c.location)}</p></div><span class="evidence-tag uncertain">${r.unsaved ? "Not saved" : "Needs verification"}</span></div><p class="small muted">Menu, prices and availability need owner verification.</p><h4>Happy-hour menu</h4><p class="small muted">Items found in the source; this may be a partial menu.</p>${c.items.map((i) => `<div class="menu-highlight"><span>${esc(i.name)}</span><strong>${i.priceCents === null ? "Price needs confirmation" : money(i.priceCents) + " · unverified"}</strong></div>`).join("")}<p class="small">${c.hoursText ? "Suggested hours (unverified): " + esc(c.hoursText) : "Happy-hour times need confirmation."}</p><div class="menu-source-actions"><a href="${esc(c.sourceUrl)}" target="_blank" rel="noreferrer" aria-label="Open menu source">Open menu source ↗</a>${r.unsaved || !config.menuLookup ? "" : `<button type="button" class="secondary" data-load-menu ${menus.has(r.id) ? "disabled" : ""}>${menus.has(r.id) ? "Menu items loaded" : "Find more menu items"}</button>`}</div><p class="small muted menu-load-status" role="status"></p><details><summary>Source details</summary><p class="source-summary small">${esc(sourceSummary(c))}</p></details>${(r.review_evidence || []).length ? `<details><summary>Community evidence (${r.review_evidence.length})</summary>${r.review_evidence.map((e) => `<p>${esc(e.note)}<br><a href="${esc(e.source_url)}" target="_blank" rel="noreferrer">Submitted source ↗</a></p>`).join("")}</details>` : ""}${r.unsaved ? '<p class="small budget-over">This discovery is not in the shared queue. Retry after storage is connected.</p>' : `<details><summary>Add menu evidence</summary><form data-evidence><label>Menu or photo link<input type="url" name="sourceUrl" required maxlength="2048" placeholder="https://restaurant.com/happy-hour"></label><label>What does the source confirm?<textarea name="note" maxlength="750" required></textarea></label><p class="small muted">Submit public menu information only. Evidence is public and still needs owner review.</p><button class="secondary" type="submit">Submit evidence</button><p class="form-message" role="status"></p></form></details>`}${isOwner && !r.unsaved ? ownerForm(c) : ""}</article>`;
           })
           .join("")
       : '<div class="empty-state"><h3>No places waiting for verification</h3><p>Tell us what sounds good to search beyond the researched list. New discoveries appear here for source review before publication.</p></div>';
+  }
+  function sourceSummary(c) {
+    const title = c.evidence.match(/^Page title: ([^\n]+)/)?.[1];
+    const description = title || c.evidence.replace(/\s+/g, " ");
+    return `${new URL(c.sourceUrl).hostname} · ${description.slice(0, 180)}${description.length > 180 ? "…" : ""}`.slice(
+      0,
+      240,
+    );
   }
   function ownerForm(c) {
     return `<details class="owner-review"><summary>Review for publication</summary><form data-decision><label>Restaurant name<input name="name" value="${esc(c.name)}" maxlength="160" required></label><label>City or neighborhood<input name="location" value="${esc(c.location)}" maxlength="120" required></label><label>County<select name="county" required><option value="">Choose county</option><option value="LA County" ${c.county === "LA County" ? "selected" : ""}>LA County</option><option value="Orange County" ${c.county === "Orange County" ? "selected" : ""}>Orange County</option></select></label><label>Address<input name="address" value="${esc(c.address)}" maxlength="300"></label><label>Restaurant happy-hour menu link<input name="sourceUrl" type="url" value="${esc(c.sourceUrl)}" required maxlength="2048"></label><p class="small muted">Open the source and correct these extracted items and prices. Leave an unknown price blank. Publish only items that share the schedule below and have no extra purchase conditions.</p>${c.items.map((i, n) => `<div class="owner-item" data-owner-item><label>Item ${n + 1}<input name="itemName" value="${esc(i.name)}" required maxlength="150"></label><label>Type<select name="kind"><option value="food" ${i.kind === "food" ? "selected" : ""}>Food</option><option value="drink" ${i.kind === "drink" ? "selected" : ""}>Drink</option></select></label><label>Price ($)<input name="price" type="number" min="0.01" max="1000" step="0.01" value="${i.priceCents === null ? "" : (i.priceCents / 100).toFixed(2)}" placeholder="Unknown"></label></div>`).join("")}<fieldset><legend>Happy-hour days</legend>${weekdays.map((d) => `<label class="day-choice"><input type="checkbox" name="day" value="${d}">${d}</label>`).join("")}</fieldset><div class="owner-times"><label>Happy-hour start<input name="start" type="time" required></label><label>Happy-hour end<input name="end" type="time" required></label></div><label>Where the offer applies<select name="restriction"><option value="none">No seating restriction</option><option value="bar-only">Bar only</option><option value="bar-or-patio">Bar or patio</option></select></label><label class="confirmation"><input type="checkbox" name="confirmed" required>I checked the restaurant’s own happy-hour menu: every listed item applies during these same hours, with no extra purchase conditions.</label><div class="review-actions"><button class="primary" type="submit">Approve and publish</button><button class="secondary" type="button" data-reject>Reject submission</button></div><p class="form-message" role="status"></p></form></details>`;
@@ -106,7 +115,8 @@ export function initReviews({ endpoint, onApproved, onBrowse }) {
         message.textContent = "Evidence submitted for owner review.";
         f.reset();
       } else {
-        const original = records.find((r) => r.id === id)?.payload;
+        const original =
+          menus.get(id) || records.find((r) => r.id === id)?.payload;
         if (!original) throw Error("Refresh this submission before review.");
         const value = {
           ...original,
@@ -154,6 +164,35 @@ export function initReviews({ endpoint, onApproved, onBrowse }) {
     }
   });
   pending.addEventListener("click", async (e) => {
+    const menuButton = e.target.closest("[data-load-menu]");
+    if (menuButton) {
+      const card = menuButton.closest("[data-review-id]");
+      const message = card.querySelector(".menu-load-status");
+      menuButton.disabled = true;
+      message.textContent = "Looking up the happy-hour menu…";
+      try {
+        const result = await post(`reviews/${card.dataset.reviewId}/menu`, {});
+        if (result.candidate) {
+          const c = normalizeCandidate(result.candidate);
+          const original = records.find(
+            (r) => r.id === card.dataset.reviewId,
+          )?.payload;
+          if (!original || identity(c) !== identity(original))
+            throw Error("The menu source did not match this place.");
+          menus.set(card.dataset.reviewId, c);
+          render();
+        } else {
+          message.textContent =
+            result.notice ||
+            "No additional menu items found. Check the menu source.";
+          menuButton.disabled = false;
+        }
+      } catch (err) {
+        message.textContent = err.message;
+        menuButton.disabled = false;
+      }
+      return;
+    }
     const b = e.target.closest("[data-reject]");
     if (!b) return;
     const card = b.closest("[data-review-id]"),

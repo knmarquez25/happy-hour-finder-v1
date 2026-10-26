@@ -134,3 +134,71 @@ test("already approved or rejected discoveries are not reported as new pending r
     },
   );
 });
+
+test("public menu lookup uses a saved pending identity without modifying or approving it and caches results", async () => {
+  const payload = { name: "New Bistro", location: "Pasadena" };
+  let searches = 0;
+  await server(
+    {
+      apiKey: "test",
+      reviewStore: {
+        configured: true,
+        list: async () => [{ id, status: "pending", payload }],
+      },
+      searchImpl: async (query, options) => {
+        searches++;
+        assert.deepEqual(options.target, payload);
+        assert.match(query, /New Bistro.*Pasadena/);
+        return {
+          candidates: [
+            {
+              ...payload,
+              items: [{ name: "Fries", kind: "food", priceCents: 700 }],
+            },
+          ],
+        };
+      },
+    },
+    async (base) => {
+      const request = () =>
+        fetch(base + `/api/reviews/${id}/menu`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: "{}",
+        });
+      for (let n = 0; n < 2; n++) {
+        const r = await request();
+        assert.equal(r.status, 200);
+        assert.equal((await r.json()).candidate.items[0].name, "Fries");
+      }
+      assert.equal(searches, 1);
+      const invalid = await fetch(base + `/api/reviews/${id}/menu`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ query: "untrusted" }),
+      });
+      assert.equal(invalid.status, 400);
+    },
+  );
+});
+test("menu lookup cannot search for an unknown or already reviewed record", async () => {
+  await server(
+    {
+      reviewStore: {
+        configured: true,
+        list: async () => [{ id, status: "approved", payload: {} }],
+      },
+      searchImpl: async () => {
+        throw Error("Must not call AI");
+      },
+    },
+    async (base) => {
+      const r = await fetch(base + `/api/reviews/${id}/menu`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: "{}",
+      });
+      assert.equal(r.status, 404);
+    },
+  );
+});

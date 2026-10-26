@@ -646,3 +646,21 @@ footer {
     flex-direction: column;
   }
 }
+
+.pending-card h4 {
+  margin: 20px 0 6px;
+}
+.menu-source-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin: 16px 0 0;
+  font-size: 13px;
+}
+.menu-load-status:empty {
+  display: none;
+}
+.source-summary {
+  overflow-wrap: anywhere;
+}

@@ -79,6 +79,7 @@ export function createApp({
     hourCalls = 0,
     inFlight = 0;
   const addresses = new Map();
+  const menuCache = new Map();
   let cachedReviews,
     cacheUntil = 0;
   async function reviewList() {
@@ -127,7 +128,7 @@ export function createApp({
     try {
       const url = new URL(req.url, "http://localhost");
       const reviewMatch = url.pathname.match(
-        /^\/api\/reviews\/([0-9a-f-]{36})\/(evidence|decision)$/i,
+        /^\/api\/reviews\/([0-9a-f-]{36})\/(evidence|decision|menu)$/i,
       );
       const apiMethod = [
         "/api/status",
@@ -225,7 +226,7 @@ export function createApp({
         }
       }
       if (url.pathname === "/api/review-config" && req.method === "GET")
-        return json(200, reviewStore.publicConfig());
+        return json(200, { ...reviewStore.publicConfig(), menuLookup: true });
       if (url.pathname === "/api/reviews" && req.method === "GET")
         return json(200, { records: await reviewList() });
       if (url.pathname === "/api/owner" && req.method === "GET") {
@@ -293,6 +294,44 @@ export function createApp({
                 "Found these places, but their saved status could not be confirmed. Refresh the queue or retry before leaving this page.",
             });
           }
+        } finally {
+          inFlight--;
+        }
+      }
+      if (reviewMatch?.[2] === "menu" && req.method === "POST") {
+        await readJson(req, []);
+        const id = reviewMatch[1];
+        const record = (await reviewList()).find(
+          (r) => r.id === id && r.status === "pending",
+        );
+        if (!record)
+          throw serviceError(
+            "This place is no longer waiting for verification. Refresh the queue.",
+            404,
+          );
+        const cached = menuCache.get(id);
+        if (cached && cached.until > Date.now())
+          return json(200, cached.result);
+        reserve(req, res, 2);
+        try {
+          const target = record.payload;
+          const result = await searchImpl(
+            `${target.name} ${target.location} restaurant happy hour food and drink menu prices`,
+            { apiKey, searchKey, model, fetchImpl, target },
+          );
+          const candidate =
+            result.candidates.find((c) => identity(c) === identity(target)) ||
+            null;
+          const value = {
+            candidate,
+            notice: candidate
+              ? "Available happy-hour menu items from web sources; completeness and availability need verification."
+              : "No additional menu could be confirmed from search sources. The original source is still available.",
+          };
+          if (menuCache.size >= 200)
+            menuCache.delete(menuCache.keys().next().value);
+          menuCache.set(id, { until: Date.now() + 3600000, result: value });
+          return json(200, value);
         } finally {
           inFlight--;
         }
