@@ -37,6 +37,16 @@ flowchart TD
   B --> Q{Browse directly or describe preferences?}
   Q -->|Browse| M[Compare menu items, prices and sources]
   Q -->|Ask AI| A[Server extracts optional preferences]
+  Q -->|Ask AI| W[Tavily basic searches public web sources]
+  W --> E[AI extracts offers from cited source passages]
+  E --> T{Validate sources, items, missing prices and duplicates}
+  T -->|Unsupported| R
+  T -->|Supported as a candidate| N[Save in Needs verification]
+  N --> Y[Visitors append public menu evidence]
+  Y --> O{Owner signs in and reviews original menu}
+  O -->|Reject| J[Retain rejection without publishing]
+  O -->|Approve corrected items and common schedule| K[Atomically save owner-reviewed snapshot]
+  K --> B
   A --> V{Validate interpretation}
   V -->|Needs clarification or fails| R[Explain issue and preserve previous list]
   R --> Q
@@ -52,9 +62,9 @@ The user decides whether to supply an area, which preferences matter, whether to
 
 ## 4. Evaluation results, improvements, and a challenge case
 
-Improvements: no required dropdowns or area on entry; one shared result list; real server-side AI interpretation integration; menu-first cards; custom item selection; source and restriction visibility; graceful AI failure and Clear behavior.
+Improvements: no required dropdowns or area on entry; one reviewed browsing list plus a separate Needs verification queue; server-side AI interpretation and source-based discovery; menu-first cards; custom item selection; source and restriction visibility; graceful AI failure and Clear behavior.
 
-**95/95 unit and HTTP tests passed**, including the new discovery and review workflow checks. The new browser regression passed at four viewport widths; the preserved previous interface passed its existing browser checks at six widths. Checks verify browsing all 111 records, deterministic filtering and arithmetic, optional/overnight timing, unknown prices, conditional offers, malformed AI responses, HTTP protections, and desktop/mobile flows. External AI responses are fixtures in these checks. Three additional **live smoke cases passed (3/3)** from the public GitHub Pages app in a fresh unauthenticated Chrome session: tacos/margaritas/$25, area-only Pasadena, and a clarification for “near me.” The first two matched every expected preference field; the third asked for an area and preserved browsing. Warm response times were about 0.81–1.24 seconds. This is a small integration check, not general model accuracy or a user study. Full scope and reproducibility are in [ai-discovery-evaluation.md](ai-discovery-evaluation.md).
+**102/102 unit and HTTP tests passed**, including the new discovery and review workflow checks. The new browser regression passed at four viewport widths; the preserved previous interface passed its existing browser checks at six widths. Checks verify browsing all 111 records, deterministic filtering and arithmetic, optional/overnight timing, unknown prices, conditional offers, malformed AI responses, HTTP protections, and desktop/mobile flows. External AI responses are fixtures in these checks. Three additional **live smoke cases passed (3/3)** from the public GitHub Pages app in a fresh unauthenticated Chrome session: tacos/margaritas/$25, area-only Pasadena, and a clarification for “near me.” The first two matched every expected preference field; the third asked for an area and preserved browsing. Warm response times were about 0.81–1.24 seconds. This is a small integration check, not general model accuracy or a user study. Full scope and reproducibility are in [ai-discovery-evaluation.md](ai-discovery-evaluation.md).
 
 The unchanged historical engine benchmark still measures **1/15 → 12/15** on development cases and **0/5 → 4/5** on held-out cases. These are prior engine results, not scores for the new AI feature.
 
@@ -64,8 +74,8 @@ Challenge: a Friday oyster price that requires the documented sparkling-wine gla
 
 Menus become outdated, restaurant coverage and item transcription are incomplete, and the model may misunderstand a request even when its response has a valid shape. Reviewed sources, visible interpreted criteria, evidence labels, explicit restrictions, server-side validation, and deterministic calculations reduce these risks without guaranteeing correctness. Source-review dates are not live confirmation. No allergy-safety or current-availability guarantee is made.
 
-API keys stay server-side. Requests have length limits, timeouts, and request quotas; users see that their submitted text goes to Google Gemini. The app is publicly deployed on GitHub Pages with a Render Free backend and has passed a small live AI check. Free quotas may make AI temporarily unavailable, and Render may take 50 seconds or more to wake after inactivity. Broader live-model evaluation, account usage monitoring, and user testing remain necessary.
+API keys stay server-side. Requests have length limits, timeouts, and request quotas; users see that their submitted text goes to Google Gemini and Tavily. The app is publicly deployed on GitHub Pages with a Render Free backend and has passed a small live AI check. Free quotas may make AI temporarily unavailable, and Render may take 50 seconds or more to wake after inactivity. Broader live-model evaluation, account usage monitoring, and user testing remain necessary.
 
 ## 6. What I want to build next
 
-My next direction would be a **menu-evidence assistant**: find restaurant-owned menus and relevant posts, extract offers with direct source references, detect conflicting prices or hours, and queue uncertain changes for human review. That addresses the original research burden while keeping the discovery experience simple. I would start with official menu pages before expanding to social-platform content, where access and interpretation are harder.
+My next direction would expand this **menu-evidence assistant** with change detection, stronger conflicting-price checks, owner editing of published offers, and more complete menu/PDF coverage. That addresses the original research burden while keeping the discovery experience simple. I would start with official menu pages before expanding to social-platform content, where access and interpretation are harder.

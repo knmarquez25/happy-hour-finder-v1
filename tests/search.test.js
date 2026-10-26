@@ -33,6 +33,7 @@ function fetcher(extracted = candidate, first = grounded()) {
       assert.equal(url, "https://api.tavily.com/search");
       assert.equal(body.search_depth, "basic");
       assert.equal(body.auto_parameters, false);
+      assert.match(body.query, /Los Angeles OR Orange County/);
       return { ok: true, json: async () => first };
     }
     assert.match(url, /gemini-3.5-flash-lite/);
@@ -43,7 +44,19 @@ function fetcher(extracted = candidate, first = grounded()) {
           {
             finishReason: "STOP",
             content: {
-              parts: [{ text: JSON.stringify({ candidates: [extracted] }) }],
+              parts: [
+                {
+                  text: JSON.stringify({
+                    candidates: [
+                      {
+                        ...extracted,
+                        sourceIndex: extracted.sourceIndex ?? 0,
+                        fragmentIndex: extracted.fragmentIndex ?? 0,
+                      },
+                    ],
+                  }),
+                },
+              ],
             },
           },
         ],
@@ -69,8 +82,11 @@ test("grounded discovery preserves a cited happy-hour item and unknown price", a
 });
 test("uncited source, unrelated evidence and invalid prices cannot enter discovery", async () => {
   for (const bad of [
-    { ...candidate, sourceUrl: "https://unlisted.example/menu" },
-    { ...candidate, evidence: "Happy hour pizza elsewhere" },
+    { ...candidate, sourceIndex: 99 },
+    {
+      ...candidate,
+      items: [{ name: "Pizza", kind: "food", priceCents: null }],
+    },
     { ...candidate, items: [{ ...candidate.items[0], priceCents: -1 }] },
   ]) {
     const result = await searchPlaces("martini", {
@@ -191,6 +207,7 @@ test("free basic Tavily search supplies literal source passages without Google g
         assert.equal(options.headers.Authorization, "Bearer tavily-test");
         assert.equal(body.search_depth, "basic");
         assert.equal(body.auto_parameters, false);
+        assert.match(body.query, /Los Angeles OR Orange County/);
         return {
           ok: true,
           json: async () => ({
@@ -212,7 +229,15 @@ test("free basic Tavily search supplies literal source passages without Google g
             {
               finishReason: "STOP",
               content: {
-                parts: [{ text: JSON.stringify({ candidates: [candidate] }) }],
+                parts: [
+                  {
+                    text: JSON.stringify({
+                      candidates: [
+                        { ...candidate, sourceIndex: 0, fragmentIndex: 0 },
+                      ],
+                    }),
+                  },
+                ],
               },
             },
           ],
@@ -304,4 +329,91 @@ test("search context is bounded and known restaurants are excluded before AI cho
       };
     },
   });
+});
+
+test("source references select actual menu text instead of trusting an AI-retyped quote", async () => {
+  const c = {
+    ...candidate,
+    evidence: "Invented quote",
+    sourceUrl: "https://invented.example/menu",
+    sourceIndex: 0,
+    fragmentIndex: 0,
+  };
+  const r = await searchPlaces("martini", {
+    apiKey: "test",
+    searchKey: "test",
+    fetchImpl: fetcher(c),
+  });
+  assert.equal(r.candidates[0].sourceUrl, candidate.sourceUrl);
+  assert.ok(r.candidates[0].evidence.includes(text));
+  assert.ok(!r.candidates[0].evidence.includes("Invented quote"));
+});
+test("an explicitly titled happy-hour page supports a literal item excerpt", async () => {
+  const c = {
+    ...candidate,
+    items: [{ name: "Classic martini", kind: "drink", priceCents: 1300 }],
+    sourceIndex: 0,
+    fragmentIndex: 0,
+  };
+  const r = await searchPlaces("martini", {
+    apiKey: "test",
+    searchKey: "test",
+    fetchImpl: fetcher(c, {
+      results: [
+        {
+          url: candidate.sourceUrl,
+          title: "New Bistro Pasadena Happy Hour",
+          content: "Classic martini $13",
+        },
+      ],
+    }),
+  });
+  assert.equal(r.candidates.length, 1);
+  assert.equal(r.candidates[0].items[0].priceCents, 1300);
+});
+test("a price belonging to another menu item cannot become the martini price", async () => {
+  const c = {
+    ...candidate,
+    items: [{ name: "Classic martini", kind: "drink", priceCents: 500 }],
+    sourceIndex: 0,
+    fragmentIndex: 0,
+  };
+  const r = await searchPlaces("martini", {
+    apiKey: "test",
+    searchKey: "test",
+    fetchImpl: fetcher(c, {
+      results: [
+        {
+          url: candidate.sourceUrl,
+          title: "New Bistro Pasadena Happy Hour",
+          content: "Classic martini $18; beer $5",
+        },
+      ],
+    }),
+  });
+  assert.equal(r.candidates[0].items[0].priceCents, null);
+});
+test("an item omitted from retained evidence cannot pass discovery", async () => {
+  const c = {
+    ...candidate,
+    items: [{ name: "Late Martini", kind: "drink", priceCents: null }],
+    sourceIndex: 0,
+    fragmentIndex: 2,
+  };
+  const raw = "x".repeat(701) + "martini " + "x".repeat(900) + " Late Martini";
+  const r = await searchPlaces("martini", {
+    apiKey: "test",
+    searchKey: "test",
+    fetchImpl: fetcher(c, {
+      results: [
+        {
+          url: candidate.sourceUrl,
+          title: "New Bistro Pasadena Happy Hour",
+          content: "No offer transcribed",
+          raw_content: raw,
+        },
+      ],
+    }),
+  });
+  assert.equal(r.candidates.length, 0);
 });

@@ -277,7 +277,10 @@ export function initReviews({ endpoint, onApproved, onBrowse }) {
         });
         if (own !== serial) return;
         if (result.diagnostics)
-          console.info("Discovery review counts", result.diagnostics);
+          console.info(
+            "Discovery review counts",
+            JSON.stringify(result.diagnostics),
+          );
         if (result.saved) update(result.records || []);
         else {
           transient = (result.candidates || []).map((payload, n) => ({
