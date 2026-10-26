@@ -9,7 +9,7 @@ import {
   menuSelection,
   primaryEvidence,
   menuHighlights,
-} from "./discovery.js";
+} from "./discovery.js?v=menu-matches-1";
 import { formatHappyHour } from "./matching.js";
 import {
   escapeHtml as esc,
