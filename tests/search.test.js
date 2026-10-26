@@ -452,3 +452,28 @@ test("a martini discovery retains the other sourced happy-hour food and drinks",
   });
   assert.deepEqual(r.candidates[0].items, items);
 });
+
+test("targeted menus can recover all items from saved venue-specific evidence when fresh web search is empty", async () => {
+  const target = {
+    ...candidate,
+    evidence:
+      "Page title: Pasadena Happy Hour Guide\nMenu excerpt: Other Bistro Pasadena\nHappy hour pizza $5\nView details\nNew Bistro Pasadena\nHappy hour IKI martini $10; Truffle fries $7\nView details\nAnother Bistro Pasadena\nHappy hour Lobster $8",
+  };
+  const extracted = {
+    ...candidate,
+    items: [
+      ...candidate.items,
+      { name: "Truffle fries", kind: "food", priceCents: 700 },
+    ],
+  };
+  const result = await searchPlaces("New Bistro Pasadena happy hour menu", {
+    apiKey: "test",
+    searchKey: "test",
+    target,
+    fetchImpl: fetcher(extracted, { results: [] }),
+  });
+  assert.equal(result.candidates[0].items.length, 2);
+  assert.equal(result.candidates[0].previouslyCaptured, true);
+  assert.ok(!result.candidates[0].evidence.includes("Other Bistro"));
+  assert.ok(!result.candidates[0].evidence.includes("Lobster"));
+});

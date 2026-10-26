@@ -151,7 +151,7 @@ export function freshMenuLookup(record, now = Date.now()) {
   if (
     !lookup ||
     !Number.isFinite(checked) ||
-    now - checked >= 86400000 ||
+    now - checked >= (lookup.candidate === null ? 300000 : 86400000) ||
     checked > now + 300000
   )
     return null;

@@ -36,3 +36,10 @@ test("a completed lookup with no menu stays explicit and prevents repeated searc
   assert.equal(freshMenuLookup(record(null), now).candidate, null);
   assert.equal(freshMenuLookup({ payload }, now), null);
 });
+
+test("empty menu results expire quickly so a weak search cannot hide items all day", () => {
+  assert.equal(
+    freshMenuLookup(record(null, new Date(now - 300001).toISOString()), now),
+    null,
+  );
+});

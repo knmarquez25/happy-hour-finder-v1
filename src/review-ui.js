@@ -3,7 +3,7 @@ import {
   normalizeCandidate,
   identity,
   freshMenuLookup,
-} from "./candidates.js?v=review-discovery-7";
+} from "./candidates.js?v=review-discovery-8";
 import { weekdays } from "./matching.js";
 export function initReviews({ endpoint, onApproved, onBrowse }) {
   const pending = document.querySelector("#pending-results"),

@@ -326,9 +326,11 @@ export function createApp({
           const candidate =
             result.candidates.find((c) => identity(c) === identity(target)) ||
             null;
-          const notice = candidate
-            ? "Available happy-hour menu items from web sources; completeness and availability need verification."
-            : "No additional menu items were found. This may be a partial menu; check the source.";
+          const notice = candidate?.previouslyCaptured
+            ? "Menu items from previously captured source evidence; the menu may be incomplete or outdated and needs verification."
+            : candidate
+              ? "Available happy-hour menu items from web sources; completeness and availability need verification."
+              : "No additional menu items were found. This may be a partial menu; check the source.";
           const updated = await reviewStore.saveMenu(id, candidate, notice);
           cacheUntil = 0;
           return updated.menu_lookup;
