@@ -108,3 +108,29 @@ test("review endpoints enforce body allowlists and reject foreign-origin preflig
     assert.equal(cors.status, 403);
   });
 });
+test("already approved or rejected discoveries are not reported as new pending results", async () => {
+  const candidate = { name: "Previously reviewed", location: "Pasadena" };
+  const reviewStore = {
+    configured: true,
+    list: async () => [],
+    save: async () => [],
+  };
+  await server(
+    {
+      apiKey: "test",
+      reviewStore,
+      searchImpl: async () => ({ candidates: [candidate], provider: "Tavily" }),
+    },
+    async (base) => {
+      const r = await fetch(base + "/api/explore", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ query: "martinis" }),
+      });
+      const d = await r.json();
+      assert.equal(r.status, 200);
+      assert.deepEqual(d.candidates, []);
+      assert.equal(d.insertedCount, 0);
+    },
+  );
+});

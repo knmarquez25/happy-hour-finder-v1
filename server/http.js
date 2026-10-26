@@ -5,6 +5,7 @@ import { fileURLToPath } from "node:url";
 import { interpretRequest, serviceError } from "./ai.js";
 import { searchPlaces } from "./search.js";
 import { createReviewStore } from "./reviews.js";
+import { identity } from "../src/candidates.js";
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const mime = {
@@ -266,12 +267,22 @@ export function createApp({
                 "These discoveries are not saved: the shared review queue needs setup.",
             });
           try {
-            await reviewStore.save(result.candidates);
+            const inserted = await reviewStore.save(result.candidates);
             cacheUntil = 0;
+            const records = await reviewList();
+            const pendingKeys = new Set(
+              records
+                .filter((r) => r.status === "pending")
+                .map((r) => identity(r.payload)),
+            );
             return json(200, {
               ...result,
+              candidates: result.candidates.filter((c) =>
+                pendingKeys.has(identity(c)),
+              ),
+              insertedCount: inserted.length,
               saved: true,
-              records: await reviewList(),
+              records,
             });
           } catch {
             return json(200, {
@@ -279,7 +290,7 @@ export function createApp({
               saved: false,
               records: [],
               notice:
-                "Found these places, but the review queue could not save them. Retry before leaving this page.",
+                "Found these places, but their saved status could not be confirmed. Refresh the queue or retry before leaving this page.",
             });
           }
         } finally {

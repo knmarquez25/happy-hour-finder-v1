@@ -1,0 +1,53 @@
+{
+  "date": "2026-10-26",
+  "status": "Live discovery and durable pending queue verified; owner login verified; no live publication performed without owner menu review.",
+  "queries": [
+    {
+      "query": "martinis",
+      "sourceCount": 8,
+      "extractedCount": 3,
+      "acceptedCount": 1
+    },
+    {
+      "query": "martinis in Los Angeles, using restaurant-owned happy hour menus",
+      "sourceCount": 8,
+      "extractedCount": 5,
+      "acceptedCount": 4,
+      "note": "Returned guide sources, so the restaurant-owned preference was not fully satisfied; candidates remain unverified."
+    }
+  ],
+  "infrastructure": {
+    "queueGet": 200,
+    "unsignedOwnerGet": 401,
+    "directAnonTableGet": 401,
+    "directAnonErrorCode": "42501",
+    "ownerLogin": "user confirmed successful",
+    "freeSearchPlan": "Researcher; pay-as-you-go Off; requests stop at plan limit"
+  },
+  "pendingRecords": [
+    {
+      "evidence": "Page title: Happy Hour Finder — All Cities\nMenu excerpt: 5:00 PM–8:00 PM 🗓️\nCocktails $9 (regularly $13), well drinks $8, wine $10, draft beers $7.\ndrinks $7-10\nView details ↗\nConfirmed Aug 29, 2026\nMomed LA Eastside (Los Feliz / Silver Lake)\n3245 Casitas Ave, Los Angeles, CA 90039\n5:00 PM–6:30 PM 🗓️\nAt the bar only (\"Bridge Bar\"): cocktails $7 (Cadillac Margarita, Aperol Spritz Draft, Old Fashioned, Gold Rush, well + mixer), house wines $6, beer $5.\ndrinks $5-7\nView details ↗\nConfirmed Aug 29, 2026\nAll'Acqua LA Eastside (Los Feliz / Silver Lake) [...] drinksfood $12-17\nView details ↗\nConfirmed Aug 11, 2026\nThe Fitting Room West Hollywood\n1000 Westmount Dr, West Hollywood, CA 90069\n5:00 PM–6:00 PM 🗓️\n\"Prohibition Hour\": five $10 cocktails (Boulevardier, French 75, Sidecar, Penicillin, Espresso Martini) with light snacks.\ndrinksfood $10\nView details ↗\nConfirmed Aug 11, 2026\nHarriet's Rooftop West Hollywood\n8490 Sunset Blvd, West Hollywood, CA 90069\n5:00 PM–7:00 PM 🗓️ [...] 4:00 PM–7:00 PM 🗓️\n\"Abbey Hour\": $8 select appetizers (popcorn chicken, chicken quesadilla, Abbey wings, artichoke dip, potstickers, nachos, sweet mini peppers), $6 wine/well drinks/beer, $9 martinis.\ndrinksfood $6-9\nView details ↗\nConfirmed Aug 30, 2026\nFiesta Cantina West Hollywood\n8865 Santa Monica Blvd, West Hollywood, CA 90069\n4:00 PM–8:00 PM 🗓️\n2-for-1 on all regular-priced drinks.\ndrinkspatio 2-for-1\nView details ↗\nConfirmed Aug 28, 2026\n10:30 PM–12:30 AM 🗓️",
+      "id": "3d07a636-d82f-4434-93f7-5ab80b8777a6",
+      "name": "Fiesta Cantina",
+      "sourceUrl": "https://hh.happyla.app/"
+    },
+    {
+      "evidence": "Page title: Happy Hour Finder — All Cities\nMenu excerpt: 00 PM Happening now 🗓️\n\"Beergarden Happy Hour\": 25% off draft beer and wine; $9 bratwurst hot dogs; $9 pretzels.\ndrinksfood 25% off, $9\nView details ↗\nConfirmed Aug 28, 2026\nTrunks Bar West Hollywood\n8809 Santa Monica Blvd, West Hollywood, CA 90069\n1:00 PM–8:00 PM 🗓️\nDiscounted well drinks, beer, and wine (approx. $3.50 wells, $3 beer, $1 off wine — pricing single-sourced, confirm at the bar).\ndrinks ~$3-4 (approximate)\nView details ↗\nConfirmed Aug 10, 2026\nBirds Hollywood Hollywood\n5925 Franklin Ave, Hollywood, CA 90028\n2:00 PM–6:30 PM 🗓️\n$4 rustic potato chips, $5.50 cajun/garlic-parmesan fries, $14.75 for 8 wings, $5 domestic draft, $6.50-7.50 premium draft/wine, $6-7 well drinks, $10 martini, $8-9 house cocktails.\ndrinksfood $4-15\nView details ↗\nConfirmed Aug 15, 2026\nThe Semi-Tropic LA Eastside (Los Feliz / Silver Lake)\n1412 Glendale Blvd, Los Angeles, CA 90026\n2:00 PM–6:00 PM 🗓️\n$7 beer & hard cider (all styles), $8 house wine, $8 well spirits; discounted snack menu 2-6pm: $6 fries, $4 pickled veggies, $9 blistered shishitos.\ndrinksfood $4-9\nView details ↗\nConfirmed Aug 28, 2026\nTam O'Shanter LA Eastside (Los Feliz / Silver Lake)\n2980 Los Feliz Blvd, Los Angeles, CA 90039\n2:00 PM–5:00 PM 🗓️\n$10 classic cocktails (Salted Caramel Old Fashioned, Martini, Penicillin, Daiquiri, Tommy's Margarita, Aperol Spritz); $7 wine; $6 house draft; $7 rotating draft; $4 16oz PBR (add a well shot for $5).\ndrinks $4-10\nView details ↗\nConfirmed Aug 28, 2026\nFormosa Cafe West Hollywood",
+      "id": "b3977544-07b8-4320-ad54-20d5208780a4",
+      "name": "Birds Hollywood",
+      "sourceUrl": "https://hh.happyla.app/"
+    },
+    {
+      "evidence": "Page title: The Best WEEKEND Happy Hours in Los Angeles • EatDrinkLA\nMenu excerpt: When to Visit: Each location has different hours for Happy Hour, so check the website before you go. Weekend Happy Hour in Pasadena takes place from 4 to 6 p.m.\nQueen’s Raw Bar (Eagle Rock)\nI love a good salty sip, and Queen’s Raw Bar & Grill is home to a Swashbuckler Martini, made with house olive + oyster brine! The best part, though, is being able to get it for $10 EVERY DAY until 6 p.m. This also extends to Wines and perhaps some Bites. [...] There’s hardly a better place to relax by the ocean than Boa Steakhouse. During Happy Hour, they feature $12 Cocktails like their Lychee Martini or Tropical Margaritas, as well as $10 House Wine. The food options are enough to make a great meal if you choose – like a Wagyu Smash Burger ($16) and Cauliflower Tempura ($13).\nWhen to Go: Visit from 5 to 6 p.m. on the weekends and 5:30 p.m. to 6:30 p.m. on weekdays to take advantage of this pricing.\nHotel June West LA (West Los Angeles) [...] Boa Steakhouse in Manhattan Village has got bites as low as $8, but the one you’ll really want is their Wagyu Smash Burger, which features two stacks of rosewood wagyu beef, American cheese, and that delectable “house” sauce for $16 – which is a fraction of the price of anything on the dinner menu.\nPair that with one of their $12 Cocktails, like an Espresso Martini, and you’ve got yourself a very upscale happy meal.\nWhen to Visit: Daily Happy Hour takes place every day from 4 to 5 p.m.",
+      "id": "8a72ce68-014e-4103-b540-ef8629318e4a",
+      "name": "Queen’s Raw Bar",
+      "sourceUrl": "https://www.eatdrinkla.com/best-weekend-happy-hours-los-angeles"
+    },
+    {
+      "evidence": "Page title: The Best Happy Hour Restaurants and Bar Deals in Los Angeles Right Now | Eater LA\nMenu excerpt: Esters Wine Shop and Bar\nThose looking for more flexible happy hours can come to Esters on Sunday or Monday when the specials run all day. From Tuesday to Saturday, discounted bites and sips at this swanky Santa Monica wine bar are available from 4 p.m. to 6 p.m. with oysters and $25 charcuterie plates. Classic cocktails like martinis and margaritas are also only $10.\n Book a table\n 1314 7th Street, Santa Monica, California 90401\n (310) 899-6900\n Visit Website [...] 323 661 6007\n Visit Website\nA Manhattan and a martini on a wood table at the Thirsty Crow\nA Manhattan and a martini on a wood table at the Thirsty Crow\nRebecca Roland\nSee more\nThe Best Martinis in Los Angeles, According to Eater EditorsThe Best Martinis in Los Angeles, According to Eater Editors\nThe Best Martinis in Los Angeles, According to Eater Editors\nThe Best Martinis in Los Angeles, According to Eater Editors\nThe Best Martinis in Los Angeles, According to Eater Editors [...] LA Cha Cha Chá\nLA Cha Cha Cha offers a weekend happy hour menu that runs from 12 p.m. to 4 p.m. Friday through Sunday. Start with ceviche or quesabirria paired with a $13 margarita or $10 mimosa. Larger dishes include carne asada, chilaquiles, and a breakfast burrito with carnitas and potatoes. Save room for the classic LA churro for a sweet end to the meal.\n Book a table\n 812 E 3rd St, Los Angeles, CA, 90013, US\n +12135488487\n Visit Website",
+      "id": "91e2588e-aa3c-4a9d-948d-ceb07e2ed2d6",
+      "name": "Esters Wine Shop and Bar",
+      "sourceUrl": "https://la.eater.com/maps/best-happy-hour-cocktails-bars-los-angeles"
+    }
+  ]
+}
