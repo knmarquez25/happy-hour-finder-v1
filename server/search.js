@@ -377,7 +377,27 @@ export async function searchPlaces(
         const windows = happyHourWindows(raw);
         if (windows.length) {
           fragments.push(...windows);
-          fragments.push(raw.slice(0, 400) + "\n…\n" + raw.slice(-400));
+          const cityPattern = searchArea
+            ? new RegExp(
+                "\\b" +
+                  searchArea.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") +
+                  "\\b",
+                "gi",
+              )
+            : /\b[A-Za-z ]+,?\s+CA\s*\d{5}\b/g;
+          const places = [...raw.matchAll(cityPattern)].map((m) =>
+            raw.slice(Math.max(0, m.index - 250), m.index + 350),
+          );
+          places.sort(
+            (a, b) => Number(/\b\d{5}\b/.test(b)) - Number(/\b\d{5}\b/.test(a)),
+          );
+          fragments.push(
+            raw.slice(0, 400) +
+              "\n…\n" +
+              (places[0] || "") +
+              "\n…\n" +
+              raw.slice(-200),
+          );
         } else {
           fragments.push(raw.slice(0, 400));
           const at = terms.map((w) => lower.indexOf(w)).find((n) => n >= 0);
@@ -420,7 +440,7 @@ export async function searchPlaces(
           continue;
         // Keep literal captured text; never synthesize an item or venue citation.
         if (
-          ![title, excerpt]
+          ![title, excerpt, c.sourceContext]
             .join(" ")
             .toLowerCase()
             .includes(c.name.toLowerCase())
@@ -429,7 +449,7 @@ export async function searchPlaces(
         savedPassages.push({
           url: c.sourceUrl,
           title,
-          fragments: [excerpt.slice(0, 1500)],
+          fragments: [excerpt.slice(0, 1500), c.sourceContext].filter(Boolean),
           previouslyCaptured: true,
         });
         if (savedPassages.length === 4) break;
@@ -450,8 +470,8 @@ export async function searchPlaces(
         "",
       );
       const at = excerpt.toLowerCase().indexOf(saved.name.toLowerCase());
-      if (at >= 0) {
-        let scoped = excerpt.slice(at);
+      if (at >= 0 || title.toLowerCase().includes(saved.name.toLowerCase())) {
+        let scoped = excerpt.slice(Math.max(0, at));
         const end = scoped.search(
           /\n(?:View details|Book a table)|\s+\[\.\.\.\]/i,
         );
@@ -460,7 +480,9 @@ export async function searchPlaces(
         passages.unshift({
           url: saved.sourceUrl,
           title,
-          fragments: [scoped.slice(0, 1500)],
+          fragments: [scoped.slice(0, 1500), saved.sourceContext].filter(
+            Boolean,
+          ),
           previouslyCaptured: true,
         });
       }
@@ -584,6 +606,16 @@ export async function searchPlaces(
         rejected[reason]++;
         continue;
       }
+      // Retain literal name/city context separately so future saved-source searches
+      // do not lose the address when the menu excerpt is far from Contact.
+      c.sourceContext = [c.name, c.location]
+        .map((term) => {
+          const at = context.toLowerCase().indexOf(term.toLowerCase());
+          return at < 0 ? "" : context.slice(Math.max(0, at - 120), at + 300);
+        })
+        .filter(Boolean)
+        .join("\n…\n")
+        .slice(0, 1000);
       // An amount must follow this exact item, not another item on the page.
       c.items = c.items.map((i) => {
         const name = i.name.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");

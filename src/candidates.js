@@ -43,6 +43,9 @@ export function normalizeCandidate(value) {
     address: value.address ? clean(value.address, 300, "address") : "",
     hoursText: value.hoursText ? clean(value.hoursText, 500, "hours") : null,
     sourceUrl: publicUrl(value.sourceUrl),
+    ...(value.sourceContext
+      ? { sourceContext: clean(value.sourceContext, 1000, "source context") }
+      : {}),
     evidence: clean(value.evidence, 1800, "evidence"),
     items: value.items.map((i) => {
       if (

@@ -705,6 +705,42 @@ test("saved unverified evidence remains searchable when the provider misses the 
     fetchImpl: fetcher(noonCandidate, { results: [] }),
   });
   assert.equal(r.candidates.length, 1);
+  assert.match(r.candidates[0].sourceContext, /Downey/);
+  const replay = await searchPlaces("Downey Monday noon", {
+    apiKey: "test",
+    searchKey: "test",
+    savedCandidates: r.candidates,
+    fetchImpl: fetcher(noonCandidate, { results: [] }),
+  });
+  assert.equal(replay.candidates.length, 1);
   assert.equal(r.candidates[0].previouslyCaptured, true);
   assert.equal(r.candidates[0].sourceUrl, noonSource.url);
+});
+
+test("import retains the explicit city and address even when the contact section is far from menu and footer", async () => {
+  const mock = fetcher(noonCandidate);
+  const raw =
+    "Noon Bistro\n" +
+    "Navigation ".repeat(60) +
+    "\nHappy Hour\nMonday-Friday12–2 PM\nDomestic $3.50 Import $4.50\n" +
+    "Menu text ".repeat(250) +
+    "\nContact:123 Main St, Downey CA90242\n" +
+    "Footer ".repeat(180);
+  const r = await searchPlaces("happy hour in Downey", {
+    apiKey: "test",
+    searchKey: "test",
+    sourceUrl: "https://noon-bistro.example/",
+    fetchImpl: async (url, o) =>
+      url.endsWith("/extract")
+        ? {
+            ok: true,
+            json: async () => ({
+              results: [
+                { url: "https://noon-bistro.example/", raw_content: raw },
+              ],
+            }),
+          }
+        : mock(url, o),
+  });
+  assert.equal(r.candidates.length, 1);
 });
