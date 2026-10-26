@@ -8,6 +8,7 @@ import {
   discover,
   menuSelection,
   primaryEvidence,
+  menuHighlights,
 } from "./discovery.js";
 import { formatHappyHour } from "./matching.js";
 import {
@@ -52,16 +53,12 @@ function itemDetails(v, i) {
   return `${esc(status(i))}${primaryEvidence(v, i) ? "" : " · Price needs confirmation"}${i.days ? ` · ${esc(i.days.join(", "))} only` : ""}${i.windowIds ? ` · ${esc(formatHappyHour(windows))}` : ""}${i.pairWithIds ? " · Conditional pairing: check offer details" : ""}${s ? ` · ${sourceLink(s, "Source")}` : ""}`;
 }
 function highlights(v) {
-  const items = [...(v.menu || [])]
-    .sort(
-      (a, b) => Number(primaryEvidence(v, b)) - Number(primaryEvidence(v, a)),
-    )
-    .slice(0, 3);
+  const items = menuHighlights(v, preferences);
   if (items.length)
     return items
       .map(
-        (i) =>
-          `<div class="menu-highlight"><span>${esc(i.name)}<small class="item-evidence">${esc(status(i))}${i.days ? " · " + esc(i.days.join(", ")) + " only" : ""}${i.windowIds ? " · Specific offer window" : ""}</small></span><strong>${Number.isSafeInteger(i.priceCents) ? money(i.priceCents) : "Price unknown"}</strong></div>`,
+        ({ item: i, matchesRequest }) =>
+          `<div class="menu-highlight"><span>${esc(i.name)}<small class="item-evidence">${matchesRequest ? "Matches your request · " : ""}${esc(status(i))}${i.days ? " · " + esc(i.days.join(", ")) + " only" : ""}${i.windowIds ? " · Specific offer window" : ""}</small></span><strong>${Number.isSafeInteger(i.priceCents) ? money(i.priceCents) : "Price unknown"}</strong></div>`,
       )
       .join("");
   const specials = happyHourListings(v).slice(0, 3);

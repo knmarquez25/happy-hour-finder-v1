@@ -71,6 +71,37 @@ const { chromium } = require("playwright");
     await page.unroute("**/api/discover");
     await page.route("**/api/discover", (route) =>
       route.fulfill({
+        json: {
+          preferences: { ...emptyPreferences(), drinkPreferences: ["martini"] },
+        },
+      }),
+    );
+    await page.getByLabel("Tell us what you’re looking for").fill("Martinis");
+    await page.getByRole("button", { name: "Find my happy hour" }).click();
+    await page.waitForFunction(() =>
+      document.querySelector("#interpretation").textContent.includes("martini"),
+    );
+    assert.equal(await page.locator("#results article").count(), 3);
+    for (const card of await page.locator("#results article").all()) {
+      const highlight = card.locator(".menu-highlight").first();
+      assert.match(await highlight.innerText(), /martini/i);
+      assert.match(await highlight.innerText(), /Matches your request/);
+    }
+    for (const id of ["iki-ramen-hollywood", "iki-ramen-koreatown"])
+      assert.equal(
+        await page
+          .locator(`[data-venue-id="${id}"] .menu-highlight`)
+          .first()
+          .locator("strong")
+          .innerText(),
+        "$10",
+      );
+    await page
+      .getByRole("button", { name: "Clear request", exact: true })
+      .click();
+    await page.unroute("**/api/discover");
+    await page.route("**/api/discover", (route) =>
+      route.fulfill({
         status: 503,
         json: { error: "AI is unavailable. Please try again later." },
       }),

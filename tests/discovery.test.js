@@ -5,6 +5,7 @@ import {
   validatePreferences,
   discover,
   menuSelection,
+  menuHighlights,
 } from "../src/discovery.js";
 import { restaurants } from "../src/data.js";
 const venue = {
@@ -75,6 +76,49 @@ const venue = {
   atmosphereTags: ["casual"],
 };
 const prefs = (overrides = {}) => ({ ...emptyPreferences(), ...overrides });
+test("requested martinis appear first in card highlights even when fourth on the menu", () => {
+  const hollywood = restaurants.find((v) => v.id === "iki-ramen-hollywood");
+  const rows =
+    menuHighlights(hollywood, prefs({ drinkPreferences: ["martini"] })) || [];
+  assert.equal(rows[0]?.item.name, "IKI Martini");
+  assert.equal(rows[0].item.priceCents, 1000);
+  assert.equal(rows[0].matchesRequest, true);
+  assert.equal(rows.length, 3);
+  assert.equal(
+    hollywood.menu[0].name,
+    "Edamame",
+    "Original menu order is untouched",
+  );
+});
+test("highlights do not label unavailable or unsupported menu items as a request match", () => {
+  const v = {
+    ...venue,
+    menu: [
+      ...venue.menu,
+      {
+        id: "unconfirmed",
+        name: "Martini",
+        kind: "drink",
+        tags: ["martini"],
+        priceCents: 500,
+        status: "secondary",
+        sourceId: "s",
+      },
+    ],
+  };
+  const rows =
+    menuHighlights(
+      v,
+      prefs({
+        day: "Friday",
+        time: "22:00",
+        foodPreferences: ["tacos"],
+        drinkPreferences: ["martini"],
+      }),
+    ) || [];
+  assert.equal(rows.length, 3);
+  assert.ok(rows.every((row) => !row.matchesRequest));
+});
 test("default browsing includes every record without mandatory plans or mutation", () => {
   assert.equal(discover(restaurants, prefs()).length, 111);
   assert.equal(discover([venue], prefs())[0].venue, venue);

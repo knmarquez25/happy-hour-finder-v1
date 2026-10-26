@@ -8,7 +8,7 @@ The prior entry screen immediately required plans and showed time/location-quali
 
 ## Verification performed
 
-Final verification: **76/76 unit and HTTP tests passed**, the new discovery browser regression passed at four viewport widths, and the retained previous interface passed its full existing browser regression at six viewport widths. Of the 76 tests, 23 were added in this iteration (12 discovery/menu, five AI-boundary, six HTTP tests). A separate browser test verifies real CORS/preflight between frontend and backend ports using a Gemini response fixture. Three live smoke requests were subsequently run from the public GitHub Pages app, separately from those fixture-based tests.
+Final verification: **78/78 unit and HTTP tests passed**, the new discovery browser regression passed at four viewport widths, and the retained previous interface passed its full existing browser regression at six viewport widths. Of the 78 tests, 25 were added in this iteration (14 discovery/menu, five AI-boundary, six HTTP tests). A separate browser test verifies real CORS/preflight between frontend and backend ports using a Gemini response fixture. Three live smoke requests were subsequently run from the public GitHub Pages app, separately from those fixture-based tests.
 
 - Discovery tests cover all 111 records on entry, area/menu narrowing, flexible budgets, no invented day/time defaults, overnight windows, rejected unsupported model fields, unknown prices, conflicting evidence, incompatible windows, and conditional pairings.
 - AI transport tests use documented structured-output response fixtures: valid extraction, missing key, blank/oversized query, refusal, incomplete output, malformed JSON, missing fields, unexpected fields, and safe provider-error messages. This verifies application behavior, not whether the model interprets real requests accurately.
@@ -29,6 +29,8 @@ The frozen legacy benchmark was rerun without changing the matching engine or an
 These are the existing engine's small source-evidenced benchmark results. They are **not** evaluation scores for the new AI parser or browser UI. The new optional-criteria discovery module has different behavior and was assessed by the new tests above. Dataset growth and bundled earlier improvements do not establish independent causal effects.
 
 ## Challenge case
+
+A user’s martini search exposed a display issue: both IKI locations matched their listed $10 IKI Martini, but the card hid that fourth menu item behind the first three generic highlights. Highlights now prioritize eligible requested items and label them “Matches your request.” Two unit regressions and a browser assertion cover all three martini results, prices at both IKI locations, and avoiding match labels for unsupported or inactive items. The AI helper now states visibly that it searches the researched list rather than finding new restaurants online.
 
 Ocean Prime's Friday oyster price is conditional on the documented Veuve Clicquot Rosé glass. A tempting subtotal would select the cheap oyster without the required drink, or mix it with a different offer window. The app preserves pairing restrictions, avoids treating an oyster-only selection as a supported order, and identifies selections not confirmed together. Generic conditional windows are excluded from positive timing/menu matches and compatibility claims, so a drinks-only late window cannot establish a burger match after a kitchen closes. An unknown or conflicting price must not become $0 or a claim that an order fits a budget.
 
