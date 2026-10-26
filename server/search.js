@@ -112,11 +112,26 @@ export async function searchPlaces(
         503,
       );
     }
-    if (!response.ok)
+    if (!response.ok) {
+      let detail;
+      try {
+        detail = await response.json();
+      } catch {}
+      const quotaRules = (detail?.error?.details || [])
+        .flatMap((d) => d.violations || [])
+        .map((v) => v.quotaId)
+        .filter(
+          (v) => typeof v === "string" && /^[a-zA-Z0-9._-]{1,150}$/.test(v),
+        );
+      console.warn(
+        "Discovery extraction provider failure",
+        JSON.stringify({ httpStatus: response.status, quotaRules }),
+      );
       throw serviceError(
-        "Free web search is unavailable for this project or its quota was reached. No paid fallback was used.",
+        `AI menu extraction is unavailable (Gemini HTTP ${response.status}). Search results were not published; try again later.`,
         503,
       );
+    }
     try {
       return await response.json();
     } catch {

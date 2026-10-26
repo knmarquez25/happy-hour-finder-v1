@@ -223,3 +223,21 @@ test("free basic Tavily search supplies literal source passages without Google g
   assert.equal(result.provider, "Tavily");
   assert.equal(calls, 2);
 });
+test("AI extraction failures are distinguished from a search-service failure", async () => {
+  let calls = 0;
+  await assert.rejects(
+    searchPlaces("martini", {
+      apiKey: "test",
+      searchKey: "test",
+      fetchImpl: async () =>
+        ++calls === 1
+          ? { ok: true, json: async () => grounded() }
+          : {
+              ok: false,
+              status: 429,
+              json: async () => ({ error: { status: "RESOURCE_EXHAUSTED" } }),
+            },
+    }),
+    /AI menu extraction.*429/i,
+  );
+});
