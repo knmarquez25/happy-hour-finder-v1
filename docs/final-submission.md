@@ -1,0 +1,71 @@
+# Happy Hour Finder: browse first, ask AI when you want help
+
+**Public build:** Pending deployment of this iteration. The local working build runs at `http://127.0.0.1:4176`; that is not a shareable public link.
+
+**Final submission destination:** [Bruin Learn — Final Build](https://bruinlearn.ucla.edu/courses/237790/discussion_topics/1491803). This discussion requires a link to the build in the class gallery and answers to steps 1–6. No separate gallery link appears in the discussion instructions; its destination still needs to be established. Nothing has been posted. Replace this note with the actual gallery-post link once the public build is ready and posted.
+
+## 1. Updated answers to the five questions
+
+**What am I trying to improve?** Discovering a happy-hour place without hunting through websites, menus, TikTok, and other posts just to find what I can order and what it costs. I often do not know which area I want, so the app should let me explore first.
+
+**What does the system need to know?** Whatever I choose to share: an area, food or drinks I want, an approximate budget, and optionally a day/time or atmosphere. It also needs restaurant-specific menu items, prices, schedules, restrictions, source links, and review dates. Missing details must stay unknown.
+
+**What should it produce?** One browsable restaurant list, with menu items and prices up front. AI interprets my request and narrows that same list. Each restaurant can offer an initial food-and-drink suggestion, but I can browse the menu, select my own items, and see the subtotal before tax, tip, and fees.
+
+**How would I know it was good?** I can find a place I would actually choose, understand what I could order and spend, and see which details still need confirmation. The AI should preserve my request accurately rather than return attractive but unsupported deals.
+
+**What feedback would improve it?** Incorrect prices/hours, missing restaurants or menu items, misunderstood requests, confusing restrictions, and whether people chose a suggested restaurant or kept searching. I would also ask whether browsing without a chosen area helped.
+
+## 2. Working build, instructions, and example
+
+![Browse-first Happy Hour Finder](assets/ai-discovery-desktop.png)
+
+Run `npm ci` and `npm start` with Node 22+. Browse all **111 researched restaurants** at the local URL above. Genuine AI suggestions require the server's private `GEMINI_API_KEY`; setup and public-host instructions are in [deployment.md](deployment.md). Without it, browsing and menu selection work, and the helper states that AI is unavailable.
+
+Example request: **“Tacos and margaritas around $25.”** With AI configured, inspect its interpreted criteria and browse matching menus. The reviewed dataset includes Coyote Grill in Laguna Beach: a bar happy-hour chicken taco ($6.25) and margarita ($8.50) make a **$14.75 subtotal** before tax, tip, and fees, under a documented shared bar-only offer window. This is published-source evidence from the stored snapshot, not a current restaurant guarantee. Users may choose different menu items instead. Clear request restores the full list.
+
+## 3. Workflow, decision space, and human approval points
+
+```mermaid
+flowchart TD
+  S[Discover public restaurant sources] --> X[AI-assisted extraction and curation]
+  X --> H{Human reviews prices, hours, restrictions and sources}
+  H -->|Accepted| D[Validate and publish reviewed dataset]
+  H -->|Uncertain| U[Keep missing or conflicting evidence labeled]
+  D --> B[Open app: browse all researched restaurants]
+  U --> B
+  B --> Q{Browse directly or describe preferences?}
+  Q -->|Browse| M[Compare menu items, prices and sources]
+  Q -->|Ask AI| A[Server extracts optional preferences]
+  A --> V{Validate interpretation}
+  V -->|Needs clarification or fails| R[Explain issue and preserve previous list]
+  R --> Q
+  V -->|Valid| F[Deterministic filtering and supported combo arithmetic]
+  F --> I[User inspects interpreted criteria]
+  I --> M
+  M --> P[User selects items and checks subtotal]
+  P --> C[User checks restrictions and confirms uncertain offers]
+  C --> Z[User chooses restaurant]
+```
+
+The user decides whether to supply an area, which preferences matter, whether to revise the interpretation, what to order, and where to go. Budget remains flexible; overages are labeled. Human source review controls what enters the dataset. Publishing and API-account setup stay with the project owner. The app does not order, book, or message anyone.
+
+## 4. Evaluation results, improvements, and a challenge case
+
+Improvements: no required dropdowns or area on entry; one shared result list; real server-side AI interpretation integration; menu-first cards; custom item selection; source and restriction visibility; graceful AI failure and Clear behavior.
+
+**76/76 unit and HTTP tests passed**, including 23 new checks for this iteration. The new browser regression passed at four viewport widths; the preserved previous interface passed its existing browser checks at six widths. Checks verify browsing all 111 records, deterministic filtering and arithmetic, optional/overnight timing, unknown prices, conditional offers, malformed AI responses, HTTP protections, and desktop/mobile flows. External AI responses are fixtures in these checks. **Live model accuracy and a user study have not yet been measured.** Full scope and reproducibility are in [ai-discovery-evaluation.md](ai-discovery-evaluation.md).
+
+The unchanged historical engine benchmark still measures **1/15 → 12/15** on development cases and **0/5 → 4/5** on held-out cases. These are prior engine results, not scores for the new AI feature.
+
+Challenge: a Friday oyster price that requires the documented sparkling-wine glass can look cheaper than it really is if the user selects the oyster alone. Pairing and shared-window checks prevent presenting that selection as a confirmed valid offer. Unknown prices remain unknown.
+
+## 5. Remaining risks, safeguards, and next steps
+
+Menus become outdated, restaurant coverage and item transcription are incomplete, and the model may misunderstand a request even when its response has a valid shape. Reviewed sources, visible interpreted criteria, evidence labels, explicit restrictions, server-side validation, and deterministic calculations reduce these risks without guaranteeing correctness. Source-review dates are not live confirmation. No allergy-safety or current-availability guarantee is made.
+
+API keys stay server-side. Requests have length limits, timeouts, and request quotas; users see that their submitted text goes to Google Gemini. Public deployment, a real API check, account usage limits, live-model evaluation, and user testing remain necessary before calling this a fully evaluated public AI product.
+
+## 6. What I want to build next
+
+My next direction would be a **menu-evidence assistant**: find restaurant-owned menus and relevant posts, extract offers with direct source references, detect conflicting prices or hours, and queue uncertain changes for human review. That addresses the original research burden while keeping the discovery experience simple. I would start with official menu pages before expanding to social-platform content, where access and interpretation are harder.

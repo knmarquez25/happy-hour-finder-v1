@@ -1,5 +1,15 @@
 # Happy Hour Finder
 
+## New: AI-guided menu discovery
+
+The approved iteration opens all **111 researched restaurants**, with no required area or dropdown filters. Describe an area, food/drink preference, or flexible budget in one request box; the server uses Google Gemini to extract optional criteria, and the app updates one menu-first results list. Browse menu items, choose your own order, and see the menu-price subtotal with source and compatibility notes. Restaurant data remains curated, not live-crawled.
+
+Run `npm ci` and `npm start` (Node 22+), then open <http://127.0.0.1:4176>. Browsing works without a key. Genuine AI needs a private server-side `GEMINI_API_KEY`; without it the helper states that AI is unavailable. This implementation has not been publicly deployed or live-model evaluated yet.
+
+See [setup and recommended Render hosting](docs/deployment.md), [six-step final submission draft](docs/final-submission.md), and [new evaluation scope](docs/ai-discovery-evaluation.md). Run `npm test` and, with the server running and Chrome installed, `npm run test:discovery-browser`.
+
+The previous interface is preserved at `legacy.html`. The following sections document its prior behavior and historical evaluations.
+
 A static, source-aware happy-hour finder for Los Angeles County and Orange County, with incomplete coverage. The approved Focused list design supports flexible budget targets, supported itemized subtotals before tax/tip/fees, real origin-based straight-line distance, food/drink must-haves, source details, sorting, a browser-local three-spot shortlist, and mobile/dark layouts.
 
 ## Run

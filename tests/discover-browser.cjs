@@ -1,0 +1,150 @@
+const assert = require("node:assert/strict");
+const fs = require("node:fs/promises");
+const { chromium } = require("playwright");
+(async () => {
+  const { emptyPreferences } = await import("../src/discovery.js");
+  const { restaurants } = await import("../src/data.js");
+  const browser = await chromium.launch({ headless: true, channel: "chrome" });
+  const base = process.env.PREVIEW_URL || "http://127.0.0.1:4176";
+  try {
+    const page = await browser.newPage({
+      viewport: { width: 1280, height: 1000 },
+    });
+    const errors = [];
+    page.on("pageerror", (e) => errors.push(e.message));
+    await page.goto(base);
+    await page.locator("#results article").first().waitFor();
+    assert.equal(
+      await page.locator("#results article").count(),
+      111,
+      "All researched restaurants appear on first load",
+    );
+    assert.equal(
+      await page.locator("select").count(),
+      0,
+      "No dropdown preferences",
+    );
+    assert.match(await page.locator("#interpretation").innerText(), /111/);
+    assert.equal(
+      await page.locator("#ai-helper article").count(),
+      0,
+      "Only one restaurant list",
+    );
+    const first = page.locator("#results article").filter({
+      has: page.getByRole("heading", { name: "Joyce", exact: true }),
+    });
+    await first.locator("summary").filter({ hasText: "Browse menu" }).click();
+    await first.getByRole("checkbox", { name: /Colossal shrimp/ }).check();
+    await first.getByRole("checkbox", { name: /Tommy/ }).check();
+    assert.match(await first.locator(".order-total").innerText(), /\$28/);
+    assert.match(await first.locator(".order-total").innerText(), /before tax/);
+    await page.route("**/api/discover", (route) =>
+      route.fulfill({
+        json: { preferences: { ...emptyPreferences(), area: "Pasadena" } },
+      }),
+    );
+    await page.getByLabel("Tell us what you’re looking for").fill("Pasadena");
+    await page.getByRole("button", { name: "Find my happy hour" }).click();
+    await page.waitForFunction(() =>
+      document
+        .querySelector("#interpretation")
+        .textContent.includes("Pasadena"),
+    );
+    assert.ok((await page.locator("#results article").count()) > 0);
+    assert.ok((await page.locator("#results article").count()) < 111);
+    for (const el of await page
+      .locator("#results article .venue-location")
+      .all())
+      assert.match(await el.textContent(), /Pasadena/);
+    await page
+      .getByRole("button", { name: "Clear request", exact: true })
+      .click();
+    assert.equal(await page.locator("#results article").count(), 111);
+    await page.unroute("**/api/discover");
+    await page.route("**/api/discover", (route) =>
+      route.fulfill({
+        status: 503,
+        json: { error: "AI is unavailable. Please try again later." },
+      }),
+    );
+    await page.getByLabel("Tell us what you’re looking for").fill("Tacos");
+    await page.getByRole("button", { name: "Find my happy hour" }).click();
+    await page.getByRole("alert").waitFor();
+    assert.equal(await page.locator("#results article").count(), 111);
+    await page.unroute("**/api/discover");
+    let release, arrived;
+    const pending = new Promise((r) => (arrived = r));
+    await page.route("**/api/discover", async (route) => {
+      arrived();
+      await new Promise((r) => (release = r));
+      try {
+        await route.fulfill({
+          json: { preferences: { ...emptyPreferences(), area: "Pasadena" } },
+        });
+      } catch {}
+    });
+    await page.getByLabel("Tell us what you’re looking for").fill("Pasadena");
+    await page.getByRole("button", { name: "Find my happy hour" }).click();
+    await pending;
+    await page
+      .getByRole("button", { name: "Clear request", exact: true })
+      .click();
+    release();
+    await page.waitForLoadState("networkidle");
+    assert.equal(await page.locator("#results article").count(), 111);
+    assert.match(await page.locator("#interpretation").innerText(), /Anywhere/);
+    await page.unroute("**/api/discover");
+    await page.route("**/api/discover", (route) =>
+      route.fulfill({
+        json: {
+          preferences: {
+            ...emptyPreferences(),
+            clarification: "Which area should I use for near me?",
+          },
+        },
+      }),
+    );
+    await page.getByLabel("Tell us what you’re looking for").fill("Near me");
+    await page.getByRole("button", { name: "Find my happy hour" }).click();
+    await page.getByRole("alert").waitFor();
+    assert.equal(await page.locator("#results article").count(), 111);
+    assert.match(await page.getByRole("alert").innerText(), /Which area/);
+    await page
+      .getByRole("button", { name: "Clear request", exact: true })
+      .click();
+    await fs.mkdir("test-results", { recursive: true });
+    for (const width of [1280, 736, 390, 320]) {
+      await page.setViewportSize({ width, height: 1000 });
+      const overflow = await page.evaluate(() =>
+        [...document.querySelectorAll("body *")]
+          .filter((el) => el.getBoundingClientRect().right > innerWidth + 1)
+          .slice(0, 8)
+          .map((el) => ({
+            tag: el.tagName,
+            class: el.className,
+            text: el.textContent.slice(0, 80),
+            right: el.getBoundingClientRect().right,
+          })),
+      );
+      assert.ok(
+        await page.evaluate(
+          () => document.documentElement.scrollWidth <= innerWidth,
+        ),
+        "No overflow at " + width + ": " + JSON.stringify(overflow),
+      );
+      await page.screenshot({
+        path: "test-results/ai-discovery-" + width + ".png",
+        fullPage: false,
+      });
+    }
+    assert.deepEqual(errors, []);
+    console.log(
+      "Discovery browser checks passed: default 111, AI fixture narrowing, menu subtotal, Clear, error/clarification preservation, stale response, four viewport widths.",
+    );
+  } finally {
+    await browser.close();
+  }
+})().catch((e) => {
+  console.error(e);
+  process.exitCode = 1;
+});

@@ -1,279 +1,108 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
     <meta
       name="description"
-      content="Find restaurant-listed happy hours in Los Angeles County and Orange County. Compare menu subtotals, timing, distance, and source details. Coverage is incomplete."
+      content="Browse researched happy-hour menus in LA and Orange County. Describe an area, food, or budget to get AI-guided suggestions, with published prices and source links."
     />
-    <meta name="color-scheme" content="light dark" />
-    <title>Happy Hour Finder | LA + Orange County</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&amp;family=DM+Sans:wght@400;500;600;700&amp;display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="./src/styles.css" />
+    <title>Happy Hour Finder | Ask & Browse</title>
+    <link rel="stylesheet" href="./src/discover.css" />
   </head>
   <body>
-    <a class="skip-link" href="#results-title">Skip to results</a>
-    <header class="app-header">
-      <div class="edition">
-        <span>LA + Orange County</span><span>The after-work edit</span>
-      </div>
-      <div class="header-inner">
-        <div class="brand">
-          <span class="brand-mark"
-            ><i data-lucide="martini" aria-hidden="true"></i
-          ></span>
-          <div>
-            <h1>Happy Hour <span>Finder</span></h1>
-            <p class="brand-note">Good plans start here.</p>
-            <p>
-              Your local happy-hour guide <span aria-hidden="true">·</span>
-              <span id="coverage-count">Researching local spots</span>
-            </p>
-          </div>
-        </div>
-        <div class="header-actions">
-          <button id="shortlist-jump" type="button" disabled>
-            <i data-lucide="bookmark" aria-hidden="true"></i
-            ><span
-              >Tonight's contenders <span id="shortlist-count">0</span></span
-            ></button
-          ><button
-            id="theme-toggle"
-            class="icon-button"
-            type="button"
-            aria-label="Switch color theme"
-            data-tooltip="Color theme"
-          >
-            <i data-lucide="sun-moon" aria-hidden="true"></i>
-          </button>
-        </div>
-      </div>
+    <a class="skip-link" href="#results-title">Skip to restaurants</a>
+    <header>
+      <a class="brand" href="./"
+        >Happy Hour Finder <span aria-hidden="true">✳</span></a
+      ><span id="coverage">LA + Orange County</span>
     </header>
-    <div class="app-shell">
-      <section class="search-panel" aria-label="Search preferences">
-        <form id="request-form">
-          <h2 class="sr-only">Your plans</h2>
-          <label class="field"
-            >Optional quick plan<select id="preset-select" name="preset">
-              <option value="">Custom search</option>
-              <option value="tacos">Tacos + margaritas</option>
-              <option value="wine">Seafood + wine</option>
-              <option value="pasadena">Pasadena after work</option>
-            </select></label
-          >
-          <label class="field"
-            >Search near<select id="origin" name="originId" required></select
-          ></label>
-          <div class="day-time">
-            <label class="field"
-              >Day<select name="day" required>
-                <option>Monday</option>
-                <option>Tuesday</option>
-                <option>Wednesday</option>
-                <option selected>Thursday</option>
-                <option>Friday</option>
-                <option>Saturday</option>
-                <option>Sunday</option>
-              </select></label
-            ><label class="field"
-              >Time<input type="time" name="time" value="17:30" required
-            /></label>
-          </div>
-          <label class="field"
-            >Within<select name="maxDistance">
-              <option value="1">1 mile</option>
-              <option selected value="3">3 miles</option>
-              <option value="5">5 miles</option>
-              <option value="10">10 miles</option>
-              <option value="15">15 miles</option>
-              <option value="25">25 miles</option></select
-            ><small>Straight-line from area center</small></label
-          >
-          <div class="field budget-field">
-            <label class="field-heading" for="budget"
-              >Budget target <span>Flexible</span></label
-            >
-            <div class="budget-input">
-              <span aria-hidden="true">$</span
-              ><input
-                id="budget"
-                name="budget"
-                type="number"
-                min="1"
-                max="500"
-                step="1"
-                value="25"
-                required
-                aria-describedby="budget-note"
-              />
-            </div>
-            <input
-              id="budget-slider"
-              type="range"
-              min="1"
-              max="500"
-              step="1"
-              value="25"
-              aria-label="Adjust budget target"
-            /><small id="budget-note"
-              >Per person, before tax, tip &amp; fees</small
-            >
-          </div>
-          <details id="more-filters" open>
-            <summary>Customize food, drinks &amp; more</summary>
-            <div class="preference-fields">
-              <label class="field"
-                >Food preferences<input
-                  name="foodPreferences"
-                  placeholder="e.g. tacos, seafood" /></label
-              ><label class="check"
-                ><input type="checkbox" name="requireFood" />Food is a
-                must-have</label
-              >
-              <label class="field"
-                >Drink preferences<input
-                  name="drinkPreferences"
-                  placeholder="e.g. wine, margarita" /></label
-              ><label class="check"
-                ><input type="checkbox" name="requireDrinks" />Drink is a
-                must-have</label
-              >
-              <label class="field"
-                >Atmosphere<select name="atmosphere">
-                  <option value="">Any atmosphere</option>
-                  <option selected value="lively">Lively</option>
-                  <option value="casual">Casual</option>
-                  <option value="date-night">Date night</option>
-                  <option value="quiet">Quiet</option>
-                  <option value="cozy">Cozy</option>
-                  <option value="rooftop">Rooftop</option></select
-                ><small>Editorial labels, where available</small></label
-              >
-              <label class="check"
-                ><input type="checkbox" name="includeRestricted" />Include bar /
-                patio-only offers</label
-              >
-            </div>
-          </details>
-          <button class="primary-button search-button" type="submit">
-            <i data-lucide="search" aria-hidden="true"></i>Find spots
-          </button>
-          <p id="form-error" class="error-message" role="alert" hidden></p>
-        </form>
-        <details class="coverage-details">
-          <summary>Data coverage &amp; limits</summary>
-          <div id="data-summary"></div>
-          <p>
-            Coverage is incomplete across Los Angeles County and Orange County.
-            Nearby searches extend up to 25 straight-line miles from your
-            selected origin.
+    <main>
+      <div class="eyebrow">Good food. Better plans.</div>
+      <h1>Find a happy hour worth going out for.</h1>
+      <p class="intro">
+        Browse the menus, or tell us what sounds good. You don’t need an area in
+        mind.
+      </p>
+      <div class="layout">
+        <aside id="ai-helper" aria-label="AI search helper">
+          <h2>What sounds good?</h2>
+          <p>An area, a craving, a budget—or a mix. Start wherever you like.</p>
+          <form id="ask-form">
+            <label for="request">Tell us what you’re looking for</label
+            ><textarea
+              id="request"
+              rows="3"
+              maxlength="1000"
+              placeholder="Tacos and margaritas around $25"
+              aria-describedby="privacy request-note"
+            ></textarea>
+            <p class="privacy" id="privacy">
+              When you submit, your request is sent to Google Gemini. Free-tier
+              requests may be used to improve Google's products.
+            </p>
+            <button class="primary" id="ask-button" type="submit">
+              Find my happy hour <span aria-hidden="true">→</span>
+            </button>
+          </form>
+          <p id="request-note" class="small muted">
+            Each request starts fresh. Mention a day or time if you have one in
+            mind.
           </p>
-          <p>
-            Published information can change. Confirm with the restaurant before
-            going. Dates are source-review dates, not a live availability check.
-          </p>
-          <p>
-            Distances are approximate, not driving distances. Weekday schedules
-            may differ on holidays and event days.
-          </p>
-        </details>
-      </section>
-      <main id="main-results">
-        <div class="results-heading">
-          <div>
-            <p class="eyebrow">Clock out. Head out.</p>
-            <h2 id="results-title">Thursday, 5:30 PM</h2>
-            <p id="result-count" class="secondary" aria-live="polite"></p>
-          </div>
-          <label class="sort-control"
-            >Sort by<select id="sort">
-              <option value="match">Best match</option>
-              <option value="budget">Closest to budget</option>
-              <option value="price">Lowest subtotal</option>
-              <option value="distance">Nearest</option>
-            </select></label
-          >
-        </div>
-        <div id="active-filters" class="active-filters"></div>
-        <div id="results" class="results-list"></div>
-        <button id="show-more" class="more-button" type="button" hidden>
-          Show more spots<i data-lucide="chevron-down" aria-hidden="true"></i>
-        </button>
-        <aside id="contenders-tray" aria-label="Saved contenders" hidden>
-          <strong>Tonight's contenders</strong>
-          <div id="tray-items"></div>
-          <span id="tray-count">0 / 3 spots</span
-          ><a href="#shortlist"
-            >Compare all <i data-lucide="arrow-down" aria-hidden="true"></i
-          ></a>
-        </aside>
-        <section
-          id="shortlist"
-          class="shortlist"
-          aria-labelledby="shortlist-title"
-          hidden
-        >
-          <div class="section-heading">
-            <div>
-              <h2 id="shortlist-title">Tonight's contenders</h2>
-              <p class="secondary">Menu subtotals before tax, tip &amp; fees</p>
-            </div>
-            <button
-              id="clear-shortlist"
-              class="icon-button"
+          <p id="ai-status" class="small" role="status"></p>
+          <p id="request-error" role="alert" hidden></p>
+          <div class="examples">
+            <span class="eyebrow">Need a starting point?</span
+            ><button type="button" data-example="Somewhere in Pasadena">
+              Somewhere in Pasadena <span aria-hidden="true">↗</span></button
+            ><button type="button" data-example="Seafood and wine around $25">
+              Seafood and wine around $25
+              <span aria-hidden="true">↗</span></button
+            ><button
               type="button"
-              aria-label="Clear shortlist"
-              data-tooltip="Clear shortlist"
+              data-example="Tacos and margaritas around $25"
             >
-              <i data-lucide="trash-2" aria-hidden="true"></i>
+              Tacos and margaritas around $25 <span aria-hidden="true">↗</span>
             </button>
           </div>
-          <div id="comparison" class="comparison-grid"></div>
-          <p id="shortlist-message" class="secondary" aria-live="polite"></p>
+          <details class="coverage-details">
+            <summary>About these happy hours</summary>
+            <p id="dataset-summary"></p>
+            <p>
+              Coverage is incomplete. These are researched listings, not live
+              restaurant confirmation or a live search of TikTok and websites.
+              Dates show when a source was reviewed.
+            </p>
+            <p>
+              Menus and offers can change. Check the linked source and
+              restaurant restrictions before going. Subtotals exclude tax, tip,
+              and fees.
+            </p>
+          </details>
+        </aside>
+        <section class="browse" aria-label="Restaurant browsing">
+          <div class="results-heading">
+            <div>
+              <div class="eyebrow">Menus first. Your choice.</div>
+              <h2 id="results-title">Explore happy hours</h2>
+            </div>
+            <button id="clear-request" class="secondary" type="button" hidden>
+              Clear request
+            </button>
+          </div>
+          <p id="interpretation" class="interpretation" role="status"></p>
+          <div id="results" aria-busy="false"></div>
+          <footer>
+            <span>Restaurant-listed, not live-confirmed.</span
+            ><a href="./docs/final-submission.md">Project write-up</a
+            ><a href="./legacy.html">Previous version</a>
+          </footer>
         </section>
-        <details id="alternatives" class="alternatives">
-          <summary>
-            <span id="alternatives-title">Other spots to consider</span>
-          </summary>
-          <p class="secondary">
-            These do not meet every requirement. Each result shows what needs to
-            change or be verified.
-          </p>
-          <div id="alternative-results" class="results-list"></div>
-          <button
-            id="more-alternatives"
-            class="more-button"
-            type="button"
-            hidden
-          >
-            Show more alternatives<i
-              data-lucide="chevron-down"
-              aria-hidden="true"
-            ></i>
-          </button>
-        </details>
-        <footer class="results-footer">
-          <span>Restaurant-listed, not live-confirmed.</span
-          ><a href="./docs/class-post.md" target="_blank" rel="noreferrer"
-            >Project evaluation<i
-              data-lucide="arrow-up-right"
-              aria-hidden="true"
-            ></i
-          ></a>
-        </footer>
-      </main>
-    </div>
+      </div>
+    </main>
     <noscript
-      ><p class="noscript">
-        Enable JavaScript to search this local restaurant dataset.
-      </p></noscript
+      ><p>Enable JavaScript to browse the restaurant dataset.</p></noscript
     >
-    <script src="./src/vendor/lucide.min.js"></script>
-    <script type="module" src="./src/app.js"></script>
+    <script type="module" src="./src/discover-app.js"></script>
   </body>
 </html>
