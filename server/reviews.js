@@ -86,7 +86,7 @@ export function createReviewStore({
     owner,
     async list() {
       const columns =
-        "id,status,payload,approved_payload,created_at,reviewed_at,review_evidence(id,source_url,note,created_at)";
+        "id,status,payload,menu_lookup,approved_payload,created_at,reviewed_at,review_evidence(id,source_url,note,created_at)";
       const pending = await api(
         `/rest/v1/review_candidates?select=${columns}&status=eq.pending&order=created_at.desc&limit=200&review_evidence.limit=10`,
       );
@@ -116,6 +116,24 @@ export function createReviewStore({
           };
         }),
       });
+    },
+    async saveMenu(id, candidate, notice) {
+      checkId(id);
+      const menu_lookup = {
+        candidate: candidate === null ? null : normalizeCandidate(candidate),
+        checkedAt: new Date().toISOString(),
+        notice: String(notice || "Menu remains unverified.").slice(0, 750),
+      };
+      const rows = await api(
+        `/rest/v1/review_candidates?id=eq.${id}&status=eq.pending`,
+        { method: "PATCH", body: { menu_lookup } },
+      );
+      if (!rows.length)
+        throw serviceError(
+          "This submission was already reviewed. Refresh the queue.",
+          409,
+        );
+      return rows[0];
     },
     async evidence(id, input) {
       checkId(id);

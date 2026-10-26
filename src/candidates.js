@@ -143,3 +143,32 @@ export function candidateToVenue(record) {
     })),
   };
 }
+
+// Only server-sourced previews for this exact place can replace its display menu.
+export function freshMenuLookup(record, now = Date.now()) {
+  const lookup = record?.menu_lookup;
+  const checked = Date.parse(lookup?.checkedAt);
+  if (
+    !lookup ||
+    !Number.isFinite(checked) ||
+    now - checked >= 86400000 ||
+    checked > now + 300000
+  )
+    return null;
+  try {
+    const candidate =
+      lookup.candidate === null ? null : normalizeCandidate(lookup.candidate);
+    if (candidate && identity(candidate) !== identity(record.payload))
+      return null;
+    return {
+      candidate,
+      checkedAt: lookup.checkedAt,
+      notice:
+        typeof lookup.notice === "string"
+          ? lookup.notice.slice(0, 750)
+          : "Menu availability still needs verification.",
+    };
+  } catch {
+    return null;
+  }
+}

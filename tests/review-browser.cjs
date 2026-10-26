@@ -32,6 +32,7 @@ const { chromium } = require("playwright");
         json: {
           configured: true,
           menuLookup: true,
+          menuPersistence: true,
           url: "https://test.supabase.co",
           anonKey: "public",
         },
@@ -49,20 +50,25 @@ const { chromium } = require("playwright");
         },
       });
     });
-    await page.route("**/api/reviews/*/menu", (r) =>
-      r.fulfill({
-        json: {
-          candidate: {
-            ...payload,
-            items: [
-              ...payload.items,
-              { name: "Truffle fries", kind: "food", priceCents: 700 },
-              { name: "House wine", kind: "drink", priceCents: null },
-            ],
-          },
-        },
-      }),
-    );
+    let menuCalls = 0;
+    await page.route("**/api/reviews/*/menu", (r) => {
+      menuCalls++;
+      const candidate = {
+        ...payload,
+        items: [
+          ...payload.items,
+          { name: "Truffle fries", kind: "food", priceCents: 700 },
+          { name: "House wine", kind: "drink", priceCents: null },
+        ],
+      };
+      const lookup = {
+        candidate,
+        notice: "Menu remains unverified.",
+        checkedAt: new Date().toISOString(),
+      };
+      records[0].menu_lookup = lookup;
+      return r.fulfill({ json: lookup });
+    });
     await page.route("**/api/discover", async (r) => {
       const { emptyPreferences } = await import("../src/discovery.js");
       return r.fulfill({
@@ -141,9 +147,7 @@ const { chromium } = require("playwright");
       0,
       "Public visitors see pending places without owner controls",
     );
-    await page
-      .getByRole("button", { name: "Find more menu items", exact: true })
-      .click();
+
     await page
       .locator("#pending-results .menu-highlight")
       .filter({ hasText: "Truffle fries" })
@@ -171,6 +175,17 @@ const { chromium } = require("playwright");
       !(await page.locator("#pending-results").innerText()).includes(
         "Long source article. ".repeat(20),
       ),
+    );
+    await page.reload();
+    await page.getByRole("tab", { name: /Needs verification/ }).click();
+    await page
+      .locator("#pending-results .menu-highlight")
+      .filter({ hasText: "Truffle fries" })
+      .waitFor();
+    assert.equal(
+      menuCalls,
+      1,
+      "Saved menu loads automatically after refresh without another search",
     );
     await page.getByText("Add menu evidence", { exact: true }).click();
     await page

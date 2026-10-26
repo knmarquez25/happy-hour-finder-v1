@@ -29,3 +29,8 @@ alter table public.review_evidence enable row level security;
 revoke all on public.review_candidates, public.review_evidence from anon, authenticated;
 grant select, insert, update on public.review_candidates to service_role;
 grant select, insert on public.review_evidence to service_role;
+
+-- Persist unverified menu previews separately from immutable discovery/approval data.
+-- Safe to rerun on an existing project; changes no grants or review status.
+alter table public.review_candidates add column if not exists menu_lookup jsonb
+  check (octet_length(menu_lookup::text) <= 20000);

@@ -135,50 +135,77 @@ test("already approved or rejected discoveries are not reported as new pending r
   );
 });
 
-test("public menu lookup uses a saved pending identity without modifying or approving it and caches results", async () => {
-  const payload = { name: "New Bistro", location: "Pasadena" };
+test("public menu lookup persists a preview that survives an application restart", async () => {
+  const payload = {
+    name: "New Bistro",
+    location: "Pasadena",
+    county: "LA County",
+    address: "",
+    sourceUrl: "https://example.com/menu",
+    evidence: "New Bistro Pasadena happy hour menu",
+    items: [{ name: "Martini", kind: "drink", priceCents: null }],
+    hoursText: null,
+  };
   let searches = 0;
-  await server(
-    {
-      apiKey: "test",
-      reviewStore: {
-        configured: true,
-        list: async () => [{ id, status: "pending", payload }],
-      },
-      searchImpl: async (query, options) => {
-        searches++;
-        assert.deepEqual(options.target, payload);
-        assert.match(query, /New Bistro.*Pasadena/);
-        return {
-          candidates: [
-            {
-              ...payload,
-              items: [{ name: "Fries", kind: "food", priceCents: 700 }],
-            },
-          ],
-        };
-      },
+  const row = { id, status: "pending", payload };
+  const reviewStore = {
+    configured: true,
+    list: async () => [row],
+    saveMenu: async (savedId, candidate, notice) => {
+      assert.equal(savedId, id);
+      row.menu_lookup = {
+        candidate,
+        notice,
+        checkedAt: new Date().toISOString(),
+      };
+      return row;
     },
-    async (base) => {
-      const request = () =>
-        fetch(base + `/api/reviews/${id}/menu`, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: "{}",
-        });
-      for (let n = 0; n < 2; n++) {
-        const r = await request();
-        assert.equal(r.status, 200);
-        assert.equal((await r.json()).candidate.items[0].name, "Fries");
-      }
-      assert.equal(searches, 1);
+  };
+  const options = {
+    apiKey: "test",
+    reviewStore,
+    searchImpl: async (query, options) => {
+      searches++;
+      assert.deepEqual(options.target, payload);
+      assert.match(query, /New Bistro.*Pasadena/);
+      return {
+        candidates: [
+          {
+            ...payload,
+            items: [
+              ...payload.items,
+              { name: "Fries", kind: "food", priceCents: 700 },
+            ],
+          },
+        ],
+      };
+    },
+  };
+  for (let n = 0; n < 2; n++)
+    await server(options, async (base) => {
+      const r = await fetch(base + `/api/reviews/${id}/menu`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: "{}",
+      });
+      assert.equal(r.status, 200);
+      const result = await r.json();
+      assert.equal(result.candidate.items.length, 2);
+      const list = await (await fetch(base + "/api/reviews")).json();
+      assert.equal(list.records[0].menu_lookup.candidate.items.length, 2);
+      assert.equal(list.records[0].payload.items.length, 1);
+      assert.equal(list.records[0].status, "pending");
       const invalid = await fetch(base + `/api/reviews/${id}/menu`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ query: "untrusted" }),
       });
       assert.equal(invalid.status, 400);
-    },
+    });
+  assert.equal(
+    searches,
+    1,
+    "Fresh durable menu avoids another provider call after restart",
   );
 });
 test("menu lookup cannot search for an unknown or already reviewed record", async () => {

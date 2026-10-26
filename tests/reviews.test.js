@@ -29,6 +29,11 @@ test("save writes server candidates pending without copying approval fields", as
       const body = JSON.parse(o.body);
       assert.equal(body[0].status, "pending");
       assert.equal(body[0].approved_payload, undefined);
+      assert.equal(
+        body[0].menu_lookup,
+        undefined,
+        "Broad discovery must not skip the targeted menu lookup",
+      );
       assert.equal(body[0].reviewed_by, undefined);
       assert.equal(o.headers.Authorization, "Bearer private-test");
       return { ok: true, json: async () => [] };
@@ -141,4 +146,37 @@ test("pending queue growth cannot hide older approved publications", async () =>
   const rows = await store.list();
   assert.ok(rows.some((r) => r.id === "old-approved"));
   assert.equal(rows.length, 201);
+});
+
+test("expanded menus are saved separately without changing the original discovery or approval state", async () => {
+  const store = createReviewStore({
+    ...config,
+    fetchImpl: async (url, o) => {
+      assert.match(url, /id=eq\./);
+      assert.match(url, /status=eq.pending/);
+      assert.equal(o.method, "PATCH");
+      const body = JSON.parse(o.body);
+      assert.deepEqual(Object.keys(body), ["menu_lookup"]);
+      assert.equal(body.menu_lookup.candidate.items.length, 2);
+      assert.ok(Date.parse(body.menu_lookup.checkedAt));
+      return {
+        ok: true,
+        json: async () => [{ id, status: "pending", payload, ...body }],
+      };
+    },
+  });
+  const row = await store.saveMenu(
+    id,
+    {
+      ...payload,
+      items: [
+        ...payload.items,
+        { name: "Fries", kind: "food", priceCents: null },
+      ],
+    },
+    "Menu remains unverified.",
+  );
+  assert.equal(row.payload.items.length, 1);
+  assert.equal(row.menu_lookup.candidate.items.length, 2);
+  assert.equal(row.status, "pending");
 });

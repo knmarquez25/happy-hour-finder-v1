@@ -5,7 +5,7 @@ import { fileURLToPath } from "node:url";
 import { interpretRequest, serviceError } from "./ai.js";
 import { searchPlaces } from "./search.js";
 import { createReviewStore } from "./reviews.js";
-import { identity } from "../src/candidates.js";
+import { identity, freshMenuLookup } from "../src/candidates.js";
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const mime = {
@@ -79,7 +79,7 @@ export function createApp({
     hourCalls = 0,
     inFlight = 0;
   const addresses = new Map();
-  const menuCache = new Map();
+  const menuJobs = new Map();
   let cachedReviews,
     cacheUntil = 0;
   async function reviewList() {
@@ -226,7 +226,11 @@ export function createApp({
         }
       }
       if (url.pathname === "/api/review-config" && req.method === "GET")
-        return json(200, { ...reviewStore.publicConfig(), menuLookup: true });
+        return json(200, {
+          ...reviewStore.publicConfig(),
+          menuLookup: true,
+          menuPersistence: true,
+        });
       if (url.pathname === "/api/reviews" && req.method === "GET")
         return json(200, { records: await reviewList() });
       if (url.pathname === "/api/owner" && req.method === "GET") {
@@ -309,11 +313,11 @@ export function createApp({
             "This place is no longer waiting for verification. Refresh the queue.",
             404,
           );
-        const cached = menuCache.get(id);
-        if (cached && cached.until > Date.now())
-          return json(200, cached.result);
+        const saved = freshMenuLookup(record);
+        if (saved) return json(200, saved);
+        if (menuJobs.has(id)) return json(200, await menuJobs.get(id));
         reserve(req, res, 2);
-        try {
+        const job = (async () => {
           const target = record.payload;
           const result = await searchImpl(
             `${target.name} ${target.location} restaurant happy hour food and drink menu prices`,
@@ -322,20 +326,22 @@ export function createApp({
           const candidate =
             result.candidates.find((c) => identity(c) === identity(target)) ||
             null;
-          const value = {
-            candidate,
-            notice: candidate
-              ? "Available happy-hour menu items from web sources; completeness and availability need verification."
-              : "No additional menu could be confirmed from search sources. The original source is still available.",
-          };
-          if (menuCache.size >= 200)
-            menuCache.delete(menuCache.keys().next().value);
-          menuCache.set(id, { until: Date.now() + 3600000, result: value });
-          return json(200, value);
+          const notice = candidate
+            ? "Available happy-hour menu items from web sources; completeness and availability need verification."
+            : "No additional menu items were found. This may be a partial menu; check the source.";
+          const updated = await reviewStore.saveMenu(id, candidate, notice);
+          cacheUntil = 0;
+          return updated.menu_lookup;
+        })();
+        menuJobs.set(id, job);
+        try {
+          return json(200, await job);
         } finally {
+          menuJobs.delete(id);
           inFlight--;
         }
       }
+
       if (reviewMatch && req.method === "POST") {
         const action = reviewMatch[2];
         const body = await readJson(

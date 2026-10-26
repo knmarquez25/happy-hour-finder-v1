@@ -1,12 +1,29 @@
 import { escapeHtml as esc, formatMoney as money } from "./ui-state.js";
-import { normalizeCandidate, identity } from "./candidates.js";
+import {
+  normalizeCandidate,
+  identity,
+  freshMenuLookup,
+} from "./candidates.js?v=review-discovery-7";
 import { weekdays } from "./matching.js";
 export function initReviews({ endpoint, onApproved, onBrowse }) {
   const pending = document.querySelector("#pending-results"),
     status = document.querySelector("#discovery-status"),
     ownerPanel = document.querySelector("#owner-panel"),
     ownerButton = document.querySelector("#owner-toggle");
-  const menus = new Map();
+  const menus = new Map(),
+    menuStates = new Map(),
+    attempted = new Set(),
+    queued = new Set();
+  const menuQueue = [];
+  let menuBusy = false,
+    autoPaused = false;
+  const menuObserver = new IntersectionObserver(
+    (entries) => {
+      for (const entry of entries)
+        if (entry.isIntersecting) queueMenu(entry.target.dataset.reviewId);
+    },
+    { rootMargin: "120px" },
+  );
   let records = [],
     transient = [],
     config = {},
@@ -22,6 +39,8 @@ export function initReviews({ endpoint, onApproved, onBrowse }) {
     });
     document.querySelector("#browse-panel").hidden = name !== "browse";
     document.querySelector("#pending-panel").hidden = name !== "pending";
+    observeMenus();
+    void pumpMenus();
   };
   document.querySelectorAll("[data-view]").forEach((b) => {
     b.addEventListener("click", () => showTab(b.dataset.view));
@@ -44,7 +63,11 @@ export function initReviews({ endpoint, onApproved, onBrowse }) {
         "The discovery service is unavailable. Your researched restaurants are still here.",
       );
     }
-    if (!r.ok) throw Error(data.error || "The review service is unavailable.");
+    if (!r.ok)
+      throw Object.assign(
+        Error(data.error || "The review service is unavailable."),
+        { status: r.status },
+      );
     return data;
   }
   const post = (path, body, owner = false) =>
@@ -77,14 +100,128 @@ export function initReviews({ endpoint, onApproved, onBrowse }) {
           .map((r) => {
             let c;
             try {
-              c = normalizeCandidate(menus.get(r.id) || r.payload);
+              c = normalizeCandidate(
+                menus.get(r.id) || freshMenuLookup(r)?.candidate || r.payload,
+              );
             } catch {
               return "";
             }
-            return `<article class="restaurant-card pending-card" data-review-id="${esc(r.id)}"><div class="card-top"><div><h3>${esc(c.name)}</h3><p class="venue-location">${esc(c.location)}</p></div><span class="evidence-tag uncertain">${r.unsaved ? "Not saved" : "Needs verification"}</span></div><p class="small muted">Menu, prices and availability need owner verification.</p><h4>Happy-hour menu</h4><p class="small muted">Items found in the source; this may be a partial menu.</p>${c.items.map((i) => `<div class="menu-highlight"><span>${esc(i.name)}</span><strong>${i.priceCents === null ? "Price needs confirmation" : money(i.priceCents) + " · unverified"}</strong></div>`).join("")}<p class="small">${c.hoursText ? "Suggested hours (unverified): " + esc(c.hoursText) : "Happy-hour times need confirmation."}</p><div class="menu-source-actions"><a href="${esc(c.sourceUrl)}" target="_blank" rel="noreferrer" aria-label="Open menu source">Open menu source ↗</a>${r.unsaved || !config.menuLookup ? "" : `<button type="button" class="secondary" data-load-menu ${menus.has(r.id) ? "disabled" : ""}>${menus.has(r.id) ? "Menu items loaded" : "Find more menu items"}</button>`}</div><p class="small muted menu-load-status" role="status"></p><details><summary>Source details</summary><p class="source-summary small">${esc(sourceSummary(c))}</p></details>${(r.review_evidence || []).length ? `<details><summary>Community evidence (${r.review_evidence.length})</summary>${r.review_evidence.map((e) => `<p>${esc(e.note)}<br><a href="${esc(e.source_url)}" target="_blank" rel="noreferrer">Submitted source ↗</a></p>`).join("")}</details>` : ""}${r.unsaved ? '<p class="small budget-over">This discovery is not in the shared queue. Retry after storage is connected.</p>' : `<details><summary>Add menu evidence</summary><form data-evidence><label>Menu or photo link<input type="url" name="sourceUrl" required maxlength="2048" placeholder="https://restaurant.com/happy-hour"></label><label>What does the source confirm?<textarea name="note" maxlength="750" required></textarea></label><p class="small muted">Submit public menu information only. Evidence is public and still needs owner review.</p><button class="secondary" type="submit">Submit evidence</button><p class="form-message" role="status"></p></form></details>`}${isOwner && !r.unsaved ? ownerForm(c) : ""}</article>`;
+            return `<article class="restaurant-card pending-card" data-review-id="${esc(r.id)}"><div class="card-top"><div><h3>${esc(c.name)}</h3><p class="venue-location">${esc(c.location)}</p></div><span class="evidence-tag uncertain">${r.unsaved ? "Not saved" : "Needs verification"}</span></div><p class="small muted">Menu, prices and availability need owner verification.</p>${pendingMenu(r, c)}${(r.review_evidence || []).length ? `<details><summary>Community evidence (${r.review_evidence.length})</summary>${r.review_evidence.map((e) => `<p>${esc(e.note)}<br><a href="${esc(e.source_url)}" target="_blank" rel="noreferrer">Submitted source ↗</a></p>`).join("")}</details>` : ""}${r.unsaved ? '<p class="small budget-over">This discovery is not in the shared queue. Retry after storage is connected.</p>' : `<details><summary>Add menu evidence</summary><form data-evidence><label>Menu or photo link<input type="url" name="sourceUrl" required maxlength="2048" placeholder="https://restaurant.com/happy-hour"></label><label>What does the source confirm?<textarea name="note" maxlength="750" required></textarea></label><p class="small muted">Submit public menu information only. Evidence is public and still needs owner review.</p><button class="secondary" type="submit">Submit evidence</button><p class="form-message" role="status"></p></form></details>`}${isOwner && !r.unsaved ? ownerForm(c) : ""}</article>`;
           })
           .join("")
       : '<div class="empty-state"><h3>No places waiting for verification</h3><p>Tell us what sounds good to search beyond the researched list. New discoveries appear here for source review before publication.</p></div>';
+    observeMenus();
+  }
+  function observeMenus() {
+    menuObserver.disconnect();
+    if (
+      !isOwner &&
+      config.menuPersistence &&
+      !document.querySelector("#pending-panel").hidden
+    ) {
+      pending
+        .querySelectorAll(".pending-card")
+        .forEach((card) => menuObserver.observe(card));
+    }
+  }
+  function queueMenu(id) {
+    const r = records.find((r) => r.id === id && r.status === "pending");
+    if (
+      !r ||
+      isOwner ||
+      autoPaused ||
+      !config.menuPersistence ||
+      attempted.has(id) ||
+      queued.has(id) ||
+      freshMenuLookup(r)
+    )
+      return;
+    queued.add(id);
+    menuQueue.push(id);
+    void pumpMenus();
+  }
+  async function pumpMenus() {
+    if (
+      menuBusy ||
+      isOwner ||
+      autoPaused ||
+      document.querySelector("#pending-panel").hidden
+    )
+      return;
+    const id = menuQueue.shift();
+    if (!id) return;
+    queued.delete(id);
+    const r = records.find((r) => r.id === id && r.status === "pending");
+    if (!r || freshMenuLookup(r)) return void pumpMenus();
+    menuBusy = true;
+    attempted.add(id);
+    try {
+      await loadMenu(id, false);
+    } finally {
+      menuBusy = false;
+      void pumpMenus();
+    }
+  }
+  function patchMenu(id) {
+    const r = records.find((r) => r.id === id && r.status === "pending");
+    const card = [...pending.querySelectorAll("[data-review-id]")].find(
+      (card) => card.dataset.reviewId === id,
+    );
+    const section = card?.querySelector(".pending-menu");
+    if (r && section)
+      section.outerHTML = pendingMenu(
+        r,
+        normalizeCandidate(
+          menus.get(id) || freshMenuLookup(r)?.candidate || r.payload,
+        ),
+      );
+  }
+  function pendingMenu(r, c) {
+    const saved = freshMenuLookup(r),
+      state = menuStates.get(r.id);
+    const loading = state?.loading;
+    const message = loading
+      ? "Loading available happy-hour menu items…"
+      : state?.error ||
+        state?.notice ||
+        (saved
+          ? saved.notice
+          : config.menuPersistence
+            ? "Additional menu items load automatically when this card is in view."
+            : "");
+    return `<section class="pending-menu"><h4>Happy-hour menu</h4><p class="small muted">Items found in the source; this may be a partial menu.</p>${c.items.map((i) => `<div class="menu-highlight"><span>${esc(i.name)}</span><strong>${i.priceCents === null ? "Price needs confirmation" : money(i.priceCents) + " · unverified"}</strong></div>`).join("")}<p class="small">${c.hoursText ? "Suggested hours (unverified): " + esc(c.hoursText) : "Happy-hour times need confirmation."}</p><div class="menu-source-actions"><a href="${esc(c.sourceUrl)}" target="_blank" rel="noreferrer" aria-label="Open menu source">Open menu source ↗</a>${!r.unsaved && config.menuLookup && !saved ? `<button type="button" class="secondary" data-load-menu ${loading ? "disabled" : ""}>${loading ? "Loading menu…" : state?.error ? "Retry menu lookup" : "Find more menu items"}</button>` : ""}</div><p class="small muted menu-load-status" role="status">${esc(message)}</p><details><summary>Source details</summary><p class="source-summary small">${esc(sourceSummary(c))}</p></details></section>`;
+  }
+  async function loadMenu(id, manual) {
+    const r = records.find((r) => r.id === id && r.status === "pending");
+    if (!r || menuStates.get(id)?.loading) return;
+    menuStates.set(id, { loading: true });
+    patchMenu(id);
+    try {
+      const result = await post(`reviews/${id}/menu`, {});
+      if (!manual && isOwner) {
+        // Preserve the review form and its original source while clearing loading.
+        menuStates.set(id, {
+          notice:
+            "An updated menu was saved. Refresh the queue before reviewing it.",
+        });
+        patchMenu(id);
+        return;
+      }
+      const lookup = freshMenuLookup({ ...r, menu_lookup: result });
+      if (!lookup)
+        throw Error("The saved menu did not match this place. Please retry.");
+      r.menu_lookup = lookup;
+      if (lookup.candidate) menus.set(id, lookup.candidate);
+      menuStates.delete(id);
+      if (isOwner && manual) render();
+      else patchMenu(id);
+    } catch (err) {
+      if (err.status === 429) autoPaused = true;
+      menuStates.set(id, { error: err.message });
+      patchMenu(id);
+    } finally {
+      if (menuStates.get(id)?.loading) menuStates.delete(id);
+    }
   }
   function sourceSummary(c) {
     const title = c.evidence.match(/^Page title: ([^\n]+)/)?.[1];
@@ -116,7 +253,9 @@ export function initReviews({ endpoint, onApproved, onBrowse }) {
         f.reset();
       } else {
         const original =
-          menus.get(id) || records.find((r) => r.id === id)?.payload;
+          menus.get(id) ||
+          freshMenuLookup(records.find((r) => r.id === id))?.candidate ||
+          records.find((r) => r.id === id)?.payload;
         if (!original) throw Error("Refresh this submission before review.");
         const value = {
           ...original,
@@ -166,31 +305,8 @@ export function initReviews({ endpoint, onApproved, onBrowse }) {
   pending.addEventListener("click", async (e) => {
     const menuButton = e.target.closest("[data-load-menu]");
     if (menuButton) {
-      const card = menuButton.closest("[data-review-id]");
-      const message = card.querySelector(".menu-load-status");
-      menuButton.disabled = true;
-      message.textContent = "Looking up the happy-hour menu…";
-      try {
-        const result = await post(`reviews/${card.dataset.reviewId}/menu`, {});
-        if (result.candidate) {
-          const c = normalizeCandidate(result.candidate);
-          const original = records.find(
-            (r) => r.id === card.dataset.reviewId,
-          )?.payload;
-          if (!original || identity(c) !== identity(original))
-            throw Error("The menu source did not match this place.");
-          menus.set(card.dataset.reviewId, c);
-          render();
-        } else {
-          message.textContent =
-            result.notice ||
-            "No additional menu items found. Check the menu source.";
-          menuButton.disabled = false;
-        }
-      } catch (err) {
-        message.textContent = err.message;
-        menuButton.disabled = false;
-      }
+      const id = menuButton.closest("[data-review-id]").dataset.reviewId;
+      await loadMenu(id, true);
       return;
     }
     const b = e.target.closest("[data-reject]");
