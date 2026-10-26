@@ -4,7 +4,7 @@
   "knownPositive": {
     "name": "Maria's Bar & Grill",
     "sourceUrl": "https://mariasgrilldowney.com/",
-    "publishedHours": "Monday–Friday12–2PM and5–7PM",
+    "publishedHours": "Monday\u2013Friday12\u20132PM and5\u20137PM",
     "publishedItems": [
       {
         "name": "Domestic",
@@ -22,6 +22,16 @@
     "keptCount": 0,
     "validationRejections": 0
   },
-  "acceptance": "At least one real Downey lead with source support for Monday noon should be displayed as Needs verification; do not auto-approve. Maria’s is a known source-supported positive, not proof of complete recall.",
-  "status": "Expected positive recorded before post-deploy live test."
+  "acceptance": "At least one real Downey lead with source support for Monday noon should be displayed as Needs verification; do not auto-approve. Maria\u2019s is a known source-supported positive, not proof of complete recall.",
+  "status": "FAIL: known positive not discovered. Geography/scope/schedule regressions pass, but live recall acceptance remains unmet. Advanced search removed after no benefit; no manual seeding or owner approval performed.",
+  "after": {
+    "liveBackendCommit": "1ff36e9649f21bf896e22458fbf982b4affa90c6",
+    "searchCalls": 2,
+    "sourceCount": 8,
+    "retrievedSourceCount": 19,
+    "extractedCount": 0,
+    "keptCount": 0,
+    "knownPositiveRetrieved": false,
+    "basicAndAdvancedBothMissedKnownPositive": true
+  }
 }

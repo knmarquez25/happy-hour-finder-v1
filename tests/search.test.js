@@ -596,7 +596,7 @@ test("a relevant city menu below the first eight search results is considered be
   assert.equal(r.candidates[0].sourceUrl, noonSource.url);
 });
 
-test("a city-and-time request uses bounded basic and deeper searches and rejects an explicit later happy hour", async () => {
+test("a city-and-time request uses two bounded basic searches and rejects an explicit later happy hour", async () => {
   const requests = [];
   const mocked = fetcher(
     { ...noonCandidate, hoursText: "Monday-Friday3pm-6pm" },
@@ -619,7 +619,7 @@ test("a city-and-time request uses bounded basic and deeper searches and rejects
     },
   });
   assert.equal(requests.length, 2);
-  assert.deepEqual(requests.map(b => b.search_depth), ["basic", "advanced"]);
+  assert.deepEqual(requests.map(b => b.search_depth), ["basic", "basic"]);
   assert.ok(
     requests.every(
       (b) =>
