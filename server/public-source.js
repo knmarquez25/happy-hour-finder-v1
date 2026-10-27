@@ -30,6 +30,22 @@ for (const [address, prefix] of [
   ["2002::", 16],
 ])
   forbidden.addSubnet(address, prefix, "ipv6");
+function policyError(message) {
+  return Object.assign(new Error(message), { sourcePolicyBlocked: true });
+}
+function checkedUrl(value) {
+  try {
+    const url = new URL(publicUrl(value));
+    if (
+      (url.port && url.port !== "443") ||
+      !/^[a-z0-9.-]+\.[a-z]{2,}$/i.test(url.hostname)
+    )
+      throw Error();
+    return url.href;
+  } catch {
+    throw policyError("Use a public HTTPS menu page on the standard port.");
+  }
+}
 function safeAddress(address) {
   const family = isIP(address);
   return family === 4
@@ -62,7 +78,7 @@ export async function readPublicMenu(
   value,
   { resolveHost = lookup, requestImpl = https.request } = {},
 ) {
-  let next = publicUrl(value);
+  let next = checkedUrl(value);
   for (let hop = 0; hop < 4; hop++) {
     const url = new URL(next);
     if (
@@ -79,7 +95,7 @@ export async function readPublicMenu(
       }),
     ]).finally(() => clearTimeout(timer));
     if (!addresses.length || addresses.some((r) => !safeAddress(r.address)))
-      throw Error("Private network sources are not allowed.");
+      throw policyError("Private network sources are not allowed.");
     const page = await new Promise((resolve, reject) => {
       const req = requestImpl(
         url,
@@ -134,7 +150,7 @@ export async function readPublicMenu(
     });
     if (Object.hasOwn(page, "redirect")) {
       if (!page.redirect) throw Error("Unreadable redirect.");
-      next = publicUrl(new URL(page.redirect, url).href);
+      next = checkedUrl(new URL(page.redirect, url).href);
       continue;
     }
     return { ...parseMenuPage(page.body, page.type), url: next };

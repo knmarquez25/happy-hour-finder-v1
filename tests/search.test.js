@@ -767,3 +767,113 @@ test("a readable original menu imports without a search or extraction-service ca
   assert.equal(r.candidates.length, 1);
   assert.equal(r.provider, "Menu link");
 });
+
+test("a discount amount is never turned into the full menu price", async () => {
+  const source = {
+    results: [
+      {
+        url: candidate.sourceUrl,
+        title: "New Bistro Pasadena Happy Hour",
+        content: "New Bistro Pasadena Happy Hour: Martini $2 off",
+      },
+    ],
+  };
+  const result = await searchPlaces("martini in Pasadena", {
+    apiKey: "test",
+    searchKey: "test",
+    fetchImpl: fetcher(
+      {
+        ...candidate,
+        items: [{ name: "Martini", kind: "drink", priceCents: 200 }],
+      },
+      source,
+    ),
+  });
+  assert.equal(result.candidates[0].items[0].priceCents, null);
+});
+test("plain Martini cannot borrow the name or price of Espresso Martini", async () => {
+  const source = {
+    results: [
+      {
+        url: candidate.sourceUrl,
+        title: "New Bistro Pasadena Happy Hour",
+        content: "New Bistro Pasadena Happy Hour: Espresso Martini $7",
+      },
+    ],
+  };
+  const result = await searchPlaces("martini in Pasadena", {
+    apiKey: "test",
+    searchKey: "test",
+    fetchImpl: fetcher(
+      {
+        ...candidate,
+        items: [{ name: "Martini", kind: "drink", priceCents: 700 }],
+      },
+      source,
+    ),
+  });
+  assert.equal(result.candidates.length, 0);
+});
+test("saved menu evidence is ranked before the four-source cap", async () => {
+  const saved = Array.from({ length: 5 }, (_, n) => ({
+    ...noonCandidate,
+    name: `Saved Bistro ${n}`,
+    sourceUrl: `https://saved${n}.example/menu`,
+    items: [
+      {
+        name: n === 4 ? "Unique tamarind margarita" : "Domestic",
+        kind: "drink",
+        priceCents: null,
+      },
+    ],
+    evidence: `Page title: Saved Bistro ${n} Downey\nMenu excerpt: Saved Bistro ${n} Downey happy hour Monday-Friday12–2PM. ${n === 4 ? "Unique tamarind margarita" : "Domestic"}`,
+  }));
+  const r = await searchPlaces(
+    "Unique tamarind margarita in Downey Monday noon",
+    {
+      apiKey: "test",
+      searchKey: "test",
+      savedCandidates: saved,
+      fetchImpl: fetcher(
+        { ...saved[4], sourceIndex: 0, fragmentIndex: 0 },
+        { results: [] },
+      ),
+    },
+  );
+  assert.equal(r.candidates.length, 1);
+  assert.equal(r.candidates[0].name, "Saved Bistro 4");
+});
+test("blocked direct-source errors cannot fall through to an extraction provider", async () => {
+  let calls = 0;
+  await assert.rejects(
+    searchPlaces("Downey", {
+      apiKey: "test",
+      searchKey: "test",
+      sourceUrl: "https://example.com/menu",
+      pageReader: async () => {
+        throw Object.assign(Error("private address"), {
+          sourcePolicyBlocked: true,
+        });
+      },
+      fetchImpl: async () => {
+        calls++;
+        throw Error();
+      },
+    }),
+    /public|private/i,
+  );
+  assert.equal(calls, 0);
+  await assert.rejects(
+    searchPlaces("Downey", {
+      apiKey: "test",
+      searchKey: "test",
+      sourceUrl: "https://example.com:8443/menu",
+      pageReader: async () => null,
+      fetchImpl: async () => {
+        calls++;
+        throw Error();
+      },
+    }),
+  );
+  assert.equal(calls, 0);
+});

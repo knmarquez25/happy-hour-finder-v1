@@ -27,10 +27,21 @@ const { chromium } = require("playwright");
       111,
       "All researched restaurants appear on first load",
     );
-    assert.equal(
-      await page.locator("select").count(),
-      0,
-      "No dropdown preferences",
+    assert.deepEqual(
+      await page
+        .locator("select")
+        .evaluateAll((selects) =>
+          selects.map((s) => ({
+            id: s.id,
+            required: s.required,
+            value: s.value,
+          })),
+        ),
+      [
+        { id: "day-filter", required: false, value: "" },
+        { id: "period-filter", required: false, value: "" },
+      ],
+      "Only the optional day/time controls are present; browsing needs no selections",
     );
     assert.match(await page.locator("#interpretation").innerText(), /111/);
     assert.equal(

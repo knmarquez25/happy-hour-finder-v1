@@ -137,10 +137,12 @@ test("pending queue growth cannot hide older approved publications", async () =>
       json: async () =>
         url.includes("status=eq.approved")
           ? [approved]
-          : Array.from({ length: 200 }, (_, n) => ({
-              id: "pending-" + n,
-              status: "pending",
-            })),
+          : url.includes("offset=200")
+            ? []
+            : Array.from({ length: 200 }, (_, n) => ({
+                id: "pending-" + n,
+                status: "pending",
+              })),
     }),
   });
   const rows = await store.list();
@@ -179,4 +181,25 @@ test("expanded menus are saved separately without changing the original discover
   assert.equal(row.payload.items.length, 1);
   assert.equal(row.menu_lookup.candidate.items.length, 2);
   assert.equal(row.status, "pending");
+});
+
+test("pending menus older than the first 200 remain public and reviewable", async () => {
+  const store = createReviewStore({
+    ...config,
+    fetchImpl: async (url) => ({
+      ok: true,
+      json: async () =>
+        !url.includes("status=eq.pending")
+          ? []
+          : url.includes("offset=200")
+            ? [{ id: "oldest-pending", status: "pending" }]
+            : Array.from({ length: 200 }, (_, n) => ({
+                id: "pending-" + n,
+                status: "pending",
+              })),
+    }),
+  });
+  const rows = await store.list();
+  assert.equal(rows.length, 201);
+  assert.ok(rows.some((r) => r.id === "oldest-pending"));
 });

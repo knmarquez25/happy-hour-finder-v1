@@ -195,6 +195,8 @@ export async function searchPlaces(
   if (sourceUrl !== null) {
     try {
       sourceUrl = publicUrl(sourceUrl);
+      if (new URL(sourceUrl).port && new URL(sourceUrl).port !== "443")
+        throw Error();
       if (!/^[a-z0-9.-]+\.[a-z]{2,}$/i.test(new URL(sourceUrl).hostname))
         throw Error();
     } catch {
@@ -278,7 +280,13 @@ export async function searchPlaces(
       const direct = await pageReader(sourceUrl);
       if (direct?.raw_content && /happy[\s-]*hour/i.test(direct.raw_content))
         page = direct;
-    } catch {}
+    } catch (error) {
+      if (error.sourcePolicyBlocked)
+        throw serviceError(
+          "Only public HTTPS menu sources on the standard port are allowed; private addresses are blocked.",
+          400,
+        );
+    }
     if (!page) {
       try {
         const response = await fetchImpl("https://api.tavily.com/extract", {
@@ -422,8 +430,55 @@ export async function searchPlaces(
   // Search the accumulated unverified source library as well as the web.
   // Saved evidence remains a lead, not owner approval or live confirmation.
   const savedPassages = [];
+  const queryTerms = [
+    ...new Set(query.toLowerCase().match(/[a-z]{3,}/g) || []),
+  ].filter(
+    (term) =>
+      ![
+        "happy",
+        "hour",
+        "hours",
+        "monday",
+        "tuesday",
+        "wednesday",
+        "thursday",
+        "friday",
+        "saturday",
+        "sunday",
+        "noon",
+        "night",
+        "morning",
+        "afternoon",
+        "menu",
+        "menus",
+        "with",
+        "near",
+        "from",
+        "the",
+        "for",
+      ].includes(term),
+  );
+  function savedRelevance(raw) {
+    const names = (raw.name || "").toLowerCase(),
+      items = (raw.items || [])
+        .map((i) => i.name || "")
+        .join(" ")
+        .toLowerCase();
+    return (
+      (names && query.toLowerCase().includes(names) ? 100 : 0) +
+      queryTerms.reduce(
+        (score, term) =>
+          score +
+          (items.includes(term) ? 10 : 0) +
+          (names.includes(term) ? 5 : 0),
+        0,
+      )
+    );
+  }
   if (!sourceUrl && !target)
-    for (const raw of savedCandidates.slice(0, 200)) {
+    for (const raw of [...savedCandidates].sort(
+      (a, b) => savedRelevance(b) - savedRelevance(a),
+    )) {
       try {
         const c = normalizeCandidate(raw);
         if (
@@ -558,6 +613,13 @@ export async function searchPlaces(
     ),
     candidates = [];
   const folded = (s) => s.normalize("NFKC").toLowerCase().replace(/\s+/g, " ");
+  const itemText = (fragment, name) =>
+    /^martinis?$/i.test(name.trim())
+      ? fragment.replace(
+          /\bespresso[\s*-]*martinis?\b/gi,
+          "[espresso-only drink]",
+        )
+      : fragment;
   const rejected = {
     shape: 0,
     source: 0,
@@ -604,7 +666,10 @@ export async function searchPlaces(
           : !folded(context).includes(folded(c.location))
             ? "location"
             : c.items.some(
-                  (i) => !folded(retainedFragment).includes(folded(i.name)),
+                  (i) =>
+                    !folded(itemText(retainedFragment, i.name)).includes(
+                      folded(i.name),
+                    ),
                 )
               ? "item"
               : seen.has(key) ||
@@ -632,8 +697,16 @@ export async function searchPlaces(
           name +
             "[\\s*_:–—|()\\-]{0,20}(?:(?:for|only|at|is)\\s+)?\\$\\s*(\\d{1,4}(?:\\.\\d{2})?)(?![\\d.,])",
           "i",
-        ).exec(retainedFragment);
-        const supported = match ? Math.round(Number(match[1]) * 100) : null;
+        ).exec(itemText(retainedFragment, i.name));
+        const isDiscount =
+          match &&
+          /^\s*(?:off\b|discount\b|savings?\b|less\b|reduction\b)/i.test(
+            itemText(retainedFragment, i.name).slice(
+              match.index + match[0].length,
+            ),
+          );
+        const supported =
+          match && !isDiscount ? Math.round(Number(match[1]) * 100) : null;
         return {
           ...i,
           priceCents:

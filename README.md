@@ -38,8 +38,8 @@ The new engine is `src/matching.js`. The original `src/scoring.js` and `src/pres
 - `npm run test:browser`: with the local preview and installed Google Chrome; verifies real flows and desktop/mobile layouts. Set `PREVIEW_URL` for another port and `PLAYWRIGHT_MODULE` only to use an alternate installed Playwright package.
 - `npm run evaluate`: unchanged 15-case benchmark, frozen original modules vs current app.
 - `npm run evaluate:holdout`: five held-out cases; do not use these for ranking tuning.
-- `node scripts/write-report.mjs`: regenerate evaluation and class-post documents after measured outputs.
+- `node scripts/write-report.mjs`: regenerate the evaluation document after measured outputs.
 
 Original modules are frozen under `evaluation/baseline/` at SHA `865f3c9b4a1ce436d56eb0ab9afbb55938c44fc8`. Cases were defined before expanded-data results. Gold labels were source-reviewed independently from ranking outputs; sources, assumptions, unknowns and witness prices are documented in `evaluation/gold-notes.md`. Scores are small-sample source-evidenced search success, not restaurant accuracy, AI-model accuracy or user satisfaction. Bundled changes are not assigned independent causal effects.
 
-See [evaluation report](docs/evaluation-report.md) and [six-step class post](docs/class-post.md). Source research and development were AI-assisted; runtime recommendations are deterministic. [GitHub Pages app](https://knmarquez25.github.io/happy-hour-finder-v1/).
+See the [evaluation report](docs/evaluation-report.md). Source research and development were AI-assisted; runtime recommendations are deterministic. [GitHub Pages app](https://knmarquez25.github.io/happy-hour-finder-v1/).

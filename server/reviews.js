@@ -87,21 +87,26 @@ export function createReviewStore({
     async list() {
       const columns =
         "id,status,payload,menu_lookup,approved_payload,created_at,reviewed_at,review_evidence(id,source_url,note,created_at)";
-      const pending = await api(
-        `/rest/v1/review_candidates?select=${columns}&status=eq.pending&order=created_at.desc&limit=200&review_evidence.limit=10`,
-      );
-      const approved = [];
-      for (let offset = 0; offset < 10000; offset += 200) {
-        const page = await api(
-          `/rest/v1/review_candidates?select=${columns}&status=eq.approved&order=id.asc&limit=200&offset=${offset}&review_evidence.limit=10`,
+      async function listStatus(status) {
+        const rows = [];
+        const order =
+          status === "pending" ? "created_at.desc,id.asc" : "id.asc";
+        for (let offset = 0; offset < 10000; offset += 200) {
+          const page = await api(
+            `/rest/v1/review_candidates?select=${columns}&status=eq.${status}&order=${order}&limit=200&offset=${offset}&review_evidence.limit=10`,
+          );
+          rows.push(...page);
+          if (page.length < 200) return rows;
+        }
+        throw serviceError(
+          "The review list is too large to load safely. Contact the app owner.",
+          503,
         );
-        approved.push(...page);
-        if (page.length < 200) return [...pending, ...approved];
       }
-      throw serviceError(
-        "The published list is too large to load safely. Contact the app owner.",
-        503,
-      );
+      return [
+        ...(await listStatus("pending")),
+        ...(await listStatus("approved")),
+      ];
     },
     async save(candidates) {
       if (!candidates.length) return [];
