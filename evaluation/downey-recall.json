@@ -1,0 +1,60 @@
+{
+  "date": "2026-10-26",
+  "query": "happy hour in Downey noon on Monday",
+  "knownPositive": {
+    "name": "Maria's Bar & Grill",
+    "sourceUrl": "https://mariasgrilldowney.com/",
+    "publishedHours": "Monday\u2013Friday12\u20132PM and5\u20137PM",
+    "publishedItems": [
+      {
+        "name": "Domestic",
+        "priceCents": 350
+      },
+      {
+        "name": "Import",
+        "priceCents": 450
+      }
+    ]
+  },
+  "before": {
+    "sourceCount": 8,
+    "extractedCount": 0,
+    "keptCount": 0,
+    "validationRejections": 0
+  },
+  "acceptance": "At least one real Downey lead with source support for Monday noon should be displayed as Needs verification; do not auto-approve. Maria\u2019s is a known source-supported positive, not proof of complete recall.",
+  "status": "Known application case PASS via imported official source and saved-source search. Provider-only automatic recall remains incomplete; Maria was not automatically discovered by Tavily.",
+  "after": {
+    "liveBackendCommit": "1ff36e9649f21bf896e22458fbf982b4affa90c6",
+    "searchCalls": 2,
+    "sourceCount": 8,
+    "retrievedSourceCount": 19,
+    "extractedCount": 0,
+    "keptCount": 0,
+    "knownPositiveRetrieved": false,
+    "basicAndAdvancedBothMissedKnownPositive": true
+  },
+  "sourceLibraryAfter": {
+    "date": "2026-10-26",
+    "backendCommit": "77a763dc16731cf5095aa2fa27b22ec81888dec0",
+    "method": "Imported official public menu through menu-link workflow; then ran exact original query against fresh web search plus saved unverified source library.",
+    "sourceCount": 8,
+    "savedSourceCount": 1,
+    "extractedCount": 1,
+    "keptCount": 1,
+    "result": "Maria's Bar & Grill",
+    "status": "pending",
+    "menuItems": [
+      {
+        "name": "Domestic",
+        "priceCents": 350
+      },
+      {
+        "name": "Import",
+        "priceCents": 450
+      }
+    ],
+    "hours": "Monday\u2013Friday 12\u20132 PM & 5\u20137 PM",
+    "ownerApprovalPerformed": false
+  }
+}

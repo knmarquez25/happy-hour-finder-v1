@@ -8,6 +8,8 @@
   },
   "data": {
     "collectedOn": "2026-10-19",
+    "builtOn": "2026-10-19",
+    "snapshotBasis": "Latest source review date; rebuilding does not renew source reviews.",
     "target": 500,
     "targetStatus": "proposed milestone, not complete coverage",
     "legacyTotal": 100,
@@ -1020,9 +1022,9 @@
     }
   },
   "hashes": {
-    "src/data.js": "9d3e82c412bd22cda427b5167d0d79cb3dbc20203c7754cf91d198d34bfcf31a",
+    "src/data.js": "d9fd1b53c5daa983bdf9a43ec446667cb3c616132e8dc8826b330ff619f29a16",
     "src/matching.js": "217f2a9f4b7bf89be335a9574aa032d56af4f33d9189a16c8ab94e49c47f88a8",
-    "src/locations.js": "aa7b3d2211428a8addd425323febb177a9a24a44f51c14f820724df7ffe8354c",
+    "src/locations.js": "5b6e2b501eb6e7fbfd2be8635bfc45fc0c2f29d861a333f7251ffbc235039e58",
     "evaluation/cases.json": "103d70015c840d7d54f0f0a1701c788d4cdf343b76e39f6d40babcdc6597e1da",
     "evaluation/holdout.json": "55f3d4e7ac43fd999cb0475218ef49c035d86cec2380951c85ea41a0716df107",
     "evaluation/gold.json": "5c377f069c7c2fbd0fb214fd5d28d53a5d71f69b429bb7669f69d4d722338ece",

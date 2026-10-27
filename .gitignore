@@ -3,3 +3,6 @@ node_modules/
 .superpowers/
 test-results/
 research/cache/
+.env
+.env.*
+!.env.example

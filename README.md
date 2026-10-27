@@ -1,5 +1,15 @@
 # Happy Hour Finder
 
+## New: AI-guided menu discovery
+
+The approved iteration opens all **111 researched restaurants**, with no required area or dropdown filters. Describe an area, food/drink preference, or flexible budget in one request box; the server uses Google Gemini to extract optional criteria, and the app updates one menu-first results list. Browse menu items, choose your own order, and see the menu-price subtotal with source and compatibility notes. The reviewed dataset stays separate from new web discoveries. Tavily basic search supplies source passages; new candidates are saved to a Supabase Needs verification queue. Visitors add evidence and only the owner can approve a restaurant-menu snapshot into browsing. Unknown prices remain unknown.
+
+Run `npm ci` and `npm start` (Node 22+), then open <http://127.0.0.1:4176>. Browsing works without a key. Genuine AI needs a private server-side `GEMINI_API_KEY`; web discovery also needs `TAVILY_API_KEY` and review storage needs the Supabase settings in [deployment.md](docs/deployment.md); without it the helper states that AI is unavailable. The public build is live at <https://knmarquez25.github.io/happy-hour-finder-v1/>, using a Render Free backend and Gemini 3.5 Flash-Lite. Three live smoke cases passed in a fresh unauthenticated Chrome session; this small check is not general model accuracy.
+
+See [setup and recommended Render hosting](docs/deployment.md), [six-step final submission draft](docs/final-submission.md), and [new evaluation scope](docs/ai-discovery-evaluation.md). Run `npm test` and, with the server running and Chrome installed, `npm run test:discovery-browser`.
+
+The previous interface is preserved at `legacy.html`. The following sections document its prior behavior and historical evaluations.
+
 A static, source-aware happy-hour finder for Los Angeles County and Orange County, with incomplete coverage. The approved Focused list design supports flexible budget targets, supported itemized subtotals before tax/tip/fees, real origin-based straight-line distance, food/drink must-haves, source details, sorting, a browser-local three-spot shortlist, and mobile/dark layouts.
 
 ## Run

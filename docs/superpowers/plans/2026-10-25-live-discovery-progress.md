@@ -1,0 +1,21 @@
+# SDD ledger — plan: docs/superpowers/plans/2026-10-25-live-discovery.md
+Ruling: Continue in the established codex/happy-hour-improvements feature checkout — it contains the already-published uncommitted iteration and secret local config, which a clean worktree would omit. Publish only enumerated reviewed files through the existing GitHub connector and preserve unrelated changes.
+Ruling: User's instruction to build authorizes implementation of the agreed workflow; use native execution without another implementation-choice question.
+Pre-flight: Task 1 candidate schema is consumed by Task 2 store and Task 3 UI; Task 2 endpoint contracts feed Task 3. Define and reuse validators in src/candidates.js.
+Status: awaiting user Supabase Free setup; independent implementation proceeding. Real free grounded-search availability is unverified.
+
+Task 1: complete — search tests observed RED missing implementation, then GREEN. Cited passage matching, unknown prices and safe provider errors tested.
+Task 2: complete locally — owner/store/API tests observed RED, then GREEN. Supabase tables created with RLS and public grants revoked; user privately configured owner login and Render keys.
+Task 3: local UI acceptance passed; public deployment in progress.
+Review: corrected county metadata, menu-name tags, and approved-list pagination, with RED/GREEN regressions. Full suite 94/94 passes; both browser suites pass.
+
+Ruling: Public Gemini 2.5 search call returned 503 immediately (free search unavailable). Replace that search stage with Tavily basic (one credit/request, auto_parameters=false), leaving Gemini 3.5 extraction. User created free Tavily account and privately entered keys into Render. Prior Supabase fields had not been saved; user re-entered them and a real rebuild is now confirmed in Render. No billing enabled.
+
+Live acceptance: Supabase config true; GET /api/reviews 200 with empty queue; unsigned /api/owner 401; direct anon Supabase table GET 401 (42501). Tavily account visibly Researcher Free, pay-as-you-go Off, requests stop at plan limit. Latest Tavily backend deployed 5fdbe59. First public martini run: preference parser timed out; extraction failed with ambiguous legacy message. Independent small parser probe later returned correct martini preferences in 16.4 seconds. Deploying 4a36e14 safe HTTP-status diagnostics to locate extraction failure before changing behavior.
+
+Live isolation: small Gemini preference request succeeded in 16.4s; larger extraction alternated between no accepted candidates and 25s timeout. Reproduced a separate real-page layout bug with unit RED: restaurant identity/location outside the HH excerpt was wrongly rejected. Fixed by validating identity against the same page title/fragments, while requiring HH+item evidence in a single literal fragment. Bound page context under45k chars, include known restaurant exclusions in prompt, and permit45s extraction without retries. User confirmed live owner login succeeds.
+
+Source-reference refinement: AI now returns bounded sourceIndex/fragmentIndex, and the server copies actual provider text/URL instead of trusting an AI-retyped quote. HH evidence must be in the selected fragment or its explicit HH page title; venue/location remain tied to that same source. Added RED/GREEN tests for invalid refs, fabricated quotes/URLs, explicit HH page titles, truncated evidence, and another item’s price. Price must be directly associated with the requested item or becomes null. Full suite102/102 passes. County search is an explicit OR, not an accidental conjunction.
+
+Public discovery succeeded: broad martinis → one candidate; Los Angeles martini request → four accepted candidates in persistent queue. Names: Fiesta Cantina, Birds Hollywood, Queen’s Raw Bar, Esters Wine Shop and Bar. Reload/new page restored records; signed-in owner refreshed to all four. Source-ownership preference did not fully succeed (guides returned). Esters current domain parked/indexed closure; leave unapproved for owner rejection rather than publish. Live owner login succeeds. Approval/snapshot exercised by automated fixture, not by impersonating owner judgment.
+Final regression count103/103. Final safeguard filters already-approved/rejected rows out of pending search results and distinguishes uncertain save confirmation.
