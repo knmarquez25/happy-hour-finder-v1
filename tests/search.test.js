@@ -2,6 +2,38 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import { searchPlaces } from "../server/search.js";
 import { normalizeCandidate, candidateToVenue } from "../src/candidates.js";
+test("Anywhere retrieval retains both LA and Orange counties", async () => {
+  const queries = [];
+  await assert.rejects(
+    searchPlaces("Happy hour · in LA County or Orange County", {
+      apiKey: "test",
+      searchKey: "test",
+      fetchImpl: async (url, options) => {
+        if (url === "https://api.tavily.com/search") {
+          queries.push(JSON.parse(options.body).query);
+          return { ok: true, json: async () => ({ results: [] }) };
+        }
+        return {
+          ok: true,
+          json: async () => ({
+            candidates: [
+              {
+                finishReason: "STOP",
+                content: { parts: [{ text: '{"candidates":[]}' }] },
+              },
+            ],
+          }),
+        };
+      },
+    }),
+    /no cited sources/,
+  );
+  assert.ok(queries.length > 0);
+  assert.ok(
+    queries.every((query) => /Orange County/i.test(query)),
+    "Anywhere must not silently drop Orange County",
+  );
+});
 const text =
   "New Bistro in Pasadena has a happy hour IKI martini for $10, weekdays 4–6pm.";
 const candidate = {

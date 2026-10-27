@@ -29,6 +29,29 @@ async function withServer(options, fn) {
     await new Promise((resolve) => server.close(resolve));
   }
 }
+test("production server serves the bundled font assets with font MIME types", async () => {
+  await withServer({ apiKey: "" }, async (base) => {
+    for (const filename of [
+      "dm-sans-400.ttf",
+      "dm-sans-500.ttf",
+      "dm-sans-600.ttf",
+      "dm-sans-700.ttf",
+      "dm-serif-display-regular.ttf",
+      "dm-serif-display-italic.ttf",
+    ]) {
+      const response = await fetch(`${base}/src/fonts/${filename}`);
+      assert.equal(response.status, 200, filename);
+      assert.match(response.headers.get("content-type"), /^font\/ttf/);
+      assert.ok((await response.arrayBuffer()).byteLength > 1000);
+    }
+    const head = await fetch(`${base}/src/fonts/dm-sans-400.ttf`, {
+      method: "HEAD",
+    });
+    assert.equal(head.status, 200);
+    assert.equal((await head.arrayBuffer()).byteLength, 0);
+    assert.equal((await fetch(`${base}/src/fonts/private.env`)).status, 404);
+  });
+});
 test("server exposes public browsing and safe status, but never repository or environment files", async () => {
   await withServer({ apiKey: "" }, async (base) => {
     assert.equal((await fetch(base)).status, 200);

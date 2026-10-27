@@ -19,6 +19,7 @@ const mime = {
   ".md": "text/plain; charset=utf-8",
   ".png": "image/png",
   ".svg": "image/svg+xml",
+  ".ttf": "font/ttf",
 };
 const publicDocs = new Set([
   "/docs/final-submission.md",
@@ -424,6 +425,9 @@ export function createApp({
       const allowed =
         ["/index.html", "/legacy.html"].includes(pathname) ||
         publicDocs.has(pathname) ||
+        /^\/src\/fonts\/(?:dm-sans-(?:400|500|600|700)|dm-serif-display-(?:regular|italic))\.ttf$/.test(
+          pathname,
+        ) ||
         /^\/src\/(?:[a-zA-Z0-9_-]+\/)*[a-zA-Z0-9_.-]+\.(js|css)$/.test(
           pathname,
         ) ||

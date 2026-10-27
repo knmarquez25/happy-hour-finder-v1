@@ -1,4 +1,3 @@
-import { timePeriods } from "./time-filter.js";
 import { restaurants, dataMetadata } from "./data.js";
 import { apiBase } from "./config.js";
 const endpoint = (path) =>
@@ -10,47 +9,34 @@ import {
   menuSelection,
   primaryEvidence,
   menuItems,
-} from "./discovery.js?v=time-discovery-12";
-import { formatHappyHour } from "./matching.js";
+} from "./discovery.js?v=review-discovery-10";
+import { displayHours as formatHappyHour } from "./display-hours.js";
 import {
   escapeHtml as esc,
   formatMoney as money,
   happyHourListings,
 } from "./ui-state.js";
 
-import { candidateToVenue } from "./candidates.js?v=time-discovery-12";
-import { initReviews } from "./review-ui.js?v=time-discovery-12";
+import { candidateToVenue } from "./candidates.js?v=review-discovery-10";
+import { initReviews } from "./review-ui.js?v=explore-filters-1";
+import { timePeriods } from "./time-filter.js";
+import { initFilters } from "./filter-controls.js";
+import { webQuery } from "./filter-options.js";
+import { venueMedia } from "./media.js?v=venue-photos-1";
+import {
+  renderVenuePhoto,
+  handleVenuePhotoError,
+} from "./venue-photo.js?v=venue-photos-1";
 let venues = [...restaurants];
 const list = document.querySelector("#results"),
   request = document.querySelector("#request"),
   error = document.querySelector("#request-error"),
   clear = document.querySelector("#clear-request"),
   button = document.querySelector("#ask-button");
-const dayFilter = document.querySelector("#day-filter"),
-  periodFilter = document.querySelector("#period-filter"),
-  exactFilter = document.querySelector("#exact-time-filter"),
-  exactLabel = document.querySelector("#exact-time-label");
-let manualFilters = {};
-function syncTimeControls(p) {
-  dayFilter.value = p.day || "";
-  periodFilter.value = p.time ? "exact" : p.timePeriod || "";
-  exactFilter.value = p.time || "";
-  exactLabel.hidden = periodFilter.value !== "exact";
-}
-dayFilter.addEventListener("change", () => {
-  manualFilters.day = dayFilter.value || null;
-});
-periodFilter.addEventListener("change", () => {
-  exactLabel.hidden = periodFilter.value !== "exact";
-  manualFilters.timePeriod =
-    periodFilter.value === "exact" ? null : periodFilter.value || null;
-  manualFilters.time =
-    periodFilter.value === "exact" ? exactFilter.value || null : null;
-});
-exactFilter.addEventListener("change", () => {
-  manualFilters.time = exactFilter.value || null;
-  manualFilters.timePeriod = null;
-});
+let controls,
+  reviews,
+  visibleCount = 6,
+  onlineBusy = false;
 let preferences = emptyPreferences(),
   generation = 0,
   controller;
@@ -101,14 +87,38 @@ function renderCard(result) {
     .map((s) => s.reviewedOn)
     .sort()
     .at(-1);
-  const html = `<article class="restaurant-card" data-venue-id="${esc(v.id)}"><div class="card-top"><div><h3>${esc(v.name)}</h3><p class="venue-location">${esc([...new Set([v.neighborhood, city(v)].filter(Boolean))].join(" · "))}</p></div><span class="evidence-tag ${reviewed ? "" : "uncertain"}">${v.ownerReviewed ? "Owner reviewed" : reviewed ? "Restaurant source listed" : "Needs restaurant review"}</span></div><p class="schedule">Listed happy hours: ${esc(formatHappyHour(v.hours) || "Exact schedule needs verification.")}</p>${reasons.length ? `<p class="match-reasons">${reasons.map(esc).join(" · ")}</p>` : ""}${renderMenu(v)}${combo ? `<div class="suggestion"><strong>A starting suggestion · ${money(combo.totalCents)}</strong><br>${esc(combo.food.name)} + ${esc(combo.drink.name)}${diff === null ? "" : `<br><span class="${diff > 0 ? "budget-over" : ""}">${money(Math.abs(diff))} ${diff > 0 ? "above" : "below"} your target</span>`}<small>One published order of each · before tax, tip &amp; fees</small><small>Applies to ${esc(formatHappyHour([window]))}. Listed offers, not live-confirmed.</small></div>` : '<p class="small muted">No supported food-and-drink combo total is available. Explore individual listings and sources.</p>'}<details class="source-details"><summary>Offer details &amp; sources</summary><p>${esc(v.address || "Address needs confirmation")}</p>${v.notes ? `<p>${esc(v.notes)}</p>` : ""}<ul>${v.sources.map((s) => `<li>${sourceLink(s)}<small>${s.type === "primary" ? "Restaurant / primary source" : "Secondary source"} · ${s.reviewedOn ? "Reviewed " + esc(s.reviewedOn) : "Not reviewed"}</small>${s.note ? `<small>${esc(s.note)}</small>` : ""}</li>`).join("")}</ul><p>Published information may change. Review dates are not current restaurant confirmation. No allergy-safety guarantee is made.</p></details><p class="evidence-line">${reviewed ? (v.ownerReviewed ? "Owner reviewed " : "Restaurant source reviewed ") + esc(reviewed) : "Restaurant confirmation needed"} · Check restrictions before going.</p></article>`;
+  const media = venueMedia[v.id];
+  const photo = renderVenuePhoto(v.name, media);
+  const suggestion = combo
+    ? `<div class="suggestion"><span class="pairing-label">A starting pairing</span><strong>${money(combo.totalCents)}</strong><p>${esc(combo.food.name)} + ${esc(combo.drink.name)}</p>${diff === null ? "" : `<p class="${diff > 0 ? "budget-over" : ""}">${money(Math.abs(diff))} ${diff > 0 ? "above" : "below"} your target</p>`}<small>One published order of each · before tax, tip &amp; fees</small><small>Applies to ${esc(formatHappyHour([window]))}. Listed offers, not live-confirmed.</small></div>`
+    : '<p class="menu-preview">Explore the listed menu and offers below. A confirmed food-and-drink pairing total isn’t available.</p>';
+  const html = `<article class="restaurant-card" data-venue-id="${esc(v.id)}">
+    <div class="venue-overview">${photo}<div class="card-top"><div><h3>${esc(v.name)}</h3><p class="venue-location">${esc([...new Set([v.neighborhood, city(v)].filter(Boolean))].join(" · "))}</p></div></div>
+    <p class="schedule">Listed happy hours: ${esc(formatHappyHour(v.hours) || "Exact schedule needs verification.")}</p>
+    ${reasons.length ? `<p class="match-reasons">${reasons.map(esc).join(" · ")}</p>` : ""}</div>
+    ${suggestion}
+    <details class="venue-menu"><summary>See the happy-hour menu <span aria-hidden="true">↗</span></summary>${renderMenu(v)}</details>
+    <details class="source-details"><summary>Offer details &amp; sources</summary><p>${esc(v.address || "Address needs confirmation")}</p>${v.notes ? `<p>${esc(v.notes)}</p>` : ""}<ul>${v.sources.map((s) => `<li>${sourceLink(s)}<small>${s.type === "primary" ? "Restaurant / primary source" : "Secondary source"} · ${s.reviewedOn ? "Reviewed " + esc(s.reviewedOn) : "Not reviewed"}</small>${s.note ? `<small>${esc(s.note)}</small>` : ""}</li>`).join("")}</ul><p>Published information may change. Review dates are not current restaurant confirmation. No allergy-safety guarantee is made.</p></details>
+    <p class="evidence-line"><span class="evidence-tag ${reviewed ? "" : "uncertain"}">${v.ownerReviewed ? "Owner reviewed" : reviewed ? "Restaurant source listed" : "Needs restaurant review"}</span> ${reviewed ? (v.ownerReviewed ? "Owner reviewed " : "Source reviewed ") + esc(reviewed) : "Restaurant confirmation needed"} · Check restrictions before going.</p>
+  </article>`;
   return html;
 }
 function render() {
+  document.querySelector("#find-online").disabled =
+    onlineBusy ||
+    document.querySelector("#filter-city").getAttribute("aria-invalid") ===
+      "true";
   const rows = discover(venues, preferences);
   list.innerHTML = rows.length
     ? rows.map(renderCard).join("")
-    : `<div class="empty-state"><h3>No reviewed happy-hour matches${preferences.area ? " in " + esc(preferences.area) : " for this request"}</h3><p>No saved restaurant listing is confirmed for these preferences. This does not mean no happy hours exist; additional discoveries may appear in Needs verification.</p><button class="secondary" type="button" data-browse-all>Browse all restaurants</button></div>`;
+    : `<div class="empty-state"><h3>No reviewed happy-hour matches${preferences.area ? " in " + esc(preferences.area) : " for this request"}</h3><p>No saved restaurant listing is confirmed for these preferences. This does not mean no happy hours exist; additional discoveries may appear in More places to explore.</p><button class="secondary" type="button" data-browse-all>Browse all restaurants</button></div>`;
+  [...list.querySelectorAll("article")].forEach((card, index) => {
+    card.hidden = index >= visibleCount;
+  });
+  const more = document.querySelector("#show-more");
+  more.hidden = rows.length <= visibleCount;
+  more.textContent = `Show more researched places (${Math.max(0, rows.length - visibleCount)} remaining)`;
+  reviews?.setPreferences();
   document.querySelector("#results-title").textContent = Object.entries(
     preferences,
   ).some(
@@ -116,7 +126,7 @@ function render() {
       k !== "clarification" && (Array.isArray(v) ? v.length : v !== null),
   )
     ? "Your happy-hour picks"
-    : "Explore happy hours";
+    : "The neighborhood shortlist";
   const parts = [
     preferences.area || "Anywhere",
     preferences.foodPreferences.length
@@ -134,54 +144,70 @@ function render() {
   else if (preferences.timePeriod)
     parts.push(timePeriods[preferences.timePeriod].label);
   if (preferences.atmosphere) parts.push(preferences.atmosphere);
-  parts.push(`${rows.length} of ${venues.length} reviewed restaurants`);
+  parts.push(
+    `${rows.length} of ${venues.length} researched places · showing ${Math.min(visibleCount, rows.length)}`,
+  );
   document.querySelector("#interpretation").textContent = parts.join(" · ");
 }
 function reset() {
   generation++;
-  reviews.reset();
+  reviews?.reset();
   controller?.abort();
   preferences = emptyPreferences();
-  manualFilters = {};
-  syncTimeControls(preferences);
   request.value = "";
   error.hidden = true;
   clear.hidden = true;
   button.disabled = false;
-  button.textContent = "Find my happy hour →";
+  button.textContent = "Use as filters";
   list.setAttribute("aria-busy", "false");
+  visibleCount = 6;
+  controls?.clearTimeOverrides();
+  controls?.sync(preferences);
   render();
 }
+function cancelAI() {
+  generation++;
+  controller?.abort();
+  button.disabled = false;
+  button.textContent = "Use as filters";
+  list.setAttribute("aria-busy", "false");
+}
+controls = initFilters({
+  getVenues: () => venues,
+  onDraftChange() {
+    cancelAI();
+    reviews?.cancelSearch();
+  },
+  onChange(next) {
+    preferences = validatePreferences(next, venues);
+    visibleCount = 6;
+    error.hidden = true;
+    render();
+  },
+});
 document
   .querySelector("#ask-form")
   .addEventListener("submit", async (event) => {
     event.preventDefault();
-    const query =
-      request.value.trim() ||
-      (Object.keys(manualFilters).length ? "happy hours" : "");
-    if (periodFilter.value === "exact" && !exactFilter.value) {
-      error.textContent = "Choose an exact time or another time-of-day option.";
-      error.hidden = false;
-      return;
-    }
+    const query = request.value.trim();
     if (!query) {
       reset();
       return;
     }
-    reviews.explore(query, manualFilters);
     const ownGeneration = ++generation;
     controller?.abort();
     controller = new AbortController();
     clear.hidden = false;
     error.hidden = true;
     button.disabled = true;
-    button.textContent = "Finding your happy hour…";
+    reviews?.cancelSearch();
+    button.textContent = "Reading your request…";
     list.setAttribute("aria-busy", "true");
     try {
       const response = await fetch(endpoint("discover"), {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ query, filters: manualFilters }),
+        body: JSON.stringify({ query, filters: controls.getTimeOverrides() }),
         signal: controller.signal,
       });
       let value;
@@ -202,7 +228,8 @@ document
       if (ownGeneration !== generation) return;
       if (next.clarification) throw new Error(next.clarification);
       preferences = next;
-      syncTimeControls(preferences);
+      visibleCount = 6;
+      controls.sync(preferences);
       render();
     } catch (e) {
       if (ownGeneration !== generation || e.name === "AbortError") return;
@@ -212,7 +239,7 @@ document
     } finally {
       if (ownGeneration === generation) {
         button.disabled = false;
-        button.textContent = "Find my happy hour →";
+        button.textContent = "Use as filters";
         list.setAttribute("aria-busy", "false");
       }
     }
@@ -227,6 +254,7 @@ document.querySelectorAll("[data-example]").forEach((b) =>
 list.addEventListener("click", (e) => {
   if (e.target.closest("[data-browse-all]")) reset();
 });
+list.addEventListener("error", handleVenuePhotoError, true);
 list.addEventListener("change", (e) => {
   if (!e.target.matches("[data-item]")) return;
   const card = e.target.closest("[data-venue-id]");
@@ -259,19 +287,61 @@ document.querySelector("#coverage").textContent =
   `${restaurants.length} researched spots · LA + Orange County`;
 document.querySelector("#dataset-summary").textContent =
   `${dataMetadata.total || restaurants.length} researched restaurant locations. Not every record has a complete menu, exact prices, or a restaurant-supported schedule.`;
-const reviews = initReviews({
+reviews = initReviews({
   endpoint,
+  getPreferences: () => preferences,
   onApproved(records) {
     venues = [...restaurants, ...records.map(candidateToVenue).filter(Boolean)];
     document.querySelector("#coverage").textContent =
-      `${venues.length} reviewed spots · LA + Orange County`;
+      `${venues.length} researched spots · LA + Orange County`;
+    controls.refresh();
     render();
   },
   onBrowse() {
-    preferences = emptyPreferences();
+    visibleCount = venues.length;
     render();
+    document.querySelector("#happy-hour-lists").focus();
   },
 });
+controls.sync(preferences);
+document.querySelector("#show-more").addEventListener("click", () => {
+  visibleCount += 6;
+  const cards = [...list.querySelectorAll("article")];
+  cards.forEach((card, index) => {
+    card.hidden = index >= visibleCount;
+  });
+  const more = document.querySelector("#show-more");
+  more.hidden = cards.length <= visibleCount;
+  more.textContent = `Show more researched places (${Math.max(0, cards.length - visibleCount)} remaining)`;
+  const interpretation = document.querySelector("#interpretation");
+  interpretation.textContent = interpretation.textContent.replace(
+    /showing \d+$/,
+    `showing ${Math.min(visibleCount, cards.length)}`,
+  );
+});
+document
+  .querySelector("#find-online")
+  .addEventListener("click", async (event) => {
+    const trigger = event.currentTarget;
+    if (
+      document.querySelector("#filter-city").getAttribute("aria-invalid") ===
+      "true"
+    )
+      return;
+    cancelAI();
+    onlineBusy = true;
+    trigger.disabled = true;
+    trigger.textContent = "Looking for more places…";
+    try {
+      await reviews.explore(webQuery(preferences), controls.getTimeOverrides());
+    } finally {
+      onlineBusy = false;
+      trigger.disabled =
+        document.querySelector("#filter-city").getAttribute("aria-invalid") ===
+        "true";
+      trigger.textContent = "Find more places online";
+    }
+  });
 render();
 fetch(endpoint("status"))
   .then((r) => (r.ok ? r.json() : null))

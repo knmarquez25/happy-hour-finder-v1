@@ -1,0 +1,24 @@
+{
+  "date": "2026-10-26",
+  "deployment": "1d346530b367d57372bb4f1488b5fb94289010b0",
+  "automatedTests": {
+    "passed": 113,
+    "failed": 0
+  },
+  "browserChecks": [
+    "automatic visible-card lookup without a button click",
+    "menu persistence after page refresh",
+    "menu persistence after backend redeployment",
+    "fresh guest tab with no owner controls",
+    "owner sign-in during successful and failed lookups preserves review edits"
+  ],
+  "liveMenus": {
+    "Birds Hollywood": 8,
+    "Fiesta Cantina": 4,
+    "Queen’s Raw Bar": 3,
+    "Esters Wine Shop and Bar": 4
+  },
+  "status": "All remain pending and labeled Needs verification; captured evidence can be incomplete or outdated. No owner approvals performed.",
+  "storage": "Expanded menu previews saved separately from original discovery payload. Successful previews reused for24h; empty results5min.",
+  "providerIssue": "Observed free web-search unavailability; saved source excerpts can still be extracted with Gemini. No paid search fallback."
+}

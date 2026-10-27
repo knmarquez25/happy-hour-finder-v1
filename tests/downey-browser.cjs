@@ -41,7 +41,7 @@ const { chromium } = require("playwright");
     let records = [oldPlace];
     await page.route("**/api/reviews", (r) => r.fulfill({ json: { records } }));
     await page.route("**/api/explore", (r) => {
-      const pasadena = r.request().postDataJSON().query === "Pasadena";
+      const pasadena = r.request().postDataJSON().query.includes("Pasadena");
       if (pasadena) records = [oldPlace, newPlace];
       return r.fulfill({
         json: {
@@ -70,10 +70,13 @@ const { chromium } = require("playwright");
       });
     });
     await page.goto(process.env.PREVIEW_URL || "http://127.0.0.1:4176");
+    await page.locator("#ai-helper").evaluate((el) => {
+      el.open = true;
+    });
     await page
       .getByLabel("Tell us what you’re looking for")
       .fill("happy hour in Downey noon on Monday");
-    await page.getByRole("button", { name: "Find my happy hour" }).click();
+    await page.getByRole("button", { name: "Use as filters" }).click();
     await page.waitForFunction(
       () =>
         document
@@ -100,10 +103,10 @@ const { chromium } = require("playwright");
       await page.locator("#results").innerText(),
       /does not mean no happy hours exist/i,
     );
-    await page.getByRole("tab", { name: /Needs verification/ }).click();
+    await page.locator("#pending-tab").click();
     await page
       .getByRole("heading", {
-        name: "No discoveries for this search",
+        name: "No recorded extra matches yet",
         exact: true,
       })
       .waitFor({ timeout: 5000 });
@@ -112,7 +115,7 @@ const { chromium } = require("playwright");
       0,
       "A Downey search must not show the global Hollywood queue",
     );
-    assert.match(await page.locator("#pending-tab").innerText(), /\(0\)/);
+    assert.match(await page.locator("#extra-count").innerText(), /\(0\)/);
     await page
       .getByRole("button", { name: "Refresh queue", exact: true })
       .click();
@@ -122,9 +125,9 @@ const { chromium } = require("playwright");
       "Refreshing the shared data must preserve search scope",
     );
     await page
-      .getByRole("button", { name: "Clear request", exact: true })
+      .getByRole("button", { name: "Clear all filters", exact: true })
       .click();
-    await page.getByRole("tab", { name: /Needs verification/ }).click();
+    await page.locator("#pending-tab").click();
     await page
       .getByRole("heading", { name: "Old Hollywood Place", exact: true })
       .waitFor();
@@ -133,8 +136,19 @@ const { chromium } = require("playwright");
       1,
       "Clear restores the saved queue without deleting records",
     );
+    await page.locator("#ai-helper").evaluate((el) => {
+      el.open = true;
+    });
     await page.getByLabel("Tell us what you’re looking for").fill("Pasadena");
-    await page.getByRole("button", { name: "Find my happy hour" }).click();
+    await page.getByRole("button", { name: "Use as filters" }).click();
+    await page.waitForFunction(() =>
+      document
+        .querySelector("#interpretation")
+        .textContent.includes("Pasadena"),
+    );
+    await page
+      .getByRole("button", { name: "Find more places online", exact: true })
+      .click();
     await page
       .getByRole("heading", { name: "New Pasadena Place", exact: true })
       .waitFor();
@@ -150,19 +164,19 @@ const { chromium } = require("playwright");
       0,
     );
     await page
-      .getByRole("button", { name: "Clear request", exact: true })
+      .getByRole("button", { name: "Clear all filters", exact: true })
       .click();
-    await page.getByRole("tab", { name: /Needs verification/ }).click();
+    await page.locator("#pending-tab").click();
     assert.equal(
       await page.locator("#pending-results .pending-card").count(),
       2,
       "Both submissions remain in the shared queue",
     );
-    await page.getByRole("tab", { name: /Browse happy hours/ }).click();
+    await page.locator("#browse-tab").click();
 
     assert.equal(await page.locator("#results article").count(), 111);
     console.log(
-      "Downey browser passed: Monday noon stays12:00, valid city produces honest empty result, no geographic error or silent broadening, pending tab is scoped to current discoveries, refresh preserves scope, Clear restores the full queue and111 reviewed restaurants.",
+      "Downey browser passed: Monday noon stays12:00, valid city produces honest empty result, no geographic error or silent broadening, extra discoveries respect local city filters, refresh preserves scope, Clear restores the full queue and111 reviewed restaurants.",
     );
   } finally {
     await browser.close();

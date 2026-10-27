@@ -27,21 +27,10 @@ const { chromium } = require("playwright");
       111,
       "All researched restaurants appear on first load",
     );
-    assert.deepEqual(
-      await page
-        .locator("select")
-        .evaluateAll((selects) =>
-          selects.map((s) => ({
-            id: s.id,
-            required: s.required,
-            value: s.value,
-          })),
-        ),
-      [
-        { id: "day-filter", required: false, value: "" },
-        { id: "period-filter", required: false, value: "" },
-      ],
-      "Only the optional day/time controls are present; browsing needs no selections",
+    assert.equal(
+      await page.locator(".filter-grid select").count(),
+      3,
+      "Budget, day and time period use native selectors; city, food and drink are searchable",
     );
     assert.match(await page.locator("#interpretation").innerText(), /111/);
     assert.equal(
@@ -52,12 +41,15 @@ const { chromium } = require("playwright");
     const first = page.locator("#results article").filter({
       has: page.getByRole("heading", { name: "Joyce", exact: true }),
     });
-    assert.ok(
+    assert.equal(
       await first
         .getByRole("checkbox", { name: /Colossal shrimp/ })
         .isVisible(),
-      "Menu choices appear without expanding a section",
+      false,
+      "Full menus begin collapsed for concise browsing",
     );
+    while (!(await first.isVisible())) await page.locator("#show-more").click();
+    await first.locator(".venue-menu > summary").click();
     for (const venue of restaurants) {
       const card = page.locator(`[data-venue-id="${venue.id}"]`);
       assert.equal(
@@ -75,8 +67,11 @@ const { chromium } = require("playwright");
         json: { preferences: { ...emptyPreferences(), area: "Pasadena" } },
       }),
     );
+    await page.locator("#ai-helper").evaluate((el) => {
+      el.open = true;
+    });
     await page.getByLabel("Tell us what you’re looking for").fill("Pasadena");
-    await page.getByRole("button", { name: "Find my happy hour" }).click();
+    await page.getByRole("button", { name: "Use as filters" }).click();
     await page.waitForFunction(() =>
       document
         .querySelector("#interpretation")
@@ -89,7 +84,7 @@ const { chromium } = require("playwright");
       .all())
       assert.match(await el.textContent(), /Pasadena/);
     await page
-      .getByRole("button", { name: "Clear request", exact: true })
+      .getByRole("button", { name: "Clear all filters", exact: true })
       .click();
     assert.equal(await page.locator("#results article").count(), 111);
     await page.unroute("**/api/discover");
@@ -100,13 +95,17 @@ const { chromium } = require("playwright");
         },
       }),
     );
+    await page.locator("#ai-helper").evaluate((el) => {
+      el.open = true;
+    });
     await page.getByLabel("Tell us what you’re looking for").fill("Martinis");
-    await page.getByRole("button", { name: "Find my happy hour" }).click();
+    await page.getByRole("button", { name: "Use as filters" }).click();
     await page.waitForFunction(() =>
       document.querySelector("#interpretation").textContent.includes("martini"),
     );
     assert.equal(await page.locator("#results article").count(), 3);
     for (const card of await page.locator("#results article").all()) {
+      await card.locator(".venue-menu > summary").click();
       const highlight = card.locator(".menu-choice").first();
       assert.match(await highlight.innerText(), /martini/i);
       assert.match(await highlight.innerText(), /Matches your request/);
@@ -121,7 +120,7 @@ const { chromium } = require("playwright");
         "$10",
       );
     await page
-      .getByRole("button", { name: "Clear request", exact: true })
+      .getByRole("button", { name: "Clear all filters", exact: true })
       .click();
     await page.unroute("**/api/discover");
     await page.route("**/api/discover", (route) =>
@@ -130,8 +129,11 @@ const { chromium } = require("playwright");
         json: { error: "AI is unavailable. Please try again later." },
       }),
     );
+    await page.locator("#ai-helper").evaluate((el) => {
+      el.open = true;
+    });
     await page.getByLabel("Tell us what you’re looking for").fill("Tacos");
-    await page.getByRole("button", { name: "Find my happy hour" }).click();
+    await page.getByRole("button", { name: "Use as filters" }).click();
     await page.getByRole("alert").waitFor();
     assert.equal(await page.locator("#results article").count(), 111);
     await page.unroute("**/api/discover");
@@ -146,11 +148,14 @@ const { chromium } = require("playwright");
         });
       } catch {}
     });
+    await page.locator("#ai-helper").evaluate((el) => {
+      el.open = true;
+    });
     await page.getByLabel("Tell us what you’re looking for").fill("Pasadena");
-    await page.getByRole("button", { name: "Find my happy hour" }).click();
+    await page.getByRole("button", { name: "Use as filters" }).click();
     await pending;
     await page
-      .getByRole("button", { name: "Clear request", exact: true })
+      .getByRole("button", { name: "Clear all filters", exact: true })
       .click();
     release();
     await page.waitForLoadState("networkidle");
@@ -167,13 +172,16 @@ const { chromium } = require("playwright");
         },
       }),
     );
+    await page.locator("#ai-helper").evaluate((el) => {
+      el.open = true;
+    });
     await page.getByLabel("Tell us what you’re looking for").fill("Near me");
-    await page.getByRole("button", { name: "Find my happy hour" }).click();
+    await page.getByRole("button", { name: "Use as filters" }).click();
     await page.getByRole("alert").waitFor();
     assert.equal(await page.locator("#results article").count(), 111);
     assert.match(await page.getByRole("alert").innerText(), /Which area/);
     await page
-      .getByRole("button", { name: "Clear request", exact: true })
+      .getByRole("button", { name: "Clear all filters", exact: true })
       .click();
     await fs.mkdir("test-results", { recursive: true });
     for (const width of [1280, 736, 390, 320]) {

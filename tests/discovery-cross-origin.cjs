@@ -45,10 +45,16 @@ const { chromium } = require("playwright");
       }),
     );
     await page.goto(frontUrl);
+    await page.locator("#ai-helper").evaluate((el) => {
+      el.open = true;
+    });
     await page.getByText("AI suggestions available", { exact: true }).waitFor();
     assert.equal(await page.locator("#results article").count(), 111);
+    await page.locator("#ai-helper").evaluate((el) => {
+      el.open = true;
+    });
     await page.getByLabel("Tell us what you’re looking for").fill("Pasadena");
-    await page.getByRole("button", { name: "Find my happy hour" }).click();
+    await page.getByRole("button", { name: "Use as filters" }).click();
     await page.waitForFunction(() =>
       document
         .querySelector("#interpretation")

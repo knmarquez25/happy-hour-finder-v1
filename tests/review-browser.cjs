@@ -109,11 +109,18 @@ const { chromium } = require("playwright");
       return r.fulfill({ json: { record: records[0] } });
     });
     await page.goto(process.env.PREVIEW_URL || "http://127.0.0.1:4176");
-    await page
-      .getByRole("tab", { name: /Needs verification/ })
-      .waitFor({ timeout: 3000 });
+    await page.locator("#pending-tab").waitFor({ timeout: 3000 });
+    await page.locator("#ai-helper").evaluate((el) => {
+      el.open = true;
+    });
     await page.getByLabel("Tell us what you’re looking for").fill("martinis");
-    await page.getByRole("button", { name: "Find my happy hour" }).click();
+    await page.getByRole("button", { name: "Use as filters" }).click();
+    await page.waitForFunction(() =>
+      document.querySelector("#interpretation").textContent.includes("martini"),
+    );
+    await page
+      .getByRole("button", { name: "Find more places online", exact: true })
+      .click();
     await page
       .getByRole("heading", { name: "New Bistro", exact: true })
       .waitFor();
@@ -136,7 +143,7 @@ const { chromium } = require("playwright");
       "Needs verification",
     );
     await page.reload();
-    await page.getByRole("tab", { name: /Needs verification/ }).click();
+    await page.locator("#pending-tab").click();
     await page
       .getByRole("heading", { name: "New Bistro", exact: true })
       .waitFor();
@@ -148,6 +155,9 @@ const { chromium } = require("playwright");
       "Public visitors see pending places without owner controls",
     );
 
+    await page
+      .getByRole("button", { name: "Find more menu items", exact: true })
+      .click();
     await page
       .locator("#pending-results .menu-highlight")
       .filter({ hasText: "Truffle fries" })
@@ -177,7 +187,7 @@ const { chromium } = require("playwright");
       ),
     );
     await page.reload();
-    await page.getByRole("tab", { name: /Needs verification/ }).click();
+    await page.locator("#pending-tab").click();
     await page
       .locator("#pending-results .menu-highlight")
       .filter({ hasText: "Truffle fries" })
@@ -215,7 +225,7 @@ const { chromium } = require("playwright");
     await page
       .getByRole("button", { name: "Approve and publish", exact: true })
       .click();
-    await page.getByRole("tab", { name: /Browse happy hours/ }).click();
+    await page.locator("#browse-tab").click();
     const card = page.locator(`[data-venue-id="community-${id}"]`);
     await card.waitFor();
     await card.scrollIntoViewIfNeeded();
@@ -225,9 +235,12 @@ const { chromium } = require("playwright");
       `[data-venue-id="community-${id}"]`,
     );
     assert.match(await card.innerText(), /Owner reviewed/);
+    await card.locator(".venue-menu > summary").click();
     assert.match(await card.innerText(), /Price needs confirmation/);
     await page.reload();
-    await page.locator(`[data-venue-id="community-${id}"]`).waitFor();
+    await page
+      .locator(`[data-venue-id="community-${id}"]`)
+      .waitFor({ state: "attached" });
     for (const width of [390, 320]) {
       await page.setViewportSize({ width, height: 900 });
       assert.ok(

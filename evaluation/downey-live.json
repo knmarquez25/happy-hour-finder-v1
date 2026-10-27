@@ -1,0 +1,19 @@
+{
+  "date": "2026-10-26",
+  "deployment": "49231bac9ff9062d971fae4f2ad7cd736c59c330",
+  "query": "happy hour in Downey noon on Monday",
+  "liveInterpretation": {
+    "area": "Downey",
+    "day": "Monday",
+    "time": "12:00"
+  },
+  "reviewedMatches": 0,
+  "geographicError": false,
+  "newDiscoveryOutcome": "No additional source-supported places found for this request.",
+  "automatedTests": {
+    "passed": 116,
+    "failed": 0
+  },
+  "review": "No blockers found in targeted geography review.",
+  "limitation": "Valid geography and an empty researched list do not establish whether real restaurants offer happy hour at noon on Monday."
+}

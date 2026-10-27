@@ -60,6 +60,9 @@ const { chromium } = require("playwright");
     assert.equal(await page.locator("#results article").count(), 111);
     report.initialCount = 111;
     for (const scenario of cases) {
+      await page.locator("#ai-helper").evaluate((el) => {
+        el.open = true;
+      });
       await page
         .getByLabel("Tell us what you’re looking for")
         .fill(scenario.query);
@@ -71,7 +74,7 @@ const { chromium } = require("playwright");
         { timeout: 90000 },
       );
       const start = Date.now();
-      await page.getByRole("button", { name: "Find my happy hour" }).click();
+      await page.getByRole("button", { name: "Use as filters" }).click();
       const response = await responsePromise;
       const result = await response.json();
       await page.waitForFunction(
@@ -101,10 +104,7 @@ const { chromium } = require("playwright");
         const card = page.locator(
           '[data-venue-id="cw-coyote-grill-laguna-beach"]',
         );
-        await card
-          .locator("summary")
-          .filter({ hasText: "Browse menu" })
-          .click();
+        await card.locator(".venue-menu > summary").click();
         await card.getByRole("checkbox", { name: /Chicken taco/ }).check();
         await card
           .getByRole("checkbox", { name: /Happy-hour margarita/ })
@@ -122,7 +122,7 @@ const { chromium } = require("playwright");
       }
       row.passed = true;
       await page
-        .getByRole("button", { name: "Clear request", exact: true })
+        .getByRole("button", { name: "Clear all filters", exact: true })
         .click();
       assert.equal(await page.locator("#results article").count(), 111);
     }

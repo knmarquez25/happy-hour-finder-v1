@@ -1,12 +1,24 @@
 # Happy Hour Finder
 
-## New: AI-guided menu discovery
+## Local Squeeze interface
 
-The approved iteration opens all **111 researched restaurants**, with no required area or dropdown filters. Describe an area, food/drink preference, or flexible budget in one request box; the server uses Google Gemini to extract optional criteria, and the app updates one menu-first results list. Browse menu items, choose your own order, and see the menu-price subtotal with source and compatibility notes. The reviewed dataset stays separate from new web discoveries. Tavily basic search supplies source passages; new candidates are saved to a Supabase Needs verification queue. Visitors add evidence and only the owner can approve a restaurant-menu snapshot into browsing. Unknown prices remain unknown.
+The current discovery page uses the approved butter-yellow and paprika design with locally bundled DM Serif Display and DM Sans fonts (licenses in `src/fonts/`). Compact restaurant summaries expand into full menus for item selection and subtotals. Additional discoveries appear in the More places to explore section on Explore, with a prominent counted link above the researched results. Each extra place retains its Needs verification status, source links, community evidence, and owner review. Source confidence and offer restrictions are preserved; existing operator photography is used only for the matching venue.
+
+Run `PREVIEW_URL=http://127.0.0.1:4176 node tests/local-squeeze-browser.cjs` against the running app for the menu, review separation, keyboard, font-loading, and four-width layout checks. The existing discovery, review, and explicit-menu browser checks cover the other flows.
+
+## Local filters and optional AI
+
+The integrated release also preserves Morning/Afternoon/Night and exact-time controls, manual day/time overrides, saved discovery reuse, and the public menu-link importer. Imported sources use the server’s bounded, public-DNS-pinned HTTPS reader; imported places stay provisional until owner review.
+
+Browse all **111 researched restaurants** with independent city/neighborhood, Food, Drinks, budget target, weekday, and exact-time filters. Food and drink suggestions are built from the menu names and tags of the researched list plus owner-approved records. Equivalent singular/plural terms group; suggestion labels show unique researched-place counts under the other filters. Menu entries with unsupported or inactive schedules may show zero supported matches. Every recorded menu item remains searchable; pending-only vocabulary enters suggestions only after approval. Counts and matching run locally, without AI calls.
+
+The first six researched cards are shown with Show more for the rest. Optional **Use as filters** sends one interpretation request to Gemini and synchronizes the visible controls. **Find more places online** explicitly sends current criteria to web discovery (Tavily plus Gemini); **Find more menu items** explicitly requests a targeted lookup. Initial browsing, local filtering, paging, and viewing saved extra places do not trigger those calls. Cached source research remains separate from provisional web discoveries. Owners review menu snapshots before publication; unknown prices and pending schedules remain unconfirmed.
+
+Run `PREVIEW_URL=http://127.0.0.1:4176 node tests/filters-browser.cjs` for the side-effect, dynamic-vocabulary, stale-request, pagination, and responsive checks.
 
 Run `npm ci` and `npm start` (Node 22+), then open <http://127.0.0.1:4176>. Browsing works without a key. Genuine AI needs a private server-side `GEMINI_API_KEY`; web discovery also needs `TAVILY_API_KEY` and review storage needs the Supabase settings in [deployment.md](docs/deployment.md); without it the helper states that AI is unavailable. The public build is live at <https://knmarquez25.github.io/happy-hour-finder-v1/>, using a Render Free backend and Gemini 3.5 Flash-Lite. Three live smoke cases passed in a fresh unauthenticated Chrome session; this small check is not general model accuracy.
 
-See [setup and recommended Render hosting](docs/deployment.md), [six-step final submission draft](docs/final-submission.md), and [new evaluation scope](docs/ai-discovery-evaluation.md). Run `npm test` and, with the server running and Chrome installed, `npm run test:discovery-browser`.
+See [setup and recommended Render hosting](docs/deployment.md) and [new evaluation scope](docs/ai-discovery-evaluation.md). Run `npm test` and, with the server running and Chrome installed, `npm run test:discovery-browser`.
 
 The previous interface is preserved at `legacy.html`. The following sections document its prior behavior and historical evaluations.
 

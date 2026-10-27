@@ -76,6 +76,12 @@ const { chromium } = require("playwright");
         });
       });
       await page.goto(process.env.PREVIEW_URL || "http://127.0.0.1:4192");
+      await page.locator("#ai-helper").evaluate((el) => {
+        el.open = true;
+      });
+      await page.locator("#explore-filters").evaluate((el) => {
+        el.open = true;
+      });
       await page
         .getByLabel("Tell us what you’re looking for")
         .fill("Glendale Tuesday afternoon");
@@ -83,19 +89,33 @@ const { chromium } = require("playwright");
       await page
         .getByLabel("Time of day", { exact: true })
         .selectOption("night");
-      await page.getByRole("button", { name: "Find my happy hour" }).click();
+      await page.getByRole("button", { name: "Use as filters" }).click();
       await page.waitForFunction(() =>
         document
           .querySelector("#interpretation")
           .textContent.includes("Night · 6 PM–midnight"),
       );
-      assert.equal(bodies.length, 2);
+      assert.equal(bodies.length, 1, "AI help only interprets filters");
+      await page
+        .getByRole("button", { name: "Find more places online", exact: true })
+        .click();
+      await page
+        .getByText(
+          "No additional source-supported places found for this request. Try a named area or a broader craving.",
+          { exact: true },
+        )
+        .waitFor();
+      assert.equal(
+        bodies.length,
+        2,
+        "A web request occurs only after the explicit button",
+      );
       assert.ok(
         bodies.every(
           (b) => b.filters.day === "Monday" && b.filters.timePeriod === "night",
         ),
       );
-      await page.getByRole("tab", { name: /Needs verification/ }).click();
+      await page.locator("#pending-tab").click();
       await page
         .getByText("Know a place we missed? Add its menu link", { exact: true })
         .click();
@@ -106,15 +126,12 @@ const { chromium } = require("playwright");
       await page.getByRole("button", { name: "Read menu link" }).click();
       await page.waitForFunction(
         () =>
-          document.querySelector("#pending-panel")?.hidden === false &&
+          !document.querySelector("#pending-panel")?.hidden &&
           document
             .querySelector(".pending-card h3")
             ?.textContent.includes("Imported"),
       );
-      console.log(
-        "import",
-        await page.locator("#import-menu-status").textContent(),
-      );
+
       assert.match(
         await page.locator(".pending-card").innerText(),
         /Imported Noon Bistro[\s\S]*Needs verification[\s\S]*Added from a menu link/,
@@ -124,12 +141,18 @@ const { chromium } = require("playwright");
         0,
       );
       await page
-        .getByRole("button", { name: "Clear request", exact: true })
+        .getByRole("button", { name: "Clear all filters", exact: true })
         .click();
       assert.equal(
         await page.getByLabel("Day", { exact: true }).inputValue(),
         "",
       );
+      await page.locator("#ai-helper").evaluate((el) => {
+        el.open = true;
+      });
+      await page.locator("#explore-filters").evaluate((el) => {
+        el.open = true;
+      });
       await page
         .getByLabel("Tell us what you’re looking for")
         .fill("Downey Monday noon");
@@ -137,7 +160,7 @@ const { chromium } = require("playwright");
         .getByLabel("Time of day", { exact: true })
         .selectOption("exact");
       await page.getByLabel("Exact time", { exact: true }).fill("12:00");
-      await page.getByRole("button", { name: "Find my happy hour" }).click();
+      await page.getByRole("button", { name: "Use as filters" }).click();
       await page.waitForFunction(() =>
         document.querySelector("#interpretation").textContent.includes("12:00"),
       );

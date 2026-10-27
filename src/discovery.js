@@ -56,7 +56,7 @@ export function validatePreferences(value, venues) {
     if (
       !Array.isArray(p[key]) ||
       p[key].length > 8 ||
-      p[key].some((v) => typeof v !== "string" || !v.trim() || v.length > 60)
+      p[key].some((v) => typeof v !== "string" || !v.trim() || v.length > 150)
     )
       throw new Error("The AI returned invalid menu preferences.");
     p[key] = [...new Set(p[key].map((v) => v.trim().toLowerCase()))];
@@ -133,6 +133,9 @@ function eligibleItems(venue, p, points) {
     (item) =>
       primaryEvidence(venue, item) && points.some((c) => applies(item, c)),
   );
+}
+export function eligibleMenuItems(venue, p = emptyPreferences()) {
+  return eligibleItems(venue, p, contexts(venue, p));
 }
 export function menuItems(venue, p = emptyPreferences()) {
   const eligible = new Set(eligibleItems(venue, p, contexts(venue, p)));

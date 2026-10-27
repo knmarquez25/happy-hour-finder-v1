@@ -70,13 +70,18 @@ const { chromium } = require("playwright");
         r.fulfill({ json: { owner: true } }),
       );
       await page.goto(process.env.PREVIEW_URL || "http://127.0.0.1:4176");
-      await page.getByRole("tab", { name: /Needs verification/ }).waitFor();
+      await page.locator("#pending-tab").waitFor();
       assert.equal(
         calls,
         0,
-        "Browsing does not trigger hidden-card menu searches",
+        "Browsing does not trigger additional menu searches",
       );
-      await page.getByRole("tab", { name: /Needs verification/ }).click();
+      await page.locator("#pending-tab").click();
+      await page.locator(".pending-card").scrollIntoViewIfNeeded();
+      assert.equal(calls, 0, "Viewing extra places must not spend AI usage");
+      await page
+        .getByRole("button", { name: "Find more menu items", exact: true })
+        .click();
       await page
         .getByText("Loading available happy-hour menu items…", { exact: true })
         .waitFor();
@@ -109,10 +114,43 @@ const { chromium } = require("playwright");
         0,
       );
       assert.equal(calls, 1);
+      await page.route("**/api/explore", (r) =>
+        r.fulfill({
+          status: 503,
+          json: { error: "Fixture online search unavailable" },
+        }),
+      );
+      await page
+        .getByRole("button", { name: "Find more places online", exact: true })
+        .click();
+      await page
+        .getByText("Fixture online search unavailable", { exact: true })
+        .waitFor();
+      assert.equal(
+        await page.getByLabel("Item 1", { exact: true }).inputValue(),
+        "Owner edit",
+        "A failed online search preserves owner corrections",
+      );
+      if (!fails) {
+        await page
+          .getByRole("button", { name: "Find more menu items", exact: true })
+          .click();
+        await page
+          .getByText(
+            "An updated menu was saved. Refresh the queue before reviewing it.",
+            { exact: true },
+          )
+          .waitFor();
+        assert.equal(
+          await page.getByLabel("Item 1", { exact: true }).inputValue(),
+          "Owner edit",
+          "An owner-started menu lookup also preserves corrections in progress",
+        );
+      }
       await page.close();
     }
     console.log(
-      "Automatic menu browser passed: hidden cards do not search, visible cards load automatically, owner sign-in race clears loading and preserves edits.",
+      "Manual menu browser passed: hidden cards do not search, visible cards wait for an explicit menu lookup, owner sign-in race clears loading and preserves edits.",
     );
   } finally {
     await browser.close();

@@ -6,6 +6,11 @@ import { areaOptions } from "../src/discovery.js";
 import { requestedSchedule, contradictsSchedule } from "./request-schedule.js";
 function explicitSearchArea(query) {
   const q = query.trim().normalize("NFKC");
+  if (
+    /\b(?:Los Angeles|LA|L\.A\.) County\b/i.test(q) &&
+    /\b(?:Orange|OC) County\b/i.test(q)
+  )
+    return null;
   if (/\b(?:Los Angeles|LA|L\.A\.) County\b/i.test(q)) return "LA County";
   return (
     areaOptions(restaurants)

@@ -7,48 +7,89 @@
       name="description"
       content="Browse researched happy-hour menus in LA and Orange County. Describe an area, food, or budget to get AI-guided suggestions, with published prices and source links."
     />
-    <title>Happy Hour Finder | Ask & Browse</title>
-    <link rel="stylesheet" href="./src/discover.css?v=time-discovery-12" />
+    <meta name="theme-color" content="#fff4dc" />
+    <title>Happy Hour Finder | Where are we unwinding?</title>
+    <link
+      rel="preload"
+      href="./src/fonts/dm-serif-display-regular.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="./src/fonts/dm-sans-400.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin
+    />
+    <link rel="stylesheet" href="./src/discover.css?v=explore-filters-2" />
   </head>
   <body>
-    <a class="skip-link" href="#results-title">Skip to restaurants</a>
+    <a class="skip-link" href="#happy-hour-lists">Skip to restaurants</a>
     <header>
-      <a class="brand" href="./"
-        >Happy Hour Finder <span aria-hidden="true">✳</span></a
-      ><span id="coverage">LA + Orange County</span>
+      <a class="brand" href="./" aria-label="Happy Hour Finder home"
+        >Happy Hour<span>Finder</span></a
+      >
+      <span id="coverage">LA + Orange County</span>
     </header>
     <main>
-      <div class="eyebrow">Good food. Better plans.</div>
-      <h1>Find a happy hour worth going out for.</h1>
-      <p class="intro">
-        Browse the menus, or tell us what sounds good. You don’t need an area in
-        mind.
-      </p>
+      <section class="welcome" aria-labelledby="welcome-title">
+        <div class="eyebrow">Good food. Better plans.</div>
+        <h1 id="welcome-title">Where are we <em>unwinding?</em></h1>
+        <p class="intro">
+          Find a good bite, a favorite drink, and somewhere to settle in.
+        </p>
+      </section>
       <div class="layout">
-        <aside id="ai-helper" aria-label="AI search helper">
-          <h2>What sounds good?</h2>
-          <p>An area, a craving, a budget—or a mix. Start wherever you like.</p>
-          <form id="ask-form">
-            <label for="request">Tell us what you’re looking for</label
-            ><textarea
-              id="request"
-              rows="3"
-              maxlength="1000"
-              placeholder="Tacos and margaritas around $25"
-              aria-describedby="privacy request-note"
-            ></textarea>
-            <p class="privacy" id="privacy">
-              Searches and automatic menu lookups use Google Gemini and Tavily
-              for interpretation and web search. Gemini free-tier requests may
-              be used to improve Google's products.
-            </p>
-            <fieldset class="time-filters">
-              <legend>
-                When do you want to go?
-                <span class="small muted">Optional</span>
-              </legend>
-              <label
-                >Day<select id="day-filter" aria-label="Day">
+        <section class="filter-section" aria-label="Explore filters">
+          <details id="explore-filters" open>
+            <summary>
+              Filters
+              <span id="filter-count">Make it your kind of evening</span>
+            </summary>
+            <div class="filter-grid">
+              <label for="filter-city"
+                >City or neighborhood<input
+                  id="filter-city"
+                  list="city-options"
+                  placeholder="Anywhere"
+                  autocomplete="off"
+                  maxlength="120"
+                  aria-describedby="filter-notice" /><datalist
+                  id="city-options"
+                ></datalist
+              ></label>
+              <label for="filter-food"
+                >Food<input
+                  id="filter-food"
+                  list="food-options"
+                  placeholder="Any food"
+                  autocomplete="off"
+                  maxlength="150" /><datalist id="food-options"></datalist
+              ></label>
+              <label for="filter-drink"
+                >Drinks<input
+                  id="filter-drink"
+                  list="drink-options"
+                  placeholder="Any drink"
+                  autocomplete="off"
+                  maxlength="150" /><datalist id="drink-options"></datalist
+              ></label>
+              <label for="filter-budget"
+                >Food + drink target<select
+                  id="filter-budget"
+                  aria-label="Food + drink target"
+                >
+                  <option value="">Any budget</option>
+                  <option value="20">Around $20</option>
+                  <option value="25">Around $25</option>
+                  <option value="35">Around $35</option>
+                  <option value="50">Around $50</option>
+                </select></label
+              >
+              <label for="filter-day"
+                >Day<select id="filter-day" aria-label="Day">
                   <option value="">Any day</option>
                   <option>Monday</option>
                   <option>Tuesday</option>
@@ -59,48 +100,85 @@
                   <option>Sunday</option>
                 </select></label
               >
-              <label
-                >Time of day<select id="period-filter" aria-label="Time of day">
-                  <option value="">Any time</option>
-                  <option value="morning">Morning · 6 AM–noon</option>
-                  <option value="afternoon">Afternoon · noon–6 PM</option>
-                  <option value="night">Night · 6 PM–midnight</option>
-                  <option value="exact">Exact time</option>
-                </select></label
-              >
-              <label id="exact-time-label" hidden
-                >Exact time<input id="exact-time-filter" type="time"
-              /></label>
-              <p class="small muted">
-                Find a happy hour to apply these filters to both lists.
-                Time-of-day matches overlap that period.
-              </p>
-            </fieldset>
+              <div class="time-options">
+                <label for="filter-period"
+                  >Time of day<select
+                    id="filter-period"
+                    aria-label="Time of day"
+                  >
+                    <option value="">Any time</option>
+                    <option value="morning">Morning · 6 am–noon</option>
+                    <option value="afternoon">Afternoon · noon–6 pm</option>
+                    <option value="night">Night · 6 pm–midnight</option>
+                    <option value="exact">Exact time</option>
+                  </select></label
+                ><label class="exact-time" for="filter-time" hidden
+                  >Exact time<input
+                    id="filter-time"
+                    type="time"
+                    aria-label="Exact time"
+                /></label>
+              </div>
+            </div>
+            <p class="filter-help">
+              Food and drinks are optional. Budget guides a food-and-drink
+              pairing before tax and tip. Suggestions show researched-place
+              counts for your other filters.
+            </p>
+          </details>
+          <p id="filter-notice" role="status"></p>
+          <div class="filter-selection">
+            <div id="filter-chips" aria-label="Selected filters"></div>
+            <button id="clear-request" class="secondary" type="button" hidden>
+              Clear all filters
+            </button>
+          </div>
+        </section>
+        <details id="ai-helper">
+          <summary>Rather describe it? Ask for a little help.</summary>
+          <form id="ask-form">
+            <label for="request" class="visually-hidden"
+              >Tell us what you’re looking for</label
+            ><textarea
+              id="request"
+              rows="1"
+              maxlength="1000"
+              placeholder="Tacos and margaritas around $25"
+              aria-describedby="privacy request-note"
+            ></textarea>
             <button class="primary" id="ask-button" type="submit">
-              Find my happy hour <span aria-hidden="true">→</span>
+              Use as filters
             </button>
           </form>
-          <p id="request-note" class="small muted">
-            AI searches our reviewed list and looks online for additional
-            places. New discoveries need owner verification. Each request starts
-            fresh.
-          </p>
-          <p id="ai-status" class="small" role="status"></p>
-          <p id="request-error" role="alert" hidden></p>
-          <div class="examples">
-            <span class="eyebrow">Need a starting point?</span
-            ><button type="button" data-example="Somewhere in Pasadena">
-              Somewhere in Pasadena <span aria-hidden="true">↗</span></button
-            ><button type="button" data-example="Seafood and wine around $25">
-              Seafood and wine around $25
-              <span aria-hidden="true">↗</span></button
-            ><button
+          <div class="examples" aria-label="Need a starting point?">
+            <button
               type="button"
               data-example="Tacos and margaritas around $25"
             >
-              Tacos and margaritas around $25 <span aria-hidden="true">↗</span>
+              Tacos &amp; margs
+            </button>
+            <button type="button" data-example="Seafood and wine around $25">
+              Seafood &amp; wine
+            </button>
+            <button type="button" data-example="Somewhere in Pasadena">
+              Pasadena
             </button>
           </div>
+          <details class="search-details">
+            <summary>How search works &amp; privacy</summary>
+            <p class="privacy" id="privacy">
+              AI help uses Google Gemini to interpret your request. Online
+              searches and additional menu lookups use Gemini and Tavily. Gemini
+              free-tier requests may be used to improve Google's products.
+            </p>
+            <p id="request-note" class="small muted">
+              AI help fills the filters. Use “Find more places online” below for
+              a fresh web search. New discoveries need owner verification. Each
+              AI request starts fresh.
+            </p>
+          </details>
+          <p id="ai-status" class="small" role="status"></p>
+          <p id="request-error" role="alert" hidden></p>
           <details class="coverage-details">
             <summary>About these happy hours</summary>
             <p id="dataset-summary"></p>
@@ -116,60 +194,53 @@
               and fees.
             </p>
           </details>
-        </aside>
+        </details>
         <section class="browse" aria-label="Restaurant browsing">
-          <div class="results-heading">
-            <div>
-              <div class="eyebrow">Menus first. Your choice.</div>
-              <h2 id="results-title">Explore happy hours</h2>
-            </div>
-            <button id="clear-request" class="secondary" type="button" hidden>
-              Clear request
-            </button>
+          <div class="results-heading" id="happy-hour-lists" tabindex="-1">
+            <h2 id="results-title">The neighborhood shortlist</h2>
           </div>
           <p id="interpretation" class="interpretation" role="status"></p>
-          <div
-            class="discovery-tabs"
-            role="tablist"
-            aria-label="Happy-hour lists"
+          <aside
+            class="more-callout"
+            aria-label="Additional places found online"
           >
-            <button
-              id="browse-tab"
-              role="tab"
-              data-view="browse"
-              aria-selected="true"
-              aria-controls="browse-panel"
-              type="button"
-            >
-              Browse happy hours</button
-            ><button
-              id="pending-tab"
-              role="tab"
-              data-view="pending"
-              aria-selected="false"
-              tabindex="-1"
-              aria-controls="pending-panel"
-              type="button"
-            >
-              Needs verification (0)
-            </button>
-          </div>
+            <div>
+              <strong id="more-callout-title">There’s more to explore.</strong>
+              <p id="more-callout-copy">
+                Extra discoveries from the web. Menus, prices and availability
+                need verification.
+              </p>
+            </div>
+            <a id="pending-tab" href="#pending-panel">See extra places ↓</a>
+          </aside>
           <p id="discovery-status" role="status" class="discovery-status"></p>
           <div id="search-attribution"></div>
-          <div id="browse-panel" role="tabpanel" aria-labelledby="browse-tab">
+          <section id="browse-panel" aria-labelledby="results-title">
             <div id="results" aria-busy="false"></div>
-          </div>
-          <div
+            <button id="show-more" class="secondary" type="button" hidden>
+              Show more researched places
+            </button>
+          </section>
+          <section
             id="pending-panel"
-            role="tabpanel"
-            aria-labelledby="pending-tab"
-            hidden
+            class="extra-section"
+            aria-labelledby="more-places-title"
+            tabindex="-1"
           >
-            <p class="small muted">
-              These are newly discovered offers, not approved recommendations.
-              Community evidence helps the owner review them; it does not
-              automatically publish a place.
-            </p>
+            <div class="pending-intro">
+              <div class="eyebrow">Extra discoveries from the web</div>
+              <h2 id="more-places-title">
+                More places to explore <span id="extra-count">(0)</span>
+              </h2>
+              <p>
+                More options for your evening. These places are awaiting owner
+                review; menus, prices and availability aren’t confirmed yet.
+              </p>
+              <p id="pending-filter-note" class="small muted"></p>
+              <a id="browse-tab" href="#happy-hour-lists"
+                >Back to researched places ↑</a
+              >
+            </div>
             <div class="review-actions">
               <button class="secondary" id="refresh-reviews" type="button">
                 Refresh queue</button
@@ -212,25 +283,40 @@
                     name="sourceUrl"
                     required
                     maxlength="2048"
-                    placeholder="https://restaurant.com/happy-hour"
-                /></label>
-                <label
+                    placeholder="https://restaurant.com/happy-hour" /></label
+                ><label
                   >City or neighborhood (optional)<input
                     name="area"
                     maxlength="120"
                     placeholder="Downey"
                 /></label>
                 <p class="small muted">
-                  We read the linked page and extract supported happy-hour
-                  items. Additions stay public and labeled Needs verification
-                  until the owner reviews them.
+                  We read the public page and extract source-supported
+                  happy-hour items. Additions stay public and need owner
+                  verification.
                 </p>
                 <button class="secondary" type="submit">Read menu link</button>
                 <p id="import-menu-status" role="status"></p>
               </form>
             </details>
             <div id="pending-results"></div>
-          </div>
+            <p class="review-note">
+              Community evidence helps the owner review a place. It does not
+              automatically publish it.
+            </p>
+          </section>
+          <section class="find-more" aria-label="Search for additional places">
+            <div>
+              <strong>Still looking for your kind of place?</strong>
+              <p>
+                Look beyond the current list. This search uses your current
+                filters.
+              </p>
+            </div>
+            <button id="find-online" class="secondary" type="button">
+              Find more places online
+            </button>
+          </section>
           <footer>
             <span>Restaurant-listed, not live-confirmed.</span
             ><a href="./legacy.html">Previous version</a>
@@ -243,7 +329,7 @@
     >
     <script
       type="module"
-      src="./src/discover-app.js?v=time-discovery-12"
+      src="./src/discover-app.js?v=explore-filters-2"
     ></script>
   </body>
 </html>
