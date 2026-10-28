@@ -101,7 +101,7 @@ const { chromium } = require("playwright");
         .click();
       await page
         .getByText(
-          "No additional source-supported places found for this request. Try a named area or a broader craving.",
+          "No new places found for this request. Saved matches remain listed below; try a named area or a broader craving.",
           { exact: true },
         )
         .waitFor();

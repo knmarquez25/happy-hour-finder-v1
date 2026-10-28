@@ -103,8 +103,10 @@ const { chromium } = require("playwright");
     await page.waitForFunction(() =>
       document.querySelector("#interpretation").textContent.includes("martini"),
     );
-    assert.equal(await page.locator("#results article").count(), 3);
+    assert.equal(await page.locator("#results article").count(), 13);
     for (const card of await page.locator("#results article").all()) {
+      while (!(await card.isVisible()))
+        await page.locator("#show-more").click();
       await card.locator(".venue-menu > summary").click();
       const highlight = card.locator(".menu-choice").first();
       assert.match(await highlight.innerText(), /martini/i);
@@ -116,7 +118,7 @@ const { chromium } = require("playwright");
           .locator(`[data-venue-id="${id}"] .menu-choice`)
           .first()
           .locator("strong")
-          .innerText(),
+          .textContent(),
         "$10",
       );
     await page

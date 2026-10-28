@@ -1,5 +1,6 @@
 import { weekdays, toMinutes } from "./matching.js";
 import { coverageEligibility, validCoordinates } from "./locations.js";
+import { menuCoverageErrors } from "./menu-coverage.js";
 export function validateRecords(records) {
   const errors = [],
     ids = new Set(),
@@ -7,6 +8,8 @@ export function validateRecords(records) {
   for (const record of records) {
     const prefix = record.id || record.name || "Unnamed record";
     const error = (message) => errors.push(`${prefix}: ${message}`);
+    if (record.menuCoverage !== undefined)
+      menuCoverageErrors(record.menuCoverage, record.sources).forEach(error);
     if (!record.id || !record.name || !record.neighborhood)
       error("Missing identity");
     if (ids.has(record.id)) error("Duplicate ID");

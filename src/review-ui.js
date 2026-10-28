@@ -6,7 +6,11 @@ import {
 } from "./candidates.js?v=review-discovery-10";
 import { weekdays } from "./matching.js";
 import { emptyPreferences } from "./discovery.js";
-import { pendingMatches } from "./filter-options.js";
+import {
+  pendingMatches,
+  pendingPossibleTerms,
+  canonicalTerm,
+} from "./filter-options.js";
 export function initReviews({
   endpoint,
   onApproved,
@@ -18,8 +22,7 @@ export function initReviews({
     ownerPanel = document.querySelector("#owner-panel"),
     ownerButton = document.querySelector("#owner-toggle");
   const importedIds = new Set();
-  const menus = new Map(),
-    menuStates = new Map();
+  const menuStates = new Map();
   let records = [],
     transient = [],
     config = {},
@@ -60,6 +63,8 @@ export function initReviews({
     });
   function update(rows, preserveOwnerEdits = false) {
     records = rows;
+    const savedKeys = new Set(rows.map((r) => identity(r.payload)));
+    transient = transient.filter((r) => !savedKeys.has(identity(r.payload)));
     onApproved(rows.filter((r) => r.status === "approved"));
     render(preserveOwnerEdits);
   }
@@ -78,21 +83,28 @@ export function initReviews({
     const rows = [
       ...records.filter((r) => r.status === "pending"),
       ...transient,
-    ].filter((r) => {
-      try {
-        return (
-          importedIds.has(r.id) ||
-          pendingMatches(
-            normalizeCandidate(
-              menus.get(r.id) || freshMenuLookup(r)?.candidate || r.payload,
-            ),
+    ]
+      .filter((r) => {
+        try {
+          return (
+            importedIds.has(r.id) ||
+            pendingMatches(
+              normalizeCandidate(freshMenuLookup(r)?.candidate || r.payload),
+              preferences,
+            )
+          );
+        } catch {
+          return false;
+        }
+      })
+      .sort((a, b) => {
+        const possibleCount = (r) =>
+          pendingPossibleTerms(
+            normalizeCandidate(freshMenuLookup(r)?.candidate || r.payload),
             preferences,
-          )
-        );
-      } catch {
-        return false;
-      }
-    });
+          ).length;
+        return possibleCount(a) - possibleCount(b);
+      });
     const count = rows.length;
     scopeLabel.textContent = importedIds.size
       ? "Showing the menu link you added and extra discoveries matching your filters."
@@ -120,12 +132,20 @@ export function initReviews({
             let c;
             try {
               c = normalizeCandidate(
-                menus.get(r.id) || freshMenuLookup(r)?.candidate || r.payload,
+                freshMenuLookup(r)?.candidate || r.payload,
               );
             } catch {
               return "";
             }
-            return `<article class="restaurant-card pending-card" data-review-id="${esc(r.id)}"><div class="card-top"><div><h3>${esc(c.name)}</h3><p class="venue-location">${esc(c.location)}</p></div><span class="evidence-tag uncertain">${r.unsaved ? "Not saved" : "Needs verification"}</span></div><p class="small muted">${r.payload.discoveryMethod === "menu-link" ? "Added from a menu link. " : ""}${importedIds.has(r.id) && !pendingMatches(c, preferences) ? "Outside your current filters. " : ""}Menu, prices and availability need owner verification.</p>${pendingMenu(r, c)}${(r.review_evidence || []).length ? `<details><summary>Community evidence (${r.review_evidence.length})</summary>${r.review_evidence.map((e) => `<p>${esc(e.note)}<br><a href="${esc(e.source_url)}" target="_blank" rel="noreferrer">Submitted source ↗</a></p>`).join("")}</details>` : ""}${r.unsaved ? '<p class="small budget-over">This discovery is not in the shared queue. Retry after storage is connected.</p>' : `<details><summary>Add menu evidence</summary><form data-evidence><label>Menu or photo link<input type="url" name="sourceUrl" required maxlength="2048" placeholder="https://restaurant.com/happy-hour"></label><label>What does the source confirm?<textarea name="note" maxlength="750" required></textarea></label><p class="small muted">Submit public menu information only. Evidence is public and still needs owner review.</p><button class="secondary" type="submit">Submit evidence</button><p class="form-message" role="status"></p></form></details>`}${isOwner && !r.unsaved ? ownerForm(c) : ""}</article>`;
+            const possible = pendingPossibleTerms(c, preferences);
+            const matchLabel = possible.length
+              ? "Possible match · Martinis listed — Espresso Martini needs confirmation."
+              : preferences.drinkPreferences.some(
+                    (term) => canonicalTerm(term) === "espresso martini",
+                  ) && pendingMatches(c, preferences)
+                ? "Espresso Martini listed"
+                : "";
+            return `<article class="restaurant-card pending-card" data-review-id="${esc(r.id)}"><div class="card-top"><div><h3>${esc(c.name)}</h3><p class="venue-location">${esc(c.location)}</p></div><span class="evidence-tag uncertain">${r.unsaved ? "Not saved" : "Needs verification"}</span></div><p class="small muted">${r.payload.discoveryMethod === "menu-link" ? "Added from a menu link. " : ""}${importedIds.has(r.id) && !pendingMatches(c, preferences) ? "Outside your current filters. " : ""}Menu, prices and availability need owner verification.</p>${matchLabel ? `<p class="match-reasons">${esc(matchLabel)}</p>` : ""}${pendingMenu(r, c)}${(r.review_evidence || []).length ? `<details><summary>Community evidence (${r.review_evidence.length})</summary>${r.review_evidence.map((e) => `<p>${esc(e.note)}<br><a href="${esc(e.source_url)}" target="_blank" rel="noreferrer">Submitted source ↗</a></p>`).join("")}</details>` : ""}${r.unsaved ? '<p class="small budget-over">This discovery is not in the shared queue. Retry after storage is connected.</p>' : `<details><summary>Add menu evidence</summary><form data-evidence><label>Menu or photo link<input type="url" name="sourceUrl" required maxlength="2048" placeholder="https://restaurant.com/happy-hour"></label><label>What does the source confirm?<textarea name="note" maxlength="750" required></textarea></label><p class="small muted">Submit public menu information only. Evidence is public and still needs owner review.</p><button class="secondary" type="submit">Submit evidence</button><p class="form-message" role="status"></p></form></details>`}${isOwner && !r.unsaved ? ownerForm(c) : ""}</article>`;
           })
           .join("")
       : `<div class="empty-state"><h3>${searchState === "loading" ? "Searching for extra places…" : searchState === "error" ? "Online search unavailable" : "No recorded extra matches yet"}</h3><p>${searchState === "loading" ? "New online discoveries will appear here for review." : "Try different filters or use Find more places online. Unrecorded menu information does not mean an offer is unavailable."}</p></div>`;
@@ -145,9 +165,7 @@ export function initReviews({
     if (r && section)
       section.outerHTML = pendingMenu(
         r,
-        normalizeCandidate(
-          menus.get(id) || freshMenuLookup(r)?.candidate || r.payload,
-        ),
+        normalizeCandidate(freshMenuLookup(r)?.candidate || r.payload),
       );
   }
   function pendingMenu(r, c) {
@@ -186,14 +204,14 @@ export function initReviews({
       if (!lookup)
         throw Error("The saved menu did not match this place. Please retry.");
       r.menu_lookup = lookup;
-      if (lookup.candidate) menus.set(id, lookup.candidate);
       menuStates.delete(id);
       if (isOwner)
         menuStates.set(id, {
           notice:
             "An updated menu was saved. Refresh the queue before reviewing it.",
         });
-      patchMenu(id);
+      // Menu changes can alter eligibility, match labels, and ordering too.
+      render(true);
     } catch (err) {
       menuStates.set(id, { error: err.message });
       patchMenu(id);
@@ -231,7 +249,6 @@ export function initReviews({
         f.reset();
       } else {
         const original =
-          menus.get(id) ||
           freshMenuLookup(records.find((r) => r.id === id))?.candidate ||
           records.find((r) => r.id === id)?.payload;
         if (!original) throw Error("Refresh this submission before review.");
@@ -461,7 +478,6 @@ export function initReviews({
       controller?.abort();
       controller = new AbortController();
       status.textContent = "Searching for additional places online…";
-      transient = [];
       searchState = "loading";
       render(true);
       try {
@@ -480,12 +496,21 @@ export function initReviews({
           );
         if (result.saved) update(result.records || [], true);
         else {
-          transient = (result.candidates || []).map((payload, n) => ({
-            id: "unsaved-" + n,
-            payload,
-            status: "pending",
-            unsaved: true,
-          }));
+          const savedKeys = new Set(records.map((r) => identity(r.payload)));
+          const session = new Map(
+            transient.map((r) => [identity(r.payload), r]),
+          );
+          for (const [n, payload] of (result.candidates || []).entries()) {
+            const key = identity(payload);
+            if (!savedKeys.has(key))
+              session.set(key, {
+                id: session.get(key)?.id || `unsaved-${own}-${n}`,
+                payload,
+                status: "pending",
+                unsaved: true,
+              });
+          }
+          transient = [...session.values()];
           render(true);
         }
         const attribution = document.querySelector("#search-attribution");
@@ -502,7 +527,7 @@ export function initReviews({
           result.notice ||
           (count
             ? `${count} new place${count === 1 ? "" : "s"} found. See the additional discoveries in More places to explore.`
-            : "No additional source-supported places found for this request. Try a named area or a broader craving.");
+            : "No new places found for this request. Saved matches remain listed below; try a named area or a broader craving.");
       } catch (e) {
         if (own !== serial || e.name === "AbortError") return;
         status.textContent = e.message;

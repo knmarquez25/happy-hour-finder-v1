@@ -5,17 +5,295 @@
     "neighborhood": "Santa Monica",
     "address": "1654 Ocean Avenue, Santa Monica, CA 90401",
     "coordinates": null,
-    "hours": [{"days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "start": "15:00", "end": "18:00", "sourceId": "menu", "status": "primary", "restriction": "conditional"}],
+    "hours": [
+      {
+        "days": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "start": "15:00",
+        "end": "18:00",
+        "sourceId": "menu",
+        "status": "primary",
+        "restriction": "conditional"
+      }
+    ],
     "menu": [
-      {"id": "food-1", "name": "Two steak tacos", "kind": "food", "priceCents": 800, "tags": ["tacos"], "sourceId": "menu", "status": "primary"},
-      {"id": "drink-1", "name": "Red sangria", "kind": "drink", "priceCents": 600, "tags": ["sangria"], "sourceId": "menu", "status": "primary"}
+      {
+        "name": "Two Steak Tacos",
+        "kind": "food",
+        "priceCents": 800,
+        "tags": [
+          "two steak tacos"
+        ],
+        "id": "food-1",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Two Chicken Tacos",
+        "kind": "food",
+        "priceCents": 800,
+        "tags": [
+          "two chicken tacos"
+        ],
+        "id": "audit-food-twochickentacos",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Two Carnitas Tacos",
+        "kind": "food",
+        "priceCents": 800,
+        "tags": [
+          "two carnitas tacos"
+        ],
+        "id": "audit-food-twocarnitastacos",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Beer-Battered Fried Fish Taco",
+        "kind": "food",
+        "priceCents": 500,
+        "tags": [
+          "beer-battered fried fish taco"
+        ],
+        "id": "audit-food-beerbatteredfriedfishtaco",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Guacamole Molcajete",
+        "kind": "food",
+        "priceCents": null,
+        "tags": [
+          "guacamole molcajete"
+        ],
+        "id": "audit-food-guacamolemolcajete",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Casa Martin Platter",
+        "kind": "food",
+        "priceCents": null,
+        "tags": [
+          "casa martin platter"
+        ],
+        "id": "audit-food-casamartinplatter",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Cheese Dip",
+        "kind": "food",
+        "priceCents": null,
+        "tags": [
+          "cheese dip"
+        ],
+        "id": "audit-food-cheesedip",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Queso Fundido",
+        "kind": "food",
+        "priceCents": null,
+        "tags": [
+          "queso fundido"
+        ],
+        "id": "audit-food-quesofundido",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Chimiflautas",
+        "kind": "food",
+        "priceCents": null,
+        "tags": [
+          "chimiflautas"
+        ],
+        "id": "audit-food-chimiflautas",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Quesadilla",
+        "kind": "food",
+        "priceCents": null,
+        "tags": [
+          "quesadilla"
+        ],
+        "id": "audit-food-quesadilla",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Nachos",
+        "kind": "food",
+        "priceCents": null,
+        "tags": [
+          "nachos"
+        ],
+        "id": "audit-food-nachos",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Spicy Chicken Wings",
+        "kind": "food",
+        "priceCents": null,
+        "tags": [
+          "spicy chicken wings"
+        ],
+        "id": "audit-food-spicychickenwings",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Fish Ceviche & Chips",
+        "kind": "food",
+        "priceCents": null,
+        "tags": [
+          "fish ceviche & chips"
+        ],
+        "id": "audit-food-fishcevichechips",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Shrimp Ceviche & Chips",
+        "kind": "food",
+        "priceCents": null,
+        "tags": [
+          "shrimp ceviche & chips"
+        ],
+        "id": "audit-food-shrimpcevichechips",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Mixed Ceviche & Chips",
+        "kind": "food",
+        "priceCents": null,
+        "tags": [
+          "mixed ceviche & chips"
+        ],
+        "id": "audit-food-mixedcevichechips",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Red Sangria",
+        "kind": "drink",
+        "priceCents": 600,
+        "tags": [
+          "red sangria"
+        ],
+        "id": "drink-1",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Bottled Beer",
+        "kind": "drink",
+        "priceCents": 600,
+        "tags": [
+          "bottled beer"
+        ],
+        "id": "audit-drink-bottledbeer",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Draft Beer",
+        "kind": "drink",
+        "priceCents": 600,
+        "tags": [
+          "draft beer"
+        ],
+        "id": "audit-drink-draftbeer",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Margarita",
+        "kind": "drink",
+        "priceCents": null,
+        "tags": [
+          "margarita"
+        ],
+        "id": "audit-drink-margarita",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Wine Glass",
+        "kind": "drink",
+        "priceCents": null,
+        "tags": [
+          "wine glass"
+        ],
+        "id": "audit-drink-wineglass",
+        "sourceId": "menu",
+        "status": "primary"
+      }
     ],
-    "foodTags": ["tacos"], "drinkTags": ["sangria"], "atmosphereTags": [],
+    "foodTags": [
+      "two steak tacos",
+      "two chicken tacos",
+      "two carnitas tacos",
+      "beer-battered fried fish taco",
+      "guacamole molcajete",
+      "casa martin platter",
+      "cheese dip",
+      "queso fundido",
+      "chimiflautas",
+      "quesadilla",
+      "nachos",
+      "spicy chicken wings",
+      "fish ceviche & chips",
+      "shrimp ceviche & chips",
+      "mixed ceviche & chips"
+    ],
+    "drinkTags": [
+      "red sangria",
+      "bottled beer",
+      "draft beer",
+      "margarita",
+      "wine glass"
+    ],
+    "atmosphereTags": [],
     "sources": [
-      {"id": "official", "url": "https://www.casamartinsm.com/menu/", "type": "primary", "accessedOn": "2026-10-19", "reviewedOn": "2026-10-19", "note": "Lists this address and weekday schedule; explicitly links the same happy-hour PDF for both Santa Monica branches."},
-      {"id": "menu", "url": "https://www.casamartinsm.com/wp-content/uploads/2020/04/Happy-Hour-Menu.pdf", "type": "primary", "accessedOn": "2026-10-19", "reviewedOn": "2026-10-19", "note": "Linked menu supplies exact prices and excludes holidays and special events. Old upload path; no current publication date supplied."}
+      {
+        "id": "official",
+        "url": "https://www.casamartinsm.com/menu/",
+        "type": "primary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "note": "Lists this address and weekday schedule; explicitly links the same happy-hour PDF for both Santa Monica branches."
+      },
+      {
+        "id": "menu",
+        "url": "https://www.casamartinsm.com/wp-content/uploads/2020/04/Happy-Hour-Menu.pdf",
+        "type": "primary",
+        "accessedOn": "2026-10-26",
+        "reviewedOn": "2026-10-26",
+        "note": "Linked menu supplies exact prices and excludes holidays and special events. Old upload path; no current publication date supplied."
+      }
     ],
-    "notes": "Holidays and special events excluded. Official sources say 18:00 end; tourism guide says 18:30 and different sangria pricing. Official evidence retained. Taco price is for two, not each."
+    "notes": "Holidays and special events excluded. Official sources say 18:00 end; tourism guide says 18:30 and different sangria pricing. Official evidence retained. Taco price is for two, not each.",
+    "specials": [
+      {
+        "text": "Weekdays 3–6pm, excluding holidays and special events. Appetizers and wine glasses $2 off; margaritas $4 off. Cheese-dip ground beef +$2; quesadilla/nacho chicken +$3, steak/shrimp +$4. Discounted totals without published base prices remain unknown.",
+        "sourceId": "menu",
+        "status": "primary"
+      }
+    ]
   },
   {
     "id": "casa-martin-third-street-promenade",
@@ -23,17 +301,295 @@
     "neighborhood": "Santa Monica",
     "address": "1251 Third Street Promenade, Santa Monica, CA 90401",
     "coordinates": null,
-    "hours": [{"days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "start": "15:00", "end": "18:00", "sourceId": "menu", "status": "primary", "restriction": "conditional"}],
+    "hours": [
+      {
+        "days": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "start": "15:00",
+        "end": "18:00",
+        "sourceId": "menu",
+        "status": "primary",
+        "restriction": "conditional"
+      }
+    ],
     "menu": [
-      {"id": "food-1", "name": "Two chicken tacos", "kind": "food", "priceCents": 800, "tags": ["tacos"], "sourceId": "menu", "status": "primary"},
-      {"id": "drink-1", "name": "Red sangria", "kind": "drink", "priceCents": 600, "tags": ["sangria"], "sourceId": "menu", "status": "primary"}
+      {
+        "name": "Two Steak Tacos",
+        "kind": "food",
+        "priceCents": 800,
+        "tags": [
+          "two steak tacos"
+        ],
+        "id": "audit-food-twosteaktacos",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Two Chicken Tacos",
+        "kind": "food",
+        "priceCents": 800,
+        "tags": [
+          "two chicken tacos"
+        ],
+        "id": "food-1",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Two Carnitas Tacos",
+        "kind": "food",
+        "priceCents": 800,
+        "tags": [
+          "two carnitas tacos"
+        ],
+        "id": "audit-food-twocarnitastacos",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Beer-Battered Fried Fish Taco",
+        "kind": "food",
+        "priceCents": 500,
+        "tags": [
+          "beer-battered fried fish taco"
+        ],
+        "id": "audit-food-beerbatteredfriedfishtaco",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Guacamole Molcajete",
+        "kind": "food",
+        "priceCents": null,
+        "tags": [
+          "guacamole molcajete"
+        ],
+        "id": "audit-food-guacamolemolcajete",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Casa Martin Platter",
+        "kind": "food",
+        "priceCents": null,
+        "tags": [
+          "casa martin platter"
+        ],
+        "id": "audit-food-casamartinplatter",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Cheese Dip",
+        "kind": "food",
+        "priceCents": null,
+        "tags": [
+          "cheese dip"
+        ],
+        "id": "audit-food-cheesedip",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Queso Fundido",
+        "kind": "food",
+        "priceCents": null,
+        "tags": [
+          "queso fundido"
+        ],
+        "id": "audit-food-quesofundido",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Chimiflautas",
+        "kind": "food",
+        "priceCents": null,
+        "tags": [
+          "chimiflautas"
+        ],
+        "id": "audit-food-chimiflautas",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Quesadilla",
+        "kind": "food",
+        "priceCents": null,
+        "tags": [
+          "quesadilla"
+        ],
+        "id": "audit-food-quesadilla",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Nachos",
+        "kind": "food",
+        "priceCents": null,
+        "tags": [
+          "nachos"
+        ],
+        "id": "audit-food-nachos",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Spicy Chicken Wings",
+        "kind": "food",
+        "priceCents": null,
+        "tags": [
+          "spicy chicken wings"
+        ],
+        "id": "audit-food-spicychickenwings",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Fish Ceviche & Chips",
+        "kind": "food",
+        "priceCents": null,
+        "tags": [
+          "fish ceviche & chips"
+        ],
+        "id": "audit-food-fishcevichechips",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Shrimp Ceviche & Chips",
+        "kind": "food",
+        "priceCents": null,
+        "tags": [
+          "shrimp ceviche & chips"
+        ],
+        "id": "audit-food-shrimpcevichechips",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Mixed Ceviche & Chips",
+        "kind": "food",
+        "priceCents": null,
+        "tags": [
+          "mixed ceviche & chips"
+        ],
+        "id": "audit-food-mixedcevichechips",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Red Sangria",
+        "kind": "drink",
+        "priceCents": 600,
+        "tags": [
+          "red sangria"
+        ],
+        "id": "drink-1",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Bottled Beer",
+        "kind": "drink",
+        "priceCents": 600,
+        "tags": [
+          "bottled beer"
+        ],
+        "id": "audit-drink-bottledbeer",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Draft Beer",
+        "kind": "drink",
+        "priceCents": 600,
+        "tags": [
+          "draft beer"
+        ],
+        "id": "audit-drink-draftbeer",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Margarita",
+        "kind": "drink",
+        "priceCents": null,
+        "tags": [
+          "margarita"
+        ],
+        "id": "audit-drink-margarita",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Wine Glass",
+        "kind": "drink",
+        "priceCents": null,
+        "tags": [
+          "wine glass"
+        ],
+        "id": "audit-drink-wineglass",
+        "sourceId": "menu",
+        "status": "primary"
+      }
     ],
-    "foodTags": ["tacos"], "drinkTags": ["sangria"], "atmosphereTags": [],
+    "foodTags": [
+      "two steak tacos",
+      "two chicken tacos",
+      "two carnitas tacos",
+      "beer-battered fried fish taco",
+      "guacamole molcajete",
+      "casa martin platter",
+      "cheese dip",
+      "queso fundido",
+      "chimiflautas",
+      "quesadilla",
+      "nachos",
+      "spicy chicken wings",
+      "fish ceviche & chips",
+      "shrimp ceviche & chips",
+      "mixed ceviche & chips"
+    ],
+    "drinkTags": [
+      "red sangria",
+      "bottled beer",
+      "draft beer",
+      "margarita",
+      "wine glass"
+    ],
+    "atmosphereTags": [],
     "sources": [
-      {"id": "official", "url": "https://www.casamartinsm.com/menu/", "type": "primary", "accessedOn": "2026-10-19", "reviewedOn": "2026-10-19", "note": "Separately identifies Promenade address, hours, and its link to the shared happy-hour PDF."},
-      {"id": "menu", "url": "https://www.casamartinsm.com/wp-content/uploads/2020/04/Happy-Hour-Menu.pdf", "type": "primary", "accessedOn": "2026-10-19", "reviewedOn": "2026-10-19", "note": "Exact food/drink prices; excludes holidays and special events. Older upload remains linked by this branch."}
+      {
+        "id": "official",
+        "url": "https://www.casamartinsm.com/menu/",
+        "type": "primary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "note": "Separately identifies Promenade address, hours, and its link to the shared happy-hour PDF."
+      },
+      {
+        "id": "menu",
+        "url": "https://www.casamartinsm.com/wp-content/uploads/2020/04/Happy-Hour-Menu.pdf",
+        "type": "primary",
+        "accessedOn": "2026-10-26",
+        "reviewedOn": "2026-10-26",
+        "note": "Exact food/drink prices; excludes holidays and special events. Older upload remains linked by this branch."
+      }
     ],
-    "notes": "Distinct physical location from Ocean Avenue. Holidays and special events excluded. Tourism guide's longer weekday window and Sunday offer were not imported. Taco price covers two."
+    "notes": "Distinct physical location from Ocean Avenue. Holidays and special events excluded. Tourism guide's longer weekday window and Sunday offer were not imported. Taco price covers two.",
+    "specials": [
+      {
+        "text": "Weekdays 3–6pm, excluding holidays and special events. Appetizers and wine glasses $2 off; margaritas $4 off. Cheese-dip ground beef +$2; quesadilla/nacho chicken +$3, steak/shrimp +$4. Discounted totals without published base prices remain unknown.",
+        "sourceId": "menu",
+        "status": "primary"
+      }
+    ]
   },
   {
     "id": "culver-hotel-bar-restaurant",
@@ -41,15 +597,70 @@
     "neighborhood": "Culver City",
     "address": "9400 Culver Boulevard, Culver City, CA 90232",
     "coordinates": null,
-    "hours": [{"days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "start": "15:00", "end": "17:00", "sourceId": "menu", "status": "conflicting", "restriction": "none"}],
-    "menu": [
-      {"id": "food-1", "name": "Parmesan fries", "kind": "food", "priceCents": 800, "tags": ["fries"], "sourceId": "menu", "status": "primary"},
-      {"id": "drink-1", "name": "Draft beer", "kind": "drink", "priceCents": 500, "tags": ["beer"], "sourceId": "menu", "status": "primary"}
+    "hours": [
+      {
+        "days": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "start": "15:00",
+        "end": "17:00",
+        "sourceId": "menu",
+        "status": "conflicting",
+        "restriction": "none"
+      }
     ],
-    "foodTags": ["fries"], "drinkTags": ["beer"], "atmosphereTags": [],
+    "menu": [
+      {
+        "id": "food-1",
+        "name": "Parmesan fries",
+        "kind": "food",
+        "priceCents": 800,
+        "tags": [
+          "fries"
+        ],
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "id": "drink-1",
+        "name": "Draft beer",
+        "kind": "drink",
+        "priceCents": 500,
+        "tags": [
+          "beer"
+        ],
+        "sourceId": "menu",
+        "status": "primary"
+      }
+    ],
+    "foodTags": [
+      "fries"
+    ],
+    "drinkTags": [
+      "beer"
+    ],
+    "atmosphereTags": [],
     "sources": [
-      {"id": "menu", "url": "https://www.culverhotel.com/menus", "type": "primary", "accessedOn": "2026-10-19", "reviewedOn": "2026-10-19", "note": "Harry's Hour section lists weekdays 15:00-17:00, priced human food and drinks, and street address."},
-      {"id": "dining", "url": "https://www.culverhotel.com/downtown-culver-city-restaurants", "type": "primary", "accessedOn": "2026-10-19", "reviewedOn": "2026-10-19", "note": "Dining page repeatedly gives weekdays 15:00-18:00, contradicting the menu's end time."}
+      {
+        "id": "menu",
+        "url": "https://www.culverhotel.com/menus",
+        "type": "primary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "note": "Harry's Hour section lists weekdays 15:00-17:00, priced human food and drinks, and street address."
+      },
+      {
+        "id": "dining",
+        "url": "https://www.culverhotel.com/downtown-culver-city-restaurants",
+        "type": "primary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "note": "Dining page repeatedly gives weekdays 15:00-18:00, contradicting the menu's end time."
+      }
     ],
     "notes": "Unresolved official schedule conflict: menu ends 17:00, dining page 18:00. Encoded menu window is conflicting, not a verified live schedule. Pet-treat board deliberately excluded from food items."
   },
@@ -59,13 +670,60 @@
     "neighborhood": "Culver City",
     "address": "9411 Culver Boulevard, Culver City, CA 90232",
     "coordinates": null,
-    "hours": [{"days": ["Thursday", "Friday"], "start": "15:00", "end": "18:00", "sourceId": "official", "status": "primary", "restriction": "bar-only"}],
-    "menu": [
-      {"id": "food-1", "name": "Garlic fries", "kind": "food", "priceCents": 900, "tags": ["fries"], "sourceId": "official", "status": "primary"},
-      {"id": "drink-1", "name": "Red sangria", "kind": "drink", "priceCents": 800, "tags": ["sangria"], "sourceId": "official", "status": "primary"}
+    "hours": [
+      {
+        "days": [
+          "Thursday",
+          "Friday"
+        ],
+        "start": "15:00",
+        "end": "18:00",
+        "sourceId": "official",
+        "status": "primary",
+        "restriction": "bar-only"
+      }
     ],
-    "foodTags": ["fries"], "drinkTags": ["sangria"], "atmosphereTags": [],
-    "sources": [{"id": "official", "url": "https://www.psontap.com/ps-310", "type": "primary", "accessedOn": "2026-10-19", "reviewedOn": "2026-10-19", "note": "Branch page contains address and priced Recess menu. Top announcement and lower schedule disagree on all-day days and late-night start; both explicitly support Thursday/Friday 15:00-18:00."}],
+    "menu": [
+      {
+        "id": "food-1",
+        "name": "Garlic fries",
+        "kind": "food",
+        "priceCents": 900,
+        "tags": [
+          "fries"
+        ],
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "id": "drink-1",
+        "name": "Red sangria",
+        "kind": "drink",
+        "priceCents": 800,
+        "tags": [
+          "sangria"
+        ],
+        "sourceId": "official",
+        "status": "primary"
+      }
+    ],
+    "foodTags": [
+      "fries"
+    ],
+    "drinkTags": [
+      "sangria"
+    ],
+    "atmosphereTags": [],
+    "sources": [
+      {
+        "id": "official",
+        "url": "https://www.psontap.com/ps-310",
+        "type": "primary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "note": "Branch page contains address and priced Recess menu. Top announcement and lower schedule disagree on all-day days and late-night start; both explicitly support Thursday/Friday 15:00-18:00."
+      }
+    ],
     "notes": "Only the mutually consistent Thursday/Friday window retained. Top: Monday all day, Tuesday-Friday 15:00-18:00, late 21:00-close. Lower page: Sunday-Wednesday all day, Thursday-Saturday 15:00-18:00, late 20:00-close; another block omits Saturday. Malformed 11am late-night end not used. Bar-only per announcement."
   },
   {
@@ -74,11 +732,45 @@
     "neighborhood": "Santa Monica",
     "address": "2442 Main Street, Santa Monica, CA 90405",
     "coordinates": null,
-    "hours": [{"days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], "start": "17:00", "end": "19:00", "sourceId": "official", "status": "primary", "restriction": "conditional"}],
-    "menu": [], "foodTags": [], "drinkTags": [], "atmosphereTags": [],
+    "hours": [
+      {
+        "days": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+          "Sunday"
+        ],
+        "start": "17:00",
+        "end": "19:00",
+        "sourceId": "official",
+        "status": "primary",
+        "restriction": "conditional"
+      }
+    ],
+    "menu": [],
+    "foodTags": [],
+    "drinkTags": [],
+    "atmosphereTags": [],
     "sources": [
-      {"id": "official", "url": "https://www.thegalleyrestaurant.net/", "type": "primary", "accessedOn": "2026-10-19", "reviewedOn": "2026-10-19", "note": "Address and daily happy hour; explicitly limited to bar and front patio."},
-      {"id": "menu", "url": "https://www.thegalleyrestaurant.net/our-menu/", "type": "primary", "accessedOn": "2026-10-19", "reviewedOn": "2026-10-19", "note": "Inspected menu repeats schedule but does not clearly identify per-item happy-hour prices; regular items not imported."}
+      {
+        "id": "official",
+        "url": "https://www.thegalleyrestaurant.net/",
+        "type": "primary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "note": "Address and daily happy hour; explicitly limited to bar and front patio."
+      },
+      {
+        "id": "menu",
+        "url": "https://www.thegalleyrestaurant.net/our-menu/",
+        "type": "primary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "note": "Inspected menu repeats schedule but does not clearly identify per-item happy-hour prices; regular items not imported."
+      }
     ],
     "notes": "Bar and front patio only. Tourism guide prices were not treated as official menu evidence; item arrays left empty."
   },
@@ -88,11 +780,43 @@
     "neighborhood": "Marina del Rey",
     "address": "13950 Panay Way, Marina del Rey, CA 90292",
     "coordinates": null,
-    "hours": [{"days": ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"], "start": "17:30", "end": "19:00", "sourceId": "official", "status": "primary", "restriction": "bar-only"}],
-    "menu": [], "foodTags": [], "drinkTags": [], "atmosphereTags": [],
+    "hours": [
+      {
+        "days": [
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday"
+        ],
+        "start": "17:30",
+        "end": "19:00",
+        "sourceId": "official",
+        "status": "primary",
+        "restriction": "bar-only"
+      }
+    ],
+    "menu": [],
+    "foodTags": [],
+    "drinkTags": [],
+    "atmosphereTags": [],
     "sources": [
-      {"id": "official", "url": "https://www.dearjanesla.com/", "type": "primary", "accessedOn": "2026-10-19", "reviewedOn": "2026-10-19", "note": "Address and consistent Tuesday-Saturday times. Body permits bar and weather-dependent patio; footer says bar only. No priced happy-hour items established."},
-      {"id": "unavailable-menu", "url": "https://www.dearjanesla.com/menus", "type": "primary", "accessedOn": "2026-10-19", "reviewedOn": null, "note": "Open returned internal error; content unreviewed and unused."}
+      {
+        "id": "official",
+        "url": "https://www.dearjanesla.com/",
+        "type": "primary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "note": "Address and consistent Tuesday-Saturday times. Body permits bar and weather-dependent patio; footer says bar only. No priced happy-hour items established."
+      },
+      {
+        "id": "unavailable-menu",
+        "url": "https://www.dearjanesla.com/menus",
+        "type": "primary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": null,
+        "note": "Open returned internal error; content unreviewed and unused."
+      }
     ],
     "notes": "Bar eligibility is supported by both official blocks. Patio eligibility conflicts with bar-only footer; confirm directly. Closed Sunday/Monday. Homepage cocktail descriptions were not silently reused as happy-hour items."
   },
@@ -102,13 +826,53 @@
     "neighborhood": "Marina del Rey",
     "address": "13534 Bali Way, Marina del Rey, CA 90292",
     "coordinates": null,
-    "hours": [{"days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"], "start": "16:00", "end": "18:30", "sourceId": "hotel", "status": "primary", "restriction": "conditional"}],
-    "menu": [], "foodTags": [], "drinkTags": [], "atmosphereTags": [],
-    "sources": [
-      {"id": "hotel", "url": "https://www.marinadelreyhotel.com/dining-overview/", "type": "primary", "accessedOn": "2026-10-19", "reviewedOn": "2026-10-19", "note": "SALT Sunset Hour 16:00-18:30 Monday-Saturday; 20% off bar bites and $2 off lounge drinks. Footer supplies hotel address. Separate Del Rey Lounge extended window begins 14:00."},
-      {"id": "restaurant", "url": "https://www.saltmdr.com/", "type": "primary", "accessedOn": "2026-10-19", "reviewedOn": "2026-10-19", "note": "Restaurant identity and Bali Way waterfront location inspected; no exact discounted per-item amounts established."}
+    "hours": [
+      {
+        "days": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday"
+        ],
+        "start": "16:00",
+        "end": "18:30",
+        "sourceId": "hotel",
+        "status": "primary",
+        "restriction": "conditional"
+      }
     ],
-    "notes": "Applies to bar bites/lounge drinks. Do not interpret percentage or dollar-off offers as exact prices. Separate Del Rey Lounge 14:00 start not merged into SALT or counted as a second location."
+    "menu": [],
+    "foodTags": [],
+    "drinkTags": [],
+    "atmosphereTags": [],
+    "sources": [
+      {
+        "id": "hotel",
+        "url": "https://www.marinadelreyhotel.com/dining-overview/",
+        "type": "primary",
+        "accessedOn": "2026-10-26",
+        "reviewedOn": "2026-10-26",
+        "note": "SALT Sunset Hour 16:00-18:30 Monday-Saturday; 20% off bar bites and $2 off lounge drinks. Footer supplies hotel address. Separate Del Rey Lounge extended window begins 14:00."
+      },
+      {
+        "id": "restaurant",
+        "url": "https://www.saltmdr.com/",
+        "type": "primary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "note": "Restaurant identity and Bali Way waterfront location inspected; no exact discounted per-item amounts established."
+      }
+    ],
+    "notes": "Applies to bar bites/lounge drinks. Do not interpret percentage or dollar-off offers as exact prices. Separate Del Rey Lounge 14:00 start not merged into SALT or counted as a second location.",
+    "specials": [
+      {
+        "text": "Published extended HH: 20% off bar bites and $2 off lounge drinks, Monday–Saturday 2–6:30pm. The same page also lists Sunset Hour 4–6:30pm.",
+        "status": "primary",
+        "sourceId": "hotel"
+      }
+    ]
   },
   {
     "id": "simonette-culver-city",
@@ -116,18 +880,210 @@
     "neighborhood": "Culver City",
     "address": "3927 Van Buren Place, Culver City, CA 90232",
     "coordinates": null,
-    "hours": [{"days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], "start": "15:00", "end": "18:00", "sourceId": "official", "status": "primary", "restriction": "none"}],
+    "hours": [
+      {
+        "days": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+          "Sunday"
+        ],
+        "start": "15:00",
+        "end": "18:00",
+        "sourceId": "official",
+        "status": "primary",
+        "restriction": "none"
+      }
+    ],
     "menu": [
-      {"id": "food-1", "name": "Burger Parisienne", "kind": "food", "priceCents": 1000, "tags": ["burger"], "sourceId": "menu", "status": "primary"},
-      {"id": "drink-1", "name": "Lager", "kind": "drink", "priceCents": 400, "tags": ["beer"], "sourceId": "menu", "status": "primary"}
+      {
+        "name": "Oyster (each)",
+        "kind": "food",
+        "priceCents": 300,
+        "tags": [
+          "oyster (each)"
+        ],
+        "id": "audit-food-oystereach",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Pommes Frites",
+        "kind": "food",
+        "priceCents": 500,
+        "tags": [
+          "pommes frites"
+        ],
+        "id": "audit-food-pommesfrites",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Croquettes",
+        "kind": "food",
+        "priceCents": 1000,
+        "tags": [
+          "croquettes"
+        ],
+        "id": "audit-food-croquettes",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Tapenade & Crostini",
+        "kind": "food",
+        "priceCents": 900,
+        "tags": [
+          "tapenade & crostini"
+        ],
+        "id": "audit-food-tapenadecrostini",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Little Gems",
+        "kind": "food",
+        "priceCents": 1000,
+        "tags": [
+          "little gems"
+        ],
+        "id": "audit-food-littlegems",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Burger Parisienne",
+        "kind": "food",
+        "priceCents": 1000,
+        "tags": [
+          "burger parisienne"
+        ],
+        "id": "food-1",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Burger Americaine",
+        "kind": "food",
+        "priceCents": 1000,
+        "tags": [
+          "burger americaine"
+        ],
+        "id": "audit-food-burgeramericaine",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Roadside Burger",
+        "kind": "food",
+        "priceCents": 1000,
+        "tags": [
+          "roadside burger"
+        ],
+        "id": "audit-food-roadsideburger",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Lager",
+        "kind": "drink",
+        "priceCents": 400,
+        "tags": [
+          "lager",
+          "beer"
+        ],
+        "id": "drink-1",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "House Red Wine",
+        "kind": "drink",
+        "priceCents": 800,
+        "tags": [
+          "house red wine"
+        ],
+        "id": "audit-drink-houseredwine",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "House White Wine",
+        "kind": "drink",
+        "priceCents": 800,
+        "tags": [
+          "house white wine"
+        ],
+        "id": "audit-drink-housewhitewine",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Cocktail of the Day",
+        "kind": "drink",
+        "priceCents": 1200,
+        "tags": [
+          "cocktail of the day"
+        ],
+        "id": "audit-drink-cocktailoftheday",
+        "sourceId": "menu",
+        "status": "primary"
+      }
     ],
-    "foodTags": ["burger"], "drinkTags": ["beer"], "atmosphereTags": [],
+    "foodTags": [
+      "oyster (each)",
+      "pommes frites",
+      "croquettes",
+      "tapenade & crostini",
+      "little gems",
+      "burger parisienne",
+      "burger americaine",
+      "roadside burger"
+    ],
+    "drinkTags": [
+      "lager",
+      "house red wine",
+      "house white wine",
+      "cocktail of the day"
+    ],
+    "atmosphereTags": [],
     "sources": [
-      {"id": "official", "url": "https://www.simonetterestaurant.com/", "type": "primary", "accessedOn": "2026-10-19", "reviewedOn": "2026-10-19", "note": "Full address and daily hours; advertises half-price burgers, $8 wine and $12 cocktail of the day."},
-      {"id": "happenings", "url": "https://www.simonetterestaurant.com/weekly-happenings", "type": "primary", "accessedOn": "2026-10-19", "reviewedOn": "2026-10-19", "note": "Daily happy hour confirms $4 beer and 15:00-18:00."},
-      {"id": "menu", "url": "https://static1.squarespace.com/static/5be5da0d25bf029c9c2ed22d/t/68dff694936382200281ca21/1759508116611/Simonette_HappyHour_9.25.25_web.pdf", "type": "primary", "accessedOn": "2026-10-19", "reviewedOn": "2026-10-19", "note": "Directly read branded happy-hour PDF hosted under the same Squarespace site ID as official homepage images. Exact burger and lager prices. Filename dated 2025; found through search, not a current homepage PDF link."}
+      {
+        "id": "official",
+        "url": "https://www.simonetterestaurant.com/",
+        "type": "primary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "note": "Full address and daily hours; advertises half-price burgers, $8 wine and $12 cocktail of the day."
+      },
+      {
+        "id": "happenings",
+        "url": "https://www.simonetterestaurant.com/weekly-happenings",
+        "type": "primary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "note": "Daily happy hour confirms $4 beer and 15:00-18:00."
+      },
+      {
+        "id": "menu",
+        "url": "https://static1.squarespace.com/static/5be5da0d25bf029c9c2ed22d/t/68dff694936382200281ca21/1759508116611/Simonette_HappyHour_9.25.25_web.pdf",
+        "type": "primary",
+        "accessedOn": "2026-10-26",
+        "reviewedOn": "2026-10-26",
+        "note": "Directly read branded happy-hour PDF hosted under the same Squarespace site ID as official homepage images. Exact burger and lager prices. Filename dated 2025; found through search, not a current homepage PDF link."
+      }
     ],
-    "notes": "Exact burger amount comes from older official-hosted menu; current homepage confirms the burger promotion but not its dollar amount. Reconfirm food price before travel. No price calculated from a percentage."
+    "notes": "Exact burger amount comes from older official-hosted menu; current homepage confirms the burger promotion but not its dollar amount. Reconfirm food price before travel. No price calculated from a percentage.",
+    "specials": [
+      {
+        "text": "Daily 3–6pm. Official weekly-happenings page also lists Tuesday Frites Night $30 per person including a house martini; Tuesday martinis $12 from 5pm–close; Wednesday bottles half off. Rotating frites follow the week-of-month schedule; check source for the current dish.",
+        "sourceId": "menu",
+        "status": "primary"
+      }
+    ]
   },
   {
     "id": "stk-los-angeles-westwood",
@@ -136,15 +1092,359 @@
     "address": "1100 Glendon Avenue, Los Angeles, CA 90024",
     "coordinates": null,
     "hours": [
-      {"days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "start": "14:30", "end": "18:30", "sourceId": "official", "status": "primary", "restriction": "none"},
-      {"days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Sunday"], "start": "22:00", "end": "23:00", "sourceId": "official", "status": "primary", "restriction": "none"}
+      {
+        "days": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "start": "14:30",
+        "end": "18:30",
+        "sourceId": "official",
+        "status": "primary",
+        "restriction": "none"
+      },
+      {
+        "days": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Sunday"
+        ],
+        "start": "22:00",
+        "end": "23:00",
+        "sourceId": "official",
+        "status": "primary",
+        "restriction": "none"
+      }
     ],
-    "menu": [], "foodTags": [], "drinkTags": [], "atmosphereTags": [],
+    "menu": [
+      {
+        "name": "Oyster on Half Shell",
+        "kind": "food",
+        "priceCents": 300,
+        "tags": [
+          "oyster on half shell"
+        ],
+        "id": "audit-food-oysteronhalfshell",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Tater Tots",
+        "kind": "food",
+        "priceCents": 300,
+        "tags": [
+          "tater tots"
+        ],
+        "id": "audit-food-tatertots",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Crab and Corn Fritters",
+        "kind": "food",
+        "priceCents": 300,
+        "tags": [
+          "crab and corn fritters"
+        ],
+        "id": "audit-food-crabandcornfritters",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Lil Brg and Truffle Fries",
+        "kind": "food",
+        "priceCents": 600,
+        "tags": [
+          "lil brg and truffle fries"
+        ],
+        "id": "audit-food-lilbrgandtrufflefries",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Wagyu Meatballs",
+        "kind": "food",
+        "priceCents": 600,
+        "tags": [
+          "wagyu meatballs"
+        ],
+        "id": "audit-food-wagyumeatballs",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Short Rib Quesadilla",
+        "kind": "food",
+        "priceCents": 600,
+        "tags": [
+          "short rib quesadilla"
+        ],
+        "id": "audit-food-shortribquesadilla",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Pastrami Salmon Cones",
+        "kind": "food",
+        "priceCents": 600,
+        "tags": [
+          "pastrami salmon cones"
+        ],
+        "id": "audit-food-pastramisalmoncones",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Mushroom Arancini",
+        "kind": "food",
+        "priceCents": 600,
+        "tags": [
+          "mushroom arancini"
+        ],
+        "id": "audit-food-mushroomarancini",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Steak Tacos",
+        "kind": "food",
+        "priceCents": 900,
+        "tags": [
+          "steak tacos"
+        ],
+        "id": "audit-food-steaktacos",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Jalapeno Pickled Shrimp Cocktail",
+        "kind": "food",
+        "priceCents": 900,
+        "tags": [
+          "jalapeno pickled shrimp cocktail"
+        ],
+        "id": "audit-food-jalapenopickledshrimpcocktail",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Beef Tartare",
+        "kind": "food",
+        "priceCents": 900,
+        "tags": [
+          "beef tartare"
+        ],
+        "id": "audit-food-beeftartare",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Tuna Tartare Taco",
+        "kind": "food",
+        "priceCents": 900,
+        "tags": [
+          "tuna tartare taco"
+        ],
+        "id": "audit-food-tunatartaretaco",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Popcorn Chicken",
+        "kind": "food",
+        "priceCents": 900,
+        "tags": [
+          "popcorn chicken"
+        ],
+        "id": "audit-food-popcornchicken",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Crispy Calamari",
+        "kind": "food",
+        "priceCents": 900,
+        "tags": [
+          "crispy calamari"
+        ],
+        "id": "audit-food-crispycalamari",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "STK Cheeseburger",
+        "kind": "food",
+        "priceCents": 900,
+        "tags": [
+          "stk cheeseburger"
+        ],
+        "id": "audit-food-stkcheeseburger",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Bacon Loaded Fries",
+        "kind": "food",
+        "priceCents": 900,
+        "tags": [
+          "bacon loaded fries"
+        ],
+        "id": "audit-food-baconloadedfries",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Modelo Especial",
+        "kind": "drink",
+        "priceCents": 600,
+        "tags": [
+          "modelo especial",
+          "beer"
+        ],
+        "id": "audit-drink-modeloespecial",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Modelo Negra",
+        "kind": "drink",
+        "priceCents": 600,
+        "tags": [
+          "modelo negra",
+          "beer"
+        ],
+        "id": "audit-drink-modelonegra",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Happy Hour Cocktail",
+        "kind": "drink",
+        "priceCents": 900,
+        "tags": [
+          "happy hour cocktail"
+        ],
+        "id": "audit-drink-cocktail",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Chimay Bottle",
+        "kind": "drink",
+        "priceCents": 900,
+        "tags": [
+          "chimay bottle",
+          "beer"
+        ],
+        "id": "audit-drink-chimaybottle",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Bonanza Cabernet by Caymus",
+        "kind": "drink",
+        "priceCents": 900,
+        "tags": [
+          "bonanza cabernet by caymus"
+        ],
+        "id": "audit-drink-bonanzacabernetbycaymus",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Silver Gate Rose",
+        "kind": "drink",
+        "priceCents": 900,
+        "tags": [
+          "silver gate rose"
+        ],
+        "id": "audit-drink-silvergaterose",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Silver Gate Moscato",
+        "kind": "drink",
+        "priceCents": 900,
+        "tags": [
+          "silver gate moscato"
+        ],
+        "id": "audit-drink-silvergatemoscato",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Don Julio 1942 Shot",
+        "kind": "drink",
+        "priceCents": 3900,
+        "tags": [
+          "don julio 1942 shot"
+        ],
+        "id": "audit-drink-donjulio1942shot",
+        "sourceId": "menu",
+        "status": "primary"
+      }
+    ],
+    "foodTags": [
+      "oyster on half shell",
+      "tater tots",
+      "crab and corn fritters",
+      "lil brg and truffle fries",
+      "wagyu meatballs",
+      "short rib quesadilla",
+      "pastrami salmon cones",
+      "mushroom arancini",
+      "steak tacos",
+      "jalapeno pickled shrimp cocktail",
+      "beef tartare",
+      "tuna tartare taco",
+      "popcorn chicken",
+      "crispy calamari",
+      "stk cheeseburger",
+      "bacon loaded fries"
+    ],
+    "drinkTags": [
+      "modelo especial",
+      "modelo negra",
+      "happy hour cocktail",
+      "chimay bottle",
+      "bonanza cabernet by caymus",
+      "silver gate rose",
+      "silver gate moscato",
+      "don julio 1942 shot"
+    ],
+    "atmosphereTags": [],
     "sources": [
-      {"id": "official", "url": "https://stksteakhouse.com/en-us/location/los-angeles/", "type": "primary", "accessedOn": "2026-10-19", "reviewedOn": "2026-10-19", "note": "Current Westwood branch address and menu-link schedule. Advertises $3/$6/$9 tiers without assigning an inspected item to a tier."},
-      {"id": "menu", "url": "https://stksteakhouse.com/en-us/location/los-angeles/menu/?menu=Happy-Hour-Menu", "type": "primary", "accessedOn": "2026-10-19", "reviewedOn": "2026-10-19", "note": "Page opened but returned menu headings without readable item/pricing content. No item prices inferred from tiers."}
+      {
+        "id": "official",
+        "url": "https://stksteakhouse.com/en-us/location/los-angeles/",
+        "type": "primary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "note": "Current Westwood branch address and menu-link schedule. Advertises $3/$6/$9 tiers without assigning an inspected item to a tier."
+      },
+      {
+        "id": "menu",
+        "url": "https://stksteakhouse.com/en-us/location/los-angeles/menu/?menu=Happy-Hour-Menu",
+        "type": "primary",
+        "accessedOn": "2026-10-26",
+        "reviewedOn": "2026-10-26",
+        "note": "Page opened but returned menu headings without readable item/pricing content. No item prices inferred from tiers."
+      }
     ],
-    "notes": "Uses current Glendon Avenue branch, not former W hotel address. No regular steak or cocktail prices imported."
+    "notes": "Uses current Glendon Avenue branch, not former W hotel address. No regular steak or cocktail prices imported.",
+    "specials": [
+      {
+        "text": "Bar/lounge/patio only. Menu lists weekdays 2:30–6:30pm, weekends 2:30–5:30pm, late Sunday–Thursday 10pm–close. Burger upgrades bacon/egg/onions-jalapenos +$3 each, works +$7. Separate Sunday–Thursday Steak Night is a $49 three-course offer; optional drinks +$20, premium additions extra.",
+        "sourceId": "menu",
+        "status": "primary"
+      }
+    ]
   },
   {
     "id": "ospi-venice",
@@ -152,17 +1452,384 @@
     "neighborhood": "Venice",
     "address": "2025 Pacific Avenue, Venice, CA 90291",
     "coordinates": null,
-    "hours": [{"days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], "start": "15:00", "end": "18:00", "sourceId": "official", "status": "primary", "restriction": "none"}],
+    "hours": [
+      {
+        "days": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+          "Sunday"
+        ],
+        "start": "15:00",
+        "end": "18:00",
+        "sourceId": "official",
+        "status": "primary",
+        "restriction": "none"
+      }
+    ],
     "menu": [
-      {"id": "food-1", "name": "Crispy provolone", "kind": "food", "priceCents": 1400, "tags": ["cheese"], "sourceId": "menu", "status": "primary"},
-      {"id": "drink-1", "name": "Espresso martini", "kind": "drink", "priceCents": 1400, "tags": ["espresso-martini"], "sourceId": "menu", "status": "primary"}
+      {
+        "name": "Olives, Almonds, and Fries",
+        "kind": "food",
+        "priceCents": 1400,
+        "tags": [
+          "olives, almonds, and fries"
+        ],
+        "id": "audit-food-olivesalmondsandfries",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Whipped Ricotta Fettunta",
+        "kind": "food",
+        "priceCents": 1400,
+        "tags": [
+          "whipped ricotta fettunta"
+        ],
+        "id": "audit-food-whippedricottafettunta",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Meatball Parm Fettunta",
+        "kind": "food",
+        "priceCents": 1400,
+        "tags": [
+          "meatball parm fettunta"
+        ],
+        "id": "audit-food-meatballparmfettunta",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Crispy Provolone",
+        "kind": "food",
+        "priceCents": 1400,
+        "tags": [
+          "crispy provolone",
+          "cheese"
+        ],
+        "id": "food-1",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Cauliflower",
+        "kind": "food",
+        "priceCents": 1400,
+        "tags": [
+          "cauliflower"
+        ],
+        "id": "audit-food-cauliflower",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Kale Salad",
+        "kind": "food",
+        "priceCents": 1400,
+        "tags": [
+          "kale salad"
+        ],
+        "id": "audit-food-kalesalad",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Caesar Salad",
+        "kind": "food",
+        "priceCents": 1400,
+        "tags": [
+          "caesar salad"
+        ],
+        "id": "audit-food-caesarsalad",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Spicy Rigatoni",
+        "kind": "food",
+        "priceCents": 1500,
+        "tags": [
+          "spicy rigatoni"
+        ],
+        "id": "audit-food-spicyrigatoni",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Tonnarelli Cacio e Pepe",
+        "kind": "food",
+        "priceCents": 1500,
+        "tags": [
+          "tonnarelli cacio e pepe"
+        ],
+        "id": "audit-food-tonnarellicacioepepe",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Margherita Pizza",
+        "kind": "food",
+        "priceCents": 2200,
+        "tags": [
+          "margherita pizza"
+        ],
+        "id": "audit-food-margheritapizza",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Copione Pizza",
+        "kind": "food",
+        "priceCents": 2400,
+        "tags": [
+          "copione pizza"
+        ],
+        "id": "audit-food-copionepizza",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Vodka Pizza",
+        "kind": "food",
+        "priceCents": 2400,
+        "tags": [
+          "vodka pizza"
+        ],
+        "id": "audit-food-vodkapizza",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Rebeccas Basil Margherita",
+        "kind": "drink",
+        "priceCents": 1400,
+        "tags": [
+          "rebeccas basil margherita"
+        ],
+        "id": "audit-drink-rebeccasbasilmargherita",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Espresso Martini",
+        "kind": "drink",
+        "priceCents": 1400,
+        "tags": [
+          "espresso martini"
+        ],
+        "id": "drink-1",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Negroni della Casa",
+        "kind": "drink",
+        "priceCents": 1400,
+        "tags": [
+          "negroni della casa"
+        ],
+        "id": "audit-drink-negronidellacasa",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Aperol Spritz",
+        "kind": "drink",
+        "priceCents": 1300,
+        "tags": [
+          "aperol spritz"
+        ],
+        "id": "audit-drink-aperolspritz",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Campari Spritz",
+        "kind": "drink",
+        "priceCents": 1300,
+        "tags": [
+          "campari spritz"
+        ],
+        "id": "audit-drink-camparispritz",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Sarti Spritz",
+        "kind": "drink",
+        "priceCents": 1300,
+        "tags": [
+          "sarti spritz"
+        ],
+        "id": "audit-drink-sartispritz",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Lusty Martini",
+        "kind": "drink",
+        "priceCents": 1400,
+        "tags": [
+          "lusty martini"
+        ],
+        "id": "audit-drink-lustymartini",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Mini Cocktail Flight",
+        "kind": "drink",
+        "priceCents": 1800,
+        "tags": [
+          "mini cocktail flight"
+        ],
+        "id": "audit-drink-minicocktailflight",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Red Wine",
+        "kind": "drink",
+        "priceCents": 1300,
+        "tags": [
+          "red wine"
+        ],
+        "id": "audit-drink-redwine",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "White Wine",
+        "kind": "drink",
+        "priceCents": 1300,
+        "tags": [
+          "white wine"
+        ],
+        "id": "audit-drink-whitewine",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Rose Wine",
+        "kind": "drink",
+        "priceCents": 1300,
+        "tags": [
+          "rose wine"
+        ],
+        "id": "audit-drink-rosewine",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Orange Wine",
+        "kind": "drink",
+        "priceCents": 1300,
+        "tags": [
+          "orange wine"
+        ],
+        "id": "audit-drink-orangewine",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Prosecco",
+        "kind": "drink",
+        "priceCents": 1300,
+        "tags": [
+          "prosecco"
+        ],
+        "id": "audit-drink-prosecco",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Skyduster Lager Pint",
+        "kind": "drink",
+        "priceCents": 1000,
+        "tags": [
+          "skyduster lager pint",
+          "beer"
+        ],
+        "id": "audit-drink-skydusterlagerpint",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Pliny the Elder IPA Pint",
+        "kind": "drink",
+        "priceCents": 1000,
+        "tags": [
+          "pliny the elder ipa pint",
+          "beer"
+        ],
+        "id": "audit-drink-plinytheelderipapint",
+        "sourceId": "menu",
+        "status": "primary"
+      }
     ],
-    "foodTags": ["cheese"], "drinkTags": ["espresso-martini"], "atmosphereTags": [],
+    "foodTags": [
+      "olives, almonds, and fries",
+      "whipped ricotta fettunta",
+      "meatball parm fettunta",
+      "crispy provolone",
+      "cauliflower",
+      "kale salad",
+      "caesar salad",
+      "spicy rigatoni",
+      "tonnarelli cacio e pepe",
+      "margherita pizza",
+      "copione pizza",
+      "vodka pizza"
+    ],
+    "drinkTags": [
+      "rebeccas basil margherita",
+      "espresso martini",
+      "negroni della casa",
+      "aperol spritz",
+      "campari spritz",
+      "sarti spritz",
+      "lusty martini",
+      "mini cocktail flight",
+      "red wine",
+      "white wine",
+      "rose wine",
+      "orange wine",
+      "prosecco",
+      "skyduster lager pint",
+      "pliny the elder ipa pint"
+    ],
+    "atmosphereTags": [],
     "sources": [
-      {"id": "official", "url": "https://ospi.com/venice", "type": "primary", "accessedOn": "2026-10-19", "reviewedOn": "2026-10-19", "note": "Venice address, daily Aperitivo schedule and direct link to current branch PDF. Parking garage address is different and not used."},
-      {"id": "menu", "url": "https://firebasestorage.googleapis.com/v0/b/mmh-co.firebasestorage.app/o/ospi%2Fvenice%2Fmenus%2Fpdfs%2Fdaily%2F09-16-26-ospi-venice-aperitivo-happy-hour-menu-1791412014971.pdf?alt=media&token=c91e7cbe-73af-4215-94ec-6b8a8990b9dc", "type": "primary", "accessedOn": "2026-10-19", "reviewedOn": "2026-10-19", "note": "Officially linked Venice PDF lists item-specific Aperitivo amounts and daily 15:00-18:00."}
+      {
+        "id": "official",
+        "url": "https://ospi.com/venice",
+        "type": "primary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "note": "Venice address, daily Aperitivo schedule and direct link to current branch PDF. Parking garage address is different and not used."
+      },
+      {
+        "id": "menu",
+        "url": "https://firebasestorage.googleapis.com/v0/b/mmh-co.firebasestorage.app/o/ospi%2Fvenice%2Fmenus%2Fpdfs%2Fdaily%2F09-16-26-ospi-venice-aperitivo-happy-hour-menu-1791412014971.pdf?alt=media&token=c91e7cbe-73af-4215-94ec-6b8a8990b9dc",
+        "type": "primary",
+        "accessedOn": "2026-10-26",
+        "reviewedOn": "2026-10-26",
+        "note": "Officially linked Venice PDF lists item-specific Aperitivo amounts and daily 15:00-18:00."
+      }
     ],
-    "notes": "Cashless. Menu mentions removable surcharge, not included in item prices. Old ospi.com PDF URL returned generic site content; current Firebase PDF used instead. No Brentwood-only seating restriction transferred to Venice."
+    "notes": "Cashless. Menu mentions removable surcharge, not included in item prices. Old ospi.com PDF URL returned generic site content; current Firebase PDF used instead. No Brentwood-only seating restriction transferred to Venice.",
+    "specials": [
+      {
+        "text": "Daily 3–6pm. Mini flight includes old fashioned, espresso martini and vodka or gin martini. Cashless; published 4% surcharge excluded from subtotals.",
+        "sourceId": "menu",
+        "status": "primary"
+      }
+    ]
   },
   {
     "id": "ospi-brentwood",
@@ -170,18 +1837,396 @@
     "neighborhood": "Brentwood",
     "address": "11677 San Vicente Boulevard, Suite 200, Los Angeles, CA 90049",
     "coordinates": null,
-    "hours": [{"days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], "start": "15:00", "end": "18:00", "sourceId": "menu", "status": "primary", "restriction": "conditional"}],
+    "hours": [
+      {
+        "days": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+          "Sunday"
+        ],
+        "start": "15:00",
+        "end": "18:00",
+        "sourceId": "menu",
+        "status": "primary",
+        "restriction": "conditional"
+      }
+    ],
     "menu": [
-      {"id": "food-1", "name": "Margherita pizza", "kind": "food", "priceCents": 2200, "tags": ["pizza"], "sourceId": "menu", "status": "primary"},
-      {"id": "drink-1", "name": "Skyduster lager pint", "kind": "drink", "priceCents": 1000, "tags": ["beer"], "sourceId": "menu", "status": "primary"},
-      {"id": "food-2", "name": "Crispy provolone (pick-two offer)", "kind": "food", "priceCents": null, "tags": ["cheese"], "sourceId": "menu", "status": "primary"}
+      {
+        "name": "Marinated Olives, Rosemary Almonds, French Fries",
+        "kind": "food",
+        "priceCents": null,
+        "tags": [
+          "marinated olives, rosemary almonds, french fries"
+        ],
+        "id": "audit-food-marinatedolivesrosemaryalmondsfrenchfries",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Whipped Ricotta Fettunta",
+        "kind": "food",
+        "priceCents": null,
+        "tags": [
+          "whipped ricotta fettunta"
+        ],
+        "id": "audit-food-whippedricottafettunta",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Stracciatella Fettunta",
+        "kind": "food",
+        "priceCents": null,
+        "tags": [
+          "stracciatella fettunta"
+        ],
+        "id": "audit-food-stracciatellafettunta",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Meatball Parm Fettunta",
+        "kind": "food",
+        "priceCents": null,
+        "tags": [
+          "meatball parm fettunta"
+        ],
+        "id": "audit-food-meatballparmfettunta",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Crispy Provolone",
+        "kind": "food",
+        "priceCents": null,
+        "tags": [
+          "crispy provolone",
+          "cheese"
+        ],
+        "id": "food-2",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Chili-Tahini Cauliflower",
+        "kind": "food",
+        "priceCents": null,
+        "tags": [
+          "chili-tahini cauliflower"
+        ],
+        "id": "audit-food-chilitahinicauliflower",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Kale Salad",
+        "kind": "food",
+        "priceCents": null,
+        "tags": [
+          "kale salad"
+        ],
+        "id": "audit-food-kalesalad",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Caesar Salad",
+        "kind": "food",
+        "priceCents": null,
+        "tags": [
+          "caesar salad"
+        ],
+        "id": "audit-food-caesarsalad",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Spicy Rigatoni",
+        "kind": "food",
+        "priceCents": null,
+        "tags": [
+          "spicy rigatoni"
+        ],
+        "id": "audit-food-spicyrigatoni",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Tonnarelli Cacio e Pepe",
+        "kind": "food",
+        "priceCents": null,
+        "tags": [
+          "tonnarelli cacio e pepe"
+        ],
+        "id": "audit-food-tonnarellicacioepepe",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Margherita Pizza",
+        "kind": "food",
+        "priceCents": 2200,
+        "tags": [
+          "margherita pizza"
+        ],
+        "id": "food-1",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Copione Pizza",
+        "kind": "food",
+        "priceCents": 2300,
+        "tags": [
+          "copione pizza"
+        ],
+        "id": "audit-food-copionepizza",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Vodka Pizza",
+        "kind": "food",
+        "priceCents": 2300,
+        "tags": [
+          "vodka pizza"
+        ],
+        "id": "audit-food-vodkapizza",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Rebeccas Basil Margherita",
+        "kind": "drink",
+        "priceCents": null,
+        "tags": [
+          "rebeccas basil margherita"
+        ],
+        "id": "audit-drink-rebeccasbasilmargherita",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Espresso Martini",
+        "kind": "drink",
+        "priceCents": null,
+        "tags": [
+          "espresso martini"
+        ],
+        "id": "audit-drink-espressomartini",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Aperol Spritz",
+        "kind": "drink",
+        "priceCents": null,
+        "tags": [
+          "aperol spritz"
+        ],
+        "id": "audit-drink-aperolspritz",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Campari Spritz",
+        "kind": "drink",
+        "priceCents": null,
+        "tags": [
+          "campari spritz"
+        ],
+        "id": "audit-drink-camparispritz",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Sarti Spritz",
+        "kind": "drink",
+        "priceCents": null,
+        "tags": [
+          "sarti spritz"
+        ],
+        "id": "audit-drink-sartispritz",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Hot Girl Summer",
+        "kind": "drink",
+        "priceCents": null,
+        "tags": [
+          "hot girl summer"
+        ],
+        "id": "audit-drink-hotgirlsummer",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Lusty Martini",
+        "kind": "drink",
+        "priceCents": null,
+        "tags": [
+          "lusty martini"
+        ],
+        "id": "audit-drink-lustymartini",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Pinot Noir",
+        "kind": "drink",
+        "priceCents": null,
+        "tags": [
+          "pinot noir"
+        ],
+        "id": "audit-drink-pinotnoir",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Pinot Grigio",
+        "kind": "drink",
+        "priceCents": null,
+        "tags": [
+          "pinot grigio"
+        ],
+        "id": "audit-drink-pinotgrigio",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Prosecco",
+        "kind": "drink",
+        "priceCents": null,
+        "tags": [
+          "prosecco"
+        ],
+        "id": "audit-drink-prosecco",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Rose Wine",
+        "kind": "drink",
+        "priceCents": null,
+        "tags": [
+          "rose wine"
+        ],
+        "id": "audit-drink-rosewine",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Orange Wine",
+        "kind": "drink",
+        "priceCents": null,
+        "tags": [
+          "orange wine"
+        ],
+        "id": "audit-drink-orangewine",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Skyduster Lager Pint",
+        "kind": "drink",
+        "priceCents": 1000,
+        "tags": [
+          "skyduster lager pint",
+          "beer"
+        ],
+        "id": "drink-1",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Mayberry IPA Pint",
+        "kind": "drink",
+        "priceCents": 1000,
+        "tags": [
+          "mayberry ipa pint",
+          "beer"
+        ],
+        "id": "audit-drink-mayberryipapint",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Mini Cocktail Flight",
+        "kind": "drink",
+        "priceCents": 1800,
+        "tags": [
+          "mini cocktail flight"
+        ],
+        "id": "audit-drink-minicocktailflight",
+        "sourceId": "menu",
+        "status": "primary"
+      }
     ],
-    "foodTags": ["pizza", "cheese"], "drinkTags": ["beer"], "atmosphereTags": [],
+    "foodTags": [
+      "marinated olives, rosemary almonds, french fries",
+      "whipped ricotta fettunta",
+      "stracciatella fettunta",
+      "meatball parm fettunta",
+      "crispy provolone",
+      "chili-tahini cauliflower",
+      "kale salad",
+      "caesar salad",
+      "spicy rigatoni",
+      "tonnarelli cacio e pepe",
+      "margherita pizza",
+      "copione pizza",
+      "vodka pizza"
+    ],
+    "drinkTags": [
+      "rebeccas basil margherita",
+      "espresso martini",
+      "aperol spritz",
+      "campari spritz",
+      "sarti spritz",
+      "hot girl summer",
+      "lusty martini",
+      "pinot noir",
+      "pinot grigio",
+      "prosecco",
+      "rose wine",
+      "orange wine",
+      "skyduster lager pint",
+      "mayberry ipa pint",
+      "mini cocktail flight"
+    ],
+    "atmosphereTags": [],
     "sources": [
-      {"id": "official", "url": "https://ospi.com/brentwood", "type": "primary", "accessedOn": "2026-10-19", "reviewedOn": "2026-10-19", "note": "Branch address including suite; links this branch-specific Aperitivo PDF."},
-      {"id": "menu", "url": "https://firebasestorage.googleapis.com/v0/b/mmh-co.firebasestorage.app/o/ospi%2Fbrentwood%2Fmenus%2Fpdfs%2Fdaily%2F09-16-26-ospi-brentwood-aperitivo-happy-hour-menu-1791411913224.pdf?alt=media&token=9d7070d4-fede-4065-9d10-a0773f68cc1e", "type": "primary", "accessedOn": "2026-10-19", "reviewedOn": "2026-10-19", "note": "Daily 15:00-18:00 at bar/patio only. Pick two for $25 excludes beer, mini cocktail flight and pizzas; these have separately listed amounts."}
+      {
+        "id": "official",
+        "url": "https://ospi.com/brentwood",
+        "type": "primary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "note": "Branch address including suite; links this branch-specific Aperitivo PDF."
+      },
+      {
+        "id": "menu",
+        "url": "https://firebasestorage.googleapis.com/v0/b/mmh-co.firebasestorage.app/o/ospi%2Fbrentwood%2Fmenus%2Fpdfs%2Fdaily%2F09-16-26-ospi-brentwood-aperitivo-happy-hour-menu-1791411913224.pdf?alt=media&token=9d7070d4-fede-4065-9d10-a0773f68cc1e",
+        "type": "primary",
+        "accessedOn": "2026-10-26",
+        "reviewedOn": "2026-10-26",
+        "note": "Daily 15:00-18:00 at bar/patio only. Pick two for $25 excludes beer, mini cocktail flight and pizzas; these have separately listed amounts."
+      }
     ],
-    "notes": "Bar and patio only; cashless. Pizza $22 and beer $10 are individually published on the happy-hour menu but excluded from pick-two-for-$25. Provolone has no individual published amount; never divide bundle price into invented item prices. Venice prices not reused."
+    "notes": "Bar and patio only; cashless. Pizza $22 and beer $10 are individually published on the happy-hour menu but excluded from pick-two-for-$25. Provolone has no individual published amount; never divide bundle price into invented item prices. Venice prices not reused.",
+    "specials": [
+      {
+        "text": "Daily 3–6pm, bar and patio only. Pick 2 for $25 excludes flight, beer and pizzas. Individual prices for bundle choices are not published; do not split the bundle into invented component prices.",
+        "sourceId": "menu",
+        "status": "primary"
+      }
+    ]
   },
   {
     "id": "roccos-tavern-westwood",
@@ -189,9 +2234,38 @@
     "neighborhood": "Westwood",
     "address": "1000 Gayley Avenue, Los Angeles, CA 90024",
     "coordinates": null,
-    "hours": [{"days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], "start": "15:00", "end": "19:00", "sourceId": "official", "status": "primary", "restriction": "none"}],
-    "menu": [], "foodTags": [], "drinkTags": [], "atmosphereTags": [],
-    "sources": [{"id": "official", "url": "https://www.roccostavern.com/locations/westwood", "type": "primary", "accessedOn": "2026-10-19", "reviewedOn": "2026-10-19", "note": "Westwood/UCLA branch page supplies full address and explicitly daily happy hour. No happy-hour-specific priced items established."}],
+    "hours": [
+      {
+        "days": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+          "Sunday"
+        ],
+        "start": "15:00",
+        "end": "19:00",
+        "sourceId": "official",
+        "status": "primary",
+        "restriction": "none"
+      }
+    ],
+    "menu": [],
+    "foodTags": [],
+    "drinkTags": [],
+    "atmosphereTags": [],
+    "sources": [
+      {
+        "id": "official",
+        "url": "https://www.roccostavern.com/locations/westwood",
+        "type": "primary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "note": "Westwood/UCLA branch page supplies full address and explicitly daily happy hour. No happy-hour-specific priced items established."
+      }
+    ],
     "notes": "General wings/pizza descriptions and unspecified double happy hour were not turned into food deals or a second schedule."
   },
   {
@@ -201,16 +2275,165 @@
     "address": "205 Ocean Front Walk, Venice, CA 90291",
     "coordinates": null,
     "hours": [
-      {"days": ["Monday", "Thursday", "Friday"], "start": "15:00", "end": "19:00", "sourceId": "official", "status": "primary", "restriction": "none"},
-      {"days": ["Saturday", "Sunday"], "start": "19:00", "end": "21:00", "sourceId": "official", "status": "conflicting", "restriction": "none"}
+      {
+        "days": [
+          "Monday",
+          "Thursday",
+          "Friday"
+        ],
+        "start": "15:00",
+        "end": "19:00",
+        "sourceId": "official",
+        "status": "primary",
+        "restriction": "none"
+      },
+      {
+        "days": [
+          "Saturday",
+          "Sunday"
+        ],
+        "start": "19:00",
+        "end": "21:00",
+        "sourceId": "official",
+        "status": "conflicting",
+        "restriction": "none"
+      }
     ],
     "menu": [
-      {"id": "food-1", "name": "Cheeseburger with fries", "kind": "food", "priceCents": 1200, "tags": ["burger", "fries"], "sourceId": "official", "status": "primary"},
-      {"id": "drink-1", "name": "PBR (buy one, get one free)", "kind": "drink", "priceCents": 800, "tags": ["beer"], "sourceId": "official", "status": "primary"}
+      {
+        "name": "Spicy Chicken Sandwich",
+        "kind": "food",
+        "priceCents": 1200,
+        "tags": [
+          "spicy chicken sandwich"
+        ],
+        "id": "audit-food-spicychickensandwich",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "Baja Fish Tacos (2)",
+        "kind": "food",
+        "priceCents": 1200,
+        "tags": [
+          "baja fish tacos (2)"
+        ],
+        "id": "audit-food-bajafishtacos2",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "Cheeseburger",
+        "kind": "food",
+        "priceCents": 1200,
+        "tags": [
+          "cheeseburger",
+          "burger"
+        ],
+        "id": "food-1",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "Ceviche",
+        "kind": "food",
+        "priceCents": 1200,
+        "tags": [
+          "ceviche"
+        ],
+        "id": "audit-food-ceviche",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "House Wine or Bubbles (BOGO)",
+        "kind": "drink",
+        "priceCents": null,
+        "tags": [
+          "house wine or bubbles (bogo)"
+        ],
+        "id": "audit-drink-housewineorbubblesbogo",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "Margarita (BOGO)",
+        "kind": "drink",
+        "priceCents": 1800,
+        "tags": [
+          "margarita (bogo)"
+        ],
+        "id": "audit-drink-margaritabogo",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "Whiskey Wave (BOGO)",
+        "kind": "drink",
+        "priceCents": 1700,
+        "tags": [
+          "whiskey wave (bogo)"
+        ],
+        "id": "audit-drink-whiskeywavebogo",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "PBR (BOGO)",
+        "kind": "drink",
+        "priceCents": 800,
+        "tags": [
+          "pbr (bogo)",
+          "beer"
+        ],
+        "id": "audit-drink-pbrbogo",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "Jameson Shot (BOGO)",
+        "kind": "drink",
+        "priceCents": 1000,
+        "tags": [
+          "jameson shot (bogo)"
+        ],
+        "id": "audit-drink-jamesonshotbogo",
+        "sourceId": "official",
+        "status": "primary"
+      }
     ],
-    "foodTags": ["burger", "fries"], "drinkTags": ["beer"], "atmosphereTags": [],
-    "sources": [{"id": "official", "url": "https://www.thewaterfrontvenice.com/menus", "type": "primary", "accessedOn": "2026-10-19", "reviewedOn": "2026-10-19", "note": "Happy-hour section lists $12 food and BOGO drinks with posted purchase prices. Menu body says weekend 19:00-21:00; footer says 19:00-20:00. Footer says Tuesday/Wednesday closed."}],
-    "notes": "Weekday schedule restricted to open Monday/Thursday/Friday; Tuesday/Wednesday not included despite generic weekdays wording. Weekend end unresolved. $8 is posted PBR purchase price with second free, not an invented $4 effective per-drink price."
+    "foodTags": [
+      "spicy chicken sandwich",
+      "baja fish tacos (2)",
+      "cheeseburger",
+      "ceviche"
+    ],
+    "drinkTags": [
+      "house wine or bubbles (bogo)",
+      "margarita (bogo)",
+      "whiskey wave (bogo)",
+      "pbr (bogo)",
+      "jameson shot (bogo)"
+    ],
+    "atmosphereTags": [],
+    "sources": [
+      {
+        "id": "official",
+        "url": "https://www.thewaterfrontvenice.com/menus",
+        "type": "primary",
+        "accessedOn": "2026-10-26",
+        "reviewedOn": "2026-10-26",
+        "note": "Happy-hour section lists $12 food and BOGO drinks with posted purchase prices. Menu body says weekend 19:00-21:00; footer says 19:00-20:00. Footer says Tuesday/Wednesday closed."
+      }
+    ],
+    "notes": "Weekday schedule restricted to open Monday/Thursday/Friday; Tuesday/Wednesday not included despite generic weekdays wording. Weekend end unresolved. $8 is posted PBR purchase price with second free, not an invented $4 effective per-drink price.",
+    "specials": [
+      {
+        "text": "Weekdays 3–7pm, weekends 7–9pm. Drinks are buy-one-get-one offers; listed price is the required paid order, not a per-drink split. House wine/bubbles range $13–15, exact selection price unknown.",
+        "sourceId": "official",
+        "status": "primary"
+      }
+    ]
   },
   {
     "id": "bacari-culver-city",
@@ -219,11 +2442,44 @@
     "address": "3833 Main Street, Culver City, CA 90232",
     "coordinates": null,
     "hours": [
-      {"days": ["Monday", "Tuesday", "Wednesday", "Thursday"], "start": "16:30", "end": "18:00", "sourceId": "official", "status": "primary", "restriction": "none"},
-      {"days": ["Friday"], "start": "15:00", "end": "18:00", "sourceId": "official", "status": "primary", "restriction": "none"}
+      {
+        "days": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday"
+        ],
+        "start": "16:30",
+        "end": "18:00",
+        "sourceId": "official",
+        "status": "primary",
+        "restriction": "none"
+      },
+      {
+        "days": [
+          "Friday"
+        ],
+        "start": "15:00",
+        "end": "18:00",
+        "sourceId": "official",
+        "status": "primary",
+        "restriction": "none"
+      }
     ],
-    "menu": [], "foodTags": [], "drinkTags": [], "atmosphereTags": [],
-    "sources": [{"id": "official", "url": "https://www.eatwithbacari.com/culver-city", "type": "primary", "accessedOn": "2026-10-19", "reviewedOn": "2026-10-19", "note": "Culver City address and weekday happy-hour schedule. Regular dinner items present but not established as happy-hour items."}],
+    "menu": [],
+    "foodTags": [],
+    "drinkTags": [],
+    "atmosphereTags": [],
+    "sources": [
+      {
+        "id": "official",
+        "url": "https://www.eatwithbacari.com/culver-city",
+        "type": "primary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "note": "Culver City address and weekday happy-hour schedule. Regular dinner items present but not established as happy-hour items."
+      }
+    ],
     "notes": "No generic Bacari chain offer or Playa del Rey pricing transferred to this branch."
   },
   {
@@ -232,13 +2488,52 @@
     "neighborhood": "Santa Monica",
     "address": "101 Wilshire Boulevard, Santa Monica, CA 90401",
     "coordinates": null,
-    "hours": [{"days": ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"], "start": "17:00", "end": "18:00", "sourceId": "hotel", "status": "primary", "restriction": "conditional"}],
-    "menu": [], "foodTags": [], "drinkTags": [], "atmosphereTags": [],
-    "sources": [
-      {"id": "hotel", "url": "https://www.fairmont-miramar.com/dine/fig-restaurant/", "type": "primary", "accessedOn": "2026-10-19", "reviewedOn": "2026-10-19", "note": "Full address and FIG at 5 Tuesday-Saturday. Fifty percent off the happy-hour menu, not an independently inspected set of final item prices."},
-      {"id": "faq", "url": "https://www.figsantamonica.com/faq/", "type": "primary", "accessedOn": "2026-10-19", "reviewedOn": "2026-10-19", "note": "Confirms 17:00-18:00 and 90-minute dining limit; parties of seven or more should contact restaurant."}
+    "hours": [
+      {
+        "days": [
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday"
+        ],
+        "start": "17:00",
+        "end": "18:00",
+        "sourceId": "hotel",
+        "status": "primary",
+        "restriction": "conditional"
+      }
     ],
-    "notes": "90-minute dining experience. No arithmetic-derived prices. Official wording limits discount to Happy Hour menu; tourism guide's broader entire-menu description not adopted."
+    "menu": [],
+    "foodTags": [],
+    "drinkTags": [],
+    "atmosphereTags": [],
+    "sources": [
+      {
+        "id": "hotel",
+        "url": "https://www.fairmont-miramar.com/dine/fig-restaurant/",
+        "type": "primary",
+        "accessedOn": "2026-10-26",
+        "reviewedOn": "2026-10-26",
+        "note": "Full address and FIG at 5 Tuesday-Saturday. Fifty percent off the happy-hour menu, not an independently inspected set of final item prices."
+      },
+      {
+        "id": "faq",
+        "url": "https://www.figsantamonica.com/faq/",
+        "type": "primary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "note": "Confirms 17:00-18:00 and 90-minute dining limit; parties of seven or more should contact restaurant."
+      }
+    ],
+    "notes": "90-minute dining experience. No arithmetic-derived prices. Official wording limits discount to Happy Hour menu; tourism guide's broader entire-menu description not adopted.",
+    "specials": [
+      {
+        "text": "FIG at 5 Tuesday–Saturday 5–6pm: half off the Happy Hour menu. Official FAQ limits dining to 90 minutes.",
+        "status": "primary",
+        "sourceId": "hotel"
+      }
+    ]
   },
   {
     "id": "hinano-cafe-venice",
@@ -246,11 +2541,43 @@
     "neighborhood": "Venice",
     "address": "15 Washington Boulevard, Venice, CA 90292",
     "coordinates": null,
-    "hours": [{"days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "start": "16:00", "end": "20:00", "sourceId": "official", "status": "primary", "restriction": "none"}],
-    "menu": [], "foodTags": [], "drinkTags": [], "atmosphereTags": [],
+    "hours": [
+      {
+        "days": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "start": "16:00",
+        "end": "20:00",
+        "sourceId": "official",
+        "status": "primary",
+        "restriction": "none"
+      }
+    ],
+    "menu": [],
+    "foodTags": [],
+    "drinkTags": [],
+    "atmosphereTags": [],
     "sources": [
-      {"id": "official", "url": "https://www.hinanocafevenice.com/", "type": "primary", "accessedOn": "2026-10-19", "reviewedOn": "2026-10-19", "note": "Address explicitly uses Venice CA 90292; weekday happy-hour times repeated. General beer/wine and burger descriptions do not establish happy-hour-specific items."},
-      {"id": "menu", "url": "https://www.hinanocafevenice.com/menu", "type": "primary", "accessedOn": "2026-10-19", "reviewedOn": "2026-10-19", "note": "Inspected menu repeats happy-hour schedule but does not identify priced happy-hour food/drink items."}
+      {
+        "id": "official",
+        "url": "https://www.hinanocafevenice.com/",
+        "type": "primary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "note": "Address explicitly uses Venice CA 90292; weekday happy-hour times repeated. General beer/wine and burger descriptions do not establish happy-hour-specific items."
+      },
+      {
+        "id": "menu",
+        "url": "https://www.hinanocafevenice.com/menu",
+        "type": "primary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "note": "Inspected menu repeats happy-hour schedule but does not identify priced happy-hour food/drink items."
+      }
     ],
     "notes": "Postal ZIP retained exactly as official address rather than assumed Venice 90291. No regular burger silently treated as a happy-hour special."
   },
@@ -260,12 +2587,53 @@
     "neighborhood": "Brentwood",
     "address": "145 South Barrington Avenue, Los Angeles, CA 90049",
     "coordinates": null,
-    "hours": [{"days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], "start": "15:30", "end": "17:30", "sourceId": "official", "status": "primary", "restriction": "none"}],
-    "menu": [], "foodTags": [], "drinkTags": [], "atmosphereTags": [],
+    "hours": [
+      {
+        "days": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+          "Sunday"
+        ],
+        "start": "15:30",
+        "end": "17:30",
+        "sourceId": "official",
+        "status": "primary",
+        "restriction": "none"
+      }
+    ],
+    "menu": [],
+    "foodTags": [],
+    "drinkTags": [],
+    "atmosphereTags": [],
     "sources": [
-      {"id": "official", "url": "https://www.allroadspinseria.com/", "type": "primary", "accessedOn": "2026-10-19", "reviewedOn": "2026-10-19", "note": "Explicit daily happy-hour schedule and Brentwood identity."},
-      {"id": "contact", "url": "https://www.allroadspinseria.com/contact", "type": "primary", "accessedOn": "2026-10-19", "reviewedOn": "2026-10-19", "note": "Full Barrington Avenue address and ZIP."},
-      {"id": "menu", "url": "https://www.allroadspinseria.com/menu", "type": "primary", "accessedOn": "2026-10-19", "reviewedOn": "2026-10-19", "note": "Menu page inspected; image-based dinner/lunch menus did not establish specific happy-hour item amounts. No image transcription claimed."}
+      {
+        "id": "official",
+        "url": "https://www.allroadspinseria.com/",
+        "type": "primary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "note": "Explicit daily happy-hour schedule and Brentwood identity."
+      },
+      {
+        "id": "contact",
+        "url": "https://www.allroadspinseria.com/contact",
+        "type": "primary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "note": "Full Barrington Avenue address and ZIP."
+      },
+      {
+        "id": "menu",
+        "url": "https://www.allroadspinseria.com/menu",
+        "type": "primary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "note": "Menu page inspected; image-based dinner/lunch menus did not establish specific happy-hour item amounts. No image transcription claimed."
+      }
     ],
     "notes": "Happy-hour existence and schedule supported; item-level coverage incomplete."
   },
@@ -275,17 +2643,481 @@
     "neighborhood": "Santa Monica",
     "address": "2424 Pico Boulevard, Santa Monica, CA 90405",
     "coordinates": null,
-    "hours": [{"days": ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"], "start": "15:00", "end": "17:00", "sourceId": "menu", "status": "primary", "restriction": "conditional"}],
+    "hours": [
+      {
+        "days": [
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday"
+        ],
+        "start": "15:00",
+        "end": "17:00",
+        "sourceId": "menu",
+        "status": "primary",
+        "restriction": "conditional"
+      }
+    ],
     "menu": [
-      {"id": "food-1", "name": "Potato chips and dip", "kind": "food", "priceCents": 800, "tags": ["chips"], "sourceId": "menu", "status": "primary"},
-      {"id": "drink-1", "name": "Aperol spritz", "kind": "drink", "priceCents": 1200, "tags": ["spritz"], "sourceId": "menu", "status": "primary"}
+      {
+        "name": "Potato Chips and Dip",
+        "kind": "food",
+        "priceCents": 800,
+        "tags": [
+          "potato chips and dip"
+        ],
+        "id": "food-1",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Rosemary Citrus Olives",
+        "kind": "food",
+        "priceCents": 800,
+        "tags": [
+          "rosemary citrus olives"
+        ],
+        "id": "audit-food-rosemarycitrusolives",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Fromage Board",
+        "kind": "food",
+        "priceCents": 1400,
+        "tags": [
+          "fromage board"
+        ],
+        "id": "audit-food-fromageboard",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Wild Pacific Shrimp Cocktail",
+        "kind": "food",
+        "priceCents": 1200,
+        "tags": [
+          "wild pacific shrimp cocktail"
+        ],
+        "id": "audit-food-wildpacificshrimpcocktail",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Ahi Tuna Crudo",
+        "kind": "food",
+        "priceCents": 1200,
+        "tags": [
+          "ahi tuna crudo"
+        ],
+        "id": "audit-food-ahitunacrudo",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Wood Grilled Artichoke",
+        "kind": "food",
+        "priceCents": 800,
+        "tags": [
+          "wood grilled artichoke"
+        ],
+        "id": "audit-food-woodgrilledartichoke",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Pan con Tomate",
+        "kind": "food",
+        "priceCents": 500,
+        "tags": [
+          "pan con tomate"
+        ],
+        "id": "audit-food-pancontomate",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Tender Green Jardiniere",
+        "kind": "food",
+        "priceCents": 1100,
+        "tags": [
+          "tender green jardiniere"
+        ],
+        "id": "audit-food-tendergreenjardiniere",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Little Gem Caesar",
+        "kind": "food",
+        "priceCents": 1100,
+        "tags": [
+          "little gem caesar"
+        ],
+        "id": "audit-food-littlegemcaesar",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Crispy Chicken Sandwich",
+        "kind": "food",
+        "priceCents": 1200,
+        "tags": [
+          "crispy chicken sandwich"
+        ],
+        "id": "audit-food-crispychickensandwich",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "LAD Burger",
+        "kind": "food",
+        "priceCents": 1200,
+        "tags": [
+          "lad burger"
+        ],
+        "id": "audit-food-ladburger",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Wood Grilled Salmon Sandwich",
+        "kind": "food",
+        "priceCents": 1800,
+        "tags": [
+          "wood grilled salmon sandwich"
+        ],
+        "id": "audit-food-woodgrilledsalmonsandwich",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Mushroom Fettuccine",
+        "kind": "food",
+        "priceCents": 1400,
+        "tags": [
+          "mushroom fettuccine"
+        ],
+        "id": "audit-food-mushroomfettuccine",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Linguini and Clams",
+        "kind": "food",
+        "priceCents": 1600,
+        "tags": [
+          "linguini and clams"
+        ],
+        "id": "audit-food-linguiniandclams",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Bolognese Pappardelle",
+        "kind": "food",
+        "priceCents": 1400,
+        "tags": [
+          "bolognese pappardelle"
+        ],
+        "id": "audit-food-bolognesepappardelle",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Fresh Cut Kennebec Fries",
+        "kind": "food",
+        "priceCents": 500,
+        "tags": [
+          "fresh cut kennebec fries"
+        ],
+        "id": "audit-food-freshcutkennebecfries",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Grilled Organic Sourdough",
+        "kind": "food",
+        "priceCents": 500,
+        "tags": [
+          "grilled organic sourdough"
+        ],
+        "id": "audit-food-grilledorganicsourdough",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "All Daisy",
+        "kind": "drink",
+        "priceCents": 1200,
+        "tags": [
+          "all daisy"
+        ],
+        "id": "audit-drink-alldaisy",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Aperol Spritz",
+        "kind": "drink",
+        "priceCents": 1200,
+        "tags": [
+          "aperol spritz"
+        ],
+        "id": "drink-1",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Honey Ryder",
+        "kind": "drink",
+        "priceCents": 1200,
+        "tags": [
+          "honey ryder"
+        ],
+        "id": "audit-drink-honeyryder",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Hugo Spritz",
+        "kind": "drink",
+        "priceCents": 1200,
+        "tags": [
+          "hugo spritz"
+        ],
+        "id": "audit-drink-hugospritz",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Costa Tamarindo",
+        "kind": "drink",
+        "priceCents": 1200,
+        "tags": [
+          "costa tamarindo"
+        ],
+        "id": "audit-drink-costatamarindo",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Amalfi Spritz (nonalcoholic)",
+        "kind": "drink",
+        "priceCents": 1200,
+        "tags": [
+          "amalfi spritz (nonalcoholic)"
+        ],
+        "id": "audit-drink-amalfispritznonalcoholic",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Sparkling Chardonnay Pet Nat",
+        "kind": "drink",
+        "priceCents": 1400,
+        "tags": [
+          "sparkling chardonnay pet nat"
+        ],
+        "id": "audit-drink-sparklingchardonnaypetnat",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Zweigelt Rose",
+        "kind": "drink",
+        "priceCents": 1400,
+        "tags": [
+          "zweigelt rose"
+        ],
+        "id": "audit-drink-zweigeltrose",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Sauvignon Blanc",
+        "kind": "drink",
+        "priceCents": 1400,
+        "tags": [
+          "sauvignon blanc"
+        ],
+        "id": "audit-drink-sauvignonblanc",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Pinot Noir",
+        "kind": "drink",
+        "priceCents": 1400,
+        "tags": [
+          "pinot noir"
+        ],
+        "id": "audit-drink-pinotnoir",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Pacifico",
+        "kind": "drink",
+        "priceCents": 600,
+        "tags": [
+          "pacifico",
+          "beer"
+        ],
+        "id": "audit-drink-pacifico",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Sapporo",
+        "kind": "drink",
+        "priceCents": 600,
+        "tags": [
+          "sapporo",
+          "beer"
+        ],
+        "id": "audit-drink-sapporo",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Pinzon Pilsner",
+        "kind": "drink",
+        "priceCents": 600,
+        "tags": [
+          "pinzon pilsner",
+          "beer"
+        ],
+        "id": "audit-drink-pinzonpilsner",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Shoner Tag",
+        "kind": "drink",
+        "priceCents": 600,
+        "tags": [
+          "shoner tag"
+        ],
+        "id": "audit-drink-shonertag",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Guinness",
+        "kind": "drink",
+        "priceCents": 600,
+        "tags": [
+          "guinness",
+          "beer"
+        ],
+        "id": "audit-drink-guinness",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Kilkenny",
+        "kind": "drink",
+        "priceCents": 600,
+        "tags": [
+          "kilkenny",
+          "beer"
+        ],
+        "id": "audit-drink-kilkenny",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Best Day Kolsch (nonalcoholic)",
+        "kind": "drink",
+        "priceCents": 600,
+        "tags": [
+          "best day kolsch (nonalcoholic)",
+          "beer"
+        ],
+        "id": "audit-drink-bestdaykolschnonalcoholic",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Blueberry Cider",
+        "kind": "drink",
+        "priceCents": 600,
+        "tags": [
+          "blueberry cider"
+        ],
+        "id": "audit-drink-blueberrycider",
+        "sourceId": "menu",
+        "status": "primary"
+      }
     ],
-    "foodTags": ["chips"], "drinkTags": ["spritz"], "atmosphereTags": [],
+    "foodTags": [
+      "potato chips and dip",
+      "rosemary citrus olives",
+      "fromage board",
+      "wild pacific shrimp cocktail",
+      "ahi tuna crudo",
+      "wood grilled artichoke",
+      "pan con tomate",
+      "tender green jardiniere",
+      "little gem caesar",
+      "crispy chicken sandwich",
+      "lad burger",
+      "wood grilled salmon sandwich",
+      "mushroom fettuccine",
+      "linguini and clams",
+      "bolognese pappardelle",
+      "fresh cut kennebec fries",
+      "grilled organic sourdough"
+    ],
+    "drinkTags": [
+      "all daisy",
+      "aperol spritz",
+      "honey ryder",
+      "hugo spritz",
+      "costa tamarindo",
+      "amalfi spritz (nonalcoholic)",
+      "sparkling chardonnay pet nat",
+      "zweigelt rose",
+      "sauvignon blanc",
+      "pinot noir",
+      "pacifico",
+      "sapporo",
+      "pinzon pilsner",
+      "shoner tag",
+      "guinness",
+      "kilkenny",
+      "best day kolsch (nonalcoholic)",
+      "blueberry cider"
+    ],
+    "atmosphereTags": [],
     "sources": [
-      {"id": "official", "url": "https://www.lunettasm.com/restaurant_menus/", "type": "primary", "accessedOn": "2026-10-19", "reviewedOn": "2026-10-19", "note": "Golden Hour Tuesday-Saturday and direct PDF link; address shown as 2420 / 2424 Pico Boulevard, one adjoining restaurant complex."},
-      {"id": "menu", "url": "https://www.lunettasm.com/wp-content/uploads/2026/04/NEW-GH-421.pdf", "type": "primary", "accessedOn": "2026-10-19", "reviewedOn": "2026-10-19", "note": "Golden Hour PDF supplies exact food prices, $12 cocktail category including Aperol spritz, schedule and dine-in-only rule."}
+      {
+        "id": "official",
+        "url": "https://www.lunettasm.com/restaurant_menus/",
+        "type": "primary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "note": "Golden Hour Tuesday-Saturday and direct PDF link; address shown as 2420 / 2424 Pico Boulevard, one adjoining restaurant complex."
+      },
+      {
+        "id": "menu",
+        "url": "https://www.lunettasm.com/wp-content/uploads/2026/04/NEW-GH-421.pdf",
+        "type": "primary",
+        "accessedOn": "2026-10-26",
+        "reviewedOn": "2026-10-26",
+        "note": "Golden Hour PDF supplies exact food prices, $12 cocktail category including Aperol spritz, schedule and dine-in-only rule."
+      }
     ],
-    "notes": "Dine-in only. Uses 2424 entrance from official combined 2420/2424 listing; verify entrance during geocoding. Adjoining Lunetta All Day is not counted as another location."
+    "notes": "Dine-in only. Uses 2424 entrance from official combined 2420/2424 listing; verify entrance during geocoding. Adjoining Lunetta All Day is not counted as another location.",
+    "specials": [
+      {
+        "text": "Tuesday–Saturday 3–5pm, dine-in only. Girl Dinner $35 per person includes a martini, Little Gem Caesar and Kennebec fries; bundle remains descriptive.",
+        "sourceId": "menu",
+        "status": "primary"
+      }
+    ]
   },
   {
     "id": "library-alehouse-santa-monica",
@@ -293,18 +3125,344 @@
     "neighborhood": "Santa Monica",
     "address": "2911 Main Street, Santa Monica, CA 90405",
     "coordinates": null,
-    "hours": [{"days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "start": "16:00", "end": "18:00", "sourceId": "official", "status": "primary", "restriction": "none"}],
+    "hours": [
+      {
+        "days": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "start": "16:00",
+        "end": "18:00",
+        "sourceId": "official",
+        "status": "primary",
+        "restriction": "none"
+      }
+    ],
     "menu": [
-      {"id": "food-1", "name": "Two street tacos (chicken or steak)", "kind": "food", "priceCents": 700, "tags": ["tacos"], "sourceId": "menu-image", "status": "primary"},
-      {"id": "drink-1", "name": "Mayberry IPA", "kind": "drink", "priceCents": 700, "tags": ["beer", "ipa"], "sourceId": "menu-image", "status": "primary"}
+      {
+        "name": "LA Chips and Salsa",
+        "kind": "food",
+        "priceCents": 200,
+        "tags": [
+          "la chips and salsa"
+        ],
+        "id": "audit-food-lachipsandsalsa",
+        "sourceId": "menu-image",
+        "status": "primary"
+      },
+      {
+        "name": "White Bean Hummus",
+        "kind": "food",
+        "priceCents": 600,
+        "tags": [
+          "white bean hummus"
+        ],
+        "id": "audit-food-whitebeanhummus",
+        "sourceId": "menu-image",
+        "status": "primary"
+      },
+      {
+        "name": "Brussels Sprouts",
+        "kind": "food",
+        "priceCents": 600,
+        "tags": [
+          "brussels sprouts"
+        ],
+        "id": "audit-food-brusselssprouts",
+        "sourceId": "menu-image",
+        "status": "primary"
+      },
+      {
+        "name": "Buffalo Wings",
+        "kind": "food",
+        "priceCents": 600,
+        "tags": [
+          "buffalo wings"
+        ],
+        "id": "audit-food-buffalowings",
+        "sourceId": "menu-image",
+        "status": "primary"
+      },
+      {
+        "name": "Soy Honey Cauliflower",
+        "kind": "food",
+        "priceCents": null,
+        "tags": [
+          "soy honey cauliflower"
+        ],
+        "id": "audit-food-soyhoneycauliflower",
+        "sourceId": "menu-image",
+        "status": "primary"
+      },
+      {
+        "name": "Chicken Street Tacos (2)",
+        "kind": "food",
+        "priceCents": 700,
+        "tags": [
+          "chicken street tacos (2)"
+        ],
+        "id": "audit-food-chickenstreettacos2",
+        "sourceId": "menu-image",
+        "status": "primary"
+      },
+      {
+        "name": "Steak Street Tacos (2)",
+        "kind": "food",
+        "priceCents": 700,
+        "tags": [
+          "steak street tacos (2)"
+        ],
+        "id": "audit-food-steakstreettacos2",
+        "sourceId": "menu-image",
+        "status": "primary"
+      },
+      {
+        "name": "Alehouse BBQ Fries",
+        "kind": "food",
+        "priceCents": 800,
+        "tags": [
+          "alehouse bbq fries"
+        ],
+        "id": "audit-food-alehousebbqfries",
+        "sourceId": "menu-image",
+        "status": "primary"
+      },
+      {
+        "name": "All American Sliders (2)",
+        "kind": "food",
+        "priceCents": 1000,
+        "tags": [
+          "all american sliders (2)"
+        ],
+        "id": "audit-food-allamericansliders2",
+        "sourceId": "menu-image",
+        "status": "primary"
+      },
+      {
+        "name": "Alehouse Sliders (2)",
+        "kind": "food",
+        "priceCents": 1000,
+        "tags": [
+          "alehouse sliders (2)"
+        ],
+        "id": "audit-food-alehousesliders2",
+        "sourceId": "menu-image",
+        "status": "primary"
+      },
+      {
+        "name": "Tequila Mockingbird",
+        "kind": "drink",
+        "priceCents": 1200,
+        "tags": [
+          "tequila mockingbird"
+        ],
+        "id": "audit-drink-tequilamockingbird",
+        "sourceId": "menu-image",
+        "status": "primary"
+      },
+      {
+        "name": "Elderflower for Algernon",
+        "kind": "drink",
+        "priceCents": 1200,
+        "tags": [
+          "elderflower for algernon"
+        ],
+        "id": "audit-drink-elderflowerforalgernon",
+        "sourceId": "menu-image",
+        "status": "primary"
+      },
+      {
+        "name": "Catcher in the Rye",
+        "kind": "drink",
+        "priceCents": 1200,
+        "tags": [
+          "catcher in the rye"
+        ],
+        "id": "audit-drink-catcherintherye",
+        "sourceId": "menu-image",
+        "status": "primary"
+      },
+      {
+        "name": "Smokey in the Bear",
+        "kind": "drink",
+        "priceCents": 1200,
+        "tags": [
+          "smokey in the bear"
+        ],
+        "id": "audit-drink-smokeyinthebear",
+        "sourceId": "menu-image",
+        "status": "primary"
+      },
+      {
+        "name": "Mayberry IPA",
+        "kind": "drink",
+        "priceCents": 700,
+        "tags": [
+          "mayberry ipa",
+          "beer"
+        ],
+        "id": "drink-1",
+        "sourceId": "menu-image",
+        "status": "primary"
+      },
+      {
+        "name": "Dos Topas",
+        "kind": "drink",
+        "priceCents": 700,
+        "tags": [
+          "dos topas",
+          "beer"
+        ],
+        "id": "audit-drink-dostopas",
+        "sourceId": "menu-image",
+        "status": "primary"
+      },
+      {
+        "name": "Chronic Amber",
+        "kind": "drink",
+        "priceCents": 700,
+        "tags": [
+          "chronic amber",
+          "beer"
+        ],
+        "id": "audit-drink-chronicamber",
+        "sourceId": "menu-image",
+        "status": "primary"
+      },
+      {
+        "name": "Orderville Hazy IPA",
+        "kind": "drink",
+        "priceCents": 700,
+        "tags": [
+          "orderville hazy ipa",
+          "beer"
+        ],
+        "id": "audit-drink-ordervillehazyipa",
+        "sourceId": "menu-image",
+        "status": "primary"
+      },
+      {
+        "name": "Fresh Pils of LA",
+        "kind": "drink",
+        "priceCents": 700,
+        "tags": [
+          "fresh pils of la",
+          "beer"
+        ],
+        "id": "audit-drink-freshpilsofla",
+        "sourceId": "menu-image",
+        "status": "primary"
+      },
+      {
+        "name": "Hard Kombucha",
+        "kind": "drink",
+        "priceCents": 700,
+        "tags": [
+          "hard kombucha"
+        ],
+        "id": "audit-drink-hardkombucha",
+        "sourceId": "menu-image",
+        "status": "primary"
+      },
+      {
+        "name": "Seasonal Cider",
+        "kind": "drink",
+        "priceCents": 700,
+        "tags": [
+          "seasonal cider"
+        ],
+        "id": "audit-drink-seasonalcider",
+        "sourceId": "menu-image",
+        "status": "primary"
+      },
+      {
+        "name": "House Red Wine",
+        "kind": "drink",
+        "priceCents": 800,
+        "tags": [
+          "house red wine"
+        ],
+        "id": "audit-drink-houseredwine",
+        "sourceId": "menu-image",
+        "status": "primary"
+      },
+      {
+        "name": "House White Wine",
+        "kind": "drink",
+        "priceCents": 800,
+        "tags": [
+          "house white wine"
+        ],
+        "id": "audit-drink-housewhitewine",
+        "sourceId": "menu-image",
+        "status": "primary"
+      }
     ],
-    "foodTags": ["tacos"], "drinkTags": ["beer", "ipa"], "atmosphereTags": [],
+    "foodTags": [
+      "la chips and salsa",
+      "white bean hummus",
+      "brussels sprouts",
+      "buffalo wings",
+      "soy honey cauliflower",
+      "chicken street tacos (2)",
+      "steak street tacos (2)",
+      "alehouse bbq fries",
+      "all american sliders (2)",
+      "alehouse sliders (2)"
+    ],
+    "drinkTags": [
+      "tequila mockingbird",
+      "elderflower for algernon",
+      "catcher in the rye",
+      "smokey in the bear",
+      "mayberry ipa",
+      "dos topas",
+      "chronic amber",
+      "orderville hazy ipa",
+      "fresh pils of la",
+      "hard kombucha",
+      "seasonal cider",
+      "house red wine",
+      "house white wine"
+    ],
+    "atmosphereTags": [],
     "sources": [
-      {"id": "official", "url": "https://www.libraryalehouse.com/happy-hour", "type": "primary", "accessedOn": "2026-10-19", "reviewedOn": "2026-10-19", "note": "Weekday schedule and direct link to official happy-hour image."},
-      {"id": "address", "url": "https://www.libraryalehouse.com/", "type": "primary", "accessedOn": "2026-10-19", "reviewedOn": "2026-10-19", "note": "Full Main Street address."},
-      {"id": "menu-image", "url": "https://images.squarespace-cdn.com/content/v1/664faefda75c1706e8633fc4/216133c6-5d4b-497d-b7a5-3014f205a66d/Library%2Bdrink%2BMenu_HAPPY%2BHOUR.png", "type": "primary", "accessedOn": "2026-10-19", "reviewedOn": "2026-10-19", "note": "Direct official image visually inspected in browser screenshot. Hoppy Hour: beer category $7, two street tacos $7, Monday-Friday 16:00-18:00."}
+      {
+        "id": "official",
+        "url": "https://www.libraryalehouse.com/happy-hour",
+        "type": "primary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "note": "Weekday schedule and direct link to official happy-hour image."
+      },
+      {
+        "id": "address",
+        "url": "https://www.libraryalehouse.com/",
+        "type": "primary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "note": "Full Main Street address."
+      },
+      {
+        "id": "menu-image",
+        "url": "https://images.squarespace-cdn.com/content/v1/664faefda75c1706e8633fc4/216133c6-5d4b-497d-b7a5-3014f205a66d/Library%2Bdrink%2BMenu_HAPPY%2BHOUR.png",
+        "type": "primary",
+        "accessedOn": "2026-10-26",
+        "reviewedOn": "2026-10-26",
+        "note": "Direct official image visually inspected in browser screenshot. Hoppy Hour: beer category $7, two street tacos $7, Monday-Friday 16:00-18:00."
+      }
     ],
-    "notes": "Official image's $7 beer supersedes tourism guide's $6 select-beer claim. Taco amount covers two."
+    "notes": "Official image's $7 beer supersedes tourism guide's $6 select-beer claim. Taco amount covers two.",
+    "specials": [
+      {
+        "text": "Weekdays 4–6pm. Chips guacamole upgrade +$2. Cauliflower price appears displaced in the graphic; kept unknown rather than assigning an ambiguous value.",
+        "sourceId": "menu-image",
+        "status": "primary"
+      }
+    ]
   },
   {
     "id": "surfing-fox-santa-monica",
@@ -312,13 +3470,63 @@
     "neighborhood": "Santa Monica",
     "address": "120 Colorado Avenue, Santa Monica, CA 90401",
     "coordinates": null,
-    "hours": [{"days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "start": "15:00", "end": "18:00", "sourceId": "official", "status": "primary", "restriction": "conditional"}],
-    "menu": [
-      {"id": "food-1", "name": "Fox fries", "kind": "food", "priceCents": 500, "tags": ["fries"], "sourceId": "official", "status": "primary"},
-      {"id": "drink-1", "name": "Pacifico draft", "kind": "drink", "priceCents": 600, "tags": ["beer"], "sourceId": "official", "status": "primary"}
+    "hours": [
+      {
+        "days": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "start": "15:00",
+        "end": "18:00",
+        "sourceId": "official",
+        "status": "primary",
+        "restriction": "conditional"
+      }
     ],
-    "foodTags": ["fries"], "drinkTags": ["beer"], "atmosphereTags": [],
-    "sources": [{"id": "official", "url": "https://www.thesurfingfoxsm.com/", "type": "primary", "accessedOn": "2026-10-19", "reviewedOn": "2026-10-19", "note": "Full address and schedule. Browser selected Sunset Hour menu and directly read loaded widget: bar/patio only, Fox fries $5, Pacifico $6. Default web extraction shows all-day menu instead."}],
+    "menu": [
+      {
+        "id": "food-1",
+        "name": "Fox fries",
+        "kind": "food",
+        "priceCents": 500,
+        "tags": [
+          "fries"
+        ],
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "id": "drink-1",
+        "name": "Pacifico draft",
+        "kind": "drink",
+        "priceCents": 600,
+        "tags": [
+          "beer"
+        ],
+        "sourceId": "official",
+        "status": "primary"
+      }
+    ],
+    "foodTags": [
+      "fries"
+    ],
+    "drinkTags": [
+      "beer"
+    ],
+    "atmosphereTags": [],
+    "sources": [
+      {
+        "id": "official",
+        "url": "https://www.thesurfingfoxsm.com/",
+        "type": "primary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "note": "Full address and schedule. Browser selected Sunset Hour menu and directly read loaded widget: bar/patio only, Fox fries $5, Pacifico $6. Default web extraction shows all-day menu instead."
+      }
+    ],
     "notes": "Bar and patio seating only. Prices transcribed from selected Sunset Hour tab, not all-day menu or tourism guide."
   },
   {
@@ -327,14 +3535,325 @@
     "neighborhood": "Santa Monica",
     "address": "1621 Wilshire Boulevard, Santa Monica, CA 90403",
     "coordinates": null,
-    "hours": [{"days": ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], "start": "14:00", "end": "17:00", "sourceId": "official", "status": "primary", "restriction": "conditional"}],
-    "menu": [
-      {"id": "food-1", "name": "Puglia pizza", "kind": "food", "priceCents": 1600, "tags": ["pizza"], "sourceId": "official", "status": "primary"},
-      {"id": "drink-1", "name": "Peroni beer", "kind": "drink", "priceCents": 800, "tags": ["beer"], "sourceId": "official", "status": "primary"}
+    "hours": [
+      {
+        "days": [
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+          "Sunday"
+        ],
+        "start": "14:00",
+        "end": "17:00",
+        "sourceId": "official",
+        "status": "primary",
+        "restriction": "conditional"
+      }
     ],
-    "foodTags": ["pizza"], "drinkTags": ["beer"], "atmosphereTags": [],
-    "sources": [{"id": "official", "url": "https://lapuglia.us/happy-hour", "type": "primary", "accessedOn": "2026-10-19", "reviewedOn": "2026-10-19", "note": "Lists everyday 14:00-17:00, exact happy-hour category/item prices, full address, and closed-Monday business hours on same page."}],
-    "notes": "Monday excluded because same official page says closed Mondays, despite everyday happy-hour heading. Schedule applies only on operating days. Cashless. No Monday availability claimed."
+    "menu": [
+      {
+        "name": "Vieste Pizza",
+        "kind": "food",
+        "priceCents": 1600,
+        "tags": [
+          "vieste pizza"
+        ],
+        "id": "audit-food-viestepizza",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "Otranto Pizza",
+        "kind": "food",
+        "priceCents": 1600,
+        "tags": [
+          "otranto pizza"
+        ],
+        "id": "audit-food-otrantopizza",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "Puglia Pizza",
+        "kind": "food",
+        "priceCents": 1600,
+        "tags": [
+          "puglia pizza"
+        ],
+        "id": "food-1",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "Monopoli Pizza",
+        "kind": "food",
+        "priceCents": 1600,
+        "tags": [
+          "monopoli pizza"
+        ],
+        "id": "audit-food-monopolipizza",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "Auand Appetizer",
+        "kind": "food",
+        "priceCents": 1600,
+        "tags": [
+          "auand appetizer"
+        ],
+        "id": "audit-food-auandappetizer",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "Polpette",
+        "kind": "food",
+        "priceCents": 1600,
+        "tags": [
+          "polpette"
+        ],
+        "id": "audit-food-polpette",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "Zia Maria Pasta",
+        "kind": "food",
+        "priceCents": 1600,
+        "tags": [
+          "zia maria pasta"
+        ],
+        "id": "audit-food-ziamariapasta",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "Alessia Pasta",
+        "kind": "food",
+        "priceCents": 1600,
+        "tags": [
+          "alessia pasta"
+        ],
+        "id": "audit-food-alessiapasta",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "Nonna Anna Pasta",
+        "kind": "food",
+        "priceCents": 1600,
+        "tags": [
+          "nonna anna pasta"
+        ],
+        "id": "audit-food-nonnaannapasta",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "Enza Bruschetta",
+        "kind": "food",
+        "priceCents": 1200,
+        "tags": [
+          "enza bruschetta"
+        ],
+        "id": "audit-food-enzabruschetta",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "Le Radici ca Tieni Bruschetta",
+        "kind": "food",
+        "priceCents": 1200,
+        "tags": [
+          "le radici ca tieni bruschetta"
+        ],
+        "id": "audit-food-leradicicatienibruschetta",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "Tomato Mozzarella Panzerotto",
+        "kind": "food",
+        "priceCents": 1200,
+        "tags": [
+          "tomato mozzarella panzerotto"
+        ],
+        "id": "audit-food-tomatomozzarellapanzerotto",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "Danza delle Spade Salad",
+        "kind": "food",
+        "priceCents": 1200,
+        "tags": [
+          "danza delle spade salad"
+        ],
+        "id": "audit-food-danzadellespadesalad",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "Festa dei Baresi Salad",
+        "kind": "food",
+        "priceCents": 1200,
+        "tags": [
+          "festa dei baresi salad"
+        ],
+        "id": "audit-food-festadeibaresisalad",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "Gelato",
+        "kind": "food",
+        "priceCents": 800,
+        "tags": [
+          "gelato"
+        ],
+        "id": "audit-food-gelato",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "Pannacotta",
+        "kind": "food",
+        "priceCents": 800,
+        "tags": [
+          "pannacotta"
+        ],
+        "id": "audit-food-pannacotta",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "Pastry",
+        "kind": "food",
+        "priceCents": 400,
+        "tags": [
+          "pastry"
+        ],
+        "id": "audit-food-pastry",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "Spritz",
+        "kind": "drink",
+        "priceCents": 1200,
+        "tags": [
+          "spritz"
+        ],
+        "id": "audit-drink-spritz",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "Ugo",
+        "kind": "drink",
+        "priceCents": 1200,
+        "tags": [
+          "ugo"
+        ],
+        "id": "audit-drink-ugo",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "Gin Tonic",
+        "kind": "drink",
+        "priceCents": 1200,
+        "tags": [
+          "gin tonic"
+        ],
+        "id": "audit-drink-gintonic",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "Vodka Tonic",
+        "kind": "drink",
+        "priceCents": 1200,
+        "tags": [
+          "vodka tonic"
+        ],
+        "id": "audit-drink-vodkatonic",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "Sommelier Wine Selection",
+        "kind": "drink",
+        "priceCents": 1200,
+        "tags": [
+          "sommelier wine selection"
+        ],
+        "id": "audit-drink-sommelierwineselection",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "Peroni",
+        "kind": "drink",
+        "priceCents": 800,
+        "tags": [
+          "peroni",
+          "beer"
+        ],
+        "id": "audit-drink-peroni",
+        "sourceId": "official",
+        "status": "primary"
+      }
+    ],
+    "foodTags": [
+      "vieste pizza",
+      "otranto pizza",
+      "puglia pizza",
+      "monopoli pizza",
+      "auand appetizer",
+      "polpette",
+      "zia maria pasta",
+      "alessia pasta",
+      "nonna anna pasta",
+      "enza bruschetta",
+      "le radici ca tieni bruschetta",
+      "tomato mozzarella panzerotto",
+      "danza delle spade salad",
+      "festa dei baresi salad",
+      "gelato",
+      "pannacotta",
+      "pastry"
+    ],
+    "drinkTags": [
+      "spritz",
+      "ugo",
+      "gin tonic",
+      "vodka tonic",
+      "sommelier wine selection",
+      "peroni"
+    ],
+    "atmosphereTags": [],
+    "sources": [
+      {
+        "id": "official",
+        "url": "https://lapuglia.us/happy-hour",
+        "type": "primary",
+        "accessedOn": "2026-10-26",
+        "reviewedOn": "2026-10-26",
+        "note": "Lists everyday 14:00-17:00, exact happy-hour category/item prices, full address, and closed-Monday business hours on same page."
+      }
+    ],
+    "notes": "Monday excluded because same official page says closed Mondays, despite everyday happy-hour heading. Schedule applies only on operating days. Cashless. No Monday availability claimed.",
+    "specials": [
+      {
+        "text": "Daily 2–5pm; wine and pastries depend on the daily selection.",
+        "sourceId": "official",
+        "status": "primary"
+      }
+    ]
   },
   {
     "id": "manchego-santa-monica",
@@ -343,16 +3862,212 @@
     "address": "2518 Main Street, Santa Monica, CA 90405",
     "coordinates": null,
     "hours": [
-      {"days": ["Tuesday", "Wednesday", "Thursday", "Friday"], "start": "17:00", "end": "18:30", "sourceId": "official", "status": "primary", "restriction": "none"},
-      {"days": ["Saturday", "Sunday"], "start": "15:00", "end": "18:30", "sourceId": "official", "status": "primary", "restriction": "none"}
+      {
+        "days": [
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "start": "17:00",
+        "end": "18:30",
+        "sourceId": "official",
+        "status": "primary",
+        "restriction": "none"
+      },
+      {
+        "days": [
+          "Saturday",
+          "Sunday"
+        ],
+        "start": "15:00",
+        "end": "18:30",
+        "sourceId": "official",
+        "status": "primary",
+        "restriction": "none"
+      }
     ],
     "menu": [
-      {"id": "food-1", "name": "Deviled eggs", "kind": "food", "priceCents": 900, "tags": ["eggs"], "sourceId": "official", "status": "primary"},
-      {"id": "drink-1", "name": "Sangria glass", "kind": "drink", "priceCents": 800, "tags": ["sangria"], "sourceId": "official", "status": "primary"}
+      {
+        "name": "Deviled Eggs",
+        "kind": "food",
+        "priceCents": 900,
+        "tags": [
+          "deviled eggs"
+        ],
+        "id": "food-1",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "Romaine Salad",
+        "kind": "food",
+        "priceCents": 1100,
+        "tags": [
+          "romaine salad"
+        ],
+        "id": "audit-food-romainesalad",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "Goat Cheese and Dried Fig Tostado",
+        "kind": "food",
+        "priceCents": 1100,
+        "tags": [
+          "goat cheese and dried fig tostado"
+        ],
+        "id": "audit-food-goatcheeseanddriedfigtostado",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "Tortilla Espanola",
+        "kind": "food",
+        "priceCents": 1100,
+        "tags": [
+          "tortilla espanola"
+        ],
+        "id": "audit-food-tortillaespanola",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "Mac and Manchego Cheese",
+        "kind": "food",
+        "priceCents": 1200,
+        "tags": [
+          "mac and manchego cheese"
+        ],
+        "id": "audit-food-macandmanchegocheese",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "Mac and Manchego Cheese with Bacon",
+        "kind": "food",
+        "priceCents": 1500,
+        "tags": [
+          "mac and manchego cheese with bacon"
+        ],
+        "id": "audit-food-macandmanchegocheesewithbacon",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "Gambas Spicy Garlic Shrimp",
+        "kind": "food",
+        "priceCents": 1350,
+        "tags": [
+          "gambas spicy garlic shrimp"
+        ],
+        "id": "audit-food-gambasspicygarlicshrimp",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "Membrillo Glazed Pork Belly",
+        "kind": "food",
+        "priceCents": 1300,
+        "tags": [
+          "membrillo glazed pork belly"
+        ],
+        "id": "audit-food-membrilloglazedporkbelly",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "Sangria Glass",
+        "kind": "drink",
+        "priceCents": 800,
+        "tags": [
+          "sangria glass"
+        ],
+        "id": "drink-1",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "House Red Wine",
+        "kind": "drink",
+        "priceCents": 900,
+        "tags": [
+          "house red wine"
+        ],
+        "id": "audit-drink-houseredwine",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "House White Wine",
+        "kind": "drink",
+        "priceCents": 900,
+        "tags": [
+          "house white wine"
+        ],
+        "id": "audit-drink-housewhitewine",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "Bottled Beer",
+        "kind": "drink",
+        "priceCents": 800,
+        "tags": [
+          "bottled beer"
+        ],
+        "id": "audit-drink-bottledbeer",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "Spanish Bottled Beer",
+        "kind": "drink",
+        "priceCents": 900,
+        "tags": [
+          "spanish bottled beer"
+        ],
+        "id": "audit-drink-spanishbottledbeer",
+        "sourceId": "official",
+        "status": "primary"
+      }
     ],
-    "foodTags": ["eggs"], "drinkTags": ["sangria"], "atmosphereTags": [],
-    "sources": [{"id": "official", "url": "https://www.manchegosm.com/menu", "type": "primary", "accessedOn": "2026-10-19", "reviewedOn": "2026-10-19", "note": "Explicit Happy hour section supplies separate weekday/weekend schedules, exact prices and footer address. Regular tapas and drinks appear in other sections and were not mixed in."}],
-    "notes": "Official menu retained over older third-party daily 17:00 start descriptions. No Monday window stated."
+    "foodTags": [
+      "deviled eggs",
+      "romaine salad",
+      "goat cheese and dried fig tostado",
+      "tortilla espanola",
+      "mac and manchego cheese",
+      "mac and manchego cheese with bacon",
+      "gambas spicy garlic shrimp",
+      "membrillo glazed pork belly"
+    ],
+    "drinkTags": [
+      "sangria glass",
+      "house red wine",
+      "house white wine",
+      "bottled beer",
+      "spanish bottled beer"
+    ],
+    "atmosphereTags": [],
+    "sources": [
+      {
+        "id": "official",
+        "url": "https://www.manchegosm.com/menu",
+        "type": "primary",
+        "accessedOn": "2026-10-26",
+        "reviewedOn": "2026-10-26",
+        "note": "Explicit Happy hour section supplies separate weekday/weekend schedules, exact prices and footer address. Regular tapas and drinks appear in other sections and were not mixed in."
+      }
+    ],
+    "notes": "Official menu retained over older third-party daily 17:00 start descriptions. No Monday window stated.",
+    "specials": [
+      {
+        "text": "Tuesday–Friday 5–6:30pm; Saturday/Sunday 3–6:30pm.",
+        "sourceId": "official",
+        "status": "primary"
+      }
+    ]
   },
   {
     "id": "michaels-santa-monica",
@@ -360,18 +4075,487 @@
     "neighborhood": "Santa Monica",
     "address": "1147 Third Street, Santa Monica, CA 90403",
     "coordinates": null,
-    "hours": [{"days": ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"], "start": "16:00", "end": "18:00", "sourceId": "official", "status": "primary", "restriction": "none"}],
+    "hours": [
+      {
+        "days": [
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday"
+        ],
+        "start": "16:00",
+        "end": "18:00",
+        "sourceId": "official",
+        "status": "primary",
+        "restriction": "none"
+      }
+    ],
     "menu": [
-      {"id": "food-1", "name": "Fries", "kind": "food", "priceCents": 700, "tags": ["fries"], "sourceId": "menu", "status": "primary"},
-      {"id": "drink-1", "name": "1979 cocktail", "kind": "drink", "priceCents": 1200, "tags": ["cocktail"], "sourceId": "menu", "status": "primary"}
+      {
+        "name": "Baby Gem Lettuce Mini Salad",
+        "kind": "food",
+        "priceCents": 900,
+        "tags": [
+          "baby gem lettuce mini salad"
+        ],
+        "id": "audit-food-babygemlettuceminisalad",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Farmers Market Greens Mini Salad",
+        "kind": "food",
+        "priceCents": 900,
+        "tags": [
+          "farmers market greens mini salad"
+        ],
+        "id": "audit-food-farmersmarketgreensminisalad",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Marinated Olives",
+        "kind": "food",
+        "priceCents": 500,
+        "tags": [
+          "marinated olives"
+        ],
+        "id": "audit-food-marinatedolives",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Mixed Nuts",
+        "kind": "food",
+        "priceCents": 500,
+        "tags": [
+          "mixed nuts"
+        ],
+        "id": "audit-food-mixednuts",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Thyme Fries",
+        "kind": "food",
+        "priceCents": 700,
+        "tags": [
+          "thyme fries"
+        ],
+        "id": "food-1",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Caviar Deviled Eggs",
+        "kind": "food",
+        "priceCents": 1200,
+        "tags": [
+          "caviar deviled eggs"
+        ],
+        "id": "audit-food-caviardeviledeggs",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Kennebec Potato Chips",
+        "kind": "food",
+        "priceCents": 500,
+        "tags": [
+          "kennebec potato chips"
+        ],
+        "id": "audit-food-kennebecpotatochips",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Crispy Confit Duck Wings",
+        "kind": "food",
+        "priceCents": 800,
+        "tags": [
+          "crispy confit duck wings"
+        ],
+        "id": "audit-food-crispyconfitduckwings",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Tuna Tartare Taco",
+        "kind": "food",
+        "priceCents": 500,
+        "tags": [
+          "tuna tartare taco"
+        ],
+        "id": "audit-food-tunatartaretaco",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Oyster Shooters (minimum 3)",
+        "kind": "food",
+        "priceCents": 1500,
+        "tags": [
+          "oyster shooters (minimum 3)"
+        ],
+        "id": "audit-food-oystershootersminimum3",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Margherita Pizza",
+        "kind": "food",
+        "priceCents": 1500,
+        "tags": [
+          "margherita pizza"
+        ],
+        "id": "audit-food-margheritapizza",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Big Mac Carty Burger",
+        "kind": "food",
+        "priceCents": 1500,
+        "tags": [
+          "big mac carty burger"
+        ],
+        "id": "audit-food-bigmaccartyburger",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "California Dog",
+        "kind": "food",
+        "priceCents": 1500,
+        "tags": [
+          "california dog"
+        ],
+        "id": "audit-food-californiadog",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Corned Beef Sliders",
+        "kind": "food",
+        "priceCents": 1200,
+        "tags": [
+          "corned beef sliders"
+        ],
+        "id": "audit-food-cornedbeefsliders",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Lobster Roll",
+        "kind": "food",
+        "priceCents": 1900,
+        "tags": [
+          "lobster roll"
+        ],
+        "id": "audit-food-lobsterroll",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Seeded Sourdough",
+        "kind": "food",
+        "priceCents": 1200,
+        "tags": [
+          "seeded sourdough"
+        ],
+        "id": "audit-food-seededsourdough",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Belgian Endive Salad",
+        "kind": "food",
+        "priceCents": 1900,
+        "tags": [
+          "belgian endive salad"
+        ],
+        "id": "audit-food-belgianendivesalad",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Charred Octopus Salad",
+        "kind": "food",
+        "priceCents": 3100,
+        "tags": [
+          "charred octopus salad"
+        ],
+        "id": "audit-food-charredoctopussalad",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Japanese Amberjack Crudo",
+        "kind": "food",
+        "priceCents": 2700,
+        "tags": [
+          "japanese amberjack crudo"
+        ],
+        "id": "audit-food-japaneseamberjackcrudo",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Salami Picante and Rapini Pizza",
+        "kind": "food",
+        "priceCents": 2800,
+        "tags": [
+          "salami picante and rapini pizza"
+        ],
+        "id": "audit-food-salamipicanteandrapinipizza",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Truffle Mushroom Pizza",
+        "kind": "food",
+        "priceCents": 2900,
+        "tags": [
+          "truffle mushroom pizza"
+        ],
+        "id": "audit-food-trufflemushroompizza",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Liberty Duck Leg Confit",
+        "kind": "food",
+        "priceCents": 2700,
+        "tags": [
+          "liberty duck leg confit"
+        ],
+        "id": "audit-food-libertyducklegconfit",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Saltspring Island Mussels",
+        "kind": "food",
+        "priceCents": 2700,
+        "tags": [
+          "saltspring island mussels"
+        ],
+        "id": "audit-food-saltspringislandmussels",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "1979 Cocktail",
+        "kind": "drink",
+        "priceCents": 1200,
+        "tags": [
+          "1979 cocktail"
+        ],
+        "id": "drink-1",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Last Chance",
+        "kind": "drink",
+        "priceCents": 1200,
+        "tags": [
+          "last chance"
+        ],
+        "id": "audit-drink-lastchance",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "MSM",
+        "kind": "drink",
+        "priceCents": 1200,
+        "tags": [
+          "msm"
+        ],
+        "id": "audit-drink-msm",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Red Sangria",
+        "kind": "drink",
+        "priceCents": 1200,
+        "tags": [
+          "red sangria"
+        ],
+        "id": "audit-drink-redsangria",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Three Weavers Cloud City Hazy IPA",
+        "kind": "drink",
+        "priceCents": 500,
+        "tags": [
+          "three weavers cloud city hazy ipa",
+          "beer"
+        ],
+        "id": "audit-drink-threeweaverscloudcityhazyipa",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Ventura Light Lager",
+        "kind": "drink",
+        "priceCents": 500,
+        "tags": [
+          "ventura light lager",
+          "beer"
+        ],
+        "id": "audit-drink-venturalightlager",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Pacifico",
+        "kind": "drink",
+        "priceCents": 500,
+        "tags": [
+          "pacifico",
+          "beer"
+        ],
+        "id": "audit-drink-pacifico",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "White Rascal",
+        "kind": "drink",
+        "priceCents": 500,
+        "tags": [
+          "white rascal",
+          "beer"
+        ],
+        "id": "audit-drink-whiterascal",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Sparkling Wine",
+        "kind": "drink",
+        "priceCents": 1000,
+        "tags": [
+          "sparkling wine"
+        ],
+        "id": "audit-drink-sparklingwine",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Rose Wine",
+        "kind": "drink",
+        "priceCents": 1000,
+        "tags": [
+          "rose wine"
+        ],
+        "id": "audit-drink-rosewine",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "White Wine",
+        "kind": "drink",
+        "priceCents": 1000,
+        "tags": [
+          "white wine"
+        ],
+        "id": "audit-drink-whitewine",
+        "sourceId": "menu",
+        "status": "primary"
+      },
+      {
+        "name": "Red Wine",
+        "kind": "drink",
+        "priceCents": 1000,
+        "tags": [
+          "red wine"
+        ],
+        "id": "audit-drink-redwine",
+        "sourceId": "menu",
+        "status": "primary"
+      }
     ],
-    "foodTags": ["fries"], "drinkTags": ["cocktail"], "atmosphereTags": [],
+    "foodTags": [
+      "baby gem lettuce mini salad",
+      "farmers market greens mini salad",
+      "marinated olives",
+      "mixed nuts",
+      "thyme fries",
+      "caviar deviled eggs",
+      "kennebec potato chips",
+      "crispy confit duck wings",
+      "tuna tartare taco",
+      "oyster shooters (minimum 3)",
+      "margherita pizza",
+      "big mac carty burger",
+      "california dog",
+      "corned beef sliders",
+      "lobster roll",
+      "seeded sourdough",
+      "belgian endive salad",
+      "charred octopus salad",
+      "japanese amberjack crudo",
+      "salami picante and rapini pizza",
+      "truffle mushroom pizza",
+      "liberty duck leg confit",
+      "saltspring island mussels"
+    ],
+    "drinkTags": [
+      "1979 cocktail",
+      "last chance",
+      "msm",
+      "red sangria",
+      "three weavers cloud city hazy ipa",
+      "ventura light lager",
+      "pacifico",
+      "white rascal",
+      "sparkling wine",
+      "rose wine",
+      "white wine",
+      "red wine"
+    ],
+    "atmosphereTags": [],
     "sources": [
-      {"id": "official", "url": "https://michaelssantamonica.com/", "type": "primary", "accessedOn": "2026-10-19", "reviewedOn": "2026-10-19", "note": "Explicit happy-hour hours Tuesday-Saturday; closed Sunday/Monday."},
-      {"id": "address", "url": "https://michaelssantamonica.com/contact-us/", "type": "primary", "accessedOn": "2026-10-19", "reviewedOn": "2026-10-19", "note": "1147 3rd Street, Santa Monica 90403."},
-      {"id": "menu", "url": "https://michaelssantamonica.com/adacompliant/happy-hour/", "type": "primary", "accessedOn": "2026-10-19", "reviewedOn": "2026-10-19", "note": "Official accessible happy-hour menu: fries $7 and 1979 within Cocktails $12 category."}
+      {
+        "id": "official",
+        "url": "https://michaelssantamonica.com/",
+        "type": "primary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "note": "Explicit happy-hour hours Tuesday-Saturday; closed Sunday/Monday."
+      },
+      {
+        "id": "address",
+        "url": "https://michaelssantamonica.com/contact-us/",
+        "type": "primary",
+        "accessedOn": "2026-10-19",
+        "reviewedOn": "2026-10-19",
+        "note": "1147 3rd Street, Santa Monica 90403."
+      },
+      {
+        "id": "menu",
+        "url": "https://michaelssantamonica.com/adacompliant/happy-hour/",
+        "type": "primary",
+        "accessedOn": "2026-10-26",
+        "reviewedOn": "2026-10-26",
+        "note": "Official accessible happy-hour menu: fries $7 and 1979 within Cocktails $12 category."
+      }
     ],
-    "notes": "Santa Monica branch only, not Michael's New York. Menu's separate signature cocktails and regular wines were not imported as happy-hour discounts."
+    "notes": "Santa Monica branch only, not Michael's New York. Menu's separate signature cocktails and regular wines were not imported as happy-hour discounts.",
+    "specials": [
+      {
+        "text": "Tuesday–Saturday 4–6pm. Oyster shooters published $5 each with minimum three: selectable order represents $15 minimum. Kitchen Select section is included at its published prices; regular signature cocktails and regular wines are excluded.",
+        "sourceId": "menu",
+        "status": "primary"
+      }
+    ]
   },
   {
     "id": "north-italia-santa-monica",
@@ -379,13 +4563,454 @@
     "neighborhood": "Santa Monica",
     "address": "1442 Second Street, Santa Monica, CA 90401",
     "coordinates": null,
-    "hours": [{"days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "start": "15:00", "end": "18:00", "sourceId": "official", "status": "primary", "restriction": "bar-only"}],
-    "menu": [
-      {"id": "food-1", "name": "Cacio e pepe arancini", "kind": "food", "priceCents": 1000, "tags": ["arancini"], "sourceId": "official", "status": "primary"},
-      {"id": "drink-1", "name": "Sicilian margarita", "kind": "drink", "priceCents": 1200, "tags": ["margarita"], "sourceId": "official", "status": "primary"}
+    "hours": [
+      {
+        "days": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "start": "15:00",
+        "end": "18:00",
+        "sourceId": "official",
+        "status": "primary",
+        "restriction": "bar-only"
+      }
     ],
-    "foodTags": ["arancini"], "drinkTags": ["margarita"], "atmosphereTags": [],
-    "sources": [{"id": "official", "url": "https://www.northitalia.com/locations/santa-monica-ca/?menu=happy-hour", "type": "primary", "accessedOn": "2026-10-19", "reviewedOn": "2026-10-19", "note": "Direct open of Santa Monica page supplies full address; happy-hour section says weekdays 15:00-18:00 at bar, arancini $10 and Sicilian margarita $12. Search result body showed a different older menu version, not used."}],
-    "notes": "Bar only. All-day Monday language is attached to half-off wine bottles, not applied to food/cocktail schedule. Exact amounts from directly opened page rather than differing search excerpt."
+    "menu": [
+      {
+        "name": "Zucca Chips",
+        "kind": "food",
+        "priceCents": 1000,
+        "tags": [
+          "zucca chips"
+        ],
+        "id": "audit-food-zuccachips",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "Cacio e Pepe Arancini",
+        "kind": "food",
+        "priceCents": 1000,
+        "tags": [
+          "cacio e pepe arancini"
+        ],
+        "id": "food-1",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "Garlic Knot Sliders",
+        "kind": "food",
+        "priceCents": 1000,
+        "tags": [
+          "garlic knot sliders"
+        ],
+        "id": "audit-food-garlicknotsliders",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "Sicilian Meatballs",
+        "kind": "food",
+        "priceCents": 1000,
+        "tags": [
+          "sicilian meatballs"
+        ],
+        "id": "audit-food-sicilianmeatballs",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "Grilled Mortadella Skewers",
+        "kind": "food",
+        "priceCents": 1000,
+        "tags": [
+          "grilled mortadella skewers"
+        ],
+        "id": "audit-food-grilledmortadellaskewers",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "Margherita Flatbread",
+        "kind": "food",
+        "priceCents": 1000,
+        "tags": [
+          "margherita flatbread"
+        ],
+        "id": "audit-food-margheritaflatbread",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "Double Pepperoni Flatbread",
+        "kind": "food",
+        "priceCents": 1000,
+        "tags": [
+          "double pepperoni flatbread"
+        ],
+        "id": "audit-food-doublepepperoniflatbread",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "White Truffle Garlic Bread",
+        "kind": "food",
+        "priceCents": 1200,
+        "tags": [
+          "white truffle garlic bread"
+        ],
+        "id": "audit-food-whitetrufflegarlicbread",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "Smoked Salmon Avocado Toast",
+        "kind": "food",
+        "priceCents": 1200,
+        "tags": [
+          "smoked salmon avocado toast"
+        ],
+        "id": "audit-food-smokedsalmonavocadotoast",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "Fritto Misto",
+        "kind": "food",
+        "priceCents": 1200,
+        "tags": [
+          "fritto misto"
+        ],
+        "id": "audit-food-frittomisto",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "Prosciutto di Parma",
+        "kind": "food",
+        "priceCents": 1200,
+        "tags": [
+          "prosciutto di parma"
+        ],
+        "id": "audit-food-prosciuttodiparma",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "Baked Burrata alla Diavola",
+        "kind": "food",
+        "priceCents": 1200,
+        "tags": [
+          "baked burrata alla diavola"
+        ],
+        "id": "audit-food-bakedburrataalladiavola",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "Grillo Glass",
+        "kind": "drink",
+        "priceCents": 1000,
+        "tags": [
+          "grillo glass"
+        ],
+        "id": "audit-drink-grilloglass",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "Greco di Tufo Glass",
+        "kind": "drink",
+        "priceCents": 1000,
+        "tags": [
+          "greco di tufo glass"
+        ],
+        "id": "audit-drink-grecoditufoglass",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "Barbera Glass",
+        "kind": "drink",
+        "priceCents": 1000,
+        "tags": [
+          "barbera glass"
+        ],
+        "id": "audit-drink-barberaglass",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "Negroamaro Glass",
+        "kind": "drink",
+        "priceCents": 1000,
+        "tags": [
+          "negroamaro glass"
+        ],
+        "id": "audit-drink-negroamaroglass",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "Grillo Bottle",
+        "kind": "drink",
+        "priceCents": 3500,
+        "tags": [
+          "grillo bottle"
+        ],
+        "id": "audit-drink-grillobottle",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "Greco di Tufo Bottle",
+        "kind": "drink",
+        "priceCents": 3500,
+        "tags": [
+          "greco di tufo bottle"
+        ],
+        "id": "audit-drink-grecoditufobottle",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "Barbera Bottle",
+        "kind": "drink",
+        "priceCents": 3500,
+        "tags": [
+          "barbera bottle"
+        ],
+        "id": "audit-drink-barberabottle",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "Negroamaro Bottle",
+        "kind": "drink",
+        "priceCents": 3500,
+        "tags": [
+          "negroamaro bottle"
+        ],
+        "id": "audit-drink-negroamarobottle",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "Sicilian Margarita",
+        "kind": "drink",
+        "priceCents": 1200,
+        "tags": [
+          "sicilian margarita"
+        ],
+        "id": "drink-1",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "Pomegranate Mule",
+        "kind": "drink",
+        "priceCents": 1200,
+        "tags": [
+          "pomegranate mule"
+        ],
+        "id": "audit-drink-pomegranatemule",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "Diavolo",
+        "kind": "drink",
+        "priceCents": 1200,
+        "tags": [
+          "diavolo"
+        ],
+        "id": "audit-drink-diavolo",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "Espresso Martini",
+        "kind": "drink",
+        "priceCents": 1200,
+        "tags": [
+          "espresso martini"
+        ],
+        "id": "audit-drink-espressomartini",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "Turino Old Fashioned",
+        "kind": "drink",
+        "priceCents": 1200,
+        "tags": [
+          "turino old fashioned"
+        ],
+        "id": "audit-drink-turinooldfashioned",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "New Italian Spritz",
+        "kind": "drink",
+        "priceCents": 1000,
+        "tags": [
+          "new italian spritz"
+        ],
+        "id": "audit-drink-newitalianspritz",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "Meet Me in Capri Spritz",
+        "kind": "drink",
+        "priceCents": 1000,
+        "tags": [
+          "meet me in capri spritz"
+        ],
+        "id": "audit-drink-meetmeincaprispritz",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "Hugo Spritz",
+        "kind": "drink",
+        "priceCents": 1000,
+        "tags": [
+          "hugo spritz"
+        ],
+        "id": "audit-drink-hugospritz",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "Pink Slip (zero proof)",
+        "kind": "drink",
+        "priceCents": 800,
+        "tags": [
+          "pink slip (zero proof)"
+        ],
+        "id": "audit-drink-pinkslipzeroproof",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "Faux Me Twice (zero proof)",
+        "kind": "drink",
+        "priceCents": 800,
+        "tags": [
+          "faux me twice (zero proof)"
+        ],
+        "id": "audit-drink-fauxmetwicezeroproof",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "Phony Negroni (zero proof)",
+        "kind": "drink",
+        "priceCents": 800,
+        "tags": [
+          "phony negroni (zero proof)"
+        ],
+        "id": "audit-drink-phonynegronizeroproof",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "NA Sparkling Wine",
+        "kind": "drink",
+        "priceCents": 800,
+        "tags": [
+          "na sparkling wine"
+        ],
+        "id": "audit-drink-nasparklingwine",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "Sauvignon Blanc 0.0",
+        "kind": "drink",
+        "priceCents": 800,
+        "tags": [
+          "sauvignon blanc 0.0"
+        ],
+        "id": "audit-drink-sauvignonblanc00",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "Beer",
+        "kind": "drink",
+        "priceCents": 650,
+        "tags": [
+          "beer"
+        ],
+        "id": "audit-drink-beer",
+        "sourceId": "official",
+        "status": "primary"
+      }
+    ],
+    "foodTags": [
+      "zucca chips",
+      "cacio e pepe arancini",
+      "garlic knot sliders",
+      "sicilian meatballs",
+      "grilled mortadella skewers",
+      "margherita flatbread",
+      "double pepperoni flatbread",
+      "white truffle garlic bread",
+      "smoked salmon avocado toast",
+      "fritto misto",
+      "prosciutto di parma",
+      "baked burrata alla diavola"
+    ],
+    "drinkTags": [
+      "grillo glass",
+      "greco di tufo glass",
+      "barbera glass",
+      "negroamaro glass",
+      "grillo bottle",
+      "greco di tufo bottle",
+      "barbera bottle",
+      "negroamaro bottle",
+      "sicilian margarita",
+      "pomegranate mule",
+      "diavolo",
+      "espresso martini",
+      "turino old fashioned",
+      "new italian spritz",
+      "meet me in capri spritz",
+      "hugo spritz",
+      "pink slip (zero proof)",
+      "faux me twice (zero proof)",
+      "phony negroni (zero proof)",
+      "na sparkling wine",
+      "sauvignon blanc 0.0",
+      "beer"
+    ],
+    "atmosphereTags": [],
+    "sources": [
+      {
+        "id": "official",
+        "url": "https://www.northitalia.com/locations/santa-monica-ca/?menu=happy-hour",
+        "type": "primary",
+        "accessedOn": "2026-10-26",
+        "reviewedOn": "2026-10-26",
+        "note": "Direct open of Santa Monica page supplies full address; happy-hour section says weekdays 15:00-18:00 at bar, arancini $10 and Sicilian margarita $12. Search result body showed a different older menu version, not used."
+      }
+    ],
+    "notes": "Bar only. All-day Monday language is attached to half-off wine bottles, not applied to food/cocktail schedule. Exact amounts from directly opened page rather than differing search excerpt.",
+    "specials": [
+      {
+        "text": "Weekdays 3–6pm. Spritz and Snacks $15 pairs an HH spritz with three snacks. Sangria Social $30 includes Margherita or Pepperoni flatbread and house red-sangria pitcher. Bundles remain descriptive with no component splitting.",
+        "sourceId": "official",
+        "status": "primary"
+      }
+    ]
   }
 ]

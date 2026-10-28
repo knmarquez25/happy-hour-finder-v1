@@ -20,7 +20,11 @@
     "hours": [
       {
         "id": "weekday",
-        "days": ["Wednesday", "Thursday", "Friday"],
+        "days": [
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
         "start": "16:00",
         "end": "18:00",
         "restriction": "none",
@@ -31,28 +35,237 @@
     ],
     "menu": [
       {
-        "id": "fries",
-        "name": "Parmesan fries",
+        "id": "audit-food-forestmushroomarancini",
+        "name": "Forest Mushroom Arancini",
         "kind": "food",
         "priceCents": null,
-        "tags": ["fries"],
-        "status": "primary",
+        "tags": [
+          "forest mushroom arancini"
+        ],
         "sourceId": "src-cw-benchmark-menu",
-        "windowIds": ["weekday"]
+        "status": "primary",
+        "windowIds": [
+          "weekday"
+        ]
       },
       {
-        "id": "house-wine",
-        "name": "House wine",
+        "id": "audit-food-gochujangchickenbites",
+        "name": "Gochujang Chicken Bites",
+        "kind": "food",
+        "priceCents": null,
+        "tags": [
+          "gochujang chicken bites"
+        ],
+        "sourceId": "src-cw-benchmark-menu",
+        "status": "primary",
+        "windowIds": [
+          "weekday"
+        ]
+      },
+      {
+        "id": "audit-food-artichokefondue",
+        "name": "Artichoke Fondue",
+        "kind": "food",
+        "priceCents": null,
+        "tags": [
+          "artichoke fondue"
+        ],
+        "sourceId": "src-cw-benchmark-menu",
+        "status": "primary",
+        "windowIds": [
+          "weekday"
+        ]
+      },
+      {
+        "id": "audit-food-frittomisto",
+        "name": "Fritto Misto",
+        "kind": "food",
+        "priceCents": null,
+        "tags": [
+          "fritto misto"
+        ],
+        "sourceId": "src-cw-benchmark-menu",
+        "status": "primary",
+        "windowIds": [
+          "weekday"
+        ]
+      },
+      {
+        "id": "fries",
+        "name": "Parmesan Fries",
+        "kind": "food",
+        "priceCents": null,
+        "tags": [
+          "parmesan fries",
+          "fries"
+        ],
+        "sourceId": "src-cw-benchmark-menu",
+        "status": "primary",
+        "windowIds": [
+          "weekday"
+        ]
+      },
+      {
+        "id": "audit-food-warmmarinatedolives",
+        "name": "Warm Marinated Olives",
+        "kind": "food",
+        "priceCents": null,
+        "tags": [
+          "warm marinated olives"
+        ],
+        "sourceId": "src-cw-benchmark-menu",
+        "status": "primary",
+        "windowIds": [
+          "weekday"
+        ]
+      },
+      {
+        "id": "audit-food-chorizoflatbread",
+        "name": "Chorizo Flatbread",
+        "kind": "food",
+        "priceCents": null,
+        "tags": [
+          "chorizo flatbread"
+        ],
+        "sourceId": "src-cw-benchmark-menu",
+        "status": "primary",
+        "windowIds": [
+          "weekday"
+        ]
+      },
+      {
+        "id": "audit-food-koreanbbqtacos",
+        "name": "Korean BBQ Tacos",
+        "kind": "food",
+        "priceCents": null,
+        "tags": [
+          "korean bbq tacos"
+        ],
+        "sourceId": "src-cw-benchmark-menu",
+        "status": "primary",
+        "windowIds": [
+          "weekday"
+        ]
+      },
+      {
+        "id": "audit-food-fetadip",
+        "name": "Feta Dip",
+        "kind": "food",
+        "priceCents": null,
+        "tags": [
+          "feta dip"
+        ],
+        "sourceId": "src-cw-benchmark-menu",
+        "status": "primary",
+        "windowIds": [
+          "weekday"
+        ]
+      },
+      {
+        "id": "audit-drink-housedraftbeer",
+        "name": "House Draft Beer",
         "kind": "drink",
         "priceCents": null,
-        "tags": ["wine"],
-        "status": "primary",
+        "tags": [
+          "house draft beer"
+        ],
         "sourceId": "src-cw-benchmark-menu",
-        "windowIds": ["weekday"]
+        "status": "primary",
+        "windowIds": [
+          "weekday"
+        ]
+      },
+      {
+        "id": "audit-drink-houseredwine",
+        "name": "House Red Wine",
+        "kind": "drink",
+        "priceCents": null,
+        "tags": [
+          "house red wine"
+        ],
+        "sourceId": "src-cw-benchmark-menu",
+        "status": "primary",
+        "windowIds": [
+          "weekday"
+        ]
+      },
+      {
+        "id": "audit-drink-housewhitewine",
+        "name": "House White Wine",
+        "kind": "drink",
+        "priceCents": null,
+        "tags": [
+          "house white wine"
+        ],
+        "sourceId": "src-cw-benchmark-menu",
+        "status": "primary",
+        "windowIds": [
+          "weekday"
+        ]
+      },
+      {
+        "id": "audit-drink-housemargarita",
+        "name": "House Margarita",
+        "kind": "drink",
+        "priceCents": null,
+        "tags": [
+          "house margarita"
+        ],
+        "sourceId": "src-cw-benchmark-menu",
+        "status": "primary",
+        "windowIds": [
+          "weekday"
+        ]
+      },
+      {
+        "id": "audit-drink-strawberrymargarita",
+        "name": "Strawberry Margarita",
+        "kind": "drink",
+        "priceCents": null,
+        "tags": [
+          "strawberry margarita"
+        ],
+        "sourceId": "src-cw-benchmark-menu",
+        "status": "primary",
+        "windowIds": [
+          "weekday"
+        ]
+      },
+      {
+        "id": "audit-drink-guavapaloma",
+        "name": "Guava Paloma",
+        "kind": "drink",
+        "priceCents": null,
+        "tags": [
+          "guava paloma"
+        ],
+        "sourceId": "src-cw-benchmark-menu",
+        "status": "primary",
+        "windowIds": [
+          "weekday"
+        ]
       }
     ],
-    "foodTags": ["fries"],
-    "drinkTags": ["wine"],
+    "foodTags": [
+      "forest mushroom arancini",
+      "gochujang chicken bites",
+      "artichoke fondue",
+      "fritto misto",
+      "parmesan fries",
+      "fries",
+      "warm marinated olives",
+      "chorizo flatbread",
+      "korean bbq tacos",
+      "feta dip"
+    ],
+    "drinkTags": [
+      "house draft beer",
+      "house red wine",
+      "house white wine",
+      "house margarita",
+      "strawberry margarita",
+      "guava paloma"
+    ],
     "atmosphereTags": [],
     "sources": [
       {
@@ -71,11 +284,11 @@
         "url": "https://benchmarkoc.com/menu/",
         "type": "primary",
         "publisherRole": "restaurant",
-        "accessedOn": "2026-10-19",
-        "reviewedOn": "2026-10-19",
+        "accessedOn": "2026-10-26",
+        "reviewedOn": "2026-10-26",
         "reviewMethod": "agent-source-inspection",
         "publisherUpdatedOn": null,
-        "note": "agent-source-inspection. HAPPY HOUR section after BRUNCH gives Wednesday-Friday 16:00-18:00 and separate snack/drink lists; no numeric prices visible: agent-source-inspection. HAPPY HOUR section after BRUNCH gives Wednesday-Friday 16:00-18:00 and separate snack/drink lists; no numeric prices visible. Page also specifies 22% gratuity for parties of eight or more. Publication date not stated."
+        "note": "Happy Hour food and drink sections, all identifiable named choices: October 26 full-specials transcription; item prices directly listed, unknown prices not inferred. Official current text does not expose exact prices; older sample prices not retained as newly confirmed."
       },
       {
         "id": "src-cw-benchmark-census",
@@ -99,7 +312,14 @@
         "note": "result.addressMatches[0].coordinates and geographies.Counties[0].GEOID: Matched 601 E SANTA ANA BLVD, SANTA ANA, CA, 92701; street-range interpolation. Suites from official branch evidence are not geocoded separately."
       }
     ],
-    "notes": "Reviewer method: agent-source-inspection, not human review. Advertised happy hour verified; exact prices unavailable, so no priced menu or calculated savings retained. Party-of-eight gratuity is additional. Government county/address match reviewed; coordinates are street-range estimates. No holiday or seating exclusion stated in inspected happy-hour section; absence is not a guarantee. A limited factual-only retention basis is documented; no source-content license is asserted. Review uses selected independently authored facts only; no source-content license is represented. Location is government street-range interpolation where resolved."
+    "specials": [
+      {
+        "text": "Official current text does not expose exact prices; older sample prices not retained as newly confirmed.",
+        "sourceId": "src-cw-benchmark-menu",
+        "status": "primary"
+      }
+    ],
+    "notes": "Reviewer method: agent-source-inspection, not human review. Advertised happy hour verified; exact prices unavailable, so no priced menu or calculated savings retained. Party-of-eight gratuity is additional. Government county/address match reviewed; coordinates are street-range estimates. No holiday or seating exclusion stated in inspected happy-hour section; absence is not a guarantee. A limited factual-only retention basis is documented; no source-content license is asserted. Review uses selected independently authored facts only; no source-content license is represented. Location is government street-range interpolation where resolved. October 26 menu audit expanded all identifiable choices; unknown current totals remain null. Agent source inspection, not owner/in-person confirmation."
   },
   {
     "id": "cw-risu-long-beach",
@@ -141,48 +361,211 @@
     ],
     "menu": [
       {
-        "id": "food-fries",
-        "name": "Truffle fries",
+        "id": "audit-food-tacos",
+        "name": "Tacos",
         "kind": "food",
         "priceCents": 900,
-        "tags": ["fries"],
+        "tags": [
+          "tacos"
+        ],
         "sourceId": "src-cw-risu-long-beach-official-hh",
         "status": "primary",
-        "windowIds": ["daily-afternoon"]
+        "windowIds": [
+          "daily-afternoon"
+        ]
+      },
+      {
+        "id": "audit-food-tunatostada",
+        "name": "Tuna Tostada",
+        "kind": "food",
+        "priceCents": 900,
+        "tags": [
+          "tuna tostada"
+        ],
+        "sourceId": "src-cw-risu-long-beach-official-hh",
+        "status": "primary",
+        "windowIds": [
+          "daily-afternoon"
+        ]
       },
       {
         "id": "food-wings",
-        "name": "Chicken wings",
+        "name": "Chicken Wings",
         "kind": "food",
         "priceCents": 900,
-        "tags": ["wings"],
+        "tags": [
+          "chicken wings",
+          "wings"
+        ],
         "sourceId": "src-cw-risu-long-beach-official-hh",
         "status": "primary",
-        "windowIds": ["daily-afternoon"]
+        "windowIds": [
+          "daily-afternoon"
+        ]
+      },
+      {
+        "id": "audit-food-bougiebrussels",
+        "name": "Bougie Brussels",
+        "kind": "food",
+        "priceCents": 900,
+        "tags": [
+          "bougie brussels"
+        ],
+        "sourceId": "src-cw-risu-long-beach-official-hh",
+        "status": "primary",
+        "windowIds": [
+          "daily-afternoon"
+        ]
+      },
+      {
+        "id": "audit-food-veggiesandhummus",
+        "name": "Veggies and Hummus",
+        "kind": "food",
+        "priceCents": 900,
+        "tags": [
+          "veggies and hummus"
+        ],
+        "sourceId": "src-cw-risu-long-beach-official-hh",
+        "status": "primary",
+        "windowIds": [
+          "daily-afternoon"
+        ]
+      },
+      {
+        "id": "food-fries",
+        "name": "Truffle Fries",
+        "kind": "food",
+        "priceCents": 900,
+        "tags": [
+          "truffle fries",
+          "fries"
+        ],
+        "sourceId": "src-cw-risu-long-beach-official-hh",
+        "status": "primary",
+        "windowIds": [
+          "daily-afternoon"
+        ]
+      },
+      {
+        "id": "audit-food-bleucheesewedge",
+        "name": "Bleu Cheese Wedge",
+        "kind": "food",
+        "priceCents": 900,
+        "tags": [
+          "bleu cheese wedge"
+        ],
+        "sourceId": "src-cw-risu-long-beach-official-hh",
+        "status": "primary",
+        "windowIds": [
+          "daily-afternoon"
+        ]
+      },
+      {
+        "id": "audit-food-flatbread",
+        "name": "Flatbread",
+        "kind": "food",
+        "priceCents": 1200,
+        "tags": [
+          "flatbread"
+        ],
+        "sourceId": "src-cw-risu-long-beach-official-hh",
+        "status": "primary",
+        "windowIds": [
+          "daily-afternoon"
+        ]
+      },
+      {
+        "id": "audit-food-mexishrimpcocktail",
+        "name": "Mexi-Shrimp Cocktail",
+        "kind": "food",
+        "priceCents": 1200,
+        "tags": [
+          "mexi-shrimp cocktail"
+        ],
+        "sourceId": "src-cw-risu-long-beach-official-hh",
+        "status": "primary",
+        "windowIds": [
+          "daily-afternoon"
+        ]
       },
       {
         "id": "drink-well",
-        "name": "Well drink",
+        "name": "Well Drink",
         "kind": "drink",
         "priceCents": 600,
-        "tags": ["cocktail"],
+        "tags": [
+          "well drink",
+          "cocktail"
+        ],
         "sourceId": "src-cw-risu-long-beach-official-hh",
         "status": "primary",
-        "windowIds": ["daily-afternoon"]
+        "windowIds": [
+          "daily-afternoon"
+        ]
       },
       {
-        "id": "drink-wine",
-        "name": "House red or white wine",
+        "id": "audit-drink-selectcalldrink",
+        "name": "Select Call Drink",
         "kind": "drink",
-        "priceCents": 700,
-        "tags": ["wine"],
+        "priceCents": 800,
+        "tags": [
+          "select call drink"
+        ],
         "sourceId": "src-cw-risu-long-beach-official-hh",
         "status": "primary",
-        "windowIds": ["daily-afternoon"]
+        "windowIds": [
+          "daily-afternoon"
+        ]
+      },
+      {
+        "id": "audit-drink-houseredwine",
+        "name": "House Red Wine",
+        "kind": "drink",
+        "priceCents": 700,
+        "tags": [
+          "house red wine"
+        ],
+        "sourceId": "src-cw-risu-long-beach-official-hh",
+        "status": "primary",
+        "windowIds": [
+          "daily-afternoon"
+        ]
+      },
+      {
+        "id": "audit-drink-housewhitewine",
+        "name": "House White Wine",
+        "kind": "drink",
+        "priceCents": 700,
+        "tags": [
+          "house white wine"
+        ],
+        "sourceId": "src-cw-risu-long-beach-official-hh",
+        "status": "primary",
+        "windowIds": [
+          "daily-afternoon"
+        ]
       }
     ],
-    "foodTags": ["fries", "wings"],
-    "drinkTags": ["cocktail", "wine"],
+    "foodTags": [
+      "tacos",
+      "tuna tostada",
+      "chicken wings",
+      "wings",
+      "bougie brussels",
+      "veggies and hummus",
+      "truffle fries",
+      "fries",
+      "bleu cheese wedge",
+      "flatbread",
+      "mexi-shrimp cocktail"
+    ],
+    "drinkTags": [
+      "well drink",
+      "cocktail",
+      "select call drink",
+      "house red wine",
+      "house white wine"
+    ],
     "atmosphereTags": [],
     "sources": [
       {
@@ -190,11 +573,11 @@
         "url": "https://www.therisu.com/happy-hour",
         "type": "primary",
         "publisherRole": "restaurant",
-        "accessedOn": "2026-10-19",
-        "reviewedOn": "2026-10-19",
+        "accessedOn": "2026-10-26",
+        "reviewedOn": "2026-10-26",
         "reviewMethod": "agent-source-inspection",
         "publisherUpdatedOn": null,
-        "note": "agent-source-inspection: Happy Hour heading and Our Happy Hour Menu give daily 16:00-18:00 and Monday all-day extension; fries and wings appear in the $9 group. Publication date not displayed.: agent-source-inspection: Happy Hour heading and Our Happy Hour Menu give daily 16:00-18:00 and Monday all-day extension; fries and wings appear in the $9 group. Publication date not displayed."
+        "note": "Happy Hour food and drink sections, all identifiable named choices: October 26 full-specials transcription; item prices directly listed, unknown prices not inferred. Specialty cocktails $2 off and beer $1 off; base prices vary. Monday all-day closing boundary remains conservative."
       },
       {
         "id": "src-cw-risu-long-beach-official-menu",
@@ -245,9 +628,14 @@
         "text": "Happy-hour specialty cocktails are $2 below regular prices; beer is $1 below regular prices.",
         "status": "primary",
         "sourceId": "src-cw-risu-long-beach-official-menu"
+      },
+      {
+        "text": "Specialty cocktails $2 off and beer $1 off; base prices vary. Monday all-day closing boundary remains conservative.",
+        "sourceId": "src-cw-risu-long-beach-official-hh",
+        "status": "primary"
       }
     ],
-    "notes": "Reviewer method: agent-source-inspection. Monday is advertised as all day on the happy-hour page and all night on the location page; only the shared bounded daily window is encoded. No final prices calculated from discounts. Serving sizes, tax, gratuity and additional restrictions are unspecified. Government county/address match reviewed; coordinates are street-range estimates. Review uses selected independently authored facts only; no source-content license is represented. Location is government street-range interpolation where resolved."
+    "notes": "Reviewer method: agent-source-inspection. Monday is advertised as all day on the happy-hour page and all night on the location page; only the shared bounded daily window is encoded. No final prices calculated from discounts. Serving sizes, tax, gratuity and additional restrictions are unspecified. Government county/address match reviewed; coordinates are street-range estimates. Review uses selected independently authored facts only; no source-content license is represented. Location is government street-range interpolation where resolved. October 26 menu audit expanded all identifiable choices; unknown current totals remain null. Agent source inspection, not owner/in-person confirmation."
   },
   {
     "id": "cw-the-hare-long-beach",
@@ -359,7 +747,12 @@
     "hours": [
       {
         "id": "weekday-afternoon",
-        "days": ["Tuesday", "Wednesday", "Thursday", "Friday"],
+        "days": [
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
         "start": "16:30",
         "end": "18:00",
         "restriction": "none",
@@ -371,26 +764,145 @@
     "menu": [
       {
         "id": "food-guacamole",
-        "name": "Guacamole with chips",
+        "name": "Guacamole with Chips",
         "kind": "food",
         "priceCents": 600,
-        "tags": ["guacamole"],
+        "tags": [
+          "guacamole with chips",
+          "guacamole"
+        ],
         "sourceId": "src-cw-nomad-eatery-el-segundo-official-hh",
         "status": "primary",
-        "windowIds": ["weekday-afternoon"]
+        "windowIds": [
+          "weekday-afternoon"
+        ]
       },
       {
         "id": "food-fries",
         "name": "Fries",
         "kind": "food",
         "priceCents": 600,
-        "tags": ["fries"],
+        "tags": [
+          "fries",
+          "fries"
+        ],
         "sourceId": "src-cw-nomad-eatery-el-segundo-official-hh",
         "status": "primary",
-        "windowIds": ["weekday-afternoon"]
+        "windowIds": [
+          "weekday-afternoon"
+        ]
+      },
+      {
+        "id": "audit-food-nachoswithcotijacheese",
+        "name": "Nachos with Cotija Cheese",
+        "kind": "food",
+        "priceCents": 700,
+        "tags": [
+          "nachos with cotija cheese"
+        ],
+        "sourceId": "src-cw-nomad-eatery-el-segundo-official-hh",
+        "status": "primary",
+        "windowIds": [
+          "weekday-afternoon"
+        ]
+      },
+      {
+        "id": "audit-food-littlegemscaesarsalad",
+        "name": "Little Gems Caesar Salad",
+        "kind": "food",
+        "priceCents": 700,
+        "tags": [
+          "little gems caesar salad"
+        ],
+        "sourceId": "src-cw-nomad-eatery-el-segundo-official-hh",
+        "status": "primary",
+        "windowIds": [
+          "weekday-afternoon"
+        ]
+      },
+      {
+        "id": "audit-food-nomadhummus",
+        "name": "Nomad Hummus",
+        "kind": "food",
+        "priceCents": 700,
+        "tags": [
+          "nomad hummus"
+        ],
+        "sourceId": "src-cw-nomad-eatery-el-segundo-official-hh",
+        "status": "primary",
+        "windowIds": [
+          "weekday-afternoon"
+        ]
+      },
+      {
+        "id": "audit-food-crispycoconutshrimp",
+        "name": "Crispy Coconut Shrimp",
+        "kind": "food",
+        "priceCents": 800,
+        "tags": [
+          "crispy coconut shrimp"
+        ],
+        "sourceId": "src-cw-nomad-eatery-el-segundo-official-hh",
+        "status": "primary",
+        "windowIds": [
+          "weekday-afternoon"
+        ]
+      },
+      {
+        "id": "audit-food-chickenandvegetableskewers",
+        "name": "Chicken and Vegetable Skewers",
+        "kind": "food",
+        "priceCents": 800,
+        "tags": [
+          "chicken and vegetable skewers"
+        ],
+        "sourceId": "src-cw-nomad-eatery-el-segundo-official-hh",
+        "status": "primary",
+        "windowIds": [
+          "weekday-afternoon"
+        ]
+      },
+      {
+        "id": "audit-food-steamedclams",
+        "name": "Steamed Clams",
+        "kind": "food",
+        "priceCents": 800,
+        "tags": [
+          "steamed clams"
+        ],
+        "sourceId": "src-cw-nomad-eatery-el-segundo-official-hh",
+        "status": "primary",
+        "windowIds": [
+          "weekday-afternoon"
+        ]
+      },
+      {
+        "id": "audit-food-charcuterieboard",
+        "name": "Charcuterie Board",
+        "kind": "food",
+        "priceCents": null,
+        "tags": [
+          "charcuterie board"
+        ],
+        "sourceId": "src-cw-nomad-eatery-el-segundo-official-hh",
+        "status": "primary",
+        "windowIds": [
+          "weekday-afternoon"
+        ]
       }
     ],
-    "foodTags": ["guacamole", "fries"],
+    "foodTags": [
+      "guacamole with chips",
+      "guacamole",
+      "fries",
+      "nachos with cotija cheese",
+      "little gems caesar salad",
+      "nomad hummus",
+      "crispy coconut shrimp",
+      "chicken and vegetable skewers",
+      "steamed clams",
+      "charcuterie board"
+    ],
     "drinkTags": [],
     "atmosphereTags": [],
     "sources": [
@@ -399,11 +911,11 @@
         "url": "https://nomadsouthbay.com/happy-hour-menu/",
         "type": "primary",
         "publisherRole": "restaurant",
-        "accessedOn": "2026-10-19",
-        "reviewedOn": "2026-10-19",
+        "accessedOn": "2026-10-26",
+        "reviewedOn": "2026-10-26",
         "reviewMethod": "agent-source-inspection",
         "publisherUpdatedOn": null,
-        "note": "agent-source-inspection: Happy Hour Menu heading gives Tuesday-Saturday 16:30-18:00; $6 Items lists guacamole/chips and fries at 6.00 each. Publication date not displayed: agent-source-inspection: Happy Hour Menu heading gives Tuesday-Saturday 16:30-18:00; $6 Items lists guacamole/chips and fries at 6.00 each. Publication date not displayed. The charcuterie heading and item price disagree; that item is omitted."
+        "note": "Happy Hour food and drink sections, all identifiable named choices: October 26 full-specials transcription; item prices directly listed, unknown prices not inferred. Menu heading lists board at $18 but item text says $8; price unresolved. Menu includes Saturday while homepage says Tuesday–Friday. Drinks not itemized in current readable HH page."
       },
       {
         "id": "src-cw-nomad-eatery-el-segundo-official-home",
@@ -449,7 +961,14 @@
         "note": "result.addressMatches[0].coordinates and geographies.Counties[0].GEOID: Matched 2041 ROSECRANS AVE, EL SEGUNDO, CA, 90245; street-range interpolation. Suites from official branch evidence are not geocoded separately."
       }
     ],
-    "notes": "Reviewer method: agent-source-inspection. Encoded days are the agreement between official homepage and dedicated happy-hour menu. Saturday remains unverified because the pages conflict; no date establishes which is newer. Only unambiguous food prices retained; no drink prices tied to happy hour were established. Government county/address match reviewed; coordinates are street-range estimates. Review uses selected independently authored facts only; no source-content license is represented. Location is government street-range interpolation where resolved."
+    "specials": [
+      {
+        "text": "Menu heading lists board at $18 but item text says $8; price unresolved. Menu includes Saturday while homepage says Tuesday–Friday. Drinks not itemized in current readable HH page.",
+        "sourceId": "src-cw-nomad-eatery-el-segundo-official-hh",
+        "status": "primary"
+      }
+    ],
+    "notes": "Reviewer method: agent-source-inspection. Encoded days are the agreement between official homepage and dedicated happy-hour menu. Saturday remains unverified because the pages conflict; no date establishes which is newer. Only unambiguous food prices retained; no drink prices tied to happy hour were established. Government county/address match reviewed; coordinates are street-range estimates. Review uses selected independently authored facts only; no source-content license is represented. Location is government street-range interpolation where resolved. October 26 menu audit expanded all identifiable choices; unknown current totals remain null. Agent source inspection, not owner/in-person confirmation."
   },
   {
     "id": "cw-sausal-el-segundo",
@@ -491,48 +1010,318 @@
     ],
     "menu": [
       {
-        "id": "food-poppers",
-        "name": "Jalapeno poppers",
+        "id": "audit-food-griddledcheesetortilla",
+        "name": "Griddled Cheese Tortilla",
         "kind": "food",
-        "priceCents": 600,
-        "tags": ["poppers"],
+        "priceCents": 450,
+        "tags": [
+          "griddled cheese tortilla"
+        ],
         "sourceId": "src-cw-sausal-el-segundo-official-menu",
         "status": "primary",
-        "windowIds": ["daily-afternoon"]
+        "windowIds": [
+          "daily-afternoon"
+        ]
+      },
+      {
+        "id": "food-poppers",
+        "name": "Jalapeno Poppers",
+        "kind": "food",
+        "priceCents": 600,
+        "tags": [
+          "jalapeno poppers",
+          "poppers"
+        ],
+        "sourceId": "src-cw-sausal-el-segundo-official-menu",
+        "status": "primary",
+        "windowIds": [
+          "daily-afternoon"
+        ]
+      },
+      {
+        "id": "audit-food-grilledachiotechickentostada",
+        "name": "Grilled Achiote Chicken Tostada",
+        "kind": "food",
+        "priceCents": 450,
+        "tags": [
+          "grilled achiote chicken tostada"
+        ],
+        "sourceId": "src-cw-sausal-el-segundo-official-menu",
+        "status": "primary",
+        "windowIds": [
+          "daily-afternoon"
+        ]
+      },
+      {
+        "id": "audit-food-potatochorizocroquette",
+        "name": "Potato Chorizo Croquette",
+        "kind": "food",
+        "priceCents": 450,
+        "tags": [
+          "potato chorizo croquette"
+        ],
+        "sourceId": "src-cw-sausal-el-segundo-official-menu",
+        "status": "primary",
+        "windowIds": [
+          "daily-afternoon"
+        ]
+      },
+      {
+        "id": "audit-food-porkcarnitastostada",
+        "name": "Pork Carnitas Tostada",
+        "kind": "food",
+        "priceCents": 450,
+        "tags": [
+          "pork carnitas tostada"
+        ],
+        "sourceId": "src-cw-sausal-el-segundo-official-menu",
+        "status": "primary",
+        "windowIds": [
+          "daily-afternoon"
+        ]
+      },
+      {
+        "id": "audit-food-shrimptaco",
+        "name": "Shrimp Taco",
+        "kind": "food",
+        "priceCents": 450,
+        "tags": [
+          "shrimp taco"
+        ],
+        "sourceId": "src-cw-sausal-el-segundo-official-menu",
+        "status": "primary",
+        "windowIds": [
+          "daily-afternoon"
+        ]
       },
       {
         "id": "food-chips",
-        "name": "Chips with salsa",
+        "name": "Chips with Salsa",
         "kind": "food",
         "priceCents": 250,
-        "tags": ["chips-salsa"],
+        "tags": [
+          "chips with salsa",
+          "chips-salsa"
+        ],
         "sourceId": "src-cw-sausal-el-segundo-official-menu",
         "status": "primary",
-        "windowIds": ["daily-afternoon"]
+        "windowIds": [
+          "daily-afternoon"
+        ]
       },
       {
         "id": "drink-margarita",
-        "name": "Rancho margarita",
+        "name": "Rancho Margarita",
         "kind": "drink",
         "priceCents": 850,
-        "tags": ["margarita"],
+        "tags": [
+          "rancho margarita",
+          "margarita"
+        ],
         "sourceId": "src-cw-sausal-el-segundo-official-menu",
         "status": "primary",
-        "windowIds": ["daily-afternoon"]
+        "windowIds": [
+          "daily-afternoon"
+        ]
+      },
+      {
+        "id": "audit-drink-vamosalaplaya",
+        "name": "Vamos ala Playa",
+        "kind": "drink",
+        "priceCents": 900,
+        "tags": [
+          "vamos ala playa"
+        ],
+        "sourceId": "src-cw-sausal-el-segundo-official-menu",
+        "status": "primary",
+        "windowIds": [
+          "daily-afternoon"
+        ]
+      },
+      {
+        "id": "audit-drink-aperolspritz",
+        "name": "Aperol Spritz",
+        "kind": "drink",
+        "priceCents": 900,
+        "tags": [
+          "aperol spritz"
+        ],
+        "sourceId": "src-cw-sausal-el-segundo-official-menu",
+        "status": "primary",
+        "windowIds": [
+          "daily-afternoon"
+        ]
+      },
+      {
+        "id": "audit-drink-tincuppunch",
+        "name": "Tin Cup Punch",
+        "kind": "drink",
+        "priceCents": 850,
+        "tags": [
+          "tin cup punch"
+        ],
+        "sourceId": "src-cw-sausal-el-segundo-official-menu",
+        "status": "primary",
+        "windowIds": [
+          "daily-afternoon"
+        ]
+      },
+      {
+        "id": "audit-drink-mezcalmargarita",
+        "name": "Mezcal Margarita",
+        "kind": "drink",
+        "priceCents": 1000,
+        "tags": [
+          "mezcal margarita"
+        ],
+        "sourceId": "src-cw-sausal-el-segundo-official-menu",
+        "status": "primary",
+        "windowIds": [
+          "daily-afternoon"
+        ]
+      },
+      {
+        "id": "audit-drink-goldenhour",
+        "name": "Golden Hour",
+        "kind": "drink",
+        "priceCents": 1000,
+        "tags": [
+          "golden hour"
+        ],
+        "sourceId": "src-cw-sausal-el-segundo-official-menu",
+        "status": "primary",
+        "windowIds": [
+          "daily-afternoon"
+        ]
+      },
+      {
+        "id": "audit-drink-redsangria",
+        "name": "Red Sangria",
+        "kind": "drink",
+        "priceCents": 850,
+        "tags": [
+          "red sangria"
+        ],
+        "sourceId": "src-cw-sausal-el-segundo-official-menu",
+        "status": "primary",
+        "windowIds": [
+          "daily-afternoon"
+        ]
+      },
+      {
+        "id": "audit-drink-whitesangria",
+        "name": "White Sangria",
+        "kind": "drink",
+        "priceCents": 850,
+        "tags": [
+          "white sangria"
+        ],
+        "sourceId": "src-cw-sausal-el-segundo-official-menu",
+        "status": "primary",
+        "windowIds": [
+          "daily-afternoon"
+        ]
+      },
+      {
+        "id": "audit-drink-housewhitewine",
+        "name": "House White Wine",
+        "kind": "drink",
+        "priceCents": 850,
+        "tags": [
+          "house white wine"
+        ],
+        "sourceId": "src-cw-sausal-el-segundo-official-menu",
+        "status": "primary",
+        "windowIds": [
+          "daily-afternoon"
+        ]
+      },
+      {
+        "id": "audit-drink-houserosewine",
+        "name": "House Rose Wine",
+        "kind": "drink",
+        "priceCents": 850,
+        "tags": [
+          "house rose wine"
+        ],
+        "sourceId": "src-cw-sausal-el-segundo-official-menu",
+        "status": "primary",
+        "windowIds": [
+          "daily-afternoon"
+        ]
+      },
+      {
+        "id": "audit-drink-houseredwine",
+        "name": "House Red Wine",
+        "kind": "drink",
+        "priceCents": 850,
+        "tags": [
+          "house red wine"
+        ],
+        "sourceId": "src-cw-sausal-el-segundo-official-menu",
+        "status": "primary",
+        "windowIds": [
+          "daily-afternoon"
+        ]
       },
       {
         "id": "drink-beer",
-        "name": "Modelo Negra lager",
+        "name": "Modelo Negra Lager",
         "kind": "drink",
         "priceCents": 650,
-        "tags": ["beer"],
+        "tags": [
+          "modelo negra lager",
+          "beer"
+        ],
         "sourceId": "src-cw-sausal-el-segundo-official-menu",
         "status": "primary",
-        "windowIds": ["daily-afternoon"]
+        "windowIds": [
+          "daily-afternoon"
+        ]
+      },
+      {
+        "id": "audit-drink-sausalssanchitablonde",
+        "name": "Sausals Sanchita Blonde",
+        "kind": "drink",
+        "priceCents": 650,
+        "tags": [
+          "sausals sanchita blonde"
+        ],
+        "sourceId": "src-cw-sausal-el-segundo-official-menu",
+        "status": "primary",
+        "windowIds": [
+          "daily-afternoon"
+        ]
       }
     ],
-    "foodTags": ["poppers", "chips-salsa"],
-    "drinkTags": ["margarita", "beer"],
+    "foodTags": [
+      "griddled cheese tortilla",
+      "jalapeno poppers",
+      "poppers",
+      "grilled achiote chicken tostada",
+      "potato chorizo croquette",
+      "pork carnitas tostada",
+      "shrimp taco",
+      "chips with salsa",
+      "chips-salsa"
+    ],
+    "drinkTags": [
+      "rancho margarita",
+      "margarita",
+      "vamos ala playa",
+      "aperol spritz",
+      "tin cup punch",
+      "mezcal margarita",
+      "golden hour",
+      "red sangria",
+      "white sangria",
+      "house white wine",
+      "house rose wine",
+      "house red wine",
+      "modelo negra lager",
+      "beer",
+      "sausals sanchita blonde"
+    ],
     "atmosphereTags": [],
     "sources": [
       {
@@ -540,11 +1329,11 @@
         "url": "https://www.sausal.com/lunch-dinner?location=Main+Street&menu=happy-hour",
         "type": "primary",
         "publisherRole": "restaurant",
-        "accessedOn": "2026-10-19",
-        "reviewedOn": "2026-10-19",
+        "accessedOn": "2026-10-26",
+        "reviewedOn": "2026-10-26",
         "reviewMethod": "agent-source-inspection",
         "publisherUpdatedOn": null,
-        "note": "agent-source-inspection: Happy Hour availability line gives Monday-Sunday 15:00-18:00. Happy Hour Drinks and HAPPY HOUR BITES supply the four recorded prices: agent-source-inspection: Happy Hour availability line gives Monday-Sunday 15:00-18:00. Happy Hour Drinks and HAPPY HOUR BITES supply the four recorded prices. Publication date not displayed."
+        "note": "Happy Hour food and drink sections, all identifiable named choices: October 26 full-specials transcription; item prices directly listed, unknown prices not inferred. Separate tequila/mezcal pairing events are advertised without fixed current event details."
       },
       {
         "id": "src-cw-sausal-el-segundo-official-home",
@@ -590,7 +1379,14 @@
         "note": "result.addressMatches[0].coordinates and geographies.Counties[0].GEOID: Matched 219 MAIN ST, EL SEGUNDO, CA, 90245; street-range interpolation. Suites from official branch evidence are not geocoded separately."
       }
     ],
-    "notes": "Reviewer method: agent-source-inspection. Prices are directly advertised in the branch happy-hour menu; no discount arithmetic. Serving sizes, tax and gratuity unspecified. Government county/address match reviewed; coordinates are street-range estimates. Review uses selected independently authored facts only; no source-content license is represented. Location is government street-range interpolation where resolved."
+    "specials": [
+      {
+        "text": "Separate tequila/mezcal pairing events are advertised without fixed current event details.",
+        "sourceId": "src-cw-sausal-el-segundo-official-menu",
+        "status": "primary"
+      }
+    ],
+    "notes": "Reviewer method: agent-source-inspection. Prices are directly advertised in the branch happy-hour menu; no discount arithmetic. Serving sizes, tax and gratuity unspecified. Government county/address match reviewed; coordinates are street-range estimates. Review uses selected independently authored facts only; no source-content license is represented. Location is government street-range interpolation where resolved. October 26 menu audit expanded all identifiable choices; unknown current totals remain null. Agent source inspection, not owner/in-person confirmation."
   },
   {
     "id": "cw-glendora-continental-glendora",
@@ -613,7 +1409,13 @@
     "hours": [
       {
         "id": "weekday-afternoon",
-        "days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "days": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
         "start": "15:00",
         "end": "19:00",
         "restriction": "bar-only",
@@ -701,7 +1503,13 @@
     "hours": [
       {
         "id": "weekday",
-        "days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "days": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
         "start": "15:00",
         "end": "18:00",
         "restriction": "none",
@@ -713,27 +1521,224 @@
     "menu": [
       {
         "id": "fries",
-        "name": "Duck-fat fries",
+        "name": "Duck-fat Fries",
         "kind": "food",
         "priceCents": 800,
-        "tags": ["fries"],
+        "tags": [
+          "duck-fat fries",
+          "fries"
+        ],
         "sourceId": "src-cw-chapter-one-santa-ana-happy-hour",
         "status": "primary",
-        "windowIds": ["weekday"]
+        "windowIds": [
+          "weekday"
+        ]
+      },
+      {
+        "id": "audit-food-macandcheese",
+        "name": "Mac and Cheese",
+        "kind": "food",
+        "priceCents": 1200,
+        "tags": [
+          "mac and cheese"
+        ],
+        "sourceId": "src-cw-chapter-one-santa-ana-happy-hour",
+        "status": "primary",
+        "windowIds": [
+          "weekday"
+        ]
+      },
+      {
+        "id": "audit-food-friedcheesecurds",
+        "name": "Fried Cheese Curds",
+        "kind": "food",
+        "priceCents": 800,
+        "tags": [
+          "fried cheese curds"
+        ],
+        "sourceId": "src-cw-chapter-one-santa-ana-happy-hour",
+        "status": "primary",
+        "windowIds": [
+          "weekday"
+        ]
+      },
+      {
+        "id": "audit-food-primebeefsliders3",
+        "name": "Prime Beef Sliders (3)",
+        "kind": "food",
+        "priceCents": 1500,
+        "tags": [
+          "prime beef sliders (3)"
+        ],
+        "sourceId": "src-cw-chapter-one-santa-ana-happy-hour",
+        "status": "primary",
+        "windowIds": [
+          "weekday"
+        ]
+      },
+      {
+        "id": "audit-food-hothoneychickensliders3",
+        "name": "Hot Honey Chicken Sliders (3)",
+        "kind": "food",
+        "priceCents": 1200,
+        "tags": [
+          "hot honey chicken sliders (3)"
+        ],
+        "sourceId": "src-cw-chapter-one-santa-ana-happy-hour",
+        "status": "primary",
+        "windowIds": [
+          "weekday"
+        ]
+      },
+      {
+        "id": "audit-food-beefpicadilloempanadas3",
+        "name": "Beef Picadillo Empanadas (3)",
+        "kind": "food",
+        "priceCents": 1500,
+        "tags": [
+          "beef picadillo empanadas (3)"
+        ],
+        "sourceId": "src-cw-chapter-one-santa-ana-happy-hour",
+        "status": "primary",
+        "windowIds": [
+          "weekday"
+        ]
+      },
+      {
+        "id": "audit-food-goatcheeseempanadas3",
+        "name": "Goat Cheese Empanadas (3)",
+        "kind": "food",
+        "priceCents": 1200,
+        "tags": [
+          "goat cheese empanadas (3)"
+        ],
+        "sourceId": "src-cw-chapter-one-santa-ana-happy-hour",
+        "status": "primary",
+        "windowIds": [
+          "weekday"
+        ]
+      },
+      {
+        "id": "audit-food-lumpia",
+        "name": "Lumpia",
+        "kind": "food",
+        "priceCents": 900,
+        "tags": [
+          "lumpia"
+        ],
+        "sourceId": "src-cw-chapter-one-santa-ana-happy-hour",
+        "status": "primary",
+        "windowIds": [
+          "weekday"
+        ]
+      },
+      {
+        "id": "audit-food-hotwings1lb",
+        "name": "Hot Wings (1lb)",
+        "kind": "food",
+        "priceCents": 1200,
+        "tags": [
+          "hot wings (1lb)"
+        ],
+        "sourceId": "src-cw-chapter-one-santa-ana-happy-hour",
+        "status": "primary",
+        "windowIds": [
+          "weekday"
+        ]
       },
       {
         "id": "margarita",
         "name": "Margarita",
         "kind": "drink",
         "priceCents": 800,
-        "tags": ["margarita", "cocktail"],
+        "tags": [
+          "margarita",
+          "margarita",
+          "cocktail"
+        ],
         "sourceId": "src-cw-chapter-one-santa-ana-happy-hour",
         "status": "primary",
-        "windowIds": ["weekday"]
+        "windowIds": [
+          "weekday"
+        ]
+      },
+      {
+        "id": "audit-drink-moscowmule",
+        "name": "Moscow Mule",
+        "kind": "drink",
+        "priceCents": 800,
+        "tags": [
+          "moscow mule"
+        ],
+        "sourceId": "src-cw-chapter-one-santa-ana-happy-hour",
+        "status": "primary",
+        "windowIds": [
+          "weekday"
+        ]
+      },
+      {
+        "id": "audit-drink-sangria",
+        "name": "Sangria",
+        "kind": "drink",
+        "priceCents": 800,
+        "tags": [
+          "sangria"
+        ],
+        "sourceId": "src-cw-chapter-one-santa-ana-happy-hour",
+        "status": "primary",
+        "windowIds": [
+          "weekday"
+        ]
+      },
+      {
+        "id": "audit-drink-oldfashioned",
+        "name": "Old Fashioned",
+        "kind": "drink",
+        "priceCents": 1000,
+        "tags": [
+          "old fashioned"
+        ],
+        "sourceId": "src-cw-chapter-one-santa-ana-happy-hour",
+        "status": "primary",
+        "windowIds": [
+          "weekday"
+        ]
+      },
+      {
+        "id": "audit-drink-ranchwatertradicional",
+        "name": "Ranch Water Tradicional",
+        "kind": "drink",
+        "priceCents": 500,
+        "tags": [
+          "ranch water tradicional"
+        ],
+        "sourceId": "src-cw-chapter-one-santa-ana-happy-hour",
+        "status": "primary",
+        "windowIds": [
+          "weekday"
+        ]
       }
     ],
-    "foodTags": ["fries"],
-    "drinkTags": ["margarita", "cocktail"],
+    "foodTags": [
+      "duck-fat fries",
+      "fries",
+      "mac and cheese",
+      "fried cheese curds",
+      "prime beef sliders (3)",
+      "hot honey chicken sliders (3)",
+      "beef picadillo empanadas (3)",
+      "goat cheese empanadas (3)",
+      "lumpia",
+      "hot wings (1lb)"
+    ],
+    "drinkTags": [
+      "margarita",
+      "cocktail",
+      "moscow mule",
+      "sangria",
+      "old fashioned",
+      "ranch water tradicional"
+    ],
     "atmosphereTags": [],
     "sources": [
       {
@@ -741,11 +1746,11 @@
         "url": "https://chapteronetml.com/food/happy-hour.php",
         "type": "primary",
         "publisherRole": "restaurant",
-        "accessedOn": "2026-10-19",
-        "reviewedOn": "2026-10-19",
+        "accessedOn": "2026-10-26",
+        "reviewedOn": "2026-10-26",
         "reviewMethod": "agent-source-inspection",
         "publisherUpdatedOn": null,
-        "note": "agent-source-inspection. Reached through homepage MENUS > HAPPY-HOUR in browser and inspected again with web: agent-source-inspection. Reached through homepage MENUS > HAPPY-HOUR in browser and inspected again with web. Heading supplies Monday-Friday 15:00-18:00; Food Specials lists fries at $8; Drink Specials lists margaritas at $8. Footer adds 20% gratuity for six or more. Menu publication date not stated."
+        "note": "Happy Hour food and drink sections, all identifiable named choices: October 26 full-specials transcription; item prices directly listed, unknown prices not inferred. Drafts and wine glasses $3 off. Mac and cheese chicken +$7, steak +$13. Separate Taco Tuesday menu not independently transcribed in this HH source."
       },
       {
         "id": "src-cw-chapter-one-santa-ana-location",
@@ -796,9 +1801,14 @@
         "text": "During weekday happy hour, draft beer and wine by the glass each receive a $3 reduction; final prices were not established.",
         "status": "primary",
         "sourceId": "src-cw-chapter-one-santa-ana-happy-hour"
+      },
+      {
+        "text": "Drafts and wine glasses $3 off. Mac and cheese chicken +$7, steak +$13. Separate Taco Tuesday menu not independently transcribed in this HH source.",
+        "sourceId": "src-cw-chapter-one-santa-ana-happy-hour",
+        "status": "primary"
       }
     ],
-    "notes": "Reviewer method: agent-source-inspection, not human review. Prices are directly advertised happy-hour amounts, before tax/tip. Menu says 20% gratuity for parties of six or more and substitutions may be declined except for allergies. No seating or holiday exclusion stated in inspected section. Government county/address match reviewed; coordinates are street-range estimates. Review uses selected independently authored facts only; no source-content license is represented. Location is government street-range interpolation where resolved."
+    "notes": "Reviewer method: agent-source-inspection, not human review. Prices are directly advertised happy-hour amounts, before tax/tip. Menu says 20% gratuity for parties of six or more and substitutions may be declined except for allergies. No seating or holiday exclusion stated in inspected section. Government county/address match reviewed; coordinates are street-range estimates. Review uses selected independently authored facts only; no source-content license is represented. Location is government street-range interpolation where resolved. October 26 menu audit expanded all identifiable choices; unknown current totals remain null. Agent source inspection, not owner/in-person confirmation."
   },
   {
     "id": "cw-cedar-creek-inn-brea",
@@ -918,7 +1928,12 @@
     "hours": [
       {
         "id": "weekday",
-        "days": ["Tuesday", "Wednesday", "Thursday", "Friday"],
+        "days": [
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
         "start": "15:00",
         "end": "19:00",
         "restriction": "none",
@@ -928,7 +1943,9 @@
       },
       {
         "id": "saturday",
-        "days": ["Saturday"],
+        "days": [
+          "Saturday"
+        ],
         "start": "11:30",
         "end": "15:30",
         "restriction": "conditional",
@@ -938,7 +1955,9 @@
       },
       {
         "id": "sunday",
-        "days": ["Sunday"],
+        "days": [
+          "Sunday"
+        ],
         "start": "10:00",
         "end": "14:00",
         "restriction": "conditional",
@@ -953,24 +1972,42 @@
         "name": "Happy-hour calamari",
         "kind": "food",
         "priceCents": 1000,
-        "tags": ["calamari", "seafood"],
+        "tags": [
+          "calamari",
+          "seafood"
+        ],
         "sourceId": "src-cw-billys-at-the-beach-newport-beach-happy-hour-menu",
         "status": "primary",
-        "windowIds": ["weekday", "saturday", "sunday"]
+        "windowIds": [
+          "weekday",
+          "saturday",
+          "sunday"
+        ]
       },
       {
         "id": "blue-hawaiian",
         "name": "Happy-hour Blue Hawaiian",
         "kind": "drink",
         "priceCents": 1000,
-        "tags": ["cocktail"],
+        "tags": [
+          "cocktail"
+        ],
         "sourceId": "src-cw-billys-at-the-beach-newport-beach-happy-hour-menu",
         "status": "primary",
-        "windowIds": ["weekday", "saturday", "sunday"]
+        "windowIds": [
+          "weekday",
+          "saturday",
+          "sunday"
+        ]
       }
     ],
-    "foodTags": ["calamari", "seafood"],
-    "drinkTags": ["cocktail"],
+    "foodTags": [
+      "calamari",
+      "seafood"
+    ],
+    "drinkTags": [
+      "cocktail"
+    ],
     "atmosphereTags": [],
     "sources": [
       {
@@ -1040,7 +2077,12 @@
     "hours": [
       {
         "id": "afternoon",
-        "days": ["Wednesday", "Thursday", "Friday", "Sunday"],
+        "days": [
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Sunday"
+        ],
         "start": "14:30",
         "end": "18:00",
         "restriction": "none",
@@ -1050,7 +2092,9 @@
       },
       {
         "id": "tuesday",
-        "days": ["Tuesday"],
+        "days": [
+          "Tuesday"
+        ],
         "start": "17:00",
         "end": "18:00",
         "restriction": "conditional",
@@ -1062,27 +2106,415 @@
     "menu": [
       {
         "id": "nuts",
-        "name": "Spiced nuts",
+        "name": "Spiced Nuts",
         "kind": "food",
         "priceCents": 600,
-        "tags": ["nuts"],
+        "tags": [
+          "spiced nuts",
+          "nuts"
+        ],
         "sourceId": "src-cw-mayfield-san-juan-capistrano-happy-hour",
         "status": "primary",
-        "windowIds": ["afternoon", "tuesday"]
+        "windowIds": [
+          "afternoon",
+          "tuesday"
+        ]
+      },
+      {
+        "id": "audit-food-marinatedolives",
+        "name": "Marinated Olives",
+        "kind": "food",
+        "priceCents": 700,
+        "tags": [
+          "marinated olives"
+        ],
+        "sourceId": "src-cw-mayfield-san-juan-capistrano-happy-hour",
+        "status": "primary",
+        "windowIds": [
+          "afternoon",
+          "tuesday"
+        ]
+      },
+      {
+        "id": "audit-food-mayfieldburger",
+        "name": "Mayfield Burger",
+        "kind": "food",
+        "priceCents": 2300,
+        "tags": [
+          "mayfield burger"
+        ],
+        "sourceId": "src-cw-mayfield-san-juan-capistrano-happy-hour",
+        "status": "primary",
+        "windowIds": [
+          "afternoon",
+          "tuesday"
+        ]
+      },
+      {
+        "id": "audit-food-zaatarfriedchickensandwich",
+        "name": "Zaatar Fried Chicken Sandwich",
+        "kind": "food",
+        "priceCents": 2300,
+        "tags": [
+          "zaatar fried chicken sandwich"
+        ],
+        "sourceId": "src-cw-mayfield-san-juan-capistrano-happy-hour",
+        "status": "primary",
+        "windowIds": [
+          "afternoon",
+          "tuesday"
+        ]
+      },
+      {
+        "id": "audit-food-middleeasterncaesar",
+        "name": "Middle Eastern Caesar",
+        "kind": "food",
+        "priceCents": 1600,
+        "tags": [
+          "middle eastern caesar"
+        ],
+        "sourceId": "src-cw-mayfield-san-juan-capistrano-happy-hour",
+        "status": "primary",
+        "windowIds": [
+          "afternoon",
+          "tuesday"
+        ]
+      },
+      {
+        "id": "audit-food-babaganoushdip",
+        "name": "Baba Ganoush Dip",
+        "kind": "food",
+        "priceCents": 500,
+        "tags": [
+          "baba ganoush dip"
+        ],
+        "sourceId": "src-cw-mayfield-san-juan-capistrano-happy-hour",
+        "status": "primary",
+        "windowIds": [
+          "afternoon",
+          "tuesday"
+        ]
+      },
+      {
+        "id": "audit-food-hummusdip",
+        "name": "Hummus Dip",
+        "kind": "food",
+        "priceCents": 500,
+        "tags": [
+          "hummus dip"
+        ],
+        "sourceId": "src-cw-mayfield-san-juan-capistrano-happy-hour",
+        "status": "primary",
+        "windowIds": [
+          "afternoon",
+          "tuesday"
+        ]
+      },
+      {
+        "id": "audit-food-muhammaradip",
+        "name": "Muhammara Dip",
+        "kind": "food",
+        "priceCents": 500,
+        "tags": [
+          "muhammara dip"
+        ],
+        "sourceId": "src-cw-mayfield-san-juan-capistrano-happy-hour",
+        "status": "primary",
+        "windowIds": [
+          "afternoon",
+          "tuesday"
+        ]
+      },
+      {
+        "id": "audit-food-datelabnehdip",
+        "name": "Date Labneh Dip",
+        "kind": "food",
+        "priceCents": 500,
+        "tags": [
+          "date labneh dip"
+        ],
+        "sourceId": "src-cw-mayfield-san-juan-capistrano-happy-hour",
+        "status": "primary",
+        "windowIds": [
+          "afternoon",
+          "tuesday"
+        ]
+      },
+      {
+        "id": "audit-food-spinachwhippedfetadip",
+        "name": "Spinach Whipped Feta Dip",
+        "kind": "food",
+        "priceCents": 500,
+        "tags": [
+          "spinach whipped feta dip"
+        ],
+        "sourceId": "src-cw-mayfield-san-juan-capistrano-happy-hour",
+        "status": "primary",
+        "windowIds": [
+          "afternoon",
+          "tuesday"
+        ]
+      },
+      {
+        "id": "audit-food-challahbreadpiece",
+        "name": "Challah Bread Piece",
+        "kind": "food",
+        "priceCents": 300,
+        "tags": [
+          "challah bread piece"
+        ],
+        "sourceId": "src-cw-mayfield-san-juan-capistrano-happy-hour",
+        "status": "primary",
+        "windowIds": [
+          "afternoon",
+          "tuesday"
+        ]
+      },
+      {
+        "id": "audit-drink-blossombreeze",
+        "name": "Blossom Breeze",
+        "kind": "drink",
+        "priceCents": 1200,
+        "tags": [
+          "blossom breeze"
+        ],
+        "sourceId": "src-cw-mayfield-san-juan-capistrano-happy-hour",
+        "status": "primary",
+        "windowIds": [
+          "afternoon",
+          "tuesday"
+        ]
+      },
+      {
+        "id": "audit-drink-farandaway",
+        "name": "Far and Away",
+        "kind": "drink",
+        "priceCents": 1200,
+        "tags": [
+          "far and away"
+        ],
+        "sourceId": "src-cw-mayfield-san-juan-capistrano-happy-hour",
+        "status": "primary",
+        "windowIds": [
+          "afternoon",
+          "tuesday"
+        ]
+      },
+      {
+        "id": "audit-drink-avantgarden",
+        "name": "Avant Garden",
+        "kind": "drink",
+        "priceCents": 1200,
+        "tags": [
+          "avant garden"
+        ],
+        "sourceId": "src-cw-mayfield-san-juan-capistrano-happy-hour",
+        "status": "primary",
+        "windowIds": [
+          "afternoon",
+          "tuesday"
+        ]
+      },
+      {
+        "id": "audit-drink-doctorschoice",
+        "name": "Doctors Choice",
+        "kind": "drink",
+        "priceCents": 1200,
+        "tags": [
+          "doctors choice"
+        ],
+        "sourceId": "src-cw-mayfield-san-juan-capistrano-happy-hour",
+        "status": "primary",
+        "windowIds": [
+          "afternoon",
+          "tuesday"
+        ]
+      },
+      {
+        "id": "audit-drink-aztecoldfashioned",
+        "name": "Aztec Old Fashioned",
+        "kind": "drink",
+        "priceCents": 1200,
+        "tags": [
+          "aztec old fashioned"
+        ],
+        "sourceId": "src-cw-mayfield-san-juan-capistrano-happy-hour",
+        "status": "primary",
+        "windowIds": [
+          "afternoon",
+          "tuesday"
+        ]
+      },
+      {
+        "id": "audit-drink-teetime",
+        "name": "Tee Time",
+        "kind": "drink",
+        "priceCents": 1200,
+        "tags": [
+          "tee time"
+        ],
+        "sourceId": "src-cw-mayfield-san-juan-capistrano-happy-hour",
+        "status": "primary",
+        "windowIds": [
+          "afternoon",
+          "tuesday"
+        ]
       },
       {
         "id": "pilsner",
-        "name": "pFriem pilsner on draft",
+        "name": "pFriem Pilsner on Draft",
         "kind": "drink",
         "priceCents": 800,
-        "tags": ["beer", "pilsner"],
+        "tags": [
+          "pfriem pilsner on draft",
+          "beer",
+          "pilsner"
+        ],
         "sourceId": "src-cw-mayfield-san-juan-capistrano-happy-hour",
         "status": "primary",
-        "windowIds": ["afternoon", "tuesday"]
+        "windowIds": [
+          "afternoon",
+          "tuesday"
+        ]
+      },
+      {
+        "id": "audit-drink-swamisipa",
+        "name": "Swamis IPA",
+        "kind": "drink",
+        "priceCents": 800,
+        "tags": [
+          "swamis ipa"
+        ],
+        "sourceId": "src-cw-mayfield-san-juan-capistrano-happy-hour",
+        "status": "primary",
+        "windowIds": [
+          "afternoon",
+          "tuesday"
+        ]
+      },
+      {
+        "id": "audit-drink-harlandhazyipa",
+        "name": "Harland Hazy IPA",
+        "kind": "drink",
+        "priceCents": 800,
+        "tags": [
+          "harland hazy ipa"
+        ],
+        "sourceId": "src-cw-mayfield-san-juan-capistrano-happy-hour",
+        "status": "primary",
+        "windowIds": [
+          "afternoon",
+          "tuesday"
+        ]
+      },
+      {
+        "id": "audit-drink-sauvignonblanc",
+        "name": "Sauvignon Blanc",
+        "kind": "drink",
+        "priceCents": 1200,
+        "tags": [
+          "sauvignon blanc"
+        ],
+        "sourceId": "src-cw-mayfield-san-juan-capistrano-happy-hour",
+        "status": "primary",
+        "windowIds": [
+          "afternoon",
+          "tuesday"
+        ]
+      },
+      {
+        "id": "audit-drink-picpouldepinet",
+        "name": "Picpoul de Pinet",
+        "kind": "drink",
+        "priceCents": 1200,
+        "tags": [
+          "picpoul de pinet"
+        ],
+        "sourceId": "src-cw-mayfield-san-juan-capistrano-happy-hour",
+        "status": "primary",
+        "windowIds": [
+          "afternoon",
+          "tuesday"
+        ]
+      },
+      {
+        "id": "audit-drink-roseofcaladoc",
+        "name": "Rose of Caladoc",
+        "kind": "drink",
+        "priceCents": 1200,
+        "tags": [
+          "rose of caladoc"
+        ],
+        "sourceId": "src-cw-mayfield-san-juan-capistrano-happy-hour",
+        "status": "primary",
+        "windowIds": [
+          "afternoon",
+          "tuesday"
+        ]
+      },
+      {
+        "id": "audit-drink-trepatandsumoll",
+        "name": "Trepat and Sumoll",
+        "kind": "drink",
+        "priceCents": 1200,
+        "tags": [
+          "trepat and sumoll"
+        ],
+        "sourceId": "src-cw-mayfield-san-juan-capistrano-happy-hour",
+        "status": "primary",
+        "windowIds": [
+          "afternoon",
+          "tuesday"
+        ]
+      },
+      {
+        "id": "audit-drink-bordeauxblend",
+        "name": "Bordeaux Blend",
+        "kind": "drink",
+        "priceCents": 1200,
+        "tags": [
+          "bordeaux blend"
+        ],
+        "sourceId": "src-cw-mayfield-san-juan-capistrano-happy-hour",
+        "status": "primary",
+        "windowIds": [
+          "afternoon",
+          "tuesday"
+        ]
       }
     ],
-    "foodTags": ["nuts"],
-    "drinkTags": ["beer", "pilsner"],
+    "foodTags": [
+      "spiced nuts",
+      "nuts",
+      "marinated olives",
+      "mayfield burger",
+      "zaatar fried chicken sandwich",
+      "middle eastern caesar",
+      "baba ganoush dip",
+      "hummus dip",
+      "muhammara dip",
+      "date labneh dip",
+      "spinach whipped feta dip",
+      "challah bread piece"
+    ],
+    "drinkTags": [
+      "blossom breeze",
+      "far and away",
+      "avant garden",
+      "doctors choice",
+      "aztec old fashioned",
+      "tee time",
+      "pfriem pilsner on draft",
+      "beer",
+      "pilsner",
+      "swamis ipa",
+      "harland hazy ipa",
+      "sauvignon blanc",
+      "picpoul de pinet",
+      "rose of caladoc",
+      "trepat and sumoll",
+      "bordeaux blend"
+    ],
     "atmosphereTags": [],
     "sources": [
       {
@@ -1090,11 +2522,11 @@
         "url": "https://www.mayfieldoc.com/happy-hour",
         "type": "primary",
         "publisherRole": "restaurant",
-        "accessedOn": "2026-10-19",
-        "reviewedOn": "2026-10-19",
+        "accessedOn": "2026-10-26",
+        "reviewedOn": "2026-10-26",
         "reviewMethod": "agent-source-inspection",
         "publisherUpdatedOn": null,
-        "note": "agent-source-inspection. Heading advertises Sunday-Friday 14:30-18:00 subject to opening hours: agent-source-inspection. Heading advertises Sunday-Friday 14:30-18:00 subject to opening hours. HOURS OF OPERATION excludes Monday and Tuesday before 17:00. Food lists nuts $6; $8 DRAFT BEERS includes pFriem Pilsner. FIND US supplies address. Browser footer TERMS and PRIVACY links both resolve back to this same happy-hour URL, with no policy text supplied. Menu publication date not stated."
+        "note": "Happy Hour food and drink sections, all identifiable named choices: October 26 full-specials transcription; item prices directly listed, unknown prices not inferred. Sunday–Friday 2:30–6pm subject to opening hours. Rip and Dip: three dips plus two challah $15; do not split bundle component prices. Opening-day limitations retained."
       },
       {
         "id": "src-cw-mayfield-san-juan-capistrano-census",
@@ -1118,7 +2550,14 @@
         "note": "result.addressMatches[0].coordinates and geographies.Counties[0].GEOID: Matched 31761 CAM CAPISTRANO, SAN JUAN CAPISTRANO, CA, 92675; street-range interpolation. Suites from official branch evidence are not geocoded separately."
       }
     ],
-    "notes": "Reviewer method: agent-source-inspection, not human review. Tuesday 17:00 start applies the page's explicit closure exception; Monday omitted because closed. Saturday excluded by advertised Sunday-Friday schedule. Exact listed prices retained, with no assumption that every listed item is discounted from a regular price. No seating/holiday exclusion established. Government county/address match reviewed; coordinates are street-range estimates. Review uses selected independently authored facts only; no source-content license is represented. Location is government street-range interpolation where resolved."
+    "specials": [
+      {
+        "text": "Sunday–Friday 2:30–6pm subject to opening hours. Rip and Dip: three dips plus two challah $15; do not split bundle component prices. Opening-day limitations retained.",
+        "sourceId": "src-cw-mayfield-san-juan-capistrano-happy-hour",
+        "status": "primary"
+      }
+    ],
+    "notes": "Reviewer method: agent-source-inspection, not human review. Tuesday 17:00 start applies the page's explicit closure exception; Monday omitted because closed. Saturday excluded by advertised Sunday-Friday schedule. Exact listed prices retained, with no assumption that every listed item is discounted from a regular price. No seating/holiday exclusion established. Government county/address match reviewed; coordinates are street-range estimates. Review uses selected independently authored facts only; no source-content license is represented. Location is government street-range interpolation where resolved. October 26 menu audit expanded all identifiable choices; unknown current totals remain null. Agent source inspection, not owner/in-person confirmation."
   },
   {
     "id": "cw-coyote-grill-laguna-beach",
@@ -1158,7 +2597,9 @@
       },
       {
         "id": "bar-tuesday",
-        "days": ["Tuesday"],
+        "days": [
+          "Tuesday"
+        ],
         "start": "15:00",
         "end": "21:00",
         "restriction": "bar-only",
@@ -1173,24 +2614,42 @@
         "name": "Chicken taco, one, bar happy hour",
         "kind": "food",
         "priceCents": 625,
-        "tags": ["tacos", "chicken"],
+        "tags": [
+          "tacos",
+          "chicken"
+        ],
         "sourceId": "src-cw-coyote-grill-laguna-beach-menu",
         "status": "primary",
-        "windowIds": ["bar-standard", "bar-tuesday"]
+        "windowIds": [
+          "bar-standard",
+          "bar-tuesday"
+        ]
       },
       {
         "id": "margarita",
         "name": "Happy-hour margarita",
         "kind": "drink",
         "priceCents": 850,
-        "tags": ["margarita", "cocktail"],
+        "tags": [
+          "margarita",
+          "cocktail"
+        ],
         "sourceId": "src-cw-coyote-grill-laguna-beach-menu",
         "status": "primary",
-        "windowIds": ["bar-standard", "bar-tuesday"]
+        "windowIds": [
+          "bar-standard",
+          "bar-tuesday"
+        ]
       }
     ],
-    "foodTags": ["tacos", "chicken"],
-    "drinkTags": ["margarita", "cocktail"],
+    "foodTags": [
+      "tacos",
+      "chicken"
+    ],
+    "drinkTags": [
+      "margarita",
+      "cocktail"
+    ],
     "atmosphereTags": [],
     "sources": [
       {

@@ -48,8 +48,19 @@
     "note": "Reviewed Sunset Hour tab explicitly restricts seating to bar/patio."
   },
   "ocean-prime-beverly-hills": {
-    "itemDays": { "food-1": ["Friday"], "drink-1": ["Friday"] },
-    "itemPairs": { "food-1": ["drink-1"] },
+    "itemDays": {
+      "food-1": [
+        "Friday"
+      ],
+      "drink-1": [
+        "Friday"
+      ]
+    },
+    "itemPairs": {
+      "food-1": [
+        "drink-1"
+      ]
+    },
     "note": "Friday-only oyster price is conservatively paired only with the documented champagne promotion, not the unrelated beer; lounge restriction remains conditional."
   }
 }

@@ -166,6 +166,33 @@ export function freshMenuLookup(record, now = Date.now()) {
       lookup.candidate === null ? null : normalizeCandidate(lookup.candidate);
     if (candidate && identity(candidate) !== identity(record.payload))
       return null;
+    // Extraction can collapse named choices into a category such as "Martinis".
+    // Keep saved choices only when this same menu's new excerpt still names them.
+    // The excerpt confirms the name, not the old price.
+    if (candidate && candidate.sourceUrl === record.payload.sourceUrl) {
+      const fold = (text) =>
+        " " +
+        String(text)
+          .normalize("NFKC")
+          .toLowerCase()
+          .replace(/[^a-z0-9]+/g, " ")
+          .trim() +
+        " ";
+      const excerpt = fold(candidate.evidence.split("Menu excerpt:").at(-1));
+      const keys = new Set(candidate.items.map((i) => i.kind + fold(i.name)));
+      for (const item of record.payload.items || []) {
+        const key = item.kind + fold(item.name);
+        if (candidate.items.length >= 20) break;
+        if (!keys.has(key) && excerpt.includes(fold(item.name))) {
+          const restored = normalizeCandidate({
+            ...candidate,
+            items: [{ ...item, priceCents: null }],
+          }).items[0];
+          candidate.items.push(restored);
+          keys.add(key);
+        }
+      }
+    }
     return {
       candidate,
       checkedAt: lookup.checkedAt,

@@ -1,7 +1,7 @@
 import { periodFromQuery, timePeriods } from "./time-filter.js";
 import { weekdays, isHappyHourActive } from "./matching.js";
 const dayWord =
-  "(mon(?:day)?|tue(?:sday)?|wed(?:nesday)?|thu(?:rsday)?|fri(?:day)?|sat(?:urday)?|sun(?:day)?)";
+  "(mon(?:day)?|tue(?:s(?:day)?)?|wed(?:s|nesday)?|thu(?:r(?:s(?:day)?)?)?|fri(?:day)?|sat(?:urday)?|sun(?:day)?)\\.?";
 const fullDay = (value) =>
   weekdays.find(
     (d) => d.slice(0, 3).toLowerCase() === value.slice(0, 3).toLowerCase(),

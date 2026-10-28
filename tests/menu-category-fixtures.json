@@ -1,0 +1,129 @@
+{
+  "beer": {
+    "beverly-bar-beverly-hills": [
+      "Asahi Draft",
+      "Peroni Draft",
+      "Lagunitas IPA Draft",
+      "Almanac Love Hazy IPA Draft"
+    ],
+    "gracias-madre-west-hollywood": ["House Cerveza"],
+    "joyce": ["Clasica Mexican Lager", "Skyduster IPA"],
+    "lawrys-prime-rib-beverly-hills": [
+      "Stella Artois Draft",
+      "Stone IPA Draft"
+    ],
+    "library-alehouse-santa-monica": [
+      "Mayberry IPA",
+      "Dos Topas",
+      "Chronic Amber",
+      "Orderville Hazy IPA",
+      "Fresh Pils of LA"
+    ],
+    "marina-pasadena": ["Scrimshaw Pilsner", "Offshoot Relax IPA"],
+    "ospi-brentwood": ["Skyduster Lager Pint", "Mayberry IPA Pint"],
+    "perch-la": ["Kronenbourg 1664"],
+    "simonette-culver-city": ["Lager"],
+    "tam-oshanter-atwater-village": [
+      "Harp",
+      "Guinness",
+      "Old Speckled Hen",
+      "Tennents Lager",
+      "Lost Coast Downtown Brown Ale",
+      "Stone IPA",
+      "Rotating Draft",
+      "Pabst Blue Ribbon (16oz)",
+      "Sullivans Irish Red",
+      "Sullivans Irish Gold"
+    ],
+    "the-waterfront-venice": ["PBR (BOGO)"],
+    "broken-shaker-dtla": [
+      "Tecate",
+      "Bero Kingston Golden Pilsner (nonalcoholic)"
+    ],
+    "library-bar": ["Mexican Style Lager", "Hazy IPA"],
+    "rossoblu": ["Classic City Lager", "Tropicalia IPA"],
+    "ospi-venice": ["Skyduster Lager Pint", "Pliny the Elder IPA Pint"],
+    "lunetta-santa-monica": [
+      "Pacifico",
+      "Sapporo",
+      "Pinzon Pilsner",
+      "Guinness",
+      "Kilkenny",
+      "Best Day Kolsch (nonalcoholic)"
+    ],
+    "la-puglia-santa-monica": ["Peroni"],
+    "michaels-santa-monica": [
+      "Three Weavers Cloud City Hazy IPA",
+      "Ventura Light Lager",
+      "Pacifico",
+      "White Rascal"
+    ],
+    "stk-los-angeles-westwood": [
+      "Modelo Especial",
+      "Modelo Negra",
+      "Chimay Bottle"
+    ],
+    "da-michele-hollywood": ["Peroni"],
+    "prospect-gourmand-beverly-hills": ["Modelo Especial"]
+  },
+  "cocktail": {
+    "iki-ramen-koreatown": ["IKI Martini", "IKI High Ball"],
+    "iki-ramen-hollywood": ["IKI Martini", "IKI High Ball"],
+    "joyce": [
+      "Freezer Door Martini",
+      "Sidecar",
+      "Tommys Margarita",
+      "Pineapple Daiquiri"
+    ],
+    "lawrys-prime-rib-beverly-hills": [
+      "La Cienega Mule",
+      "Aperol Spritz",
+      "Hendricks Gin and Tonic",
+      "Prime Margarita",
+      "Prime Old Fashioned"
+    ],
+    "rossoblu": [
+      "Aperol Spritz",
+      "Hugo",
+      "Paloma",
+      "Limoncello Martini",
+      "Negroni",
+      "Casanovas Cup",
+      "Vesuvio",
+      "The Oro",
+      "B Dolce"
+    ],
+    "formosa-cafe-west-hollywood": [
+      "Stagecoach",
+      "The Ginger Rogers",
+      "The Howard Hughes",
+      "The Lindy",
+      "The Golden Idol",
+      "Pink Cadillac"
+    ]
+  },
+  "burger": {
+    "la-boheme-west-hollywood": ["Cheeseburger Sliders"],
+    "perch-la": ["Brioche Beef Slider"],
+    "prospect-gourmand-beverly-hills": ["Gourmando Slider"],
+    "the-waterfront-venice": ["Cheeseburger"]
+  },
+  "vegan": {
+    "gracias-madre-west-hollywood": ["Ceviche Tostada", "Garlic Chipotle Fries"]
+  },
+  "dumplings": {
+    "iki-ramen-koreatown": ["Chicken Gyoza"],
+    "iki-ramen-hollywood": ["Chicken Gyoza"]
+  },
+  "sandwich": {
+    "lawrys-prime-rib-beverly-hills": ["Prime Rib Katsu Sando"]
+  },
+  "cheese": {
+    "ospi-venice": ["Crispy Provolone"],
+    "ospi-brentwood": ["Crispy Provolone"]
+  },
+  "vegetables": {
+    "formosa-cafe-west-hollywood": ["Kung Pao Brussels Sprouts"],
+    "la-boheme-west-hollywood": ["Buffalo Cauliflower"]
+  }
+}

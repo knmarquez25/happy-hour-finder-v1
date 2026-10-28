@@ -131,57 +131,160 @@
     ],
     "menu": [
       {
-        "id": "food-1",
+        "name": "Shrimp and Pork Shu Mai",
+        "kind": "food",
+        "priceCents": 1000,
+        "tags": [
+          "shrimp and pork shu mai"
+        ],
+        "id": "audit-food-shrimpandporkshumai",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
         "name": "Szechuan Wings",
         "kind": "food",
         "priceCents": 1000,
         "tags": [
-          "wings"
+          "szechuan wings"
         ],
+        "id": "food-1",
         "sourceId": "official",
         "status": "primary"
       },
       {
-        "id": "food-2",
         "name": "Kung Pao Brussels Sprouts",
         "kind": "food",
         "priceCents": 1000,
         "tags": [
+          "kung pao brussels sprouts",
           "vegetables"
         ],
+        "id": "food-2",
         "sourceId": "official",
         "status": "primary"
       },
       {
-        "id": "drink-1",
+        "name": "Chicken Xiao Long Bao Soup Dumplings",
+        "kind": "food",
+        "priceCents": 1000,
+        "tags": [
+          "chicken xiao long bao soup dumplings"
+        ],
+        "id": "audit-food-chickenxiaolongbaosoupdumplings",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
         "name": "Stagecoach",
         "kind": "drink",
         "priceCents": 1000,
         "tags": [
+          "stagecoach",
           "cocktail"
         ],
+        "id": "drink-1",
         "sourceId": "official",
         "status": "primary"
       },
       {
-        "id": "drink-2",
+        "name": "The Ginger Rogers",
+        "kind": "drink",
+        "priceCents": 1000,
+        "tags": [
+          "the ginger rogers",
+          "cocktail"
+        ],
+        "id": "audit-drink-thegingerrogers",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "The Howard Hughes",
+        "kind": "drink",
+        "priceCents": 1000,
+        "tags": [
+          "the howard hughes",
+          "cocktail"
+        ],
+        "id": "audit-drink-thehowardhughes",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "The Lindy",
+        "kind": "drink",
+        "priceCents": 1000,
+        "tags": [
+          "the lindy",
+          "cocktail"
+        ],
+        "id": "audit-drink-thelindy",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "The Golden Idol",
+        "kind": "drink",
+        "priceCents": 1000,
+        "tags": [
+          "the golden idol",
+          "cocktail"
+        ],
+        "id": "audit-drink-thegoldenidol",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "Pink Cadillac",
+        "kind": "drink",
+        "priceCents": 1000,
+        "tags": [
+          "pink cadillac",
+          "cocktail"
+        ],
+        "id": "audit-drink-pinkcadillac",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "Daily Wine",
+        "kind": "drink",
+        "priceCents": 800,
+        "tags": [
+          "daily wine"
+        ],
+        "id": "audit-drink-dailywine",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
         "name": "Daily Beer",
         "kind": "drink",
         "priceCents": 500,
         "tags": [
-          "beer"
+          "daily beer"
         ],
+        "id": "drink-2",
         "sourceId": "official",
         "status": "primary"
       }
     ],
     "foodTags": [
-      "wings",
-      "vegetables"
+      "shrimp and pork shu mai",
+      "szechuan wings",
+      "kung pao brussels sprouts",
+      "chicken xiao long bao soup dumplings"
     ],
     "drinkTags": [
-      "cocktail",
-      "beer"
+      "stagecoach",
+      "the ginger rogers",
+      "the howard hughes",
+      "the lindy",
+      "the golden idol",
+      "pink cadillac",
+      "daily wine",
+      "daily beer"
     ],
     "atmosphereTags": [],
     "sources": [
@@ -189,8 +292,8 @@
         "id": "official",
         "url": "https://theformosacafe.com/menu",
         "type": "primary",
-        "accessedOn": "2026-10-19",
-        "reviewedOn": "2026-10-19",
+        "accessedOn": "2026-10-26",
+        "reviewedOn": "2026-10-26",
         "note": "Golden Hour daily 3-6pm; cocktails and named food plates $10, daily beer $5."
       },
       {
@@ -202,7 +305,14 @@
         "note": "Same official page gives ZIP 90069 in its visit block but 90046 in its FAQ. Address uses FAQ ZIP; flag for Census resolution."
       }
     ],
-    "notes": "Official location page has an internal ZIP conflict (90069 versus 90046). Street address is consistent. Golden Hour is the published happy-hour offer."
+    "notes": "Official location page has an internal ZIP conflict (90069 versus 90046). Street address is consistent. Golden Hour is the published happy-hour offer.",
+    "specials": [
+      {
+        "text": "Golden Hour daily 3–6pm; daily beer, wine and punch selections rotate.",
+        "sourceId": "official",
+        "status": "primary"
+      }
+    ]
   },
   {
     "id": "laurel-hardware-west-hollywood",
@@ -324,59 +434,213 @@
     ],
     "menu": [
       {
-        "id": "food-1",
         "name": "Happy Hour Kitty Burger",
         "kind": "food",
         "priceCents": 1000,
         "tags": [
-          "burger"
+          "happy hour kitty burger"
         ],
+        "id": "food-1",
         "sourceId": "official",
         "status": "primary"
       },
       {
-        "id": "food-2",
+        "name": "Cat Snack",
+        "kind": "food",
+        "priceCents": 700,
+        "tags": [
+          "cat snack"
+        ],
+        "id": "audit-food-catsnack",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
         "name": "Chicken Wings",
         "kind": "food",
         "priceCents": 900,
         "tags": [
-          "wings"
+          "chicken wings"
         ],
+        "id": "food-2",
         "sourceId": "official",
         "status": "primary"
       },
       {
-        "id": "drink-1",
+        "name": "Chicken Liver Toast",
+        "kind": "food",
+        "priceCents": 800,
+        "tags": [
+          "chicken liver toast"
+        ],
+        "id": "audit-food-chickenlivertoast",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "Cheese Plate",
+        "kind": "food",
+        "priceCents": 700,
+        "tags": [
+          "cheese plate"
+        ],
+        "id": "audit-food-cheeseplate",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
         "name": "Black Cat Manhattan",
         "kind": "drink",
         "priceCents": 1000,
         "tags": [
-          "cocktail",
-          "manhattan"
+          "black cat manhattan"
         ],
+        "id": "drink-1",
         "sourceId": "official",
         "status": "primary"
       },
       {
-        "id": "drink-2",
+        "name": "Wallflower",
+        "kind": "drink",
+        "priceCents": 1000,
+        "tags": [
+          "wallflower"
+        ],
+        "id": "audit-drink-wallflower",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "Spaghett",
+        "kind": "drink",
+        "priceCents": 1000,
+        "tags": [
+          "spaghett"
+        ],
+        "id": "audit-drink-spaghett",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "Dark and Stormy",
+        "kind": "drink",
+        "priceCents": 1000,
+        "tags": [
+          "dark and stormy"
+        ],
+        "id": "audit-drink-darkandstormy",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "Spaghett About It (nonalcoholic)",
+        "kind": "drink",
+        "priceCents": 1000,
+        "tags": [
+          "spaghett about it (nonalcoholic)"
+        ],
+        "id": "audit-drink-spaghettaboutitnonalcoholic",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "Happy Hour White Wine",
+        "kind": "drink",
+        "priceCents": 1000,
+        "tags": [
+          "happy hour white wine"
+        ],
+        "id": "audit-drink-whitewine",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "Happy Hour Orange Wine",
+        "kind": "drink",
+        "priceCents": 1000,
+        "tags": [
+          "happy hour orange wine"
+        ],
+        "id": "audit-drink-orangewine",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "Happy Hour Rose Wine",
+        "kind": "drink",
+        "priceCents": 1000,
+        "tags": [
+          "happy hour rose wine"
+        ],
+        "id": "audit-drink-rosewine",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "Happy Hour Red Wine",
+        "kind": "drink",
+        "priceCents": 1000,
+        "tags": [
+          "happy hour red wine"
+        ],
+        "id": "audit-drink-redwine",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "Glera Sparkling Bottle",
+        "kind": "drink",
+        "priceCents": 3000,
+        "tags": [
+          "glera sparkling bottle"
+        ],
+        "id": "audit-drink-glerasparklingbottle",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "Lambrusco Bottle",
+        "kind": "drink",
+        "priceCents": 3000,
+        "tags": [
+          "lambrusco bottle"
+        ],
+        "id": "audit-drink-lambruscobottle",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
         "name": "Draft Beer",
         "kind": "drink",
         "priceCents": 600,
         "tags": [
-          "beer"
+          "draft beer"
         ],
+        "id": "drink-2",
         "sourceId": "official",
         "status": "primary"
       }
     ],
     "foodTags": [
-      "burger",
-      "wings"
+      "happy hour kitty burger",
+      "cat snack",
+      "chicken wings",
+      "chicken liver toast",
+      "cheese plate"
     ],
     "drinkTags": [
-      "cocktail",
-      "manhattan",
-      "beer"
+      "black cat manhattan",
+      "wallflower",
+      "spaghett",
+      "dark and stormy",
+      "spaghett about it (nonalcoholic)",
+      "happy hour white wine",
+      "happy hour orange wine",
+      "happy hour rose wine",
+      "happy hour red wine",
+      "glera sparkling bottle",
+      "lambrusco bottle",
+      "draft beer"
     ],
     "atmosphereTags": [],
     "sources": [
@@ -384,12 +648,19 @@
         "id": "official",
         "url": "https://www.theblackcatla.com/",
         "type": "primary",
-        "accessedOn": "2026-10-19",
-        "reviewedOn": "2026-10-19",
+        "accessedOn": "2026-10-26",
+        "reviewedOn": "2026-10-26",
         "note": "Branch address, weekday 4-6pm schedule and explicitly separated happy-hour food, cocktail and beer sections. Establishment is 21+."
       }
     ],
-    "notes": "21+ establishment. Separate $13 Aristocat burger/beer bundle is inside-only; it is not split into invented component prices. Listed standalone items are separate published prices. Menu warns items can change."
+    "notes": "21+ establishment. Separate $13 Aristocat burger/beer bundle is inside-only; it is not split into invented component prices. Listed standalone items are separate published prices. Menu warns items can change.",
+    "specials": [
+      {
+        "text": "Weekdays 4–6pm. Plant-based burger patty available. Aristocat burger/fries + small beer bundle $13, inside only; do not split the bundle into component prices. Wine selections vary.",
+        "sourceId": "official",
+        "status": "primary"
+      }
+    ]
   },
   {
     "id": "33-taps-silver-lake",
@@ -410,7 +681,8 @@
         "end": "19:00",
         "sourceId": "official",
         "status": "primary",
-        "restriction": "none"
+        "restriction": "none",
+        "id": "weekday-hh"
       },
       {
         "days": [
@@ -422,7 +694,8 @@
         "end": "23:00",
         "sourceId": "official",
         "status": "primary",
-        "restriction": "conditional"
+        "restriction": "conditional",
+        "id": "late-1"
       },
       {
         "days": [
@@ -434,7 +707,8 @@
         "end": "00:00",
         "sourceId": "official",
         "status": "primary",
-        "restriction": "conditional"
+        "restriction": "conditional",
+        "id": "late-2"
       },
       {
         "days": [
@@ -444,7 +718,30 @@
         "end": "22:00",
         "sourceId": "official",
         "status": "primary",
-        "restriction": "conditional"
+        "restriction": "conditional",
+        "id": "late-3"
+      },
+      {
+        "id": "taco-tuesday-drinks",
+        "days": [
+          "Tuesday"
+        ],
+        "start": "12:00",
+        "end": "23:00",
+        "sourceId": "official",
+        "status": "primary",
+        "restriction": "none"
+      },
+      {
+        "id": "taco-tuesday-food",
+        "days": [
+          "Tuesday"
+        ],
+        "start": "12:00",
+        "end": "22:00",
+        "sourceId": "official",
+        "status": "primary",
+        "restriction": "none"
       }
     ],
     "menu": [
@@ -457,18 +754,30 @@
           "burger"
         ],
         "sourceId": "official-menu",
-        "status": "primary"
+        "status": "primary",
+        "windowIds": [
+          "weekday-hh",
+          "late-1",
+          "late-2",
+          "late-3"
+        ]
       },
       {
         "id": "drink-1",
-        "name": "33 Taps Draft Pint",
+        "name": "33 Taps Light Pint",
         "kind": "drink",
         "priceCents": 500,
         "tags": [
           "beer"
         ],
         "sourceId": "official-menu",
-        "status": "primary"
+        "status": "primary",
+        "windowIds": [
+          "weekday-hh",
+          "late-1",
+          "late-2",
+          "late-3"
+        ]
       },
       {
         "id": "drink-2",
@@ -479,15 +788,581 @@
           "margarita"
         ],
         "sourceId": "official-menu",
-        "status": "primary"
+        "status": "primary",
+        "windowIds": [
+          "weekday-hh",
+          "late-1",
+          "late-2",
+          "late-3"
+        ]
+      },
+      {
+        "id": "pizza",
+        "name": "Pizza",
+        "kind": "food",
+        "priceCents": 900,
+        "tags": [
+          "pizza"
+        ],
+        "sourceId": "official-menu",
+        "status": "primary",
+        "windowIds": [
+          "weekday-hh",
+          "late-1",
+          "late-2",
+          "late-3"
+        ]
+      },
+      {
+        "id": "quesadilla",
+        "name": "Quesadilla",
+        "kind": "food",
+        "priceCents": 900,
+        "tags": [
+          "quesadilla"
+        ],
+        "sourceId": "official-menu",
+        "status": "primary",
+        "windowIds": [
+          "weekday-hh",
+          "late-1",
+          "late-2",
+          "late-3"
+        ]
+      },
+      {
+        "id": "tacos",
+        "name": "Street Tacos",
+        "kind": "food",
+        "priceCents": 900,
+        "tags": [
+          "tacos"
+        ],
+        "sourceId": "official-menu",
+        "status": "primary",
+        "windowIds": [
+          "weekday-hh",
+          "late-1",
+          "late-2",
+          "late-3"
+        ]
+      },
+      {
+        "id": "brussels",
+        "name": "Brussels Sprouts",
+        "kind": "food",
+        "priceCents": 900,
+        "tags": [
+          "vegetables"
+        ],
+        "sourceId": "official-menu",
+        "status": "primary",
+        "windowIds": [
+          "weekday-hh",
+          "late-1",
+          "late-2",
+          "late-3"
+        ]
+      },
+      {
+        "id": "fries",
+        "name": "Banh Mi Fries",
+        "kind": "food",
+        "priceCents": 900,
+        "tags": [
+          "fries"
+        ],
+        "sourceId": "official-menu",
+        "status": "primary",
+        "windowIds": [
+          "weekday-hh",
+          "late-1",
+          "late-2",
+          "late-3"
+        ]
+      },
+      {
+        "id": "paloma",
+        "name": "Paloma",
+        "kind": "drink",
+        "priceCents": 800,
+        "tags": [
+          "paloma"
+        ],
+        "sourceId": "official-menu",
+        "status": "primary",
+        "windowIds": [
+          "weekday-hh",
+          "late-1",
+          "late-2",
+          "late-3"
+        ]
+      },
+      {
+        "id": "mule",
+        "name": "Moscow Mule",
+        "kind": "drink",
+        "priceCents": 800,
+        "tags": [
+          "cocktail"
+        ],
+        "sourceId": "official-menu",
+        "status": "primary",
+        "windowIds": [
+          "weekday-hh",
+          "late-1",
+          "late-2",
+          "late-3"
+        ]
+      },
+      {
+        "id": "espresso",
+        "name": "Espresso Martini",
+        "kind": "drink",
+        "priceCents": 800,
+        "tags": [
+          "martini"
+        ],
+        "sourceId": "official-menu",
+        "status": "primary",
+        "windowIds": [
+          "weekday-hh",
+          "late-1",
+          "late-2",
+          "late-3"
+        ]
+      },
+      {
+        "id": "red-wine",
+        "name": "House Red Wine",
+        "kind": "drink",
+        "priceCents": 800,
+        "tags": [
+          "wine"
+        ],
+        "sourceId": "official-menu",
+        "status": "primary",
+        "windowIds": [
+          "weekday-hh",
+          "late-1",
+          "late-2",
+          "late-3"
+        ]
+      },
+      {
+        "id": "white-wine",
+        "name": "House White Wine",
+        "kind": "drink",
+        "priceCents": 800,
+        "tags": [
+          "wine"
+        ],
+        "sourceId": "official-menu",
+        "status": "primary",
+        "windowIds": [
+          "weekday-hh",
+          "late-1",
+          "late-2",
+          "late-3"
+        ]
+      },
+      {
+        "id": "mezcal-margarita",
+        "name": "Mezcal Margarita",
+        "kind": "drink",
+        "priceCents": null,
+        "tags": [
+          "margarita",
+          "mezcal"
+        ],
+        "sourceId": "official-menu",
+        "status": "primary",
+        "windowIds": [
+          "weekday-hh",
+          "late-1",
+          "late-2",
+          "late-3"
+        ]
+      },
+      {
+        "id": "pint-blonde",
+        "name": "33 Taps Blonde Pint",
+        "kind": "drink",
+        "priceCents": 500,
+        "tags": [
+          "beer"
+        ],
+        "sourceId": "official-menu",
+        "status": "primary",
+        "windowIds": [
+          "weekday-hh",
+          "late-1",
+          "late-2",
+          "late-3"
+        ]
+      },
+      {
+        "id": "pint-red",
+        "name": "33 Taps Red Pint",
+        "kind": "drink",
+        "priceCents": 500,
+        "tags": [
+          "beer"
+        ],
+        "sourceId": "official-menu",
+        "status": "primary",
+        "windowIds": [
+          "weekday-hh",
+          "late-1",
+          "late-2",
+          "late-3"
+        ]
+      },
+      {
+        "id": "pint-ipa",
+        "name": "33 Taps IPA Pint",
+        "kind": "drink",
+        "priceCents": 500,
+        "tags": [
+          "beer"
+        ],
+        "sourceId": "official-menu",
+        "status": "primary",
+        "windowIds": [
+          "weekday-hh",
+          "late-1",
+          "late-2",
+          "late-3"
+        ]
+      },
+      {
+        "id": "pint-seltzer",
+        "name": "33 Taps Seltzer Pint",
+        "kind": "drink",
+        "priceCents": 500,
+        "tags": [
+          "seltzer"
+        ],
+        "sourceId": "official-menu",
+        "status": "primary",
+        "windowIds": [
+          "weekday-hh",
+          "late-1",
+          "late-2",
+          "late-3"
+        ]
+      },
+      {
+        "id": "pint-pilsner",
+        "name": "33 Taps Pilsner Pint",
+        "kind": "drink",
+        "priceCents": 500,
+        "tags": [
+          "beer"
+        ],
+        "sourceId": "official-menu",
+        "status": "primary",
+        "windowIds": [
+          "weekday-hh",
+          "late-1",
+          "late-2",
+          "late-3"
+        ]
+      },
+      {
+        "id": "well-gin",
+        "name": "House Gin",
+        "kind": "drink",
+        "priceCents": 700,
+        "tags": [
+          "gin",
+          "well drink"
+        ],
+        "sourceId": "official-menu",
+        "status": "primary",
+        "windowIds": [
+          "weekday-hh",
+          "late-1",
+          "late-2",
+          "late-3"
+        ]
+      },
+      {
+        "id": "well-rum",
+        "name": "House Rum",
+        "kind": "drink",
+        "priceCents": 700,
+        "tags": [
+          "rum",
+          "well drink"
+        ],
+        "sourceId": "official-menu",
+        "status": "primary",
+        "windowIds": [
+          "weekday-hh",
+          "late-1",
+          "late-2",
+          "late-3"
+        ]
+      },
+      {
+        "id": "well-tequila",
+        "name": "House Tequila",
+        "kind": "drink",
+        "priceCents": 700,
+        "tags": [
+          "tequila",
+          "well drink"
+        ],
+        "sourceId": "official-menu",
+        "status": "primary",
+        "windowIds": [
+          "weekday-hh",
+          "late-1",
+          "late-2",
+          "late-3"
+        ]
+      },
+      {
+        "id": "well-vodka",
+        "name": "House Vodka",
+        "kind": "drink",
+        "priceCents": 700,
+        "tags": [
+          "vodka",
+          "well drink"
+        ],
+        "sourceId": "official-menu",
+        "status": "primary",
+        "windowIds": [
+          "weekday-hh",
+          "late-1",
+          "late-2",
+          "late-3"
+        ]
+      },
+      {
+        "id": "well-whiskey",
+        "name": "House Whiskey",
+        "kind": "drink",
+        "priceCents": 700,
+        "tags": [
+          "whiskey",
+          "well drink"
+        ],
+        "sourceId": "official-menu",
+        "status": "primary",
+        "windowIds": [
+          "weekday-hh",
+          "late-1",
+          "late-2",
+          "late-3"
+        ]
+      },
+      {
+        "id": "pitcher",
+        "name": "House Draft Pitcher",
+        "kind": "drink",
+        "priceCents": null,
+        "tags": [
+          "beer"
+        ],
+        "sourceId": "official-menu",
+        "status": "primary",
+        "windowIds": [
+          "weekday-hh",
+          "late-1",
+          "late-2",
+          "late-3"
+        ]
+      },
+      {
+        "id": "pitcher-blonde",
+        "name": "33 Taps Blonde Pitcher",
+        "kind": "drink",
+        "priceCents": null,
+        "tags": [
+          "beer"
+        ],
+        "sourceId": "official-menu",
+        "status": "primary",
+        "windowIds": [
+          "weekday-hh",
+          "late-1",
+          "late-2",
+          "late-3"
+        ]
+      },
+      {
+        "id": "pitcher-red",
+        "name": "33 Taps Red Pitcher",
+        "kind": "drink",
+        "priceCents": null,
+        "tags": [
+          "beer"
+        ],
+        "sourceId": "official-menu",
+        "status": "primary",
+        "windowIds": [
+          "weekday-hh",
+          "late-1",
+          "late-2",
+          "late-3"
+        ]
+      },
+      {
+        "id": "pitcher-ipa",
+        "name": "33 Taps IPA Pitcher",
+        "kind": "drink",
+        "priceCents": null,
+        "tags": [
+          "beer"
+        ],
+        "sourceId": "official-menu",
+        "status": "primary",
+        "windowIds": [
+          "weekday-hh",
+          "late-1",
+          "late-2",
+          "late-3"
+        ]
+      },
+      {
+        "id": "pitcher-seltzer",
+        "name": "33 Taps Seltzer Pitcher",
+        "kind": "drink",
+        "priceCents": null,
+        "tags": [
+          "seltzer"
+        ],
+        "sourceId": "official-menu",
+        "status": "primary",
+        "windowIds": [
+          "weekday-hh",
+          "late-1",
+          "late-2",
+          "late-3"
+        ]
+      },
+      {
+        "id": "tuesday-shot",
+        "name": "Taco Tuesday Tequila Shot",
+        "kind": "drink",
+        "priceCents": 500,
+        "tags": [
+          "tequila shot"
+        ],
+        "sourceId": "official-menu",
+        "status": "primary",
+        "windowIds": [
+          "taco-tuesday-drinks",
+          "taco-tuesday-food",
+          "weekday-hh"
+        ],
+        "days": [
+          "Tuesday"
+        ]
+      },
+      {
+        "id": "tuesday-estrella",
+        "name": "Taco Tuesday Estrella Pint",
+        "kind": "drink",
+        "priceCents": 500,
+        "tags": [
+          "beer"
+        ],
+        "sourceId": "official-menu",
+        "status": "primary",
+        "windowIds": [
+          "taco-tuesday-drinks",
+          "taco-tuesday-food",
+          "weekday-hh"
+        ],
+        "days": [
+          "Tuesday"
+        ]
+      },
+      {
+        "id": "tuesday-tacos",
+        "name": "Taco Tuesday Chicken Street Tacos (3)",
+        "kind": "food",
+        "priceCents": 900,
+        "tags": [
+          "tacos"
+        ],
+        "sourceId": "official-menu",
+        "status": "primary",
+        "windowIds": [
+          "taco-tuesday-food",
+          "weekday-hh"
+        ],
+        "days": [
+          "Tuesday"
+        ]
+      },
+      {
+        "id": "tuesday-margarita",
+        "name": "Taco Tuesday Margarita",
+        "kind": "drink",
+        "priceCents": 800,
+        "tags": [
+          "margarita"
+        ],
+        "sourceId": "official-menu",
+        "status": "primary",
+        "windowIds": [
+          "taco-tuesday-drinks",
+          "taco-tuesday-food",
+          "weekday-hh"
+        ],
+        "days": [
+          "Tuesday"
+        ]
+      },
+      {
+        "id": "tuesday-paloma",
+        "name": "Taco Tuesday Paloma",
+        "kind": "drink",
+        "priceCents": 800,
+        "tags": [
+          "paloma"
+        ],
+        "sourceId": "official-menu",
+        "status": "primary",
+        "windowIds": [
+          "taco-tuesday-drinks",
+          "taco-tuesday-food",
+          "weekday-hh"
+        ],
+        "days": [
+          "Tuesday"
+        ]
       }
     ],
     "foodTags": [
-      "burger"
+      "burger",
+      "pizza",
+      "quesadilla",
+      "tacos",
+      "vegetables",
+      "fries"
     ],
     "drinkTags": [
       "beer",
-      "margarita"
+      "margarita",
+      "paloma",
+      "cocktail",
+      "martini",
+      "wine",
+      "mezcal",
+      "seltzer",
+      "gin",
+      "well drink",
+      "rum",
+      "tequila",
+      "vodka",
+      "whiskey",
+      "tequila shot"
     ],
     "atmosphereTags": [],
     "sources": [
@@ -495,28 +1370,40 @@
         "id": "official",
         "url": "https://www.eatdrink33.com/silver-lake-location/",
         "type": "primary",
-        "accessedOn": "2026-10-19",
-        "reviewedOn": "2026-10-19",
+        "accessedOn": "2026-10-26",
+        "reviewedOn": "2026-10-26",
         "note": "Branch-specific full address, weekday 3-7pm and nightly 9:30-close schedule. Closing times used to normalize close. Kitchen closes one hour early Monday-Thursday and Sunday."
       },
       {
         "id": "official-menu",
         "url": "https://www.eatdrink33.com/menus/",
         "type": "primary",
-        "accessedOn": "2026-10-19",
-        "reviewedOn": "2026-10-19",
+        "accessedOn": "2026-10-26",
+        "reviewedOn": "2026-10-26",
         "note": "Happy-hour section identifies cheeseburger, house pints and margarita. Prices cross-supported by official-specials, explicitly applicable at every location."
       },
       {
         "id": "official-specials",
         "url": "https://www.eatdrink33.com/event/",
         "type": "primary",
-        "accessedOn": "2026-10-19",
-        "reviewedOn": "2026-10-19",
+        "accessedOn": "2026-10-26",
+        "reviewedOn": "2026-10-26",
         "note": "Explicitly all locations: $5 drafts, $7 wells, $8 cocktails/wines, $9 food for afternoon and late-night happy hour."
       }
     ],
-    "notes": "Late-night food is only available until kitchen close: Mon-Wed 22:00, Thu 23:00, Sun 21:00. Sunday late happy hour is therefore drinks-only. Friday/Saturday kitchen cutoff not specified. Afternoon supports the priced food/drink pair."
+    "notes": "Late-night food is only available until kitchen close: Mon-Wed 22:00, Thu 23:00, Sun 21:00. Sunday late happy hour is therefore drinks-only. Friday/Saturday kitchen cutoff not specified. Afternoon supports the priced food/drink pair. Full published HH and Tuesday choices transcribed October 26. House Draft Pitcher represents Light; remaining published pitcher styles are separate choices. Conditional late-night windows remain excluded from supported food/drink recommendations; choose an afternoon or evidenced Tuesday window. Cocktail flavor upgrades are descriptive, not independent orders.",
+    "specials": [
+      {
+        "text": "Happy-hour house draft pints $5; wells $7; listed cocktails and wines $8; listed food $9. Pitcher prices and the mezcal margarita price are not specified in the reviewed text.",
+        "sourceId": "official-specials",
+        "status": "primary"
+      },
+      {
+        "text": "Taco Tuesday runs all day during branch hours: tequila shots and Estrella drafts $5, margaritas and palomas $8, three chicken street tacos $9. Steak, salmon and Beyond substitutions, grande/pitcher cocktails and flavored margarita upgrades are listed; happy-hour upgrade totals need confirmation.",
+        "sourceId": "official-specials",
+        "status": "primary"
+      }
+    ]
   },
   {
     "id": "33-taps-west-hollywood",
@@ -537,7 +1424,8 @@
         "end": "19:00",
         "sourceId": "official",
         "status": "primary",
-        "restriction": "none"
+        "restriction": "none",
+        "id": "weekday-hh"
       },
       {
         "days": [
@@ -550,7 +1438,8 @@
         "end": "23:00",
         "sourceId": "official",
         "status": "primary",
-        "restriction": "conditional"
+        "restriction": "conditional",
+        "id": "late-1"
       },
       {
         "days": [
@@ -561,7 +1450,8 @@
         "end": "00:00",
         "sourceId": "official",
         "status": "primary",
-        "restriction": "conditional"
+        "restriction": "conditional",
+        "id": "late-2"
       },
       {
         "days": [
@@ -571,7 +1461,30 @@
         "end": "22:00",
         "sourceId": "official",
         "status": "primary",
-        "restriction": "conditional"
+        "restriction": "conditional",
+        "id": "late-3"
+      },
+      {
+        "id": "taco-tuesday-drinks",
+        "days": [
+          "Tuesday"
+        ],
+        "start": "12:00",
+        "end": "23:00",
+        "sourceId": "official",
+        "status": "primary",
+        "restriction": "none"
+      },
+      {
+        "id": "taco-tuesday-food",
+        "days": [
+          "Tuesday"
+        ],
+        "start": "12:00",
+        "end": "22:00",
+        "sourceId": "official",
+        "status": "primary",
+        "restriction": "none"
       }
     ],
     "menu": [
@@ -584,18 +1497,30 @@
           "burger"
         ],
         "sourceId": "official-menu",
-        "status": "primary"
+        "status": "primary",
+        "windowIds": [
+          "weekday-hh",
+          "late-1",
+          "late-2",
+          "late-3"
+        ]
       },
       {
         "id": "drink-1",
-        "name": "33 Taps Draft Pint",
+        "name": "33 Taps Light Pint",
         "kind": "drink",
         "priceCents": 500,
         "tags": [
           "beer"
         ],
         "sourceId": "official-menu",
-        "status": "primary"
+        "status": "primary",
+        "windowIds": [
+          "weekday-hh",
+          "late-1",
+          "late-2",
+          "late-3"
+        ]
       },
       {
         "id": "drink-2",
@@ -606,15 +1531,581 @@
           "margarita"
         ],
         "sourceId": "official-menu",
-        "status": "primary"
+        "status": "primary",
+        "windowIds": [
+          "weekday-hh",
+          "late-1",
+          "late-2",
+          "late-3"
+        ]
+      },
+      {
+        "id": "pizza",
+        "name": "Pizza",
+        "kind": "food",
+        "priceCents": 900,
+        "tags": [
+          "pizza"
+        ],
+        "sourceId": "official-menu",
+        "status": "primary",
+        "windowIds": [
+          "weekday-hh",
+          "late-1",
+          "late-2",
+          "late-3"
+        ]
+      },
+      {
+        "id": "quesadilla",
+        "name": "Quesadilla",
+        "kind": "food",
+        "priceCents": 900,
+        "tags": [
+          "quesadilla"
+        ],
+        "sourceId": "official-menu",
+        "status": "primary",
+        "windowIds": [
+          "weekday-hh",
+          "late-1",
+          "late-2",
+          "late-3"
+        ]
+      },
+      {
+        "id": "tacos",
+        "name": "Street Tacos",
+        "kind": "food",
+        "priceCents": 900,
+        "tags": [
+          "tacos"
+        ],
+        "sourceId": "official-menu",
+        "status": "primary",
+        "windowIds": [
+          "weekday-hh",
+          "late-1",
+          "late-2",
+          "late-3"
+        ]
+      },
+      {
+        "id": "brussels",
+        "name": "Brussels Sprouts",
+        "kind": "food",
+        "priceCents": 900,
+        "tags": [
+          "vegetables"
+        ],
+        "sourceId": "official-menu",
+        "status": "primary",
+        "windowIds": [
+          "weekday-hh",
+          "late-1",
+          "late-2",
+          "late-3"
+        ]
+      },
+      {
+        "id": "fries",
+        "name": "Banh Mi Fries",
+        "kind": "food",
+        "priceCents": 900,
+        "tags": [
+          "fries"
+        ],
+        "sourceId": "official-menu",
+        "status": "primary",
+        "windowIds": [
+          "weekday-hh",
+          "late-1",
+          "late-2",
+          "late-3"
+        ]
+      },
+      {
+        "id": "paloma",
+        "name": "Paloma",
+        "kind": "drink",
+        "priceCents": 800,
+        "tags": [
+          "paloma"
+        ],
+        "sourceId": "official-menu",
+        "status": "primary",
+        "windowIds": [
+          "weekday-hh",
+          "late-1",
+          "late-2",
+          "late-3"
+        ]
+      },
+      {
+        "id": "mule",
+        "name": "Moscow Mule",
+        "kind": "drink",
+        "priceCents": 800,
+        "tags": [
+          "cocktail"
+        ],
+        "sourceId": "official-menu",
+        "status": "primary",
+        "windowIds": [
+          "weekday-hh",
+          "late-1",
+          "late-2",
+          "late-3"
+        ]
+      },
+      {
+        "id": "espresso",
+        "name": "Espresso Martini",
+        "kind": "drink",
+        "priceCents": 800,
+        "tags": [
+          "martini"
+        ],
+        "sourceId": "official-menu",
+        "status": "primary",
+        "windowIds": [
+          "weekday-hh",
+          "late-1",
+          "late-2",
+          "late-3"
+        ]
+      },
+      {
+        "id": "red-wine",
+        "name": "House Red Wine",
+        "kind": "drink",
+        "priceCents": 800,
+        "tags": [
+          "wine"
+        ],
+        "sourceId": "official-menu",
+        "status": "primary",
+        "windowIds": [
+          "weekday-hh",
+          "late-1",
+          "late-2",
+          "late-3"
+        ]
+      },
+      {
+        "id": "white-wine",
+        "name": "House White Wine",
+        "kind": "drink",
+        "priceCents": 800,
+        "tags": [
+          "wine"
+        ],
+        "sourceId": "official-menu",
+        "status": "primary",
+        "windowIds": [
+          "weekday-hh",
+          "late-1",
+          "late-2",
+          "late-3"
+        ]
+      },
+      {
+        "id": "mezcal-margarita",
+        "name": "Mezcal Margarita",
+        "kind": "drink",
+        "priceCents": null,
+        "tags": [
+          "margarita",
+          "mezcal"
+        ],
+        "sourceId": "official-menu",
+        "status": "primary",
+        "windowIds": [
+          "weekday-hh",
+          "late-1",
+          "late-2",
+          "late-3"
+        ]
+      },
+      {
+        "id": "pint-blonde",
+        "name": "33 Taps Blonde Pint",
+        "kind": "drink",
+        "priceCents": 500,
+        "tags": [
+          "beer"
+        ],
+        "sourceId": "official-menu",
+        "status": "primary",
+        "windowIds": [
+          "weekday-hh",
+          "late-1",
+          "late-2",
+          "late-3"
+        ]
+      },
+      {
+        "id": "pint-red",
+        "name": "33 Taps Red Pint",
+        "kind": "drink",
+        "priceCents": 500,
+        "tags": [
+          "beer"
+        ],
+        "sourceId": "official-menu",
+        "status": "primary",
+        "windowIds": [
+          "weekday-hh",
+          "late-1",
+          "late-2",
+          "late-3"
+        ]
+      },
+      {
+        "id": "pint-ipa",
+        "name": "33 Taps IPA Pint",
+        "kind": "drink",
+        "priceCents": 500,
+        "tags": [
+          "beer"
+        ],
+        "sourceId": "official-menu",
+        "status": "primary",
+        "windowIds": [
+          "weekday-hh",
+          "late-1",
+          "late-2",
+          "late-3"
+        ]
+      },
+      {
+        "id": "pint-seltzer",
+        "name": "33 Taps Seltzer Pint",
+        "kind": "drink",
+        "priceCents": 500,
+        "tags": [
+          "seltzer"
+        ],
+        "sourceId": "official-menu",
+        "status": "primary",
+        "windowIds": [
+          "weekday-hh",
+          "late-1",
+          "late-2",
+          "late-3"
+        ]
+      },
+      {
+        "id": "pint-pilsner",
+        "name": "33 Taps Pilsner Pint",
+        "kind": "drink",
+        "priceCents": 500,
+        "tags": [
+          "beer"
+        ],
+        "sourceId": "official-menu",
+        "status": "primary",
+        "windowIds": [
+          "weekday-hh",
+          "late-1",
+          "late-2",
+          "late-3"
+        ]
+      },
+      {
+        "id": "well-gin",
+        "name": "House Gin",
+        "kind": "drink",
+        "priceCents": 700,
+        "tags": [
+          "gin",
+          "well drink"
+        ],
+        "sourceId": "official-menu",
+        "status": "primary",
+        "windowIds": [
+          "weekday-hh",
+          "late-1",
+          "late-2",
+          "late-3"
+        ]
+      },
+      {
+        "id": "well-rum",
+        "name": "House Rum",
+        "kind": "drink",
+        "priceCents": 700,
+        "tags": [
+          "rum",
+          "well drink"
+        ],
+        "sourceId": "official-menu",
+        "status": "primary",
+        "windowIds": [
+          "weekday-hh",
+          "late-1",
+          "late-2",
+          "late-3"
+        ]
+      },
+      {
+        "id": "well-tequila",
+        "name": "House Tequila",
+        "kind": "drink",
+        "priceCents": 700,
+        "tags": [
+          "tequila",
+          "well drink"
+        ],
+        "sourceId": "official-menu",
+        "status": "primary",
+        "windowIds": [
+          "weekday-hh",
+          "late-1",
+          "late-2",
+          "late-3"
+        ]
+      },
+      {
+        "id": "well-vodka",
+        "name": "House Vodka",
+        "kind": "drink",
+        "priceCents": 700,
+        "tags": [
+          "vodka",
+          "well drink"
+        ],
+        "sourceId": "official-menu",
+        "status": "primary",
+        "windowIds": [
+          "weekday-hh",
+          "late-1",
+          "late-2",
+          "late-3"
+        ]
+      },
+      {
+        "id": "well-whiskey",
+        "name": "House Whiskey",
+        "kind": "drink",
+        "priceCents": 700,
+        "tags": [
+          "whiskey",
+          "well drink"
+        ],
+        "sourceId": "official-menu",
+        "status": "primary",
+        "windowIds": [
+          "weekday-hh",
+          "late-1",
+          "late-2",
+          "late-3"
+        ]
+      },
+      {
+        "id": "pitcher",
+        "name": "House Draft Pitcher",
+        "kind": "drink",
+        "priceCents": null,
+        "tags": [
+          "beer"
+        ],
+        "sourceId": "official-menu",
+        "status": "primary",
+        "windowIds": [
+          "weekday-hh",
+          "late-1",
+          "late-2",
+          "late-3"
+        ]
+      },
+      {
+        "id": "pitcher-blonde",
+        "name": "33 Taps Blonde Pitcher",
+        "kind": "drink",
+        "priceCents": null,
+        "tags": [
+          "beer"
+        ],
+        "sourceId": "official-menu",
+        "status": "primary",
+        "windowIds": [
+          "weekday-hh",
+          "late-1",
+          "late-2",
+          "late-3"
+        ]
+      },
+      {
+        "id": "pitcher-red",
+        "name": "33 Taps Red Pitcher",
+        "kind": "drink",
+        "priceCents": null,
+        "tags": [
+          "beer"
+        ],
+        "sourceId": "official-menu",
+        "status": "primary",
+        "windowIds": [
+          "weekday-hh",
+          "late-1",
+          "late-2",
+          "late-3"
+        ]
+      },
+      {
+        "id": "pitcher-ipa",
+        "name": "33 Taps IPA Pitcher",
+        "kind": "drink",
+        "priceCents": null,
+        "tags": [
+          "beer"
+        ],
+        "sourceId": "official-menu",
+        "status": "primary",
+        "windowIds": [
+          "weekday-hh",
+          "late-1",
+          "late-2",
+          "late-3"
+        ]
+      },
+      {
+        "id": "pitcher-seltzer",
+        "name": "33 Taps Seltzer Pitcher",
+        "kind": "drink",
+        "priceCents": null,
+        "tags": [
+          "seltzer"
+        ],
+        "sourceId": "official-menu",
+        "status": "primary",
+        "windowIds": [
+          "weekday-hh",
+          "late-1",
+          "late-2",
+          "late-3"
+        ]
+      },
+      {
+        "id": "tuesday-shot",
+        "name": "Taco Tuesday Tequila Shot",
+        "kind": "drink",
+        "priceCents": 500,
+        "tags": [
+          "tequila shot"
+        ],
+        "sourceId": "official-menu",
+        "status": "primary",
+        "windowIds": [
+          "taco-tuesday-drinks",
+          "taco-tuesday-food",
+          "weekday-hh"
+        ],
+        "days": [
+          "Tuesday"
+        ]
+      },
+      {
+        "id": "tuesday-estrella",
+        "name": "Taco Tuesday Estrella Pint",
+        "kind": "drink",
+        "priceCents": 500,
+        "tags": [
+          "beer"
+        ],
+        "sourceId": "official-menu",
+        "status": "primary",
+        "windowIds": [
+          "taco-tuesday-drinks",
+          "taco-tuesday-food",
+          "weekday-hh"
+        ],
+        "days": [
+          "Tuesday"
+        ]
+      },
+      {
+        "id": "tuesday-tacos",
+        "name": "Taco Tuesday Chicken Street Tacos (3)",
+        "kind": "food",
+        "priceCents": 900,
+        "tags": [
+          "tacos"
+        ],
+        "sourceId": "official-menu",
+        "status": "primary",
+        "windowIds": [
+          "taco-tuesday-food",
+          "weekday-hh"
+        ],
+        "days": [
+          "Tuesday"
+        ]
+      },
+      {
+        "id": "tuesday-margarita",
+        "name": "Taco Tuesday Margarita",
+        "kind": "drink",
+        "priceCents": 800,
+        "tags": [
+          "margarita"
+        ],
+        "sourceId": "official-menu",
+        "status": "primary",
+        "windowIds": [
+          "taco-tuesday-drinks",
+          "taco-tuesday-food",
+          "weekday-hh"
+        ],
+        "days": [
+          "Tuesday"
+        ]
+      },
+      {
+        "id": "tuesday-paloma",
+        "name": "Taco Tuesday Paloma",
+        "kind": "drink",
+        "priceCents": 800,
+        "tags": [
+          "paloma"
+        ],
+        "sourceId": "official-menu",
+        "status": "primary",
+        "windowIds": [
+          "taco-tuesday-drinks",
+          "taco-tuesday-food",
+          "weekday-hh"
+        ],
+        "days": [
+          "Tuesday"
+        ]
       }
     ],
     "foodTags": [
-      "burger"
+      "burger",
+      "pizza",
+      "quesadilla",
+      "tacos",
+      "vegetables",
+      "fries"
     ],
     "drinkTags": [
       "beer",
-      "margarita"
+      "margarita",
+      "paloma",
+      "cocktail",
+      "martini",
+      "wine",
+      "mezcal",
+      "seltzer",
+      "gin",
+      "well drink",
+      "rum",
+      "tequila",
+      "vodka",
+      "whiskey",
+      "tequila shot"
     ],
     "atmosphereTags": [],
     "sources": [
@@ -622,28 +2113,40 @@
         "id": "official",
         "url": "https://www.eatdrink33.com/west-hollywood-location/",
         "type": "primary",
-        "accessedOn": "2026-10-19",
-        "reviewedOn": "2026-10-19",
+        "accessedOn": "2026-10-26",
+        "reviewedOn": "2026-10-26",
         "note": "Branch-specific full address, weekday 3-7pm and nightly 9:30-close happy hour; close normalized using branch hours. Kitchen closes one hour early Monday-Thursday and Sunday."
       },
       {
         "id": "official-menu",
         "url": "https://www.eatdrink33.com/menus/",
         "type": "primary",
-        "accessedOn": "2026-10-19",
-        "reviewedOn": "2026-10-19",
+        "accessedOn": "2026-10-26",
+        "reviewedOn": "2026-10-26",
         "note": "Happy-hour section names cheeseburger, house pints and margarita. Prices cross-supported by official-specials, expressly for every location."
       },
       {
         "id": "official-specials",
         "url": "https://www.eatdrink33.com/event/",
         "type": "primary",
-        "accessedOn": "2026-10-19",
-        "reviewedOn": "2026-10-19",
+        "accessedOn": "2026-10-26",
+        "reviewedOn": "2026-10-26",
         "note": "All-location afternoon and late-night specials: $5 drafts, $7 wells, $8 cocktails/wines, $9 food."
       }
     ],
-    "notes": "Late-night food stops at 22:00 Mon-Thu and 21:00 Sun; Sunday late happy hour is drinks-only. Friday/Saturday kitchen cutoff not specified. Afternoon supports the priced food/drink pair."
+    "notes": "Late-night food stops at 22:00 Mon-Thu and 21:00 Sun; Sunday late happy hour is drinks-only. Friday/Saturday kitchen cutoff not specified. Afternoon supports the priced food/drink pair. Full published HH and Tuesday choices transcribed October 26. House Draft Pitcher represents Light; remaining published pitcher styles are separate choices. Conditional late-night windows remain excluded from supported food/drink recommendations; choose an afternoon or evidenced Tuesday window. Cocktail flavor upgrades are descriptive, not independent orders.",
+    "specials": [
+      {
+        "text": "Happy-hour house draft pints $5; wells $7; listed cocktails and wines $8; listed food $9. Pitcher prices and the mezcal margarita price are not specified in the reviewed text.",
+        "sourceId": "official-specials",
+        "status": "primary"
+      },
+      {
+        "text": "Taco Tuesday runs all day during branch hours: tequila shots and Estrella drafts $5, margaritas and palomas $8, three chicken street tacos $9. Steak, salmon and Beyond substitutions, grande/pitcher cocktails and flavored margarita upgrades are listed; happy-hour upgrade totals need confirmation.",
+        "sourceId": "official-specials",
+        "status": "primary"
+      }
+    ]
   },
   {
     "id": "edendale-silver-lake",
@@ -728,9 +2231,107 @@
         "restriction": "none"
       }
     ],
-    "menu": [],
+    "menu": [
+      {
+        "name": "Aguachile Margarita",
+        "kind": "drink",
+        "priceCents": 1700,
+        "tags": [
+          "aguachile margarita"
+        ],
+        "id": "audit-drink-aguachilemargarita",
+        "sourceId": "unreviewed-menu-image",
+        "status": "primary"
+      },
+      {
+        "name": "Eastside",
+        "kind": "drink",
+        "priceCents": 1500,
+        "tags": [
+          "eastside"
+        ],
+        "id": "audit-drink-eastside",
+        "sourceId": "unreviewed-menu-image",
+        "status": "primary"
+      },
+      {
+        "name": "White Negroni",
+        "kind": "drink",
+        "priceCents": 1500,
+        "tags": [
+          "white negroni"
+        ],
+        "id": "audit-drink-whitenegroni",
+        "sourceId": "unreviewed-menu-image",
+        "status": "primary"
+      },
+      {
+        "name": "Paloma",
+        "kind": "drink",
+        "priceCents": 1500,
+        "tags": [
+          "paloma"
+        ],
+        "id": "audit-drink-paloma",
+        "sourceId": "unreviewed-menu-image",
+        "status": "primary"
+      },
+      {
+        "name": "Vesper Martini",
+        "kind": "drink",
+        "priceCents": 1600,
+        "tags": [
+          "vesper martini"
+        ],
+        "id": "audit-drink-vespermartini",
+        "sourceId": "unreviewed-menu-image",
+        "status": "primary"
+      },
+      {
+        "name": "French 75",
+        "kind": "drink",
+        "priceCents": 1500,
+        "tags": [
+          "french 75"
+        ],
+        "id": "audit-drink-french75",
+        "sourceId": "unreviewed-menu-image",
+        "status": "primary"
+      },
+      {
+        "name": "Black Manhattan",
+        "kind": "drink",
+        "priceCents": 1500,
+        "tags": [
+          "black manhattan"
+        ],
+        "id": "audit-drink-blackmanhattan",
+        "sourceId": "unreviewed-menu-image",
+        "status": "primary"
+      },
+      {
+        "name": "Summerhouse Spritz",
+        "kind": "drink",
+        "priceCents": 1500,
+        "tags": [
+          "summerhouse spritz"
+        ],
+        "id": "audit-drink-summerhousespritz",
+        "sourceId": "unreviewed-menu-image",
+        "status": "primary"
+      }
+    ],
     "foodTags": [],
-    "drinkTags": [],
+    "drinkTags": [
+      "aguachile margarita",
+      "eastside",
+      "white negroni",
+      "paloma",
+      "vesper martini",
+      "french 75",
+      "black manhattan",
+      "summerhouse spritz"
+    ],
     "atmosphereTags": [],
     "sources": [
       {
@@ -761,12 +2362,19 @@
         "id": "unreviewed-menu-image",
         "url": "https://images.squarespace-cdn.com/content/v1/68b39499dcf6053c8e04aa04/029f8ae1-627d-4b9e-8735-8f999f3071f3/NEW%2BUPSTAIRS%2BMENU%2B%2B8.16.26.jpg",
         "type": "primary",
-        "accessedOn": "2026-10-19",
-        "reviewedOn": null,
+        "accessedOn": "2026-10-26",
+        "reviewedOn": "2026-10-26",
         "note": "Linked menu image was inaccessible via web tool; unreviewed."
       }
     ],
-    "notes": "Schedule-only. Upstairs page title alone does not establish an upstairs-only restriction, so none is asserted."
+    "notes": "Schedule-only. Upstairs page title alone does not establish an upstairs-only restriction, so none is asserted.",
+    "specials": [
+      {
+        "text": "Weekdays 5–7pm. $2 off listed menu cocktails/draft beer/select food; $3 off wine by the glass. Mezcal upgrade to Eastside +$1. Mocktails explicitly excluded. Select food eligibility and wine/draft list are not specified in the reviewed graphic.",
+        "sourceId": "unreviewed-menu-image",
+        "status": "primary"
+      }
+    ]
   },
   {
     "id": "gracias-madre-west-hollywood",
@@ -787,65 +2395,347 @@
         "end": "18:00",
         "sourceId": "official-menu",
         "status": "primary",
+        "restriction": "none",
+        "id": "audit-hh-0"
+      },
+      {
+        "id": "audit-tuesday",
+        "days": [
+          "Tuesday"
+        ],
+        "start": "11:30",
+        "end": "21:00",
+        "sourceId": "official-menu",
+        "status": "primary",
         "restriction": "none"
       }
     ],
     "menu": [
       {
-        "id": "food-1",
+        "name": "Crispy Taco",
+        "kind": "food",
+        "priceCents": 800,
+        "tags": [
+          "crispy taco"
+        ],
+        "id": "audit-food-crispytaco",
+        "sourceId": "official-menu",
+        "status": "primary",
+        "windowIds": [
+          "audit-hh-0"
+        ]
+      },
+      {
         "name": "Ceviche Tostada",
         "kind": "food",
         "priceCents": 700,
         "tags": [
-          "tostada",
+          "ceviche tostada",
           "vegan"
         ],
+        "id": "food-1",
         "sourceId": "official-menu",
-        "status": "primary"
+        "status": "primary",
+        "windowIds": [
+          "audit-hh-0"
+        ]
       },
       {
-        "id": "food-2",
+        "name": "BBQ Jackfruit Birria Sliders",
+        "kind": "food",
+        "priceCents": 800,
+        "tags": [
+          "bbq jackfruit birria sliders"
+        ],
+        "id": "audit-food-bbqjackfruitbirriasliders",
+        "sourceId": "official-menu",
+        "status": "primary",
+        "windowIds": [
+          "audit-hh-0"
+        ]
+      },
+      {
+        "name": "Nachos",
+        "kind": "food",
+        "priceCents": 1000,
+        "tags": [
+          "nachos"
+        ],
+        "id": "audit-food-nachos",
+        "sourceId": "official-menu",
+        "status": "primary",
+        "windowIds": [
+          "audit-hh-0"
+        ]
+      },
+      {
         "name": "Garlic Chipotle Fries",
         "kind": "food",
         "priceCents": 700,
         "tags": [
-          "fries",
+          "garlic chipotle fries",
           "vegan"
         ],
+        "id": "food-2",
         "sourceId": "official-menu",
-        "status": "primary"
+        "status": "primary",
+        "windowIds": [
+          "audit-hh-0"
+        ]
       },
       {
-        "id": "drink-1",
-        "name": "House Cerveza",
-        "kind": "drink",
-        "priceCents": 700,
+        "name": "Gracias Burger",
+        "kind": "food",
+        "priceCents": 1600,
         "tags": [
-          "beer"
+          "gracias burger"
         ],
+        "id": "audit-food-graciasburger",
         "sourceId": "official-menu",
-        "status": "primary"
+        "status": "primary",
+        "windowIds": [
+          "audit-hh-0"
+        ]
       },
       {
-        "id": "drink-2",
+        "name": "Mini Street Taco Trio",
+        "kind": "food",
+        "priceCents": 900,
+        "tags": [
+          "mini street taco trio"
+        ],
+        "id": "audit-food-ministreettacotrio",
+        "sourceId": "official-menu",
+        "status": "primary",
+        "windowIds": [
+          "audit-hh-0"
+        ]
+      },
+      {
         "name": "Purista Margarita",
         "kind": "drink",
         "priceCents": 1100,
         "tags": [
-          "margarita"
+          "purista margarita"
+        ],
+        "id": "drink-2",
+        "sourceId": "official-menu",
+        "status": "conflicting",
+        "windowIds": [
+          "audit-hh-0"
+        ]
+      },
+      {
+        "name": "Purista Mezcal Margarita",
+        "kind": "drink",
+        "priceCents": 1200,
+        "tags": [
+          "purista mezcal margarita"
+        ],
+        "id": "audit-drink-puristamezcalmargarita",
+        "sourceId": "official-menu",
+        "status": "conflicting",
+        "windowIds": [
+          "audit-hh-0"
+        ]
+      },
+      {
+        "name": "Sangria",
+        "kind": "drink",
+        "priceCents": 1000,
+        "tags": [
+          "sangria"
+        ],
+        "id": "audit-drink-sangria",
+        "sourceId": "official-menu",
+        "status": "primary",
+        "windowIds": [
+          "audit-hh-0"
+        ]
+      },
+      {
+        "name": "House Cerveza",
+        "kind": "drink",
+        "priceCents": 700,
+        "tags": [
+          "house cerveza",
+          "beer"
+        ],
+        "id": "drink-1",
+        "sourceId": "official-menu",
+        "status": "primary",
+        "windowIds": [
+          "audit-hh-0"
+        ]
+      },
+      {
+        "name": "House Red Wine",
+        "kind": "drink",
+        "priceCents": 900,
+        "tags": [
+          "house red wine"
+        ],
+        "id": "audit-drink-houseredwine",
+        "sourceId": "official-menu",
+        "status": "primary",
+        "windowIds": [
+          "audit-hh-0"
+        ]
+      },
+      {
+        "name": "House White Wine",
+        "kind": "drink",
+        "priceCents": 900,
+        "tags": [
+          "house white wine"
+        ],
+        "id": "audit-drink-housewhitewine",
+        "sourceId": "official-menu",
+        "status": "primary",
+        "windowIds": [
+          "audit-hh-0"
+        ]
+      },
+      {
+        "name": "Sparkling Wine",
+        "kind": "drink",
+        "priceCents": 900,
+        "tags": [
+          "sparkling wine"
+        ],
+        "id": "audit-drink-sparklingwine",
+        "sourceId": "official-menu",
+        "status": "primary",
+        "windowIds": [
+          "audit-hh-0"
+        ]
+      },
+      {
+        "id": "tuesday-mushroomchicharron",
+        "name": "Taco Tuesday Mushroom Chicharron",
+        "kind": "food",
+        "priceCents": 600,
+        "tags": [
+          "tacos"
+        ],
+        "days": [
+          "Tuesday"
+        ],
+        "windowIds": [
+          "audit-hh-0",
+          "audit-tuesday"
         ],
         "sourceId": "official-menu",
-        "status": "conflicting"
+        "status": "primary"
+      },
+      {
+        "id": "tuesday-jackfruitcarnitas",
+        "name": "Taco Tuesday Jackfruit Carnitas",
+        "kind": "food",
+        "priceCents": 600,
+        "tags": [
+          "tacos"
+        ],
+        "days": [
+          "Tuesday"
+        ],
+        "windowIds": [
+          "audit-hh-0",
+          "audit-tuesday"
+        ],
+        "sourceId": "official-menu",
+        "status": "primary"
+      },
+      {
+        "id": "tuesday-chipotlebarbacoa",
+        "name": "Taco Tuesday Chipotle Barbacoa",
+        "kind": "food",
+        "priceCents": 600,
+        "tags": [
+          "tacos"
+        ],
+        "days": [
+          "Tuesday"
+        ],
+        "windowIds": [
+          "audit-hh-0",
+          "audit-tuesday"
+        ],
+        "sourceId": "official-menu",
+        "status": "primary"
+      },
+      {
+        "id": "tuesday-soyrizo",
+        "name": "Taco Tuesday Soyrizo",
+        "kind": "food",
+        "priceCents": 600,
+        "tags": [
+          "tacos"
+        ],
+        "days": [
+          "Tuesday"
+        ],
+        "windowIds": [
+          "audit-hh-0",
+          "audit-tuesday"
+        ],
+        "sourceId": "official-menu",
+        "status": "primary"
+      },
+      {
+        "id": "tuesday-grilledlionsmane",
+        "name": "Taco Tuesday Grilled Lions Mane",
+        "kind": "food",
+        "priceCents": 900,
+        "tags": [
+          "tacos"
+        ],
+        "days": [
+          "Tuesday"
+        ],
+        "windowIds": [
+          "audit-hh-0",
+          "audit-tuesday"
+        ],
+        "sourceId": "official-menu",
+        "status": "primary"
+      },
+      {
+        "id": "tuesday-coconutpescado",
+        "name": "Taco Tuesday Coconut Pescado",
+        "kind": "food",
+        "priceCents": 900,
+        "tags": [
+          "tacos"
+        ],
+        "days": [
+          "Tuesday"
+        ],
+        "windowIds": [
+          "audit-hh-0",
+          "audit-tuesday"
+        ],
+        "sourceId": "official-menu",
+        "status": "primary"
       }
     ],
     "foodTags": [
-      "tostada",
-      "vegan",
-      "fries"
+      "crispy taco",
+      "ceviche tostada",
+      "bbq jackfruit birria sliders",
+      "nachos",
+      "garlic chipotle fries",
+      "gracias burger",
+      "mini street taco trio"
     ],
     "drinkTags": [
-      "beer",
-      "margarita"
+      "purista margarita",
+      "purista mezcal margarita",
+      "sangria",
+      "house cerveza",
+      "house red wine",
+      "house white wine",
+      "sparkling wine"
     ],
     "atmosphereTags": [],
     "sources": [
@@ -861,8 +2751,8 @@
         "id": "official-menu",
         "url": "https://cdn.shopify.com/s/files/1/0905/4132/6630/files/GM_Menus_-_Web_260930.pdf?v=1791161657",
         "type": "primary",
-        "accessedOn": "2026-10-19",
-        "reviewedOn": "2026-10-19",
+        "accessedOn": "2026-10-26",
+        "reviewedOn": "2026-10-26",
         "note": "Linked menu, page 6 (zero-index 5), explicitly happy hour 3-6 Mon-Fri. Purista $11, cerveza $7, ceviche tostada/fries $7; Happy Madre Meal $12."
       },
       {
@@ -874,7 +2764,14 @@
         "note": "Homepage still advertises $9 margaritas and $7 favorites, conflicting with linked menu's $11 Purista."
       }
     ],
-    "notes": "Use latest linked menu pricing, with margarita flagged conflicting against $9 homepage claim. Other retained prices have no directly inspected official disagreement. Entire menu is plant-based. Bundled Happy Madre Meal is $12, not a separate $12 food component."
+    "notes": "Use latest linked menu pricing, with margarita flagged conflicting against $9 homepage claim. Other retained prices have no directly inspected official disagreement. Entire menu is plant-based. Bundled Happy Madre Meal is $12, not a separate $12 food component.",
+    "specials": [
+      {
+        "text": "Weekdays 3–6pm. Happy Madre Meal $12 includes slider/fries plus house beer or seasonal agua fresca; do not split component prices. Tuesday all-day tacos: mushroom chicharron, jackfruit carnitas, chipotle barbacoa and soyrizo $6 each; grilled lions mane and coconut pescado $9 each. Mini HH taco trio allows choice of three from mushroom, jackfruit, soyrizo, lentil-quinoa barbacoa.",
+        "sourceId": "official-menu",
+        "status": "primary"
+      }
+    ]
   },
   {
     "id": "la-boheme-west-hollywood",
@@ -920,57 +2817,179 @@
     ],
     "menu": [
       {
-        "id": "food-1",
-        "name": "Cheeseburger Sliders",
+        "name": "Kalbi Beef Taco",
         "kind": "food",
-        "priceCents": 1000,
+        "priceCents": 700,
         "tags": [
-          "burger"
+          "kalbi beef taco"
         ],
+        "id": "audit-food-kalbibeeftaco",
         "sourceId": "official",
         "status": "primary"
       },
       {
-        "id": "food-2",
         "name": "Buffalo Cauliflower",
         "kind": "food",
         "priceCents": 900,
         "tags": [
+          "buffalo cauliflower",
           "vegetables"
         ],
+        "id": "food-2",
         "sourceId": "official",
         "status": "primary"
       },
       {
-        "id": "drink-1",
-        "name": "House Wine (glass)",
+        "name": "Popcorn Shrimp Tempura",
+        "kind": "food",
+        "priceCents": 1100,
+        "tags": [
+          "popcorn shrimp tempura"
+        ],
+        "id": "audit-food-popcornshrimptempura",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "Grilled Chicken Dijon",
+        "kind": "food",
+        "priceCents": 1600,
+        "tags": [
+          "grilled chicken dijon"
+        ],
+        "id": "audit-food-grilledchickendijon",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "Chicken Wings",
+        "kind": "food",
+        "priceCents": 1400,
+        "tags": [
+          "chicken wings"
+        ],
+        "id": "audit-food-chickenwings",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "Seared Salmon Crudo",
+        "kind": "food",
+        "priceCents": 1200,
+        "tags": [
+          "seared salmon crudo"
+        ],
+        "id": "audit-food-searedsalmoncrudo",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "Cheeseburger Sliders",
+        "kind": "food",
+        "priceCents": 1000,
+        "tags": [
+          "cheeseburger sliders",
+          "burger"
+        ],
+        "id": "food-1",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "Oysters on Half Shell",
+        "kind": "food",
+        "priceCents": 1600,
+        "tags": [
+          "oysters on half shell"
+        ],
+        "id": "audit-food-oystersonhalfshell",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "Stuffed Jalapeno Bites",
+        "kind": "food",
+        "priceCents": 1200,
+        "tags": [
+          "stuffed jalapeno bites"
+        ],
+        "id": "audit-food-stuffedjalapenobites",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "House Red Wine",
         "kind": "drink",
         "priceCents": 900,
         "tags": [
-          "wine"
+          "house red wine"
         ],
+        "id": "audit-drink-houseredwine",
         "sourceId": "official",
         "status": "primary"
       },
       {
-        "id": "drink-2",
+        "name": "House White Wine",
+        "kind": "drink",
+        "priceCents": 900,
+        "tags": [
+          "house white wine"
+        ],
+        "id": "audit-drink-housewhitewine",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "House Rose Wine",
+        "kind": "drink",
+        "priceCents": 900,
+        "tags": [
+          "house rose wine"
+        ],
+        "id": "audit-drink-houserosewine",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "Draft Beer",
+        "kind": "drink",
+        "priceCents": null,
+        "tags": [
+          "draft beer"
+        ],
+        "id": "audit-drink-draftbeer",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
         "name": "Happy Hour Cocktail",
         "kind": "drink",
         "priceCents": 1000,
         "tags": [
-          "cocktail"
+          "happy hour cocktail"
         ],
+        "id": "drink-2",
         "sourceId": "official",
         "status": "primary"
       }
     ],
     "foodTags": [
-      "burger",
-      "vegetables"
+      "kalbi beef taco",
+      "buffalo cauliflower",
+      "popcorn shrimp tempura",
+      "grilled chicken dijon",
+      "chicken wings",
+      "seared salmon crudo",
+      "cheeseburger sliders",
+      "oysters on half shell",
+      "stuffed jalapeno bites"
     ],
     "drinkTags": [
-      "wine",
-      "cocktail"
+      "house red wine",
+      "house white wine",
+      "house rose wine",
+      "draft beer",
+      "happy hour cocktail"
     ],
     "atmosphereTags": [],
     "sources": [
@@ -978,8 +2997,8 @@
         "id": "official",
         "url": "https://www.labohemeweho.com/menus/",
         "type": "primary",
-        "accessedOn": "2026-10-19",
-        "reviewedOn": "2026-10-19",
+        "accessedOn": "2026-10-26",
+        "reviewedOn": "2026-10-26",
         "note": "Happy-hour section: Mon-Thu 5-close, Fri-Sat 5-7, Sun 4-close; sliders $10, cauliflower $9, house wine $9, cocktails $10."
       },
       {
@@ -991,7 +3010,14 @@
         "note": "Full address; Mon-Thu and Sunday close 10pm used to normalize close."
       }
     ],
-    "notes": "Close-based windows normalized from official location hours. Happy-hour cocktail choices are not named in that section; generic category retained without assigning regular-menu cocktail names."
+    "notes": "Close-based windows normalized from official location hours. Happy-hour cocktail choices are not named in that section; generic category retained without assigning regular-menu cocktail names.",
+    "specials": [
+      {
+        "text": "Monday–Thursday 5pm–close; Friday/Saturday 5–7pm; Sunday 4pm–close. Drafts $2 off. Exact HH cocktail choices not identified; regular specialty cocktails are not assumed eligible.",
+        "sourceId": "official",
+        "status": "primary"
+      }
+    ]
   },
   {
     "id": "hugos-west-hollywood",
@@ -1086,59 +3112,190 @@
     ],
     "menu": [
       {
-        "id": "food-1",
         "name": "Arancini",
         "kind": "food",
         "priceCents": 1200,
         "tags": [
           "arancini"
         ],
+        "id": "food-1",
         "sourceId": "official",
         "status": "primary"
       },
       {
-        "id": "food-2",
+        "name": "Meatballs",
+        "kind": "food",
+        "priceCents": 1200,
+        "tags": [
+          "meatballs"
+        ],
+        "id": "audit-food-meatballs",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "Mozzarella Halfmoons",
+        "kind": "food",
+        "priceCents": 1200,
+        "tags": [
+          "mozzarella halfmoons"
+        ],
+        "id": "audit-food-mozzarellahalfmoons",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
         "name": "Marinara Pizza",
         "kind": "food",
         "priceCents": 1200,
         "tags": [
-          "pizza"
+          "marinara pizza"
         ],
+        "id": "food-2",
         "sourceId": "official",
         "status": "primary"
       },
       {
-        "id": "drink-1",
-        "name": "Peroni",
-        "kind": "drink",
-        "priceCents": 500,
+        "name": "Margherita Pizza",
+        "kind": "food",
+        "priceCents": 1500,
         "tags": [
-          "beer"
+          "margherita pizza"
         ],
+        "id": "audit-food-margheritapizza",
         "sourceId": "official",
         "status": "primary"
       },
       {
-        "id": "drink-2",
         "name": "Negroni",
         "kind": "drink",
         "priceCents": 1200,
         "tags": [
-          "negroni",
-          "cocktail"
+          "negroni"
         ],
+        "id": "drink-2",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "Margarita",
+        "kind": "drink",
+        "priceCents": 1200,
+        "tags": [
+          "margarita"
+        ],
+        "id": "audit-drink-margarita",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "Aperol Spritz",
+        "kind": "drink",
+        "priceCents": 1200,
+        "tags": [
+          "aperol spritz"
+        ],
+        "id": "audit-drink-aperolspritz",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "Campari Spritz",
+        "kind": "drink",
+        "priceCents": 1200,
+        "tags": [
+          "campari spritz"
+        ],
+        "id": "audit-drink-camparispritz",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "Hugo Spritz",
+        "kind": "drink",
+        "priceCents": 1200,
+        "tags": [
+          "hugo spritz"
+        ],
+        "id": "audit-drink-hugospritz",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "Alpine Spritz",
+        "kind": "drink",
+        "priceCents": 1200,
+        "tags": [
+          "alpine spritz"
+        ],
+        "id": "audit-drink-alpinespritz",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "Espresso Martini",
+        "kind": "drink",
+        "priceCents": 1200,
+        "tags": [
+          "espresso martini"
+        ],
+        "id": "audit-drink-espressomartini",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "Vermentino di Sardegna",
+        "kind": "drink",
+        "priceCents": 1200,
+        "tags": [
+          "vermentino di sardegna"
+        ],
+        "id": "audit-drink-vermentinodisardegna",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "Sangiovese",
+        "kind": "drink",
+        "priceCents": 1200,
+        "tags": [
+          "sangiovese"
+        ],
+        "id": "audit-drink-sangiovese",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "Peroni",
+        "kind": "drink",
+        "priceCents": 500,
+        "tags": [
+          "peroni",
+          "beer"
+        ],
+        "id": "drink-1",
         "sourceId": "official",
         "status": "primary"
       }
     ],
     "foodTags": [
       "arancini",
-      "pizza"
+      "meatballs",
+      "mozzarella halfmoons",
+      "marinara pizza",
+      "margherita pizza"
     ],
     "drinkTags": [
-      "beer",
       "negroni",
-      "cocktail"
+      "margarita",
+      "aperol spritz",
+      "campari spritz",
+      "hugo spritz",
+      "alpine spritz",
+      "espresso martini",
+      "vermentino di sardegna",
+      "sangiovese",
+      "peroni"
     ],
     "atmosphereTags": [],
     "sources": [
@@ -1146,8 +3303,8 @@
         "id": "official",
         "url": "https://damicheleusa.com/dinner-brunch/",
         "type": "primary",
-        "accessedOn": "2026-10-19",
-        "reviewedOn": "2026-10-19",
+        "accessedOn": "2026-10-26",
+        "reviewedOn": "2026-10-26",
         "note": "Hollywood menu happy-hour section: Mon-Fri 2-5pm and 9-close, bar and high tops only; listed bites $12, cocktails $12, Peroni $5."
       },
       {
@@ -1159,7 +3316,14 @@
         "note": "Full Hollywood address; close Mon-Thu 11pm and Fri midnight normalizes late window."
       }
     ],
-    "notes": "Bar and high tops only. Marinara Pizza is $12; optional Margherita upgrade +$3 not silently included. Separate Thursday Aperitivo event is not merged into these recurring happy-hour terms."
+    "notes": "Bar and high tops only. Marinara Pizza is $12; optional Margherita upgrade +$3 not silently included. Separate Thursday Aperitivo event is not merged into these recurring happy-hour terms.",
+    "specials": [
+      {
+        "text": "Monday–Friday 2–5pm and 9pm–close, bar and high tops only. Marinara-to-Margherita upgrade +$3 included in the separate $15 choice.",
+        "sourceId": "official",
+        "status": "primary"
+      }
+    ]
   },
   {
     "id": "ocean-prime-beverly-hills",
@@ -1233,12 +3397,19 @@
         "id": "official",
         "url": "https://ocean-prime.com/locations-menus/beverly-hills/",
         "type": "primary",
-        "accessedOn": "2026-10-19",
-        "reviewedOn": "2026-10-19",
+        "accessedOn": "2026-10-26",
+        "reviewedOn": "2026-10-26",
         "note": "Branch address and Mon-Fri 3-7pm in lounge. Friday promotion explicitly pairs $20 Veuve Clicquot Rose glass with $2 oysters. Happy-hour section lists select beers including Peroni at $6; $5 off lounge food and signature cocktails."
       }
     ],
-    "notes": "Lounge only. Oyster $2 and Veuve glass $20 apply Friday only; not offered as weekday-wide prices. Friday supports the full priced food/drink pair. No fixed food price computed from $5-off regular lounge menu."
+    "notes": "Lounge only. Oyster $2 and Veuve glass $20 apply Friday only; not offered as weekday-wide prices. Friday supports the full priced food/drink pair. No fixed food price computed from $5-off regular lounge menu.",
+    "specials": [
+      {
+        "text": "Lounge HH Monday–Friday 3–7pm: $5 off lounge menu and special drink prices. Friday $20 Veuve Clicquot Rose with $2 oysters; Sunday half-price selected wine bottles priced $150 or less.",
+        "status": "primary",
+        "sourceId": "official"
+      }
+    ]
   },
   {
     "id": "bacari-beverly-hills",
@@ -1337,59 +3508,165 @@
     ],
     "menu": [
       {
-        "id": "food-1",
+        "name": "Warm Mediterranean Olives",
+        "kind": "food",
+        "priceCents": 1200,
+        "tags": [
+          "warm mediterranean olives"
+        ],
+        "id": "audit-food-warmmediterraneanolives",
+        "sourceId": "official-menu",
+        "status": "primary"
+      },
+      {
         "name": "Parmesan Truffle Fries",
         "kind": "food",
         "priceCents": 1600,
         "tags": [
-          "fries"
+          "parmesan truffle fries"
         ],
+        "id": "food-1",
         "sourceId": "official-menu",
         "status": "primary"
       },
       {
-        "id": "food-2",
-        "name": "Fried Calamari & Zucchini",
+        "name": "Fried Calamari and Zucchini",
         "kind": "food",
         "priceCents": 1600,
         "tags": [
-          "calamari"
+          "fried calamari and zucchini"
         ],
+        "id": "audit-food-friedcalamariandzucchini",
         "sourceId": "official-menu",
         "status": "primary"
       },
       {
-        "id": "drink-1",
-        "name": "Happy Hour Beer",
+        "name": "Polpette",
+        "kind": "food",
+        "priceCents": 1600,
+        "tags": [
+          "polpette"
+        ],
+        "id": "audit-food-polpette",
+        "sourceId": "official-menu",
+        "status": "primary"
+      },
+      {
+        "name": "Sfogliatina di Prosciutto",
+        "kind": "food",
+        "priceCents": 1600,
+        "tags": [
+          "sfogliatina di prosciutto"
+        ],
+        "id": "audit-food-sfogliatinadiprosciutto",
+        "sourceId": "official-menu",
+        "status": "primary"
+      },
+      {
+        "name": "Beer",
         "kind": "drink",
         "priceCents": 800,
         "tags": [
           "beer"
         ],
+        "id": "drink-1",
         "sourceId": "official-menu",
         "status": "primary"
       },
       {
-        "id": "drink-2",
-        "name": "Happy Hour Martini",
+        "name": "Red Wine",
         "kind": "drink",
         "priceCents": 1200,
         "tags": [
-          "martini",
-          "cocktail"
+          "red wine"
         ],
+        "id": "audit-drink-redwine",
+        "sourceId": "official-menu",
+        "status": "primary"
+      },
+      {
+        "name": "White Wine",
+        "kind": "drink",
+        "priceCents": 1200,
+        "tags": [
+          "white wine"
+        ],
+        "id": "audit-drink-whitewine",
+        "sourceId": "official-menu",
+        "status": "primary"
+      },
+      {
+        "name": "Prosecco",
+        "kind": "drink",
+        "priceCents": 1200,
+        "tags": [
+          "prosecco"
+        ],
+        "id": "audit-drink-prosecco",
+        "sourceId": "official-menu",
+        "status": "primary"
+      },
+      {
+        "name": "Champagne",
+        "kind": "drink",
+        "priceCents": 1200,
+        "tags": [
+          "champagne"
+        ],
+        "id": "audit-drink-champagne",
+        "sourceId": "official-menu",
+        "status": "primary"
+      },
+      {
+        "name": "Well Drink",
+        "kind": "drink",
+        "priceCents": 1200,
+        "tags": [
+          "well drink"
+        ],
+        "id": "audit-drink-welldrink",
+        "sourceId": "official-menu",
+        "status": "primary"
+      },
+      {
+        "name": "Martini",
+        "kind": "drink",
+        "priceCents": 1200,
+        "tags": [
+          "martini"
+        ],
+        "id": "drink-2",
+        "sourceId": "official-menu",
+        "status": "primary"
+      },
+      {
+        "name": "Zero Proof Cocktail",
+        "kind": "drink",
+        "priceCents": 1200,
+        "tags": [
+          "zero proof cocktail"
+        ],
+        "id": "audit-drink-zeroproofcocktail",
         "sourceId": "official-menu",
         "status": "primary"
       }
     ],
     "foodTags": [
-      "fries",
-      "calamari"
+      "warm mediterranean olives",
+      "parmesan truffle fries",
+      "fried calamari and zucchini",
+      "polpette",
+      "sfogliatina di prosciutto"
     ],
     "drinkTags": [
       "beer",
+      "red wine",
+      "white wine",
+      "prosecco",
+      "champagne",
+      "well drink",
       "martini",
-      "cocktail"
+      "zero proof cocktail"
     ],
     "atmosphereTags": [],
     "sources": [
@@ -1397,8 +3674,8 @@
         "id": "official-menu",
         "url": "https://www.ilcielo.com/menus/",
         "type": "primary",
-        "accessedOn": "2026-10-19",
-        "reviewedOn": "2026-10-19",
+        "accessedOn": "2026-10-26",
+        "reviewedOn": "2026-10-26",
         "note": "Aperitivo happy-hour section labels Bar Cielo Wed-Fri and Sun 5:30-7:30pm and supplies these prices; address in footer."
       },
       {
@@ -1410,7 +3687,14 @@
         "note": "Conflicting Aperitivo schedule: Monday through Friday, 5-8pm with parenthetical Friday 5:30pm start. Does not match main menu's days or end time."
       }
     ],
-    "notes": "Schedule requires venue confirmation. Encoded main-menu window is conflicting, not a clean primary schedule. Menu item prices are directly primary-supported. Bar Cielo only; no regular dinner prices reused."
+    "notes": "Schedule requires venue confirmation. Encoded main-menu window is conflicting, not a clean primary schedule. Menu item prices are directly primary-supported. Bar Cielo only; no regular dinner prices reused.",
+    "specials": [
+      {
+        "text": "Menu states Wednesday–Friday and Sunday 5:30–7:30pm; Bar Cielo page lists a different weekday schedule.",
+        "sourceId": "official-menu",
+        "status": "primary"
+      }
+    ]
   },
   {
     "id": "beverly-bar-beverly-hills",
@@ -1438,57 +3722,253 @@
     ],
     "menu": [
       {
-        "id": "food-1",
+        "name": "Avocado Hummus",
+        "kind": "food",
+        "priceCents": 1700,
+        "tags": [
+          "avocado hummus"
+        ],
+        "id": "audit-food-avocadohummus",
+        "sourceId": "official-menu",
+        "status": "primary"
+      },
+      {
+        "name": "Burrata",
+        "kind": "food",
+        "priceCents": 2000,
+        "tags": [
+          "burrata"
+        ],
+        "id": "audit-food-burrata",
+        "sourceId": "official-menu",
+        "status": "primary"
+      },
+      {
         "name": "Truffle Parmesan Fries",
         "kind": "food",
         "priceCents": 1200,
         "tags": [
-          "fries"
+          "truffle parmesan fries"
         ],
+        "id": "food-1",
         "sourceId": "official-menu",
         "status": "primary"
       },
       {
-        "id": "food-2",
-        "name": "The Beverly Smash Burger",
+        "name": "Roasted Shishito Peppers",
+        "kind": "food",
+        "priceCents": 1500,
+        "tags": [
+          "roasted shishito peppers"
+        ],
+        "id": "audit-food-roastedshishitopeppers",
+        "sourceId": "official-menu",
+        "status": "primary"
+      },
+      {
+        "name": "Baja Shrimp Tacos (2)",
+        "kind": "food",
+        "priceCents": 2000,
+        "tags": [
+          "baja shrimp tacos (2)"
+        ],
+        "id": "audit-food-bajashrimptacos2",
+        "sourceId": "official-menu",
+        "status": "primary"
+      },
+      {
+        "name": "Margherita Pizza",
         "kind": "food",
         "priceCents": 1800,
         "tags": [
-          "burger"
+          "margherita pizza"
         ],
+        "id": "audit-food-margheritapizza",
         "sourceId": "official-menu",
         "status": "primary"
       },
       {
-        "id": "drink-1",
-        "name": "Asahi Draft",
-        "kind": "drink",
-        "priceCents": 700,
+        "name": "Chefs Smash Burger",
+        "kind": "food",
+        "priceCents": 2000,
         "tags": [
-          "beer"
+          "chefs smash burger"
         ],
+        "id": "audit-food-chefssmashburger",
         "sourceId": "official-menu",
         "status": "primary"
       },
       {
-        "id": "drink-2",
+        "name": "Beverly Smash Burger",
+        "kind": "food",
+        "priceCents": 1800,
+        "tags": [
+          "beverly smash burger"
+        ],
+        "id": "food-2",
+        "sourceId": "official-menu",
+        "status": "primary"
+      },
+      {
+        "name": "Beverly Bar Martini",
+        "kind": "drink",
+        "priceCents": 1400,
+        "tags": [
+          "beverly bar martini"
+        ],
+        "id": "audit-drink-beverlybarmartini",
+        "sourceId": "official-menu",
+        "status": "primary"
+      },
+      {
+        "name": "Old Fashioned",
+        "kind": "drink",
+        "priceCents": 1400,
+        "tags": [
+          "old fashioned"
+        ],
+        "id": "audit-drink-oldfashioned",
+        "sourceId": "official-menu",
+        "status": "primary"
+      },
+      {
+        "name": "Cosmopolitan",
+        "kind": "drink",
+        "priceCents": 1400,
+        "tags": [
+          "cosmopolitan"
+        ],
+        "id": "audit-drink-cosmopolitan",
+        "sourceId": "official-menu",
+        "status": "primary"
+      },
+      {
         "name": "Classic Margarita",
         "kind": "drink",
         "priceCents": 1300,
         "tags": [
-          "margarita"
+          "classic margarita"
         ],
+        "id": "drink-2",
+        "sourceId": "official-menu",
+        "status": "primary"
+      },
+      {
+        "name": "The Cats Meow Sangria",
+        "kind": "drink",
+        "priceCents": 1200,
+        "tags": [
+          "the cats meow sangria"
+        ],
+        "id": "audit-drink-thecatsmeowsangria",
+        "sourceId": "official-menu",
+        "status": "primary"
+      },
+      {
+        "name": "House White Wine",
+        "kind": "drink",
+        "priceCents": 900,
+        "tags": [
+          "house white wine"
+        ],
+        "id": "audit-drink-housewhitewine",
+        "sourceId": "official-menu",
+        "status": "primary"
+      },
+      {
+        "name": "House Red Wine",
+        "kind": "drink",
+        "priceCents": 900,
+        "tags": [
+          "house red wine"
+        ],
+        "id": "audit-drink-houseredwine",
+        "sourceId": "official-menu",
+        "status": "primary"
+      },
+      {
+        "name": "House Bubbles",
+        "kind": "drink",
+        "priceCents": 900,
+        "tags": [
+          "house bubbles"
+        ],
+        "id": "audit-drink-housebubbles",
+        "sourceId": "official-menu",
+        "status": "primary"
+      },
+      {
+        "name": "Asahi Draft",
+        "kind": "drink",
+        "priceCents": 700,
+        "tags": [
+          "asahi draft",
+          "beer"
+        ],
+        "id": "drink-1",
+        "sourceId": "official-menu",
+        "status": "primary"
+      },
+      {
+        "name": "Peroni Draft",
+        "kind": "drink",
+        "priceCents": 800,
+        "tags": [
+          "peroni draft",
+          "beer"
+        ],
+        "id": "audit-drink-peronidraft",
+        "sourceId": "official-menu",
+        "status": "primary"
+      },
+      {
+        "name": "Lagunitas IPA Draft",
+        "kind": "drink",
+        "priceCents": 800,
+        "tags": [
+          "lagunitas ipa draft",
+          "beer"
+        ],
+        "id": "audit-drink-lagunitasipadraft",
+        "sourceId": "official-menu",
+        "status": "primary"
+      },
+      {
+        "name": "Almanac Love Hazy IPA Draft",
+        "kind": "drink",
+        "priceCents": 700,
+        "tags": [
+          "almanac love hazy ipa draft",
+          "beer"
+        ],
+        "id": "audit-drink-almanaclovehazyipadraft",
         "sourceId": "official-menu",
         "status": "primary"
       }
     ],
     "foodTags": [
-      "fries",
-      "burger"
+      "avocado hummus",
+      "burrata",
+      "truffle parmesan fries",
+      "roasted shishito peppers",
+      "baja shrimp tacos (2)",
+      "margherita pizza",
+      "chefs smash burger",
+      "beverly smash burger"
     ],
     "drinkTags": [
-      "beer",
-      "margarita"
+      "beverly bar martini",
+      "old fashioned",
+      "cosmopolitan",
+      "classic margarita",
+      "the cats meow sangria",
+      "house white wine",
+      "house red wine",
+      "house bubbles",
+      "asahi draft",
+      "peroni draft",
+      "lagunitas ipa draft",
+      "almanac love hazy ipa draft"
     ],
     "atmosphereTags": [],
     "sources": [
@@ -1504,12 +3984,19 @@
         "id": "official-menu",
         "url": "https://beverlybar.com/happy-hour/",
         "type": "primary",
-        "accessedOn": "2026-10-19",
-        "reviewedOn": "2026-10-19",
+        "accessedOn": "2026-10-26",
+        "reviewedOn": "2026-10-26",
         "note": "Directly inspected happy-hour menu has exact food and drink prices; page says every day 2-6pm and invites any seat."
       }
     ],
-    "notes": "No bar-only restriction inferred from promotional bar wording; happy-hour page says any seat."
+    "notes": "No bar-only restriction inferred from promotional bar wording; happy-hour page says any seat.",
+    "specials": [
+      {
+        "text": "Daily 2–6pm. Homepage separately lists Martini Monday, Taco Tuesday and half-price wine bottles Sunday; consult daily menu for details.",
+        "sourceId": "official-menu",
+        "status": "primary"
+      }
+    ]
   },
   {
     "id": "iki-ramen-koreatown",
@@ -1535,59 +4022,228 @@
     ],
     "menu": [
       {
-        "id": "food-1",
         "name": "Edamame",
         "kind": "food",
         "priceCents": 500,
         "tags": [
           "edamame"
         ],
+        "id": "food-1",
         "sourceId": "official",
         "status": "primary"
       },
       {
-        "id": "food-2",
+        "name": "Seaweed Salad",
+        "kind": "food",
+        "priceCents": 500,
+        "tags": [
+          "seaweed salad"
+        ],
+        "id": "audit-food-seaweedsalad",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
         "name": "Chicken Gyoza",
         "kind": "food",
         "priceCents": 600,
         "tags": [
+          "chicken gyoza",
           "dumplings"
         ],
+        "id": "food-2",
         "sourceId": "official",
         "status": "primary"
       },
       {
-        "id": "drink-1",
+        "name": "Takoyaki",
+        "kind": "food",
+        "priceCents": 600,
+        "tags": [
+          "takoyaki"
+        ],
+        "id": "audit-food-takoyaki",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "Tuna Sushi (2pc)",
+        "kind": "food",
+        "priceCents": 600,
+        "tags": [
+          "tuna sushi (2pc)"
+        ],
+        "id": "audit-food-tunasushi2pc",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "Salmon Sushi (2pc)",
+        "kind": "food",
+        "priceCents": 600,
+        "tags": [
+          "salmon sushi (2pc)"
+        ],
+        "id": "audit-food-salmonsushi2pc",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "Yellowtail Sushi (2pc)",
+        "kind": "food",
+        "priceCents": 600,
+        "tags": [
+          "yellowtail sushi (2pc)"
+        ],
+        "id": "audit-food-yellowtailsushi2pc",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "Spicy Tuna Handroll",
+        "kind": "food",
+        "priceCents": 500,
+        "tags": [
+          "spicy tuna handroll"
+        ],
+        "id": "audit-food-spicytunahandroll",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "Salmon Handroll",
+        "kind": "food",
+        "priceCents": 500,
+        "tags": [
+          "salmon handroll"
+        ],
+        "id": "audit-food-salmonhandroll",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "Shrimp Tempura Handroll",
+        "kind": "food",
+        "priceCents": 500,
+        "tags": [
+          "shrimp tempura handroll"
+        ],
+        "id": "audit-food-shrimptempurahandroll",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "IKI Taco",
+        "kind": "food",
+        "priceCents": 600,
+        "tags": [
+          "iki taco"
+        ],
+        "id": "audit-food-ikitaco",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
         "name": "Draft Beer",
         "kind": "drink",
         "priceCents": 500,
         "tags": [
-          "beer"
+          "draft beer"
         ],
+        "id": "drink-1",
         "sourceId": "official",
         "status": "primary"
       },
       {
-        "id": "drink-2",
+        "name": "Hot Sake",
+        "kind": "drink",
+        "priceCents": 800,
+        "tags": [
+          "hot sake"
+        ],
+        "id": "audit-drink-hotsake",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "Cold Sake",
+        "kind": "drink",
+        "priceCents": 500,
+        "tags": [
+          "cold sake"
+        ],
+        "id": "audit-drink-coldsake",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "White Wine",
+        "kind": "drink",
+        "priceCents": 800,
+        "tags": [
+          "white wine"
+        ],
+        "id": "audit-drink-whitewine",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "Red Wine",
+        "kind": "drink",
+        "priceCents": 800,
+        "tags": [
+          "red wine"
+        ],
+        "id": "audit-drink-redwine",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "IKI High Ball",
+        "kind": "drink",
+        "priceCents": 1000,
+        "tags": [
+          "iki high ball",
+          "cocktail"
+        ],
+        "id": "audit-drink-ikihighball",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
         "name": "IKI Martini",
         "kind": "drink",
         "priceCents": 1000,
         "tags": [
-          "martini",
+          "iki martini",
           "cocktail"
         ],
+        "id": "drink-2",
         "sourceId": "official",
         "status": "primary"
       }
     ],
     "foodTags": [
       "edamame",
-      "dumplings"
+      "seaweed salad",
+      "chicken gyoza",
+      "takoyaki",
+      "tuna sushi (2pc)",
+      "salmon sushi (2pc)",
+      "yellowtail sushi (2pc)",
+      "spicy tuna handroll",
+      "salmon handroll",
+      "shrimp tempura handroll",
+      "iki taco"
     ],
     "drinkTags": [
-      "beer",
-      "martini",
-      "cocktail"
+      "draft beer",
+      "hot sake",
+      "cold sake",
+      "white wine",
+      "red wine",
+      "iki high ball",
+      "iki martini"
     ],
     "atmosphereTags": [],
     "sources": [
@@ -1595,12 +4251,19 @@
         "id": "official",
         "url": "https://ikiramen.com/happenings/happy-hour",
         "type": "primary",
-        "accessedOn": "2026-10-19",
-        "reviewedOn": "2026-10-19",
+        "accessedOn": "2026-10-26",
+        "reviewedOn": "2026-10-26",
         "note": "Official happy-hour page explicitly invites Koreatown at this full address and Sunset at 6565 Sunset Blvd. Mon-Fri 2:30-5:30pm; priced food/drink list."
       }
     ],
-    "notes": "Shared official offer expressly names both retained branches. Do not confuse the separate IKI Nori concept at 6464 Sunset Blvd with this Ramen + Sushi location."
+    "notes": "Shared official offer expressly names both retained branches. Do not confuse the separate IKI Nori concept at 6464 Sunset Blvd with this Ramen + Sushi location.",
+    "specials": [
+      {
+        "text": "Monday–Friday 2:30–5:30pm. Official shared page identifies both Koreatown and Sunset branches.",
+        "sourceId": "official",
+        "status": "primary"
+      }
+    ]
   },
   {
     "id": "iki-ramen-hollywood",
@@ -1626,59 +4289,228 @@
     ],
     "menu": [
       {
-        "id": "food-1",
         "name": "Edamame",
         "kind": "food",
         "priceCents": 500,
         "tags": [
           "edamame"
         ],
+        "id": "food-1",
         "sourceId": "official",
         "status": "primary"
       },
       {
-        "id": "food-2",
+        "name": "Seaweed Salad",
+        "kind": "food",
+        "priceCents": 500,
+        "tags": [
+          "seaweed salad"
+        ],
+        "id": "audit-food-seaweedsalad",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
         "name": "Chicken Gyoza",
         "kind": "food",
         "priceCents": 600,
         "tags": [
+          "chicken gyoza",
           "dumplings"
         ],
+        "id": "food-2",
         "sourceId": "official",
         "status": "primary"
       },
       {
-        "id": "drink-1",
+        "name": "Takoyaki",
+        "kind": "food",
+        "priceCents": 600,
+        "tags": [
+          "takoyaki"
+        ],
+        "id": "audit-food-takoyaki",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "Tuna Sushi (2pc)",
+        "kind": "food",
+        "priceCents": 600,
+        "tags": [
+          "tuna sushi (2pc)"
+        ],
+        "id": "audit-food-tunasushi2pc",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "Salmon Sushi (2pc)",
+        "kind": "food",
+        "priceCents": 600,
+        "tags": [
+          "salmon sushi (2pc)"
+        ],
+        "id": "audit-food-salmonsushi2pc",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "Yellowtail Sushi (2pc)",
+        "kind": "food",
+        "priceCents": 600,
+        "tags": [
+          "yellowtail sushi (2pc)"
+        ],
+        "id": "audit-food-yellowtailsushi2pc",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "Spicy Tuna Handroll",
+        "kind": "food",
+        "priceCents": 500,
+        "tags": [
+          "spicy tuna handroll"
+        ],
+        "id": "audit-food-spicytunahandroll",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "Salmon Handroll",
+        "kind": "food",
+        "priceCents": 500,
+        "tags": [
+          "salmon handroll"
+        ],
+        "id": "audit-food-salmonhandroll",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "Shrimp Tempura Handroll",
+        "kind": "food",
+        "priceCents": 500,
+        "tags": [
+          "shrimp tempura handroll"
+        ],
+        "id": "audit-food-shrimptempurahandroll",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "IKI Taco",
+        "kind": "food",
+        "priceCents": 600,
+        "tags": [
+          "iki taco"
+        ],
+        "id": "audit-food-ikitaco",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
         "name": "Draft Beer",
         "kind": "drink",
         "priceCents": 500,
         "tags": [
-          "beer"
+          "draft beer"
         ],
+        "id": "drink-1",
         "sourceId": "official",
         "status": "primary"
       },
       {
-        "id": "drink-2",
+        "name": "Hot Sake",
+        "kind": "drink",
+        "priceCents": 800,
+        "tags": [
+          "hot sake"
+        ],
+        "id": "audit-drink-hotsake",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "Cold Sake",
+        "kind": "drink",
+        "priceCents": 500,
+        "tags": [
+          "cold sake"
+        ],
+        "id": "audit-drink-coldsake",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "White Wine",
+        "kind": "drink",
+        "priceCents": 800,
+        "tags": [
+          "white wine"
+        ],
+        "id": "audit-drink-whitewine",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "Red Wine",
+        "kind": "drink",
+        "priceCents": 800,
+        "tags": [
+          "red wine"
+        ],
+        "id": "audit-drink-redwine",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "IKI High Ball",
+        "kind": "drink",
+        "priceCents": 1000,
+        "tags": [
+          "iki high ball",
+          "cocktail"
+        ],
+        "id": "audit-drink-ikihighball",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
         "name": "IKI Martini",
         "kind": "drink",
         "priceCents": 1000,
         "tags": [
-          "martini",
+          "iki martini",
           "cocktail"
         ],
+        "id": "drink-2",
         "sourceId": "official",
         "status": "primary"
       }
     ],
     "foodTags": [
       "edamame",
-      "dumplings"
+      "seaweed salad",
+      "chicken gyoza",
+      "takoyaki",
+      "tuna sushi (2pc)",
+      "salmon sushi (2pc)",
+      "yellowtail sushi (2pc)",
+      "spicy tuna handroll",
+      "salmon handroll",
+      "shrimp tempura handroll",
+      "iki taco"
     ],
     "drinkTags": [
-      "beer",
-      "martini",
-      "cocktail"
+      "draft beer",
+      "hot sake",
+      "cold sake",
+      "white wine",
+      "red wine",
+      "iki high ball",
+      "iki martini"
     ],
     "atmosphereTags": [],
     "sources": [
@@ -1686,12 +4518,19 @@
         "id": "official",
         "url": "https://ikiramen.com/happenings/happy-hour",
         "type": "primary",
-        "accessedOn": "2026-10-19",
-        "reviewedOn": "2026-10-19",
+        "accessedOn": "2026-10-26",
+        "reviewedOn": "2026-10-26",
         "note": "Happy-hour invitation explicitly identifies Sunset address 6565 Sunset Blvd; footer labels it IKI Ramen+Sushi Hollywood. Mon-Fri 2:30-5:30pm with exact item prices."
       }
     ],
-    "notes": "This is the 6565 Sunset Ramen + Sushi branch, not IKI Nori at 6464 Sunset. Shared offer explicitly identifies this address."
+    "notes": "This is the 6565 Sunset Ramen + Sushi branch, not IKI Nori at 6464 Sunset. Shared offer explicitly identifies this address.",
+    "specials": [
+      {
+        "text": "Monday–Friday 2:30–5:30pm. Official shared page identifies both Koreatown and Sunset branches.",
+        "sourceId": "official",
+        "status": "primary"
+      }
+    ]
   },
   {
     "id": "bacari-silverlake",
@@ -1803,45 +4642,233 @@
     ],
     "menu": [
       {
-        "id": "food-1",
-        "name": "Prime Rib Katsu Sando (happy-hour discount)",
+        "name": "Prime Rib Katsu Sando",
         "kind": "food",
-        "priceCents": null,
+        "priceCents": 2900,
         "tags": [
+          "prime rib katsu sando",
           "sandwich"
         ],
-        "sourceId": "official-bites",
-        "status": "primary"
-      },
-      {
-        "id": "drink-1",
-        "name": "La Cienega Mule",
-        "kind": "drink",
-        "priceCents": 1000,
-        "tags": [
-          "cocktail"
-        ],
+        "id": "food-1",
         "sourceId": "official-menu",
         "status": "primary"
       },
       {
-        "id": "drink-2",
-        "name": "Stella Artois Draft (16 oz)",
+        "name": "Jumbo Shrimp Cocktail",
+        "kind": "food",
+        "priceCents": 2000,
+        "tags": [
+          "jumbo shrimp cocktail"
+        ],
+        "id": "audit-food-jumboshrimpcocktail",
+        "sourceId": "official-menu",
+        "status": "primary"
+      },
+      {
+        "name": "Caviar Chips",
+        "kind": "food",
+        "priceCents": 3400,
+        "tags": [
+          "caviar chips"
+        ],
+        "id": "audit-food-caviarchips",
+        "sourceId": "official-menu",
+        "status": "primary"
+      },
+      {
+        "name": "Shrimp Corn and Jalapeno Fritters",
+        "kind": "food",
+        "priceCents": 1100,
+        "tags": [
+          "shrimp corn and jalapeno fritters"
+        ],
+        "id": "audit-food-shrimpcornandjalapenofritters",
+        "sourceId": "official-menu",
+        "status": "primary"
+      },
+      {
+        "name": "Lawrys Fries",
+        "kind": "food",
+        "priceCents": 400,
+        "tags": [
+          "lawrys fries"
+        ],
+        "id": "audit-food-lawrysfries",
+        "sourceId": "official-menu",
+        "status": "primary"
+      },
+      {
+        "name": "Cheesy Onion Fondue",
+        "kind": "food",
+        "priceCents": 900,
+        "tags": [
+          "cheesy onion fondue"
+        ],
+        "id": "audit-food-cheesyonionfondue",
+        "sourceId": "official-menu",
+        "status": "primary"
+      },
+      {
+        "name": "Lawrys Burger",
+        "kind": "food",
+        "priceCents": 1800,
+        "tags": [
+          "lawrys burger"
+        ],
+        "id": "audit-food-lawrysburger",
+        "sourceId": "official-menu",
+        "status": "primary"
+      },
+      {
+        "name": "Prime Rib Sandwich",
+        "kind": "food",
+        "priceCents": 2700,
+        "tags": [
+          "prime rib sandwich"
+        ],
+        "id": "audit-food-primeribsandwich",
+        "sourceId": "official-menu",
+        "status": "primary"
+      },
+      {
+        "name": "La Cienega Mule",
+        "kind": "drink",
+        "priceCents": 1000,
+        "tags": [
+          "la cienega mule",
+          "cocktail"
+        ],
+        "id": "drink-1",
+        "sourceId": "official-menu",
+        "status": "primary"
+      },
+      {
+        "name": "Aperol Spritz",
+        "kind": "drink",
+        "priceCents": 1000,
+        "tags": [
+          "aperol spritz",
+          "cocktail"
+        ],
+        "id": "audit-drink-aperolspritz",
+        "sourceId": "official-menu",
+        "status": "primary"
+      },
+      {
+        "name": "Hendricks Gin and Tonic",
+        "kind": "drink",
+        "priceCents": 1000,
+        "tags": [
+          "hendricks gin and tonic",
+          "cocktail"
+        ],
+        "id": "audit-drink-hendricksginandtonic",
+        "sourceId": "official-menu",
+        "status": "primary"
+      },
+      {
+        "name": "Prime Margarita",
+        "kind": "drink",
+        "priceCents": 1000,
+        "tags": [
+          "prime margarita",
+          "cocktail"
+        ],
+        "id": "audit-drink-primemargarita",
+        "sourceId": "official-menu",
+        "status": "primary"
+      },
+      {
+        "name": "Prime Old Fashioned",
+        "kind": "drink",
+        "priceCents": 1000,
+        "tags": [
+          "prime old fashioned",
+          "cocktail"
+        ],
+        "id": "audit-drink-primeoldfashioned",
+        "sourceId": "official-menu",
+        "status": "primary"
+      },
+      {
+        "name": "Rodney Strong Cabernet Sauvignon",
+        "kind": "drink",
+        "priceCents": 1000,
+        "tags": [
+          "rodney strong cabernet sauvignon"
+        ],
+        "id": "audit-drink-rodneystrongcabernetsauvignon",
+        "sourceId": "official-menu",
+        "status": "primary"
+      },
+      {
+        "name": "Mer Soleil Silver Chardonnay",
+        "kind": "drink",
+        "priceCents": 1000,
+        "tags": [
+          "mer soleil silver chardonnay"
+        ],
+        "id": "audit-drink-mersoleilsilverchardonnay",
+        "sourceId": "official-menu",
+        "status": "primary"
+      },
+      {
+        "name": "Santa Margherita Sparkling Rose",
+        "kind": "drink",
+        "priceCents": 1000,
+        "tags": [
+          "santa margherita sparkling rose"
+        ],
+        "id": "audit-drink-santamargheritasparklingrose",
+        "sourceId": "official-menu",
+        "status": "primary"
+      },
+      {
+        "name": "Stella Artois Draft",
         "kind": "drink",
         "priceCents": 700,
         "tags": [
+          "stella artois draft",
           "beer"
         ],
+        "id": "drink-2",
+        "sourceId": "official-menu",
+        "status": "primary"
+      },
+      {
+        "name": "Stone IPA Draft",
+        "kind": "drink",
+        "priceCents": 700,
+        "tags": [
+          "stone ipa draft",
+          "beer"
+        ],
+        "id": "audit-drink-stoneipadraft",
         "sourceId": "official-menu",
         "status": "primary"
       }
     ],
     "foodTags": [
-      "sandwich"
+      "prime rib katsu sando",
+      "jumbo shrimp cocktail",
+      "caviar chips",
+      "shrimp corn and jalapeno fritters",
+      "lawrys fries",
+      "cheesy onion fondue",
+      "lawrys burger",
+      "prime rib sandwich"
     ],
     "drinkTags": [
-      "cocktail",
-      "beer"
+      "la cienega mule",
+      "aperol spritz",
+      "hendricks gin and tonic",
+      "prime margarita",
+      "prime old fashioned",
+      "rodney strong cabernet sauvignon",
+      "mer soleil silver chardonnay",
+      "santa margherita sparkling rose",
+      "stella artois draft",
+      "stone ipa draft"
     ],
     "atmosphereTags": [],
     "sources": [
@@ -1857,20 +4884,27 @@
         "id": "official-menu",
         "url": "https://www.lawrysonline.com/wp-content/uploads/2026/05/9642-BH-Bar-Book-INSERTS-Happy-Hour-Beer-Q3-4.25x11-061325-HAPPY-HOUR.pdf",
         "type": "primary",
-        "accessedOn": "2026-10-19",
-        "reviewedOn": "2026-10-19",
+        "accessedOn": "2026-10-26",
+        "reviewedOn": "2026-10-26",
         "note": "Current linked menu confirms Mon-Fri 4:30-6:30pm, bar only, $10 named cocktails and $7 named draft beers, plus $5 off Bar Bites."
       },
       {
         "id": "official-bites",
         "url": "https://www.lawrysonline.com/wp-content/uploads/2026/05/9805-BH-Bar-Book-TEXT-Q2-4.25x11-031926-BAR-BITES.pdf",
         "type": "primary",
-        "accessedOn": "2026-10-19",
-        "reviewedOn": "2026-10-19",
+        "accessedOn": "2026-10-26",
+        "reviewedOn": "2026-10-26",
         "note": "Linked Bar Bites includes Prime Rib Katsu Sando at regular $34. Happy-hour eligibility established by official-menu; final discounted price is not printed, so priceCents null."
       }
     ],
-    "notes": "Bar only. Do not treat regular $34 Sando as its happy-hour price. Older search-indexed 2024-path PDF says 4:30-5:30, but current linked PDF and current page agree on 4:30-6:30."
+    "notes": "Bar only. Do not treat regular $34 Sando as its happy-hour price. Older search-indexed 2024-path PDF says 4:30-5:30, but current linked PDF and current page agree on 4:30-6:30.",
+    "specials": [
+      {
+        "text": "Weekdays 4:30–6:30pm, bar only. Food prices calculated from official Bar Bites PDF prices minus the explicitly published $5 happy-hour discount.",
+        "sourceId": "official-menu",
+        "status": "primary"
+      }
+    ]
   },
   {
     "id": "prospect-gourmand-beverly-hills",
@@ -1906,59 +4940,239 @@
     ],
     "menu": [
       {
-        "id": "food-1",
-        "name": "Gourmando Slider",
+        "name": "Spicy Salmon Tartar Tostada",
         "kind": "food",
-        "priceCents": 600,
+        "priceCents": 800,
         "tags": [
-          "burger"
+          "spicy salmon tartar tostada"
         ],
+        "id": "audit-food-spicysalmontartartostada",
         "sourceId": "official",
         "status": "primary"
       },
       {
-        "id": "food-2",
         "name": "Baja Fish Taco",
         "kind": "food",
         "priceCents": 800,
         "tags": [
-          "tacos",
-          "fish"
+          "baja fish taco"
         ],
+        "id": "food-2",
         "sourceId": "official",
         "status": "primary"
       },
       {
-        "id": "drink-1",
-        "name": "Red or White Wine (glass)",
-        "kind": "drink",
-        "priceCents": 700,
+        "name": "Guacamole and Salsa",
+        "kind": "food",
+        "priceCents": 1200,
         "tags": [
-          "wine"
+          "guacamole and salsa"
         ],
+        "id": "audit-food-guacamoleandsalsa",
         "sourceId": "official",
         "status": "primary"
       },
       {
-        "id": "drink-2",
+        "name": "Oyster Mushroom Taco",
+        "kind": "food",
+        "priceCents": 800,
+        "tags": [
+          "oyster mushroom taco"
+        ],
+        "id": "audit-food-oystermushroomtaco",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "Russet Potato Fries",
+        "kind": "food",
+        "priceCents": 800,
+        "tags": [
+          "russet potato fries"
+        ],
+        "id": "audit-food-russetpotatofries",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "Korean BBQ Oat Fried Chicken",
+        "kind": "food",
+        "priceCents": 800,
+        "tags": [
+          "korean bbq oat fried chicken"
+        ],
+        "id": "audit-food-koreanbbqoatfriedchicken",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "Brussels Sprouts",
+        "kind": "food",
+        "priceCents": 1200,
+        "tags": [
+          "brussels sprouts"
+        ],
+        "id": "audit-food-brusselssprouts",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "Half Caesar Salad",
+        "kind": "food",
+        "priceCents": 800,
+        "tags": [
+          "half caesar salad"
+        ],
+        "id": "audit-food-halfcaesarsalad",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "Gourmando Slider",
+        "kind": "food",
+        "priceCents": 600,
+        "tags": [
+          "gourmando slider",
+          "burger"
+        ],
+        "id": "food-1",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "Salmon Collar",
+        "kind": "food",
+        "priceCents": 1200,
+        "tags": [
+          "salmon collar"
+        ],
+        "id": "audit-food-salmoncollar",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "Escargot (2)",
+        "kind": "food",
+        "priceCents": 800,
+        "tags": [
+          "escargot (2)"
+        ],
+        "id": "audit-food-escargot2",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
         "name": "Cadillac Margarita",
         "kind": "drink",
         "priceCents": 1100,
         "tags": [
-          "margarita"
+          "cadillac margarita"
         ],
+        "id": "drink-2",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "East of the 405",
+        "kind": "drink",
+        "priceCents": 1100,
+        "tags": [
+          "east of the 405"
+        ],
+        "id": "audit-drink-eastofthe405",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "House Red Wine",
+        "kind": "drink",
+        "priceCents": 700,
+        "tags": [
+          "house red wine"
+        ],
+        "id": "audit-drink-houseredwine",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "House White Wine",
+        "kind": "drink",
+        "priceCents": 700,
+        "tags": [
+          "house white wine"
+        ],
+        "id": "audit-drink-housewhitewine",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "House Sangria",
+        "kind": "drink",
+        "priceCents": 1100,
+        "tags": [
+          "house sangria"
+        ],
+        "id": "audit-drink-housesangria",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "Modelo Especial",
+        "kind": "drink",
+        "priceCents": 600,
+        "tags": [
+          "modelo especial",
+          "beer"
+        ],
+        "id": "audit-drink-modeloespecial",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "Kale Cucumber Mint Lemonade",
+        "kind": "drink",
+        "priceCents": 400,
+        "tags": [
+          "kale cucumber mint lemonade"
+        ],
+        "id": "audit-drink-kalecucumbermintlemonade",
+        "sourceId": "official",
+        "status": "primary"
+      },
+      {
+        "name": "Arnold Palmer Iced Tea",
+        "kind": "drink",
+        "priceCents": 400,
+        "tags": [
+          "arnold palmer iced tea"
+        ],
+        "id": "audit-drink-arnoldpalmericedtea",
         "sourceId": "official",
         "status": "primary"
       }
     ],
     "foodTags": [
-      "burger",
-      "tacos",
-      "fish"
+      "spicy salmon tartar tostada",
+      "baja fish taco",
+      "guacamole and salsa",
+      "oyster mushroom taco",
+      "russet potato fries",
+      "korean bbq oat fried chicken",
+      "brussels sprouts",
+      "half caesar salad",
+      "gourmando slider",
+      "salmon collar",
+      "escargot (2)"
     ],
     "drinkTags": [
-      "wine",
-      "margarita"
+      "cadillac margarita",
+      "east of the 405",
+      "house red wine",
+      "house white wine",
+      "house sangria",
+      "modelo especial",
+      "kale cucumber mint lemonade",
+      "arnold palmer iced tea"
     ],
     "atmosphereTags": [],
     "sources": [
@@ -1966,11 +5180,18 @@
         "id": "official",
         "url": "https://www.prospectgourmand.com/menu-lunch",
         "type": "primary",
-        "accessedOn": "2026-10-19",
-        "reviewedOn": "2026-10-19",
+        "accessedOn": "2026-10-26",
+        "reviewedOn": "2026-10-26",
         "note": "Page explicitly lists Happy Hour Tue-Sun 3pm-close. Final Happy Hour/Tasters section has slider $6, fish taco $8, wine $7, Cadillac Margarita $11. Footer supplies full address and closing times."
       }
     ],
-    "notes": "Close normalized from same page: Tue-Thu 21:00; Fri-Sun 22:00. Earlier regular cocktail prices on the page are not used. Tourism guide's 3-6pm differs from official 3-close; official terms retained."
+    "notes": "Close normalized from same page: Tue-Thu 21:00; Fri-Sun 22:00. Earlier regular cocktail prices on the page are not used. Tourism guide's 3-6pm differs from official 3-close; official terms retained.",
+    "specials": [
+      {
+        "text": "Published HH Tuesday–Sunday from 3pm–close. Salmon collar subject to availability.",
+        "sourceId": "official",
+        "status": "primary"
+      }
+    ]
   }
 ]

@@ -5,6 +5,7 @@ import { exportAcceptedBatch } from "../research/countywide/tools/export.mjs";
 import { loadBatch, localDate } from "../research/countywide/tools/common.mjs";
 import { fileURLToPath } from "node:url";
 import { evidenceSnapshotMetadata } from "./data-metadata.mjs";
+import { attachMenuCoverage } from "./menu-coverage.mjs";
 const root = new URL("../", import.meta.url),
   records = [];
 for (const name of ["dtla", "west", "north", "central"]) {
@@ -77,10 +78,10 @@ if (
 const outside = reviewed.filter(
   (record) => record.coordinates && !coverageEligibility(record).included,
 );
-const included = [
-  ...reviewed.filter((record) => !outside.includes(record)),
-  ...accepted,
-];
+const included = attachMenuCoverage(
+  [...reviewed.filter((record) => !outside.includes(record)), ...accepted],
+  JSON.parse(await readFile(new URL("research/menu-audit.json", root), "utf8")),
+);
 const errors = validateRecords(included);
 if (errors.length) throw new Error(errors.join("\n"));
 const metadata = {

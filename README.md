@@ -1,5 +1,11 @@
 # Happy Hour Finder
 
+## Published-specials audit
+
+The October 26 audit accounts for all 111 existing locations and expands 49 saved menus. There are 969 recorded item choices (previously 166), plus descriptive discounts, bundles and daily offers. Menus display coverage status, audit date, source links and unresolved gaps; itemized entries no longer hide general specials. Two menus have complete published-specials reviews, 63 remain partial and 46 need verification. These are source-review outcomes, not live restaurant confirmation. Blocked-source samples retain their original evidence dates; unknown prices remain unknown.
+
+See [the per-location report](research/menu-audit-report.md) and [research notes](research/menu-audit-notes.md). Edit original research or countywide staging inputs, then regenerate accepted countywide output when applicable, run `npm run data:build`, `npm run data:validate`, and `node scripts/report-menu-audit.mjs`. `research/menu-audit.json` is the coverage ledger; `research/menu-audit-baseline.json` fixes the 111-location audit scope. The ledger is applied after both research sources are combined. No opening-card crawl or automatic paid lookup is introduced.
+
 ## Local Squeeze interface
 
 The current discovery page uses the approved butter-yellow and paprika design with locally bundled DM Serif Display and DM Sans fonts (licenses in `src/fonts/`). Compact restaurant summaries expand into full menus for item selection and subtotals. Additional discoveries appear in the More places to explore section on Explore, with a prominent counted link above the researched results. Each extra place retains its Needs verification status, source links, community evidence, and owner review. Source confidence and offer restrictions are preserved; existing operator photography is used only for the matching venue.

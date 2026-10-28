@@ -4,6 +4,8 @@ import { normalizeCandidate, identity, publicUrl } from "../src/candidates.js";
 import { restaurants } from "../src/data.js";
 import { areaOptions } from "../src/discovery.js";
 import { requestedSchedule, contradictsSchedule } from "./request-schedule.js";
+import { candidateAreaMatches } from "../src/candidate-area.js";
+import { applyTimeFilters } from "../src/time-filter.js";
 function explicitSearchArea(query) {
   const q = query.trim().normalize("NFKC");
   if (
@@ -209,7 +211,7 @@ export async function searchPlaces(
     }
   }
   const retrievalQuery = searchArea
-    ? `${searchArea} California happy hour menu`
+    ? `${searchArea} California happy hour menu · ${applyTimeFilters(query, { day: null, time: null, timePeriod: null })}`
     : `${query.trim()} happy hour restaurant menu (Los Angeles OR Orange County) California`;
   const plan = requestedSchedule(query);
   const queries = [retrievalQuery];
@@ -486,13 +488,7 @@ export async function searchPlaces(
     )) {
       try {
         const c = normalizeCandidate(raw);
-        if (
-          searchArea &&
-          ![c.location, c.county].some(
-            (v) => v?.toLowerCase() === searchArea.toLowerCase(),
-          )
-        )
-          continue;
+        if (!candidateAreaMatches(c, searchArea)) continue;
         if (contradictsSchedule(c.hoursText, query)) continue;
         const title = c.evidence.match(/^Page title: ([^\n]+)/)?.[1] || "";
         const excerpt = c.evidence.replace(

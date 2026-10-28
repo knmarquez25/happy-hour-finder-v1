@@ -90,11 +90,11 @@ const { chromium } = require("playwright");
     await page.waitForFunction(() =>
       document
         .querySelector("#results article h3")
-        ?.textContent.includes("IKI"),
+        ?.textContent.includes("33 Taps"),
     );
     assert.equal(
       await page.locator("#results article:not([hidden])").count(),
-      3,
+      6,
     );
     assert.equal(
       await page.getByLabel("Food", { exact: true }).inputValue(),

@@ -93,7 +93,7 @@ const { chromium } = require("playwright");
       /awaiting owner review/i,
     );
     assert.match(
-      await page.locator("#pending-results").innerText(),
+      await page.locator("#pending-results").textContent(),
       /Price needs confirmation/,
     );
     await page.locator(".skip-link").focus();

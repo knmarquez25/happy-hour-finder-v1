@@ -4,9 +4,15 @@
     "url": "https://www.woodranch.com/restaurants/valencia/",
     "type": "primary",
     "publisherRole": "restaurant",
-    "claims": ["advertised-offer", "hours", "address"],
+    "claims": [
+      "advertised-offer",
+      "hours",
+      "address"
+    ],
     "mediaType": "text/html",
-    "branchIds": ["cw-wood-valencia"],
+    "branchIds": [
+      "cw-wood-valencia"
+    ],
     "accessedAt": "2026-10-19T22:39:37Z",
     "reviewedAt": "2026-10-19T22:39:51Z",
     "reviewer": "Codex source inspection",
@@ -26,9 +32,14 @@
     "url": "https://www.thefrontyardla.com/happenings",
     "type": "primary",
     "publisherRole": "restaurant",
-    "claims": ["advertised-offer", "hours"],
+    "claims": [
+      "advertised-offer",
+      "hours"
+    ],
     "mediaType": "text/html",
-    "branchIds": ["cw-frontyard"],
+    "branchIds": [
+      "cw-frontyard"
+    ],
     "accessedAt": "2026-10-19T22:39:37Z",
     "reviewedAt": "2026-10-19T22:39:51Z",
     "reviewer": "Codex source inspection",
@@ -48,9 +59,14 @@
     "url": "https://www.theatticonbroadway.com/happy-hour",
     "type": "primary",
     "publisherRole": "restaurant",
-    "claims": ["advertised-offer", "address"],
+    "claims": [
+      "advertised-offer",
+      "address"
+    ],
     "mediaType": "text/html",
-    "branchIds": ["cw-attic"],
+    "branchIds": [
+      "cw-attic"
+    ],
     "accessedAt": "2026-10-19T22:39:37Z",
     "reviewedAt": "2026-10-19T22:39:51Z",
     "reviewer": "Codex source inspection",
@@ -70,9 +86,13 @@
     "url": "https://thehangarinn.com/",
     "type": "primary",
     "publisherRole": "restaurant",
-    "claims": ["address"],
+    "claims": [
+      "address"
+    ],
     "mediaType": "text/html",
-    "branchIds": ["cw-hangar"],
+    "branchIds": [
+      "cw-hangar"
+    ],
     "accessedAt": "2026-10-19T22:39:37Z",
     "reviewedAt": "2026-10-19T22:39:51Z",
     "reviewer": "Codex source inspection",
@@ -92,9 +112,15 @@
     "url": "https://www.woodranch.com/restaurants/irvine/",
     "type": "primary",
     "publisherRole": "restaurant",
-    "claims": ["advertised-offer", "hours", "address"],
+    "claims": [
+      "advertised-offer",
+      "hours",
+      "address"
+    ],
     "mediaType": "text/html",
-    "branchIds": ["cw-wood-irvine"],
+    "branchIds": [
+      "cw-wood-irvine"
+    ],
     "accessedAt": "2026-10-19T22:39:37Z",
     "reviewedAt": "2026-10-19T22:39:51Z",
     "reviewer": "Codex source inspection",
@@ -114,9 +140,15 @@
     "url": "https://lazydogrestaurants.com/pages/irvine-ca",
     "type": "primary",
     "publisherRole": "restaurant",
-    "claims": ["advertised-offer", "hours", "address"],
+    "claims": [
+      "advertised-offer",
+      "hours",
+      "address"
+    ],
     "mediaType": "text/html",
-    "branchIds": ["cw-lazy-irvine"],
+    "branchIds": [
+      "cw-lazy-irvine"
+    ],
     "accessedAt": "2026-10-19T22:39:37Z",
     "reviewedAt": "2026-10-19T22:39:51Z",
     "reviewer": "Codex source inspection",
@@ -136,9 +168,13 @@
     "url": "https://benchmarkoc.com/",
     "type": "primary",
     "publisherRole": "restaurant",
-    "claims": ["address"],
+    "claims": [
+      "address"
+    ],
     "mediaType": "text/html",
-    "branchIds": ["cw-benchmark"],
+    "branchIds": [
+      "cw-benchmark"
+    ],
     "accessedAt": "2026-10-20T01:35:10Z",
     "reviewedAt": "2026-10-20T01:35:10Z",
     "reviewer": "Codex integration source inspection",
@@ -158,9 +194,14 @@
     "url": "https://www.playamesa.com/",
     "type": "primary",
     "publisherRole": "restaurant",
-    "claims": ["operating-status", "address"],
+    "claims": [
+      "operating-status",
+      "address"
+    ],
     "mediaType": "text/html",
-    "branchIds": ["cw-playa"],
+    "branchIds": [
+      "cw-playa"
+    ],
     "accessedAt": "2026-10-19T22:39:37Z",
     "reviewedAt": "2026-10-19T22:39:51Z",
     "reviewer": "Codex source inspection",
@@ -180,9 +221,14 @@
     "url": "https://www.thefrontyardla.com/contact-us",
     "type": "primary",
     "publisherRole": "restaurant",
-    "claims": ["advertised-offer", "hours"],
+    "claims": [
+      "advertised-offer",
+      "hours"
+    ],
     "mediaType": "text/html",
-    "branchIds": ["cw-frontyard"],
+    "branchIds": [
+      "cw-frontyard"
+    ],
     "accessedAt": "2026-10-19T22:39:37Z",
     "reviewedAt": "2026-10-19T22:39:51Z",
     "reviewer": "Codex source inspection",
@@ -210,10 +256,12 @@
       "address"
     ],
     "mediaType": "text/html",
-    "branchIds": ["cw-risu-long-beach"],
-    "accessedAt": "2026-10-20T01:35:10Z",
-    "reviewedAt": "2026-10-20T01:35:10Z",
-    "reviewer": "Codex integration source inspection",
+    "branchIds": [
+      "cw-risu-long-beach"
+    ],
+    "accessedAt": "2026-10-27T05:12:10.388Z",
+    "reviewedAt": "2026-10-27T05:12:10.388Z",
+    "reviewer": "Codex full-specials audit",
     "reviewMethod": "agent-source-inspection",
     "accessOutcome": "ok",
     "publisherUpdatedOn": null,
@@ -221,18 +269,23 @@
     "effectiveThrough": null,
     "currentLinkSourceId": null,
     "discoveryContext": "live-branch",
-    "locator": "agent-source-inspection: Happy Hour heading and Our Happy Hour Menu give daily 16:00-18:00 and Monday all-day extension; fries and wings appear in the $9 group. Publication date not displayed.",
+    "locator": "Happy Hour food and drink sections, all identifiable named choices",
     "policyId": "facts-cw-risu-long-beach",
-    "note": "agent-source-inspection: Happy Hour heading and Our Happy Hour Menu give daily 16:00-18:00 and Monday all-day extension; fries and wings appear in the $9 group. Publication date not displayed."
+    "note": "October 26 full-specials transcription; item prices directly listed, unknown prices not inferred. Specialty cocktails $2 off and beer $1 off; base prices vary. Monday all-day closing boundary remains conservative."
   },
   {
     "id": "src-cw-risu-long-beach-official-menu",
     "url": "https://www.therisu.com/menu",
     "type": "primary",
     "publisherRole": "restaurant",
-    "claims": ["advertised-offer", "address"],
+    "claims": [
+      "advertised-offer",
+      "address"
+    ],
     "mediaType": "text/html",
-    "branchIds": ["cw-risu-long-beach"],
+    "branchIds": [
+      "cw-risu-long-beach"
+    ],
     "accessedAt": "2026-10-20T01:35:10Z",
     "reviewedAt": "2026-10-20T01:35:10Z",
     "reviewer": "Codex integration source inspection",
@@ -252,9 +305,13 @@
     "url": "https://www.therisu.com/long-beach-restaurant",
     "type": "primary",
     "publisherRole": "restaurant",
-    "claims": ["address"],
+    "claims": [
+      "address"
+    ],
     "mediaType": "text/html",
-    "branchIds": ["cw-risu-long-beach"],
+    "branchIds": [
+      "cw-risu-long-beach"
+    ],
     "accessedAt": "2026-10-20T01:35:10Z",
     "reviewedAt": "2026-10-20T01:35:10Z",
     "reviewer": "Codex integration source inspection",
@@ -274,9 +331,14 @@
     "url": "https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?address=207+E+Seaside+Way%2C+Long+Beach%2C+CA+90802&benchmark=Public_AR_Current&vintage=Current_Current&format=json",
     "type": "primary",
     "publisherRole": "government",
-    "claims": ["county", "address"],
+    "claims": [
+      "county",
+      "address"
+    ],
     "mediaType": "application/json",
-    "branchIds": ["cw-risu-long-beach"],
+    "branchIds": [
+      "cw-risu-long-beach"
+    ],
     "accessedAt": "2026-10-20T01:35:10Z",
     "reviewedAt": "2026-10-20T01:35:10Z",
     "reviewer": "Codex integration source inspection",
@@ -306,9 +368,15 @@
     "url": "https://www.theharelb.com/",
     "type": "primary",
     "publisherRole": "restaurant",
-    "claims": ["hours", "advertised-offer", "address"],
+    "claims": [
+      "hours",
+      "advertised-offer",
+      "address"
+    ],
     "mediaType": "text/html",
-    "branchIds": ["cw-the-hare-long-beach"],
+    "branchIds": [
+      "cw-the-hare-long-beach"
+    ],
     "accessedAt": "2026-10-20T01:35:10Z",
     "reviewedAt": "2026-10-20T01:35:10Z",
     "reviewer": "Codex integration source inspection",
@@ -328,9 +396,13 @@
     "url": "https://www.theharelb.com/happy-hour",
     "type": "primary",
     "publisherRole": "restaurant",
-    "claims": ["address"],
+    "claims": [
+      "address"
+    ],
     "mediaType": "text/html",
-    "branchIds": ["cw-the-hare-long-beach"],
+    "branchIds": [
+      "cw-the-hare-long-beach"
+    ],
     "accessedAt": "2026-10-20T01:35:10Z",
     "reviewedAt": "2026-10-20T01:35:10Z",
     "reviewer": "Codex integration source inspection",
@@ -350,9 +422,14 @@
     "url": "https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?address=1800+E+Broadway%2C+Long+Beach%2C+CA+90802&benchmark=Public_AR_Current&vintage=Current_Current&format=json",
     "type": "primary",
     "publisherRole": "government",
-    "claims": ["county", "address"],
+    "claims": [
+      "county",
+      "address"
+    ],
     "mediaType": "application/json",
-    "branchIds": ["cw-the-hare-long-beach"],
+    "branchIds": [
+      "cw-the-hare-long-beach"
+    ],
     "accessedAt": "2026-10-20T01:35:10Z",
     "reviewedAt": "2026-10-20T01:35:10Z",
     "reviewer": "Codex integration source inspection",
@@ -390,10 +467,12 @@
       "address"
     ],
     "mediaType": "text/html",
-    "branchIds": ["cw-nomad-eatery-el-segundo"],
-    "accessedAt": "2026-10-20T01:35:10Z",
-    "reviewedAt": "2026-10-20T01:35:10Z",
-    "reviewer": "Codex integration source inspection",
+    "branchIds": [
+      "cw-nomad-eatery-el-segundo"
+    ],
+    "accessedAt": "2026-10-27T05:12:10.388Z",
+    "reviewedAt": "2026-10-27T05:12:10.388Z",
+    "reviewer": "Codex full-specials audit",
     "reviewMethod": "agent-source-inspection",
     "accessOutcome": "ok",
     "publisherUpdatedOn": null,
@@ -401,18 +480,22 @@
     "effectiveThrough": null,
     "currentLinkSourceId": null,
     "discoveryContext": "live-branch",
-    "locator": "agent-source-inspection: Happy Hour Menu heading gives Tuesday-Saturday 16:30-18:00; $6 Items lists guacamole/chips and fries at 6.00 each. Publication date not displayed",
+    "locator": "Happy Hour food and drink sections, all identifiable named choices",
     "policyId": "facts-cw-nomad-eatery-el-segundo",
-    "note": "agent-source-inspection: Happy Hour Menu heading gives Tuesday-Saturday 16:30-18:00; $6 Items lists guacamole/chips and fries at 6.00 each. Publication date not displayed. The charcuterie heading and item price disagree; that item is omitted."
+    "note": "October 26 full-specials transcription; item prices directly listed, unknown prices not inferred. Menu heading lists board at $18 but item text says $8; price unresolved. Menu includes Saturday while homepage says Tuesday–Friday. Drinks not itemized in current readable HH page."
   },
   {
     "id": "src-cw-nomad-eatery-el-segundo-official-home",
     "url": "https://nomadsouthbay.com/",
     "type": "primary",
     "publisherRole": "restaurant",
-    "claims": ["address"],
+    "claims": [
+      "address"
+    ],
     "mediaType": "text/html",
-    "branchIds": ["cw-nomad-eatery-el-segundo"],
+    "branchIds": [
+      "cw-nomad-eatery-el-segundo"
+    ],
     "accessedAt": "2026-10-20T01:35:10Z",
     "reviewedAt": "2026-10-20T01:35:10Z",
     "reviewer": "Codex integration source inspection",
@@ -432,9 +515,13 @@
     "url": "https://nomadsouthbay.com/contact/",
     "type": "primary",
     "publisherRole": "restaurant",
-    "claims": ["address"],
+    "claims": [
+      "address"
+    ],
     "mediaType": "text/html",
-    "branchIds": ["cw-nomad-eatery-el-segundo"],
+    "branchIds": [
+      "cw-nomad-eatery-el-segundo"
+    ],
     "accessedAt": "2026-10-20T01:35:10Z",
     "reviewedAt": "2026-10-20T01:35:10Z",
     "reviewer": "Codex integration source inspection",
@@ -454,9 +541,14 @@
     "url": "https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?address=2041+Rosecrans+Avenue%2C+El+Segundo%2C+CA+90245&benchmark=Public_AR_Current&vintage=Current_Current&format=json",
     "type": "primary",
     "publisherRole": "government",
-    "claims": ["county", "address"],
+    "claims": [
+      "county",
+      "address"
+    ],
     "mediaType": "application/json",
-    "branchIds": ["cw-nomad-eatery-el-segundo"],
+    "branchIds": [
+      "cw-nomad-eatery-el-segundo"
+    ],
     "accessedAt": "2026-10-20T01:35:10Z",
     "reviewedAt": "2026-10-20T01:35:10Z",
     "reviewer": "Codex integration source inspection",
@@ -494,10 +586,12 @@
       "address"
     ],
     "mediaType": "text/html",
-    "branchIds": ["cw-sausal-el-segundo"],
-    "accessedAt": "2026-10-20T01:35:10Z",
-    "reviewedAt": "2026-10-20T01:35:10Z",
-    "reviewer": "Codex integration source inspection",
+    "branchIds": [
+      "cw-sausal-el-segundo"
+    ],
+    "accessedAt": "2026-10-27T05:12:10.388Z",
+    "reviewedAt": "2026-10-27T05:12:10.388Z",
+    "reviewer": "Codex full-specials audit",
     "reviewMethod": "agent-source-inspection",
     "accessOutcome": "ok",
     "publisherUpdatedOn": null,
@@ -505,18 +599,22 @@
     "effectiveThrough": null,
     "currentLinkSourceId": null,
     "discoveryContext": "live-branch",
-    "locator": "agent-source-inspection: Happy Hour availability line gives Monday-Sunday 15:00-18:00. Happy Hour Drinks and HAPPY HOUR BITES supply the four recorded prices",
+    "locator": "Happy Hour food and drink sections, all identifiable named choices",
     "policyId": "facts-cw-sausal-el-segundo",
-    "note": "agent-source-inspection: Happy Hour availability line gives Monday-Sunday 15:00-18:00. Happy Hour Drinks and HAPPY HOUR BITES supply the four recorded prices. Publication date not displayed."
+    "note": "October 26 full-specials transcription; item prices directly listed, unknown prices not inferred. Separate tequila/mezcal pairing events are advertised without fixed current event details."
   },
   {
     "id": "src-cw-sausal-el-segundo-official-home",
     "url": "https://www.sausal.com/",
     "type": "primary",
     "publisherRole": "restaurant",
-    "claims": ["address"],
+    "claims": [
+      "address"
+    ],
     "mediaType": "text/html",
-    "branchIds": ["cw-sausal-el-segundo"],
+    "branchIds": [
+      "cw-sausal-el-segundo"
+    ],
     "accessedAt": "2026-10-20T01:35:10Z",
     "reviewedAt": "2026-10-20T01:35:10Z",
     "reviewer": "Codex integration source inspection",
@@ -536,9 +634,13 @@
     "url": "https://www.sausal.com/happy-hour",
     "type": "primary",
     "publisherRole": "restaurant",
-    "claims": ["address"],
+    "claims": [
+      "address"
+    ],
     "mediaType": "text/html",
-    "branchIds": ["cw-sausal-el-segundo"],
+    "branchIds": [
+      "cw-sausal-el-segundo"
+    ],
     "accessedAt": "2026-10-20T01:35:10Z",
     "reviewedAt": "2026-10-20T01:35:10Z",
     "reviewer": "Codex integration source inspection",
@@ -558,9 +660,14 @@
     "url": "https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?address=219+Main+Street%2C+El+Segundo%2C+CA+90245&benchmark=Public_AR_Current&vintage=Current_Current&format=json",
     "type": "primary",
     "publisherRole": "government",
-    "claims": ["county", "address"],
+    "claims": [
+      "county",
+      "address"
+    ],
     "mediaType": "application/json",
-    "branchIds": ["cw-sausal-el-segundo"],
+    "branchIds": [
+      "cw-sausal-el-segundo"
+    ],
     "accessedAt": "2026-10-20T01:35:10Z",
     "reviewedAt": "2026-10-20T01:35:10Z",
     "reviewer": "Codex integration source inspection",
@@ -590,9 +697,15 @@
     "url": "https://thesocialrestaurant.com/",
     "type": "primary",
     "publisherRole": "restaurant",
-    "claims": ["hours", "advertised-offer", "address"],
+    "claims": [
+      "hours",
+      "advertised-offer",
+      "address"
+    ],
     "mediaType": "text/html",
-    "branchIds": ["cw-the-social-valencia"],
+    "branchIds": [
+      "cw-the-social-valencia"
+    ],
     "accessedAt": "2026-10-20T01:35:10Z",
     "reviewedAt": "2026-10-20T01:35:10Z",
     "reviewer": "Codex integration source inspection",
@@ -612,9 +725,13 @@
     "url": "https://thesocialrestaurant.com/location/",
     "type": "primary",
     "publisherRole": "restaurant",
-    "claims": ["address"],
+    "claims": [
+      "address"
+    ],
     "mediaType": "text/html",
-    "branchIds": ["cw-the-social-valencia"],
+    "branchIds": [
+      "cw-the-social-valencia"
+    ],
     "accessedAt": "2026-10-20T01:35:10Z",
     "reviewedAt": "2026-10-20T01:35:10Z",
     "reviewer": "Codex integration source inspection",
@@ -634,9 +751,15 @@
     "url": "https://www.glendoracontinental.com/menu1",
     "type": "primary",
     "publisherRole": "restaurant",
-    "claims": ["hours", "advertised-offer", "address"],
+    "claims": [
+      "hours",
+      "advertised-offer",
+      "address"
+    ],
     "mediaType": "text/html",
-    "branchIds": ["cw-glendora-continental-glendora"],
+    "branchIds": [
+      "cw-glendora-continental-glendora"
+    ],
     "accessedAt": "2026-10-20T01:35:10Z",
     "reviewedAt": "2026-10-20T01:35:10Z",
     "reviewer": "Codex integration source inspection",
@@ -656,9 +779,13 @@
     "url": "https://www.glendoracontinental.com/",
     "type": "primary",
     "publisherRole": "restaurant",
-    "claims": ["address"],
+    "claims": [
+      "address"
+    ],
     "mediaType": "text/html",
-    "branchIds": ["cw-glendora-continental-glendora"],
+    "branchIds": [
+      "cw-glendora-continental-glendora"
+    ],
     "accessedAt": "2026-10-20T01:35:10Z",
     "reviewedAt": "2026-10-20T01:35:10Z",
     "reviewer": "Codex integration source inspection",
@@ -678,9 +805,14 @@
     "url": "https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?address=316+W+Route+66%2C+Glendora%2C+CA+91740&benchmark=Public_AR_Current&vintage=Current_Current&format=json",
     "type": "primary",
     "publisherRole": "government",
-    "claims": ["county", "address"],
+    "claims": [
+      "county",
+      "address"
+    ],
     "mediaType": "application/json",
-    "branchIds": ["cw-glendora-continental-glendora"],
+    "branchIds": [
+      "cw-glendora-continental-glendora"
+    ],
     "accessedAt": "2026-10-20T01:35:10Z",
     "reviewedAt": "2026-10-20T01:35:10Z",
     "reviewer": "Codex integration source inspection",
@@ -718,10 +850,12 @@
       "address"
     ],
     "mediaType": "text/html",
-    "branchIds": ["cw-benchmark"],
-    "accessedAt": "2026-10-20T01:35:10Z",
-    "reviewedAt": "2026-10-20T01:35:10Z",
-    "reviewer": "Codex integration source inspection",
+    "branchIds": [
+      "cw-benchmark"
+    ],
+    "accessedAt": "2026-10-27T05:12:10.388Z",
+    "reviewedAt": "2026-10-27T05:12:10.388Z",
+    "reviewer": "Codex full-specials audit",
     "reviewMethod": "agent-source-inspection",
     "accessOutcome": "ok",
     "publisherUpdatedOn": null,
@@ -729,18 +863,23 @@
     "effectiveThrough": null,
     "currentLinkSourceId": null,
     "discoveryContext": "live-branch",
-    "locator": "agent-source-inspection. HAPPY HOUR section after BRUNCH gives Wednesday-Friday 16:00-18:00 and separate snack/drink lists; no numeric prices visible",
+    "locator": "Happy Hour food and drink sections, all identifiable named choices",
     "policyId": "benchmark",
-    "note": "agent-source-inspection. HAPPY HOUR section after BRUNCH gives Wednesday-Friday 16:00-18:00 and separate snack/drink lists; no numeric prices visible. Page also specifies 22% gratuity for parties of eight or more. Publication date not stated."
+    "note": "October 26 full-specials transcription; item prices directly listed, unknown prices not inferred. Official current text does not expose exact prices; older sample prices not retained as newly confirmed."
   },
   {
     "id": "src-cw-benchmark-census",
     "url": "https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?address=601+E+Santa+Ana+Blvd%2C+Santa+Ana%2C+CA+92701&benchmark=Public_AR_Current&vintage=Current_Current&format=json",
     "type": "primary",
     "publisherRole": "government",
-    "claims": ["county", "address"],
+    "claims": [
+      "county",
+      "address"
+    ],
     "mediaType": "application/json",
-    "branchIds": ["cw-benchmark"],
+    "branchIds": [
+      "cw-benchmark"
+    ],
     "accessedAt": "2026-10-20T01:35:10Z",
     "reviewedAt": "2026-10-20T01:35:10Z",
     "reviewer": "Codex integration source inspection",
@@ -778,10 +917,12 @@
       "address"
     ],
     "mediaType": "text/html",
-    "branchIds": ["cw-chapter-one-santa-ana"],
-    "accessedAt": "2026-10-20T01:35:10Z",
-    "reviewedAt": "2026-10-20T01:35:10Z",
-    "reviewer": "Codex integration source inspection",
+    "branchIds": [
+      "cw-chapter-one-santa-ana"
+    ],
+    "accessedAt": "2026-10-27T05:12:10.388Z",
+    "reviewedAt": "2026-10-27T05:12:10.388Z",
+    "reviewer": "Codex full-specials audit",
     "reviewMethod": "agent-source-inspection",
     "accessOutcome": "ok",
     "publisherUpdatedOn": null,
@@ -789,18 +930,22 @@
     "effectiveThrough": null,
     "currentLinkSourceId": null,
     "discoveryContext": "live-branch",
-    "locator": "agent-source-inspection. Reached through homepage MENUS > HAPPY-HOUR in browser and inspected again with web",
+    "locator": "Happy Hour food and drink sections, all identifiable named choices",
     "policyId": "facts-cw-chapter-one-santa-ana",
-    "note": "agent-source-inspection. Reached through homepage MENUS > HAPPY-HOUR in browser and inspected again with web. Heading supplies Monday-Friday 15:00-18:00; Food Specials lists fries at $8; Drink Specials lists margaritas at $8. Footer adds 20% gratuity for six or more. Menu publication date not stated."
+    "note": "October 26 full-specials transcription; item prices directly listed, unknown prices not inferred. Drafts and wine glasses $3 off. Mac and cheese chicken +$7, steak +$13. Separate Taco Tuesday menu not independently transcribed in this HH source."
   },
   {
     "id": "src-cw-chapter-one-santa-ana-location",
     "url": "https://chapteronetml.com/contact.php",
     "type": "primary",
     "publisherRole": "restaurant",
-    "claims": ["address"],
+    "claims": [
+      "address"
+    ],
     "mediaType": "text/html",
-    "branchIds": ["cw-chapter-one-santa-ana"],
+    "branchIds": [
+      "cw-chapter-one-santa-ana"
+    ],
     "accessedAt": "2026-10-20T01:35:10Z",
     "reviewedAt": "2026-10-20T01:35:10Z",
     "reviewer": "Codex integration source inspection",
@@ -820,9 +965,13 @@
     "url": "https://chapteronetml.com/privacy-policy.php",
     "type": "primary",
     "publisherRole": "restaurant",
-    "claims": ["address"],
+    "claims": [
+      "address"
+    ],
     "mediaType": "text/html",
-    "branchIds": ["cw-chapter-one-santa-ana"],
+    "branchIds": [
+      "cw-chapter-one-santa-ana"
+    ],
     "accessedAt": "2026-10-20T01:35:10Z",
     "reviewedAt": "2026-10-20T01:35:10Z",
     "reviewer": "Codex integration source inspection",
@@ -842,9 +991,14 @@
     "url": "https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?address=227+N+Broadway%2C+Santa+Ana%2C+CA+92701&benchmark=Public_AR_Current&vintage=Current_Current&format=json",
     "type": "primary",
     "publisherRole": "government",
-    "claims": ["county", "address"],
+    "claims": [
+      "county",
+      "address"
+    ],
     "mediaType": "application/json",
-    "branchIds": ["cw-chapter-one-santa-ana"],
+    "branchIds": [
+      "cw-chapter-one-santa-ana"
+    ],
     "accessedAt": "2026-10-20T01:35:10Z",
     "reviewedAt": "2026-10-20T01:35:10Z",
     "reviewer": "Codex integration source inspection",
@@ -874,9 +1028,15 @@
     "url": "https://www.cedarcreekbrea.com/",
     "type": "primary",
     "publisherRole": "restaurant",
-    "claims": ["hours", "advertised-offer", "address"],
+    "claims": [
+      "hours",
+      "advertised-offer",
+      "address"
+    ],
     "mediaType": "text/html",
-    "branchIds": ["cw-cedar-creek-inn-brea"],
+    "branchIds": [
+      "cw-cedar-creek-inn-brea"
+    ],
     "accessedAt": "2026-10-20T01:35:10Z",
     "reviewedAt": "2026-10-20T01:35:10Z",
     "reviewer": "Codex integration source inspection",
@@ -899,9 +1059,13 @@
     "url": "https://www.cedarcreekbrea.com/files/hh-food-cocktails-1-pdf.pdf",
     "type": "primary",
     "publisherRole": "restaurant",
-    "claims": ["menu-reference"],
+    "claims": [
+      "menu-reference"
+    ],
     "mediaType": "application/pdf",
-    "branchIds": ["cw-cedar-creek-inn-brea"],
+    "branchIds": [
+      "cw-cedar-creek-inn-brea"
+    ],
     "accessedAt": "2026-10-20T01:35:10Z",
     "reviewedAt": "2026-10-20T01:45:18Z",
     "reviewer": "Codex integration source inspection",
@@ -921,9 +1085,14 @@
     "url": "https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?address=20+Pointe+Drive%2C+Brea%2C+CA+92821&benchmark=Public_AR_Current&vintage=Current_Current&format=json",
     "type": "primary",
     "publisherRole": "government",
-    "claims": ["county", "address"],
+    "claims": [
+      "county",
+      "address"
+    ],
     "mediaType": "application/json",
-    "branchIds": ["cw-cedar-creek-inn-brea"],
+    "branchIds": [
+      "cw-cedar-creek-inn-brea"
+    ],
     "accessedAt": "2026-10-20T01:35:10Z",
     "reviewedAt": "2026-10-20T01:35:10Z",
     "reviewer": "Codex integration source inspection",
@@ -953,9 +1122,15 @@
     "url": "https://www.billysatthebeach.net/",
     "type": "primary",
     "publisherRole": "restaurant",
-    "claims": ["hours", "advertised-offer", "address"],
+    "claims": [
+      "hours",
+      "advertised-offer",
+      "address"
+    ],
     "mediaType": "text/html",
-    "branchIds": ["cw-billys-at-the-beach-newport-beach"],
+    "branchIds": [
+      "cw-billys-at-the-beach-newport-beach"
+    ],
     "accessedAt": "2026-10-20T01:35:10Z",
     "reviewedAt": "2026-10-20T01:35:10Z",
     "reviewer": "Codex integration source inspection",
@@ -975,9 +1150,15 @@
     "url": "https://www.billysatthebeach.net/menus/happy-hour",
     "type": "primary",
     "publisherRole": "restaurant",
-    "claims": ["menu", "compatible-pair", "address"],
+    "claims": [
+      "menu",
+      "compatible-pair",
+      "address"
+    ],
     "mediaType": "text/html",
-    "branchIds": ["cw-billys-at-the-beach-newport-beach"],
+    "branchIds": [
+      "cw-billys-at-the-beach-newport-beach"
+    ],
     "accessedAt": "2026-10-20T01:35:10Z",
     "reviewedAt": "2026-10-20T01:35:10Z",
     "reviewer": "Codex integration source inspection",
@@ -997,9 +1178,14 @@
     "url": "https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?address=2751+West+Coast+Hwy%2C+Newport+Beach%2C+CA+92663&benchmark=Public_AR_Current&vintage=Current_Current&format=json",
     "type": "primary",
     "publisherRole": "government",
-    "claims": ["county", "address"],
+    "claims": [
+      "county",
+      "address"
+    ],
     "mediaType": "application/json",
-    "branchIds": ["cw-billys-at-the-beach-newport-beach"],
+    "branchIds": [
+      "cw-billys-at-the-beach-newport-beach"
+    ],
     "accessedAt": "2026-10-20T01:35:10Z",
     "reviewedAt": "2026-10-20T01:35:10Z",
     "reviewer": "Codex integration source inspection",
@@ -1037,10 +1223,12 @@
       "address"
     ],
     "mediaType": "text/html",
-    "branchIds": ["cw-mayfield-san-juan-capistrano"],
-    "accessedAt": "2026-10-20T01:35:10Z",
-    "reviewedAt": "2026-10-20T01:35:10Z",
-    "reviewer": "Codex integration source inspection",
+    "branchIds": [
+      "cw-mayfield-san-juan-capistrano"
+    ],
+    "accessedAt": "2026-10-27T05:12:10.388Z",
+    "reviewedAt": "2026-10-27T05:12:10.388Z",
+    "reviewer": "Codex full-specials audit",
     "reviewMethod": "agent-source-inspection",
     "accessOutcome": "ok",
     "publisherUpdatedOn": null,
@@ -1048,18 +1236,23 @@
     "effectiveThrough": null,
     "currentLinkSourceId": null,
     "discoveryContext": "live-branch",
-    "locator": "agent-source-inspection. Heading advertises Sunday-Friday 14:30-18:00 subject to opening hours",
+    "locator": "Happy Hour food and drink sections, all identifiable named choices",
     "policyId": "facts-cw-mayfield-san-juan-capistrano",
-    "note": "agent-source-inspection. Heading advertises Sunday-Friday 14:30-18:00 subject to opening hours. HOURS OF OPERATION excludes Monday and Tuesday before 17:00. Food lists nuts $6; $8 DRAFT BEERS includes pFriem Pilsner. FIND US supplies address. Browser footer TERMS and PRIVACY links both resolve back to this same happy-hour URL, with no policy text supplied. Menu publication date not stated."
+    "note": "October 26 full-specials transcription; item prices directly listed, unknown prices not inferred. Sunday–Friday 2:30–6pm subject to opening hours. Rip and Dip: three dips plus two challah $15; do not split bundle component prices. Opening-day limitations retained."
   },
   {
     "id": "src-cw-mayfield-san-juan-capistrano-census",
     "url": "https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?address=31761+Camino+Capistrano%2C+San+Juan+Capistrano%2C+CA+92675&benchmark=Public_AR_Current&vintage=Current_Current&format=json",
     "type": "primary",
     "publisherRole": "government",
-    "claims": ["county", "address"],
+    "claims": [
+      "county",
+      "address"
+    ],
     "mediaType": "application/json",
-    "branchIds": ["cw-mayfield-san-juan-capistrano"],
+    "branchIds": [
+      "cw-mayfield-san-juan-capistrano"
+    ],
     "accessedAt": "2026-10-20T01:35:10Z",
     "reviewedAt": "2026-10-20T01:35:10Z",
     "reviewer": "Codex integration source inspection",
@@ -1089,9 +1282,15 @@
     "url": "https://www.coyotegrill.tv/events/happy-hour",
     "type": "primary",
     "publisherRole": "restaurant",
-    "claims": ["hours", "advertised-offer", "address"],
+    "claims": [
+      "hours",
+      "advertised-offer",
+      "address"
+    ],
     "mediaType": "text/html",
-    "branchIds": ["cw-coyote-grill-laguna-beach"],
+    "branchIds": [
+      "cw-coyote-grill-laguna-beach"
+    ],
     "accessedAt": "2026-10-20T01:35:10Z",
     "reviewedAt": "2026-10-20T01:35:10Z",
     "reviewer": "Codex integration source inspection",
@@ -1111,9 +1310,15 @@
     "url": "https://www.coyotegrill.tv/events/taco-tuesday",
     "type": "primary",
     "publisherRole": "restaurant",
-    "claims": ["hours", "advertised-offer", "address"],
+    "claims": [
+      "hours",
+      "advertised-offer",
+      "address"
+    ],
     "mediaType": "text/html",
-    "branchIds": ["cw-coyote-grill-laguna-beach"],
+    "branchIds": [
+      "cw-coyote-grill-laguna-beach"
+    ],
     "accessedAt": "2026-10-20T01:35:10Z",
     "reviewedAt": "2026-10-20T01:35:10Z",
     "reviewer": "Codex integration source inspection",
@@ -1133,9 +1338,15 @@
     "url": "https://www.coyotegrill.tv/menus",
     "type": "primary",
     "publisherRole": "restaurant",
-    "claims": ["menu", "compatible-pair", "address"],
+    "claims": [
+      "menu",
+      "compatible-pair",
+      "address"
+    ],
     "mediaType": "text/html",
-    "branchIds": ["cw-coyote-grill-laguna-beach"],
+    "branchIds": [
+      "cw-coyote-grill-laguna-beach"
+    ],
     "accessedAt": "2026-10-20T01:35:10Z",
     "reviewedAt": "2026-10-20T01:35:10Z",
     "reviewer": "Codex integration source inspection",
@@ -1155,9 +1366,14 @@
     "url": "https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?address=31621+Coast+Hwy%2C+Laguna+Beach%2C+CA+92651&benchmark=Public_AR_Current&vintage=Current_Current&format=json",
     "type": "primary",
     "publisherRole": "government",
-    "claims": ["county", "address"],
+    "claims": [
+      "county",
+      "address"
+    ],
     "mediaType": "application/json",
-    "branchIds": ["cw-coyote-grill-laguna-beach"],
+    "branchIds": [
+      "cw-coyote-grill-laguna-beach"
+    ],
     "accessedAt": "2026-10-20T01:35:10Z",
     "reviewedAt": "2026-10-20T01:35:10Z",
     "reviewer": "Codex integration source inspection",

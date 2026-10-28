@@ -11,6 +11,7 @@ export function initFilters({ getVenues, onChange, onDraftChange }) {
     ]),
   );
   const notice = document.querySelector("#filter-notice");
+  const editingSearch = new Set();
   let current = emptyPreferences(),
     timeOverrides = {};
   const copy = (value) => ({
@@ -70,6 +71,7 @@ export function initFilters({ getVenues, onChange, onDraftChange }) {
   }
   function sync(value, refresh = true) {
     current = copy(value);
+    editingSearch.clear();
     fields.city.value = current.area || "";
     fields.food.value = current.foodPreferences.join(" + ");
     fields.drink.value = current.drinkPreferences.join(" + ");
@@ -145,8 +147,49 @@ export function initFilters({ getVenues, onChange, onDraftChange }) {
   for (const [key, field] of Object.entries(fields))
     field.addEventListener(
       key === "city" || key === "food" || key === "drink" ? "input" : "change",
-      () => commit(key),
+      () => {
+        if (key === "city" || key === "food" || key === "drink")
+          editingSearch.add(key);
+        commit(key);
+      },
     );
+  for (const key of ["city", "food", "drink"]) {
+    const field = fields[key];
+    const selectedValue = () =>
+      key === "city"
+        ? current.area || ""
+        : current[key === "food" ? "foodPreferences" : "drinkPreferences"].join(
+            " + ",
+          );
+    // Native datalists filter against the input text. Start a fresh search
+    // when reopening a selection, without changing the applied preferences.
+    const reopen = () => {
+      if (
+        field.value.toLowerCase() === selectedValue().toLowerCase() &&
+        (!editingSearch.has(key) ||
+          [...field.list.options].some(
+            (option) =>
+              option.value.toLowerCase() === field.value.toLowerCase(),
+          ))
+      )
+        field.value = "";
+    };
+    field.addEventListener("focus", reopen);
+    field.addEventListener("pointerdown", reopen);
+    field.addEventListener("keydown", (event) => {
+      if (event.key === "ArrowDown") reopen();
+      if (
+        (event.key === "Backspace" || event.key === "Delete") &&
+        !field.value &&
+        selectedValue()
+      )
+        commit(key);
+    });
+    field.addEventListener("blur", () => {
+      if (!field.value) field.value = selectedValue();
+      editingSearch.delete(key);
+    });
+  }
   document.querySelector("#filter-chips").addEventListener("click", (event) => {
     const button = event.target.closest("[data-filter-key]");
     if (!button) return;

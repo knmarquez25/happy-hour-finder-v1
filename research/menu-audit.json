@@ -1,0 +1,1255 @@
+{
+  "joyce": {
+    "status": "partial",
+    "reviewedOn": "2026-10-26",
+    "sourceIds": [
+      "official"
+    ],
+    "scope": "Published happy-hour menu: all identifiable choices in the cited food/drink section transcribed; conditions retained as descriptive offers.",
+    "gaps": [
+      "Recurring daily offers outside the cited menu have not been fully established."
+    ]
+  },
+  "kombu-sushi": {
+    "status": "unverified",
+    "reviewedOn": "2026-10-26",
+    "sourceIds": [
+      "guide"
+    ],
+    "scope": "Existing source records and current official menu access/HH sections checked; readable text or linked menu limitations documented.",
+    "gaps": [
+      "Saved DTLA listing could not be matched to a current official branch HH menu. Search returned a Silver Lake menu; it was not borrowed for a different address."
+    ]
+  },
+  "la-cha-cha-cha": {
+    "status": "unverified",
+    "reviewedOn": "2026-10-26",
+    "sourceIds": [
+      "guide"
+    ],
+    "scope": "Existing source records and current official menu access/HH sections checked; readable text or linked menu limitations documented.",
+    "gaps": [
+      "Current official branch/menu access unavailable; search also surfaced closure reporting. No current restaurant-confirmed HH menu established."
+    ]
+  },
+  "library-bar": {
+    "status": "partial",
+    "reviewedOn": "2026-10-26",
+    "sourceIds": [
+      "audit-menu"
+    ],
+    "scope": "Published happy-hour menu: all identifiable choices in the cited food/drink section transcribed; conditions retained as descriptive offers.",
+    "gaps": [
+      "Sunday end time differs between menu and homepage; kitchen-day applicability needs confirmation."
+    ]
+  },
+  "mignon-wine-cheese-bar": {
+    "status": "unverified",
+    "reviewedOn": "2026-10-26",
+    "sourceIds": [
+      "audit-official"
+    ],
+    "scope": "Official branch/menu access and published HH coverage checked; no complete current itemized menu established.",
+    "gaps": [
+      "Official homepage advertises daily happy hour but publishes no readable item list, prices or precise HH times."
+    ]
+  },
+  "native-son": {
+    "status": "unverified",
+    "reviewedOn": "2026-10-26",
+    "sourceIds": [
+      "audit-official"
+    ],
+    "scope": "Official branch/menu access and published HH coverage checked; no complete current itemized menu established.",
+    "gaps": [
+      "Official branch page lists daily 4–6pm; linked menus page exposes only rotating taps, not a full readable HH item list."
+    ]
+  },
+  "peking-tavern": {
+    "status": "unverified",
+    "reviewedOn": "2026-10-26",
+    "sourceIds": [
+      "guide"
+    ],
+    "scope": "Existing source records and current official menu access/HH sections checked; readable text or linked menu limitations documented.",
+    "gaps": [
+      "Official /home page resolves to an image/social link without readable current HH content."
+    ]
+  },
+  "perch-la": {
+    "status": "partial",
+    "reviewedOn": "2026-10-26",
+    "sourceIds": [
+      "official"
+    ],
+    "scope": "Published happy-hour menu: all identifiable choices in the cited food/drink section transcribed; conditions retained as descriptive offers.",
+    "gaps": [
+      "Recurring daily offers outside the cited menu have not been fully established."
+    ]
+  },
+  "prank-bar": {
+    "status": "partial",
+    "reviewedOn": "2026-10-26",
+    "sourceIds": [
+      "audit-menu"
+    ],
+    "scope": "Published happy-hour menu: all identifiable choices in the cited food/drink section transcribed; conditions retained as descriptive offers.",
+    "gaps": [
+      "Monday all-night boundary and individual cocktail prices need confirmation."
+    ]
+  },
+  "precinct-dtla": {
+    "status": "partial",
+    "reviewedOn": "2026-10-26",
+    "sourceIds": [
+      "audit-menu"
+    ],
+    "scope": "Published happy-hour menu: all identifiable choices in the cited food/drink section transcribed; conditions retained as descriptive offers.",
+    "gaps": [
+      "Current direct page rendering lacks itemized menu sections; search-indexed official text supports broad offers, but individual drink/food choices need confirmation."
+    ]
+  },
+  "propaganda-wine-bar": {
+    "status": "unverified",
+    "reviewedOn": "2026-10-26",
+    "sourceIds": [
+      "audit-official"
+    ],
+    "scope": "Official branch/menu access and published HH coverage checked; no complete current itemized menu established.",
+    "gaps": [
+      "Official Aperitivo area is graphical/popup-based. Page intro says daily 3–6pm while location hours specify Tuesday–Sunday and Monday closed; full eligible items need confirmation."
+    ]
+  },
+  "rappahannock-oyster-bar": {
+    "status": "unverified",
+    "reviewedOn": "2026-10-26",
+    "sourceIds": [
+      "audit-official"
+    ],
+    "scope": "Official branch/menu access and published HH coverage checked; no complete current itemized menu established.",
+    "gaps": [
+      "Official branch page links a Canva-hosted menu; no readable happy-hour section is provided on the branch page. Current full HH choices/prices remain unresolved."
+    ]
+  },
+  "redwood-bar-grill": {
+    "status": "unverified",
+    "reviewedOn": "2026-10-26",
+    "sourceIds": [
+      "audit-official"
+    ],
+    "scope": "Official branch/menu access and published HH coverage checked; no complete current itemized menu established.",
+    "gaps": [
+      "Official menu automated access is disallowed; no bypass attempted. Complete current HH transcription is unavailable."
+    ]
+  },
+  "resident": {
+    "status": "unverified",
+    "reviewedOn": "2026-10-26",
+    "sourceIds": [
+      "guide"
+    ],
+    "scope": "Existing source records and current official menu access/HH sections checked; readable text or linked menu limitations documented.",
+    "gaps": [
+      "Search indicates the former venue may have been replaced; no current original-venue official HH menu established. Identity needs confirmation."
+    ]
+  },
+  "rossoblu": {
+    "status": "partial",
+    "reviewedOn": "2026-10-26",
+    "sourceIds": [
+      "official"
+    ],
+    "scope": "Published happy-hour menu: all identifiable choices in the cited food/drink section transcribed; conditions retained as descriptive offers.",
+    "gaps": [
+      "Wednesday all-day boundary and signature/Italian soda totals need confirmation."
+    ]
+  },
+  "shekarchi-bar-grill": {
+    "status": "partial",
+    "reviewedOn": "2026-10-26",
+    "sourceIds": [
+      "audit-menu"
+    ],
+    "scope": "Published happy-hour menu: all identifiable choices in the cited food/drink section transcribed; conditions retained as descriptive offers.",
+    "gaps": [
+      "Recurring daily offers outside the cited menu have not been fully established."
+    ]
+  },
+  "sol-agave": {
+    "status": "unverified",
+    "reviewedOn": "2026-10-26",
+    "sourceIds": [
+      "audit-official"
+    ],
+    "scope": "Official branch/menu access and published HH coverage checked; no complete current itemized menu established.",
+    "gaps": [
+      "Official branch menu access policy returned 403. Full current HH choices could not be reviewed."
+    ]
+  },
+  "tenno-sushi": {
+    "status": "unverified",
+    "reviewedOn": "2026-10-26",
+    "sourceIds": [
+      "guide"
+    ],
+    "scope": "Existing source records and current official menu access/HH sections checked; readable text or linked menu limitations documented.",
+    "gaps": [
+      "Official site unavailable. Ordering menu has regular items, but no directly reviewed current HH list for this branch."
+    ]
+  },
+  "the-mermaid": {
+    "status": "unverified",
+    "reviewedOn": "2026-10-26",
+    "sourceIds": [
+      "audit-official"
+    ],
+    "scope": "Official branch/menu access and published HH coverage checked; no complete current itemized menu established.",
+    "gaps": [
+      "Official menu direct request returned 403. Search-indexed official menu text and linked social profile disagree on HH times; full current choices remain unconfirmed."
+    ]
+  },
+  "the-palm-l-a-downtown": {
+    "status": "unverified",
+    "reviewedOn": "2026-10-26",
+    "sourceIds": [
+      "audit-official"
+    ],
+    "scope": "Official branch/menu access and published HH coverage checked; no complete current itemized menu established.",
+    "gaps": [
+      "Official branch page says SUN–SAT Closed while retaining generic dine-in copy. Operating status and any HH offers need restaurant confirmation."
+    ]
+  },
+  "the-rooftop-at-the-wayfarer-downtown-la": {
+    "status": "unverified",
+    "reviewedOn": "2026-10-26",
+    "sourceIds": [
+      "audit-official"
+    ],
+    "scope": "Official branch/menu access and published HH coverage checked; no complete current itemized menu established.",
+    "gaps": [
+      "Official page lists HH Thursday–Friday 5–7pm but exposes regular all-day menu prices without a distinct HH item/price list."
+    ]
+  },
+  "wax-on-hi-fi": {
+    "status": "unverified",
+    "reviewedOn": "2026-10-26",
+    "sourceIds": [
+      "guide"
+    ],
+    "scope": "Existing source records and current official menu access/HH sections checked; readable text or linked menu limitations documented.",
+    "gaps": [
+      "Search found venue profiles and regular-menu coverage, but no current official full HH publication."
+    ]
+  },
+  "wokcano": {
+    "status": "unverified",
+    "reviewedOn": "2026-10-26",
+    "sourceIds": [
+      "guide"
+    ],
+    "scope": "Existing source records and current official menu access/HH sections checked; readable text or linked menu limitations documented.",
+    "gaps": [
+      "Search found historical guide/booking lists; a current official DTLA happy-hour publication was not established."
+    ]
+  },
+  "wolf-crane-bar": {
+    "status": "unverified",
+    "reviewedOn": "2026-10-26",
+    "sourceIds": [
+      "guide"
+    ],
+    "scope": "Existing source records and current official menu access/HH sections checked; readable text or linked menu limitations documented.",
+    "gaps": [
+      "Official website unavailable; complete current HH choices and prices could not be reviewed."
+    ]
+  },
+  "yuko-kitchen-dtla": {
+    "status": "unverified",
+    "reviewedOn": "2026-10-26",
+    "sourceIds": [
+      "audit-official"
+    ],
+    "scope": "Official branch/menu access and published HH coverage checked; no complete current itemized menu established.",
+    "gaps": [
+      "Official DTLA menu has a Happy Hour navigation label but the readable content does not expose its separate HH section; regular menu prices were not imported as specials."
+    ]
+  },
+  "far-bar": {
+    "status": "unverified",
+    "reviewedOn": "2026-10-26",
+    "sourceIds": [
+      "official"
+    ],
+    "scope": "Existing source records and current official menu access/HH sections checked; readable text or linked menu limitations documented.",
+    "gaps": [
+      "Official takeout page provides HH schedule but no separate HH item/price section. Regular takeout food and bottle prices are not imported as specials."
+    ]
+  },
+  "district-restaurant": {
+    "status": "unverified",
+    "reviewedOn": "2026-10-26",
+    "sourceIds": [
+      "audit-official"
+    ],
+    "scope": "Official branch/menu access and published HH coverage checked; no complete current itemized menu established.",
+    "gaps": [
+      "Current official page provides a breakfast menu; historical HH PDFs surfaced in search but a current linked HH offer was not established."
+    ]
+  },
+  "broken-shaker-dtla": {
+    "status": "partial",
+    "reviewedOn": "2026-10-26",
+    "sourceIds": [
+      "audit-menu"
+    ],
+    "scope": "Published happy-hour menu: all identifiable choices in the cited food/drink section transcribed; conditions retained as descriptive offers.",
+    "gaps": [
+      "Mane Character cross-location reference requires branch confirmation."
+    ]
+  },
+  "casa-martin-ocean-avenue": {
+    "status": "partial",
+    "reviewedOn": "2026-10-26",
+    "sourceIds": [
+      "menu"
+    ],
+    "scope": "Published happy-hour menu: all identifiable choices in the cited food/drink section transcribed; conditions retained as descriptive offers.",
+    "gaps": [
+      "Recurring daily offers outside the cited menu have not been fully established."
+    ]
+  },
+  "casa-martin-third-street-promenade": {
+    "status": "partial",
+    "reviewedOn": "2026-10-26",
+    "sourceIds": [
+      "menu"
+    ],
+    "scope": "Published happy-hour menu: all identifiable choices in the cited food/drink section transcribed; conditions retained as descriptive offers.",
+    "gaps": [
+      "Recurring daily offers outside the cited menu have not been fully established."
+    ]
+  },
+  "culver-hotel-bar-restaurant": {
+    "status": "partial",
+    "reviewedOn": "2026-10-26",
+    "sourceIds": [
+      "menu",
+      "dining"
+    ],
+    "scope": "Existing source records and current official menu access/HH sections checked; readable text or linked menu limitations documented.",
+    "gaps": [
+      "Official menu and restaurant access policy returned 403. Existing sample remains partial; full current menu could not be reviewed."
+    ]
+  },
+  "public-school-310-culver-city": {
+    "status": "partial",
+    "reviewedOn": "2026-10-26",
+    "sourceIds": [
+      "official"
+    ],
+    "scope": "Existing source records and current official menu access/HH sections checked; readable text or linked menu limitations documented.",
+    "gaps": [
+      "Official branch access policy returned 403; current complete HH item list could not be reviewed."
+    ]
+  },
+  "the-galley-santa-monica": {
+    "status": "unverified",
+    "reviewedOn": "2026-10-26",
+    "sourceIds": [
+      "official",
+      "menu"
+    ],
+    "scope": "Existing source records and current official menu access/HH sections checked; readable text or linked menu limitations documented.",
+    "gaps": [
+      "Official site and regular menu provide no readable distinct HH menu. No current HH item-price assignments inferred."
+    ]
+  },
+  "dear-janes-marina-del-rey": {
+    "status": "unverified",
+    "reviewedOn": "2026-10-26",
+    "sourceIds": [
+      "official",
+      "unavailable-menu"
+    ],
+    "scope": "Existing source records and current official menu access/HH sections checked; readable text or linked menu limitations documented.",
+    "gaps": [
+      "Official homepage confirms bar/patio HH Tuesday–Saturday 5:30–7pm; saved /menus link returns 404. Full HH food/drink list unavailable."
+    ]
+  },
+  "salt-marina-del-rey-hotel": {
+    "status": "partial",
+    "reviewedOn": "2026-10-26",
+    "sourceIds": [
+      "hotel"
+    ],
+    "scope": "Official HH/weekly offer paragraphs reviewed; general discounts retained without invented item totals.",
+    "gaps": [
+      "Official page contains conflicting start times; eligible item/base-price list not established."
+    ]
+  },
+  "simonette-culver-city": {
+    "status": "partial",
+    "reviewedOn": "2026-10-26",
+    "sourceIds": [
+      "menu"
+    ],
+    "scope": "Published happy-hour menu: all identifiable choices in the cited food/drink section transcribed; conditions retained as descriptive offers.",
+    "gaps": [
+      "Tuesday rotational bundles and Wednesday wine discounts are descriptive; exact applicability and base bottle prices need confirmation."
+    ]
+  },
+  "stk-los-angeles-westwood": {
+    "status": "partial",
+    "reviewedOn": "2026-10-26",
+    "sourceIds": [
+      "menu"
+    ],
+    "scope": "Published happy-hour menu: all identifiable choices in the cited food/drink section transcribed; conditions retained as descriptive offers.",
+    "gaps": [
+      "Branch landing page omits weekend HH; late closing boundary and Steak Night choice/upgrade availability need confirmation."
+    ]
+  },
+  "ospi-venice": {
+    "status": "partial",
+    "reviewedOn": "2026-10-26",
+    "sourceIds": [
+      "menu"
+    ],
+    "scope": "Published happy-hour menu: all identifiable choices in the cited food/drink section transcribed; conditions retained as descriptive offers.",
+    "gaps": [
+      "Recurring daily offers outside the cited menu have not been fully established."
+    ]
+  },
+  "ospi-brentwood": {
+    "status": "partial",
+    "reviewedOn": "2026-10-26",
+    "sourceIds": [
+      "menu"
+    ],
+    "scope": "Published happy-hour menu: all identifiable choices in the cited food/drink section transcribed; conditions retained as descriptive offers.",
+    "gaps": [
+      "Recurring daily offers outside the cited menu have not been fully established."
+    ]
+  },
+  "roccos-tavern-westwood": {
+    "status": "unverified",
+    "reviewedOn": "2026-10-26",
+    "sourceIds": [
+      "official"
+    ],
+    "scope": "Existing source records and current official menu access/HH sections checked; readable text or linked menu limitations documented.",
+    "gaps": [
+      "Official branch page confirms daily 3–7pm but does not publish an itemized HH menu in readable content."
+    ]
+  },
+  "the-waterfront-venice": {
+    "status": "partial",
+    "reviewedOn": "2026-10-26",
+    "sourceIds": [
+      "official"
+    ],
+    "scope": "Published happy-hour menu: all identifiable choices in the cited food/drink section transcribed; conditions retained as descriptive offers.",
+    "gaps": [
+      "Recurring daily offers outside the cited menu have not been fully established."
+    ]
+  },
+  "bacari-culver-city": {
+    "status": "unverified",
+    "reviewedOn": "2026-10-26",
+    "sourceIds": [
+      "official"
+    ],
+    "scope": "Existing source records and current official menu access/HH sections checked; readable text or linked menu limitations documented.",
+    "gaps": [
+      "Official branch page lists HH times and regular dinner/drinks, but no explicit HH price/eligibility section. Regular-menu items not assumed discounted."
+    ]
+  },
+  "fig-fairmont-miramar-santa-monica": {
+    "status": "partial",
+    "reviewedOn": "2026-10-26",
+    "sourceIds": [
+      "hotel"
+    ],
+    "scope": "Official HH/weekly offer paragraphs reviewed; general discounts retained without invented item totals.",
+    "gaps": [
+      "Complete current HH item list and undiscounted base prices not available in reviewed text."
+    ]
+  },
+  "hinano-cafe-venice": {
+    "status": "unverified",
+    "reviewedOn": "2026-10-26",
+    "sourceIds": [
+      "official",
+      "menu"
+    ],
+    "scope": "Existing source records and current official menu access/HH sections checked; readable text or linked menu limitations documented.",
+    "gaps": [
+      "Official page confirms weekday 4–8pm; linked beer/food menu does not identify HH eligibility or current HH prices."
+    ]
+  },
+  "all-roads-pinseria-brentwood": {
+    "status": "unverified",
+    "reviewedOn": "2026-10-26",
+    "sourceIds": [
+      "official",
+      "contact",
+      "menu"
+    ],
+    "scope": "Existing source records and current official menu access/HH sections checked; readable text or linked menu limitations documented.",
+    "gaps": [
+      "Official homepage confirms daily 3:30–5:30pm; menu page is graphical and does not expose a distinct attributable HH item/price list."
+    ]
+  },
+  "lunetta-santa-monica": {
+    "status": "partial",
+    "reviewedOn": "2026-10-26",
+    "sourceIds": [
+      "menu"
+    ],
+    "scope": "Published happy-hour menu: all identifiable choices in the cited food/drink section transcribed; conditions retained as descriptive offers.",
+    "gaps": [
+      "Recurring daily offers outside the cited menu have not been fully established."
+    ]
+  },
+  "library-alehouse-santa-monica": {
+    "status": "partial",
+    "reviewedOn": "2026-10-26",
+    "sourceIds": [
+      "menu-image"
+    ],
+    "scope": "Published happy-hour menu: all identifiable choices in the cited food/drink section transcribed; conditions retained as descriptive offers.",
+    "gaps": [
+      "Cauliflower price layout is ambiguous; confirm before ordering."
+    ]
+  },
+  "surfing-fox-santa-monica": {
+    "status": "partial",
+    "reviewedOn": "2026-10-26",
+    "sourceIds": [
+      "official"
+    ],
+    "scope": "Existing source records and current official menu access/HH sections checked; readable text or linked menu limitations documented.",
+    "gaps": [
+      "Official page has Sunset Hour navigation but renders all-day menu; a distinct current HH item list and prices could not be isolated."
+    ]
+  },
+  "la-puglia-santa-monica": {
+    "status": "partial",
+    "reviewedOn": "2026-10-26",
+    "sourceIds": [
+      "official"
+    ],
+    "scope": "Published happy-hour menu: all identifiable choices in the cited food/drink section transcribed; conditions retained as descriptive offers.",
+    "gaps": [
+      "Recurring daily offers outside the cited menu have not been fully established."
+    ]
+  },
+  "manchego-santa-monica": {
+    "status": "partial",
+    "reviewedOn": "2026-10-26",
+    "sourceIds": [
+      "official"
+    ],
+    "scope": "Published happy-hour menu: all identifiable choices in the cited food/drink section transcribed; conditions retained as descriptive offers.",
+    "gaps": [
+      "Recurring daily offers outside the cited menu have not been fully established."
+    ]
+  },
+  "michaels-santa-monica": {
+    "status": "partial",
+    "reviewedOn": "2026-10-26",
+    "sourceIds": [
+      "menu"
+    ],
+    "scope": "Published happy-hour menu: all identifiable choices in the cited food/drink section transcribed; conditions retained as descriptive offers.",
+    "gaps": [
+      "Recurring daily offers outside the cited menu have not been fully established."
+    ]
+  },
+  "north-italia-santa-monica": {
+    "status": "partial",
+    "reviewedOn": "2026-10-26",
+    "sourceIds": [
+      "official"
+    ],
+    "scope": "Published happy-hour menu: all identifiable choices in the cited food/drink section transcribed; conditions retained as descriptive offers.",
+    "gaps": [
+      "Recurring daily offers outside the cited menu have not been fully established."
+    ]
+  },
+  "marina-pasadena": {
+    "status": "partial",
+    "reviewedOn": "2026-10-26",
+    "sourceIds": [
+      "official"
+    ],
+    "scope": "Published happy-hour menu: all identifiable choices in the cited food/drink section transcribed; conditions retained as descriptive offers.",
+    "gaps": [
+      "Monday all-day closing boundary is not established; supported matching uses the existing evidenced window only."
+    ]
+  },
+  "maestro-pasadena": {
+    "status": "partial",
+    "reviewedOn": "2026-10-26",
+    "sourceIds": [
+      "official"
+    ],
+    "scope": "Published happy-hour menu: all identifiable choices in the cited food/drink section transcribed; conditions retained as descriptive offers.",
+    "gaps": [
+      "Recurring daily offers outside the cited menu have not been fully established."
+    ]
+  },
+  "foothill-restaurant-pasadena": {
+    "status": "partial",
+    "reviewedOn": "2026-10-26",
+    "sourceIds": [
+      "official"
+    ],
+    "scope": "Published happy-hour menu: all identifiable choices in the cited food/drink section transcribed; conditions retained as descriptive offers.",
+    "gaps": [
+      "Wednesday all-day boundary remains unresolved; burger-and-beer bundle retained descriptively rather than as component-priced items."
+    ]
+  },
+  "green-street-restaurant-pasadena": {
+    "status": "partial",
+    "reviewedOn": "2026-10-26",
+    "sourceIds": [
+      "official"
+    ],
+    "scope": "Published happy-hour menu: all identifiable choices in the cited food/drink section transcribed; conditions retained as descriptive offers.",
+    "gaps": [
+      "Recurring daily offers outside the cited menu have not been fully established."
+    ]
+  },
+  "agnes-restaurant-cheesery-pasadena": {
+    "status": "partial",
+    "reviewedOn": "2026-10-26",
+    "sourceIds": [
+      "official"
+    ],
+    "scope": "Published happy-hour menu: all identifiable choices in the cited food/drink section transcribed; conditions retained as descriptive offers.",
+    "gaps": [
+      "Current official text lists food without prices and does not establish a happy-hour drinks list. Previous sample prices are not carried forward as current evidence."
+    ]
+  },
+  "brookside-restaurant-pasadena": {
+    "status": "unverified",
+    "reviewedOn": "2026-10-26",
+    "sourceIds": [
+      "official",
+      "menu-inspected"
+    ],
+    "scope": "Existing source records and current official menu access/HH sections checked; readable text or linked menu limitations documented.",
+    "gaps": [
+      "Official page confirms weekday 3–6pm; both pages of linked PDF visually reviewed and contain regular breakfast/all-day items without a separate HH section."
+    ]
+  },
+  "granville-pasadena": {
+    "status": "unverified",
+    "reviewedOn": "2026-10-26",
+    "sourceIds": [
+      "official",
+      "menu-inspected"
+    ],
+    "scope": "Existing source records and current official menu access/HH sections checked; readable text or linked menu limitations documented.",
+    "gaps": [
+      "Official homepage confirms weekday 3–6pm; branch/menu page does not expose attributable HH item prices. NoHo all-day offer not applied to Pasadena."
+    ]
+  },
+  "venezuelan-chamo-cuisine-pasadena": {
+    "status": "partial",
+    "reviewedOn": "2026-10-26",
+    "sourceIds": [
+      "official",
+      "location"
+    ],
+    "scope": "Existing source records and current official menu access/HH sections checked; readable text or linked menu limitations documented.",
+    "gaps": [
+      "Official HH/contact access policy returned 403; current full menu unavailable for review."
+    ]
+  },
+  "el-portal-pasadena": {
+    "status": "partial",
+    "reviewedOn": "2026-10-26",
+    "sourceIds": [
+      "official"
+    ],
+    "scope": "Existing source records and current official menu access/HH sections checked; readable text or linked menu limitations documented.",
+    "gaps": [
+      "Official site access policy returned 403; complete current specials unavailable for review."
+    ]
+  },
+  "john-sparr-tavern-glendale": {
+    "status": "unverified",
+    "reviewedOn": "2026-10-26",
+    "sourceIds": [
+      "official"
+    ],
+    "scope": "Existing source records and current official menu access/HH sections checked; readable text or linked menu limitations documented.",
+    "gaps": [
+      "Official menu page exposes a HH tab but no readable HH item/price content."
+    ]
+  },
+  "la-cabanita-glendale": {
+    "status": "partial",
+    "reviewedOn": "2026-10-26",
+    "sourceIds": [
+      "official"
+    ],
+    "scope": "Published happy-hour menu: all identifiable choices in the cited food/drink section transcribed; conditions retained as descriptive offers.",
+    "gaps": [
+      "Recurring daily offers outside the cited menu have not been fully established."
+    ]
+  },
+  "bacari-glendale": {
+    "status": "unverified",
+    "reviewedOn": "2026-10-26",
+    "sourceIds": [
+      "official"
+    ],
+    "scope": "Existing source records and current official menu access/HH sections checked; readable text or linked menu limitations documented.",
+    "gaps": [
+      "Official branch page confirms weekday 3–6pm but does not distinguish a priced HH section from the regular menu."
+    ]
+  },
+  "inkwell-tavern-burbank": {
+    "status": "partial",
+    "reviewedOn": "2026-10-26",
+    "sourceIds": [
+      "official"
+    ],
+    "scope": "Official HH/weekly offer paragraphs reviewed; general discounts retained without invented item totals.",
+    "gaps": [
+      "Exact discounted item totals and Tuesday/Wednesday choices are not specified."
+    ]
+  },
+  "octopus-restaurant-burbank": {
+    "status": "unverified",
+    "reviewedOn": "2026-10-26",
+    "sourceIds": [
+      "official"
+    ],
+    "scope": "Existing source records and current official menu access/HH sections checked; readable text or linked menu limitations documented.",
+    "gaps": [
+      "Official order page states Monday–Saturday 3–6pm and reverse HH 8pm–close; item prices not readable. Holiday/large-party exclusions remain."
+    ]
+  },
+  "granville-burbank": {
+    "status": "unverified",
+    "reviewedOn": "2026-10-26",
+    "sourceIds": [
+      "official",
+      "menu-inspected"
+    ],
+    "scope": "Existing source records and current official menu access/HH sections checked; readable text or linked menu limitations documented.",
+    "gaps": [
+      "Official homepage confirms weekday 3–6pm; menu page has no readable branch HH item-price section. NoHo all-day offer not applied to Burbank."
+    ]
+  },
+  "smoke-house-burbank": {
+    "status": "unverified",
+    "reviewedOn": "2026-10-26",
+    "sourceIds": [
+      "official",
+      "menu-inspected"
+    ],
+    "scope": "Existing source records and current official menu access/HH sections checked; readable text or linked menu limitations documented.",
+    "gaps": [
+      "Official specials confirms weekday 3–5pm bar/lounge only, dine-in, no combined discounts. No full HH item list is exposed."
+    ]
+  },
+  "twoheys-south-pasadena": {
+    "status": "partial",
+    "reviewedOn": "2026-10-26",
+    "sourceIds": [
+      "official"
+    ],
+    "scope": "Published happy-hour menu: all identifiable choices in the cited food/drink section transcribed; conditions retained as descriptive offers.",
+    "gaps": [
+      "Official menu and homepage disagree on end time; food and draft-pint prices not published in reviewed HH text."
+    ]
+  },
+  "guss-bbq-south-pasadena": {
+    "status": "partial",
+    "reviewedOn": "2026-10-26",
+    "sourceIds": [
+      "official",
+      "hh-food",
+      "hh-drink",
+      "hh-menu"
+    ],
+    "scope": "Existing source records and current official menu access/HH sections checked; readable text or linked menu limitations documented.",
+    "gaps": [
+      "Official location/item/HH menu access policy returned 403; complete current choices unavailable for review."
+    ]
+  },
+  "momed-atwater-village": {
+    "status": "partial",
+    "reviewedOn": "2026-10-26",
+    "sourceIds": [
+      "official",
+      "hh-menu",
+      "older-menu"
+    ],
+    "scope": "Existing source records and current official menu access/HH sections checked; readable text or linked menu limitations documented.",
+    "gaps": [
+      "Official homepage and both saved HH PDFs access policy returned 403; differing historical menus could not be rechecked."
+    ]
+  },
+  "tam-oshanter-atwater-village": {
+    "status": "partial",
+    "reviewedOn": "2026-10-26",
+    "sourceIds": [
+      "official"
+    ],
+    "scope": "Published happy-hour menu: all identifiable choices in the cited food/drink section transcribed; conditions retained as descriptive offers.",
+    "gaps": [
+      "Recurring daily offers outside the cited menu have not been fully established."
+    ]
+  },
+  "relentless-brewing-spirits-eagle-rock": {
+    "status": "unverified",
+    "reviewedOn": "2026-10-26",
+    "sourceIds": [
+      "official",
+      "menu-inspected"
+    ],
+    "scope": "Existing source records and current official menu access/HH sections checked; readable text or linked menu limitations documented.",
+    "gaps": [
+      "Official branch page lists weekday 4–6pm; food page does not expose a readable complete HH price/eligibility list."
+    ]
+  },
+  "dog-haus-biergarten-alhambra": {
+    "status": "partial",
+    "reviewedOn": "2026-10-26",
+    "sourceIds": [
+      "official"
+    ],
+    "scope": "Official HH/weekly offer paragraphs reviewed; general discounts retained without invented item totals.",
+    "gaps": [
+      "Individual current base prices and qualifying shareable/cocktail choices not established in branch text."
+    ]
+  },
+  "checker-hall-highland-park": {
+    "status": "unverified",
+    "reviewedOn": "2026-10-26",
+    "sourceIds": [
+      "official",
+      "about",
+      "hh-image"
+    ],
+    "scope": "Existing source records and current official menu access/HH sections checked; readable text or linked menu limitations documented.",
+    "gaps": [
+      "Official menus/about confirm 4–6pm; linked HH image access policy returned 403, preventing current item-price review."
+    ]
+  },
+  "barcade-los-angeles-highland-park": {
+    "status": "partial",
+    "reviewedOn": "2026-10-26",
+    "sourceIds": [
+      "official"
+    ],
+    "scope": "Existing source records and current official menu access/HH sections checked; readable text or linked menu limitations documented.",
+    "gaps": [
+      "Official location text renders only a title; current HH offer choices cannot be verified from readable content."
+    ]
+  },
+  "messhall-kitchen-los-feliz": {
+    "status": "partial",
+    "reviewedOn": "2026-10-26",
+    "sourceIds": [
+      "official",
+      "official-location"
+    ],
+    "scope": "Existing source records and current official menu access/HH sections checked; readable text or linked menu limitations documented.",
+    "gaps": [
+      "Official menu and homepage requests failed; existing conflicting weekday evidence remains unresolved."
+    ]
+  },
+  "formosa-cafe-west-hollywood": {
+    "status": "partial",
+    "reviewedOn": "2026-10-26",
+    "sourceIds": [
+      "official"
+    ],
+    "scope": "Published happy-hour menu: all identifiable choices in the cited food/drink section transcribed; conditions retained as descriptive offers.",
+    "gaps": [
+      "Recurring daily offers outside the cited menu have not been fully established."
+    ]
+  },
+  "laurel-hardware-west-hollywood": {
+    "status": "unverified",
+    "reviewedOn": "2026-10-26",
+    "sourceIds": [
+      "official"
+    ],
+    "scope": "Existing source records and current official menu access/HH sections checked; readable text or linked menu limitations documented.",
+    "gaps": [
+      "Official homepage confirms daily 5–6pm but provides no complete readable HH item-price section."
+    ]
+  },
+  "marea-beverly-hills": {
+    "status": "unverified",
+    "reviewedOn": "2026-10-26",
+    "sourceIds": [
+      "official",
+      "official-menu"
+    ],
+    "scope": "Existing source records and current official menu access/HH sections checked; readable text or linked menu limitations documented.",
+    "gaps": [
+      "Official contact page lists weekday aperitivo 4–7pm; menu page also includes Saturday 5–7pm. Menu sections are interleaved and a full HH choice/price scope cannot be reliably isolated."
+    ]
+  },
+  "black-cat-silver-lake": {
+    "status": "partial",
+    "reviewedOn": "2026-10-26",
+    "sourceIds": [
+      "official"
+    ],
+    "scope": "Published happy-hour menu: all identifiable choices in the cited food/drink section transcribed; conditions retained as descriptive offers.",
+    "gaps": [
+      "Recurring daily offers outside the cited menu have not been fully established."
+    ]
+  },
+  "33-taps-silver-lake": {
+    "status": "complete",
+    "reviewedOn": "2026-10-26",
+    "sourceIds": [
+      "official",
+      "official-menu",
+      "official-specials"
+    ],
+    "scope": "Official menus: Happy Hour and Taco Tuesday sections; weekly events offers; branch hours and kitchen cutoffs. All identifiable published choices retained; unpriced variants noted.",
+    "gaps": []
+  },
+  "33-taps-west-hollywood": {
+    "status": "complete",
+    "reviewedOn": "2026-10-26",
+    "sourceIds": [
+      "official",
+      "official-menu",
+      "official-specials"
+    ],
+    "scope": "Official menus: Happy Hour and Taco Tuesday sections; weekly events offers; branch hours and kitchen cutoffs. All identifiable published choices retained; unpriced variants noted.",
+    "gaps": []
+  },
+  "edendale-silver-lake": {
+    "status": "unverified",
+    "reviewedOn": "2026-10-26",
+    "sourceIds": [
+      "official",
+      "official-location",
+      "unreviewed-menu"
+    ],
+    "scope": "Existing source records and current official menu access/HH sections checked; readable text or linked menu limitations documented.",
+    "gaps": [
+      "Official hours confirms Tuesday–Friday 5–7pm and Monday all night; saved HH PDF returns 404. Complete current choices unavailable."
+    ]
+  },
+  "le-oyster-bar-silver-lake": {
+    "status": "partial",
+    "reviewedOn": "2026-10-26",
+    "sourceIds": [
+      "unreviewed-menu-image"
+    ],
+    "scope": "Published happy-hour menu: all identifiable choices in the cited food/drink section transcribed; conditions retained as descriptive offers.",
+    "gaps": [
+      "Eligible food choices, wine and draft choices/base prices are not identified; cocktail totals apply explicit $2 discount only."
+    ]
+  },
+  "gracias-madre-west-hollywood": {
+    "status": "partial",
+    "reviewedOn": "2026-10-26",
+    "sourceIds": [
+      "official-menu"
+    ],
+    "scope": "Published happy-hour menu: all identifiable choices in the cited food/drink section transcribed; conditions retained as descriptive offers.",
+    "gaps": [
+      "Homepage advertises $9 margaritas while current PDF lists Purista at $11; confirm drink price."
+    ]
+  },
+  "la-boheme-west-hollywood": {
+    "status": "partial",
+    "reviewedOn": "2026-10-26",
+    "sourceIds": [
+      "official"
+    ],
+    "scope": "Published happy-hour menu: all identifiable choices in the cited food/drink section transcribed; conditions retained as descriptive offers.",
+    "gaps": [
+      "All-night closing boundaries and specific $10 cocktail choices need confirmation."
+    ]
+  },
+  "hugos-west-hollywood": {
+    "status": "unverified",
+    "reviewedOn": "2026-10-26",
+    "sourceIds": [
+      "official",
+      "official-menu"
+    ],
+    "scope": "Existing source records and current official menu access/HH sections checked; readable text or linked menu limitations documented.",
+    "gaps": [
+      "Official homepage/menu access policy returned 403; complete current specials could not be reviewed."
+    ]
+  },
+  "da-michele-hollywood": {
+    "status": "partial",
+    "reviewedOn": "2026-10-26",
+    "sourceIds": [
+      "official"
+    ],
+    "scope": "Published happy-hour menu: all identifiable choices in the cited food/drink section transcribed; conditions retained as descriptive offers.",
+    "gaps": [
+      "Recurring daily offers outside the cited menu have not been fully established."
+    ]
+  },
+  "ocean-prime-beverly-hills": {
+    "status": "partial",
+    "reviewedOn": "2026-10-26",
+    "sourceIds": [
+      "official"
+    ],
+    "scope": "Official HH/weekly offer paragraphs reviewed; general discounts retained without invented item totals.",
+    "gaps": [
+      "Full lounge menu, exact drink choices and the Friday oyster purchase condition require confirmation."
+    ]
+  },
+  "bacari-beverly-hills": {
+    "status": "unverified",
+    "reviewedOn": "2026-10-26",
+    "sourceIds": [
+      "official"
+    ],
+    "scope": "Existing source records and current official menu access/HH sections checked; readable text or linked menu limitations documented.",
+    "gaps": [
+      "Official branch page confirms weekday 3–6pm but does not identify HH item prices separately from regular menu."
+    ]
+  },
+  "jade-beverly-hills": {
+    "status": "unverified",
+    "reviewedOn": "2026-10-26",
+    "sourceIds": [
+      "official"
+    ],
+    "scope": "Existing source records and current official menu access/HH sections checked; readable text or linked menu limitations documented.",
+    "gaps": [
+      "Official homepage confirms Tuesday–Thursday 5:30–7pm; itemized HH menu not exposed in readable content."
+    ]
+  },
+  "il-cielo-beverly-hills": {
+    "status": "partial",
+    "reviewedOn": "2026-10-26",
+    "sourceIds": [
+      "official-menu"
+    ],
+    "scope": "Published happy-hour menu: all identifiable choices in the cited food/drink section transcribed; conditions retained as descriptive offers.",
+    "gaps": [
+      "Official menu and Bar Cielo page disagree on days/times; confirm before going."
+    ]
+  },
+  "beverly-bar-beverly-hills": {
+    "status": "partial",
+    "reviewedOn": "2026-10-26",
+    "sourceIds": [
+      "official-menu"
+    ],
+    "scope": "Published happy-hour menu: all identifiable choices in the cited food/drink section transcribed; conditions retained as descriptive offers.",
+    "gaps": [
+      "Recurring Monday/Tuesday menu prices require separate published-menu confirmation; Sunday bottle prices vary."
+    ]
+  },
+  "iki-ramen-koreatown": {
+    "status": "partial",
+    "reviewedOn": "2026-10-26",
+    "sourceIds": [
+      "official"
+    ],
+    "scope": "Published happy-hour menu: all identifiable choices in the cited food/drink section transcribed; conditions retained as descriptive offers.",
+    "gaps": [
+      "Recurring daily offers outside the cited menu have not been fully established."
+    ]
+  },
+  "iki-ramen-hollywood": {
+    "status": "partial",
+    "reviewedOn": "2026-10-26",
+    "sourceIds": [
+      "official"
+    ],
+    "scope": "Published happy-hour menu: all identifiable choices in the cited food/drink section transcribed; conditions retained as descriptive offers.",
+    "gaps": [
+      "Recurring daily offers outside the cited menu have not been fully established."
+    ]
+  },
+  "bacari-silverlake": {
+    "status": "unverified",
+    "reviewedOn": "2026-10-26",
+    "sourceIds": [
+      "official"
+    ],
+    "scope": "Existing source records and current official menu access/HH sections checked; readable text or linked menu limitations documented.",
+    "gaps": [
+      "Official branch page confirms weekday 5–6pm but does not identify HH-specific item prices separately from regular menu."
+    ]
+  },
+  "circa-55-beverly-hilton": {
+    "status": "unverified",
+    "reviewedOn": "2026-10-26",
+    "sourceIds": [
+      "official",
+      "official-location"
+    ],
+    "scope": "Existing source records and current official menu access/HH sections checked; readable text or linked menu limitations documented.",
+    "gaps": [
+      "Both official Hilton location/dining requests timed out; current full HH menu unavailable for review."
+    ]
+  },
+  "lawrys-prime-rib-beverly-hills": {
+    "status": "partial",
+    "reviewedOn": "2026-10-26",
+    "sourceIds": [
+      "official-menu",
+      "official-bites"
+    ],
+    "scope": "Published happy-hour menu: all identifiable choices in the cited food/drink section transcribed; conditions retained as descriptive offers.",
+    "gaps": [
+      "Recurring daily offers outside the cited menu have not been fully established."
+    ]
+  },
+  "prospect-gourmand-beverly-hills": {
+    "status": "partial",
+    "reviewedOn": "2026-10-26",
+    "sourceIds": [
+      "official"
+    ],
+    "scope": "Published happy-hour menu: all identifiable choices in the cited food/drink section transcribed; conditions retained as descriptive offers.",
+    "gaps": [
+      "Published closing boundary needs confirmation; existing conservative windows retained."
+    ]
+  },
+  "cw-benchmark": {
+    "status": "partial",
+    "reviewedOn": "2026-10-26",
+    "sourceIds": [
+      "src-cw-benchmark-menu"
+    ],
+    "scope": "All identifiable HH choices in the official cited HTML sections reviewed; conditional bundles/general discounts retained as offers.",
+    "gaps": [
+      "Official current text does not expose exact prices; older sample prices not retained as newly confirmed."
+    ]
+  },
+  "cw-risu-long-beach": {
+    "status": "partial",
+    "reviewedOn": "2026-10-26",
+    "sourceIds": [
+      "src-cw-risu-long-beach-official-hh"
+    ],
+    "scope": "All identifiable HH choices in the official cited HTML sections reviewed; conditional bundles/general discounts retained as offers.",
+    "gaps": [
+      "Specialty cocktails $2 off and beer $1 off; base prices vary. Monday all-day closing boundary remains conservative."
+    ]
+  },
+  "cw-the-hare-long-beach": {
+    "status": "unverified",
+    "reviewedOn": "2026-10-26",
+    "sourceIds": [
+      "src-cw-the-hare-long-beach-official-home",
+      "src-cw-the-hare-long-beach-official-hh"
+    ],
+    "scope": "Existing source records and current official menu access/HH sections checked; readable text or linked menu limitations documented.",
+    "gaps": [
+      "Official homepage advertises 25% off while /happy-hour advertises different priced offers and hours; conflict retained. Current full eligibility/base-price list unresolved."
+    ]
+  },
+  "cw-nomad-eatery-el-segundo": {
+    "status": "partial",
+    "reviewedOn": "2026-10-26",
+    "sourceIds": [
+      "src-cw-nomad-eatery-el-segundo-official-hh"
+    ],
+    "scope": "All identifiable HH choices in the official cited HTML sections reviewed; conditional bundles/general discounts retained as offers.",
+    "gaps": [
+      "Menu heading lists board at $18 but item text says $8; price unresolved. Menu includes Saturday while homepage says Tuesday–Friday. Drinks not itemized in current readable HH page."
+    ]
+  },
+  "cw-sausal-el-segundo": {
+    "status": "partial",
+    "reviewedOn": "2026-10-26",
+    "sourceIds": [
+      "src-cw-sausal-el-segundo-official-menu"
+    ],
+    "scope": "All identifiable HH choices in the official cited HTML sections reviewed; conditional bundles/general discounts retained as offers.",
+    "gaps": [
+      "Separate tequila/mezcal pairing events are advertised without fixed current event details."
+    ]
+  },
+  "cw-glendora-continental-glendora": {
+    "status": "unverified",
+    "reviewedOn": "2026-10-26",
+    "sourceIds": [
+      "src-cw-glendora-continental-glendora-official-hours",
+      "src-cw-glendora-continental-glendora-official-home"
+    ],
+    "scope": "Existing source records and current official menu access/HH sections checked; readable text or linked menu limitations documented.",
+    "gaps": [
+      "Official page lists half-off appetizers and weekday drink specials, Wednesday $2 wine glasses/half-price bottles. No readable complete item/base-price menu."
+    ]
+  },
+  "cw-chapter-one-santa-ana": {
+    "status": "partial",
+    "reviewedOn": "2026-10-26",
+    "sourceIds": [
+      "src-cw-chapter-one-santa-ana-happy-hour"
+    ],
+    "scope": "All identifiable HH choices in the official cited HTML sections reviewed; conditional bundles/general discounts retained as offers.",
+    "gaps": [
+      "Drafts and wine glasses $3 off. Mac and cheese chicken +$7, steak +$13. Separate Taco Tuesday menu not independently transcribed in this HH source."
+    ]
+  },
+  "cw-cedar-creek-inn-brea": {
+    "status": "unverified",
+    "reviewedOn": "2026-10-26",
+    "sourceIds": [
+      "src-cw-cedar-creek-inn-brea-location",
+      "src-cw-cedar-creek-inn-brea-happy-hour-menu"
+    ],
+    "scope": "Existing source records and current official menu access/HH sections checked; readable text or linked menu limitations documented.",
+    "gaps": [
+      "Official homepage/HH PDF access policy returned 403. Existing explicit withheld-price rule preserved; no prices exposed."
+    ]
+  },
+  "cw-billys-at-the-beach-newport-beach": {
+    "status": "partial",
+    "reviewedOn": "2026-10-26",
+    "sourceIds": [
+      "src-cw-billys-at-the-beach-newport-beach-location",
+      "src-cw-billys-at-the-beach-newport-beach-happy-hour-menu"
+    ],
+    "scope": "Existing source records and current official menu access/HH sections checked; readable text or linked menu limitations documented.",
+    "gaps": [
+      "Official homepage/HH menu access policy returned 403; existing samples remain partial."
+    ]
+  },
+  "cw-mayfield-san-juan-capistrano": {
+    "status": "partial",
+    "reviewedOn": "2026-10-26",
+    "sourceIds": [
+      "src-cw-mayfield-san-juan-capistrano-happy-hour"
+    ],
+    "scope": "All identifiable HH choices in the official cited HTML sections reviewed; conditional bundles/general discounts retained as offers.",
+    "gaps": [
+      "Sunday–Friday 2:30–6pm subject to opening hours. Rip and Dip: three dips plus two challah $15; do not split bundle component prices. Opening-day limitations retained."
+    ]
+  },
+  "cw-coyote-grill-laguna-beach": {
+    "status": "partial",
+    "reviewedOn": "2026-10-26",
+    "sourceIds": [
+      "src-cw-coyote-grill-laguna-beach-daily-event",
+      "src-cw-coyote-grill-laguna-beach-tuesday-event",
+      "src-cw-coyote-grill-laguna-beach-menu"
+    ],
+    "scope": "Existing source records and current official menu access/HH sections checked; readable text or linked menu limitations documented.",
+    "gaps": [
+      "Official HH/Taco Tuesday/menu access policy returned 403; current complete daily/HH choices could not be reviewed."
+    ]
+  }
+}

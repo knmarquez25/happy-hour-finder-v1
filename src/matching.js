@@ -171,11 +171,11 @@ export function selectCombo(venue, rawRequest) {
     for (const drink of drinks) {
       if (!compatibleItems(venue, request, food, drink)) continue;
       const foodMatches = matchingPreferences(
-          food.tags,
+          [food.name, ...(food.tags || [])],
           request.foodPreferences,
         ),
         drinkMatches = matchingPreferences(
-          drink.tags,
+          [drink.name, ...(drink.tags || [])],
           request.drinkPreferences,
         );
       if (

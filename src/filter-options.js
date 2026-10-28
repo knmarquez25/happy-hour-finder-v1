@@ -1,6 +1,7 @@
 import { discover, eligibleMenuItems, emptyPreferences } from "./discovery.js";
 import { contradictsSchedule } from "./request-schedule.js";
 import { matchingPreferences } from "./matching.js";
+import { candidateAreaMatches } from "./candidate-area.js";
 
 // Use the same word normalization as matching, so equivalent options return the
 // same venues. Display labels keep the original spelling from the source menu.
@@ -65,21 +66,27 @@ export function filterOptions(venues, kind, preferences = emptyPreferences()) {
   );
 }
 
+// Broad menu categories are leads, never proof of a specific cocktail.
+export function pendingPossibleTerms(candidate, p = emptyPreferences()) {
+  return p.drinkPreferences.filter(
+    (term) =>
+      canonicalTerm(term) === "espresso martini" &&
+      !candidate.items.some(
+        (item) =>
+          item.kind === "drink" &&
+          matchingPreferences([item.name], [term]).length,
+      ) &&
+      candidate.items.some(
+        (item) =>
+          item.kind === "drink" &&
+          ["martini", "flavored martini"].includes(canonicalTerm(item.name)),
+      ),
+  );
+}
+
 export function pendingMatches(candidate, p = emptyPreferences()) {
-  if (p.area) {
-    const normalize = (value) =>
-      String(value || "")
-        .toLowerCase()
-        .replace(/[^a-z0-9]+/g, " ")
-        .trim();
-    const area = normalize(p.area);
-    const locations = [
-      candidate.location,
-      candidate.county,
-      ...(candidate.address || "").split(","),
-    ].map(normalize);
-    if (!locations.includes(area)) return false;
-  }
+  const possible = pendingPossibleTerms(candidate, p);
+  if (!candidateAreaMatches(candidate, p.area)) return false;
   for (const [kind, terms] of [
     ["food", p.foodPreferences],
     ["drink", p.drinkPreferences],
@@ -87,6 +94,7 @@ export function pendingMatches(candidate, p = emptyPreferences()) {
     if (
       terms.some(
         (term) =>
+          !(kind === "drink" && possible.includes(term)) &&
           !candidate.items.some(
             (item) =>
               item.kind === kind &&

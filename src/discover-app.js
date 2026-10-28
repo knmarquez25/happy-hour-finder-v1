@@ -68,11 +68,74 @@ function itemDetails(v, i) {
   return `${esc(status(i))}${primaryEvidence(v, i) ? "" : " · Price needs confirmation"}${i.days ? ` · ${esc(i.days.join(", "))} only` : ""}${i.windowIds ? ` · ${esc(formatHappyHour(windows))}` : ""}${i.pairWithIds ? " · Conditional pairing: check offer details" : ""}${s ? ` · ${sourceLink(s, "Source")}` : ""}`;
 }
 function renderMenu(v) {
+  const coverage = v.menuCoverage;
+  const label =
+    coverage?.status === "complete"
+      ? "Full published specials reviewed"
+      : coverage?.status === "partial"
+        ? "Partial menu"
+        : "Menu needs verification";
+  const sources = (
+    coverage?.sourceIds?.length
+      ? coverage.sourceIds.map((id) => v.sources.find((s) => s.id === id))
+      : v.sources.filter((s) => s.type === "primary")
+  ).filter(Boolean);
+  const evidence =
+    '<div class="menu-coverage"><strong>' +
+    label +
+    "</strong>" +
+    (coverage?.reviewedOn
+      ? '<p class="small muted">' +
+        (coverage.status === "complete"
+          ? "Published specials reviewed "
+          : "Menu coverage checked ") +
+        esc(coverage.reviewedOn) +
+        ". Availability may change.</p>"
+      : "") +
+    (coverage?.gaps?.length
+      ? '<p class="small muted">' + coverage.gaps.map(esc).join(" · ") + "</p>"
+      : "") +
+    '<p class="menu-source-actions">' +
+    sources
+      .map((s) =>
+        sourceLink(
+          s,
+          s.type === "primary" ? "Open restaurant source" : "Open guide source",
+        ),
+      )
+      .join(" · ") +
+    "</p></div>";
   const items = menuItems(v, preferences);
-  if (items.length)
-    return `<section class="menu-items" aria-label="Listed happy-hour menu"><h4>Happy-hour menu · ${items.length} listed items</h4><p class="small muted">All items we have recorded are shown below. The restaurant may list additional items. Pick one published order of each; item schedules and restrictions apply.</p>${items.map(({ item: i, matchesRequest }) => `<div class="menu-choice"><label><input type="checkbox" data-item="${esc(i.id)}"><span>${esc(i.name)}<small class="item-evidence">${matchesRequest ? "Matches your request · " : ""}${itemDetails(v, i)}</small></span></label><strong>${Number.isSafeInteger(i.priceCents) ? money(i.priceCents) : "Price needs confirmation"}</strong></div>`).join("")}<div class="order-total" aria-live="polite">Choose items to see your menu-price subtotal.</div><p class="order-note">Subtotals exclude tax, tip, and fees. Listed prices are not a guarantee of availability.</p></section>`;
   const specials = happyHourListings(v);
-  return `<section class="menu-items" aria-label="Listed happy-hour offers"><h4>Listed happy-hour offers</h4>${specials.length ? specials.map((s) => `<div class="menu-highlight"><span>${esc(s.text)}<small class="item-evidence">${s.primary ? "Restaurant-listed" : "Guide-listed"} · ${sourceLink(s.source, "Source")}</small></span></div>`).join("") : ""}<p class="small muted">Individual menu items and exact prices have not been recorded. Browse the restaurant source below.</p></section>`;
+  const choices = items.length
+    ? "<h4>Happy-hour menu · " +
+      items.length +
+      ' listed items</h4><p class="small muted">Pick one published order of each; item schedules and restrictions apply.</p>' +
+      items
+        .map(
+          ({ item: i, matchesRequest }) =>
+            `<div class="menu-choice"><label><input type="checkbox" data-item="${esc(i.id)}"><span>${esc(i.name)}<small class="item-evidence">${matchesRequest ? "Matches your request · " : ""}${itemDetails(v, i)}</small></span></label><strong>${Number.isSafeInteger(i.priceCents) ? money(i.priceCents) : "Price needs confirmation"}</strong></div>`,
+        )
+        .join("") +
+      '<div class="order-total" aria-live="polite">Choose items to see your menu-price subtotal.</div><p class="order-note">Subtotals exclude tax, tip, and fees. Listed prices are not a guarantee of availability.</p>'
+    : '<p class="small muted">Individual menu items and exact prices have not been recorded. Browse the restaurant source.</p>';
+  const offers = specials.length
+    ? '<div class="listed-offers"><h4>Additional published offers &amp; conditions</h4>' +
+      specials
+        .map(
+          (s) =>
+            `<div class="menu-highlight"><span>${esc(s.text)}<small class="item-evidence">${s.primary ? "Restaurant-listed" : "Guide-listed"} · ${sourceLink(s.source, "Source")}</small></span></div>`,
+        )
+        .join("") +
+      "</div>"
+    : "";
+  return (
+    '<section class="menu-items" aria-label="Listed happy-hour menu">' +
+    evidence +
+    choices +
+    offers +
+    "</section>"
+  );
 }
 function renderCard(result) {
   const {
